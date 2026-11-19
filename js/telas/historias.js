@@ -6,8 +6,9 @@ LB.usarHistorias = function (ctx) {
   const mostrandoPerguntas = ref(false);
   const indicePergunta = ref(0);
 
+  // Cada pergunta aparece com os botões sorteados (ver js/sorteio.js).
   const perguntaAtual = computed(() =>
-    historiaAtual.value ? historiaAtual.value.perguntas[indicePergunta.value] : null);
+    historiaAtual.value ? LB.sortearOpcoes(historiaAtual.value.perguntas[indicePergunta.value]) : null);
 
   const rh = LB.criarResposta(ctx, () => ({
     item: perguntaAtual.value,

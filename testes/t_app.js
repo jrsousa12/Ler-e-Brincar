@@ -36,17 +36,23 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
     vm.abrirAtividade(LB.CONTEUDO.activities.find(a => a.id === 'mat-036'));
   });
   await p.waitForSelector('.opcao');
-  await p.locator('.opcao').nth(0).click();
-  ok(await p.locator('.opcao').nth(0).evaluate(e => e.classList.contains('correta')), 'mat-036: 2 é a certa');
+  // As opções são sorteadas (js/sorteio.js): achar o botão pela resposta, não pela posição
+  const posCerta = () => p.evaluate(() => { const a = LB.app.atividadeAtual; return a.opcoes.findIndex((_, i) => LB.respostas.ehCorreta(a, i)); });
+  let c = await posCerta();
+  ok(await p.evaluate(() => String(LB.app.atividadeAtual.opcoes.find((_, i) => LB.respostas.ehCorreta(LB.app.atividadeAtual, i)))) === '2', 'mat-036: 2 é a certa');
+  await p.locator('.opcao').nth(c).click();
+  ok(await p.locator('.opcao').nth(c).evaluate(e => e.classList.contains('correta')), 'mat-036: tocar no 2 marca certa');
   await foto('3-atividade');
 
   // Nova tentativa: 1º erro apaga a opção e deixa tentar; 2º erro mostra a certa
   await p.evaluate(() => LB.app.abrirAtividade(LB.CONTEUDO.activities.find(a => a.id === 'mat-036')));
-  await p.locator('.opcao').nth(1).click();
-  ok(await p.locator('.opcao').nth(1).evaluate(e => e.classList.contains('errada')), '1º erro marca a opção');
-  ok(await p.locator('.opcao').nth(2).isEnabled(), '1º erro: ainda pode tentar');
-  await p.locator('.opcao').nth(2).click();
-  ok(await p.locator('.opcao').nth(0).evaluate(e => e.classList.contains('correta')), '2º erro: mostra a certa');
+  c = await posCerta();
+  const [e1, e2] = [0, 1, 2].filter(i => i !== c);
+  await p.locator('.opcao').nth(e1).click();
+  ok(await p.locator('.opcao').nth(e1).evaluate(e => e.classList.contains('errada')), '1º erro marca a opção');
+  ok(await p.locator('.opcao').nth(e2).isEnabled(), '1º erro: ainda pode tentar');
+  await p.locator('.opcao').nth(e2).click();
+  ok(await p.locator('.opcao').nth(c).evaluate(e => e.classList.contains('correta')), '2º erro: mostra a certa');
   ok((await p.textContent('.feedback')).length > 20, '2º erro: mostra a explicação');
 
   // Missão: faz o 2º passo (Português) e volta para a trilha com 1 passo feito

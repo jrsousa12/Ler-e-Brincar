@@ -20,7 +20,8 @@ LB.usarAtividades = function (ctx) {
   });
 
   function abrirAtividade(a) {
-    atividadeAtual.value = a;
+    atividadeAtual.value = LB.sortearOpcoes(a); // ordem dos botões muda a cada vez
+    a = atividadeAtual.value;
     ra.zerar();
     ctx.tela.value = 'atividade';
     window.scrollTo({ top: 0, behavior: 'smooth' });
