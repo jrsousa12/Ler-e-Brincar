@@ -9,7 +9,7 @@
 | Histórias | 40 | `historia-41` |
 | Português | 100 | `lp-101` |
 | Matemática | 100 | `mat-101` |
-| Colorir | 30 | `colorir-31` |
+| Colorir | 35 | `colorir-36` |
 
 ## Português (por habilidade da BNCC)
 
@@ -90,7 +90,7 @@
 
 ## Colorir
 
-colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 ❤️ Coração · colorir-04 🏠 Casa · colorir-05 ☀️ Sol · colorir-06 🌸 Flor · colorir-07 🌳 Árvore · colorir-08 🚗 Carro · colorir-09 ⚽ Bola · colorir-10 🦋 Borboleta · colorir-11 🐠 Peixe · colorir-12 ⛅ Nuvem com sol · colorir-13 ⛵ Barco · colorir-14 ✨ Estrelas · colorir-15 🚀 Foguete · colorir-16 🐞 Joaninha · colorir-17 🐸 Sapo · colorir-18 🌤️ Sol e nuvem · colorir-19 🏰 Castelo · colorir-20 🌈 Arco-íris · colorir-21 🌙 Lua e estrela · colorir-22 🍦 Sorvete · colorir-23 🎈 Balão de ar quente · colorir-24 🎂 Bolo de aniversário · colorir-25 🌟 Estrela-do-mar · colorir-26 🤖 Robô · colorir-27 🦖 Dinossauro · colorir-28 🌙 Lua com estrelas · colorir-29 🐧 Pinguim · colorir-30 🐝 Abelha
+colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 ❤️ Coração · colorir-04 🏠 Casa · colorir-05 ☀️ Sol · colorir-06 🌸 Flor · colorir-07 🌳 Árvore · colorir-08 🚗 Carro · colorir-09 ⚽ Bola · colorir-10 🦋 Borboleta · colorir-11 🐠 Peixe · colorir-12 ⛅ Nuvem com sol · colorir-13 ⛵ Barco · colorir-14 ✨ Estrelas · colorir-15 🚀 Foguete · colorir-16 🐞 Joaninha · colorir-17 🐸 Sapo · colorir-18 🌤️ Sol e nuvem · colorir-19 🏰 Castelo · colorir-20 🌈 Arco-íris · colorir-21 🌙 Lua e estrela · colorir-22 🍦 Sorvete · colorir-23 🎈 Balão de ar quente · colorir-24 🎂 Bolo de aniversário · colorir-25 🌟 Estrela-do-mar · colorir-26 🤖 Robô · colorir-27 🦖 Dinossauro · colorir-28 🌙 Lua com estrelas · colorir-29 🐧 Pinguim · colorir-30 🐝 Abelha · colorir-31 🐢 Tartaruga · colorir-32 🌻 Girassol · colorir-33 🍎 Maçã · colorir-34 🦆 Pato · colorir-35 🚂 Trem
 
 ## Código (⚠ acima de 200 linhas · ✖ acima de 300)
 
