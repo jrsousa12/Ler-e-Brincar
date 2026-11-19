@@ -1,0 +1,25 @@
+# Robô do GitHub (autorizado pelo dono em 19/11/2026): a cada envio, confere o conteúdo
+# e garante as bibliotecas em vendor/ (baixa e guarda no projeto só se faltarem).
+name: Verificar
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Conferir conteúdo
+        run: node build/validar.js && node testes/t_conteudo.js
+      - name: Baixar bibliotecas que faltam (vendor/)
+        run: |
+          baixa() { [ -s "vendor/$1" ] || curl -fsSL "$2" -o "vendor/$1"; }
+          baixa vue.global.prod.js https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.prod.js
+          baixa dexie.min.js https://cdn.jsdelivr.net/npm/dexie@4.0.10/dist/dexie.min.js
+          if [ -n "$(git status --porcelain vendor)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+            git add vendor && git commit -m "Guarda cópia local do Vue e do Dexie (vendor/)" && git push
+          fi

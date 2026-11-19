@@ -1,0 +1,1 @@
+Vue 3.5.13 e Dexie 4.0.10, baixados pelo robô .github/workflows/verificar.yml
