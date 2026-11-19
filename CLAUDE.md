@@ -9,13 +9,17 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
 - **Usuária**: uma criança de 8 anos, em casa, com dificuldade em LP e Matemática (BNCC 2º/3º ano).
 - **Comandos úteis**:
   - Validar conteúdo: `node build/validar.js` (rodar sempre que mexer em `conteudo/`)
-  - Testes: `node testes/t_conteudo.js` (regra de resposta certa + validador); `node testes/t_app.js` (abre o app no navegador; `CAPTURAS=pasta` salva fotos)
+  - Testes: `node testes/t_conteudo.js` (regra de resposta certa + validador); `node testes/t_app.js` (abre o app no navegador; `CAPTURAS=pasta` salva fotos); `node testes/t_sorteio.js` (sorteio da ordem das opções)
   - Offline: `node testes/t_offline.js` (lista do `sw.js`, manifesto, app sem internet). Ao mudar arquivo do app, aumentar `VERSAO` em `sw.js` e incluir o arquivo novo na lista. Ícones: `node build/icones.js`
   - Robô do GitHub (`.github/workflows/verificar.yml`, autorizado 19/11): a cada envio, roda o validador e baixa Vue/Dexie para `vendor/` se faltarem (faz commit sozinho: dar `git pull` depois).
-  - Lint: `for f in js/*.js js/telas/*.js conteudo/*.js; do node --check "$f"; done` (só sintaxe)
-- **Estrutura**: `index.html` (casca + telas), `css/`, `js/app.js` + `js/telas/` (uma tela por arquivo), `js/respostas.js` (regra única de resposta certa), `conteudo/` (um item por linha; achar com `grep "id:'lp-037'"`), `vendor/` (Vue e Dexie locais).
+  - Gerar Matemática: `node build/gerar-mat.js build/pedidos/<arquivo>.txt` (prévia) e `--gravar`; erros típicos e textos em `build/fichas/mat.json` (calibrar ali). Teste: `node testes/t_gerar_mat.js`
+  - Qualidade (avisos, não bloqueia): `node build/conferir.js` (`--tipo codigo` lista um tipo; `--estrito` falha se houver aviso); limites e avisos aceitos em `build/fichas/qualidade.json`. Teste: `node testes/t_conferir.js`
+  - Item único (Motor 4): `node build/item.js lp-037` mostra; `-c campos`; `--busca texto`; `campo=texto`, `campo:=json`, `perguntas.0.correta:=1`, `-x campo` alteram só a linha. Nunca ler nem dar `grep` nas linhas de `conteudo/`: usar o motor. Teste: `node testes/t_item.js`
+  - Catálogo (Motor 5): `node build/catalogo.js` gera `CATALOGO.md` (o que existe por habilidade/nível, próximos ids livres, arquivos de código). Consultar antes de criar conteúdo ou código; nunca editar à mão; `--conferir` falha se estiver desatualizado. Teste: `node testes/t_catalogo.js`
+  - **Conferir tudo (Motor 6)**: `node build/tudo.js` (uma linha por etapa: sintaxe, tamanho, validador, qualidade, catálogo, todos os testes). `--mudados` roda só o ligado aos arquivos alterados; `--rapido` pula o navegador; `--lista` só mostra. Etapas e mapa: `build/fichas/etapas.json` (teste novo entra ali). Rodar antes de cada commit. Teste: `node testes/t_tudo.js`
+- **Estrutura**: `index.html` (só a casca), `css/`, `js/app.js` (junta tudo) + `js/telas/` (comportamento de cada tela) + `js/moldes/` (HTML de cada tela), `js/respostas.js` (regra única de resposta certa), `js/sorteio.js` (sorteia a ordem dos botões a cada vez; o conteúdo não muda), `js/pergunta.js` (responder com nova tentativa), `js/missao.js`, `js/voz.js`, `js/festa.js`, `js/tentativas.js`, `conteudo/` (um item por linha; achar com `grep "id:'lp-037'"`), `vendor/` (Vue e Dexie locais).
 - **Convenções**: nomes e comentários em português. Esquemas do conteúdo e regras pedagógicas: `original-deepseek/script-gerador-conteudo.md`. `original-deepseek/` é só consulta, não editar.
-- **Próximas tarefas**: seguir as fases de `PLANO.md` (próxima: Fase 1 — organizar e publicar).
+- **Próximas tarefas**: seguir as fases de `PLANO.md` (próxima: lp-071 a 100).
 - **Público**: o dono é professor e não programa; explicar em português simples.
 - **Idioma**: responder sempre em português do Brasil (PT-BR), inclusive resumos, avisos e mensagens de commit.
 
@@ -91,7 +95,7 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Revisão em lote**: capturas/relatórios de muitos itens de uma vez, em vez de um por um.
 - **Memória do projeto**: listas de ideias e pendências (`IDEIAS.md`, `NOTAS.md`) para não redescobrir decisões. Quando passarem de ~150 linhas, mover o que já foi feito para um arquivo de histórico.
 - **Travas e barra**: `.claude/settings.json` + `.claude/hooks/` impedem ler dados enormes direto e mostram o % do contexto usado (receita: `travas-e-barra.md` do protocolo-token).
-- **Instalado aqui**: barra de contexto (`.claude/settings.json` + `.claude/hooks/barra-contexto.sh`). Trava de dados: ainda não (não há banco).
+- **Instalado aqui**: barra de contexto (`.claude/settings.json` + `.claude/hooks/barra-contexto.sh`). Motor de item único: `build/item.js`. Trava de dados: ainda não.
 
 ## 9. Recursos de Apoio (criar quando o projeto pedir)
 

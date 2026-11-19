@@ -10,51 +10,87 @@
   const { createApp, ref, watch, onMounted } = Vue;
 
   LB.CONTEUDO = { stories: LB.historias, activities: [...LB.lp, ...LB.mat], colorir: LB.colorir };
+  const AJUSTES_PADRAO = { dislexia: false, tamanho: 'medio', vozAuto: true, velocidade: 0.9, som: true };
+
+  // Junta os moldes das telas (js/moldes/) num só HTML.
+  const m = LB.moldes;
+  const molde = m.cabecalho +
+    '<div class="container" v-if="!portaoAberto">' +
+    m.inicio + m.missao + m.historias + m.atividades + m.colorir + m.selos + m.responsavel + m.ajustes +
+    '</div>' + m.portao + m.navegacao;
 
   const App = {
+    template: molde,
     setup() {
       // Estado comum a todas as telas
       const ctx = {
         tela: ref('home'),
         estrelas: ref(0),
         concluidos: ref({}),
-        ajustes: ref({ dislexia: false, tamanho: 'medio' }),
-        respostaSelecionada: ref(null)
+        ajustes: ref({ ...AJUSTES_PADRAO }),
+        missao: ref(null),        // missão de hoje (js/missao.js)
+        diasMissao: ref([]),      // datas com missão completa
+        passoAtivo: ref(null)     // passo da missão em andamento (null = fora da missão)
       };
       ctx.marcarConcluido = (id) => {
         if (!ctx.concluidos.value[id]) ctx.concluidos.value = { ...ctx.concluidos.value, [id]: true };
       };
+      ctx.ouvir = (texto) => LB.voz.falar(texto);
+      ctx.falarSozinho = (texto) => { if (ctx.ajustes.value.vozAuto) LB.voz.falar(texto); };
 
       const historias = LB.usarHistorias(ctx);
       ctx.irPara = (t) => {
+        LB.voz.parar();
         ctx.tela.value = t;
-        ctx.respostaSelecionada.value = null;
+        ctx.passoAtivo.value = null;
         historias.zerar();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       };
+      // Voltar: dentro da missão volta para a trilha; fora, para a lista indicada.
+      ctx.voltar = (padrao) => ctx.irPara(ctx.passoAtivo.value !== null ? 'missao' : padrao);
 
-      watch([ctx.estrelas, ctx.concluidos, ctx.ajustes], () => {
+      const atividades = LB.usarAtividades(ctx);
+      const colorir = LB.usarColorir(ctx);
+      ctx.abrir = { historia: historias.abrirHistoria, atividade: atividades.abrirAtividade, colorir: colorir.abrirColorir };
+      const missao = LB.usarMissao(ctx);
+      ctx.diasSeguidos = missao.diasSeguidos;
+      ctx.terminarItem = (padrao) => {
+        if (ctx.passoAtivo.value !== null) missao.marcarPasso(ctx.passoAtivo.value);
+        ctx.voltar(padrao);
+      };
+
+      watch([ctx.estrelas, ctx.concluidos, ctx.ajustes, ctx.missao, ctx.diasMissao], () => {
         LB.banco.salvarEstado({
-          estrelas: ctx.estrelas.value, concluidos: ctx.concluidos.value, ajustes: ctx.ajustes.value
+          estrelas: ctx.estrelas.value, concluidos: ctx.concluidos.value, ajustes: ctx.ajustes.value,
+          missao: ctx.missao.value, diasMissao: ctx.diasMissao.value
         });
       }, { deep: true });
+      watch(() => ctx.ajustes.value.velocidade, v => LB.voz.mudarVelocidade(v), { immediate: true });
 
       onMounted(async () => {
         const est = await LB.banco.carregarEstado();
-        if (!est) return;
-        ctx.estrelas.value = est.estrelas || 0;
-        ctx.concluidos.value = est.concluidos || {};
-        ctx.ajustes.value = est.ajustes || { dislexia: false, tamanho: 'medio' };
+        if (est) {
+          ctx.estrelas.value = est.estrelas || 0;
+          ctx.concluidos.value = est.concluidos || {};
+          ctx.ajustes.value = { ...AJUSTES_PADRAO, ...(est.ajustes || {}) };
+          ctx.missao.value = est.missao || null;
+          ctx.diasMissao.value = est.diasMissao || [];
+        }
+        missao.garantir();
       });
 
       return {
         conteudo: LB.CONTEUDO,
+        textoPergunta: (p) => LB.voz.textoPergunta(p.enunciado, p.opcoes),
         ...ctx,
         ...historias,
-        ...LB.usarAtividades(ctx),
-        ...LB.usarColorir(ctx),
+        ...atividades,
+        ...colorir,
+        ...missao.publico,
+        diasSeguidos: missao.diasSeguidos,
         ...LB.usarSelos(ctx),
-        ...LB.usarAjustes(ctx)
+        ...LB.usarAjustes(ctx),
+        ...LB.usarResponsavel(ctx)
       };
     }
   };

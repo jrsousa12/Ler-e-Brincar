@@ -1,4 +1,4 @@
-// Tela "Selos": progresso geral e conquistas.
+// Tela "Selos": progresso geral, conquistas e selos da missão do dia (missões e dias seguidos).
 LB.usarSelos = function (ctx) {
   'use strict';
   const { computed } = Vue;
@@ -14,7 +14,15 @@ LB.usarSelos = function (ctx) {
   const atividadesConcluidas = computed(() => feitos(C.activities));
   const coloridos = computed(() => feitos(C.colorir));
 
+  const missoesFeitas = computed(() => ctx.diasMissao.value.length);
+  const seguidos = () => ctx.diasSeguidos.value;
+
   const selos = computed(() => [
+    { id: 'missao1', nome: 'Primeira Missão', emoji: '🚀', desbloqueado: missoesFeitas.value >= 1 },
+    { id: 'missao10', nome: '10 Missões', emoji: '🛰️', desbloqueado: missoesFeitas.value >= 10 },
+    { id: 'dias3', nome: '3 Dias Seguidos', emoji: '🔥', desbloqueado: seguidos() >= 3 },
+    { id: 'dias7', nome: '7 Dias Seguidos', emoji: '🌈', desbloqueado: seguidos() >= 7 },
+    { id: 'dias15', nome: '15 Dias Seguidos', emoji: '👑', desbloqueado: seguidos() >= 15 },
     { id: 'iniciante', nome: 'Leitor Iniciante', emoji: '🌱', desbloqueado: historiasLidas.value >= 1 },
     { id: 'devorador', nome: 'Devorador de Histórias', emoji: '📚', desbloqueado: historiasLidas.value >= 5 },
     { id: 'matematico', nome: 'Pequeno Matemático', emoji: '🧮', desbloqueado: atividadesConcluidas.value >= 5 },
@@ -26,5 +34,5 @@ LB.usarSelos = function (ctx) {
   ]);
   const selosDesbloqueados = computed(() => selos.value.filter(s => s.desbloqueado).length);
 
-  return { totalItens, totalConcluidos, progressoGeral, selos, selosDesbloqueados };
+  return { totalItens, totalConcluidos, progressoGeral, selos, selosDesbloqueados, missoesFeitas };
 };

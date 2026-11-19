@@ -1,0 +1,19 @@
+/* Área do responsável, trava dos adultos e folhas de impressão (Fase 3). */
+.sem-clique{cursor:default}
+.linha-resumo{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--cor-borda)}
+.linha-resumo:last-child{border-bottom:0}
+.linha-erro{padding:10px 0;border-bottom:1px solid var(--cor-borda)}
+.campo-select,.campo-portao{
+  font:inherit;padding:12px 14px;border:2px solid var(--cor-borda-forte);border-radius:var(--radius-sm);
+  background:var(--cor-card);color:var(--cor-texto);min-height:48px
+}
+.campo-select{flex:1;min-width:0}
+.conta-portao{font-family:var(--font-display);font-size:2.4em;font-weight:800;margin:8px 0}
+.campo-portao{width:160px;text-align:center;font-size:1.6em}
+
+@media print{
+  body.imprimindo #app{display:none!important}
+  .print-desenho svg{width:100%;height:auto;max-height:22cm;background:#fff}
+  .print-questao{margin-bottom:18pt;page-break-inside:avoid}
+  .print-opcao{display:inline-block;margin-right:10pt}
+}

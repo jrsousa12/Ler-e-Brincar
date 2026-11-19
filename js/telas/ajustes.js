@@ -1,40 +1,42 @@
-// Portão dos pais (setas + deslizar) e tela "Ajustes" (fonte para dislexia, tamanho, zerar).
+// Trava dos adultos (uma conta de multiplicar) e tela "Ajustes" (voz, som, fonte, tamanho, zerar).
 LB.usarAjustes = function (ctx) {
   'use strict';
   const { ref, watch } = Vue;
   const portaoAberto = ref(false);
-  const portao = ref({ setas: ['←', '←', '→'], indice: 0, gestoOk: false });
-  const gestoInicio = ref(0);
-  const setasFeitas = () => portao.value.indice >= portao.value.setas.length;
+  const portao = ref({ a: 7, b: 8, resposta: '', erro: false });
+  const numero = () => 6 + Math.floor(Math.random() * 4); // 6 a 9
 
   function abrirPortao() {
+    LB.voz.parar();
+    portao.value = { a: numero(), b: numero(), resposta: '', erro: false };
     portaoAberto.value = true;
-    portao.value = { setas: ['←', '←', '→'], indice: 0, gestoOk: false };
   }
   function fecharPortao() { portaoAberto.value = false; }
-  function clicarSeta(i) {
-    if (i === portao.value.indice && !setasFeitas()) portao.value.indice++;
-  }
-  function iniciarGesto(e) {
-    if (!setasFeitas()) return;
-    gestoInicio.value = e.touches ? e.touches[0].clientX : e.clientX;
-  }
-  function terminarGesto(e) {
-    if (!setasFeitas()) return;
-    const x = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
-    if (x - gestoInicio.value > 80) {
-      portao.value.gestoOk = true;
-      setTimeout(() => { portaoAberto.value = false; ctx.irPara('ajustes'); }, 400);
+  function conferirPortao() {
+    const p = portao.value;
+    if (Number(String(p.resposta).trim()) === p.a * p.b) {
+      portaoAberto.value = false;
+      ctx.irPara('responsavel');
+    } else {
+      portao.value = { a: numero(), b: numero(), resposta: '', erro: true };
     }
   }
 
-  function toggleDislexia() { ctx.ajustes.value.dislexia = !ctx.ajustes.value.dislexia; }
+  const alternar = (campo) => { ctx.ajustes.value[campo] = !ctx.ajustes.value[campo]; };
   function mudarTamanho(t) { ctx.ajustes.value.tamanho = t; }
-  function resetarProgresso() {
-    if (confirm('Tem certeza que deseja zerar todo o progresso?')) {
-      ctx.estrelas.value = 0;
-      ctx.concluidos.value = {};
-    }
+  function mudarVelocidade(v) {
+    ctx.ajustes.value.velocidade = v;
+    LB.voz.mudarVelocidade(v);
+    LB.voz.falar('Olá! Esta é a minha voz.');
+  }
+  async function resetarProgresso() {
+    if (!confirm('Tem certeza que deseja zerar todo o progresso (estrelas, selos, missões e respostas)?')) return;
+    ctx.estrelas.value = 0;
+    ctx.concluidos.value = {};
+    ctx.diasMissao.value = [];
+    ctx.missao.value = null;
+    await LB.tentativas.apagar();
+    ctx.irPara('home');
   }
 
   // Aplica os ajustes na página inteira
@@ -46,8 +48,7 @@ LB.usarAjustes = function (ctx) {
   }, { deep: true, immediate: true });
 
   return {
-    portaoAberto, portao, abrirPortao, fecharPortao, clicarSeta,
-    iniciarGesto, terminarGesto, iniciarGestoTouch: iniciarGesto, terminarGestoTouch: terminarGesto,
-    toggleDislexia, mudarTamanho, resetarProgresso
+    portaoAberto, portao, abrirPortao, fecharPortao, conferirPortao,
+    alternar, mudarTamanho, mudarVelocidade, resetarProgresso, vozDisponivel: LB.voz.disponivel
   };
 };

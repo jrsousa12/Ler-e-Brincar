@@ -1,4 +1,4 @@
-// Telas "Ler" e "História": leitura e as 3 perguntas de cada história.
+// Telas "Ler" e "História": leitura e as perguntas de cada história.
 LB.usarHistorias = function (ctx) {
   'use strict';
   const { ref, computed } = Vue;
@@ -6,14 +6,28 @@ LB.usarHistorias = function (ctx) {
   const mostrandoPerguntas = ref(false);
   const indicePergunta = ref(0);
 
+  // Cada pergunta aparece com os botões sorteados (ver js/sorteio.js).
   const perguntaAtual = computed(() =>
-    historiaAtual.value ? historiaAtual.value.perguntas[indicePergunta.value] : null);
+    historiaAtual.value ? LB.sortearOpcoes(historiaAtual.value.perguntas[indicePergunta.value]) : null);
+
+  const rh = LB.criarResposta(ctx, () => ({
+    item: perguntaAtual.value,
+    id: historiaAtual.value.id + '-p' + (indicePergunta.value + 1),
+    materia: 'leitura',
+    habilidade: (historiaAtual.value.habilidadesBNCC || [])[0] || 'leitura',
+    titulo: historiaAtual.value.titulo
+  }));
+
+  const lerPergunta = () => {
+    const p = perguntaAtual.value;
+    if (p) ctx.falarSozinho(LB.voz.textoPergunta(p.enunciado, p.opcoes));
+  };
 
   function abrirHistoria(h) {
     historiaAtual.value = h;
     mostrandoPerguntas.value = false;
     indicePergunta.value = 0;
-    ctx.respostaSelecionada.value = null;
+    rh.zerar();
     ctx.tela.value = 'historia';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -21,38 +35,29 @@ LB.usarHistorias = function (ctx) {
   function iniciarPerguntasHistoria() {
     mostrandoPerguntas.value = true;
     indicePergunta.value = 0;
-    ctx.respostaSelecionada.value = null;
-  }
-
-  function responder(i) {
-    ctx.respostaSelecionada.value = i;
-    if (LB.respostas.ehCorreta(perguntaAtual.value, i)) ctx.estrelas.value++;
+    rh.zerar();
+    lerPergunta();
   }
 
   function proximaPergunta() {
     if (indicePergunta.value + 1 < historiaAtual.value.perguntas.length) {
       indicePergunta.value++;
-      ctx.respostaSelecionada.value = null;
+      rh.zerar();
+      lerPergunta();
     } else {
       ctx.marcarConcluido(historiaAtual.value.id);
-      ctx.irPara('ler');
+      ctx.terminarItem('ler');
     }
-  }
-
-  function classeOpcao(i) {
-    if (ctx.respostaSelecionada.value === null) return '';
-    if (LB.respostas.ehCorreta(perguntaAtual.value, i)) return 'correta';
-    if (i === ctx.respostaSelecionada.value) return 'errada';
-    return '';
   }
 
   function zerar() {
     mostrandoPerguntas.value = false;
     indicePergunta.value = 0;
+    rh.zerar();
   }
 
   return {
-    historiaAtual, mostrandoPerguntas, indicePergunta, perguntaAtual,
-    abrirHistoria, iniciarPerguntasHistoria, responder, proximaPergunta, classeOpcao, zerar
+    historiaAtual, mostrandoPerguntas, indicePergunta, perguntaAtual, rh,
+    abrirHistoria, iniciarPerguntasHistoria, proximaPergunta, zerar
   };
 };

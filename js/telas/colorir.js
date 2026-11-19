@@ -27,7 +27,8 @@ LB.usarColorir = function (ctx) {
 
   function concluirColorir() {
     if (colorirAtual.value) ctx.marcarConcluido(colorirAtual.value.id);
-    ctx.irPara('colorir');
+    LB.festa.acerto(ctx.ajustes.value.som !== false);
+    ctx.terminarItem('colorir');
   }
 
   return { colorirAtual, svgRef, corAtual, paletaCores, abrirColorir, pintarForma, resetarDesenho, concluirColorir };

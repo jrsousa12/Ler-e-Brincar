@@ -159,7 +159,7 @@
   }
   body{background-image:radial-gradient(780px 420px at 6% -10%,rgba(139,123,245,.22),transparent 62%),radial-gradient(680px 380px at 104% -2%,rgba(255,146,115,.12),transparent 60%)}
   .historia-capa{background:linear-gradient(135deg,#2A2450 0%,#3A2436 100%)}
-  .svg-colorir svg{background:#1E1A30}
+  .svg-colorir svg{background:#fff}
 }
 .print-only{display:none}
 @media print{
