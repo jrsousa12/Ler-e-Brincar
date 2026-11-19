@@ -7,7 +7,7 @@
 | Área | Itens | Próximo id livre |
 |---|---|---|
 | Histórias | 30 | `historia-31` |
-| Português | 70 | `lp-071` |
+| Português | 100 | `lp-101` |
 | Matemática | 100 | `mat-101` |
 | Colorir | 30 | `colorir-31` |
 
@@ -15,17 +15,17 @@
 
 | Habilidade | Nível 1 | Nível 2 | Nível 3 | Total | Tipos |
 |---|---|---|---|---|---|
-| EF02LP03 | 12 | 9 | · | 21 | completar, multipla |
-| EF02LP07 | 14 | 22 | 2 | 38 | multipla, completar |
-| EF02LP26 | 1 | · | · | 1 | multipla |
-| EF15LP03 | 6 | · | · | 6 | multipla |
-| EF15LP04 | · | 4 | · | 4 | multipla |
+| EF02LP03 | 14 | 13 | · | 27 | completar, multipla |
+| EF02LP07 | 17 | 27 | 3 | 47 | multipla, completar |
+| EF02LP26 | 1 | 2 | · | 3 | multipla |
+| EF15LP03 | 9 | · | · | 9 | multipla |
+| EF15LP04 | 3 | 10 | 1 | 14 | multipla |
 
-- **EF02LP03**: lp-001 Complete a frase (n1) · lp-006 Sílabas (n1) · lp-007 Rima (n1) · lp-017 Contando sílabas (n1) · lp-018 Sílabas curtas (n1) · lp-019 Letra inicial (n1) · lp-027 Rima (n1) · lp-031 Complete (n1) · lp-035 Contando palavras (n1) · lp-036 Ç ou SS (n2) · lp-037 Acento (n2) · lp-041 Sílabas (n1) · lp-042 Sílabas (n2) · lp-043 Sílabas (n1) · lp-044 Sílabas (n1) · lp-045 Sílabas (n2) · lp-046 R ou RR (n2) · lp-047 S ou SS (n2) · lp-048 Ç (n2) · lp-049 X ou CH (n2) · lp-050 M antes de P/B (n2)
-- **EF02LP07**: lp-003 Qual é o plural? (n1) · lp-004 Sinônimo (n2) · lp-005 Pontuação (n2) · lp-009 Ordem alfabética (n2) · lp-010 Frase completa (n1) · lp-011 Plural (n1) · lp-012 Singular (n1) · lp-013 Sinônimo (n2) · lp-014 Antônimo (n2) · lp-015 Feminino (n1) · lp-016 Masculino (n1) · lp-020 Vírgula (n3) · lp-021 Complete com verbo (n2) · lp-022 Futuro (n2) · lp-023 Adjetivo (n2) · lp-024 Substantivo (n2) · lp-025 Verbo (n2) · lp-026 Plural no texto (n1) · lp-028 Ordem alfabética (n1) · lp-029 Ordem alfabética (n2) · lp-032 Sinônimo (n2) · lp-033 Antônimo (n2) · lp-034 Frase correta (n2) · lp-051 Sinônimo (n2) · lp-052 Antônimo (n2) · lp-053 Sinônimo (n2) · lp-054 Antônimo (n2) · lp-055 Sinônimo (n3) · lp-061 Substantivo (n1) · lp-062 Adjetivo (n2) · lp-063 Verbo (n2) · lp-064 Substantivo próprio (n2) · lp-065 Artigo (n1) · lp-066 Ponto final (n1) · lp-067 Interrogação (n1) · lp-068 Exclamação (n1) · lp-069 Ordem alfabética (n1) · lp-070 Frase com sentido (n2)
-- **EF02LP26**: lp-002 Leia e responda (n1)
-- **EF15LP03**: lp-030 Quem fez? (n1) · lp-038 Interpretação (n1) · lp-040 Quando? (n1) · lp-056 Interpretação (n1) · lp-057 Interpretação (n1) · lp-058 Interpretação (n1)
-- **EF15LP04**: lp-008 Inferência (n2) · lp-039 Inferência (n2) · lp-059 Inferência (n2) · lp-060 Inferência (n2)
+- **EF02LP03**: lp-001 Complete a frase (n1) · lp-006 Sílabas (n1) · lp-007 Rima (n1) · lp-017 Contando sílabas (n1) · lp-018 Sílabas curtas (n1) · lp-019 Letra inicial (n1) · lp-027 Rima (n1) · lp-031 Complete (n1) · lp-035 Contando palavras (n1) · lp-036 Ç ou SS (n2) · lp-037 Acento (n2) · lp-041 Sílabas (n1) · lp-042 Sílabas (n2) · lp-043 Sílabas (n1) · lp-044 Sílabas (n1) · lp-045 Sílabas (n2) · lp-046 R ou RR (n2) · lp-047 S ou SS (n2) · lp-048 Ç (n2) · lp-049 X ou CH (n2) · lp-050 M antes de P/B (n2) · lp-086 Contando sílabas (n1) · lp-087 Rima (n1) · lp-089 R ou RR (n2) · lp-090 X ou CH (n2) · lp-091 M ou N (n2) · lp-092 Ç ou SS (n2)
+- **EF02LP07**: lp-003 Qual é o plural? (n1) · lp-004 Sinônimo (n2) · lp-005 Pontuação (n2) · lp-009 Ordem alfabética (n2) · lp-010 Frase completa (n1) · lp-011 Plural (n1) · lp-012 Singular (n1) · lp-013 Sinônimo (n2) · lp-014 Antônimo (n2) · lp-015 Feminino (n1) · lp-016 Masculino (n1) · lp-020 Vírgula (n3) · lp-021 Complete com verbo (n2) · lp-022 Futuro (n2) · lp-023 Adjetivo (n2) · lp-024 Substantivo (n2) · lp-025 Verbo (n2) · lp-026 Plural no texto (n1) · lp-028 Ordem alfabética (n1) · lp-029 Ordem alfabética (n2) · lp-032 Sinônimo (n2) · lp-033 Antônimo (n2) · lp-034 Frase correta (n2) · lp-051 Sinônimo (n2) · lp-052 Antônimo (n2) · lp-053 Sinônimo (n2) · lp-054 Antônimo (n2) · lp-055 Sinônimo (n3) · lp-061 Substantivo (n1) · lp-062 Adjetivo (n2) · lp-063 Verbo (n2) · lp-064 Substantivo próprio (n2) · lp-065 Artigo (n1) · lp-066 Ponto final (n1) · lp-067 Interrogação (n1) · lp-068 Exclamação (n1) · lp-069 Ordem alfabética (n1) · lp-070 Frase com sentido (n2) · lp-088 Pontuação (n2) · lp-093 Ordem alfabética (n1) · lp-094 Sinônimo (n2) · lp-095 Antônimo (n1) · lp-096 Antônimo (n2) · lp-097 Sinônimo (n3) · lp-098 Verbo (n2) · lp-099 Adjetivo (n2) · lp-100 Pontuação (n1)
+- **EF02LP26**: lp-002 Leia e responda (n1) · lp-084 Leia e responda (n2) · lp-085 Por quê? (n2)
+- **EF15LP03**: lp-030 Quem fez? (n1) · lp-038 Interpretação (n1) · lp-040 Quando? (n1) · lp-056 Interpretação (n1) · lp-057 Interpretação (n1) · lp-058 Interpretação (n1) · lp-081 Interpretação (n1) · lp-082 Com quem? (n1) · lp-083 O que tomou? (n1)
+- **EF15LP04**: lp-008 Inferência (n2) · lp-039 Inferência (n2) · lp-059 Inferência (n2) · lp-060 Inferência (n2) · lp-071 Inferência (n2) · lp-072 Inferência (n2) · lp-073 Inferência (n2) · lp-074 Inferência (n1) · lp-075 Inferência (n1) · lp-076 Inferência (n2) · lp-077 Inferência (n2) · lp-078 Inferência (n1) · lp-079 Inferência (n2) · lp-080 Inferência (n3)
 
 ## Matemática (por habilidade da BNCC)
 
