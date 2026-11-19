@@ -20,5 +20,7 @@ module.exports = [
   { nome: 'rostoFeliz', descricao: 'rosto sorridente: olhos, sobrancelhas, bochechas e boca aberta (cabe num círculo de raio 50)', ancora: [150, 150],
     desenho: () => f('ellipse', 'cx="130" cy="138" rx="6" ry="9"', 'black', 1) + f('ellipse', 'cx="170" cy="138" rx="6" ry="9"', 'black', 1) +
       f('circle', 'cx="112" cy="162" r="9"', 'white', 2) + f('circle', 'cx="188" cy="162" r="9"', 'white', 2) +
-      f('path', 'd="M128 164 Q150 196 172 164 Q150 172 128 164 Z"', 'white', 2.5) + solto('M122 128 Q130 122 138 126 M162 126 Q170 122 178 128', 2) }
+      f('path', 'd="M128 164 Q150 196 172 164 Q150 172 128 164 Z"', 'white', 2.5) + solto('M122 128 Q130 122 138 126 M162 126 Q170 122 178 128', 2) },
+  { nome: 'luaCrescente', descricao: 'lua crescente grossa, aberta para a direita (encaixe no meio da curva de fora)', ancora: [50, 172],
+    desenho: () => f('path', 'd="M60 130 A46 46 0 1 0 84 214 A36 36 0 1 1 60 130 Z"') }
 ].map(p => Object.assign(p, { tema }));

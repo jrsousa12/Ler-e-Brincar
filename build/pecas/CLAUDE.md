@@ -13,7 +13,7 @@ O motor aprende com cada desenho aprovado: as partes viram peças aqui e os pró
 6. `node build/colorir.js ... --gravar` e `node build/tudo.js`.
 
 ## Regras de uma peça
-- Ficha por tema: `animais.js`, `natureza.js`, `ceu.js`, `construcoes.js` (tema novo: criar a ficha e pôr em `TEMAS` no `index.js`).
+- Ficha por tema: `animais.js`, `natureza.js`, `ceu.js`, `construcoes.js`, `formas.js`, `transportes.js` (tema novo: criar a ficha e pôr em `TEMAS` no `index.js`).
 - Campos: `nome` (camelCase, único), `descricao` (uma frase: o que é e qual lado), `ancora` (ponto de encaixe), `desenho(o)`.
 - Desenhar nas coordenadas do desenho aprovado; peça pequena e solta (maçã, flor) em volta de 0,0.
 - Peça de um lado só: desenhar um lado e dizer na descrição; o outro sai com `espelho`.
