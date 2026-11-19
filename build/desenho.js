@@ -12,10 +12,11 @@ const espelhar = (...p) => grupo(...p) + `<g transform="translate(300,0) scale(-
 const polar = (cx, cy, r, graus) => { const a = graus * Math.PI / 180; return [+(cx + r * Math.cos(a)).toFixed(1), +(cy + r * Math.sin(a)).toFixed(1)]; };
 const nuvem = (x, y, e = 1) => f('path', `d="M${x} ${y} Q${x - 8 * e} ${y - 14 * e} ${x + 12 * e} ${y - 16 * e} Q${x + 18 * e} ${y - 34 * e} ${x + 42 * e} ${y - 26 * e} Q${x + 64 * e} ${y - 30 * e} ${x + 66 * e} ${y - 10 * e} Q${x + 80 * e} ${y - 2 * e} ${x + 66 * e} ${y + 8 * e} L${x + 6 * e} ${y + 8 * e} Q${x - 6 * e} ${y + 8 * e} ${x} ${y} Z"`, 'white', 2.5);
 // Copa de folhas: contorno ondulado em volta de uma elipse (n ondas). Serve para árvore, arbusto, nuvem fofa.
-const copa = (cx, cy, rx, ry, n = 9, giro = 0, sw = 3) => {
+// varia (0 a 0.2): deixa as ondas de tamanhos diferentes, mais natural.
+const copa = (cx, cy, rx, ry, n = 9, giro = 0, sw = 3, varia = 0) => {
   const p = [];
   for (let i = 0; i < n; i++) p.push(polar(0, 0, 1, giro + i * 360 / n));
-  const pts = p.map(([x, y]) => [+(cx + rx * x).toFixed(1), +(cy + ry * y).toFixed(1)]);
+  const pts = p.map(([x, y], i) => { const m = 1 + varia * Math.sin(i * 2.4 + cx); return [+(cx + rx * m * x).toFixed(1), +(cy + ry * m * y).toFixed(1)]; });
   const d = pts.map(([x, y], i) => {
     const [nx, ny] = pts[(i + 1) % n], r = (Math.hypot(nx - x, ny - y) * 0.62).toFixed(1);
     return `A${r} ${r} 0 0 1 ${nx} ${ny}`;
