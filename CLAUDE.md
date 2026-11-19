@@ -9,7 +9,8 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
 - **Usuária**: uma criança de 8 anos, em casa, com dificuldade em LP e Matemática (BNCC 2º/3º ano).
 - **Comandos úteis**:
   - Validar conteúdo: `node build/validar.js` (rodar sempre que mexer em `conteudo/`)
-  - Testes: `node testes/t_conteudo.js` (regra de resposta certa + validador)
+  - Testes: `node testes/t_conteudo.js` (regra de resposta certa + validador); `node testes/t_app.js` (abre o app no navegador; `CAPTURAS=pasta` salva fotos)
+  - Robô do GitHub (`.github/workflows/verificar.yml`, autorizado 19/11): a cada envio, roda o validador e baixa Vue/Dexie para `vendor/` se faltarem (faz commit sozinho: dar `git pull` depois).
   - Lint: `for f in js/*.js js/telas/*.js conteudo/*.js; do node --check "$f"; done` (só sintaxe)
 - **Estrutura**: `index.html` (casca + telas), `css/`, `js/app.js` + `js/telas/` (uma tela por arquivo), `js/respostas.js` (regra única de resposta certa), `conteudo/` (um item por linha; achar com `grep "id:'lp-037'"`), `vendor/` (Vue e Dexie locais).
 - **Convenções**: nomes e comentários em português. Esquemas do conteúdo e regras pedagógicas: `original-deepseek/script-gerador-conteudo.md`. `original-deepseek/` é só consulta, não editar.

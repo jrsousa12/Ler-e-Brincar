@@ -59,5 +59,6 @@
     }
   };
 
-  createApp(App).mount('#app');
+  // LB.app: acesso ao app montado (usado pelos testes em testes/t_app.js)
+  LB.app = createApp(App).mount('#app');
 })();
