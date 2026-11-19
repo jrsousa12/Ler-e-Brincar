@@ -30,10 +30,14 @@
         ajustes: ref({ ...AJUSTES_PADRAO }),
         missao: ref(null),        // missão de hoje (js/missao.js)
         diasMissao: ref([]),      // datas com missão completa
-        passoAtivo: ref(null)     // passo da missão em andamento (null = fora da missão)
+        passoAtivo: ref(null),    // passo da missão em andamento (null = fora da missão)
+        caderno: ref(LB.caderno.vazio()) // caderno de erros e pontos fracos (js/caderno.js)
       };
       ctx.marcarConcluido = (id) => {
         if (!ctx.concluidos.value[id]) ctx.concluidos.value = { ...ctx.concluidos.value, [id]: true };
+      };
+      ctx.anotarCaderno = (item, deprimeira) => {
+        ctx.caderno.value = LB.caderno.anotar(ctx.caderno.value, item, deprimeira, new Date().toISOString().slice(0, 10));
       };
       ctx.ouvir = (texto) => LB.voz.falar(texto);
       ctx.falarSozinho = (texto) => { if (ctx.ajustes.value.vozAuto) LB.voz.falar(texto); };
@@ -59,10 +63,10 @@
         ctx.voltar(padrao);
       };
 
-      watch([ctx.estrelas, ctx.concluidos, ctx.ajustes, ctx.missao, ctx.diasMissao], () => {
+      watch([ctx.estrelas, ctx.concluidos, ctx.ajustes, ctx.missao, ctx.diasMissao, ctx.caderno], () => {
         LB.banco.salvarEstado({
           estrelas: ctx.estrelas.value, concluidos: ctx.concluidos.value, ajustes: ctx.ajustes.value,
-          missao: ctx.missao.value, diasMissao: ctx.diasMissao.value
+          missao: ctx.missao.value, diasMissao: ctx.diasMissao.value, caderno: ctx.caderno.value
         });
       }, { deep: true });
       watch(() => ctx.ajustes.value.velocidade, v => LB.voz.mudarVelocidade(v), { immediate: true });
@@ -75,6 +79,7 @@
           ctx.ajustes.value = { ...AJUSTES_PADRAO, ...(est.ajustes || {}) };
           ctx.missao.value = est.missao || null;
           ctx.diasMissao.value = est.diasMissao || [];
+          ctx.caderno.value = est.caderno || LB.caderno.vazio();
         }
         missao.garantir();
       });

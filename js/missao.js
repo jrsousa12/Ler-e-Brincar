@@ -1,5 +1,6 @@
 // Missão do dia: 1 história + 3 de Português + 3 de Matemática + 1 desenho, em sequência.
 // A escolha muda a cada dia (sorteio pela data) e prefere o que a criança ainda não fez.
+// Português e Matemática: 1 (ou 2) do caderno de erros + novas puxando as habilidades fracas (js/caderno.js).
 LB.usarMissao = function (ctx) {
   'use strict';
   const { computed } = Vue;
@@ -8,6 +9,7 @@ LB.usarMissao = function (ctx) {
     historia: ['📖', 'Ler uma história'], lp: ['📝', 'Português'],
     mat: ['🧮', 'Matemática'], colorir: ['🎨', 'Pintar um desenho']
   };
+  const REVISAO = { lp: ['🔁', 'Revisão de Português'], mat: ['🔁', 'Revisão de Matemática'] };
 
   const dataDe = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
   const hoje = () => dataDe(new Date());
@@ -28,12 +30,41 @@ LB.usarMissao = function (ctx) {
     return saida;
   }
 
+  // Atividades novas: nível mais fácil (ou o seguinte), sorteio com peso maior para habilidade fraca.
+  function escolherFracas(lista, n, rnd, fora) {
+    let resto = lista.filter(x => !fora.has(x.id) && !ctx.concluidos.value[x.id]);
+    if (resto.length < n) resto = lista.filter(x => !fora.has(x.id));
+    const minimo = Math.min(...resto.map(x => x.nivel || 1));
+    const saida = [];
+    while (saida.length < n && resto.length) {
+      let base = resto.filter(x => (x.nivel || 1) <= minimo + 1);
+      if (!base.length) base = resto;
+      const pesos = base.map(x => LB.caderno.peso(ctx.caderno.value, x.habilidadeBNCC) * ((x.nivel || 1) === minimo ? 2 : 1));
+      let r = rnd() * pesos.reduce((a, b) => a + b, 0), k = 0;
+      while (k < base.length - 1 && (r -= pesos[k]) > 0) k++;
+      saida.push(base[k]);
+      resto = resto.filter(x => x !== base[k]);
+    }
+    return saida;
+  }
+
+  // 3 passos de uma matéria: nova, revisão(ões) do caderno, novas.
+  function passosDaMateria(tipo, materia, rnd) {
+    const lista = C.activities.filter(a => a.materia === materia);
+    const ids = LB.caderno.paraRevisar(ctx.caderno.value, materia).filter(id => lista.some(a => a.id === id));
+    const rev = ids.slice(0, ids.length >= 4 ? 2 : 1);
+    const novas = escolherFracas(lista, 3 - rev.length, rnd, new Set(rev));
+    const passos = novas.map(a => ({ tipo, id: a.id }));
+    passos.splice(Math.min(1, passos.length), 0, ...rev.map(id => ({ tipo, id, revisao: true })));
+    return passos;
+  }
+
   function montar(data) {
     const rnd = sorteador(data);
-    const lp = escolher(C.activities.filter(a => a.materia === 'lingua-portuguesa'), 3, rnd);
-    const mat = escolher(C.activities.filter(a => a.materia === 'matematica'), 3, rnd);
+    const lp = passosDaMateria('lp', 'lingua-portuguesa', rnd);
+    const mat = passosDaMateria('mat', 'matematica', rnd);
     const passos = [{ tipo: 'historia', id: escolher(C.stories, 1, rnd)[0].id }];
-    for (let i = 0; i < 3; i++) passos.push({ tipo: 'lp', id: lp[i].id }, { tipo: 'mat', id: mat[i].id });
+    for (let i = 0; i < 3; i++) passos.push(lp[i], mat[i]);
     passos.push({ tipo: 'colorir', id: escolher(C.colorir, 1, rnd)[0].id });
     return { data, passos, feitos: passos.map(() => false), premiada: false };
   }
@@ -49,9 +80,10 @@ LB.usarMissao = function (ctx) {
   const passosMissao = computed(() => {
     const m = ctx.missao.value;
     if (!m) return [];
-    return m.passos.map((p, i) => ({
-      ...p, item: buscar(p), feito: m.feitos[i], emoji: ROTULOS[p.tipo][0], rotulo: ROTULOS[p.tipo][1]
-    }));
+    return m.passos.map((p, i) => {
+      const [emoji, rotulo] = (p.revisao && REVISAO[p.tipo]) || ROTULOS[p.tipo];
+      return { ...p, item: buscar(p), feito: m.feitos[i], emoji, rotulo };
+    });
   });
   const passosFeitos = computed(() => passosMissao.value.filter(p => p.feito).length);
   const missaoCompleta = computed(() => passosMissao.value.length > 0 && passosFeitos.value === passosMissao.value.length);

@@ -59,8 +59,10 @@ LB.usarResponsavel = function (ctx) {
     if (c) LB.impressao.imprimir(LB.impressao.desenho(c));
   }
 
+  const noCaderno = computed(() => LB.caderno.total(ctx.caderno.value));
+
   return {
-    registros, porMateria, ondeErrou, feitosPorArea, desenhoParaImprimir,
+    registros, noCaderno, porMateria, ondeErrou, feitosPorArea, desenhoParaImprimir,
     imprimirAtividades, imprimirDesenho
   };
 };
