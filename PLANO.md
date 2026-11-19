@@ -45,8 +45,11 @@ Decisões do dono (19/11/2026):
 - Selos e estrelas ligados à missão do dia.
 - **Área do responsável** (com trava simples): progresso, onde errou mais, imprimir desenhos e atividades.
 
-### Fase 4 — Onda 3 de conteúdo (Sonnet)
-- Gerar com `original-deepseek/script-gerador-conteudo.md` (ajustado) e passar pelo validador antes de entrar no app.
+### Fase 4 — Motores, depois onda 3 de conteúdo
+- Decisão (19/11): primeiro os motores; opções **sorteadas** a cada vez no app (a certa estava quase sempre no botão do meio).
+- Motores: 1 sorteio das opções — feito · 2 gerador de Matemática + ficha de erros típicos — feito · 3 conferidor de qualidade (avisos: certa mais longa, falta de figuras, emoji repetido...) · 4 motor de item único (linhas do colorir passam de 2 000 letras) · 5 catálogo do que existe · 6 comando único de conferência.
+- Depois, conteúdo (Sonnet), uma conversa cada: mat-071 a 100 (pelo gerador; incluir dinheiro e juntar/retirar) · lp-071 a 100 (incluir inferência) · historia-31 a 40 · colorir-31 a 35.
+- Regras: `original-deepseek/script-gerador-conteudo.md` (ajustado) + validador antes de entrar no app.
 
 ### Fase 5 — Ajustes pelo uso real
 - O dono observa a criança usando e anota em `NOTAS.md`; ajustes em tarefas pequenas.

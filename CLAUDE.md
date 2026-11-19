@@ -12,10 +12,11 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
   - Testes: `node testes/t_conteudo.js` (regra de resposta certa + validador); `node testes/t_app.js` (abre o app no navegador; `CAPTURAS=pasta` salva fotos); `node testes/t_sorteio.js` (sorteio da ordem das opções)
   - Offline: `node testes/t_offline.js` (lista do `sw.js`, manifesto, app sem internet). Ao mudar arquivo do app, aumentar `VERSAO` em `sw.js` e incluir o arquivo novo na lista. Ícones: `node build/icones.js`
   - Robô do GitHub (`.github/workflows/verificar.yml`, autorizado 19/11): a cada envio, roda o validador e baixa Vue/Dexie para `vendor/` se faltarem (faz commit sozinho: dar `git pull` depois).
+  - Gerar Matemática: `node build/gerar-mat.js build/pedidos/<arquivo>.txt` (prévia) e `--gravar`; erros típicos e textos em `build/fichas/mat.json` (calibrar ali). Teste: `node testes/t_gerar_mat.js`
   - Lint: `for f in js/*.js js/telas/*.js conteudo/*.js; do node --check "$f"; done` (só sintaxe)
 - **Estrutura**: `index.html` (só a casca), `css/`, `js/app.js` (junta tudo) + `js/telas/` (comportamento de cada tela) + `js/moldes/` (HTML de cada tela), `js/respostas.js` (regra única de resposta certa), `js/sorteio.js` (sorteia a ordem dos botões a cada vez; o conteúdo não muda), `js/pergunta.js` (responder com nova tentativa), `js/missao.js`, `js/voz.js`, `js/festa.js`, `js/tentativas.js`, `conteudo/` (um item por linha; achar com `grep "id:'lp-037'"`), `vendor/` (Vue e Dexie locais).
 - **Convenções**: nomes e comentários em português. Esquemas do conteúdo e regras pedagógicas: `original-deepseek/script-gerador-conteudo.md`. `original-deepseek/` é só consulta, não editar.
-- **Próximas tarefas**: seguir as fases de `PLANO.md` (próxima: Fase 4 — onda 3 de conteúdo).
+- **Próximas tarefas**: seguir as fases de `PLANO.md` (próxima: Fase 4 — motores 3 a 6, depois onda 3 de conteúdo).
 - **Público**: o dono é professor e não programa; explicar em português simples.
 - **Idioma**: responder sempre em português do Brasil (PT-BR), inclusive resumos, avisos e mensagens de commit.
 

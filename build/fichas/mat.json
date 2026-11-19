@@ -1,0 +1,38 @@
+{
+  "_leia": "Ficha do gerador de Matemática (build/gerar-mat.js). Calibrar = editar aqui, sem programar. 'erros': para cada conta, os erros típicos de criança, em ordem de preferência; o gerador usa os 2 primeiros que dão um número válido e diferente da resposta. 'nomes_dos_erros' explica cada um. 'titulos' e 'explicacoes': textos; {a}, {b}, {r} viram os números da conta; {soma} vira b + b + ... (só na multiplicação). '+dezenas' e '−dezenas' valem quando o 2º número tem dezena e unidade; ali {ad}/{au} são dezena/unidade do 1º, {bd}/{bu} do 2º, {sd}/{su} as somas e {p} o que fica depois de tirar a dezena.",
+  "nomes_dos_erros": {
+    "um_a_mais": "contou um a mais",
+    "um_a_menos": "contou um a menos",
+    "dez_a_mais": "errou a dezena para mais",
+    "dez_a_menos": "errou a dezena para menos",
+    "trocou_por_soma": "somou em vez de fazer a conta pedida",
+    "trocou_por_subtracao": "subtraiu em vez de somar",
+    "esqueceu_vai_um": "esqueceu o 'vai um' da soma",
+    "subtraiu_ao_contrario": "na subtração com troca, tirou o menor do maior em cada casa",
+    "inverteu_algarismos": "trocou a ordem dos algarismos (ex.: 21 e 12)",
+    "um_grupo_a_mais": "contou um grupo a mais na multiplicação",
+    "um_grupo_a_menos": "contou um grupo a menos na multiplicação"
+  },
+  "erros": {
+    "+": ["esqueceu_vai_um", "um_a_mais", "um_a_menos", "inverteu_algarismos", "trocou_por_subtracao", "dez_a_mais"],
+    "−": ["subtraiu_ao_contrario", "trocou_por_soma", "um_a_mais", "um_a_menos", "dez_a_mais", "inverteu_algarismos"],
+    "×": ["um_grupo_a_mais", "um_grupo_a_menos", "trocou_por_soma", "um_a_mais", "um_a_menos"],
+    "÷": ["um_a_mais", "um_a_menos", "trocou_por_subtracao", "dez_a_mais"]
+  },
+  "titulos": {
+    "+": "Somando", "−": "Subtraindo", "×": "Multiplicando", "÷": "Dividindo",
+    "problema+": "Problema de juntar", "problema−": "Problema de tirar",
+    "problema×": "Problema de grupos", "problema÷": "Problema de repartir",
+    "dinheiro": "Contando dinheiro"
+  },
+  "explicacoes": {
+    "+": "Comece no {a} e conte mais {b}: você chega no {r}.",
+    "−": "Tire {b} de {a} e conte o que sobra: {r}.",
+    "+dezenas": "Some dezenas com dezenas e unidades com unidades: {ad} + {bd} = {sd} e {au} + {bu} = {su}. Depois, {sd} + {su} = {r}.",
+    "−dezenas": "Tire primeiro {bd} (fica {p}) e depois tire {bu} (fica {r}).",
+    "×": "São {a} grupos de {b}: {soma} = {r}.",
+    "÷": "Repartindo {a} em {b} partes iguais, cada parte fica com {r}, porque {b} × {r} = {a}."
+  },
+  "palavras_dinheiro": ["R$", "real", "reais", "moeda", "centavo", "dinheiro", "troco", "custa", "pagou"],
+  "palavras_juntar_retirar": ["juntou", "juntar", "chegaram", "chegou", "ganhou", "acrescent", "retir", "tirou", "perdeu", "saíram", "foram embora", "comeu", "deu "]
+}
