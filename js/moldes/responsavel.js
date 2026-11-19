@@ -22,6 +22,31 @@ LB.moldes.responsavel = `
       </div>
 
       <div class="card sem-clique">
+        <div class="card-titulo">📈 Evolução</div>
+        <p class="card-meta">Acerto na 1ª tentativa, semana a semana (últimas 6). Esta semana ela usou o app em {{ evolucao.diasEstaSemana }} dia(s).</p>
+        <div class="evo-bloco" v-for="l in evolucao.linhas" :key="l.nome">
+          <div class="linha-resumo"><span>{{ l.nome }}</span>
+            <span v-if="l.resumo">de {{ l.resumo.de }}% para {{ l.resumo.para }}%</span>
+            <span v-else class="card-meta">ainda poucas semanas</span></div>
+          <div class="evo-barras">
+            <div class="evo-col" v-for="s in l.semanas" :key="s.rotulo"
+                 :title="s.taxa === null ? 'sem uso' : s.taxa + '% de ' + s.perguntas + ' perguntas'">
+              <div class="evo-num">{{ s.taxa === null ? '–' : s.taxa + '%' }}</div>
+              <div class="evo-trilho"><div class="evo-barra" :style="{height: (s.taxa || 0) + '%'}"></div></div>
+              <div class="evo-sem">{{ s.rotulo }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="linha-erro" v-for="h in evolucao.mudancas.melhoraram" :key="'m' + h.habilidade">
+          ✅ <strong>{{ h.habilidade }}</strong> melhorou: {{ h.antes }}% → {{ h.agora }}%
+        </div>
+        <div class="linha-erro" v-for="h in evolucao.mudancas.pioraram" :key="'p' + h.habilidade">
+          ⚠️ <strong>{{ h.habilidade }}</strong> precisa de atenção: {{ h.antes }}% → {{ h.agora }}%
+        </div>
+        <p class="card-meta">Habilidades: comparo as 2 últimas semanas com as 2 anteriores (só com 5 perguntas ou mais em cada). Semana sem uso aparece como “–”.</p>
+      </div>
+
+      <div class="card sem-clique">
         <div class="card-titulo">🔎 Onde errou mais</div>
         <p class="card-meta" v-if="!ondeErrou.length">Nenhum erro registrado até agora.</p>
         <div class="linha-erro" v-for="g in ondeErrou" :key="g.habilidade">

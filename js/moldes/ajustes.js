@@ -22,6 +22,19 @@ LB.moldes.ajustes = `
           <button class="filtro" :class="{ativo: ajustes.som}" @click="alternar('som')">{{ ajustes.som ? '✓ Ligado' : 'Desligado' }}</button>
         </div>
       </div>
+      <div class="card sem-clique" v-if="podeVibrar">
+        <div class="linha-resumo">
+          <span class="card-titulo">📳 Vibrar ao responder</span>
+          <button class="filtro" :class="{ativo: ajustes.vibrar}" @click="alternar('vibrar')">{{ ajustes.vibrar ? '✓ Ligado' : 'Desligado' }}</button>
+        </div>
+      </div>
+      <div class="card sem-clique">
+        <div class="linha-resumo">
+          <span class="card-titulo">🧘 Reduzir movimento</span>
+          <button class="filtro" :class="{ativo: ajustes.reduzirMovimento}" @click="alternar('reduzirMovimento')">{{ ajustes.reduzirMovimento ? '✓ Ligado' : 'Desligado' }}</button>
+        </div>
+        <div class="card-meta">Tira o confete e as animações (bom para quem se distrai ou enjoa).</div>
+      </div>
       <div class="card sem-clique">
         <div class="card-titulo">Fonte para dislexia</div>
         <div class="card-meta" style="margin-bottom:10px">Usa a fonte Lexend com mais espaçamento</div>
