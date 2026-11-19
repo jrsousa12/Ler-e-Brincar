@@ -50,6 +50,11 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
 - **Mudança de assunto** → lembrar o dono de usar `/clear`.
 - **Mesma tarefa, conversa longa** → sugerir `/compact` com direcionamento (ex.: `/compact mantenha as decisões e os arquivos alterados`).
 - Só o dono pode executar `/clear` e `/compact`.
+- **Modelo indicado** (acordo com o dono, 19/11/2026): ao receber cada tarefa, dizer em uma linha qual modelo basta e por quê, antes de começar:
+  - **Haiku**: trocar texto, valor, cor; dúvida rápida; rodar um comando ou motor pronto.
+  - **Sonnet**: criar ou ajustar uma tela/atividade, corrigir erro comum, gerar conteúdo seguindo molde.
+  - **Opus**: planejar, decidir estrutura, criar motor novo, erro difícil, mudança em vários arquivos.
+  - Se o modelo atual for maior que o necessário, sugerir `/model` para trocar; o dono decide.
 
 ## 6. Vigia de Contexto
 
