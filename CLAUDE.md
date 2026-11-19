@@ -19,7 +19,7 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
   - **Conferir tudo (Motor 6)**: `node build/tudo.js` (uma linha por etapa: sintaxe, tamanho, validador, qualidade, catálogo, todos os testes). `--mudados` roda só o ligado aos arquivos alterados; `--rapido` pula o navegador; `--lista` só mostra. Etapas e mapa: `build/fichas/etapas.json` (teste novo entra ali). Rodar antes de cada commit. Teste: `node testes/t_tudo.js`
 - **Estrutura**: `index.html` (só a casca), `css/`, `js/app.js` (junta tudo) + `js/telas/` (comportamento de cada tela) + `js/moldes/` (HTML de cada tela), `js/respostas.js` (regra única de resposta certa), `js/sorteio.js` (sorteia a ordem dos botões a cada vez; o conteúdo não muda), `js/pergunta.js` (responder com nova tentativa), `js/missao.js`, `js/voz.js`, `js/festa.js`, `js/tentativas.js`, `conteudo/` (um item por linha; achar com `grep "id:'lp-037'"`), `vendor/` (Vue e Dexie locais).
 - **Convenções**: nomes e comentários em português. Esquemas do conteúdo e regras pedagógicas: `original-deepseek/script-gerador-conteudo.md`. `original-deepseek/` é só consulta, não editar.
-- **Próximas tarefas**: seguir as fases de `PLANO.md` (próxima: Fase 4 — onda 3 de conteúdo).
+- **Próximas tarefas**: seguir as fases de `PLANO.md` (próxima: lp-071 a 100).
 - **Público**: o dono é professor e não programa; explicar em português simples.
 - **Idioma**: responder sempre em português do Brasil (PT-BR), inclusive resumos, avisos e mensagens de commit.
 
