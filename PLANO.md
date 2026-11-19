@@ -29,7 +29,7 @@ Decisões do dono (19/11/2026):
 - Criar o **validador** (`build/validar.js`): confere ids, 3 opções, resposta certa, contas, sinal `−`.
 - Publicar no **GitHub Pages**: o dono ativa uma vez, nas configurações do repositório, com o passo a passo.
 
-### Fase 2 — Offline e instalável (Sonnet)
+### Fase 2 — Offline e instalável (Sonnet) — feita (19/11)
 - `manifest.json` + `sw.js`: ícone na tela do tablet/celular e funcionamento sem internet.
 
 ### Fase 3 — Visual e UX para a criança (Opus planeja, Sonnet faz)
