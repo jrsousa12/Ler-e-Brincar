@@ -2,16 +2,7 @@
 // Confere todos os arquivos de conteudo/ e lista só os erros (saída curta).
 // Regras: original-deepseek/script-gerador-conteudo.md (seções 4 e 5).
 'use strict';
-const fs = require('fs');
-const path = require('path');
-const raiz = path.join(__dirname, '..');
-const RAIZ_CONTEUDO = process.env.CONTEUDO_RAIZ || path.join(raiz, 'conteudo');
-
-globalThis.LB = {};
-require(path.join(raiz, 'js/respostas.js'));
-for (const f of ['historias', 'lp', 'mat', 'colorir']) {
-  new Function('LB', fs.readFileSync(path.join(RAIZ_CONTEUDO, f + '.js'), 'utf8'))(LB);
-}
+const LB = require('./carregar')();
 const { indiceCorreto } = LB.respostas;
 
 const BNCC_LP = ['EF02LP03', 'EF02LP07', 'EF02LP26', 'EF15LP03', 'EF15LP04'];

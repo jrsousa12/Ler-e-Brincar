@@ -1,0 +1,25 @@
+{
+  "_leia": "Ficha do conferidor de qualidade (build/conferir.js). Calibrar = editar aqui, sem programar. São AVISOS (não impedem o app). 'limites': números de cada regra. 'ignorar': para um id, os avisos já vistos e aceitos pelo dono (ex.: \"lp-002\": [\"certa_mais_longa\"]).",
+  "nomes": {
+    "certa_mais_longa": "a opção certa é bem mais longa que as outras (a criança acerta pelo tamanho)",
+    "falta_figura": "Matemática nível 1 sem figuras (apoio visual)",
+    "figura_nao_bate": "a quantidade de figuras não bate com o número da conta",
+    "distrator_facil": "opção errada longe demais da certa (fácil de descartar)",
+    "opcao_negativa": "opção com número negativo",
+    "explicacao_sem_resposta": "a explicação de Matemática não mostra o número certo",
+    "enunciado_repetido": "pergunta igual à de outro item",
+    "emoji_repetido": "emoji igual ao de outro item do mesmo tipo",
+    "texto_longo": "enunciado ou explicação longo demais para ler sozinha",
+    "desenho_simples": "desenho de colorir com poucas partes para pintar"
+  },
+  "limites": {
+    "certa_mais_longa_fator": 1.5,
+    "certa_mais_longa_letras": 6,
+    "distrator_distancia_minima": 10,
+    "enunciado_nivel1": 110,
+    "enunciado": 160,
+    "explicacao": 140,
+    "desenho_partes_minimo": 4
+  },
+  "ignorar": {}
+}
