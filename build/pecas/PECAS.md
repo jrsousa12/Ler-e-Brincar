@@ -51,6 +51,7 @@ Colocar: `p.nome({ x, y, e, espelho })` (sem x/y fica onde foi aprovada; `e` = e
 - **raiosSol** (encaixe 150,150): raios de sol em gota, longos e curtos alternados (opção n: quantidade, padrão 12)
 - **discoSol** (encaixe 150,150): disco do sol com anel por dentro
 - **rostoFeliz** (encaixe 150,150): rosto sorridente: olhos, sobrancelhas, bochechas e boca aberta (cabe num círculo de raio 50)
+- **luaCrescente** (encaixe 50,172): lua crescente grossa, aberta para a direita (encaixe no meio da curva de fora)
 
 ## construcoes (`build/pecas/construcoes.js`)
 - **torre** (encaixe 63,275): bloco de pedra com cantos arredondados: torre, muro, prédio (opções l, a: largura e altura; base no meio)
@@ -58,3 +59,11 @@ Colocar: `p.nome({ x, y, e, espelho })` (sem x/y fica onde foi aprovada; `e` = e
 - **janelaArco** (encaixe 63,192): janela em arco (opções meia 11, altura 20, ombro 8; base no meio)
 - **portaArco** (encaixe 150,274): porta em arco com maçaneta (base no meio, 40 de largura)
 - **bandeira** (encaixe 150,34): mastro com bandeirinha ao vento (encaixe na base do mastro)
+
+## formas (`build/pecas/formas.js`)
+- **estrela** (encaixe 0,0): estrela de cinco pontas redondas (opções R: raio de fora 30, r: raio de dentro, padrão 0,47 de R, giro, sw: traço 3)
+- **pentagono** (encaixe 0,0): pentágono de cantos redondos, remendo de bola (opções R: raio 22, giro; traço 2,5)
+
+## transportes (`build/pecas/transportes.js`)
+- **balaoGomos** (encaixe 150,204): copa de balão de ar quente em três faixas largas (borda, meio, centro) com anel na boca; encaixe no meio da boca, 150,204
+- **cestaBalao** (encaixe 150,204): cesta de balão com chama, quatro cordas e duas listras; encaixe no meio da boca do balão, 150,204

@@ -3,7 +3,7 @@
 // Peça nova: escrever na ficha do tema (ou criar uma e pôr em TEMAS), com nome, descricao, ancora e desenho; depois node build/biblioteca.js
 'use strict';
 const peca = require('./peca.js');
-const TEMAS = ['animais', 'natureza', 'ceu', 'construcoes'];
+const TEMAS = ['animais', 'natureza', 'ceu', 'construcoes', 'formas', 'transportes'];
 const pecas = {};
 for (const t of TEMAS) {
   for (const def of require('./' + t + '.js')) {
