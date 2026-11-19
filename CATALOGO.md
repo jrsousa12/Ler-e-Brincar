@@ -134,12 +134,13 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/responsavel.js` | 75 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
 | `js/moldes/selos.js` | 24 | Molde (HTML do Vue): Tela "Minhas conquistas" (selos e progresso). |
 | `js/moldes/versao.js` | 8 | Molde (HTML do Vue): aviso de versão nova do app (só na tela inicial e na área dos adultos). |
+| `build/biblioteca.js` | 75 | Lista e prévia da biblioteca de peças (build/pecas/). Gerado: nunca editar PECAS.md à mão. |
 | `build/carregar.js` | 17 | Carrega o conteúdo (conteudo/*.js) e a regra de resposta certa, para os motores de build/. |
 | `build/catalogo.js` | 83 | Catálogo (motor 5): gera CATALOGO.md com o que já existe (conteúdo e código), para achar sem abrir arquivos. |
-| `build/colorir-regras.js` | 24 | Regras do estilo dos desenhos de colorir (usadas por build/colorir.js). Só lê o texto do SVG; não abre navegador. |
-| `build/colorir.js` | 109 | Motor de desenhos de colorir: confere, mostra a prévia e grava um lote de desenhos. |
+| `build/colorir-regras.js` | 35 | Regras do estilo dos desenhos de colorir (usadas por build/colorir.js). Só lê o texto do SVG; não abre navegador. |
+| `build/colorir.js` | 111 | Motor de desenhos de colorir: confere, mostra a prévia e grava um lote de desenhos. |
 | `build/conferir.js` | 90 | Conferidor de qualidade (motor 3). Uso: node build/conferir.js [--tipo codigo] [--todos] [--estrito] |
-| `build/desenho.js` | 28 | Kit de peças para desenhos de colorir (viewBox 300x300). Usar nos pedidos: const k = require('../desenho.js'); |
+| `build/desenho.js` | 42 | Kit base dos desenhos de colorir (viewBox 300x300): traços e formas simples. As peças prontas (orelha, tronco, torre...) |
 | `build/escrever.js` | 10 | Escreve um item no estilo de conteudo/*.js: {chave:'texto',...} numa linha só (usado por gerar-mat e item) |
 | `build/gerar-mat.js` | 144 | Motor gerador de Matemática: de uma linha curta de pedido, monta a atividade completa |
 | `build/icones.js` | 29 | Gera os ícones PNG do app (icones/). Uso: node build/icones.js |
@@ -150,7 +151,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_backup.js` | 32 | Teste guardado: cópia de segurança do progresso (js/backup.js). |
 | `testes/t_caderno.js` | 76 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |
 | `testes/t_catalogo.js` | 37 | Teste guardado: catálogo (build/catalogo.js). Uso: node testes/t_catalogo.js |
-| `testes/t_colorir.js` | 59 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
+| `testes/t_colorir.js` | 77 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
 | `testes/t_conferir.js` | 63 | Teste guardado: conferidor de qualidade (build/conferir.js). Uso: node testes/t_conferir.js |
 | `testes/t_conteudo.js` | 47 | Teste guardado: regra de resposta certa + validador. Uso: node testes/t_conteudo.js |
 | `testes/t_evolucao.js` | 47 | Teste guardado: contas da Evolução no tempo (js/evolucao.js). |

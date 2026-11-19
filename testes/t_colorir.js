@@ -55,5 +55,23 @@ const v = execFileSync('node', [path.join(raiz, 'build/validar.js')], { env, enc
 ok(v.includes('OK'), 'conteúdo gravado passa no validador');
 fs.rmSync(tmp, { recursive: true, force: true });
 
+// 3. Biblioteca de peças (build/pecas/)
+const p = require(path.join(raiz, 'build/pecas/index.js'));
+const { avulsas } = require(path.join(raiz, 'build/colorir-regras.js'));
+const nomes = Object.keys(p).filter(n => p[n].def);
+ok(nomes.length >= 30, 'biblioteca com as peças dos 5 modelos aprovados');
+ok(nomes.every(n => p[n].def.descricao.length > 10 && p[n].def.ancora.length === 2), 'toda peça tem descrição e encaixe');
+const parado = p.maca({ x: 10, y: 20 }), grande = p.maca({ x: 10, y: 20, e: 2 }), virado = p.orelhaGato({ espelho: true });
+ok(parado.includes('data-peca="maca"') && parado.includes('translate(10 20)'), 'colocar leva o encaixe para x, y');
+ok(grande.includes('scale(2 2)') && grande.includes('stroke-width="1.25"'), 'escala não engrossa o traço');
+ok(virado.includes('scale(-1 1)'), 'espelho vira a peça');
+ok(!p.cabecaGato().includes('transform'), 'peça no lugar aprovado não ganha transform');
+ok(p.par(p.orelhaGato).includes('translate(184 62)'), 'par espelha do outro lado do eixo');
+ok(avulsas(k.svg(p.tronco(), k.copa(1, 1, 5, 5), k.f('circle', 'r="3"'), k.solto('M0 0 L1 1'))) === 1, 'conta só a forma pintável fora da biblioteca');
+const b = execFileSync('node', [path.join(raiz, 'build/biblioteca.js'), '--conferir'], { encoding: 'utf8' });
+ok(b.includes('em dia'), 'PECAS.md em dia e peças sem erro');
+const modelos = require(path.join(raiz, 'build/pedidos/colorir-modelos.js'));
+ok(modelos.length === 5 && modelos.every(m => avulsas(m.svg) === 0 && !conferir(m.svg).erros.length), 'os 5 modelos montados só com peças');
+
 console.log(falhas ? `t_colorir: ${falhas} FALHA(S)` : 't_colorir: OK');
 process.exit(falhas ? 1 : 0);

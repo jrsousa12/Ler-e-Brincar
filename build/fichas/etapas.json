@@ -6,6 +6,7 @@
     "validar": "build/validar.js",
     "qualidade": "build/conferir.js",
     "catalogo": "build/catalogo.js --conferir",
+    "pecas": "build/biblioteca.js --conferir",
     "t_conteudo": "testes/t_conteudo.js",
     "t_sorteio": "testes/t_sorteio.js",
     "t_caderno": "testes/t_caderno.js",
@@ -148,9 +149,19 @@
       "t_colorir"
     ],
     "build/colorir-regras.js": [
+      "pecas",
       "t_colorir"
     ],
     "build/desenho.js": [
+      "pecas",
+      "t_colorir"
+    ],
+    "build/pecas/": [
+      "pecas",
+      "t_colorir"
+    ],
+    "build/biblioteca.js": [
+      "pecas",
       "t_colorir"
     ]
   }

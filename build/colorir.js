@@ -9,7 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 const escrever = require('./escrever');
-const { conferir } = require('./colorir-regras');
+const { conferir, avulsas } = require('./colorir-regras');
 const raiz = path.join(__dirname, '..');
 const arquivo = () => path.join(process.env.CONTEUDO_RAIZ || path.join(raiz, 'conteudo'), 'colorir.js');
 const pastaPrevia = () => process.env.PREVIA_PASTA || path.join(raiz, 'build/previas');
@@ -91,6 +91,8 @@ async function principal(args) {
   for (const d of lote) {
     const r = conferir(d.svg);
     if (fora[d.id]) r.avisos.push(fora[d.id]);
+    const novas = avulsas(d.svg);
+    if (novas) r.avisos.push(novas + ' forma(s) fora da biblioteca: se servir para outros desenhos, registrar como peça (build/pecas/CLAUDE.md)');
     erros += r.erros.length;
     const marca = r.erros.length ? '✗' : r.avisos.length ? '!' : '✓';
     console.log(`${marca} ${d.id} ${d.titulo}${d.novo ? ' (novo)' : ''}: ${r.partes} partes` +

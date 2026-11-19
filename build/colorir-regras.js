@@ -21,4 +21,15 @@ function conferir(svg) {
   return { erros, avisos, partes };
 }
 
-module.exports = { conferir, MINIMO_PARTES };
+// Formas pintáveis fora de qualquer peça da biblioteca (<g data-peca>): o que ainda não foi registrado.
+function avulsas(svg) {
+  const pilha = [];
+  let n = 0;
+  for (const [, fecha, tag, attrs] of svg.matchAll(/<(\/?)(g|path|circle|ellipse|rect|polygon)\b([^>]*)>/g)) {
+    if (tag === 'g') { if (fecha) pilha.pop(); else if (!attrs.endsWith('/')) pilha.push(/data-peca=/.test(attrs)); continue; }
+    if (!fecha && !pilha.includes(true) && !/class="solto"/.test(attrs)) n++;
+  }
+  return n;
+}
+
+module.exports = { conferir, avulsas, MINIMO_PARTES };
