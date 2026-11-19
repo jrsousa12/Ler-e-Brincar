@@ -58,4 +58,5 @@ Decisões do dono (19/11/2026):
 - Ideias tiradas do app de ondulatória do dono, adaptadas para criança de 8 anos. Fora: desafio com tempo, PIN, relatório cifrado, vários alunos, tema escuro.
 - 1 Caderno de erros (a pergunta errada volta na missão até 2 acertos seguidos de primeira) — feito (19/11, `js/caderno.js`)
 - 2 Treino pelos pontos fracos (a missão puxa mais as habilidades com mais erro) — feito (19/11, `js/caderno.js` + `js/missao.js`)
-- 3 Cópia de segurança do progresso (baixar/importar) · 4 Botão "Instalar" + aviso de versão nova · 5 Caixa de confirmação própria (trocar o `confirm` de zerar progresso) · 6 Tela cheia no tablet · 7 Vibração e "reduzir movimento" · 8 Evolução no tempo na Área do responsável
+- 3 a 7 — feitos (19/11): cópia de segurança baixar/trazer (`js/backup.js` + `js/telas/backup.js`, teste `t_backup`) · botão "Instalar" e aviso de versão nova com botão "Atualizar" (`js/telas/aparelho.js`, `js/registrar-sw.js`; o `sw.js` agora espera o aviso) · caixa de confirmação própria (`js/telas/confirmar.js`, usada em zerar e trazer cópia) · tela cheia (Área do responsável → "No tablet") · vibrar ao responder e "reduzir movimento" nos Ajustes (`js/festa.js`)
+- 8 Evolução no tempo na Área do responsável

@@ -97,6 +97,32 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   ok(folha.includes('Nome:') && folha.includes('print-questao'), 'folha de atividades para imprimir');
   await foto('6-responsavel');
 
+  // Fase 6: cópia de segurança, caixa de confirmação própria, ajustes de movimento
+  ok(await p.locator('text=Cópia de segurança').isVisible(), 'área do responsável mostra a cópia de segurança');
+  const copia = await p.evaluate(async () => LB.backup.gerar(LB.app.estadoAtual(), await LB.tentativas.todas()));
+  const estrelasAntes = await p.evaluate(() => LB.app.estrelas);
+  await p.evaluate(() => { LB.app.estrelas = 999; });
+  const trocou = p.evaluate(t => LB.app.importarTexto(t), copia);
+  await p.waitForSelector('.caixa-confirmar');
+  ok(await p.locator('.caixa-confirmar').isVisible(), 'importar pede confirmação na caixa própria');
+  await p.click('.caixa-confirmar .btn-primario');
+  ok(await trocou, 'importar devolve sim depois de confirmar');
+  ok(await p.evaluate(() => LB.app.estrelas) === estrelasAntes, 'importar traz as estrelas da cópia');
+  ok(!(await p.evaluate(() => LB.app.importarTexto('lixo'))) && /não é uma cópia/.test(await p.evaluate(() => LB.app.avisoCopia)), 'arquivo errado avisa sem mexer');
+  let perguntou = false;
+  p.once('dialog', d => { perguntou = true; d.dismiss(); });
+  await p.click('text=🧹 Zerar progresso');
+  ok(!perguntou && await p.locator('.caixa-confirmar').isVisible(), 'zerar usa a caixa própria (sem confirm do navegador)');
+  await p.click('.caixa-confirmar .btn-secundario');
+  ok(await p.locator('.caixa-confirmar').count() === 0 && await p.evaluate(() => LB.app.estrelas) === estrelasAntes, 'cancelar não zera');
+  await foto('7-confirmar');
+  await p.click('text=🧘 Reduzir movimento >> xpath=.. >> button');
+  ok(await p.evaluate(() => document.documentElement.classList.contains('reduzir-movimento') && LB.festa.config.reduzirMovimento), 'reduzir movimento liga a classe e tira o confete');
+  await p.evaluate(() => { document.querySelectorAll('.confete').forEach(c => c.remove()); LB.festa.acerto(false); });
+  ok(await p.locator('.confete').count() === 0, 'sem confete com movimento reduzido');
+  await p.evaluate(() => window.dispatchEvent(new Event('lb-versao-nova')));
+  ok(await p.locator('.aviso-versao').isVisible(), 'aviso de versão nova aparece');
+
   ok(erros.length === 0, 'erros no navegador: ' + erros.join(' | '));
   await b.close();
   console.log(falhas ? `t_app: ${falhas} falha(s)` : 't_app: OK');

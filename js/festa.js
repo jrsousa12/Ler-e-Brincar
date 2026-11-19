@@ -23,7 +23,13 @@
     } catch (e) { /* aparelho sem som: segue sem */ }
   }
 
+  // Vibração curta (se o aparelho tiver e o ajuste estiver ligado).
+  function vibrar(padrao) {
+    try { if (LB.festa.config.vibrar && navigator.vibrate) navigator.vibrate(padrao); } catch (e) { /* segue */ }
+  }
+
   function confete(qtd) {
+    if (LB.festa.config.reduzirMovimento) return;
     const cores = ['#FF6B6B', '#FFD43B', '#51CF66', '#4DABF7', '#9775FA', '#F783AC'];
     const caixa = document.createElement('div');
     caixa.className = 'confete';
@@ -41,15 +47,19 @@
   }
 
   LB.festa = {
+    config: { vibrar: true, reduzirMovimento: false }, // ligado aos Ajustes (js/telas/ajustes.js)
     acerto(comSom) {
       confete(40);
+      vibrar(40);
       if (comSom) tocar([[523, 0, 0.15], [659, 0.12, 0.15], [784, 0.24, 0.3]]);
     },
     erro(comSom) {
+      vibrar([60, 60, 60]);
       if (comSom) tocar([[330, 0, 0.18, 'triangle'], [262, 0.16, 0.25, 'triangle']]);
     },
     grande(comSom) {
       confete(120);
+      vibrar([80, 60, 80, 60, 160]);
       if (comSom) tocar([[523, 0, 0.15], [659, 0.15, 0.15], [784, 0.3, 0.15], [1047, 0.45, 0.5]]);
     },
     elogio: () => sorteia(['Muito bem!', 'Isso aí!', 'Você acertou!', 'Mandou bem!', 'Parabéns!']),

@@ -31,5 +31,16 @@
     } catch (e) { console.warn(e); }
   }
 
-  LB.tentativas = { registrar, todas, apagar };
+  // Troca todas as respostas guardadas por outra lista (usado ao importar uma cópia).
+  async function substituir(lista) {
+    await apagar();
+    const limpas = (lista || []).map(({ n, ...t }) => t);
+    try {
+      const db = LB.banco.db;
+      if (db) { await db.tentativas.bulkAdd(limpas); return; }
+      localStorage.setItem(CHAVE, JSON.stringify(limpas.slice(-LIMITE)));
+    } catch (e) { console.warn(e); }
+  }
+
+  LB.tentativas = { registrar, todas, apagar, substituir };
 })();

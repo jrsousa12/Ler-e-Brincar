@@ -30,7 +30,12 @@ LB.usarAjustes = function (ctx) {
     LB.voz.falar('Olá! Esta é a minha voz.');
   }
   async function resetarProgresso() {
-    if (!confirm('Tem certeza que deseja zerar todo o progresso (estrelas, selos, missões e respostas)?')) return;
+    const sim = await ctx.perguntar({
+      titulo: 'Zerar o progresso?',
+      texto: 'Isso apaga estrelas, selos, missões e respostas. Se quiser guardar, baixe uma cópia de segurança antes.',
+      sim: 'Zerar tudo', perigo: true
+    });
+    if (!sim) return;
     ctx.estrelas.value = 0;
     ctx.concluidos.value = {};
     ctx.diasMissao.value = [];
@@ -46,10 +51,13 @@ LB.usarAjustes = function (ctx) {
     html.classList.toggle('fonte-dislexia', v.dislexia);
     html.classList.remove('tamanho-pequeno', 'tamanho-medio', 'tamanho-grande');
     html.classList.add('tamanho-' + v.tamanho);
+    html.classList.toggle('reduzir-movimento', !!v.reduzirMovimento);
+    LB.festa.config = { vibrar: v.vibrar !== false, reduzirMovimento: !!v.reduzirMovimento };
   }, { deep: true, immediate: true });
 
   return {
     portaoAberto, portao, abrirPortao, fecharPortao, conferirPortao,
-    alternar, mudarTamanho, mudarVelocidade, resetarProgresso, vozDisponivel: LB.voz.disponivel
+    alternar, mudarTamanho, mudarVelocidade, resetarProgresso, vozDisponivel: LB.voz.disponivel,
+    podeVibrar: typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function'
   };
 };

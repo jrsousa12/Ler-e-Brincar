@@ -10,14 +10,14 @@
   const { createApp, ref, watch, onMounted } = Vue;
 
   LB.CONTEUDO = { stories: LB.historias, activities: [...LB.lp, ...LB.mat], colorir: LB.colorir };
-  const AJUSTES_PADRAO = { dislexia: false, tamanho: 'medio', vozAuto: true, velocidade: 0.9, som: true };
+  const AJUSTES_PADRAO = { dislexia: false, tamanho: 'medio', vozAuto: true, velocidade: 0.9, som: true, vibrar: true, reduzirMovimento: false };
 
   // Junta os moldes das telas (js/moldes/) num só HTML.
   const m = LB.moldes;
   const molde = m.cabecalho +
-    '<div class="container" v-if="!portaoAberto">' +
-    m.inicio + m.missao + m.historias + m.atividades + m.colorir + m.selos + m.responsavel + m.ajustes +
-    '</div>' + m.portao + m.navegacao;
+    '<div class="container" v-if="!portaoAberto">' + m.versao +
+    m.inicio + m.missao + m.historias + m.atividades + m.colorir + m.selos + m.responsavel + m.ajustes + m.backup +
+    '</div>' + m.portao + m.navegacao + m.confirmar;
 
   const App = {
     template: molde,
@@ -42,6 +42,7 @@
       ctx.ouvir = (texto) => LB.voz.falar(texto);
       ctx.falarSozinho = (texto) => { if (ctx.ajustes.value.vozAuto) LB.voz.falar(texto); };
 
+      const confirmar = LB.usarConfirmar(ctx); // cria ctx.perguntar
       const historias = LB.usarHistorias(ctx);
       ctx.irPara = (t) => {
         LB.voz.parar();
@@ -63,25 +64,28 @@
         ctx.voltar(padrao);
       };
 
-      watch([ctx.estrelas, ctx.concluidos, ctx.ajustes, ctx.missao, ctx.diasMissao, ctx.caderno], () => {
-        LB.banco.salvarEstado({
-          estrelas: ctx.estrelas.value, concluidos: ctx.concluidos.value, ajustes: ctx.ajustes.value,
-          missao: ctx.missao.value, diasMissao: ctx.diasMissao.value, caderno: ctx.caderno.value
-        });
-      }, { deep: true });
+      // Progresso guardado: um lugar só para ler e trocar (usado ao salvar, abrir e na cópia de segurança).
+      ctx.estadoAtual = () => ({
+        estrelas: ctx.estrelas.value, concluidos: ctx.concluidos.value, ajustes: ctx.ajustes.value,
+        missao: ctx.missao.value, diasMissao: ctx.diasMissao.value, caderno: ctx.caderno.value
+      });
+      ctx.aplicarEstado = (est) => {
+        ctx.estrelas.value = est.estrelas || 0;
+        ctx.concluidos.value = est.concluidos || {};
+        ctx.ajustes.value = { ...AJUSTES_PADRAO, ...(est.ajustes || {}) };
+        ctx.missao.value = est.missao || null;
+        ctx.diasMissao.value = est.diasMissao || [];
+        ctx.caderno.value = est.caderno || LB.caderno.vazio();
+        missao.garantir();
+      };
+      watch([ctx.estrelas, ctx.concluidos, ctx.ajustes, ctx.missao, ctx.diasMissao, ctx.caderno],
+        () => LB.banco.salvarEstado(ctx.estadoAtual()), { deep: true });
       watch(() => ctx.ajustes.value.velocidade, v => LB.voz.mudarVelocidade(v), { immediate: true });
 
       onMounted(async () => {
         const est = await LB.banco.carregarEstado();
-        if (est) {
-          ctx.estrelas.value = est.estrelas || 0;
-          ctx.concluidos.value = est.concluidos || {};
-          ctx.ajustes.value = { ...AJUSTES_PADRAO, ...(est.ajustes || {}) };
-          ctx.missao.value = est.missao || null;
-          ctx.diasMissao.value = est.diasMissao || [];
-          ctx.caderno.value = est.caderno || LB.caderno.vazio();
-        }
-        missao.garantir();
+        if (est) ctx.aplicarEstado(est);
+        else missao.garantir();
       });
 
       return {
@@ -95,7 +99,10 @@
         diasSeguidos: missao.diasSeguidos,
         ...LB.usarSelos(ctx),
         ...LB.usarAjustes(ctx),
-        ...LB.usarResponsavel(ctx)
+        ...LB.usarResponsavel(ctx),
+        ...confirmar,
+        ...LB.usarBackup(ctx),
+        ...LB.usarAparelho(ctx)
       };
     }
   };
