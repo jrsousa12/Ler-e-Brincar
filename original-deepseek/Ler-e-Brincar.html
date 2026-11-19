@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#6C5CE7" />
+<title>Ler &amp; Brincar</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%236C5CE7'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3ELB%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-display: "Baloo 2", var(--font-family);
+  --font-size-base: 18px;
+  --line-height: 1.6;
+  --space: 16px;
+  --altura-toque: 56px;
+  --radius-sm: 14px;
+  --radius: 20px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --cor-primaria: #6C5CE7;
+  --cor-primaria-2: #9B8CFF;
+  --cor-primaria-escura: #5546C9;
+  --cor-primaria-suave: #EDE9FF;
+  --cor-acento: #FF7A59;
+  --cor-fundo: #F6F5FC;
+  --cor-card: #FFFFFF;
+  --cor-nav-fundo: rgba(255,255,255,.9);
+  --cor-overlay: rgba(246,245,252,.95);
+  --cor-texto: #1F1B2E;
+  --cor-texto-suave: #6B6580;
+  --cor-borda: #E7E3F4;
+  --cor-borda-forte: #D5CFEA;
+  --cor-sucesso: #0E9F63;
+  --cor-sucesso-bg: #E4F8EE;
+  --cor-sucesso-texto: #0A7A4A;
+  --cor-alerta: #D98200;
+  --cor-alerta-bg: #FFF3E0;
+  --cor-alerta-texto: #965900;
+  --sombra-1: 0 1px 2px rgba(31,27,46,.05), 0 8px 20px -14px rgba(31,27,46,.35);
+  --sombra-2: 0 2px 6px rgba(31,27,46,.06), 0 20px 40px -20px rgba(31,27,46,.40);
+  --sombra-primaria: 0 10px 24px -12px rgba(108,92,231,.85);
+}
+html.fonte-dislexia{
+  --font-family:"Lexend",system-ui,sans-serif;
+  --font-display:"Lexend",system-ui,sans-serif;
+  letter-spacing:.02em;word-spacing:.08em;
+}
+html.tamanho-pequeno{--font-size-base:16px}
+html.tamanho-medio{--font-size-base:18px}
+html.tamanho-grande{--font-size-base:22px;--line-height:1.8}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{
+  margin:0;padding:0;
+  font-family:var(--font-family);
+  font-size:var(--font-size-base);
+  line-height:var(--line-height);
+  color:var(--cor-texto);
+  background-color:var(--cor-fundo);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+body{
+  padding-bottom:104px;
+  min-height:100vh;
+  background-image:
+    radial-gradient(780px 420px at 6% -10%, rgba(155,140,255,.28), transparent 62%),
+    radial-gradient(680px 380px at 104% -2%, rgba(255,122,89,.16), transparent 60%);
+  background-repeat:no-repeat;
+}
+[v-cloak]{display:none!important}
+::selection{background:var(--cor-primaria-2);color:#fff}
+h1,h2,h3{
+  font-family:var(--font-display);
+  font-weight:700;line-height:1.2;letter-spacing:.005em;
+  margin:0 0 var(--space);
+}
+h1{font-size:1.65em}h2{font-size:1.35em}h3{font-size:1.12em}
+p{margin:0 0 var(--space)}
+button{
+  font-family:inherit;font-size:inherit;line-height:1.3;cursor:pointer;
+  min-height:var(--altura-toque);border-radius:var(--radius-sm);border:none;
+  padding:12px 20px;color:inherit;touch-action:manipulation;
+  transition:transform .14s ease,box-shadow .16s ease,background-color .18s ease,border-color .18s ease,filter .18s ease;
+}
+button:focus-visible{outline:3px solid var(--cor-primaria);outline-offset:3px}
+img{max-width:100%;height:auto;border-radius:var(--radius)}
+.container{max-width:900px;margin:0 auto;padding:calc(var(--space) + 4px) var(--space) var(--space)}
+.cabecalho-app{
+  background:linear-gradient(115deg,var(--cor-primaria) 0%,#8B7BF5 58%,#FF9B7D 175%);
+  color:#fff;padding:14px var(--space);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  position:sticky;top:0;z-index:10;
+  box-shadow:0 14px 34px -22px rgba(108,92,231,.95);
+}
+.cabecalho-app h1{margin:0;font-size:1.28em;color:#fff;letter-spacing:.01em}
+.contador-estrelas{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.38);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  padding:8px 16px;border-radius:var(--radius-pill);
+  font-family:var(--font-display);font-weight:700;font-size:.95em;white-space:nowrap;
+}
+.nav-inferior{
+  position:fixed;bottom:0;left:0;right:0;z-index:20;
+  display:flex;justify-content:space-around;gap:4px;
+  padding:8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+  background:var(--cor-nav-fundo);
+  -webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);
+  border-top:1px solid var(--cor-borda);
+  border-radius:var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow:0 -12px 32px -20px rgba(31,27,46,.55);
+}
+.nav-inferior a{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  padding:8px 4px;min-height:var(--altura-toque);
+  text-align:center;text-decoration:none;
+  color:var(--cor-texto-suave);font-size:.72em;font-weight:600;
+  border-radius:var(--radius-sm);cursor:pointer;
+  transition:color .18s ease,background-color .18s ease;
+}
+.nav-inferior .icone{
+  font-size:1.55em;line-height:1;
+  transition:transform .24s cubic-bezier(.34,1.56,.64,1);
+}
+.nav-inferior a.ativo{color:var(--cor-primaria);background:var(--cor-primaria-suave);font-weight:800}
+.nav-inferior a.ativo .icone{transform:translateY(-2px) scale(1.1)}
+.card{
+  position:relative;background:var(--cor-card);
+  border:1px solid var(--cor-borda);border-radius:var(--radius);
+  padding:calc(var(--space) + 2px);margin-bottom:var(--space);
+  box-shadow:var(--sombra-1);cursor:pointer;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.card:active{transform:scale(.995)}
+.card:focus-visible{outline:3px solid var(--cor-primaria);outline-offset:3px}
+.card-titulo{
+  font-family:var(--font-display);font-weight:700;
+  font-size:1.15em;line-height:1.3;margin-bottom:4px;
+}
+.card-meta{color:var(--cor-texto-suave);font-size:.88em}
+.card-capa{
+  height:140px;display:flex;align-items:center;justify-content:center;
+  font-size:4em;margin-bottom:14px;border-radius:var(--radius-sm);
+  box-shadow:inset 0 0 0 1px rgba(31,27,46,.05);
+}
+.btn-primario{
+  width:100%;background:linear-gradient(135deg,var(--cor-primaria) 0%,var(--cor-primaria-2) 100%);
+  color:#fff;font-family:var(--font-display);font-weight:700;letter-spacing:.01em;
+  box-shadow:var(--sombra-primaria);
+}
+.btn-secundario{
+  background:var(--cor-card);color:var(--cor-primaria);
+  border:2px solid var(--cor-primaria-2);
+  font-family:var(--font-display);font-weight:700;
+}
+.btn-icone{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--cor-primaria-suave);color:var(--cor-primaria);
+  padding:10px 18px;min-height:44px;border-radius:var(--radius-pill);
+  font-size:.92em;font-weight:700;
+}
+.btn-voltar{
+  background:transparent;color:var(--cor-primaria);
+  padding:8px 4px;min-height:44px;font-weight:700;margin-bottom:var(--space);
+}
+.opcao{
+  display:block;width:100%;text-align:left;
+  background:var(--cor-card);color:var(--cor-texto);
+  border:2px solid var(--cor-borda);border-radius:var(--radius-sm);
+  padding:14px 18px;margin-bottom:12px;font-size:1.02em;font-weight:500;
+  box-shadow:0 1px 2px rgba(31,27,46,.04);
+}
+.opcao:disabled{cursor:default}
+.opcao.correta{
+  background:var(--cor-sucesso-bg);border-color:var(--cor-sucesso);
+  color:var(--cor-sucesso-texto);font-weight:700;
+  box-shadow:0 8px 20px -14px var(--cor-sucesso);
+}
+.opcao.errada{
+  background:var(--cor-alerta-bg);border-color:var(--cor-alerta);
+  color:var(--cor-alerta-texto);
+  box-shadow:0 8px 20px -14px var(--cor-alerta);
+}
+.feedback{
+  padding:14px 18px;border-radius:var(--radius-sm);
+  border-left:5px solid currentColor;margin-top:var(--space);
+  font-weight:600;line-height:1.5;
+}
+.feedback.correto{background:var(--cor-sucesso-bg);color:var(--cor-sucesso-texto)}
+.feedback.errado{background:var(--cor-alerta-bg);color:var(--cor-alerta-texto)}
+.apoio-visual{
+  background:linear-gradient(180deg,var(--cor-primaria-suave) 0%,var(--cor-card) 100%);
+  border:2px dashed var(--cor-borda-forte);
+  padding:22px 16px;border-radius:var(--radius);
+  text-align:center;font-size:1.6em;line-height:1.5;
+  word-break:break-word;margin:var(--space) 0;
+}
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:var(--space)}
+.filtro{
+  background:var(--cor-card);color:var(--cor-texto-suave);
+  border:2px solid var(--cor-borda);padding:8px 18px;min-height:44px;
+  border-radius:var(--radius-pill);font-size:.88em;font-weight:600;
+}
+.filtro.ativo{
+  background:linear-gradient(135deg,var(--cor-primaria),var(--cor-primaria-2));
+  color:#fff;border-color:transparent;box-shadow:var(--sombra-primaria);
+}
+.portao-parental{
+  position:fixed;inset:0;z-index:100;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:var(--space);text-align:center;
+  background:var(--cor-overlay);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+}
+.portao-parental h2{color:var(--cor-primaria)}
+.portao-parental .instrucao{max-width:500px;color:var(--cor-texto-suave)}
+.sequencia-setas{
+  display:flex;gap:14px;margin:var(--space) 0;
+  font-size:2.5em;font-family:var(--font-display);
+}
+.seta{opacity:.22;transition:opacity .2s ease,transform .2s ease;cursor:pointer;background:none;border:none;padding:4px}
+.seta.feita{opacity:1;color:var(--cor-sucesso)}
+.seta.atual{opacity:1;animation:pulso 1.1s ease-in-out infinite}
+@keyframes pulso{0%,100%{transform:scale(1)}50%{transform:scale(1.16)}}
+.area-gesto{
+  width:100%;max-width:400px;height:200px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--cor-card);border:3px dashed var(--cor-borda-forte);
+  border-radius:var(--radius);color:var(--cor-texto-suave);font-weight:600;
+  touch-action:none;user-select:none;
+}
+.grid-selos{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:12px;margin:var(--space) 0;
+}
+.selo{
+  background:var(--cor-card);border:2px dashed var(--cor-borda-forte);
+  border-radius:var(--radius);padding:18px 14px;text-align:center;
+  opacity:.45;filter:grayscale(1);transition:all .3s ease;
+}
+.selo.desbloqueado{
+  opacity:1;filter:none;background:var(--cor-sucesso-bg);
+  border:2px solid var(--cor-sucesso);
+  box-shadow:0 12px 26px -18px var(--cor-sucesso);
+  transform:translateY(-2px);
+}
+.selo .emoji{display:block;font-size:2em;margin-bottom:8px;line-height:1}
+.selo .nome{font-weight:700;font-size:.85em;line-height:1.3}
+.barra-progresso{
+  background:var(--cor-borda);height:18px;border-radius:var(--radius-pill);
+  overflow:hidden;margin:var(--space) 0;
+  box-shadow:inset 0 1px 3px rgba(31,27,46,.12);
+}
+.barra-preenchida{
+  height:100%;border-radius:inherit;
+  background:linear-gradient(90deg,var(--cor-primaria) 0%,var(--cor-acento) 100%);
+  transition:width .5s cubic-bezier(.22,1,.36,1);
+}
+.linha-botoes{display:flex;gap:8px;margin-top:8px}
+.linha-botoes button{flex:1}
+.historia-texto{
+  background:var(--cor-card);border:1px solid var(--cor-borda);
+  border-radius:var(--radius);padding:calc(var(--space) + 4px);
+  margin:var(--space) 0;box-shadow:var(--sombra-1);font-size:1.06em;
+}
+.historia-texto p{margin-bottom:var(--space)}
+.historia-texto p:last-child{margin-bottom:0}
+.historia-capa{
+  font-size:6em;text-align:center;padding:44px 20px;
+  border-radius:var(--radius);margin-bottom:var(--space);
+  background:linear-gradient(135deg,#E8E3FF 0%,#FFE9E1 100%);
+  box-shadow:inset 0 0 0 1px rgba(31,27,46,.05);
+}
+.texto-suave{color:var(--cor-texto-suave)}
+.texto-centro{text-align:center}
+.mb-0{margin-bottom:0}
+.mt{margin-top:var(--space)}
+.vazio{text-align:center;padding:48px 20px;color:var(--cor-texto-suave)}
+.vazio .emoji{display:block;font-size:4em;margin-bottom:16px}
+.paleta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:var(--space) 0}
+.cor{
+  width:44px;height:44px;border-radius:50%;border:3px solid transparent;
+  cursor:pointer;padding:0;min-height:auto;box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+.cor.selecionada{border-color:var(--cor-primaria);transform:scale(1.12)}
+.svg-colorir svg{max-width:100%;height:auto;display:block;margin:0 auto;background:#fff;border-radius:var(--radius);cursor:crosshair}
+.svg-colorir svg *{cursor:crosshair}
+@media (hover:hover){
+  .card:hover{transform:translateY(-3px);box-shadow:var(--sombra-2);border-color:var(--cor-primaria-2)}
+  .btn-primario:hover{filter:brightness(1.06);transform:translateY(-1px);box-shadow:0 16px 30px -14px rgba(108,92,231,.9)}
+  .btn-secundario:hover{background:var(--cor-primaria-suave);transform:translateY(-1px)}
+  .btn-icone:hover{background:var(--cor-primaria);color:#fff}
+  .btn-voltar:hover{color:var(--cor-primaria-escura)}
+  .opcao:hover:not(:disabled){border-color:var(--cor-primaria-2);background:var(--cor-primaria-suave);transform:translateY(-1px)}
+  .filtro:hover:not(.ativo){border-color:var(--cor-primaria-2);color:var(--cor-primaria)}
+  .nav-inferior a:hover{color:var(--cor-primaria);background:var(--cor-primaria-suave)}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --cor-primaria:#8B7BF5;--cor-primaria-2:#B3A6FF;--cor-primaria-escura:#7A69EE;
+    --cor-primaria-suave:#2B2447;--cor-acento:#FF9273;
+    --cor-fundo:#131020;--cor-card:#1E1A30;
+    --cor-nav-fundo:rgba(24,20,40,.9);--cor-overlay:rgba(15,12,26,.94);
+    --cor-texto:#F0ECFF;--cor-texto-suave:#A8A1C6;
+    --cor-borda:#2E2846;--cor-borda-forte:#3E3660;
+    --cor-sucesso:#3FD69B;--cor-sucesso-bg:#0F2E23;--cor-sucesso-texto:#7BF0BE;
+    --cor-alerta:#FFC46B;--cor-alerta-bg:#33260F;--cor-alerta-texto:#FFD79A;
+    --sombra-1:0 1px 2px rgba(0,0,0,.4),0 10px 24px -16px rgba(0,0,0,.9);
+    --sombra-2:0 2px 8px rgba(0,0,0,.45),0 24px 48px -22px rgba(0,0,0,1);
+    --sombra-primaria:0 12px 28px -14px rgba(139,123,245,.9);
+  }
+  body{background-image:radial-gradient(780px 420px at 6% -10%,rgba(139,123,245,.22),transparent 62%),radial-gradient(680px 380px at 104% -2%,rgba(255,146,115,.12),transparent 60%)}
+  .historia-capa{background:linear-gradient(135deg,#2A2450 0%,#3A2436 100%)}
+  .svg-colorir svg{background:#1E1A30}
+}
+.print-only{display:none}
+@media print{
+  body{padding:0;background:#fff}
+  .nav-inferior,.cabecalho-app,.btn-voltar,.btn-primario,.btn-secundario,.no-print{display:none!important}
+  .print-only{display:block!important}
+  .container{max-width:100%;padding:0}
+  .print-header{border-bottom:2px solid #000;padding-bottom:12px;margin-bottom:20px;font-size:12pt}
+  .print-header .nome{display:flex;justify-content:space-between;margin-top:8px;font-size:11pt}
+  .print-body{font-size:14pt;line-height:1.8}
+  .print-body p{margin-bottom:16pt}
+  .print-opcao{border:1px solid #000;padding:12pt;margin-bottom:8pt;border-radius:4pt;font-size:13pt}
+  @page{size:A4;margin:2cm}
+}
+</style>
+</head>
+<body>
+
+<div id="app" v-cloak>
+  <header class="cabecalho-app" v-if="!portaoAberto">
+    <h1 @click="irPara('home')" style="cursor:pointer">Ler &amp; Brincar</h1>
+    <div style="display:flex;gap:8px;align-items:center">
+      <button class="btn-icone" @click="abrirPortao" title="Ajustes" style="background:rgba(255,255,255,.18);color:#fff">⚙️</button>
+      <div class="contador-estrelas">⭐ {{ estrelas }}</div>
+    </div>
+  </header>
+
+  <div class="container" v-if="!portaoAberto">
+    <!-- HOME -->
+    <div v-if="tela === 'home'">
+      <h2>Olá! O que vamos fazer hoje?</h2>
+      <div class="card" @click="irPara('ler')" tabindex="0">
+        <div class="card-capa" style="background:linear-gradient(135deg,#E8E3FF,#FFE9E1)">📖</div>
+        <div class="card-titulo">Ler histórias</div>
+        <div class="card-meta">{{ conteudo.stories.length }} histórias curtinhas para descobrir</div>
+      </div>
+      <div class="card" @click="irPara('atividades')" tabindex="0">
+        <div class="card-capa" style="background:linear-gradient(135deg,#E4F8EE,#EDE9FF)">🧮</div>
+        <div class="card-titulo">Atividades</div>
+        <div class="card-meta">{{ conteudo.activities.length }} desafios de português e matemática</div>
+      </div>
+      <div class="card" @click="irPara('colorir')" tabindex="0">
+        <div class="card-capa" style="background:linear-gradient(135deg,#FFF3E0,#FFE9E1)">🎨</div>
+        <div class="card-titulo">Colorir</div>
+        <div class="card-meta">{{ conteudo.colorir.length }} desenhos para pintar</div>
+      </div>
+      <div class="card" @click="irPara('recompensas')" tabindex="0">
+        <div class="card-capa" style="background:linear-gradient(135deg,#EDE9FF,#FFF3E0)">🏆</div>
+        <div class="card-titulo">Minhas conquistas</div>
+        <div class="card-meta">{{ selosDesbloqueados }}/{{ selos.length }} selos conquistados</div>
+      </div>
+    </div>
+
+    <!-- LER (lista de histórias) -->
+    <div v-if="tela === 'ler'">
+      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
+      <h2>Histórias</h2>
+      <div class="card" v-for="h in conteudo.stories" :key="h.id" @click="abrirHistoria(h)" tabindex="0">
+        <div class="card-capa" :style="{background: h.corFundo}">{{ h.emoji }}</div>
+        <div class="card-titulo">{{ h.titulo }}</div>
+        <div class="card-meta">{{ h.texto.length }} linhas · Nível {{ h.nivel }} · {{ h.anoEscolar }}º ano</div>
+        <div class="card-meta" v-if="concluidos[h.id]" style="color:var(--cor-sucesso);font-weight:700">✓ Já leu</div>
+      </div>
+    </div>
+
+    <!-- HISTÓRIA (leitura) -->
+    <div v-if="tela === 'historia' && historiaAtual">
+      <button class="btn-voltar" @click="irPara('ler')">← Voltar</button>
+      <div class="historia-capa">{{ historiaAtual.emoji }}</div>
+      <h2>{{ historiaAtual.titulo }}</h2>
+      <p class="texto-suave">{{ historiaAtual.autor }} · {{ historiaAtual.anoEscolar }}º ano · Nível {{ historiaAtual.nivel }}</p>
+      <div class="historia-texto">
+        <p v-for="(linha, i) in historiaAtual.texto" :key="i">{{ linha }}</p>
+      </div>
+      <button class="btn-primario" @click="iniciarPerguntasHistoria" v-if="!mostrandoPerguntas">
+        Responder perguntinhas ✓
+      </button>
+      <div v-if="mostrandoPerguntas">
+        <h3 class="mt">Pergunta {{ indicePergunta + 1 }} de {{ historiaAtual.perguntas.length }}</h3>
+        <p style="font-size:1.05em"><strong>{{ perguntaAtual.enunciado }}</strong></p>
+        <button
+          v-for="(op, i) in perguntaAtual.opcoes"
+          :key="i"
+          class="opcao"
+          :class="classeOpcao(i)"
+          :disabled="respostaSelecionada !== null"
+          @click="responder(i)"
+        >{{ op }}</button>
+        <div v-if="respostaSelecionada !== null" class="feedback" :class="respostaSelecionada === perguntaAtual.correta ? 'correto' : 'errado'">
+          {{ respostaSelecionada === perguntaAtual.correta ? '🎉 Muito bem!' : '💡 Quase!' }}
+          {{ perguntaAtual.explicacao }}
+        </div>
+        <button v-if="respostaSelecionada !== null" class="btn-primario mt" @click="proximaPergunta">
+          {{ indicePergunta + 1 < historiaAtual.perguntas.length ? 'Próxima →' : 'Concluir' }}
+        </button>
+      </div>
+    </div>
+
+    <!-- ATIVIDADES (lista) -->
+    <div v-if="tela === 'atividades'">
+      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
+      <h2>Atividades</h2>
+      <div class="filtros">
+        <button class="filtro" :class="{ativo: filtroMateria === 'todas'}" @click="filtroMateria = 'todas'">Todas</button>
+        <button class="filtro" :class="{ativo: filtroMateria === 'lingua-portuguesa'}" @click="filtroMateria = 'lingua-portuguesa'">Português</button>
+        <button class="filtro" :class="{ativo: filtroMateria === 'matematica'}" @click="filtroMateria = 'matematica'">Matemática</button>
+      </div>
+      <div class="card" v-for="a in atividadesFiltradas" :key="a.id" @click="abrirAtividade(a)" tabindex="0">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <div>
+            <div class="card-titulo">{{ a.titulo }}</div>
+            <div class="card-meta">{{ a.materia === 'matematica' ? '🧮 Matemática' : '📝 Português' }} · Nível {{ a.nivel }}</div>
+          </div>
+          <div v-if="concluidos[a.id]" style="color:var(--cor-sucesso);font-size:1.4em">✓</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATIVIDADE (resolver) -->
+    <div v-if="tela === 'atividade' && atividadeAtual">
+      <button class="btn-voltar" @click="irPara('atividades')">← Voltar</button>
+      <h2>{{ atividadeAtual.titulo }}</h2>
+      <p class="texto-suave">Nível {{ atividadeAtual.nivel }} · {{ atividadeAtual.habilidadeBNCC }}</p>
+      <p style="font-size:1.1em;margin:var(--space) 0"><strong>{{ atividadeAtual.enunciado }}</strong></p>
+      <div v-if="atividadeAtual.apoioVisual" class="apoio-visual">
+        <div>{{ atividadeAtual.apoioVisual.esquerda }}</div>
+        <div style="margin:8px 0">{{ atividadeAtual.apoioVisual.operador }} {{ atividadeAtual.apoioVisual.direita }}</div>
+      </div>
+      <button
+        v-for="(op, i) in atividadeAtual.opcoes"
+        :key="i"
+        class="opcao"
+        :class="classeOpcaoAtividade(i, op)"
+        :disabled="respostaSelecionada !== null"
+        @click="responderAtividade(i, op)"
+      >{{ op }}</button>
+      <div v-if="respostaSelecionada !== null" class="feedback" :class="acertouAtividade ? 'correto' : 'errado'">
+        {{ acertouAtividade ? '🎉 Muito bem!' : '💡 Quase!' }} {{ atividadeAtual.explicacao }}
+      </div>
+      <button v-if="respostaSelecionada !== null" class="btn-primario mt" @click="irPara('atividades')">Continuar</button>
+    </div>
+
+    <!-- COLORIR (lista) -->
+    <div v-if="tela === 'colorir'">
+      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
+      <h2>Desenhos para colorir</h2>
+      <div class="card" v-for="c in conteudo.colorir" :key="c.id" @click="abrirColorir(c)" tabindex="0">
+        <div class="card-capa" style="background:linear-gradient(135deg,#FFF3E0,#FFE9E1);font-size:3em">{{ c.emoji }}</div>
+        <div class="card-titulo">{{ c.titulo }}</div>
+        <div class="card-meta" v-if="concluidos[c.id]" style="color:var(--cor-sucesso);font-weight:700">✓ Já pintou</div>
+      </div>
+    </div>
+
+    <!-- COLORIR-ITEM -->
+    <div v-if="tela === 'colorir-item' && colorirAtual">
+      <button class="btn-voltar" @click="irPara('colorir')">← Voltar</button>
+      <h2>{{ colorirAtual.titulo }}</h2>
+      <p class="texto-suave">Toque nas formas para pintar</p>
+      <div class="paleta">
+        <button
+          v-for="cor in paletaCores"
+          :key="cor"
+          class="cor"
+          :class="{selecionada: corAtual === cor}"
+          :style="{background: cor}"
+          @click="corAtual = cor"
+          :title="cor"
+        ></button>
+      </div>
+      <div class="svg-colorir" ref="svgRef" @click="pintarForma"></div>
+      <div class="linha-botoes mt">
+        <button class="btn-secundario" @click="resetarDesenho">🔄 Recomeçar</button>
+        <button class="btn-primario" @click="concluirColorir">✓ Pronto!</button>
+      </div>
+    </div>
+
+    <!-- RECOMPENSAS -->
+    <div v-if="tela === 'recompensas'">
+      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
+      <h2>Minhas conquistas</h2>
+      <p class="texto-suave">Você tem <strong>{{ estrelas }} ⭐</strong> e completou <strong>{{ totalConcluidos }}</strong> de {{ totalItens }} itens.</p>
+      <div class="barra-progresso">
+        <div class="barra-preenchida" :style="{width: progressoGeral + '%'}"></div>
+      </div>
+      <p class="texto-centro texto-suave">{{ progressoGeral }}% concluído</p>
+      <div class="grid-selos">
+        <div class="selo" v-for="s in selos" :key="s.id" :class="{desbloqueado: s.desbloqueado}">
+          <span class="emoji">{{ s.emoji }}</span>
+          <div class="nome">{{ s.nome }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AJUSTES (só acessa depois do portão) -->
+    <div v-if="tela === 'ajustes'">
+      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
+      <h2>Ajustes</h2>
+      <div class="card" style="cursor:default">
+        <div class="card-titulo">Fonte para dislexia</div>
+        <div class="card-meta" style="margin-bottom:10px">Usa a fonte Lexend com mais espaçamento</div>
+        <button class="btn-secundario" @click="toggleDislexia" :style="ajustes.dislexia ? 'background:var(--cor-primaria);color:#fff;border-color:var(--cor-primaria)' : ''">
+          {{ ajustes.dislexia ? '✓ Ativada' : 'Desativada' }}
+        </button>
+      </div>
+      <div class="card" style="cursor:default">
+        <div class="card-titulo">Tamanho do texto</div>
+        <div class="filtros" style="margin-top:10px;margin-bottom:0">
+          <button class="filtro" :class="{ativo: ajustes.tamanho === 'pequeno'}" @click="mudarTamanho('pequeno')">Pequeno</button>
+          <button class="filtro" :class="{ativo: ajustes.tamanho === 'medio'}" @click="mudarTamanho('medio')">Médio</button>
+          <button class="filtro" :class="{ativo: ajustes.tamanho === 'grande'}" @click="mudarTamanho('grande')">Grande</button>
+        </div>
+      </div>
+      <div class="card" style="cursor:default">
+        <div class="card-titulo">Progresso</div>
+        <div class="card-meta" style="margin-bottom:10px">Estrelas: {{ estrelas }} · Itens concluídos: {{ totalConcluidos }}</div>
+        <button class="btn-secundario" @click="resetarProgresso">🧹 Zerar progresso</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PORTÃO PARENTAL -->
+  <div class="portao-parental" v-if="portaoAberto">
+    <h2>Área dos adultos</h2>
+    <p class="instrucao">Para entrar, clique nas setas na ordem indicada e depois deslize o dedo (ou mouse) para a direita na área tracejada.</p>
+    <div class="sequencia-setas">
+      <button
+        v-for="(s, i) in portao.setas"
+        :key="i"
+        class="seta"
+        :class="{feita: i < portao.indice, atual: i === portao.indice}"
+        @click="clicarSeta(i)"
+      >{{ s }}</button>
+    </div>
+    <div
+      class="area-gesto"
+      @mousedown="iniciarGesto"
+      @mouseup="terminarGesto"
+      @touchstart.prevent="iniciarGestoTouch"
+      @touchend.prevent="terminarGestoTouch"
+    >
+      <span v-if="portao.indice < portao.setas.length">Primeiro complete as setas</span>
+      <span v-else-if="!portao.gestoOk">👉 Deslize para a direita aqui</span>
+      <span v-else>✅ Liberado!</span>
+    </div>
+    <button class="btn-secundario" style="margin-top:var(--space)" @click="fecharPortao">Cancelar</button>
+  </div>
+
+  <!-- NAV INFERIOR -->
+  <nav class="nav-inferior" v-if="!portaoAberto">
+    <a @click="irPara('home')" :class="{ativo: tela === 'home'}"><span class="icone">🏠</span>Início</a>
+    <a @click="irPara('ler')" :class="{ativo: tela === 'ler' || tela === 'historia'}"><span class="icone">📖</span>Ler</a>
+    <a @click="irPara('atividades')" :class="{ativo: tela === 'atividades' || tela === 'atividade'}"><span class="icone">🧮</span>Brincar</a>
+    <a @click="irPara('recompensas')" :class="{ativo: tela === 'recompensas'}"><span class="icone">🏆</span>Selos</a>
+  </nav>
+</div>
+
+<div id="print-container" class="print-only"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js" onerror="window.__lbErr='Falha ao carregar Vue'"></script>
+<script src="https://cdn.jsdelivr.net/npm/dexie@4/dist/dexie.min.js" onerror="window.__lbErr='Falha ao carregar Dexie'"></script>
+
+<script>
+(function(){
+'use strict';
+
+if (typeof Vue === 'undefined') {
+  document.getElementById('app').innerHTML = '<div style="padding:24px;font-family:monospace;color:#d9534f"><h2>❌ Vue não carregou</h2><p>Verifique sua conexão.</p></div>';
+  return;
+}
+
+const CONTEUDO = {
+  stories: [
+    {id:'historia-01',titulo:'O gato que perdeu o chapéu',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF02LP03'],nivel:1,emoji:'🐱',corFundo:'linear-gradient(135deg,#ffe0e0,#ffe8cc)',texto:['Era uma vez um gato cinza chamado Tobias.','Um dia, ele perdeu seu chapéu vermelho.','Tobias procurou na cozinha, no quintal e embaixo da cama.','Foi quando viu o chapéu na cabeça do espantalho.','Tobias subiu no espantalho com cuidado e pegou seu chapéu de volta.','E voltou para casa feliz, com o chapéu bem firme na cabeça.'],perguntas:[{tipo:'multipla',enunciado:'Qual é a cor do chapéu do Tobias?',opcoes:['Azul','Vermelho','Verde'],correta:1,explicacao:'O texto diz "seu chapéu vermelho".'},{tipo:'multipla',enunciado:'Onde Tobias encontrou o chapéu?',opcoes:['Na cozinha','No quintal','Na cabeça do espantalho'],correta:2,explicacao:'O texto mostra que ele viu o chapéu no espantalho.'},{tipo:'inferencia',enunciado:'Por que Tobias procurou em vários lugares?',opcoes:['Porque queria brincar','Porque havia perdido o chapéu','Porque estava com fome'],correta:1,explicacao:'Ele estava procurando o chapéu que tinha perdido.'}]},
+    {id:'historia-02',titulo:'A menina e a estrela',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:1,emoji:'⭐',corFundo:'linear-gradient(135deg,#e0ecff,#f0e0ff)',texto:['Lia era uma menina que adorava olhar o céu à noite.','Uma vez, ela viu uma estrela que parecia piscar só para ela.','Lia fez um pedido: queria um amigo para brincar.','No dia seguinte, uma menina nova chegou na escola.','As duas logo ficaram amigas e brincaram a tarde inteira.','Lia sorriu, pensando que a estrela tinha escutado seu pedido.'],perguntas:[{tipo:'multipla',enunciado:'O que Lia mais gostava de fazer?',opcoes:['Correr no parque','Olhar o céu à noite','Desenhar'],correta:1,explicacao:'O texto diz que ela adorava olhar o céu à noite.'},{tipo:'inferencia',enunciado:'Por que Lia sorriu no final?',opcoes:['Porque ganhou um brinquedo','Porque achou que o pedido se realizou','Porque viu outra estrela'],correta:1,explicacao:'Ela sorriu porque achou que a estrela tinha escutado seu pedido.'},{tipo:'multipla',enunciado:'O que Lia pediu à estrela?',opcoes:['Um brinquedo novo','Um amigo para brincar','Um caderno'],correta:1,explicacao:'O texto diz "queria um amigo para brincar".'}]},
+    {id:'historia-03',titulo:'O dia de chuva',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP03'],nivel:2,emoji:'🌧️',corFundo:'linear-gradient(135deg,#d8e8f0,#c8d8e8)',texto:['Pedro queria jogar bola, mas começou a chover forte.','Ele ficou triste olhando pela janela.','Sua mãe sugeriu que ele desenhasse.','Pedro pegou o lápis e desenhou um arco-íris com nuvens.','Quando a chuva parou, um arco-íris apareceu no céu de verdade.','Pedro ficou feliz: seu desenho tinha se tornado real.'],perguntas:[{tipo:'multipla',enunciado:'O que Pedro queria fazer?',opcoes:['Ler um livro','Jogar bola','Dormir'],correta:1,explicacao:'O texto começa com "Pedro queria jogar bola".'},{tipo:'multipla',enunciado:'O que Pedro desenhou?',opcoes:['Um sol','Um carro','Um arco-íris com nuvens'],correta:2,explicacao:'O texto diz que ele desenhou um arco-íris com nuvens.'},{tipo:'inferencia',enunciado:'Por que Pedro ficou feliz no final?',opcoes:['Porque parou de chover e viu um arco-íris','Porque ganhou um presente','Porque foi dormir'],correta:0,explicacao:'Ele ficou feliz porque a chuva parou e um arco-íris apareceu.'}]},
+    {id:'historia-04',titulo:'O passarinho corajoso',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'🐦',corFundo:'linear-gradient(135deg,#e8f5e0,#d0e8d8)',texto:['Tico era um passarinho pequeno, mas muito corajoso.','Um dia, uma tempestade o surpreendeu longe do ninho.','Todos os outros pássaros se esconderam.','Tico voou alto, enfrentando o vento, e encontrou um abrigo seguro.','Depois da tempestade, Tico guiou os outros pássaros até o abrigo.','Todos agradeceram ao pequeno herói.'],perguntas:[{tipo:'multipla',enunciado:'Como era Tico?',opcoes:['Grande e forte','Pequeno e corajoso','Tímido e lento'],correta:1,explicacao:'O texto diz "pequeno, mas muito corajoso".'},{tipo:'multipla',enunciado:'O que Tico encontrou durante a tempestade?',opcoes:['Um ninho novo','Um abrigo seguro','Um amigo'],correta:1,explicacao:'O texto diz que ele encontrou um abrigo seguro.'},{tipo:'inferencia',enunciado:'Por que todos agradeceram a Tico?',opcoes:['Porque ele cantou bonito','Porque ele os guiou até o abrigo','Porque ele trouxe comida'],correta:1,explicacao:'Ele guiou os outros pássaros até o abrigo após a tempestade.'}]},
+    {id:'historia-05',titulo:'A horta da vovó',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP03'],nivel:2,emoji:'🌱',corFundo:'linear-gradient(135deg,#e0f0d0,#f5e8c8)',texto:['Marina adorava passar os sábados na casa da vovó.','A vovó tinha uma horta com tomates, alfaces e cenouras.','Um dia, Marina perguntou como as plantas cresciam.','A vovó explicou que era preciso terra, água e sol.','Marina plantou uma sementinha e cuidou dela toda semana.','Depois de um mês, uma pequena cenoura apareceu.'],perguntas:[{tipo:'multipla',enunciado:'O que tinha na horta da vovó?',opcoes:['Flores e rosas','Tomates, alfaces e cenouras','Bananas e maçãs'],correta:1,explicacao:'O texto lista tomates, alfaces e cenouras.'},{tipo:'multipla',enunciado:'O que era preciso para as plantas crescerem?',opcoes:['Terra, água e sol','Vento e areia','Só água'],correta:0,explicacao:'A vovó explicou que era preciso terra, água e sol.'},{tipo:'inferencia',enunciado:'O que Marina aprendeu com a vovó?',opcoes:['A cozinhar','A cuidar de plantas','A desenhar'],correta:1,explicacao:'Ela aprendeu a cuidar de plantas, plantando e regando.'}]},
+    {id:'historia-06',titulo:'O menino e o peixe',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:1,emoji:'🐟',corFundo:'linear-gradient(135deg,#d0e8ff,#e0f0ff)',texto:['Lucas foi pescar com o avô no rio.','Depois de esperar muito, ele fisgou um peixe pequeno.','O avô explicou que peixes pequenos precisam crescer.','Lucas devolveu o peixe à água com cuidado.','No fim do dia, ele voltou para casa feliz, mesmo sem peixe.'],perguntas:[{tipo:'multipla',enunciado:'Com quem Lucas foi pescar?',opcoes:['Com o pai','Com o avô','Com o irmão'],correta:1,explicacao:'O texto diz "foi pescar com o avô".'},{tipo:'multipla',enunciado:'O que Lucas fisgou?',opcoes:['Um peixe grande','Um peixe pequeno','Uma bota velha'],correta:1,explicacao:'Ele fisgou um peixe pequeno.'},{tipo:'inferencia',enunciado:'Por que Lucas devolveu o peixe?',opcoes:['Porque não gostou','Porque o peixe era pequeno e precisava crescer','Porque o avô mandou'],correta:1,explicacao:'O avô explicou que peixes pequenos precisam crescer.'}]},
+    {id:'historia-07',titulo:'A formiga trabalhadora',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:1,emoji:'🐜',corFundo:'linear-gradient(135deg,#f0e0d0,#ffe8d0)',texto:['Dona Formiga trabalhava todos os dias, carregando folhas.','As outras formigas perguntavam por que ela não descansava.','Ela respondia: "Quando a chuva chegar, teremos comida guardada."','Um dia, a chuva caiu por vários dias.','Todas as formigas ficaram quentinhas e alimentadas no formigueiro.'],perguntas:[{tipo:'multipla',enunciado:'O que Dona Formiga carregava?',opcoes:['Pedras','Folhas','Flores'],correta:1,explicacao:'O texto diz que ela carregava folhas.'},{tipo:'inferencia',enunciado:'Por que ela trabalhava todos os dias?',opcoes:['Porque gostava de andar','Para guardar comida para a chuva','Porque não tinha amigos'],correta:1,explicacao:'Ela queria ter comida guardada quando a chuva chegasse.'},{tipo:'multipla',enunciado:'O que aconteceu no fim?',opcoes:['Ficaram com fome','Ficaram alimentadas e quentinhas','Saíram do formigueiro'],correta:1,explicacao:'Todas ficaram quentinhas e alimentadas.'}]},
+    {id:'historia-08',titulo:'O dia do circo',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP03'],nivel:1,emoji:'🎪',corFundo:'linear-gradient(135deg,#ffe0e8,#fff0e0)',texto:['Bia nunca tinha ido ao circo.','No sábado, seu pai a levou pela primeira vez.','Ela viu palhaços, mágicos e um elefante enorme.','O número que mais gostou foi o do trapézio.','Bia voltou para casa dizendo que queria ser trapezista.'],perguntas:[{tipo:'multipla',enunciado:'Quando Bia foi ao circo?',opcoes:['No domingo','No sábado','Na segunda-feira'],correta:1,explicacao:'O texto diz "No sábado".'},{tipo:'multipla',enunciado:'Qual número ela mais gostou?',opcoes:['Palhaços','Mágicos','Trapézio'],correta:2,explicacao:'O texto diz que ela mais gostou do trapézio.'},{tipo:'inferencia',enunciado:'O que Bia quer ser quando crescer?',opcoes:['Palhaça','Trapezista','Mágica'],correta:1,explicacao:'Ela disse que queria ser trapezista.'}]},
+    {id:'historia-09',titulo:'A bola mágica',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:1,emoji:'⚽',corFundo:'linear-gradient(135deg,#e0f5d0,#d0e8e0)',texto:['Téo ganhou uma bola de futebol do avô.','Ele achou que a bola era mágica porque nunca errava o gol.','Treinou todos os dias durante uma semana.','No jogo contra outra escola, Téo fez três gols.','O avô sorriu e disse: "A magia é o seu treino."'],perguntas:[{tipo:'multipla',enunciado:'Quem deu a bola para Téo?',opcoes:['O pai','O avô','O amigo'],correta:1,explicacao:'O texto diz "ganhou do avô".'},{tipo:'multipla',enunciado:'Quantos gols Téo fez no jogo?',opcoes:['Um','Dois','Três'],correta:2,explicacao:'O texto diz que ele fez três gols.'},{tipo:'inferencia',enunciado:'Por que Téo acertava sempre?',opcoes:['Porque a bola era mágica de verdade','Porque ele treinava muito','Porque teve sorte'],correta:1,explicacao:'O avô disse que a magia era o treino.'}]},
+    {id:'historia-10',titulo:'O dinossauro amigável',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'🦕',corFundo:'linear-gradient(135deg,#d8f0d0,#e8f5d8)',texto:['Dino era um dinossauro grande, mas muito gentil.','Os outros dinossauros tinham medo dele por causa do tamanho.','Um dia, um filhote caiu em um buraco fundo.','Dino esticou o pescoço comprido e salvou o filhote.','Desde então, todos viram que ele era um grande amigo.'],perguntas:[{tipo:'multipla',enunciado:'Como era Dino?',opcoes:['Grande e gentil','Pequeno e bravo','Rápido e assustador'],correta:0,explicacao:'O texto diz "grande, mas muito gentil".'},{tipo:'multipla',enunciado:'Quem caiu no buraco?',opcoes:['Dino','Um filhote','Um amigo'],correta:1,explicacao:'Um filhote caiu no buraco.'},{tipo:'inferencia',enunciado:'Por que os outros tinham medo de Dino?',opcoes:['Porque ele era bravo','Porque era grande','Porque rugia alto'],correta:1,explicacao:'Eles tinham medo por causa do tamanho dele.'}]},
+    {id:'historia-11',titulo:'O coelho e a cenoura',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP03'],nivel:1,emoji:'🐰',corFundo:'linear-gradient(135deg,#fff0d0,#ffe0d0)',texto:['Beto era um coelho que adorava cenouras.','Ele plantou uma semente em sua horta.','Todos os dias, Beto regava a plantinha.','Depois de muitas semanas, uma cenoura enorme cresceu.','Beto ficou tão feliz que chamou os amigos para dividir.'],perguntas:[{tipo:'multipla',enunciado:'O que Beto plantou?',opcoes:['Uma flor','Uma cenoura','Uma árvore'],correta:1,explicacao:'O texto diz que ele plantou uma semente de cenoura.'},{tipo:'multipla',enunciado:'O que Beto fazia todos os dias?',opcoes:['Regava a plantinha','Colhia cenouras','Brincava no quintal'],correta:0,explicacao:'Ele regava a plantinha todos os dias.'},{tipo:'inferencia',enunciado:'O que Beto fez quando a cenoura cresceu?',opcoes:['Comeu sozinho','Chamou os amigos para dividir','Guardou para depois'],correta:1,explicacao:'Ele chamou os amigos para dividir.'}]},
+    {id:'historia-12',titulo:'A festa junina',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP03'],nivel:1,emoji:'🌽',corFundo:'linear-gradient(135deg,#fff0c0,#ffe8b0)',texto:['A escola de Nina preparou uma festa junina.','Nina dançou quadrilha com seus amigos.','Tinha bolo de milho, pipoca e quentão.','Também tinha uma barraca de pescaria.','Nina ganhou um peixinho de brinquedo e ficou muito feliz.'],perguntas:[{tipo:'multipla',enunciado:'Qual dança Nina dançou?',opcoes:['Samba','Quadrilha','Forró'],correta:1,explicacao:'O texto diz que ela dançou quadrilha.'},{tipo:'multipla',enunciado:'O que tinha de comer?',opcoes:['Pizza e refrigerante','Bolo de milho, pipoca e quentão','Só doces'],correta:1,explicacao:'O texto lista esses alimentos.'},{tipo:'multipla',enunciado:'O que Nina ganhou na pescaria?',opcoes:['Um peixe de verdade','Um peixinho de brinquedo','Um urso'],correta:1,explicacao:'Ela ganhou um peixinho de brinquedo.'}]},
+    {id:'historia-13',titulo:'O urso e o mel',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'🐻',corFundo:'linear-gradient(135deg,#f5e0c0,#e8d0a0)',texto:['Tavi era um urso que amava mel.','Ele viu uma colmeia em uma árvore alta.','Subiu com cuidado, mas as abelhas ficaram bravas.','Tavi caiu no chão e ficou com o nariz inchado.','Aprendeu que o mel deve ser comprado, não roubado.'],perguntas:[{tipo:'multipla',enunciado:'O que Tavi amava?',opcoes:['Frutas','Mel','Peixe'],correta:1,explicacao:'O texto diz que ele amava mel.'},{tipo:'multipla',enunciado:'Onde estava a colmeia?',opcoes:['No chão','Em uma árvore alta','Dentro de uma caverna'],correta:1,explicacao:'Ele viu a colmeia em uma árvore alta.'},{tipo:'inferencia',enunciado:'O que Tavi aprendeu?',opcoes:['A subir em árvores','Que não deve roubar mel','A fugir de abelhas'],correta:1,explicacao:'Ele aprendeu que o mel deve ser comprado, não roubado.'}]},
+    {id:'historia-14',titulo:'O trem colorido',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP03'],nivel:1,emoji:'🚂',corFundo:'linear-gradient(135deg,#d0e8f0,#e8f0f8)',texto:['Tico era um trem colorido que fazia a rota do campo à cidade.','Cada vagão tinha uma cor diferente: vermelho, azul e amarelo.','Passava por fazendas, rios e montanhas.','As crianças sempre acenavam quando o trem passava.','Tico apitava bem alto para responder, todo feliz.'],perguntas:[{tipo:'multipla',enunciado:'Quais cores tinha o trem?',opcoes:['Vermelho, azul e amarelo','Verde e preto','Rosa e roxo'],correta:0,explicacao:'O texto cita essas três cores.'},{tipo:'multipla',enunciado:'Por onde o trem passava?',opcoes:['Só na cidade','Por fazendas, rios e montanhas','Só no mar'],correta:1,explicacao:'O texto diz que ele passava por esses lugares.'},{tipo:'inferencia',enunciado:'Por que Tico apitava?',opcoes:['Porque estava com raiva','Para responder às crianças','Para avisar que estava com fome'],correta:1,explicacao:'Ele apitava para responder às crianças que acenavam.'}]},
+    {id:'historia-15',titulo:'A princesa e o sapo',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'🐸',corFundo:'linear-gradient(135deg,#e0f0d0,#d0e8f0)',texto:['Uma princesa chamada Clara brincava no jardim.','Ela viu um sapo falante que pediu ajuda.','Clara não teve medo e o ajudou a sair do poço.','O sapo virou um príncipe, mas Clara disse que o importante era a amizade.','Os dois brincaram juntos todos os dias no castelo.'],perguntas:[{tipo:'multipla',enunciado:'Onde Clara brincava?',opcoes:['No castelo','No jardim','Na escola'],correta:1,explicacao:'O texto diz que ela brincava no jardim.'},{tipo:'multipla',enunciado:'O que o sapo pediu?',opcoes:['Ajuda para sair do poço','Comida','Um abraço'],correta:0,explicacao:'O sapo pediu ajuda para sair do poço.'},{tipo:'inferencia',enunciado:'O que Clara disse ser mais importante?',opcoes:['O castelo','A amizade','A coroa'],correta:1,explicacao:'Ela disse que o importante era a amizade.'}]},
+    {id:'historia-16',titulo:'O dia na praia',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP03'],nivel:1,emoji:'🏖️',corFundo:'linear-gradient(135deg,#ffe8c0,#c0e8f0)',texto:['A família de Rui foi à praia no domingo.','Ele fez um castelo de areia com o pai.','A mãe trouxe sanduíche e suco para o almoço.','Rui viu um caranguejo pequeno perto da água.','Antes de ir embora, Rui tirou uma foto do castelo.'],perguntas:[{tipo:'multipla',enunciado:'Quando a família foi à praia?',opcoes:['No sábado','No domingo','Na sexta-feira'],correta:1,explicacao:'O texto diz "no domingo".'},{tipo:'multipla',enunciado:'O que Rui fez na praia?',opcoes:['Um castelo de areia','Uma bolha','Um bolo'],correta:0,explicacao:'Ele fez um castelo de areia com o pai.'},{tipo:'multipla',enunciado:'O que Rui viu perto da água?',opcoes:['Uma estrela-do-mar','Um caranguejo','Um peixe grande'],correta:1,explicacao:'Ele viu um caranguejo pequeno.'}]},
+    {id:'historia-17',titulo:'A abelha e a flor',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'🐝',corFundo:'linear-gradient(135deg,#fff5c0,#ffe0a0)',texto:['Bia era uma abelha que buscava néctar todos os dias.','Ela voou por um jardim cheio de flores coloridas.','Uma flor perguntou: "Por que você leva o néctar?"','Bia explicou que transforma o néctar em mel para toda a colmeia.','A flor ficou feliz por ajudar as abelhas.'],perguntas:[{tipo:'multipla',enunciado:'O que Bia buscava?',opcoes:['Água','Néctar','Folhas'],correta:1,explicacao:'O texto diz que ela buscava néctar.'},{tipo:'inferencia',enunciado:'Para que serve o néctar?',opcoes:['Para fazer mel','Para fazer pão','Para regar flores'],correta:0,explicacao:'Bia transforma o néctar em mel.'},{tipo:'multipla',enunciado:'Como a flor ficou no final?',opcoes:['Triste','Feliz por ajudar','Brava'],correta:1,explicacao:'A flor ficou feliz por ajudar as abelhas.'}]},
+    {id:'historia-18',titulo:'O lobo que não era mau',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'🐺',corFundo:'linear-gradient(135deg,#d0d8e8,#c0d0e0)',texto:['Lupo era um lobo que gostava de flores.','Os animais da floresta tinham medo só por ele ser lobo.','Um dia, um coelho ficou preso em um galho.','Lupo ajudou o coelho a se soltar com muito cuidado.','Os outros animais perceberam que Lupo era gentil.'],perguntas:[{tipo:'multipla',enunciado:'O que Lupo gostava?',opcoes:['De caçar','De flores','De correr'],correta:1,explicacao:'O texto diz que Lupo gostava de flores.'},{tipo:'inferencia',enunciado:'Por que os animais tinham medo de Lupo?',opcoes:['Porque ele era grande','Só por ele ser lobo','Porque ele rugia'],correta:1,explicacao:'Eles tinham medo só por ele ser lobo.'},{tipo:'multipla',enunciado:'Quem Lupo ajudou?',opcoes:['Um coelho','Uma raposa','Um pássaro'],correta:0,explicacao:'Ele ajudou um coelho preso em um galho.'}]},
+    {id:'historia-19',titulo:'A viagem de balão',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'🎈',corFundo:'linear-gradient(135deg,#e0e0ff,#f0e0ff)',texto:['Duda sonhava em voar em um balão.','No aniversário de 8 anos, ganhou um passeio de balão.','Lá de cima, viu casas pequenas e rios compridos.','Duda ficou com um pouco de medo, mas o piloto a tranquilizou.','Ao pousar, ela disse que foi o dia mais feliz da vida.'],perguntas:[{tipo:'multipla',enunciado:'O que Duda ganhou de aniversário?',opcoes:['Um brinquedo','Um passeio de balão','Um livro'],correta:1,explicacao:'Ela ganhou um passeio de balão.'},{tipo:'multipla',enunciado:'O que Duda viu lá de cima?',opcoes:['Casas pequenas e rios compridos','Nuvens só','Pássaros'],correta:0,explicacao:'Ela viu casas pequenas e rios compridos.'},{tipo:'inferencia',enunciado:'Como Duda se sentiu ao pousar?',opcoes:['Triste','Com muito medo','Muito feliz'],correta:2,explicacao:'Ela disse que foi o dia mais feliz da vida.'}]},
+    {id:'historia-20',titulo:'A galinha e o pintinho',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP03'],nivel:1,emoji:'🐔',corFundo:'linear-gradient(135deg,#fff0d0,#ffe0c0)',texto:['Dona Galinha tinha um pintinho chamado Piu.','Piu era muito curioso e sempre saía do galinheiro.','Um dia, ele se perdeu no quintal.','Dona Galinha chamou: "Piu, Piu!" e ele correu para ela.','Piu prometeu não se afastar mais sem a mãe.'],perguntas:[{tipo:'multipla',enunciado:'Como se chamava o pintinho?',opcoes:['Beto','Piu','Tico'],correta:1,explicacao:'O texto diz que o pintinho se chamava Piu.'},{tipo:'multipla',enunciado:'O que aconteceu com Piu?',opcoes:['Se perdeu no quintal','Foi embora','Dormiu'],correta:0,explicacao:'Ele se perdeu no quintal.'},{tipo:'inferencia',enunciado:'O que Piu prometeu?',opcoes:['Não comer','Não sair mais sem a mãe','Ficar no galinheiro para sempre'],correta:1,explicacao:'Ele prometeu não se afastar sem a mãe.'}]},
+    {id:'historia-21',titulo:'A tartaruga e a lebre',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'🐢',corFundo:'linear-gradient(135deg,#e0f0d0,#d0e8d0)',texto:['A lebre zombava da tartaruga por ela ser lenta.','A tartaruga desafiou a lebre para uma corrida.','A lebre correu rápido e, confiante, deitou para descansar.','A tartaruga continuou devagar, sem parar.','Quando a lebre acordou, a tartaruga já havia cruzado a linha.'],perguntas:[{tipo:'multipla',enunciado:'Quem desafiou quem para a corrida?',opcoes:['A lebre desafiou a tartaruga','A tartaruga desafiou a lebre','Ninguém desafiou'],correta:1,explicacao:'A tartaruga desafiou a lebre.'},{tipo:'multipla',enunciado:'O que a lebre fez durante a corrida?',opcoes:['Continuou correndo','Deitou para descansar','Desistiu'],correta:1,explicacao:'Ela deitou para descansar, confiante.'},{tipo:'inferencia',enunciado:'Qual é a lição da história?',opcoes:['Que correr é sempre melhor','Que devagar e sempre se chega lá','Que a lebre é mais forte'],correta:1,explicacao:'A tartaruga venceu por continuar devagar sem parar.'}]},
+    {id:'historia-22',titulo:'O menino e a pipa',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP03'],nivel:1,emoji:'🪁',corFundo:'linear-gradient(135deg,#d0e8ff,#c0e0f5)',texto:['Davi ganhou uma pipa do tio no fim de semana.','Ele foi ao parque com o pai para soltar a pipa.','O vento estava forte e a pipa subiu bem alto.','Davi segurava a linha com cuidado para não perder a pipa.','No fim da tarde, voltou para casa feliz e cansado.'],perguntas:[{tipo:'multipla',enunciado:'Quem deu a pipa para Davi?',opcoes:['O pai','O tio','O avô'],correta:1,explicacao:'O texto diz que ele ganhou do tio.'},{tipo:'multipla',enunciado:'Onde Davi soltou a pipa?',opcoes:['No quintal','No parque','Na escola'],correta:1,explicacao:'Ele foi ao parque com o pai.'},{tipo:'multipla',enunciado:'Como Davi voltou para casa?',opcoes:['Triste','Com raiva','Feliz e cansado'],correta:2,explicacao:'O texto diz que voltou feliz e cansado.'}]},
+    {id:'historia-23',titulo:'A festa na floresta',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'🦊',corFundo:'linear-gradient(135deg,#fff0c0,#ffe0a0)',texto:['Os animais da floresta decidiram fazer uma festa.','O macaco trouxe frutas e o coelho trouxe cenouras.','A coruja ficou responsável pela música.','Quando a noite chegou, todos dançaram ao redor da fogueira.','A raposa, que era tímida, no começo só olhava.','Mas o esquilo a convidou para dançar, e ela ficou feliz.'],perguntas:[{tipo:'multipla',enunciado:'O que o macaco trouxe?',opcoes:['Cenouras','Frutas','Música'],correta:1,explicacao:'O texto diz que o macaco trouxe frutas.'},{tipo:'multipla',enunciado:'Quem cuidou da música?',opcoes:['O coelho','A coruja','O esquilo'],correta:1,explicacao:'A coruja ficou responsável pela música.'},{tipo:'inferencia',enunciado:'Por que a raposa só olhava no começo?',opcoes:['Porque estava com sono','Porque era tímida','Porque não gostava de festa'],correta:1,explicacao:'O texto diz que ela era tímida.'}]},
+    {id:'historia-24',titulo:'O dia do livro',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP03'],nivel:1,emoji:'📖',corFundo:'linear-gradient(135deg,#e8e0ff,#d8d0f0)',texto:['Na escola de Sofia, houve uma feira do livro.','Cada aluno podia escolher um livro para levar para casa.','Sofia escolheu uma história sobre uma sereia.','Ela leu o livro em dois dias.','Depois, contou a história toda para a sua amiga.'],perguntas:[{tipo:'multipla',enunciado:'O que houve na escola de Sofia?',opcoes:['Uma festa','Uma feira do livro','Um passeio'],correta:1,explicacao:'O texto diz que houve uma feira do livro.'},{tipo:'multipla',enunciado:'Qual livro Sofia escolheu?',opcoes:['Sobre um dragão','Sobre uma sereia','Sobre um gato'],correta:1,explicacao:'Ela escolheu uma história sobre uma sereia.'},{tipo:'multipla',enunciado:'Em quanto tempo Sofia leu o livro?',opcoes:['Em uma semana','Em dois dias','Em um mês'],correta:1,explicacao:'Ela leu em dois dias.'}]},
+    {id:'historia-25',titulo:'A bicicleta nova',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'🚲',corFundo:'linear-gradient(135deg,#ffe0e8,#ffe8d0)',texto:['Caio ganhou uma bicicleta azul de aniversário.','No começo, ele caiu várias vezes tentando andar sem as rodinhas.','O pai o incentivou a não desistir.','Depois de uma semana treinando, Caio conseguiu pedalar sozinho.','Ele ficou tão feliz que saiu pedalando pela rua.'],perguntas:[{tipo:'multipla',enunciado:'Qual era a cor da bicicleta de Caio?',opcoes:['Vermelha','Verde','Azul'],correta:2,explicacao:'O texto diz que a bicicleta era azul.'},{tipo:'inferencia',enunciado:'Por que Caio caiu várias vezes?',opcoes:['Porque estava aprendendo','Porque a bicicleta era velha','Porque a rua era esburacada'],correta:0,explicacao:'Ele caiu porque estava aprendendo a andar sem as rodinhas.'},{tipo:'multipla',enunciado:'O que Caio fez quando conseguiu andar?',opcoes:['Guardou a bicicleta','Saiu pedalando pela rua','Deu a bicicleta para outra criança'],correta:1,explicacao:'Ele ficou tão feliz que saiu pedalando pela rua.'}]},
+    {id:'historia-26',titulo:'A vovó e o bolo',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP03'],nivel:1,emoji:'🎂',corFundo:'linear-gradient(135deg,#fff0d0,#ffe8e0)',texto:['Toda quinta-feira, a vovó de Nina fazia um bolo.','Nina adorava ajudar a misturar os ingredientes.','O bolo preferido era o de cenoura com cobertura de chocolate.','Enquanto o bolo assava, vovó e Nina brincavam de adivinhação.','Quando ficava pronto, o cheiro tomava a casa toda.'],perguntas:[{tipo:'multipla',enunciado:'Em que dia a vovó fazia bolo?',opcoes:['Na segunda-feira','Na quinta-feira','No sábado'],correta:1,explicacao:'O texto diz "toda quinta-feira".'},{tipo:'multipla',enunciado:'Qual era o bolo preferido?',opcoes:['Chocolate puro','Cenoura com cobertura de chocolate','Morango'],correta:1,explicacao:'O bolo preferido era de cenoura com cobertura de chocolate.'},{tipo:'multipla',enunciado:'O que vovó e Nina faziam enquanto o bolo assava?',opcoes:['Assistiam TV','Brincavam de adivinhação','Dormiam'],correta:1,explicacao:'O texto diz que brincavam de adivinhação.'}]},
+    {id:'historia-27',titulo:'O patinho diferente',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'🦢',corFundo:'linear-gradient(135deg,#e0f0ff,#d0e0f0)',texto:['Um patinho nasceu com penas brancas, diferente dos irmãos.','Os irmãos cinzas não queriam brincar com ele.','O patinho ficou triste e nadou sozinho pelo lago.','Um dia, ele viu seu reflexo na água e descobriu que era um cisne.','O cisne se juntou a outros cisnes e nunca mais ficou triste.'],perguntas:[{tipo:'multipla',enunciado:'Por que o patinho era diferente?',opcoes:['Porque tinha penas brancas','Porque era maior','Porque voava alto'],correta:0,explicacao:'Ele nasceu com penas brancas, diferente dos irmãos cinzas.'},{tipo:'inferencia',enunciado:'Por que o patinho ficou triste?',opcoes:['Porque não sabia voar','Porque os irmãos não queriam brincar com ele','Porque não gostava de água'],correta:1,explicacao:'Os irmãos cinzas não queriam brincar com ele.'},{tipo:'multipla',enunciado:'O que o patinho descobriu?',opcoes:['Que era um pato comum','Que era um cisne','Que era um ganso'],correta:1,explicacao:'Ele viu seu reflexo e descobriu que era um cisne.'}]},
+    {id:'historia-28',titulo:'A estrela cadente',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'🌠',corFundo:'linear-gradient(135deg,#d0d0f0,#c0c0e8)',texto:['Iara estava no quintal quando viu uma estrela cadente.','Ela fez um pedido em voz baixa, como a vovó tinha ensinado.','Pediu que sua família ficasse sempre unida.','No dia seguinte, seus primos que moravam longe chegaram de surpresa.','Iara sorriu, achando que o pedido tinha sido atendido.'],perguntas:[{tipo:'multipla',enunciado:'O que Iara viu no quintal?',opcoes:['Uma nuvem','Uma estrela cadente','Um pássaro'],correta:1,explicacao:'O texto diz que ela viu uma estrela cadente.'},{tipo:'inferencia',enunciado:'O que Iara pediu à estrela?',opcoes:['Um brinquedo novo','Que sua família ficasse sempre unida','Uma viagem'],correta:1,explicacao:'Ela pediu que sua família ficasse unida.'},{tipo:'multipla',enunciado:'O que aconteceu no dia seguinte?',opcoes:['Os primos chegaram de surpresa','Choveu','Ela ganhou um presente'],correta:0,explicacao:'Seus primos chegaram de surpresa.'}]},
+    {id:'historia-29',titulo:'A sementinha',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP03'],nivel:1,emoji:'🌱',corFundo:'linear-gradient(135deg,#e0f0d0,#d0e8c0)',texto:['Júlia plantou uma sementinha em um vaso.','Todos os dias, ela regava e olhava se tinha brotado.','Passaram-se muitos dias e nada acontecia.','Júlia quase desistiu, mas a mãe disse para esperar.','Um dia, um brotinho verde apareceu na terra.'],perguntas:[{tipo:'multipla',enunciado:'O que Júlia plantou?',opcoes:['Uma flor','Uma sementinha','Uma árvore'],correta:1,explicacao:'O texto diz que ela plantou uma sementinha.'},{tipo:'multipla',enunciado:'O que Júlia fazia todos os dias?',opcoes:['Regava e olhava','Colhia','Arrancava'],correta:0,explicacao:'Ela regava e olhava se tinha brotado.'},{tipo:'inferencia',enunciado:'O que a história ensina?',opcoes:['Que devemos desistir','Que é preciso ter paciência','Que regar não importa'],correta:1,explicacao:'A mãe disse para esperar, e o broto apareceu com paciência.'}]},
+    {id:'historia-30',titulo:'O amigo invisível',autor:'Domínio público',anoEscolar:2,habilidadesBNCC:['EF02LP26','EF15LP04'],nivel:2,emoji:'👻',corFundo:'linear-gradient(135deg,#e8e8ff,#e0e0f8)',texto:['Beto tinha um amigo invisível chamado Téo.','Brincavam juntos todos os dias no quintal.','Os pais de Beto achavam aquilo só imaginação.','Um dia, Beto caiu e se machucou, e Téo "o ajudou" a levantar.','Beto disse à mãe que Téo sempre cuidava dele.'],perguntas:[{tipo:'multipla',enunciado:'Como se chamava o amigo invisível de Beto?',opcoes:['Beto','Téo','Davi'],correta:1,explicacao:'O texto diz que o amigo se chamava Téo.'},{tipo:'multipla',enunciado:'O que os pais de Beto achavam?',opcoes:['Que Téo existia','Que era só imaginação','Que era um vizinho'],correta:1,explicacao:'Os pais achavam que era só imaginação.'},{tipo:'inferencia',enunciado:'O que Beto disse à mãe?',opcoes:['Que Téo sempre cuidava dele','Que não precisava mais de Téo','Que Téo tinha ido embora'],correta:0,explicacao:'Ele disse que Téo sempre cuidava dele.'}]}
+  ],
+
+  activities: [
+    {id:'lp-001',titulo:'Complete a frase',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:1,tipo:'completar',enunciado:'A ___ está muito quente hoje.',opcoes:['bola','praia','sopa'],correta:'praia',explicacao:'Praia combina com "quente" em frases do dia a dia.'},
+    {id:'lp-002',titulo:'Leia e responda',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP26',nivel:1,tipo:'multipla',enunciado:'Leia: "O menino comeu uma maçã vermelha." O que o menino comeu?',opcoes:['Uma banana','Uma maçã','Uma laranja'],correta:1,explicacao:'O texto diz que ele comeu uma maçã vermelha.'},
+    {id:'lp-003',titulo:'Qual é o plural?',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Qual é o plural de "flor"?',opcoes:['flores','florzinha','florido'],correta:0,explicacao:'O plural de "flor" é "flores".'},
+    {id:'lp-004',titulo:'Sinônimo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual palavra tem o mesmo sentido de "feliz"?',opcoes:['triste','contente','cansado'],correta:1,explicacao:'"Contente" e "feliz" significam a mesma coisa.'},
+    {id:'lp-005',titulo:'Pontuação',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual sinal combina com uma pergunta?',opcoes:['. (ponto)','? (interrogação)','! (exclamação)'],correta:1,explicacao:'A interrogação (?) é usada em perguntas.'},
+    {id:'lp-006',titulo:'Sílabas',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:1,tipo:'multipla',enunciado:'Quantas sílabas tem a palavra "bola"?',opcoes:['1','2','3'],correta:1,explicacao:'BO-LA: duas sílabas.'},
+    {id:'lp-007',titulo:'Rima',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:1,tipo:'multipla',enunciado:'Qual palavra rima com "pão"?',opcoes:['mão','pé','sol'],correta:0,explicacao:'PÃO e MÃO terminam com o mesmo som.'},
+    {id:'lp-008',titulo:'Inferência',materia:'lingua-portuguesa',habilidadeBNCC:'EF15LP04',nivel:2,tipo:'multipla',enunciado:'João pegou o guarda-chuva antes de sair. O que provavelmente vai acontecer?',opcoes:['Vai fazer sol','Vai chover','Vai nevar'],correta:1,explicacao:'João pegou o guarda-chuva, então provavelmente vai chover.'},
+    {id:'lp-009',titulo:'Ordem alfabética',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual letra vem depois do "F"?',opcoes:['E','G','H'],correta:1,explicacao:'A ordem é: E, F, G, H. Depois do F vem o G.'},
+    {id:'lp-010',titulo:'Frase completa',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'completar',enunciado:'O ___ late no quintal.',opcoes:['gato','cachorro','passarinho'],correta:'cachorro',explicacao:'Quem late é o cachorro.'},
+    {id:'lp-011',titulo:'Plural',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Qual é o plural de "casa"?',opcoes:['casa','casas','casinha'],correta:1,explicacao:'Para formar o plural, acrescentamos "s": casas.'},
+    {id:'lp-012',titulo:'Singular',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Qual é o singular de "meninos"?',opcoes:['menino','meninas','meninão'],correta:0,explicacao:'O singular de "meninos" é "menino".'},
+    {id:'lp-013',titulo:'Sinônimo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual palavra tem o mesmo sentido de "bonito"?',opcoes:['feio','belo','triste'],correta:1,explicacao:'"Belo" e "bonito" significam a mesma coisa.'},
+    {id:'lp-014',titulo:'Antônimo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual é o contrário de "grande"?',opcoes:['enorme','pequeno','alto'],correta:1,explicacao:'O contrário de "grande" é "pequeno".'},
+    {id:'lp-015',titulo:'Feminino',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Qual é o feminino de "menino"?',opcoes:['menina','meninão','meninos'],correta:0,explicacao:'O feminino de "menino" é "menina".'},
+    {id:'lp-016',titulo:'Masculino',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Qual é o masculino de "professora"?',opcoes:['professor','professores','professorzinha'],correta:0,explicacao:'O masculino de "professora" é "professor".'},
+    {id:'lp-017',titulo:'Contando sílabas',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:1,tipo:'multipla',enunciado:'Quantas sílabas tem a palavra "escola"?',opcoes:['2','3','4'],correta:1,explicacao:'ES-CO-LA: 3 sílabas.'},
+    {id:'lp-018',titulo:'Sílabas curtas',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:1,tipo:'multipla',enunciado:'Quantas sílabas tem a palavra "sol"?',opcoes:['1','2','3'],correta:0,explicacao:'"Sol" tem apenas 1 sílaba.'},
+    {id:'lp-019',titulo:'Letra inicial',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:1,tipo:'multipla',enunciado:'Qual palavra começa com a letra P?',opcoes:['bola','pato','mesa'],correta:1,explicacao:'"Pato" começa com a letra P.'},
+    {id:'lp-020',titulo:'Vírgula',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:3,tipo:'multipla',enunciado:'Onde vão as vírgulas em "Eu comi arroz feijão e carne"?',opcoes:['Depois de "arroz" e "feijão"','Só depois de "carne"','Antes de "Eu"'],correta:0,explicacao:'Usamos vírgula entre os itens de uma lista.'},
+    {id:'lp-021',titulo:'Complete com verbo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'completar',enunciado:'Eu ___ um livro ontem.',opcoes:['li','leio','ler'],correta:'li',explicacao:'"Ontem" indica passado, então usamos "li".'},
+    {id:'lp-022',titulo:'Futuro',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'completar',enunciado:'Nós ___ ao parque amanhã.',opcoes:['fomos','vamos','íamos'],correta:'vamos',explicacao:'"Amanhã" indica futuro, então usamos "vamos".'},
+    {id:'lp-023',titulo:'Adjetivo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Em "O gato é fofo", qual palavra é o adjetivo?',opcoes:['gato','fofo','o'],correta:1,explicacao:'"Fofo" é a qualidade do gato, então é adjetivo.'},
+    {id:'lp-024',titulo:'Substantivo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Em "O menino corre", qual palavra é o substantivo?',opcoes:['menino','corre','o'],correta:0,explicacao:'"Menino" é o nome da pessoa, então é substantivo.'},
+    {id:'lp-025',titulo:'Verbo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Em "A menina come", qual palavra é o verbo?',opcoes:['menina','come','a'],correta:1,explicacao:'"Come" é a ação, então é o verbo.'},
+    {id:'lp-026',titulo:'Plural no texto',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Qual palavra está no plural?',opcoes:['flor','flores','florzinha'],correta:1,explicacao:'"Flores" está no plural.'},
+    {id:'lp-027',titulo:'Rima',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:1,tipo:'multipla',enunciado:'Qual palavra rima com "amor"?',opcoes:['flor','paz','sol'],correta:0,explicacao:'"Amor" e "flor" terminam com o mesmo som.'},
+    {id:'lp-028',titulo:'Ordem alfabética',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Qual letra vem depois do M?',opcoes:['L','N','O'],correta:1,explicacao:'A ordem é: L, M, N, O. Depois do M vem N.'},
+    {id:'lp-029',titulo:'Ordem alfabética',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual é a ordem alfabética correta?',opcoes:['gato, bola, ave','ave, bola, gato','bola, ave, gato'],correta:1,explicacao:'A, B, G: ave, bola, gato.'},
+    {id:'lp-030',titulo:'Quem fez?',materia:'lingua-portuguesa',habilidadeBNCC:'EF15LP03',nivel:1,tipo:'multipla',enunciado:'Leia: "A menina pulou corda." Quem pulou?',opcoes:['O menino','A menina','O cachorro'],correta:1,explicacao:'O texto diz que a menina pulou corda.'},
+    {id:'lp-031',titulo:'Complete',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:1,tipo:'completar',enunciado:'O ___ brilha no céu durante o dia.',opcoes:['sol','gato','livro'],correta:'sol',explicacao:'O sol brilha no céu durante o dia.'},
+    {id:'lp-032',titulo:'Sinônimo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual palavra significa o mesmo que "rápido"?',opcoes:['lento','veloz','parado'],correta:1,explicacao:'"Veloz" significa rápido.'},
+    {id:'lp-033',titulo:'Antônimo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual é o contrário de "quente"?',opcoes:['morno','frio','gelado demais'],correta:1,explicacao:'O contrário de "quente" é "frio".'},
+    {id:'lp-034',titulo:'Frase correta',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual frase está correta?',opcoes:['Eu gosto de brinca.','Eu gosto de brincar.','Eu gosta de brincar.'],correta:1,explicacao:'A forma correta é "Eu gosto de brincar".'},
+    {id:'lp-035',titulo:'Contando palavras',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:1,tipo:'multipla',enunciado:'Quantas palavras tem "Eu amo meu cachorro"?',opcoes:['3','4','5'],correta:1,explicacao:'Eu / amo / meu / cachorro: 4 palavras.'},
+    {id:'lp-036',titulo:'Ç ou SS',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:2,tipo:'multipla',enunciado:'Complete: "pá___aro"',opcoes:['pássaro','pácaro','páçaro'],correta:0,explicacao:'A forma correta é "pássaro" com SS.'},
+    {id:'lp-037',titulo:'Acento',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:2,tipo:'multipla',enunciado:'Qual palavra tem acento?',opcoes:['cafe','café','cafe'],correta:1,explicacao:'A forma correta é "café" com acento agudo.'},
+    {id:'lp-038',titulo:'Interpretação',materia:'lingua-portuguesa',habilidadeBNCC:'EF15LP03',nivel:1,tipo:'multipla',enunciado:'Leia: "O coelho comeu a cenoura." O que o coelho comeu?',opcoes:['A alface','A cenoura','A maçã'],correta:1,explicacao:'O texto diz que o coelho comeu a cenoura.'},
+    {id:'lp-039',titulo:'Inferência',materia:'lingua-portuguesa',habilidadeBNCC:'EF15LP04',nivel:2,tipo:'multipla',enunciado:'Marina vestiu casaco e gorro. Está fazendo o quê?',opcoes:['Calor','Frio','Chuva'],correta:1,explicacao:'Casaco e gorro são usados quando está frio.'},
+    {id:'lp-040',titulo:'Quando?',materia:'lingua-portuguesa',habilidadeBNCC:'EF15LP03',nivel:1,tipo:'multipla',enunciado:'Leia: "O sol nasce de manhã." Quando o sol nasce?',opcoes:['À noite','De manhã','À tarde'],correta:1,explicacao:'O texto diz que o sol nasce de manhã.'},
+    {id:'lp-041',titulo:'Sílabas',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:1,tipo:'multipla',enunciado:'Quantas sílabas tem a palavra "janela"?',opcoes:['2','3','4'],correta:1,explicacao:'JA-NE-LA: 3 sílabas.'},
+    {id:'lp-042',titulo:'Sílabas',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:2,tipo:'multipla',enunciado:'Quantas sílabas tem a palavra "computador"?',opcoes:['3','4','5'],correta:1,explicacao:'COM-PU-TA-DOR: 4 sílabas.'},
+    {id:'lp-043',titulo:'Sílabas',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:1,tipo:'multipla',enunciado:'Quantas sílabas tem "pá"?',opcoes:['1','2','3'],correta:0,explicacao:'"Pá" tem apenas 1 sílaba.'},
+    {id:'lp-044',titulo:'Sílabas',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:1,tipo:'multipla',enunciado:'Quantas sílabas tem "cavalo"?',opcoes:['2','3','4'],correta:1,explicacao:'CA-VA-LO: 3 sílabas.'},
+    {id:'lp-045',titulo:'Sílabas',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:2,tipo:'multipla',enunciado:'Quantas sílabas tem "borboleta"?',opcoes:['3','4','5'],correta:1,explicacao:'BOR-BO-LE-TA: 4 sílabas.'},
+    {id:'lp-046',titulo:'R ou RR',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:2,tipo:'completar',enunciado:'O ___ andou rápido na estrada.',opcoes:['caro','carro','cachorro'],correta:'carro',explicacao:'Escreve-se "carro" com RR entre vogais.'},
+    {id:'lp-047',titulo:'S ou SS',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:2,tipo:'completar',enunciado:'A ___ estava na festa.',opcoes:['pessoa','pesoa','peçoa'],correta:'pessoa',explicacao:'"Pessoa" escreve-se com SS.'},
+    {id:'lp-048',titulo:'Ç',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:2,tipo:'completar',enunciado:'O ___ estava no mato.',opcoes:['caçador','cassador','cacador'],correta:'caçador',explicacao:'"Caçador" escreve-se com Ç.'},
+    {id:'lp-049',titulo:'X ou CH',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:2,tipo:'completar',enunciado:'Tomei café na ___.',opcoes:['xícara','chícara','sícara'],correta:'xícara',explicacao:'"Xícara" escreve-se com X.'},
+    {id:'lp-050',titulo:'M antes de P/B',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP03',nivel:2,tipo:'completar',enunciado:'Os bois estão no ___.',opcoes:['campo','canpo','cãpo'],correta:'campo',explicacao:'Antes de P ou B usa-se M, não N.'},
+    {id:'lp-051',titulo:'Sinônimo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual palavra tem o mesmo sentido de "alegre"?',opcoes:['triste','contente','cansado'],correta:1,explicacao:'"Contente" significa o mesmo que "alegre".'},
+    {id:'lp-052',titulo:'Antônimo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual é o contrário de "alto"?',opcoes:['baixo','grande','largo'],correta:0,explicacao:'O contrário de "alto" é "baixo".'},
+    {id:'lp-053',titulo:'Sinônimo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual palavra tem o mesmo sentido de "casa"?',opcoes:['rua','lar','carro'],correta:1,explicacao:'"Lar" tem o mesmo sentido de "casa".'},
+    {id:'lp-054',titulo:'Antônimo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual é o contrário de "doce"?',opcoes:['salgado','amargo','azedo'],correta:1,explicacao:'O contrário de "doce" é "amargo".'},
+    {id:'lp-055',titulo:'Sinônimo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:3,tipo:'multipla',enunciado:'Qual palavra tem o mesmo sentido de "medo"?',opcoes:['pavor','coragem','alegria'],correta:0,explicacao:'"Pavor" significa o mesmo que "medo" intenso.'},
+    {id:'lp-056',titulo:'Interpretação',materia:'lingua-portuguesa',habilidadeBNCC:'EF15LP03',nivel:1,tipo:'multipla',enunciado:'Leia: "O gato dormiu na almofada." Onde o gato dormiu?',opcoes:['No sofá','Na almofada','Na cama'],correta:1,explicacao:'O texto diz que ele dormiu na almofada.'},
+    {id:'lp-057',titulo:'Interpretação',materia:'lingua-portuguesa',habilidadeBNCC:'EF15LP03',nivel:1,tipo:'multipla',enunciado:'Leia: "Ana comeu bolo na festa." O que Ana comeu?',opcoes:['Bolo','Pizza','Fruta'],correta:0,explicacao:'O texto diz que Ana comeu bolo.'},
+    {id:'lp-058',titulo:'Interpretação',materia:'lingua-portuguesa',habilidadeBNCC:'EF15LP03',nivel:1,tipo:'multipla',enunciado:'Leia: "O menino correu até a escola." Para onde o menino correu?',opcoes:['Para casa','Para o parque','Para a escola'],correta:2,explicacao:'O texto diz que ele correu até a escola.'},
+    {id:'lp-059',titulo:'Inferência',materia:'lingua-portuguesa',habilidadeBNCC:'EF15LP04',nivel:2,tipo:'multipla',enunciado:'Bia vestiu biquíni e pegou a canga. Onde ela vai?',opcoes:['Para a escola','Para a praia','Para a igreja'],correta:1,explicacao:'Biquíni e canga são usados na praia.'},
+    {id:'lp-060',titulo:'Inferência',materia:'lingua-portuguesa',habilidadeBNCC:'EF15LP04',nivel:2,tipo:'multipla',enunciado:'Pedro pegou o livro e se sentou na poltrona. O que ele vai fazer?',opcoes:['Ler','Dormir','Comer'],correta:0,explicacao:'Pedro pegou o livro para ler.'},
+    {id:'lp-061',titulo:'Substantivo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Em "O cachorro late", qual é o substantivo?',opcoes:['O','late','cachorro'],correta:2,explicacao:'"Cachorro" é o nome do animal, então é substantivo.'},
+    {id:'lp-062',titulo:'Adjetivo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Em "A menina é gentil", qual é o adjetivo?',opcoes:['menina','é','gentil'],correta:2,explicacao:'"Gentil" é a qualidade da menina, então é adjetivo.'},
+    {id:'lp-063',titulo:'Verbo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Em "O pássaro voa alto", qual é o verbo?',opcoes:['pássaro','voa','alto'],correta:1,explicacao:'"Voa" é a ação, então é o verbo.'},
+    {id:'lp-064',titulo:'Substantivo próprio',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual palavra é um substantivo próprio?',opcoes:['cidade','Brasil','rio'],correta:1,explicacao:'"Brasil" é o nome de um lugar específico, então é próprio.'},
+    {id:'lp-065',titulo:'Artigo',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Qual palavra é um artigo?',opcoes:['casa','o','corre'],correta:1,explicacao:'"O" é artigo definido masculino.'},
+    {id:'lp-066',titulo:'Ponto final',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Qual sinal usamos no fim de uma frase afirmativa?',opcoes:['?','!','.'],correta:2,explicacao:'Usamos o ponto final (.) em frases afirmativas.'},
+    {id:'lp-067',titulo:'Interrogação',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Qual sinal usamos em perguntas?',opcoes:['.','?','!'],correta:1,explicacao:'A interrogação (?) é usada em perguntas.'},
+    {id:'lp-068',titulo:'Exclamação',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Qual sinal usamos em frases com emoção forte?',opcoes:['.','?','!'],correta:2,explicacao:'A exclamação (!) é usada em frases com emoção.'},
+    {id:'lp-069',titulo:'Ordem alfabética',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:1,tipo:'multipla',enunciado:'Qual é a ordem alfabética correta?',opcoes:['pato, bola, casa','bola, casa, pato','casa, pato, bola'],correta:1,explicacao:'B, C, P: bola, casa, pato.'},
+    {id:'lp-070',titulo:'Frase com sentido',materia:'lingua-portuguesa',habilidadeBNCC:'EF02LP07',nivel:2,tipo:'multipla',enunciado:'Qual frase tem sentido completo?',opcoes:['O menino','Correu rápido no parque.','O menino correu rápido no parque.'],correta:2,explicacao:'A frase com sujeito, verbo e complemento tem sentido completo.'},
+    {id:'mat-001',titulo:'Somando frutas',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'operacao',enunciado:'Ana tinha 3 maçãs e ganhou mais 2. Quantas maçãs ela tem?',apoioVisual:{esquerda:'🍎🍎🍎',operador:'+',direita:'🍎🍎'},opcoes:[4,5,6],correta:5,explicacao:'3 + 2 = 5. Junte 3 maçãs com mais 2.'},
+    {id:'mat-002',titulo:'Subtraindo',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'operacao',enunciado:'Pedro tinha 8 balas e comeu 3. Quantas sobraram?',apoioVisual:{esquerda:'🍬🍬🍬🍬🍬🍬🍬🍬',operador:'−',direita:'3'},opcoes:[4,5,6],correta:5,explicacao:'8 − 3 = 5. Sobraram 5 balas.'},
+    {id:'mat-003',titulo:'Juntando',materia:'matematica',habilidadeBNCC:'EF02MA07',nivel:1,tipo:'operacao',enunciado:'Havia 4 pássaros no galho. Chegaram mais 3. Quantos são?',apoioVisual:{esquerda:'🐦🐦🐦🐦',operador:'+',direita:'🐦🐦🐦'},opcoes:[6,7,8],correta:7,explicacao:'4 + 3 = 7 pássaros no galho.'},
+    {id:'mat-004',titulo:'Retirando',materia:'matematica',habilidadeBNCC:'EF02MA07',nivel:1,tipo:'operacao',enunciado:'Maria tinha 9 flores e deu 4 para a amiga. Com quantas ficou?',apoioVisual:{esquerda:'🌷🌷🌷🌷🌷🌷🌷🌷🌷',operador:'−',direita:'4'},opcoes:[4,5,6],correta:5,explicacao:'9 − 4 = 5 flores.'},
+    {id:'mat-005',titulo:'Fatos básicos',materia:'matematica',habilidadeBNCC:'EF02MA05',nivel:1,tipo:'operacao',enunciado:'Quanto é 6 + 3?',opcoes:[8,9,10],correta:9,explicacao:'6 + 3 = 9.'},
+    {id:'mat-006',titulo:'Somando com visual',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Some os grupos abaixo:',apoioVisual:{esquerda:'⭐⭐⭐⭐⭐',operador:'+',direita:'⭐⭐⭐⭐'},opcoes:[8,9,10],correta:9,explicacao:'5 + 4 = 9 estrelas.'},
+    {id:'mat-007',titulo:'Subtração com visual',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Resolva a subtração:',apoioVisual:{esquerda:'🎈🎈🎈🎈🎈🎈🎈',operador:'−',direita:'3'},opcoes:[3,4,5],correta:4,explicacao:'7 − 3 = 4 balões.'},
+    {id:'mat-008',titulo:'Multiplicação simples',materia:'matematica',habilidadeBNCC:'EF03MA03',nivel:2,tipo:'operacao',enunciado:'Se 2 grupos têm 3 bolas cada, quantas bolas há?',apoioVisual:{esquerda:'⚽⚽⚽',operador:'×2',direita:''},opcoes:[5,6,7],correta:6,explicacao:'3 + 3 = 6, ou 2 × 3 = 6 bolas.'},
+    {id:'mat-009',titulo:'Divisão simples',materia:'matematica',habilidadeBNCC:'EF03MA06',nivel:2,tipo:'operacao',enunciado:'Divida 8 maçãs entre 2 crianças. Quantas cada uma recebe?',apoioVisual:{esquerda:'🍎🍎🍎🍎🍎🍎🍎🍎',operador:'÷2',direita:''},opcoes:[3,4,5],correta:4,explicacao:'8 ÷ 2 = 4 maçãs para cada criança.'},
+    {id:'mat-010',titulo:'O dobro',materia:'matematica',habilidadeBNCC:'EF03MA06',nivel:3,tipo:'operacao',enunciado:'Qual é o dobro de 5?',apoioVisual:{esquerda:'5',operador:'×2',direita:''},opcoes:[8,10,12],correta:10,explicacao:'O dobro é 2 × 5 = 10.'},
+    {id:'mat-011',titulo:'Somando até 10',materia:'matematica',habilidadeBNCC:'EF02MA05',nivel:1,tipo:'operacao',enunciado:'Quanto é 5 + 5?',opcoes:[9,10,11],correta:10,explicacao:'5 + 5 = 10.'},
+    {id:'mat-012',titulo:'Subtraindo até 10',materia:'matematica',habilidadeBNCC:'EF02MA05',nivel:1,tipo:'operacao',enunciado:'Quanto é 10 − 4?',opcoes:[5,6,7],correta:6,explicacao:'10 − 4 = 6.'},
+    {id:'mat-013',titulo:'Somando',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'operacao',enunciado:'Quanto é 7 + 3?',opcoes:[9,10,11],correta:10,explicacao:'7 + 3 = 10.'},
+    {id:'mat-014',titulo:'Subtraindo',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'operacao',enunciado:'Quanto é 12 − 5?',opcoes:[6,7,8],correta:7,explicacao:'12 − 5 = 7.'},
+    {id:'mat-015',titulo:'Somando com visual',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'operacao',enunciado:'Some os grupos:',apoioVisual:{esquerda:'🍓🍓🍓🍓🍓🍓🍓🍓🍓',operador:'+',direita:'🍓🍓🍓🍓🍓🍓'},opcoes:[14,15,16],correta:15,explicacao:'9 + 6 = 15.'},
+    {id:'mat-016',titulo:'Subtraindo com visual',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Resolva:',apoioVisual:{esquerda:'🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋🦋',operador:'−',direita:'7'},opcoes:[6,7,8],correta:8,explicacao:'15 − 7 = 8.'},
+    {id:'mat-017',titulo:'Dobro',materia:'matematica',habilidadeBNCC:'EF02MA05',nivel:1,tipo:'operacao',enunciado:'Quanto é 8 + 8?',opcoes:[14,15,16],correta:16,explicacao:'8 + 8 = 16.'},
+    {id:'mat-018',titulo:'Dezena',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'operacao',enunciado:'Quanto é 20 − 10?',opcoes:[8,9,10],correta:10,explicacao:'20 − 10 = 10.'},
+    {id:'mat-019',titulo:'Dobro pequeno',materia:'matematica',habilidadeBNCC:'EF03MA03',nivel:1,tipo:'operacao',enunciado:'Quanto é 3 × 2?',opcoes:[4,5,6],correta:6,explicacao:'3 × 2 = 6 (ou 3 + 3).'},
+    {id:'mat-020',titulo:'Dobro',materia:'matematica',habilidadeBNCC:'EF03MA03',nivel:1,tipo:'operacao',enunciado:'Quanto é 5 × 2?',opcoes:[8,10,12],correta:10,explicacao:'5 × 2 = 10 (ou 5 + 5).'},
+    {id:'mat-021',titulo:'Triplo',materia:'matematica',habilidadeBNCC:'EF03MA03',nivel:2,tipo:'operacao',enunciado:'Quanto é 4 × 3?',opcoes:[10,11,12],correta:12,explicacao:'4 × 3 = 12 (ou 4 + 4 + 4).'},
+    {id:'mat-022',titulo:'Divisão',materia:'matematica',habilidadeBNCC:'EF03MA06',nivel:2,tipo:'operacao',enunciado:'Quanto é 10 ÷ 2?',opcoes:[4,5,6],correta:5,explicacao:'10 ÷ 2 = 5, porque 5 + 5 = 10.'},
+    {id:'mat-023',titulo:'Divisão',materia:'matematica',habilidadeBNCC:'EF03MA06',nivel:2,tipo:'operacao',enunciado:'Quanto é 12 ÷ 3?',opcoes:[3,4,5],correta:4,explicacao:'12 ÷ 3 = 4, porque 4 + 4 + 4 = 12.'},
+    {id:'mat-024',titulo:'Dobro',materia:'matematica',habilidadeBNCC:'EF02MA05',nivel:1,tipo:'operacao',enunciado:'Qual é o dobro de 4?',opcoes:[6,8,10],correta:8,explicacao:'O dobro é 4 × 2 = 8.'},
+    {id:'mat-025',titulo:'Metade',materia:'matematica',habilidadeBNCC:'EF02MA05',nivel:2,tipo:'operacao',enunciado:'Qual é a metade de 8?',opcoes:[3,4,5],correta:4,explicacao:'A metade de 8 é 4, porque 4 + 4 = 8.'},
+    {id:'mat-026',titulo:'Dezenas',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'multipla',enunciado:'Quantas unidades tem 2 dezenas?',opcoes:['2','10','20'],correta:'20',explicacao:'1 dezena = 10, então 2 dezenas = 20.'},
+    {id:'mat-027',titulo:'Dezenas e unidades',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'multipla',enunciado:'Quanto é 3 dezenas + 5 unidades?',opcoes:['8','30','35'],correta:'35',explicacao:'3 dezenas = 30, mais 5 = 35.'},
+    {id:'mat-028',titulo:'Contando',materia:'matematica',habilidadeBNCC:'EF02MA05',nivel:1,tipo:'multipla',enunciado:'Quantas unidades tem o número 15?',opcoes:['1','10','15'],correta:'15',explicacao:'O número 15 tem 15 unidades no total.'},
+    {id:'mat-029',titulo:'Ordinal',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'multipla',enunciado:'Como se escreve o 1º em ordinal?',opcoes:['primeiro','segundo','terceiro'],correta:'primeiro',explicacao:'1º = primeiro.'},
+    {id:'mat-030',titulo:'Sequência',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'multipla',enunciado:'Complete a sequência: 2, 4, 6, __, 10',opcoes:['7','8','9'],correta:'8',explicacao:'A sequência vai de 2 em 2: 2, 4, 6, 8, 10.'},
+    {id:'mat-031',titulo:'Somando dezenas',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Quanto é 15 + 20?',opcoes:[30,35,40],correta:35,explicacao:'15 + 20 = 35.'},
+    {id:'mat-032',titulo:'Subtraindo dezenas',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Quanto é 25 − 10?',opcoes:[10,15,20],correta:15,explicacao:'25 − 10 = 15.'},
+    {id:'mat-033',titulo:'Problema',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Pedro tem 12 figurinhas e ganhou mais 5. Quantas tem agora?',apoioVisual:{esquerda:'12',operador:'+',direita:'5'},opcoes:[16,17,18],correta:17,explicacao:'12 + 5 = 17 figurinhas.'},
+    {id:'mat-034',titulo:'Problema',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Ana tinha 10 balas e deu 3. Quantas sobraram?',apoioVisual:{esquerda:'🍬🍬🍬🍬🍬🍬🍬🍬🍬🍬',operador:'−',direita:'3'},opcoes:[6,7,8],correta:7,explicacao:'10 − 3 = 7 balas.'},
+    {id:'mat-035',titulo:'Problema com multiplicação',materia:'matematica',habilidadeBNCC:'EF03MA03',nivel:2,tipo:'operacao',enunciado:'Cada caixa tem 4 lápis. Quantos lápis tem em 2 caixas?',apoioVisual:{esquerda:'4+4',operador:'=',direita:'?'},opcoes:[6,8,10],correta:8,explicacao:'4 + 4 = 8 lápis (ou 2 × 4).'},
+    {id:'mat-036',titulo:'Problema com divisão',materia:'matematica',habilidadeBNCC:'EF03MA06',nivel:3,tipo:'operacao',enunciado:'Divida 8 maçãs para 4 crianças. Quantas cada uma recebe?',apoioVisual:{esquerda:'🍎🍎🍎🍎🍎🍎🍎🍎',operador:'÷4',direita:'?'},opcoes:[2,3,4],correta:2,explicacao:'8 ÷ 4 = 2 maçãs para cada.'},
+    {id:'mat-037',titulo:'Sequência de 5',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'multipla',enunciado:'Complete: 5, 10, 15, __',opcoes:['16','18','20'],correta:'20',explicacao:'A sequência vai de 5 em 5: 20.'},
+    {id:'mat-038',titulo:'Subtraindo de 100',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:3,tipo:'operacao',enunciado:'Quanto é 100 − 30?',opcoes:[60,70,80],correta:70,explicacao:'100 − 30 = 70.'},
+    {id:'mat-039',titulo:'Somando dezenas',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Quanto é 40 + 20?',opcoes:[50,60,70],correta:60,explicacao:'40 + 20 = 60.'},
+    {id:'mat-040',titulo:'Problema com dinheiro',materia:'matematica',habilidadeBNCC:'EF02MA19',nivel:3,tipo:'operacao',enunciado:'Maria tinha 15 reais e gastou 8. Quanto sobrou?',apoioVisual:{esquerda:'R$ 15',operador:'−',direita:'R$ 8'},opcoes:[5,6,7],correta:7,explicacao:'15 − 8 = 7 reais.'},
+    {id:'mat-041',titulo:'Somando',materia:'matematica',habilidadeBNCC:'EF02MA05',nivel:1,tipo:'operacao',enunciado:'Quanto é 4 + 6?',opcoes:[9,10,11],correta:10,explicacao:'4 + 6 = 10.'},
+    {id:'mat-042',titulo:'Subtraindo',materia:'matematica',habilidadeBNCC:'EF02MA05',nivel:1,tipo:'operacao',enunciado:'Quanto é 9 − 5?',opcoes:[3,4,5],correta:4,explicacao:'9 − 5 = 4.'},
+    {id:'mat-043',titulo:'Somando',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'operacao',enunciado:'Quanto é 8 + 7?',opcoes:[14,15,16],correta:15,explicacao:'8 + 7 = 15.'},
+    {id:'mat-044',titulo:'Subtraindo',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'operacao',enunciado:'Quanto é 15 − 6?',opcoes:[8,9,10],correta:9,explicacao:'15 − 6 = 9.'},
+    {id:'mat-045',titulo:'Somando dezenas',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Quanto é 30 + 20?',opcoes:[40,50,60],correta:50,explicacao:'30 + 20 = 50.'},
+    {id:'mat-046',titulo:'Subtraindo dezenas',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Quanto é 70 − 30?',opcoes:[30,40,50],correta:40,explicacao:'70 − 30 = 40.'},
+    {id:'mat-047',titulo:'Somando com visual',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'operacao',enunciado:'Some os grupos:',apoioVisual:{esquerda:'🐶🐶🐶🐶🐶',operador:'+',direita:'🐶🐶🐶'},opcoes:[7,8,9],correta:8,explicacao:'5 + 3 = 8 cachorrinhos.'},
+    {id:'mat-048',titulo:'Subtraindo com visual',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Resolva:',apoioVisual:{esquerda:'🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻🌻',operador:'−',direita:'5'},opcoes:[6,7,8],correta:7,explicacao:'12 − 5 = 7 girassóis.'},
+    {id:'mat-049',titulo:'Dobro',materia:'matematica',habilidadeBNCC:'EF02MA05',nivel:1,tipo:'operacao',enunciado:'Qual é o dobro de 6?',opcoes:[10,11,12],correta:12,explicacao:'O dobro de 6 é 6 × 2 = 12.'},
+    {id:'mat-050',titulo:'Triplo',materia:'matematica',habilidadeBNCC:'EF03MA03',nivel:2,tipo:'operacao',enunciado:'Qual é o triplo de 3?',opcoes:[6,9,12],correta:9,explicacao:'O triplo de 3 é 3 × 3 = 9.'},
+    {id:'mat-051',titulo:'Multiplicação ×2',materia:'matematica',habilidadeBNCC:'EF03MA03',nivel:1,tipo:'operacao',enunciado:'Quanto é 7 × 2?',opcoes:[12,14,16],correta:14,explicacao:'7 × 2 = 14.'},
+    {id:'mat-052',titulo:'Multiplicação ×3',materia:'matematica',habilidadeBNCC:'EF03MA03',nivel:2,tipo:'operacao',enunciado:'Quanto é 5 × 3?',opcoes:[12,15,18],correta:15,explicacao:'5 × 3 = 15.'},
+    {id:'mat-053',titulo:'Multiplicação ×4',materia:'matematica',habilidadeBNCC:'EF03MA03',nivel:2,tipo:'operacao',enunciado:'Quanto é 6 × 4?',opcoes:[20,22,24],correta:24,explicacao:'6 × 4 = 24.'},
+    {id:'mat-054',titulo:'Multiplicação ×5',materia:'matematica',habilidadeBNCC:'EF03MA03',nivel:2,tipo:'operacao',enunciado:'Quanto é 4 × 5?',opcoes:[18,20,22],correta:20,explicacao:'4 × 5 = 20.'},
+    {id:'mat-055',titulo:'Divisão ÷2',materia:'matematica',habilidadeBNCC:'EF03MA06',nivel:2,tipo:'operacao',enunciado:'Quanto é 14 ÷ 2?',opcoes:[6,7,8],correta:7,explicacao:'14 ÷ 2 = 7, porque 7 + 7 = 14.'},
+    {id:'mat-056',titulo:'Divisão ÷3',materia:'matematica',habilidadeBNCC:'EF03MA06',nivel:2,tipo:'operacao',enunciado:'Quanto é 15 ÷ 3?',opcoes:[4,5,6],correta:5,explicacao:'15 ÷ 3 = 5, porque 5 + 5 + 5 = 15.'},
+    {id:'mat-057',titulo:'Divisão ÷4',materia:'matematica',habilidadeBNCC:'EF03MA06',nivel:3,tipo:'operacao',enunciado:'Quanto é 16 ÷ 4?',opcoes:[3,4,5],correta:4,explicacao:'16 ÷ 4 = 4, porque 4 + 4 + 4 + 4 = 16.'},
+    {id:'mat-058',titulo:'Divisão ÷5',materia:'matematica',habilidadeBNCC:'EF03MA06',nivel:3,tipo:'operacao',enunciado:'Quanto é 20 ÷ 5?',opcoes:[3,4,5],correta:4,explicacao:'20 ÷ 5 = 4.'},
+    {id:'mat-059',titulo:'Problema',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Lucas tem 15 figurinhas e ganhou mais 8. Quantas tem agora?',apoioVisual:{esquerda:'15',operador:'+',direita:'8'},opcoes:[22,23,24],correta:23,explicacao:'15 + 8 = 23 figurinhas.'},
+    {id:'mat-060',titulo:'Problema',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'operacao',enunciado:'Sara tinha 18 reais e gastou 7. Quanto sobrou?',apoioVisual:{esquerda:'R$ 18',operador:'−',direita:'R$ 7'},opcoes:[10,11,12],correta:11,explicacao:'18 − 7 = 11 reais.'},
+    {id:'mat-061',titulo:'Problema',materia:'matematica',habilidadeBNCC:'EF03MA03',nivel:2,tipo:'operacao',enunciado:'Cada pacote tem 5 figurinhas. Quantas há em 3 pacotes?',apoioVisual:{esquerda:'5+5+5',operador:'=',direita:'?'},opcoes:[10,15,20],correta:15,explicacao:'5 + 5 + 5 = 15 figurinhas (ou 3 × 5).'},
+    {id:'mat-062',titulo:'Problema',materia:'matematica',habilidadeBNCC:'EF03MA06',nivel:3,tipo:'operacao',enunciado:'Divida 12 lápis entre 3 crianças. Quantos cada uma ganha?',apoioVisual:{esquerda:'✏️×12',operador:'÷3',direita:'?'},opcoes:[3,4,5],correta:4,explicacao:'12 ÷ 3 = 4 lápis para cada criança.'},
+    {id:'mat-063',titulo:'Ordinal',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'multipla',enunciado:'Como se lê o número ordinal "5º"?',opcoes:['quarto','quinto','sexto'],correta:'quinto',explicacao:'5º = quinto.'},
+    {id:'mat-064',titulo:'Antecessor',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'operacao',enunciado:'Qual é o antecessor de 15?',opcoes:[13,14,16],correta:14,explicacao:'O antecessor é o número que vem antes: 14.'},
+    {id:'mat-065',titulo:'Sucessor',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'operacao',enunciado:'Qual é o sucessor de 29?',opcoes:[28,30,31],correta:30,explicacao:'O sucessor é o número que vem depois: 30.'},
+    {id:'mat-066',titulo:'Números pares',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'multipla',enunciado:'Qual é um número par?',opcoes:['7','12','15'],correta:'12',explicacao:'12 termina em 2, então é par.'},
+    {id:'mat-067',titulo:'Números ímpares',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:2,tipo:'multipla',enunciado:'Qual é um número ímpar?',opcoes:['8','10','13'],correta:'13',explicacao:'13 termina em 3, então é ímpar.'},
+    {id:'mat-068',titulo:'Sequência',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'multipla',enunciado:'Complete: 10, 20, 30, __',opcoes:['35','40','45'],correta:'40',explicacao:'A sequência vai de 10 em 10: 40.'},
+    {id:'mat-069',titulo:'Maior ou menor',materia:'matematica',habilidadeBNCC:'EF02MA06',nivel:1,tipo:'multipla',enunciado:'Qual número é maior?',opcoes:['18','12','15'],correta:'18',explicacao:'18 é o maior número entre os três.'},
+    {id:'mat-070',titulo:'Problema com dinheiro',materia:'matematica',habilidadeBNCC:'EF02MA19',nivel:3,tipo:'operacao',enunciado:'Um caderno custa 12 reais e uma caneta custa 3. Quanto custa tudo junto?',apoioVisual:{esquerda:'R$ 12',operador:'+',direita:'R$ 3'},opcoes:[14,15,16],correta:15,explicacao:'12 + 3 = 15 reais.'}
+  ],
+
+  colorir: [
+    {id:'colorir-01',titulo:'O gato Tobias',emoji:'🐱',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><circle cx="150" cy="150" r="100" fill="none" stroke="black" stroke-width="3"/><circle cx="120" cy="130" r="10" fill="none" stroke="black" stroke-width="3"/><circle cx="180" cy="130" r="10" fill="none" stroke="black" stroke-width="3"/><path d="M130 170 Q150 190 170 170" fill="none" stroke="black" stroke-width="3"/><path d="M100 100 L80 60 L120 80" fill="none" stroke="black" stroke-width="3"/><path d="M200 100 L220 60 L180 80" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-02',titulo:'A estrela de Lia',emoji:'⭐',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><polygon points="150,30 180,120 270,120 200,180 220,270 150,215 80,270 100,180 30,120 120,120" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-03',titulo:'Coração',emoji:'❤️',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path d="M150 250 Q40 170 40 100 Q40 50 90 50 Q120 50 150 90 Q180 50 210 50 Q260 50 260 100 Q260 170 150 250 Z" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-04',titulo:'Casa',emoji:'🏠',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path d="M60 140 L150 60 L240 140 L240 260 L60 260 Z" fill="none" stroke="black" stroke-width="3"/><rect x="130" y="180" width="40" height="80" fill="none" stroke="black" stroke-width="3"/><rect x="80" y="160" width="35" height="35" fill="none" stroke="black" stroke-width="3"/><rect x="185" y="160" width="35" height="35" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-05',titulo:'Sol',emoji:'☀️',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><circle cx="150" cy="150" r="60" fill="none" stroke="black" stroke-width="3"/><line x1="150" y1="40" x2="150" y2="70" stroke="black" stroke-width="3"/><line x1="150" y1="230" x2="150" y2="260" stroke="black" stroke-width="3"/><line x1="40" y1="150" x2="70" y2="150" stroke="black" stroke-width="3"/><line x1="230" y1="150" x2="260" y2="150" stroke="black" stroke-width="3"/><line x1="70" y1="70" x2="90" y2="90" stroke="black" stroke-width="3"/><line x1="210" y1="210" x2="230" y2="230" stroke="black" stroke-width="3"/><line x1="70" y1="230" x2="90" y2="210" stroke="black" stroke-width="3"/><line x1="210" y1="90" x2="230" y2="70" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-06',titulo:'Flor',emoji:'🌸',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><circle cx="150" cy="150" r="25" fill="none" stroke="black" stroke-width="3"/><ellipse cx="150" cy="90" rx="25" ry="35" fill="none" stroke="black" stroke-width="3"/><ellipse cx="150" cy="210" rx="25" ry="35" fill="none" stroke="black" stroke-width="3"/><ellipse cx="90" cy="150" rx="35" ry="25" fill="none" stroke="black" stroke-width="3"/><ellipse cx="210" cy="150" rx="35" ry="25" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-07',titulo:'Árvore',emoji:'🌳',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><rect x="135" y="200" width="30" height="80" fill="none" stroke="black" stroke-width="3"/><circle cx="150" cy="120" r="80" fill="none" stroke="black" stroke-width="3"/><circle cx="100" cy="150" r="40" fill="none" stroke="black" stroke-width="3"/><circle cx="200" cy="150" r="40" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-08',titulo:'Carro',emoji:'🚗',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path d="M50 180 L70 120 L230 120 L250 180 Z" fill="none" stroke="black" stroke-width="3"/><rect x="40" y="180" width="220" height="50" fill="none" stroke="black" stroke-width="3"/><circle cx="100" cy="240" r="25" fill="none" stroke="black" stroke-width="3"/><circle cx="200" cy="240" r="25" fill="none" stroke="black" stroke-width="3"/><rect x="110" y="130" width="40" height="40" fill="none" stroke="black" stroke-width="3"/><rect x="160" y="130" width="40" height="40" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-09',titulo:'Bola',emoji:'⚽',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><circle cx="150" cy="150" r="100" fill="none" stroke="black" stroke-width="3"/><polygon points="150,90 185,120 172,165 128,165 115,120" fill="none" stroke="black" stroke-width="3"/><path d="M150 50 L150 90 M60 130 L115 120 M240 130 L185 120 M100 240 L128 165 M200 240 L172 165" stroke="black" stroke-width="3" fill="none"/></svg>'},
+    {id:'colorir-10',titulo:'Borboleta',emoji:'🦋',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><ellipse cx="150" cy="150" rx="10" ry="70" fill="none" stroke="black" stroke-width="3"/><path d="M140 100 Q50 60 50 130 Q50 180 140 150" fill="none" stroke="black" stroke-width="3"/><path d="M160 100 Q250 60 250 130 Q250 180 160 150" fill="none" stroke="black" stroke-width="3"/><path d="M140 170 Q60 200 70 250 Q100 260 140 220" fill="none" stroke="black" stroke-width="3"/><path d="M160 170 Q240 200 230 250 Q200 260 160 220" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-11',titulo:'Peixe',emoji:'🐠',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><ellipse cx="130" cy="150" rx="80" ry="50" fill="none" stroke="black" stroke-width="3"/><path d="M210 150 L260 110 L260 190 Z" fill="none" stroke="black" stroke-width="3"/><circle cx="100" cy="140" r="8" fill="black"/><path d="M110 170 Q130 185 150 170" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-12',titulo:'Nuvem com sol',emoji:'⛅',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><circle cx="90" cy="100" r="40" fill="none" stroke="black" stroke-width="3"/><path d="M70 100 L40 80 M70 130 L40 150 M110 70 L120 40" stroke="black" stroke-width="3"/><path d="M100 200 Q100 160 140 160 Q160 130 200 150 Q240 150 240 190 Q270 200 240 230 L110 230 Q80 230 100 200 Z" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-13',titulo:'Barco',emoji:'⛵',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path d="M50 180 L250 180 L220 240 L80 240 Z" fill="none" stroke="black" stroke-width="3"/><line x1="150" y1="60" x2="150" y2="180" stroke="black" stroke-width="3"/><path d="M150 70 L150 170 L220 170 Z" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-14',titulo:'Estrelas',emoji:'✨',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><polygon points="80,80 95,120 140,120 105,145 118,190 80,165 42,190 55,145 20,120 65,120" fill="none" stroke="black" stroke-width="3"/><polygon points="220,60 230,90 260,90 235,110 245,140 220,120 195,140 205,110 180,90 210,90" fill="none" stroke="black" stroke-width="3"/><polygon points="200,200 210,230 240,230 215,250 225,280 200,260 175,280 185,250 160,230 190,230" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-15',titulo:'Foguete',emoji:'🚀',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path d="M150 40 Q190 100 190 200 L110 200 Q110 100 150 40 Z" fill="none" stroke="black" stroke-width="3"/><circle cx="150" cy="130" r="15" fill="none" stroke="black" stroke-width="3"/><path d="M110 180 L80 220 L110 220 Z" fill="none" stroke="black" stroke-width="3"/><path d="M190 180 L220 220 L190 220 Z" fill="none" stroke="black" stroke-width="3"/><path d="M130 220 L150 260 L170 220" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-16',titulo:'Joaninha',emoji:'🐞',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><ellipse cx="150" cy="170" rx="70" ry="60" fill="none" stroke="black" stroke-width="3"/><circle cx="150" cy="100" r="30" fill="none" stroke="black" stroke-width="3"/><line x1="150" y1="110" x2="150" y2="230" stroke="black" stroke-width="3"/><circle cx="120" cy="150" r="8" fill="black"/><circle cx="180" cy="150" r="8" fill="black"/><circle cx="130" cy="200" r="8" fill="black"/><circle cx="170" cy="200" r="8" fill="black"/><line x1="130" y1="85" x2="120" y2="60" stroke="black" stroke-width="3"/><line x1="170" y1="85" x2="180" y2="60" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-17',titulo:'Sapo',emoji:'🐸',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><ellipse cx="150" cy="180" rx="90" ry="60" fill="none" stroke="black" stroke-width="3"/><circle cx="110" cy="120" r="30" fill="none" stroke="black" stroke-width="3"/><circle cx="190" cy="120" r="30" fill="none" stroke="black" stroke-width="3"/><circle cx="110" cy="120" r="10" fill="black"/><circle cx="190" cy="120" r="10" fill="black"/><path d="M110 190 Q150 210 190 190" fill="none" stroke="black" stroke-width="3"/><path d="M60 200 Q30 220 40 250" fill="none" stroke="black" stroke-width="3"/><path d="M240 200 Q270 220 260 250" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-18',titulo:'Sol e nuvem',emoji:'🌤️',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><circle cx="100" cy="100" r="55" fill="none" stroke="black" stroke-width="3"/><line x1="100" y1="20" x2="100" y2="40" stroke="black" stroke-width="3"/><line x1="100" y1="160" x2="100" y2="180" stroke="black" stroke-width="3"/><line x1="20" y1="100" x2="40" y2="100" stroke="black" stroke-width="3"/><line x1="160" y1="100" x2="180" y2="100" stroke="black" stroke-width="3"/><path d="M130 200 Q130 170 160 170 Q180 150 210 165 Q240 165 240 195 Q265 205 240 230 L150 230 Q120 230 130 200 Z" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-19',titulo:'Castelo',emoji:'🏰',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><rect x="50" y="120" width="200" height="140" fill="none" stroke="black" stroke-width="3"/><rect x="50" y="120" width="30" height="140" fill="none" stroke="black" stroke-width="3"/><rect x="220" y="120" width="30" height="140" fill="none" stroke="black" stroke-width="3"/><path d="M50 120 L65 90 L80 120" fill="none" stroke="black" stroke-width="3"/><path d="M220 120 L235 90 L250 120" fill="none" stroke="black" stroke-width="3"/><path d="M130 120 L150 80 L170 120" fill="none" stroke="black" stroke-width="3"/><rect x="130" y="200" width="40" height="60" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-20',titulo:'Arco-íris',emoji:'🌈',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path d="M40 220 Q40 100 150 100 Q260 100 260 220" fill="none" stroke="black" stroke-width="3"/><path d="M70 220 Q70 130 150 130 Q230 130 230 220" fill="none" stroke="black" stroke-width="3"/><path d="M100 220 Q100 160 150 160 Q200 160 200 220" fill="none" stroke="black" stroke-width="3"/><path d="M20 240 L280 240" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-21',titulo:'Lua e estrela',emoji:'🌙',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path d="M180 60 Q100 100 100 180 Q100 240 180 260 Q120 220 120 160 Q120 100 180 60 Z" fill="none" stroke="black" stroke-width="3"/><polygon points="230,100 245,140 285,140 253,165 263,205 230,180 197,205 207,165 175,140 215,140" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-22',titulo:'Sorvete',emoji:'🍦',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path d="M120 180 L180 180 L150 280 Z" fill="none" stroke="black" stroke-width="3"/><circle cx="150" cy="130" r="50" fill="none" stroke="black" stroke-width="3"/><circle cx="120" cy="160" r="30" fill="none" stroke="black" stroke-width="3"/><circle cx="180" cy="160" r="30" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-23',titulo:'Balão de ar quente',emoji:'🎈',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><path d="M150 40 Q90 40 90 130 Q90 180 150 220 Q210 180 210 130 Q210 40 150 40 Z" fill="none" stroke="black" stroke-width="3"/><path d="M150 40 L150 220" stroke="black" stroke-width="3"/><rect x="130" y="220" width="40" height="40" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-24',titulo:'Bolo de aniversário',emoji:'🎂',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><rect x="70" y="150" width="160" height="100" fill="none" stroke="black" stroke-width="3"/><rect x="70" y="150" width="160" height="20" fill="none" stroke="black" stroke-width="3"/><line x1="110" y1="150" x2="110" y2="110" stroke="black" stroke-width="3"/><line x1="150" y1="150" x2="150" y2="100" stroke="black" stroke-width="3"/><line x1="190" y1="150" x2="190" y2="110" stroke="black" stroke-width="3"/><circle cx="110" cy="105" r="6" fill="none" stroke="black" stroke-width="3"/><circle cx="150" cy="95" r="6" fill="none" stroke="black" stroke-width="3"/><circle cx="190" cy="105" r="6" fill="none" stroke="black" stroke-width="3"/></svg>'},
+    {id:'colorir-25',titulo:'Estrela-do-mar',emoji:'🌟',svg:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><polygon points="150,40 170,130 260,130 190,185 220,275 150,225 80,275 110,185 40,130 130,130" fill="none" stroke="black" stroke-width="3"/><circle cx="130" cy="150" r="4" fill="black"/><circle cx="170" cy="150" r="4" fill="black"/><path d="M130 175 Q150 185 170 175" fill="none" stroke="black" stroke-width="3"/></svg>'}
+  ]
+};
+
+// Dexie
+let db = null;
+if (typeof Dexie !== 'undefined') {
+  try {
+    db = new Dexie('LerBrincarDB');
+    db.version(1).stores({ estado: 'chave' });
+  } catch(e) { console.warn('Dexie falhou:', e); db = null; }
+}
+
+async function carregarEstado() {
+  try {
+    if (db) {
+      const r = await db.estado.get('main');
+      if (r) return r;
+    }
+    const ls = localStorage.getItem('lb-estado');
+    if (ls) return JSON.parse(ls);
+  } catch(e) { console.warn(e); }
+  return null;
+}
+
+async function salvarEstado(est) {
+  try {
+    if (db) await db.estado.put({ chave: 'main', ...est });
+    else localStorage.setItem('lb-estado', JSON.stringify(est));
+  } catch(e) { console.warn(e); }
+}
+
+const { createApp, ref, computed, watch, onMounted, nextTick } = Vue;
+
+const App = {
+  setup() {
+    const tela = ref('home');
+    const estrelas = ref(0);
+    const concluidos = ref({});
+    const ajustes = ref({ dislexia: false, tamanho: 'medio' });
+
+    const historiaAtual = ref(null);
+    const mostrandoPerguntas = ref(false);
+    const indicePergunta = ref(0);
+
+    const atividadeAtual = ref(null);
+    const filtroMateria = ref('todas');
+
+    const colorirAtual = ref(null);
+    const svgRef = ref(null);
+    const corAtual = ref('#FF6B6B');
+    const paletaCores = ['#FF6B6B','#FFA94D','#FFD43B','#51CF66','#4DABF7','#9775FA','#F783AC','#8B5E3C','#212529','#FFFFFF'];
+
+    const respostaSelecionada = ref(null);
+    const acertouAtividade = ref(false);
+
+    const portaoAberto = ref(false);
+    const portao = ref({ setas: ['←','←','→'], indice: 0, gestoOk: false });
+    const gestoInicio = ref(0);
+
+    function irPara(t) {
+      tela.value = t;
+      respostaSelecionada.value = null;
+      mostrandoPerguntas.value = false;
+      indicePergunta.value = 0;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function abrirHistoria(h) {
+      historiaAtual.value = h;
+      mostrandoPerguntas.value = false;
+      indicePergunta.value = 0;
+      respostaSelecionada.value = null;
+      tela.value = 'historia';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function iniciarPerguntasHistoria() {
+      mostrandoPerguntas.value = true;
+      indicePergunta.value = 0;
+      respostaSelecionada.value = null;
+    }
+
+    function responder(i) {
+      respostaSelecionada.value = i;
+      if (i === perguntaAtual.value.correta) {
+        estrelas.value++;
+      }
+    }
+
+    function proximaPergunta() {
+      if (indicePergunta.value + 1 < historiaAtual.value.perguntas.length) {
+        indicePergunta.value++;
+        respostaSelecionada.value = null;
+      } else {
+        // Concluir história
+        marcarConcluido(historiaAtual.value.id);
+        irPara('ler');
+      }
+    }
+
+    function classeOpcao(i) {
+      if (respostaSelecionada.value === null) return '';
+      if (i === perguntaAtual.value.correta) return 'correta';
+      if (i === respostaSelecionada.value) return 'errada';
+      return '';
+    }
+
+    function abrirAtividade(a) {
+      atividadeAtual.value = a;
+      respostaSelecionada.value = null;
+      acertouAtividade.value = false;
+      tela.value = 'atividade';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function responderAtividade(i, op) {
+      respostaSelecionada.value = i;
+      const correta = atividadeAtual.value.correta;
+      const acertou = (typeof correta === 'number')
+        ? i === correta
+        : op === correta;
+      acertouAtividade.value = acertou;
+      if (acertou) {
+        estrelas.value++;
+        marcarConcluido(atividadeAtual.value.id);
+      }
+    }
+
+    function classeOpcaoAtividade(i, op) {
+      if (respostaSelecionada.value === null) return '';
+      const correta = atividadeAtual.value.correta;
+      const isCorreta = (typeof correta === 'number') ? i === correta : op === correta;
+      if (isCorreta) return 'correta';
+      if (i === respostaSelecionada.value) return 'errada';
+      return '';
+    }
+
+    function abrirColorir(c) {
+      colorirAtual.value = c;
+      tela.value = 'colorir-item';
+      nextTick(() => {
+        if (svgRef.value) svgRef.value.innerHTML = c.svg;
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function pintarForma(e) {
+      const el = e.target;
+      if (!el || el.tagName === 'svg') return;
+      if (el.tagName === 'line') {
+        el.setAttribute('stroke', corAtual.value);
+      } else if (['path','circle','ellipse','rect','polygon'].includes(el.tagName)) {
+        el.setAttribute('fill', corAtual.value);
+      }
+    }
+
+    function resetarDesenho() {
+      if (svgRef.value && colorirAtual.value) {
+        svgRef.value.innerHTML = colorirAtual.value.svg;
+      }
+    }
+
+    function concluirColorir() {
+      if (colorirAtual.value) marcarConcluido(colorirAtual.value.id);
+      irPara('colorir');
+    }
+
+    function marcarConcluido(id) {
+      if (!concluidos.value[id]) {
+        concluidos.value = { ...concluidos.value, [id]: true };
+      }
+    }
+
+    const perguntaAtual = computed(() => {
+      if (!historiaAtual.value) return null;
+      return historiaAtual.value.perguntas[indicePergunta.value];
+    });
+
+    const atividadesFiltradas = computed(() => {
+      if (filtroMateria.value === 'todas') return CONTEUDO.activities;
+      return CONTEUDO.activities.filter(a => a.materia === filtroMateria.value);
+    });
+
+    const totalItens = computed(() => CONTEUDO.stories.length + CONTEUDO.activities.length + CONTEUDO.colorir.length);
+    const totalConcluidos = computed(() => Object.keys(concluidos.value).length);
+    const progressoGeral = computed(() => {
+      if (totalItens.value === 0) return 0;
+      return Math.round(totalConcluidos.value / totalItens.value * 100);
+    });
+
+    const historiasLidas = computed(() => {
+      return CONTEUDO.stories.filter(h => concluidos.value[h.id]).length;
+    });
+    const atividadesConcluidas = computed(() => {
+      return CONTEUDO.activities.filter(a => concluidos.value[a.id]).length;
+    });
+    const coloridos = computed(() => {
+      return CONTEUDO.colorir.filter(c => concluidos.value[c.id]).length;
+    });
+
+    const selos = computed(() => [
+      { id: 'iniciante', nome: 'Leitor Iniciante', emoji: '🌱', desbloqueado: historiasLidas.value >= 1 },
+      { id: 'devorador', nome: 'Devorador de Histórias', emoji: '📚', desbloqueado: historiasLidas.value >= 5 },
+      { id: 'matematico', nome: 'Pequeno Matemático', emoji: '🧮', desbloqueado: atividadesConcluidas.value >= 5 },
+      { id: 'artista', nome: 'Artista', emoji: '🎨', desbloqueado: coloridos.value >= 3 },
+      { id: 'cinquenta', nome: '50 Estrelas', emoji: '⭐', desbloqueado: estrelas.value >= 50 },
+      { id: 'cem', nome: 'Colecionador', emoji: '🌟', desbloqueado: estrelas.value >= 100 },
+      { id: 'explorador', nome: 'Explorador', emoji: '🧭', desbloqueado: totalConcluidos.value >= 10 },
+      { id: 'campeao', nome: 'Campeão', emoji: '🏆', desbloqueado: progressoGeral.value >= 50 }
+    ]);
+    const selosDesbloqueados = computed(() => selos.value.filter(s => s.desbloqueado).length);
+
+    // Portão parental
+    function abrirPortao() {
+      portaoAberto.value = true;
+      portao.value = { setas: ['←','←','→'], indice: 0, gestoOk: false };
+    }
+    function fecharPortao() {
+      portaoAberto.value = false;
+    }
+    function clicarSeta(i) {
+      if (i !== portao.value.indice) return;
+      if (portao.value.indice < portao.value.setas.length) {
+        portao.value.indice++;
+      }
+    }
+    function iniciarGesto(e) {
+      if (portao.value.indice < portao.value.setas.length) return;
+      const x = e.touches ? e.touches[0].clientX : e.clientX;
+      gestoInicio.value = x;
+    }
+    function terminarGesto(e) {
+      if (portao.value.indice < portao.value.setas.length) return;
+      const x = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+      if (x - gestoInicio.value > 80) {
+        portao.value.gestoOk = true;
+        setTimeout(() => {
+          portaoAberto.value = false;
+          irPara('ajustes');
+        }, 400);
+      }
+    }
+    function iniciarGestoTouch(e) { iniciarGesto(e); }
+    function terminarGestoTouch(e) { terminarGesto(e); }
+
+    function toggleDislexia() {
+      ajustes.value.dislexia = !ajustes.value.dislexia;
+    }
+    function mudarTamanho(t) {
+      ajustes.value.tamanho = t;
+    }
+    function resetarProgresso() {
+      if (confirm('Tem certeza que deseja zerar todo o progresso?')) {
+        estrelas.value = 0;
+        concluidos.value = {};
+      }
+    }
+
+    // Aplicar ajustes ao HTML
+    watch(ajustes, (v) => {
+      document.documentElement.classList.toggle('fonte-dislexia', v.dislexia);
+      document.documentElement.classList.remove('tamanho-pequeno','tamanho-medio','tamanho-grande');
+      document.documentElement.classList.add('tamanho-' + v.tamanho);
+    }, { deep: true, immediate: true });
+
+    // Salvar estado
+    watch([estrelas, concluidos, ajustes], () => {
+      salvarEstado({
+        estrelas: estrelas.value,
+        concluidos: concluidos.value,
+        ajustes: ajustes.value
+      });
+    }, { deep: true });
+
+    // Carregar estado
+    onMounted(async () => {
+      const est = await carregarEstado();
+      if (est) {
+        estrelas.value = est.estrelas || 0;
+        concluidos.value = est.concluidos || {};
+        ajustes.value = est.ajustes || { dislexia: false, tamanho: 'medio' };
+      }
+    });
+
+    return {
+      conteudo: CONTEUDO,
+      tela, estrelas, concluidos, ajustes,
+      historiaAtual, mostrandoPerguntas, indicePergunta, perguntaAtual,
+      atividadeAtual, filtroMateria, atividadesFiltradas,
+      colorirAtual, svgRef, corAtual, paletaCores,
+      respostaSelecionada, acertouAtividade,
+      portaoAberto, portao,
+      irPara, abrirHistoria, iniciarPerguntasHistoria, responder, proximaPergunta, classeOpcao,
+      abrirAtividade, responderAtividade, classeOpcaoAtividade,
+      abrirColorir, pintarForma, resetarDesenho, concluirColorir,
+      totalItens, totalConcluidos, progressoGeral, selos, selosDesbloqueados,
+      abrirPortao, fecharPortao, clicarSeta, iniciarGesto, terminarGesto,
+      iniciarGestoTouch, terminarGestoTouch,
+      toggleDislexia, mudarTamanho, resetarProgresso
+    };
+  }
+};
+
+const app = createApp(App);
+app.mount('#app');
+
+})();
+</script>
+</body>
+</html>

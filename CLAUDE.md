@@ -5,13 +5,14 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
 ## 0. Contexto do Projeto
 
 - **Projeto**: Ler-e-Brincar — app para crianças do Ensino Fundamental Anos Iniciais praticarem leitura, matemática e Língua Portuguesa.
-- **Stack**: site estático HTML/CSS/JS puro (como o projeto de Física), sem framework nem npm. Publicado no GitHub Pages.
+- **Stack**: PWA estático com Vue 3 + Dexie (IndexedDB), cópia local em `vendor/`, sem npm, sem backend/login/anúncios. Publicado no GitHub Pages.
+- **Usuária**: uma criança de 8 anos, em casa, com dificuldade em LP e Matemática (BNCC 2º/3º ano).
 - **Comandos úteis**:
   - Build: ainda não há
   - Testes: ainda não há
   - Lint: `for f in *.js; do node --check "$f"; done` (só sintaxe)
-- **Convenções**: nomes e comentários em português. (completar quando o projeto começar)
-- **Próximas tarefas**: 1. Planejar o app com o dono (telas, atividades, faixa de idade) antes de codar.
+- **Convenções**: nomes e comentários em português. Esquemas do conteúdo e regras pedagógicas: `original-deepseek/script-gerador-conteudo.md`. `original-deepseek/` é só consulta, não editar.
+- **Próximas tarefas**: seguir as fases de `PLANO.md` (próxima: Fase 1 — organizar e publicar).
 - **Público**: o dono é professor e não programa; explicar em português simples.
 - **Idioma**: responder sempre em português do Brasil (PT-BR), inclusive resumos, avisos e mensagens de commit.
 
