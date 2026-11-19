@@ -8,9 +8,10 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
 - **Stack**: PWA estático com Vue 3 + Dexie (IndexedDB), cópia local em `vendor/`, sem npm, sem backend/login/anúncios. Publicado no GitHub Pages.
 - **Usuária**: uma criança de 8 anos, em casa, com dificuldade em LP e Matemática (BNCC 2º/3º ano).
 - **Comandos úteis**:
-  - Build: ainda não há
-  - Testes: ainda não há
-  - Lint: `for f in *.js; do node --check "$f"; done` (só sintaxe)
+  - Validar conteúdo: `node build/validar.js` (rodar sempre que mexer em `conteudo/`)
+  - Testes: `node testes/t_conteudo.js` (regra de resposta certa + validador)
+  - Lint: `for f in js/*.js js/telas/*.js conteudo/*.js; do node --check "$f"; done` (só sintaxe)
+- **Estrutura**: `index.html` (casca + telas), `css/`, `js/app.js` + `js/telas/` (uma tela por arquivo), `js/respostas.js` (regra única de resposta certa), `conteudo/` (um item por linha; achar com `grep "id:'lp-037'"`), `vendor/` (Vue e Dexie locais).
 - **Convenções**: nomes e comentários em português. Esquemas do conteúdo e regras pedagógicas: `original-deepseek/script-gerador-conteudo.md`. `original-deepseek/` é só consulta, não editar.
 - **Próximas tarefas**: seguir as fases de `PLANO.md` (próxima: Fase 1 — organizar e publicar).
 - **Público**: o dono é professor e não programa; explicar em português simples.

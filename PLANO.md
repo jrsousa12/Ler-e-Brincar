@@ -16,7 +16,9 @@ Decisões do dono (19/11/2026):
 
 ## Fases (cada uma é uma conversa; `/clear` entre elas)
 
-### Fase 1 — Organizar e publicar (Opus)
+### Fase 1 — Organizar e publicar (Opus) — em andamento
+- Feito (19/11): divisão em arquivos, conteúdo em `conteudo/`, lp-037, colorir-26 a 30, regra de resposta certa da Matemática corrigida, validador + teste.
+- Falta: cópia do Vue e do Dexie em `vendor/` (rede da nuvem bloqueada), teste do app no navegador, publicar.
 - Dividir o HTML em arquivos pequenos:
   - `index.html` (só a casca), `css/`, `js/telas/` (uma tela por arquivo), `js/banco.js` (Dexie)
   - `conteudo/historias.js`, `lp.js`, `mat.js`, `colorir.js` (um item por linha)
