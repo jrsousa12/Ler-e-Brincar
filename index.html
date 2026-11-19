@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#6C5CE7" />
+<title>Ler &amp; Brincar</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%236C5CE7'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3ELB%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/componentes.css">
+</head>
+<body>
+
+<div id="app" v-cloak>
+  <header class="cabecalho-app" v-if="!portaoAberto">
+    <h1 @click="irPara('home')" style="cursor:pointer">Ler &amp; Brincar</h1>
+    <div style="display:flex;gap:8px;align-items:center">
+      <button class="btn-icone" @click="abrirPortao" title="Ajustes" style="background:rgba(255,255,255,.18);color:#fff">⚙️</button>
+      <div class="contador-estrelas">⭐ {{ estrelas }}</div>
+    </div>
+  </header>
+
+  <div class="container" v-if="!portaoAberto">
+    <!-- HOME -->
+    <div v-if="tela === 'home'">
+      <h2>Olá! O que vamos fazer hoje?</h2>
+      <div class="card" @click="irPara('ler')" tabindex="0">
+        <div class="card-capa" style="background:linear-gradient(135deg,#E8E3FF,#FFE9E1)">📖</div>
+        <div class="card-titulo">Ler histórias</div>
+        <div class="card-meta">{{ conteudo.stories.length }} histórias curtinhas para descobrir</div>
+      </div>
+      <div class="card" @click="irPara('atividades')" tabindex="0">
+        <div class="card-capa" style="background:linear-gradient(135deg,#E4F8EE,#EDE9FF)">🧮</div>
+        <div class="card-titulo">Atividades</div>
+        <div class="card-meta">{{ conteudo.activities.length }} desafios de português e matemática</div>
+      </div>
+      <div class="card" @click="irPara('colorir')" tabindex="0">
+        <div class="card-capa" style="background:linear-gradient(135deg,#FFF3E0,#FFE9E1)">🎨</div>
+        <div class="card-titulo">Colorir</div>
+        <div class="card-meta">{{ conteudo.colorir.length }} desenhos para pintar</div>
+      </div>
+      <div class="card" @click="irPara('recompensas')" tabindex="0">
+        <div class="card-capa" style="background:linear-gradient(135deg,#EDE9FF,#FFF3E0)">🏆</div>
+        <div class="card-titulo">Minhas conquistas</div>
+        <div class="card-meta">{{ selosDesbloqueados }}/{{ selos.length }} selos conquistados</div>
+      </div>
+    </div>
+
+    <!-- LER (lista de histórias) -->
+    <div v-if="tela === 'ler'">
+      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
+      <h2>Histórias</h2>
+      <div class="card" v-for="h in conteudo.stories" :key="h.id" @click="abrirHistoria(h)" tabindex="0">
+        <div class="card-capa" :style="{background: h.corFundo}">{{ h.emoji }}</div>
+        <div class="card-titulo">{{ h.titulo }}</div>
+        <div class="card-meta">{{ h.texto.length }} linhas · Nível {{ h.nivel }} · {{ h.anoEscolar }}º ano</div>
+        <div class="card-meta" v-if="concluidos[h.id]" style="color:var(--cor-sucesso);font-weight:700">✓ Já leu</div>
+      </div>
+    </div>
+
+    <!-- HISTÓRIA (leitura) -->
+    <div v-if="tela === 'historia' && historiaAtual">
+      <button class="btn-voltar" @click="irPara('ler')">← Voltar</button>
+      <div class="historia-capa">{{ historiaAtual.emoji }}</div>
+      <h2>{{ historiaAtual.titulo }}</h2>
+      <p class="texto-suave">{{ historiaAtual.autor }} · {{ historiaAtual.anoEscolar }}º ano · Nível {{ historiaAtual.nivel }}</p>
+      <div class="historia-texto">
+        <p v-for="(linha, i) in historiaAtual.texto" :key="i">{{ linha }}</p>
+      </div>
+      <button class="btn-primario" @click="iniciarPerguntasHistoria" v-if="!mostrandoPerguntas">
+        Responder perguntinhas ✓
+      </button>
+      <div v-if="mostrandoPerguntas">
+        <h3 class="mt">Pergunta {{ indicePergunta + 1 }} de {{ historiaAtual.perguntas.length }}</h3>
+        <p style="font-size:1.05em"><strong>{{ perguntaAtual.enunciado }}</strong></p>
+        <button
+          v-for="(op, i) in perguntaAtual.opcoes"
+          :key="i"
+          class="opcao"
+          :class="classeOpcao(i)"
+          :disabled="respostaSelecionada !== null"
+          @click="responder(i)"
+        >{{ op }}</button>
+        <div v-if="respostaSelecionada !== null" class="feedback" :class="respostaSelecionada === perguntaAtual.correta ? 'correto' : 'errado'">
+          {{ respostaSelecionada === perguntaAtual.correta ? '🎉 Muito bem!' : '💡 Quase!' }}
+          {{ perguntaAtual.explicacao }}
+        </div>
+        <button v-if="respostaSelecionada !== null" class="btn-primario mt" @click="proximaPergunta">
+          {{ indicePergunta + 1 < historiaAtual.perguntas.length ? 'Próxima →' : 'Concluir' }}
+        </button>
+      </div>
+    </div>
+
+    <!-- ATIVIDADES (lista) -->
+    <div v-if="tela === 'atividades'">
+      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
+      <h2>Atividades</h2>
+      <div class="filtros">
+        <button class="filtro" :class="{ativo: filtroMateria === 'todas'}" @click="filtroMateria = 'todas'">Todas</button>
+        <button class="filtro" :class="{ativo: filtroMateria === 'lingua-portuguesa'}" @click="filtroMateria = 'lingua-portuguesa'">Português</button>
+        <button class="filtro" :class="{ativo: filtroMateria === 'matematica'}" @click="filtroMateria = 'matematica'">Matemática</button>
+      </div>
+      <div class="card" v-for="a in atividadesFiltradas" :key="a.id" @click="abrirAtividade(a)" tabindex="0">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <div>
+            <div class="card-titulo">{{ a.titulo }}</div>
+            <div class="card-meta">{{ a.materia === 'matematica' ? '🧮 Matemática' : '📝 Português' }} · Nível {{ a.nivel }}</div>
+          </div>
+          <div v-if="concluidos[a.id]" style="color:var(--cor-sucesso);font-size:1.4em">✓</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATIVIDADE (resolver) -->
+    <div v-if="tela === 'atividade' && atividadeAtual">
+      <button class="btn-voltar" @click="irPara('atividades')">← Voltar</button>
+      <h2>{{ atividadeAtual.titulo }}</h2>
+      <p class="texto-suave">Nível {{ atividadeAtual.nivel }} · {{ atividadeAtual.habilidadeBNCC }}</p>
+      <p style="font-size:1.1em;margin:var(--space) 0"><strong>{{ atividadeAtual.enunciado }}</strong></p>
+      <div v-if="atividadeAtual.apoioVisual" class="apoio-visual">
+        <div>{{ atividadeAtual.apoioVisual.esquerda }}</div>
+        <div style="margin:8px 0">{{ atividadeAtual.apoioVisual.operador }} {{ atividadeAtual.apoioVisual.direita }}</div>
+      </div>
+      <button
+        v-for="(op, i) in atividadeAtual.opcoes"
+        :key="i"
+        class="opcao"
+        :class="classeOpcaoAtividade(i, op)"
+        :disabled="respostaSelecionada !== null"
+        @click="responderAtividade(i, op)"
+      >{{ op }}</button>
+      <div v-if="respostaSelecionada !== null" class="feedback" :class="acertouAtividade ? 'correto' : 'errado'">
+        {{ acertouAtividade ? '🎉 Muito bem!' : '💡 Quase!' }} {{ atividadeAtual.explicacao }}
+      </div>
+      <button v-if="respostaSelecionada !== null" class="btn-primario mt" @click="irPara('atividades')">Continuar</button>
+    </div>
+
+    <!-- COLORIR (lista) -->
+    <div v-if="tela === 'colorir'">
+      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
+      <h2>Desenhos para colorir</h2>
+      <div class="card" v-for="c in conteudo.colorir" :key="c.id" @click="abrirColorir(c)" tabindex="0">
+        <div class="card-capa" style="background:linear-gradient(135deg,#FFF3E0,#FFE9E1);font-size:3em">{{ c.emoji }}</div>
+        <div class="card-titulo">{{ c.titulo }}</div>
+        <div class="card-meta" v-if="concluidos[c.id]" style="color:var(--cor-sucesso);font-weight:700">✓ Já pintou</div>
+      </div>
+    </div>
+
+    <!-- COLORIR-ITEM -->
+    <div v-if="tela === 'colorir-item' && colorirAtual">
+      <button class="btn-voltar" @click="irPara('colorir')">← Voltar</button>
+      <h2>{{ colorirAtual.titulo }}</h2>
+      <p class="texto-suave">Toque nas formas para pintar</p>
+      <div class="paleta">
+        <button
+          v-for="cor in paletaCores"
+          :key="cor"
+          class="cor"
+          :class="{selecionada: corAtual === cor}"
+          :style="{background: cor}"
+          @click="corAtual = cor"
+          :title="cor"
+        ></button>
+      </div>
+      <div class="svg-colorir" ref="svgRef" @click="pintarForma"></div>
+      <div class="linha-botoes mt">
+        <button class="btn-secundario" @click="resetarDesenho">🔄 Recomeçar</button>
+        <button class="btn-primario" @click="concluirColorir">✓ Pronto!</button>
+      </div>
+    </div>
+
+    <!-- RECOMPENSAS -->
+    <div v-if="tela === 'recompensas'">
+      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
+      <h2>Minhas conquistas</h2>
+      <p class="texto-suave">Você tem <strong>{{ estrelas }} ⭐</strong> e completou <strong>{{ totalConcluidos }}</strong> de {{ totalItens }} itens.</p>
+      <div class="barra-progresso">
+        <div class="barra-preenchida" :style="{width: progressoGeral + '%'}"></div>
+      </div>
+      <p class="texto-centro texto-suave">{{ progressoGeral }}% concluído</p>
+      <div class="grid-selos">
+        <div class="selo" v-for="s in selos" :key="s.id" :class="{desbloqueado: s.desbloqueado}">
+          <span class="emoji">{{ s.emoji }}</span>
+          <div class="nome">{{ s.nome }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AJUSTES (só acessa depois do portão) -->
+    <div v-if="tela === 'ajustes'">
+      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
+      <h2>Ajustes</h2>
+      <div class="card" style="cursor:default">
+        <div class="card-titulo">Fonte para dislexia</div>
+        <div class="card-meta" style="margin-bottom:10px">Usa a fonte Lexend com mais espaçamento</div>
+        <button class="btn-secundario" @click="toggleDislexia" :style="ajustes.dislexia ? 'background:var(--cor-primaria);color:#fff;border-color:var(--cor-primaria)' : ''">
+          {{ ajustes.dislexia ? '✓ Ativada' : 'Desativada' }}
+        </button>
+      </div>
+      <div class="card" style="cursor:default">
+        <div class="card-titulo">Tamanho do texto</div>
+        <div class="filtros" style="margin-top:10px;margin-bottom:0">
+          <button class="filtro" :class="{ativo: ajustes.tamanho === 'pequeno'}" @click="mudarTamanho('pequeno')">Pequeno</button>
+          <button class="filtro" :class="{ativo: ajustes.tamanho === 'medio'}" @click="mudarTamanho('medio')">Médio</button>
+          <button class="filtro" :class="{ativo: ajustes.tamanho === 'grande'}" @click="mudarTamanho('grande')">Grande</button>
+        </div>
+      </div>
+      <div class="card" style="cursor:default">
+        <div class="card-titulo">Progresso</div>
+        <div class="card-meta" style="margin-bottom:10px">Estrelas: {{ estrelas }} · Itens concluídos: {{ totalConcluidos }}</div>
+        <button class="btn-secundario" @click="resetarProgresso">🧹 Zerar progresso</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PORTÃO PARENTAL -->
+  <div class="portao-parental" v-if="portaoAberto">
+    <h2>Área dos adultos</h2>
+    <p class="instrucao">Para entrar, clique nas setas na ordem indicada e depois deslize o dedo (ou mouse) para a direita na área tracejada.</p>
+    <div class="sequencia-setas">
+      <button
+        v-for="(s, i) in portao.setas"
+        :key="i"
+        class="seta"
+        :class="{feita: i < portao.indice, atual: i === portao.indice}"
+        @click="clicarSeta(i)"
+      >{{ s }}</button>
+    </div>
+    <div
+      class="area-gesto"
+      @mousedown="iniciarGesto"
+      @mouseup="terminarGesto"
+      @touchstart.prevent="iniciarGestoTouch"
+      @touchend.prevent="terminarGestoTouch"
+    >
+      <span v-if="portao.indice < portao.setas.length">Primeiro complete as setas</span>
+      <span v-else-if="!portao.gestoOk">👉 Deslize para a direita aqui</span>
+      <span v-else>✅ Liberado!</span>
+    </div>
+    <button class="btn-secundario" style="margin-top:var(--space)" @click="fecharPortao">Cancelar</button>
+  </div>
+
+  <!-- NAV INFERIOR -->
+  <nav class="nav-inferior" v-if="!portaoAberto">
+    <a @click="irPara('home')" :class="{ativo: tela === 'home'}"><span class="icone">🏠</span>Início</a>
+    <a @click="irPara('ler')" :class="{ativo: tela === 'ler' || tela === 'historia'}"><span class="icone">📖</span>Ler</a>
+    <a @click="irPara('atividades')" :class="{ativo: tela === 'atividades' || tela === 'atividade'}"><span class="icone">🧮</span>Brincar</a>
+    <a @click="irPara('recompensas')" :class="{ativo: tela === 'recompensas'}"><span class="icone">🏆</span>Selos</a>
+  </nav>
+</div>
+
+<div id="print-container" class="print-only"></div>
+
+<!-- Bibliotecas: cópia local em vendor/ (funciona sem internet); se faltar, busca na internet -->
+<script src="vendor/vue.global.prod.js"></script>
+<script>window.Vue || document.write('<script src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.prod.js"><\/script>')</script>
+<script src="vendor/dexie.min.js"></script>
+<script>window.Dexie || document.write('<script src="https://cdn.jsdelivr.net/npm/dexie@4.0.10/dist/dexie.min.js"><\/script>')</script>
+
+<!-- Conteúdo (conferido por: node build/validar.js) -->
+<script>window.LB = window.LB || {};</script>
+<script src="conteudo/historias.js"></script>
+<script src="conteudo/lp.js"></script>
+<script src="conteudo/mat.js"></script>
+<script src="conteudo/colorir.js"></script>
+
+<!-- App -->
+<script src="js/respostas.js"></script>
+<script src="js/banco.js"></script>
+<script src="js/telas/historias.js"></script>
+<script src="js/telas/atividades.js"></script>
+<script src="js/telas/colorir.js"></script>
+<script src="js/telas/selos.js"></script>
+<script src="js/telas/ajustes.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
