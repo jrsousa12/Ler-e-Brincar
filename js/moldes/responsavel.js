@@ -28,6 +28,7 @@ LB.moldes.responsavel = `
           <div><strong>{{ g.habilidade }}</strong> · {{ g.materia }} — {{ g.erros }} erro(s)</div>
           <div class="card-meta">{{ g.exemplos }}</div>
         </div>
+        <p class="card-meta">🔁 No caderno de revisão: {{ noCaderno }} pergunta(s). Elas voltam na missão até ela acertar 2 vezes seguidas de primeira.</p>
       </div>
 
       <div class="card sem-clique">

@@ -97,22 +97,23 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | Arquivo | Linhas | O que faz |
 |---|---|---|
 | `sw.js` | 48 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 100 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `js/app.js` | 105 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/banco.js` | 33 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
+| `js/caderno.js` | 43 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
 | `js/festa.js` | 59 | Festa do acerto (confete + som) e incentivo no erro. Som feito pelo próprio app, sem arquivos. |
 | `js/impressao.js` | 33 | Monta folhas para imprimir (desenho ou lista de atividades) em #print-container. |
-| `js/missao.js` | 103 | Missão do dia: 1 história + 3 de Português + 3 de Matemática + 1 desenho, em sequência. |
-| `js/pergunta.js` | 42 | Regra de responder (histórias e atividades): acertou → festa; errou → incentivo e nova |
+| `js/missao.js` | 135 | Missão do dia: 1 história + 3 de Português + 3 de Matemática + 1 desenho, em sequência. |
+| `js/pergunta.js` | 44 | Regra de responder (histórias e atividades): acertou → festa; errou → incentivo e nova |
 | `js/registrar-sw.js` | 6 | Liga o modo sem internet (só em https ou localhost; em arquivo aberto direto, ignora). |
 | `js/respostas.js` | 22 | Regra única de "resposta certa", usada pelo app e pelo validador (build/validar.js). |
 | `js/sorteio.js` | 28 | Sorteio das opções: a cada vez que uma pergunta aparece, a ordem dos botões muda, |
 | `js/tentativas.js` | 35 | Guarda cada resposta da criança (certa ou errada) para a Área do responsável. |
 | `js/voz.js` | 52 | Leitura em voz alta com a voz do próprio aparelho (funciona sem internet). |
-| `js/telas/ajustes.js` | 54 | Trava dos adultos (uma conta de multiplicar) e tela "Ajustes" (voz, som, fonte, tamanho, zerar). |
-| `js/telas/atividades.js` | 34 | Telas "Atividades" (lista com filtro) e "Atividade" (uma questão de LP ou Matemática). |
+| `js/telas/ajustes.js` | 55 | Trava dos adultos (uma conta de multiplicar) e tela "Ajustes" (voz, som, fonte, tamanho, zerar). |
+| `js/telas/atividades.js` | 35 | Telas "Atividades" (lista com filtro) e "Atividade" (uma questão de LP ou Matemática). |
 | `js/telas/colorir.js` | 35 | Telas "Colorir" (lista) e "Colorir item" (pintar o desenho tocando nas partes). |
 | `js/telas/historias.js` | 63 | Telas "Ler" e "História": leitura e as perguntas de cada história. |
-| `js/telas/responsavel.js` | 66 | Área do responsável: progresso, onde errou mais (por habilidade da BNCC) e impressão. |
+| `js/telas/responsavel.js` | 68 | Área do responsável: progresso, onde errou mais (por habilidade da BNCC) e impressão. |
 | `js/telas/selos.js` | 38 | Tela "Selos": progresso geral, conquistas e selos da missão do dia (missões e dias seguidos). |
 | `js/moldes/ajustes.js` | 44 | Molde (HTML do Vue): Ajustes (aparece embaixo da Área do responsável). |
 | `js/moldes/atividades.js` | 42 | Molde (HTML do Vue): Telas "Atividades" (lista) e "Atividade" (resolver). |
@@ -123,7 +124,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/missao.js` | 24 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
 | `js/moldes/navegacao.js` | 11 | Molde (HTML do Vue): Barra de navegação de baixo. |
 | `js/moldes/portao.js` | 16 | Molde (HTML do Vue): Trava dos adultos — uma conta de multiplicar. |
-| `js/moldes/responsavel.js` | 49 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
+| `js/moldes/responsavel.js` | 50 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
 | `js/moldes/selos.js` | 24 | Molde (HTML do Vue): Tela "Minhas conquistas" (selos e progresso). |
 | `build/carregar.js` | 17 | Carrega o conteúdo (conteudo/*.js) e a regra de resposta certa, para os motores de build/. |
 | `build/catalogo.js` | 83 | Catálogo (motor 5): gera CATALOGO.md com o que já existe (conteúdo e código), para achar sem abrir arquivos. |
@@ -134,7 +135,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/item.js` | 131 | Motor de item único: mostra, busca e altera um item de conteudo/*.js sem abrir o arquivo. |
 | `build/tudo.js` | 100 | (sem comentário no topo) |
 | `build/validar.js` | 67 | Validador do conteúdo. Uso: node build/validar.js |
-| `testes/t_app.js` | 102 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
+| `testes/t_app.js` | 104 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
+| `testes/t_caderno.js` | 76 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |
 | `testes/t_catalogo.js` | 37 | Teste guardado: catálogo (build/catalogo.js). Uso: node testes/t_catalogo.js |
 | `testes/t_conferir.js` | 63 | Teste guardado: conferidor de qualidade (build/conferir.js). Uso: node testes/t_conferir.js |
 | `testes/t_conteudo.js` | 47 | Teste guardado: regra de resposta certa + validador. Uso: node testes/t_conteudo.js |

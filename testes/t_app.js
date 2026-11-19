@@ -54,6 +54,8 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   await p.locator('.opcao').nth(e2).click();
   ok(await p.locator('.opcao').nth(c).evaluate(e => e.classList.contains('correta')), '2º erro: mostra a certa');
   ok((await p.textContent('.feedback')).length > 20, '2º erro: mostra a explicação');
+  ok(await p.evaluate(() => { const c = LB.app.caderno; return c.itens['mat-036'] && c.itens['mat-036'].seguidos === 0 && c.hab[LB.app.atividadeAtual.habilidadeBNCC].erradas === 1; }),
+    'caderno de erros: atividade errada entra uma vez só');
 
   // Missão: faz o 2º passo (Português) e volta para a trilha com 1 passo feito
   await p.evaluate(() => LB.app.irPara('home'));

@@ -15,7 +15,8 @@ LB.usarAtividades = function (ctx) {
     const a = atividadeAtual.value;
     return {
       item: a, id: a.id, materia: a.materia, habilidade: a.habilidadeBNCC, titulo: a.titulo,
-      aoAcertar: () => ctx.marcarConcluido(a.id)
+      aoAcertar: () => ctx.marcarConcluido(a.id),
+      aoPrimeira: (deprimeira) => ctx.anotarCaderno(a, deprimeira)
     };
   });
 
