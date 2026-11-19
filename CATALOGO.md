@@ -139,7 +139,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/colorir-regras.js` | 24 | Regras do estilo dos desenhos de colorir (usadas por build/colorir.js). Só lê o texto do SVG; não abre navegador. |
 | `build/colorir.js` | 109 | Motor de desenhos de colorir: confere, mostra a prévia e grava um lote de desenhos. |
 | `build/conferir.js` | 90 | Conferidor de qualidade (motor 3). Uso: node build/conferir.js [--tipo codigo] [--todos] [--estrito] |
-| `build/desenho.js` | 16 | Kit de peças para desenhos de colorir (viewBox 300x300). Usar nos pedidos: const k = require('../desenho.js'); |
+| `build/desenho.js` | 27 | Kit de peças para desenhos de colorir (viewBox 300x300). Usar nos pedidos: const k = require('../desenho.js'); |
 | `build/escrever.js` | 10 | Escreve um item no estilo de conteudo/*.js: {chave:'texto',...} numa linha só (usado por gerar-mat e item) |
 | `build/gerar-mat.js` | 144 | Motor gerador de Matemática: de uma linha curta de pedido, monta a atividade completa |
 | `build/icones.js` | 29 | Gera os ícones PNG do app (icones/). Uso: node build/icones.js |
