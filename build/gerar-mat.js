@@ -101,13 +101,7 @@ function montar(linha) {
   return Object.assign(q, { opcoes, correta: r, explicacao, _emoji: emoji });
 }
 
-// Escreve no mesmo estilo de conteudo/mat.js: {chave:'texto',...} numa linha só
-const esc = s => "'" + String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
-function escrever(v) {
-  if (Array.isArray(v)) return '[' + v.map(escrever).join(',') + ']';
-  if (v && typeof v === 'object') return '{' + Object.entries(v).map(([k, x]) => k + ':' + escrever(x)).join(',') + '}';
-  return typeof v === 'number' ? String(v) : esc(v);
-}
+const escrever = require('./escrever');
 
 function principal(args) {
   const arq = args.find(a => !a.startsWith('--'));
