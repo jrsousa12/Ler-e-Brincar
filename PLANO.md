@@ -16,10 +16,10 @@ Decisões do dono (19/11/2026):
 
 ## Fases (cada uma é uma conversa; `/clear` entre elas)
 
-### Fase 1 — Organizar e publicar (Opus) — em andamento
+### Fase 1 — Organizar e publicar (Opus) — feita (19/11, publicada no GitHub Pages pela main)
 - Feito (19/11): divisão em arquivos, conteúdo em `conteudo/`, lp-037, colorir-26 a 30, regra de resposta certa da Matemática corrigida, validador + teste.
 - Feito: Vue e Dexie em `vendor/` (robô do GitHub); app testado no navegador (`testes/t_app.js`).
-- Falta: publicar no GitHub Pages.
+- Feito: publicado no GitHub Pages (pela `main`) e conferido: abre e funciona sem internet.
 - Anotado para a Fase 3: ícone ⚙️ do cabeçalho quase invisível; alguns desenhos muito simples (ex.: Abelha).
 - Dividir o HTML em arquivos pequenos:
   - `index.html` (só a casca), `css/`, `js/telas/` (uma tela por arquivo), `js/banco.js` (Dexie)
