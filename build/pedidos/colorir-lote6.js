@@ -1,90 +1,117 @@
-// Lote 6 de desenhos (19/11): robô, dinossauro, lua com estrelas, pinguim, abelha. Rodar: node build/colorir.js build/pedidos/colorir-lote6.js [--gravar]
-const { f, solto, olho, svg, nuvem, colina, copa, polar, espelhar } = require('../desenho.js');
+// Lote 6 de desenhos (19/11), contornos de curva livre (suave): robô, dinossauro, lua com estrelas, pinguim, abelha.
+// Rodar: node build/colorir.js build/pedidos/colorir-lote6.js [--gravar]
+const { f, solto, olho, svg, nuvem, colina, polar, espelhar, suave, mancha } = require('../desenho.js');
 const p = require('../pecas/index.js');
 
+const S = (pts, fundo, sw) => f('path', `d="${suave(pts)}"`, fundo, sw);   // forma de curva livre
+const M = (cx, cy, r, n, giro, fundo = 'white', sw = 2.5) => f('path', `d="${mancha(cx, cy, r, n, giro)}"`, fundo, sw); // pintinha irregular
 const sol = (x, y) => [f('circle', `cx="${x}" cy="${y}" r="22"`), p.raiosSol({ x, y, e: 0.24 })];
+const W = 'white';
 
-// ---- Robô: cabeça, corpo e membros de cantos redondos, painel com botões ----
+// ---- Robô: cabeça de travesseiro com tela, olhos quadrados macios, corpo largo no ombro, garras ----
 const robo = svg(
-  p.estrela({ x: 40, y: 56, R: 18, r: 8 }), p.estrela({ x: 262, y: 50, R: 22, r: 10 }), p.estrela({ x: 32, y: 150, R: 12, r: 5 }), p.estrela({ x: 270, y: 120, R: 13, r: 6 }),
-  colina(284, 10),
-  espelhar(f('rect', 'x="172" y="244" width="26" height="30" rx="8"'), f('rect', 'x="162" y="264" width="46" height="16" rx="8"')),
-  espelhar(f('path', 'd="M218 174 Q258 182 262 222 L244 226 Q240 200 218 194 Z"'), f('circle', 'cx="254" cy="238" r="16"')),
-  f('rect', 'x="80" y="160" width="140" height="92" rx="22"'),
-  f('rect', 'x="106" y="178" width="88" height="50" rx="10"', 'white', 2.5),
-  f('circle', 'cx="126" cy="203" r="9"', 'white', 2.5), f('circle', 'cx="150" cy="203" r="9"', 'white', 2.5), f('circle', 'cx="174" cy="203" r="9"', 'white', 2.5),
-  solto('M116 188 L138 188 M162 188 L184 188', 2.5),
-  f('rect', 'x="134" y="140" width="32" height="24" rx="6"'),
-  espelhar(f('rect', 'x="210" y="88" width="18" height="36" rx="8"')),
-  f('rect', 'x="86" y="62" width="128" height="84" rx="28"'),
-  espelhar(f('circle', 'cx="184" cy="98" r="18"', 'white', 2.5), olho(184, 100, 7)),
-  f('rect', 'x="116" y="120" width="68" height="16" rx="8"', 'white', 2.5), solto('M133 120 L133 136 M150 120 L150 136 M167 120 L167 136', 2),
-  solto('M150 62 L150 38', 3), f('circle', 'cx="150" cy="30" r="10"'),
+  p.estrela({ x: 40, y: 56, R: 18, r: 8 }), p.estrela({ x: 264, y: 50, R: 22, r: 10, giro: 14 }), p.estrela({ x: 30, y: 150, R: 12, r: 5 }), p.estrela({ x: 272, y: 112, R: 13, r: 6 }),
+  colina(286, 8),
+  espelhar(S([[170, 256], [198, 256], [200, 270], [216, 276], [214, 286], [160, 286], [158, 276], [170, 270]])),
+  espelhar(S([[214, 172], [246, 178], [264, 202], [268, 226], [250, 230], [244, 212], [232, 200], [214, 198]]),
+    S([[242, 226], [268, 226], [274, 240], [266, 250], [262, 264], [252, 264], [250, 252], [242, 250], [238, 238]], W)),
+  S([[96, 166], [150, 160], [204, 166], [226, 184], [224, 236], [210, 256], [150, 262], [90, 256], [76, 236], [74, 184]]),
+  S([[104, 184], [150, 180], [196, 184], [200, 214], [194, 230], [150, 234], [106, 230], [100, 214]], W),
+  S([[112, 196], [130, 196], [134, 200], [134, 218], [130, 222], [112, 222], [108, 218], [108, 200]]), p.estrela({ x: 150, y: 208, R: 12 }),
+  S([[166, 200], [184, 200], [188, 204], [182, 220], [168, 220], [162, 204]]),
+  solto('M112 188 L132 188 M168 188 L188 188', 2.5),
+  S([[136, 148], [164, 148], [168, 164], [132, 164]], 'white', 2.5),
+  espelhar(S([[214, 90], [228, 86], [236, 96], [236, 118], [228, 128], [214, 124]])),
+  S([[102, 64], [150, 58], [198, 64], [218, 80], [222, 110], [216, 136], [190, 146], [150, 148], [110, 146], [84, 136], [78, 110], [82, 80]]),
+  S([[108, 82], [150, 78], [192, 82], [204, 92], [206, 116], [196, 128], [150, 132], [104, 128], [94, 116], [96, 92]], W),
+  espelhar(S([[158, 94], [184, 94], [190, 100], [190, 114], [184, 120], [158, 120], [152, 114], [152, 100]], 'white', 2.5), olho(176, 108, 6)),
+  solto('M124 125 Q150 133 176 125', 2.5),
+  solto('M150 62 Q147 46 152 36', 3), S([[152, 12], [164, 26], [152, 40], [140, 26]]),
   p.tufo({ x: 40 }), p.tufo({ x: 262 })
 );
 
-// ---- Dinossauro: rabo, placas nas costas, pescoço e cabeça sorridente, ovo ----
-const placa = (x, y) => f('path', `d="M${x - 16} ${y + 12} Q${x} ${y - 38} ${x + 16} ${y + 12} Z"`);
+// ---- Dinossauro: uma silhueta só (cauda, costas, pescoço, cabeça e pernas) com placas, barriga e pintas ----
+const placa = (x, y, g = 0) => f('path', `d="M${x - 14} ${y + 14} Q${x - 8} ${y - 10} ${x} ${y - 30} Q${x + 8} ${y - 10} ${x + 14} ${y + 14} Z" transform="rotate(${g} ${x} ${y + 10})"`);
+const perna = (x, w = 40) => S([[x, 216], [x + w, 216], [x + w - 3, 260], [x + w + 7, 280, 1], [x - 8, 280, 1], [x - 3, 260]]);
 const dino = svg(
-  ...sol(60, 46), nuvem(176, 44, 0.9),
-  colina(278, 12),
-  f('rect', 'x="98" y="226" width="30" height="42" rx="13"'), f('ellipse', 'cx="113" cy="270" rx="24" ry="11"'),
-  f('rect', 'x="176" y="226" width="30" height="42" rx="13"'), f('ellipse', 'cx="191" cy="270" rx="24" ry="11"'),
-  placa(108, 142), placa(136, 134), placa(164, 134), placa(192, 142),
-  f('path', 'd="M86 166 Q40 176 12 148 Q30 216 90 226 Z"'),
-  f('ellipse', 'cx="150" cy="190" rx="82" ry="56"'), f('ellipse', 'cx="150" cy="214" rx="54" ry="28"', 'white', 2.5),
-  f('path', 'd="M190 168 Q224 142 220 104 L254 104 Q260 160 230 204 Z"'),
-  f('ellipse', 'cx="242" cy="92" rx="42" ry="30"'),
-  f('circle', 'cx="250" cy="84" r="10"', 'white', 2.5), olho(253, 85, 5), olho(280, 84, 2.5), solto('M244 104 Q264 116 282 100', 2.5),
-  f('path', 'd="M210 190 Q232 190 238 206 Q222 210 208 204 Z"', 'white', 2.5),
-  f('circle', 'cx="112" cy="168" r="8"', 'white', 2.5), f('circle', 'cx="146" cy="160" r="6"', 'white', 2.5), f('circle', 'cx="178" cy="170" r="9"', 'white', 2.5),
-  f('ellipse', 'cx="36" cy="262" rx="22" ry="26"'), solto('M16 258 L26 250 L34 260 L44 250 L56 258', 2.5),
-  p.flor({ x: 262, y: 284 }), p.tufo({ x: 70 })
+  ...sol(58, 46), nuvem(168, 44, 0.9),
+  colina(290, 8),
+  perna(132), perna(168), perna(98), perna(194),
+  solto('M128 281 L129 272 M138 281 L139 272', 2), solto('M224 281 L225 272 M234 281 L235 272', 2),
+  S([[10, 148], [32, 176], [70, 190], [104, 184], [112, 232], [70, 232], [34, 208]]),
+  S([[196, 176], [214, 134], [220, 96], [226, 64], [248, 48], [280, 54], [294, 76], [284, 98], [258, 108], [246, 120], [250, 150], [256, 190], [236, 212]]),
+  placa(104, 164, -20), placa(134, 148, -8), placa(168, 144, 0), placa(200, 152, 12),
+  S([[86, 196], [96, 162], [130, 146], [170, 144], [204, 152], [230, 176], [238, 206], [216, 232], [170, 240], [120, 240], [92, 230]]),
+  M(116, 178, 9, 6, 1), M(152, 168, 7, 5, 2), M(186, 174, 10, 6, 3), M(130, 196, 6, 5, 4), M(170, 208, 8, 6, 5), M(206, 196, 7, 5, 6),
+  S([[248, 74], [258, 68], [270, 72], [270, 82], [260, 86], [250, 82]], W), olho(262, 77, 4), olho(285, 70, 2.5), solto('M258 98 Q276 100 288 90', 2.5),
+  S([[36, 238], [50, 254], [56, 272], [46, 286], [26, 286], [16, 272], [22, 254]]), solto('M18 262 L28 254 L34 264 L44 254 L54 262', 2.5),
+  p.flor({ x: 268, y: 286 }), p.tufo({ x: 70 })
 );
 
-// ---- Lua com estrelas: lua dorminhoca, estrelas de vários tamanhos, nuvem e colinas ----
+// ---- Lua com estrelas: lua gorda (arcos com leve ondulação), estrelas, colinas, pinheiros ----
+const arcoLua = (cx, cy, r, de, ate, n) => Array.from({ length: n }, (_, i) => { const g = de + (ate - de) * i / (n - 1); return polar(cx, cy, r * (1 + 0.025 * Math.sin(g / 20)), g); });
+const C1 = [124, 138, 90], C2 = [178, 112, 72];
+const dd = Math.hypot(C2[0] - C1[0], C2[1] - C1[1]), aa = (C1[2] ** 2 - C2[2] ** 2 + dd * dd) / (2 * dd), hh = Math.sqrt(C1[2] ** 2 - aa * aa);
+const ux = (C2[0] - C1[0]) / dd, uy = (C2[1] - C1[1]) / dd, Px = C1[0] + aa * ux, Py = C1[1] + aa * uy;
+const topo1 = [Px + hh * uy, Py - hh * ux], base1 = [Px - hh * uy, Py + hh * ux];
+const ang = (c, q) => Math.atan2(q[1] - c[1], q[0] - c[0]) * 180 / Math.PI;
+const a1 = ang(C1, topo1), a2 = ang(C1, base1) - 360, b1 = ang(C2, base1), b2 = ang(C2, topo1) + 360;
+const luaPts = [...arcoLua(C1[0], C1[1], C1[2], a1, a2, 10).map((q, i, a) => i === 0 || i === a.length - 1 ? [...q, 1] : q), ...arcoLua(C2[0], C2[1], C2[2], b1, b2, 9).slice(1, -1)];
+const pinheiro = (cx, topo, e, ...lados) => [
+  f('path', `d="${suave([[cx - 5 * e, topo + 118 * e], [cx + 5 * e, topo + 118 * e], [cx + 5 * e, topo + 140 * e], [cx - 5 * e, topo + 140 * e]])}"`),
+  ...[[0, 40, 46], [26, 56, 52], [56, 72, 60]].reverse().map(([dy, w, h]) => f('path', `d="${suave([[cx, topo + dy * e], [cx + w * 0.42 * e, topo + (dy + h * 0.78) * e], [cx + w / 2 * e, topo + (dy + h) * e], [cx, topo + (dy + h * 0.9) * e], [cx - w / 2 * e, topo + (dy + h) * e], [cx - w * 0.42 * e, topo + (dy + h * 0.78) * e]])}"`))
+];
 const lua = svg(
-  p.luaCrescente({ x: 120, y: 120, e: 1.5 }),
-  p.estrela({ x: 176, y: 110, R: 14, r: 6 }), p.estrela({ x: 150, y: 168, R: 9, r: 4 }),
-  p.estrela({ x: 240, y: 56, R: 26, r: 12 }), p.estrela({ x: 272, y: 128, R: 16, r: 7 }), p.estrela({ x: 214, y: 150, R: 12, r: 5 }),
-  p.estrela({ x: 36, y: 56, R: 14, r: 6 }), p.estrela({ x: 42, y: 232, R: 15, r: 7 }), p.estrela({ x: 270, y: 186, R: 20, r: 9 }),
-  nuvem(176, 210, 1.1),
-  colina(266, 24), colina(284, 12),
-  p.flor({ x: 70, y: 284 }), p.tufo({ x: 150 })
+  S(luaPts),
+  solto('M54 116 Q64 126 76 116', 2.5), solto('M58 152 Q70 162 84 150', 2.5), M(50, 136, 6, 5, 2, W),
+  p.estrela({ x: 170, y: 108, R: 14, r: 6, giro: 10 }), p.estrela({ x: 150, y: 164, R: 9, r: 4 }),
+  p.estrela({ x: 250, y: 58, R: 26, r: 12 }), p.estrela({ x: 280, y: 118, R: 14, r: 6, giro: 20 }), p.estrela({ x: 38, y: 50, R: 14, r: 6 }), 
+  S([[0, 300, 1], [0, 252, 1], [56, 236], [124, 244], [190, 258], [250, 246], [300, 252, 1], [300, 300, 1]]),
+  ...pinheiro(258, 124, 0.72), ...pinheiro(22, 168, 0.4),
+  S([[0, 300, 1], [0, 278, 1], [64, 268], [150, 280], [232, 272], [300, 282, 1], [300, 300, 1]]),
+  p.flor({ x: 108, y: 288 }), p.tufo({ x: 204 })
 );
 
-// ---- Pinguim: corpo em ovo, rosto em coração, cachecol, asas e pés ----
+// ---- Pinguim: corpo de pera, rosto em coração, olhos de amêndoa, cachecol ondulado, pés de três dedos ----
 const pinguim = svg(
-  p.estrela({ x: 110, y: 44, R: 14, r: 6 }), p.estrela({ x: 262, y: 70, R: 18, r: 8 }), p.estrela({ x: 36, y: 140, R: 9, r: 4 }), p.estrela({ x: 268, y: 150, R: 10, r: 4 }),
-  nuvem(18, 40, 0.8),
-  colina(272, 14),
-  espelhar(f('ellipse', 'cx="178" cy="274" rx="28" ry="12"')),
-  espelhar(f('path', 'd="M214 148 Q260 170 256 226 Q228 214 204 186 Z"')),
-  f('ellipse', 'cx="150" cy="160" rx="76" ry="112"'), f('ellipse', 'cx="150" cy="208" rx="50" ry="62"', 'white', 2.5),
-  f('path', 'd="M150 100 Q118 62 106 96 Q98 130 150 140 Q202 130 194 96 Q182 62 150 100 Z"', 'white', 2.5),
-  espelhar(f('circle', 'cx="172" cy="98" r="12"', 'white', 2.5), olho(174, 100, 5)),
-  f('path', 'd="M134 112 Q150 102 166 112 Q150 134 134 112 Z"'),
-  f('path', 'd="M88 152 Q150 178 212 152 L216 174 Q150 200 84 174 Z"'), f('path', 'd="M174 180 L194 234 L170 240 L158 186 Z"'),
+  nuvem(18, 40, 0.8), p.estrela({ x: 110, y: 44, R: 14, r: 6 }), p.estrela({ x: 264, y: 70, R: 18, r: 8, giro: 12 }), p.estrela({ x: 36, y: 140, R: 9, r: 4 }), p.estrela({ x: 270, y: 150, R: 10, r: 4 }),
+  colina(272, 12),
+  espelhar(S([[160, 270], [196, 266], [212, 276], [210, 286], [200, 282], [192, 288], [182, 282], [172, 288], [160, 284]])),
+  espelhar(S([[200, 144], [232, 152], [252, 184], [258, 226], [238, 216], [212, 188]])),
+  S([[150, 46], [184, 56], [202, 86], [204, 120], [214, 160], [222, 200], [212, 246], [190, 270], [150, 276], [110, 270], [88, 246], [78, 200], [86, 160], [96, 120], [98, 86], [116, 56]]),
+  S([[150, 160], [184, 176], [196, 214], [184, 252], [150, 266], [116, 252], [104, 214], [116, 176]], W),
+  S([[150, 98, 1], [136, 76], [112, 80], [104, 106], [118, 130], [150, 144], [182, 130], [196, 106], [188, 80], [164, 76]], W),
+  espelhar(S([[164, 96], [176, 90], [190, 96], [190, 108], [178, 114], [166, 108]], W), olho(179, 102, 5)),
+  S([[150, 110], [166, 119], [150, 135], [134, 119]]),
+  S([[90, 150, 1], [120, 160], [150, 164], [180, 160], [210, 150, 1], [214, 172, 1], [180, 184], [150, 188], [120, 184], [86, 172, 1]]),
+  S([[172, 184], [196, 190], [202, 232], [188, 244], [176, 226], [168, 200]]),
   p.flor({ x: 50, y: 286 }), p.flor({ x: 256, y: 288 })
 );
 
-// ---- Abelha: corpo listrado de lado, asas, antenas e rastro de voo ----
-const faixaAbelha = (x1, x2) => {
-  const y = x => +(176 - 54 * Math.sqrt(1 - ((x - 130) / 78) ** 2)).toFixed(1), y2 = x => +(352 - y(x)).toFixed(1);
-  return f('path', `d="M${x1} ${y(x1)} Q${x1 + 12} 176 ${x1} ${y2(x1)} A78 54 0 0 0 ${x2} ${y2(x2)} Q${x2 + 12} 176 ${x2} ${y(x2)} A78 54 0 0 0 ${x1} ${y(x1)} Z"`);
+// ---- Abelha: corpo em gota com listras que acompanham a curva, asas de folha, cabeça e antenas ----
+const T = [0.08, 0.18, 0.3, 0.42, 0.54, 0.66, 0.78, 0.88, 0.96];
+const X0 = 46, X1 = 216, xAt = t => X0 + (X1 - X0) * t, yc = t => 182 - 10 * t;
+const meia = t => 60 * Math.sin(Math.PI * Math.pow(t, 0.75)) ** 0.8;
+const topo = t => [xAt(t), yc(t) - meia(t)], base = t => [xAt(t), yc(t) + meia(t) * 0.92];
+const corpoAbelha = S([[...topo(0), 1], ...T.map(topo), ...[...T].reverse().map(base)]);
+const faixaAbelha = (a, b) => {
+  const ts = [a, a + (b - a) / 3, a + 2 * (b - a) / 3, b], c = t => yc(t);
+  return S([[...topo(a), 1], topo(ts[1]), topo(ts[2]), [...topo(b), 1], [xAt(b) + 10, c(b)], [...base(b), 1], base(ts[2]), base(ts[1]), [...base(a), 1], [xAt(a) + 10, c(a)]]);
 };
 const abelha = svg(
   ...sol(254, 40), nuvem(18, 50, 0.9),
-  colina(280, 12),
-  solto('M14 120 Q34 98 54 120 Q74 142 94 120', 2.5),
-  f('path', 'd="M60 164 L22 184 L60 198 Z"'),
-  f('ellipse', 'cx="112" cy="104" rx="24" ry="46" transform="rotate(-25 112 104)"', 'white', 3), f('ellipse', 'cx="158" cy="98" rx="22" ry="42" transform="rotate(20 158 98)"', 'white', 3),
-  f('ellipse', 'cx="130" cy="176" rx="78" ry="54"'), faixaAbelha(96, 120), faixaAbelha(140, 164),
-  f('circle', 'cx="222" cy="152" r="36"'),
-  solto('M222 118 Q216 86 196 76', 3), f('circle', 'cx="194" cy="74" r="6"', 'white', 2.5), solto('M238 122 Q256 92 276 92', 3), f('circle', 'cx="278" cy="92" r="6"', 'white', 2.5),
-  f('circle', 'cx="232" cy="146" r="12"', 'white', 2.5), olho(234, 147, 5), f('ellipse', 'cx="244" cy="168" rx="9" ry="6"', 'white', 2.5),
-  solto('M212 166 Q226 180 242 170', 2.5),
-  p.flor({ x: 56, y: 276, e: 1.5 }), p.flor({ x: 240, y: 286 })
+  colina(282, 10),
+  solto('M10 126 Q30 104 50 126 Q70 148 90 126', 2.5),
+  S([[100, 128], [78, 96], [76, 58], [100, 40], [126, 54], [138, 92], [134, 128]], W, 3), solto('M104 124 Q92 92 102 54', 2),
+  S([[150, 124], [152, 84], [170, 54], [198, 44], [212, 62], [204, 98], [184, 126]], W, 3), solto('M160 118 Q168 80 196 54', 2),
+  corpoAbelha, faixaAbelha(0.2, 0.34), faixaAbelha(0.46, 0.6),
+  solto('M98 228 Q94 246 84 254', 3.5), solto('M132 232 Q130 250 122 260', 3.5), solto('M162 230 Q166 248 160 258', 3.5),
+  S([[204, 134], [222, 116], [250, 112], [272, 128], [280, 154], [272, 180], [250, 194], [222, 192], [204, 176], [198, 156]]),
+  solto('M236 114 Q238 98 252 86', 3), S([[250, 76], [260, 74], [266, 82], [260, 90], [250, 88]], W, 2.5),
+  solto('M258 120 Q270 106 282 108', 3), S([[280, 102], [288, 102], [292, 110], [286, 116], [278, 112]], W, 2.5),
+  S([[224, 128], [236, 124], [248, 132], [250, 150], [240, 164], [226, 160], [220, 144]], W), olho(238, 145, 6), solto('M238 112 Q242 100 252 100 M250 111 Q256 100 266 104', 2.5),
+  solto('M232 178 Q252 190 270 176', 2.5),
+  p.flor({ x: 46, y: 284, e: 1.4 }), p.flor({ x: 250, y: 286 })
 );
 
 module.exports = [

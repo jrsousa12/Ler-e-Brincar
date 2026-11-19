@@ -14,6 +14,8 @@ Colocar: `p.nome({ x, y, e, espelho })` (sem x/y fica onde foi aprovada; `e` = e
 - nuvem(x, y, escala): nuvem pequena de céu
 - copa(cx, cy, rx, ry, ondas, giro, traço, varia): contorno de folhas ondulado (árvore, arbusto, nuvem fofa)
 - colina(y, onda, meio): chão ondulado de ponta a ponta
+- suave(pontos): contorno de curva livre por pontos [x,y] ([x,y,1] = quina); usar f('path', `d="${suave(pts)}"`)
+- mancha(cx, cy, r, n, giro): caminho de mancha irregular (pintinha, pedra) no lugar de círculo
 - svg(...partes): folha 300x300 pronta
 
 ## animais (`build/pecas/animais.js`)
