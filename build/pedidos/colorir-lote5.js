@@ -7,11 +7,11 @@ const sol = (x, y) => [f('circle', `cx="${x}" cy="${y}" r="22"`), p.raiosSol({ x
 // ---- Carro: cavas de roda no corpo, motorista sorrindo, retrovisor e grade ----
 const carro = svg(
   ...sol(254, 46), nuvem(18, 50, 0.9), colina(282, 10),
-  f('path', 'd="M78 154 Q90 96 138 94 L194 94 Q238 96 250 154 Z"'),
+  f('path', 'd="M50 152 Q58 96 98 94 L150 94 Q190 98 214 152 Z"'),
   f('path', 'd="M26 196 Q26 150 70 148 L248 148 Q290 150 292 196 L292 228 Q292 242 278 242 L258 242 A38 38 0 0 0 182 242 L132 242 A38 38 0 0 0 56 242 L40 242 Q26 242 26 228 Z"'),
-  f('path', 'd="M96 148 Q104 112 136 108 L136 148 Z"', 'white', 2.5), f('path', 'd="M152 108 L188 108 Q220 112 230 148 L152 148 Z"', 'white', 2.5),
-  f('circle', 'cx="192" cy="130" r="13"', 'white', 2.5), olho(187, 128, 2.5), olho(197, 128, 2.5), solto('M186 135 Q192 140 198 135', 2),
-  solto('M144 152 L144 236', 2.5), solto('M154 176 L172 176', 3), solto('M244 150 Q248 140 254 142', 3),
+  f('path', 'd="M68 148 Q74 114 98 110 L118 110 L118 148 Z"', 'white', 2.5), f('path', 'd="M132 110 L152 110 Q180 114 198 148 L132 148 Z"', 'white', 2.5),
+  f('circle', 'cx="158" cy="130" r="13"', 'white', 2.5), olho(153, 128, 2.5), olho(163, 128, 2.5), solto('M152 135 Q158 140 164 135', 2),
+  solto('M125 152 L125 236', 2.5), solto('M136 176 L154 176', 3), solto('M206 148 Q214 138 222 142', 3),
   f('ellipse', 'cx="278" cy="184" rx="10" ry="13"', 'white', 2.5), f('circle', 'cx="42" cy="186" r="9"', 'white', 2.5),
   f('rect', 'x="250" y="202" width="38" height="10" rx="5"', 'white', 2.5), f('rect', 'x="30" y="206" width="26" height="10" rx="5"', 'white', 2.5),
   f('circle', 'cx="94" cy="244" r="31"'), f('circle', 'cx="94" cy="244" r="17"', 'white', 2.5), f('circle', 'cx="94" cy="244" r="6"', 'white', 2.5),
@@ -23,15 +23,14 @@ const carro = svg(
 const sapo = svg(
   ...sol(254, 44), nuvem(18, 50, 0.9), colina(272, 12),
   f('ellipse', 'cx="150" cy="268" rx="122" ry="20"'),
-  espelhar(f('path', 'd="M196 196 Q262 176 270 236 Q272 266 238 266 L192 266 Q168 244 196 196 Z"'), f('circle', 'cx="254" cy="262" r="9"', 'white', 2.5), f('circle', 'cx="234" cy="270" r="9"', 'white', 2.5), f('circle', 'cx="236" cy="226" r="8"', 'white', 2.5)),
+  espelhar(f('ellipse', 'cx="226" cy="214" rx="38" ry="54" transform="rotate(18 226 214)"'), f('ellipse', 'cx="236" cy="266" rx="40" ry="11"'), f('circle', 'cx="272" cy="262" r="7"', 'white', 2.5), f('circle', 'cx="278" cy="274" r="7"', 'white', 2.5), f('circle', 'cx="262" cy="276" r="6"', 'white', 2.5)),
   f('ellipse', 'cx="150" cy="198" rx="82" ry="72"'), f('ellipse', 'cx="150" cy="214" rx="52" ry="48"', 'white', 2.5),
   f('ellipse', 'cx="150" cy="120" rx="84" ry="52"'),
   espelhar(f('path', 'd="M188 198 Q206 200 208 228 L208 248 Q208 258 196 258 Q182 258 182 248 L180 228 Q178 204 188 198 Z"'), f('ellipse', 'cx="196" cy="262" rx="17" ry="9"', 'white', 2.5)),
   espelhar(f('circle', 'cx="192" cy="80" r="26"'), f('circle', 'cx="192" cy="82" r="16"', 'white', 2.5), olho(192, 84, 7), f('ellipse', 'cx="218" cy="128" rx="11" ry="7"', 'white', 2.5)),
   solto('M92 126 Q150 168 208 126', 3), olho(142, 100, 2.5), olho(158, 100, 2.5),
   f('circle', 'cx="150" cy="66" r="7"', 'white', 2.5), f('circle', 'cx="134" cy="74" r="5"', 'white', 2.5), f('circle', 'cx="166" cy="74" r="5"', 'white', 2.5),
-  solto('M240 120 Q250 98 266 126', 2), f('ellipse', 'cx="272" cy="134" rx="9" ry="6"', 'white', 2.5), f('ellipse', 'cx="266" cy="122" rx="7" ry="4"', 'white', 2),
-  p.flor({ x: 44, y: 286 }), p.flor({ x: 258, y: 286 })
+  solto('M240 120 Q250 98 266 126', 2), f('ellipse', 'cx="272" cy="134" rx="9" ry="6"', 'white', 2.5), f('ellipse', 'cx="266" cy="122" rx="7" ry="4"', 'white', 2)
 );
 
 // ---- Arco-íris: faixas largas, sol e nuvens com carinha ----
