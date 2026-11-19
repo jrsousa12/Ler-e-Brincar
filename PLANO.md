@@ -53,6 +53,7 @@ Decisões do dono (19/11/2026):
 
 ### Fase 5 — Ajustes pelo uso real
 - O dono observa a criança usando e anota em `NOTAS.md`; ajustes em tarefas pequenas.
+- Desenhos mais curvos e harmoniosos (pedido 19/11): piloto de 5 feito (01, 05, 07, 10, 19) + cabeçalho de impressão novo + motor `build/colorir.js`. Faltam 30, em lotes de 5 (Sonnet), começando pelos que `node build/conferir.js --tipo desenho_simples` aponta.
 
 ### Fase 6 — Usabilidade trazida do app Ondulatória (decisão 19/11)
 - Ideias tiradas do app de ondulatória do dono, adaptadas para criança de 8 anos. Fora: desafio com tempo, PIN, relatório cifrado, vários alunos, tema escuro.

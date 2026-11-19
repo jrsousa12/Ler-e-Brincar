@@ -12,6 +12,7 @@
     "t_backup": "testes/t_backup.js",
     "t_evolucao": "testes/t_evolucao.js",
     "t_gerar_mat": "testes/t_gerar_mat.js",
+    "t_colorir": "testes/t_colorir.js",
     "t_conferir": "testes/t_conferir.js",
     "t_item": "testes/t_item.js",
     "t_catalogo": "testes/t_catalogo.js",
@@ -21,7 +22,8 @@
   },
   "navegador": [
     "t_offline",
-    "t_app"
+    "t_app",
+    "t_colorir"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -90,7 +92,8 @@
     ],
     "build/escrever.js": [
       "t_item",
-      "t_gerar_mat"
+      "t_gerar_mat",
+      "t_colorir"
     ],
     "build/validar.js": [
       "validar",
@@ -140,6 +143,15 @@
     "js/telas/backup.js": [
       "t_backup",
       "t_app"
+    ],
+    "build/colorir.js": [
+      "t_colorir"
+    ],
+    "build/colorir-regras.js": [
+      "t_colorir"
+    ],
+    "build/desenho.js": [
+      "t_colorir"
     ]
   }
 }

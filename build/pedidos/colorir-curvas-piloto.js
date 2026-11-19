@@ -1,5 +1,5 @@
 // Piloto "desenhos mais curvos e harmoniosos": refaz colorir-01 (Gato), 05 (Sol), 07 (Árvore), 10 (Borboleta), 19 (Castelo).
-// Rodar: node build/pedidos/colorir-curvas-piloto.js   (troca só o svg de cada item, pelo motor build/item.js)
+// Rodar: node build/colorir.js build/pedidos/colorir-curvas-piloto.js [--gravar]   (já gravado em 19/11)
 const { f, solto, olho, espelhar, polar, nuvem, colina, svg } = require('../desenho.js');
 const novos = {};
 const flor = (x, y) => [[0, -8], [8, 0], [0, 8], [-8, 0]].map(([dx, dy]) => f('circle', `cx="${x + dx}" cy="${y + dy}" r="6"`, 'white', 2)).join('') + f('circle', `cx="${x}" cy="${y}" r="5"`, 'white', 2);
@@ -90,8 +90,4 @@ novos['colorir-10'] = svg(
   f('circle', 'cx="150" cy="106" r="15"'), olho(144, 104, 2.4), olho(156, 104, 2.4), solto('M144 111 Q150 116 156 111', 2)
 );
 
-const { spawnSync } = require('child_process');
-for (const [id, s] of Object.entries(novos)) {
-  const r = spawnSync('node', [__dirname + '/../item.js', id, 'svg=' + s], { encoding: 'utf8' });
-  console.log(id, (r.stdout + r.stderr).trim().split('\n').pop());
-}
+module.exports = Object.entries(novos).map(([id, svg]) => ({ id, svg }));
