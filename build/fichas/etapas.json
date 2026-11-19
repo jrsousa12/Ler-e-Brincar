@@ -10,6 +10,7 @@
     "t_sorteio": "testes/t_sorteio.js",
     "t_caderno": "testes/t_caderno.js",
     "t_backup": "testes/t_backup.js",
+    "t_evolucao": "testes/t_evolucao.js",
     "t_gerar_mat": "testes/t_gerar_mat.js",
     "t_conferir": "testes/t_conferir.js",
     "t_item": "testes/t_item.js",
@@ -26,6 +27,10 @@
   "mapa": {
     "js/caderno.js": [
       "t_caderno",
+      "t_app"
+    ],
+    "js/evolucao.js": [
+      "t_evolucao",
       "t_app"
     ],
     "js/missao.js": [

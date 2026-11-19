@@ -59,10 +59,21 @@ LB.usarResponsavel = function (ctx) {
     if (c) LB.impressao.imprimir(LB.impressao.desenho(c));
   }
 
+  // Evolução no tempo (contas em js/evolucao.js).
+  const evolucao = computed(() => {
+    const lista = LB.evolucao.semanas(registros.value, new Date(), 6);
+    const linhas = LB.evolucao.MATERIAS.map(m => ({
+      nome: NOMES[m], resumo: LB.evolucao.resumo(lista, m),
+      semanas: lista.map(s => ({ rotulo: s.rotulo, ...s.mat[m] }))
+    }));
+    return { linhas, rotulos: lista.map(s => s.rotulo), diasEstaSemana: lista[lista.length - 1].dias,
+      mudancas: LB.evolucao.habilidades(registros.value, new Date()) };
+  });
+
   const noCaderno = computed(() => LB.caderno.total(ctx.caderno.value));
 
   return {
-    registros, noCaderno, porMateria, ondeErrou, feitosPorArea, desenhoParaImprimir,
+    registros, evolucao, noCaderno, porMateria, ondeErrou, feitosPorArea, desenhoParaImprimir,
     imprimirAtividades, imprimirDesenho
   };
 };

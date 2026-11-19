@@ -17,3 +17,11 @@
   .print-questao{margin-bottom:18pt;page-break-inside:avoid}
   .print-opcao{display:inline-block;margin-right:10pt}
 }
+
+/* Evolução no tempo: barras só com CSS */
+.evo-bloco{margin:10px 0}
+.evo-barras{display:flex;gap:6px;align-items:flex-end}
+.evo-col{flex:1;text-align:center;font-size:.8rem}
+.evo-trilho{height:60px;background:var(--cor-borda);border-radius:6px;display:flex;align-items:flex-end;overflow:hidden}
+.evo-barra{width:100%;background:var(--cor-primaria);border-radius:6px 6px 0 0}
+.evo-num,.evo-sem{color:var(--cor-texto-2,#666)}

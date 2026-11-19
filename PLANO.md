@@ -59,4 +59,4 @@ Decisões do dono (19/11/2026):
 - 1 Caderno de erros (a pergunta errada volta na missão até 2 acertos seguidos de primeira) — feito (19/11, `js/caderno.js`)
 - 2 Treino pelos pontos fracos (a missão puxa mais as habilidades com mais erro) — feito (19/11, `js/caderno.js` + `js/missao.js`)
 - 3 a 7 — feitos (19/11): cópia de segurança baixar/trazer (`js/backup.js` + `js/telas/backup.js`, teste `t_backup`) · botão "Instalar" e aviso de versão nova com botão "Atualizar" (`js/telas/aparelho.js`, `js/registrar-sw.js`; o `sw.js` agora espera o aviso) · caixa de confirmação própria (`js/telas/confirmar.js`, usada em zerar e trazer cópia) · tela cheia (Área do responsável → "No tablet") · vibrar ao responder e "reduzir movimento" nos Ajustes (`js/festa.js`)
-- 8 Evolução no tempo na Área do responsável
+- 8 Evolução no tempo na Área do responsável — feito (19/11, `js/evolucao.js` + cartão "📈 Evolução", teste `t_evolucao`)
