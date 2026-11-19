@@ -11,7 +11,15 @@
 
   LB.CONTEUDO = { stories: LB.historias, activities: [...LB.lp, ...LB.mat], colorir: LB.colorir };
 
+  // Junta os moldes das telas (js/moldes/) num só HTML.
+  const m = LB.moldes;
+  const molde = m.cabecalho +
+    '<div class="container" v-if="!portaoAberto">' +
+    m.inicio + m.historias + m.atividades + m.colorir + m.selos + m.ajustes +
+    '</div>' + m.portao + m.navegacao;
+
   const App = {
+    template: molde,
     setup() {
       // Estado comum a todas as telas
       const ctx = {

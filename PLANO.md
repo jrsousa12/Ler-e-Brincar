@@ -33,6 +33,9 @@ Decisões do dono (19/11/2026):
 - `manifest.json` + `sw.js`: ícone na tela do tablet/celular e funcionamento sem internet.
 
 ### Fase 3 — Visual e UX para a criança (Opus planeja, Sonnet faz)
+- Decisões (19/11): trava do responsável = conta de adulto (ex.: 7 × 8); voz lê sozinha ao abrir (desligável nos Ajustes); missão com 8 passos.
+- Feito (19/11): 3.0 — telas saíram do `index.html` (agora 59 linhas) para `js/moldes/`.
+- Etapas (uma conversa cada): 3.0 tirar as telas do `index.html` para `js/telas/` · 3.1 🔊 voz (`js/voz.js`) · 3.2 acerto/erro + guardar tentativas (`js/festa.js`, `js/tentativas.js`) · 3.3 missão do dia (`js/missao.js`) · 3.4 selos da missão e dias seguidos · 3.5 visual (botões, ⚙️, desenhos simples) · 3.6 área do responsável + impressão.
 - **Missão do dia** na tela inicial: 1 história + 3 de Português + 3 de Matemática + 1 desenho, em sequência guiada, sem menus para escolher.
 - 🔊 Botão "ouvir" em textos e perguntas (voz do próprio aparelho, sem internet).
 - Botões grandes, pouca leitura nas telas de navegação, ícones claros.

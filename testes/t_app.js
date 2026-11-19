@@ -28,6 +28,7 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   await p.locator('.card').first().click();
   await foto('2-historia');
   await p.getByRole('button', { name: /pergunta|responder|vamos/i }).first().click().catch(() => ok(false, 'botão de ir às perguntas'));
+  ok((await p.locator('.opcao').count()) >= 3, 'história mostra a 1ª pergunta com opções');
   // Atividade mat-036 (8 maçãs ÷ 4 = 2): o valor 2 está na posição 0
   await p.evaluate(() => {
     const vm = LB.app;
@@ -46,6 +47,13 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   await p.waitForTimeout(300);
   ok((await p.locator('svg ellipse').count()) > 0, 'colorir-30 (Abelha) desenhado');
   await foto('4-colorir');
+
+  // Conquistas (selos) pela barra de baixo
+  await p.click('nav >> text=Selos');
+  ok((await p.locator('.selo').count()) > 0, 'tela de conquistas mostra os selos');
+  // Portão dos adultos abre pelo ⚙️
+  await p.click('button[title=Ajustes]');
+  ok(await p.locator('.portao-parental').isVisible(), 'portão dos adultos abre');
 
   ok(erros.length === 0, 'erros no navegador: ' + erros.join(' | '));
   await b.close();

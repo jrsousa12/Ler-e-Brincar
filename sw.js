@@ -1,7 +1,7 @@
 // Guarda o app no aparelho para funcionar sem internet.
 // Ao mudar qualquer arquivo da lista, aumente VERSAO (o teste testes/t_offline.js confere a lista).
 'use strict';
-const VERSAO = 'lb-v1';
+const VERSAO = 'lb-v2';
 const ARQUIVOS = [
   './', 'index.html', 'manifest.json',
   'css/base.css', 'css/componentes.css',
@@ -10,6 +10,8 @@ const ARQUIVOS = [
   'js/respostas.js', 'js/banco.js', 'js/registrar-sw.js',
   'js/telas/historias.js', 'js/telas/atividades.js', 'js/telas/colorir.js',
   'js/telas/selos.js', 'js/telas/ajustes.js', 'js/app.js',
+  'js/moldes/cabecalho.js', 'js/moldes/inicio.js', 'js/moldes/historias.js', 'js/moldes/atividades.js', 'js/moldes/colorir.js', 'js/moldes/selos.js', 'js/moldes/ajustes.js', 'js/moldes/portao.js',
+  'js/moldes/navegacao.js',
   'icones/icone-192.png', 'icones/icone-512.png', 'icones/icone-mascara-512.png'
 ];
 
