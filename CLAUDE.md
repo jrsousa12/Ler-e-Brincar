@@ -10,6 +10,7 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
 - **Comandos úteis**:
   - Validar conteúdo: `node build/validar.js` (rodar sempre que mexer em `conteudo/`)
   - Testes: `node testes/t_conteudo.js` (regra de resposta certa + validador); `node testes/t_app.js` (abre o app no navegador; `CAPTURAS=pasta` salva fotos)
+  - Offline: `node testes/t_offline.js` (lista do `sw.js`, manifesto, app sem internet). Ao mudar arquivo do app, aumentar `VERSAO` em `sw.js` e incluir o arquivo novo na lista. Ícones: `node build/icones.js`
   - Robô do GitHub (`.github/workflows/verificar.yml`, autorizado 19/11): a cada envio, roda o validador e baixa Vue/Dexie para `vendor/` se faltarem (faz commit sozinho: dar `git pull` depois).
   - Lint: `for f in js/*.js js/telas/*.js conteudo/*.js; do node --check "$f"; done` (só sintaxe)
 - **Estrutura**: `index.html` (casca + telas), `css/`, `js/app.js` + `js/telas/` (uma tela por arquivo), `js/respostas.js` (regra única de resposta certa), `conteudo/` (um item por linha; achar com `grep "id:'lp-037'"`), `vendor/` (Vue e Dexie locais).
