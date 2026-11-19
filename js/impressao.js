@@ -2,12 +2,15 @@
 (function () {
   'use strict';
   const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-  const cabecalho = titulo =>
-    '<div class="print-header"><strong>Ler &amp; Brincar — ' + esc(titulo) + '</strong>' +
-    '<div class="nome"><span>Nome: ______________________________</span><span>Data: ___/___/_____</span></div></div>';
+  const cabecalho = (titulo, dica) =>
+    '<div class="print-header">' +
+    '<div class="print-topo"><span class="print-marca">Ler &amp; Brincar</span><span>Data: ___/___/_____</span></div>' +
+    '<h1 class="print-titulo">' + esc(titulo) + '</h1>' +
+    (dica ? '<p class="print-dica">' + esc(dica) + '</p>' : '') +
+    '<div class="nome"><span>Nome: ____________________________________________</span></div></div>';
 
   function desenho(c) {
-    return cabecalho('Para colorir: ' + c.titulo) + '<div class="print-desenho">' + c.svg + '</div>';
+    return cabecalho('Para colorir: ' + c.titulo, 'Capriche nas cores!') + '<div class="print-desenho">' + c.svg + '</div>';
   }
 
   function atividades(lista, materia) {

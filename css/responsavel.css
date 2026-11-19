@@ -13,6 +13,12 @@
 
 @media print{
   body.imprimindo #app{display:none!important}
+  .print-header{border:2.5pt solid #000;border-radius:14pt;padding:10pt 16pt 12pt;margin-bottom:16pt}
+  .print-topo{display:flex;justify-content:space-between;align-items:center;font-size:11pt}
+  .print-marca{font-weight:800;font-size:12pt;letter-spacing:.5pt;border:1.5pt solid #000;border-radius:20pt;padding:2pt 12pt}
+  .print-titulo{font-size:24pt;margin:10pt 0 2pt;text-align:center;line-height:1.2}
+  .print-dica{text-align:center;font-size:12pt;margin:0 0 6pt;font-style:italic}
+  .print-header .nome{margin-top:12pt;font-size:12pt}
   .print-desenho svg{width:100%;height:auto;max-height:22cm;background:#fff}
   .print-questao{margin-bottom:18pt;page-break-inside:avoid}
   .print-opcao{display:inline-block;margin-right:10pt}
