@@ -6,7 +6,7 @@
 
 | Área | Itens | Próximo id livre |
 |---|---|---|
-| Histórias | 30 | `historia-31` |
+| Histórias | 40 | `historia-41` |
 | Português | 100 | `lp-101` |
 | Matemática | 100 | `mat-101` |
 | Colorir | 30 | `colorir-31` |
@@ -77,6 +77,16 @@
 - historia-28 🌠 A estrela cadente — nível 2, 3 perguntas, EF02LP26 EF15LP04
 - historia-29 🌱 A sementinha — nível 1, 3 perguntas, EF02LP26 EF15LP03
 - historia-30 👻 O amigo invisível — nível 2, 3 perguntas, EF02LP26 EF15LP04
+- historia-31 🐶 O cachorro Pipoca — nível 1, 3 perguntas, EF02LP26 EF15LP03
+- historia-32 🦁 O leão e o ratinho — nível 2, 3 perguntas, EF02LP26 EF15LP04
+- historia-33 🌈 O arco-íris — nível 1, 3 perguntas, EF02LP26 EF15LP03
+- historia-34 🐠 O aquário da escola — nível 1, 3 perguntas, EF02LP26 EF15LP03
+- historia-35 🍎 A maçã dividida — nível 2, 3 perguntas, EF02LP26 EF15LP04
+- historia-36 🐘 O elefante e o passarinho — nível 2, 3 perguntas, EF02LP26 EF15LP04
+- historia-37 🎒 O primeiro dia de aula — nível 1, 3 perguntas, EF02LP26 EF15LP03
+- historia-38 🦋 A borboleta — nível 2, 3 perguntas, EF02LP26 EF15LP04
+- historia-39 🌙 A lua e o menino — nível 1, 3 perguntas, EF02LP26 EF15LP03
+- historia-40 🐞 A joaninha perdida — nível 2, 3 perguntas, EF02LP26 EF15LP04
 
 ## Colorir
 

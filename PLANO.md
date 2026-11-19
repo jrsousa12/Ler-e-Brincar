@@ -48,7 +48,7 @@ Decisões do dono (19/11/2026):
 ### Fase 4 — Motores, depois onda 3 de conteúdo
 - Decisão (19/11): primeiro os motores; opções **sorteadas** a cada vez no app (a certa estava quase sempre no botão do meio).
 - Motores: 1 sorteio das opções — feito · 2 gerador de Matemática + ficha de erros típicos — feito · 3 conferidor de qualidade — feito (`build/conferir.js`; 64 avisos no conteúdo atual, a tratar na onda 3) · 4 motor de item único — feito (`build/item.js`) · 5 catálogo do que existe — feito (`build/catalogo.js` → `CATALOGO.md`; mostra só 10 itens de interpretação/inferência em LP: prioridade na onda 3) · 6 comando único de conferência — feito (`build/tudo.js`; `--mudados` escolhe só o necessário).
-- Depois, conteúdo (Sonnet), uma conversa cada: mat-071 a 100 — feito (19/11, pedido em `build/pedidos/mat-onda3.txt`) · lp-071 a 100 (incluir inferência) — feito (19/11; 10 de inferência) · historia-31 a 40 · colorir-31 a 35.
+- Depois, conteúdo (Sonnet), uma conversa cada: mat-071 a 100 — feito (19/11, pedido em `build/pedidos/mat-onda3.txt`) · lp-071 a 100 (incluir inferência) — feito (19/11; 10 de inferência) · historia-31 a 40 — feito (19/11, `build/pedidos/historia-onda3.js`) · colorir-31 a 35.
 - Regras: `original-deepseek/script-gerador-conteudo.md` (ajustado) + validador antes de entrar no app.
 
 ### Fase 5 — Ajustes pelo uso real
