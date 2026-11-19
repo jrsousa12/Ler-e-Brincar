@@ -54,6 +54,7 @@
 
 /* Colorir: tocar dentro da forma também pinta (não só na linha) */
 .svg-colorir svg *{pointer-events:visible}
+.svg-colorir svg .solto{pointer-events:none} /* enfeites (sorriso, bigode): o toque passa para a forma de baixo */
 
 /* Confete da festa */
 .confete{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:999}
