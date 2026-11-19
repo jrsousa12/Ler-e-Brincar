@@ -10,6 +10,10 @@ LB.moldes.selos = `
         <div class="barra-preenchida" :style="{width: progressoGeral + '%'}"></div>
       </div>
       <p class="texto-centro texto-suave">{{ progressoGeral }}% concluído</p>
+      <div class="placar-missao">
+        <div><span>🚀</span><strong>{{ missoesFeitas }}</strong> missões</div>
+        <div><span>🔥</span><strong>{{ diasSeguidos }}</strong> dias seguidos</div>
+      </div>
       <div class="grid-selos">
         <div class="selo" v-for="s in selos" :key="s.id" :class="{desbloqueado: s.desbloqueado}">
           <span class="emoji">{{ s.emoji }}</span>

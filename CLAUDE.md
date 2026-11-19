@@ -13,9 +13,9 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
   - Offline: `node testes/t_offline.js` (lista do `sw.js`, manifesto, app sem internet). Ao mudar arquivo do app, aumentar `VERSAO` em `sw.js` e incluir o arquivo novo na lista. Ícones: `node build/icones.js`
   - Robô do GitHub (`.github/workflows/verificar.yml`, autorizado 19/11): a cada envio, roda o validador e baixa Vue/Dexie para `vendor/` se faltarem (faz commit sozinho: dar `git pull` depois).
   - Lint: `for f in js/*.js js/telas/*.js conteudo/*.js; do node --check "$f"; done` (só sintaxe)
-- **Estrutura**: `index.html` (só a casca), `css/`, `js/app.js` (junta tudo) + `js/telas/` (comportamento de cada tela) + `js/moldes/` (HTML de cada tela), `js/respostas.js` (regra única de resposta certa), `conteudo/` (um item por linha; achar com `grep "id:'lp-037'"`), `vendor/` (Vue e Dexie locais).
+- **Estrutura**: `index.html` (só a casca), `css/`, `js/app.js` (junta tudo) + `js/telas/` (comportamento de cada tela) + `js/moldes/` (HTML de cada tela), `js/respostas.js` (regra única de resposta certa), `js/pergunta.js` (responder com nova tentativa), `js/missao.js`, `js/voz.js`, `js/festa.js`, `js/tentativas.js`, `conteudo/` (um item por linha; achar com `grep "id:'lp-037'"`), `vendor/` (Vue e Dexie locais).
 - **Convenções**: nomes e comentários em português. Esquemas do conteúdo e regras pedagógicas: `original-deepseek/script-gerador-conteudo.md`. `original-deepseek/` é só consulta, não editar.
-- **Próximas tarefas**: seguir as fases de `PLANO.md` (agora: Fase 3, etapa 3.1 — voz).
+- **Próximas tarefas**: seguir as fases de `PLANO.md` (próxima: Fase 4 — onda 3 de conteúdo).
 - **Público**: o dono é professor e não programa; explicar em português simples.
 - **Idioma**: responder sempre em português do Brasil (PT-BR), inclusive resumos, avisos e mensagens de commit.
 

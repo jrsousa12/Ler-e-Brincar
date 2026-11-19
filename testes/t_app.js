@@ -19,8 +19,9 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   await p.goto('file://' + path.join(raiz, 'index.html'));
   await p.waitForSelector('.card', { timeout: 5000 }).catch(() => {});
   ok(await p.evaluate(() => typeof Vue !== 'undefined' && typeof Dexie !== 'undefined'), 'Vue e Dexie locais');
-  ok((await p.locator('.card').count()) >= 4, 'tela inicial com 4 cartões');
-  ok((await p.textContent('body')).includes('30 desenhos'), 'tela inicial conta 30 desenhos');
+  ok((await p.locator('.bloco-menu').count()) === 4, 'tela inicial com 4 botões grandes');
+  ok((await p.locator('.mini-trilha span').count()) === 8, 'missão do dia com 8 passos na tela inicial');
+  ok(await p.evaluate(() => !!(LB.voz && LB.festa && LB.tentativas)), 'voz, festa e tentativas carregados');
   await foto('1-inicio');
 
   // Abre uma história e responde a 1ª pergunta certo
@@ -39,6 +40,27 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   ok(await p.locator('.opcao').nth(0).evaluate(e => e.classList.contains('correta')), 'mat-036: 2 é a certa');
   await foto('3-atividade');
 
+  // Nova tentativa: 1º erro apaga a opção e deixa tentar; 2º erro mostra a certa
+  await p.evaluate(() => LB.app.abrirAtividade(LB.CONTEUDO.activities.find(a => a.id === 'mat-036')));
+  await p.locator('.opcao').nth(1).click();
+  ok(await p.locator('.opcao').nth(1).evaluate(e => e.classList.contains('errada')), '1º erro marca a opção');
+  ok(await p.locator('.opcao').nth(2).isEnabled(), '1º erro: ainda pode tentar');
+  await p.locator('.opcao').nth(2).click();
+  ok(await p.locator('.opcao').nth(0).evaluate(e => e.classList.contains('correta')), '2º erro: mostra a certa');
+  ok((await p.textContent('.feedback')).length > 20, '2º erro: mostra a explicação');
+
+  // Missão: faz o 2º passo (Português) e volta para a trilha com 1 passo feito
+  await p.evaluate(() => LB.app.irPara('home'));
+  await p.click('.card-missao');
+  ok(await p.locator('.trilha .passo').count() === 8, 'trilha da missão com 8 passos');
+  await p.evaluate(() => LB.app.fazerPasso(1));
+  await p.waitForSelector('.opcao');
+  const certa = await p.evaluate(() => { const a = LB.app.atividadeAtual; return a.opcoes.findIndex((_, i) => LB.respostas.ehCorreta(a, i)); });
+  await p.locator('.opcao').nth(certa).click();
+  await p.click('text=Continuar →');
+  ok(await p.evaluate(() => LB.app.tela === 'missao' && LB.app.passosFeitos === 1), 'missão: passo feito volta para a trilha');
+  await foto('5-missao');
+
   // Colorir: abre o desenho 30 (novo) e pinta
   await p.evaluate(() => {
     const vm = LB.app;
@@ -54,6 +76,18 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   // Portão dos adultos abre pelo ⚙️
   await p.click('button[title=Ajustes]');
   ok(await p.locator('.portao-parental').isVisible(), 'portão dos adultos abre');
+  await p.fill('.campo-portao', '1');
+  await p.click('.portao-parental .btn-primario');
+  ok(await p.locator('.portao-parental').isVisible(), 'conta errada não abre a área dos adultos');
+  const conta2 = await p.evaluate(() => LB.app.portao.a * LB.app.portao.b);
+  await p.fill('.campo-portao', String(conta2));
+  await p.click('.portao-parental .btn-primario');
+  await p.waitForTimeout(300);
+  ok(await p.evaluate(() => LB.app.tela === 'responsavel'), 'conta certa abre a área do responsável');
+  ok((await p.locator('.linha-erro').count()) > 0, 'área do responsável lista onde errou');
+  const folha = await p.evaluate(() => LB.impressao.atividades(LB.CONTEUDO.activities.slice(0, 2), 'Teste'));
+  ok(folha.includes('Nome:') && folha.includes('print-questao'), 'folha de atividades para imprimir');
+  await foto('6-responsavel');
 
   ok(erros.length === 0, 'erros no navegador: ' + erros.join(' | '));
   await b.close();

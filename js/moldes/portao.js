@@ -1,30 +1,16 @@
-// Molde (HTML do Vue): Portão dos adultos (setas + deslizar).
+// Molde (HTML do Vue): Trava dos adultos — uma conta de multiplicar.
 LB.moldes = LB.moldes || {};
 LB.moldes.portao = `
   <div class="portao-parental" v-if="portaoAberto">
     <h2>Área dos adultos</h2>
-    <p class="instrucao">Para entrar, clique nas setas na ordem indicada e depois deslize o dedo (ou mouse) para a direita na área tracejada.</p>
-    <div class="sequencia-setas">
-      <button
-        v-for="(s, i) in portao.setas"
-        :key="i"
-        class="seta"
-        :class="{feita: i < portao.indice, atual: i === portao.indice}"
-        @click="clicarSeta(i)"
-      >{{ s }}</button>
+    <p class="instrucao">Para entrar, responda a conta:</p>
+    <p class="conta-portao">{{ portao.a }} × {{ portao.b }} = ?</p>
+    <input class="campo-portao" v-model="portao.resposta" inputmode="numeric" autocomplete="off"
+           aria-label="Resposta da conta" @keyup.enter="conferirPortao" />
+    <p v-if="portao.erro" class="texto-suave">Resposta errada. Tente esta outra conta.</p>
+    <div class="linha-botoes" style="margin-top:var(--space)">
+      <button class="btn-secundario" @click="fecharPortao">Cancelar</button>
+      <button class="btn-primario" @click="conferirPortao">Entrar</button>
     </div>
-    <div
-      class="area-gesto"
-      @mousedown="iniciarGesto"
-      @mouseup="terminarGesto"
-      @touchstart.prevent="iniciarGestoTouch"
-      @touchend.prevent="terminarGestoTouch"
-    >
-      <span v-if="portao.indice < portao.setas.length">Primeiro complete as setas</span>
-      <span v-else-if="!portao.gestoOk">👉 Deslize para a direita aqui</span>
-      <span v-else>✅ Liberado!</span>
-    </div>
-    <button class="btn-secundario" style="margin-top:var(--space)" @click="fecharPortao">Cancelar</button>
   </div>
-
 `;

@@ -14,7 +14,7 @@ LB.moldes.colorir = `
 
     <!-- COLORIR-ITEM -->
     <div v-if="tela === 'colorir-item' && colorirAtual">
-      <button class="btn-voltar" @click="irPara('colorir')">← Voltar</button>
+      <button class="btn-voltar" @click="voltar('colorir')">← Voltar</button>
       <h2>{{ colorirAtual.titulo }}</h2>
       <p class="texto-suave">Toque nas formas para pintar</p>
       <div class="paleta">

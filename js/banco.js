@@ -6,6 +6,7 @@
     try {
       db = new Dexie('LerBrincarDB');
       db.version(1).stores({ estado: 'chave' });
+      db.version(2).stores({ estado: 'chave', tentativas: '++n, id, data' });
     } catch (e) { console.warn('Dexie falhou:', e); db = null; }
   }
 
@@ -28,5 +29,5 @@
     } catch (e) { console.warn(e); }
   }
 
-  LB.banco = { carregarEstado, salvarEstado };
+  LB.banco = { carregarEstado, salvarEstado, db };
 })();
