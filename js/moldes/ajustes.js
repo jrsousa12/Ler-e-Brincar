@@ -15,6 +15,12 @@ LB.moldes.ajustes = `
           <button class="filtro" :class="{ativo: ajustes.velocidade === 0.9}" @click="mudarVelocidade(0.9)">Normal</button>
           <button class="filtro" :class="{ativo: ajustes.velocidade === 1.05}" @click="mudarVelocidade(1.05)">🐇 Rápida</button>
         </div>
+        <div class="card-meta" style="margin-top:12px">Toque numa voz para ouvir e escolher. A mais natural vem primeiro.</div>
+        <div class="filtros" style="margin-top:8px;margin-bottom:0" v-if="vozes.length">
+          <button class="filtro" :class="{ativo: !ajustes.nomeVoz}" @click="escolherVoz('')">✨ Automática</button>
+          <button class="filtro" v-for="v in vozes" :key="v.nome" :class="{ativo: ajustes.nomeVoz === v.nome}" @click="escolherVoz(v.nome)">{{ v.nome }}</button>
+        </div>
+        <p class="card-meta" v-else-if="vozDisponivel">Nenhuma voz em português encontrada neste aparelho.</p>
       </div>
       <div class="card sem-clique">
         <div class="linha-resumo">

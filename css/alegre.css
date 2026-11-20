@@ -1,0 +1,89 @@
+/* Visual alegre (Fase 7, etapa 1): cores por área, botões "3D" que afundam ao toque,
+   letras arredondadas. Vem depois dos outros CSS e só ajusta a aparência. */
+
+/* Cabeçalho colorido */
+.cabecalho-app{background:linear-gradient(110deg,#7B5CFA 0%,#B05CF0 55%,#EE5A9E 100%)}
+.cabecalho-app h1{font-weight:800;font-size:1.4em;text-shadow:0 2px 0 rgba(0,0,0,.12)}
+.contador-estrelas{background:#FFF;color:#8A5A00;border:none;box-shadow:0 3px 0 #E8B640;font-weight:800}
+
+/* Botão principal: "3D" (sombra sólida embaixo) e afunda ao tocar */
+.btn-primario{
+  background:linear-gradient(180deg,#8E72FF 0%,var(--cor-primaria) 100%);
+  box-shadow:0 6px 0 var(--cor-primaria-escura),0 12px 22px -10px rgba(91,63,217,.7);
+  border-radius:var(--radius-pill);font-weight:800;font-size:1.1em;margin-bottom:6px;
+}
+.btn-primario:active{transform:translateY(5px);box-shadow:0 1px 0 var(--cor-primaria-escura)}
+.btn-secundario{border-width:3px;border-radius:var(--radius-pill);box-shadow:0 4px 0 var(--cor-primaria-2)}
+.btn-secundario:active{transform:translateY(3px);box-shadow:0 1px 0 var(--cor-primaria-2)}
+.btn-ouvir{box-shadow:0 4px 0 #D8CCFF}
+.btn-ouvir:active{transform:translateY(3px);box-shadow:0 1px 0 #D8CCFF}
+
+/* Cartões: mais redondos, com borda de baixo mais grossa */
+.card{border:2px solid var(--cor-borda);border-radius:var(--radius-lg);box-shadow:0 4px 0 var(--cor-borda)}
+.card:active{transform:translateY(3px);box-shadow:0 1px 0 var(--cor-borda)}
+.card.sem-clique:active{transform:none;box-shadow:0 4px 0 var(--cor-borda)}
+h2{color:#3A2E73}
+
+/* Início: missão em destaque */
+.card-missao{
+  background:linear-gradient(160deg,#FFF3D1 0%,#FFE4F0 60%,#F0EAFF 100%);
+  border:3px solid #fff;box-shadow:0 6px 0 #F3D9C2,0 18px 30px -18px rgba(238,90,158,.6);
+}
+.card-missao .card-titulo{font-size:1.5em;font-weight:800;color:#3A2E73}
+.mini-trilha span{border-width:3px;width:36px;height:36px}
+
+/* Início: um bloco de cada cor */
+.bloco-menu{
+  border:none;color:#fff;font-weight:800;font-size:1.3em;border-radius:var(--radius-lg);
+  padding:20px 8px 16px;text-shadow:0 2px 0 rgba(0,0,0,.15);
+}
+.bloco-menu span{
+  width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.9);
+  display:flex;align-items:center;justify-content:center;font-size:2.6em;text-shadow:none;
+  box-shadow:inset 0 -4px 0 rgba(0,0,0,.08);
+}
+.bloco-menu.ler{background:linear-gradient(180deg,#5CA0FF,var(--cor-ler));box-shadow:0 7px 0 var(--cor-ler-3d)}
+.bloco-menu.brincar{background:linear-gradient(180deg,#FFA45E,var(--cor-brincar));box-shadow:0 7px 0 var(--cor-brincar-3d)}
+.bloco-menu.colorir{background:linear-gradient(180deg,#FF7DB6,var(--cor-colorir));box-shadow:0 7px 0 var(--cor-colorir-3d)}
+.bloco-menu.selos{background:linear-gradient(180deg,#FFCB55,var(--cor-selos));box-shadow:0 7px 0 var(--cor-selos-3d)}
+.bloco-menu:active{transform:translateY(6px);box-shadow:0 1px 0 rgba(0,0,0,.25)}
+
+/* Opções de resposta: grandes, redondas, afundam ao tocar */
+.opcao{
+  font-family:var(--font-display);font-weight:700;font-size:1.25em;
+  border:3px solid var(--cor-borda-forte);border-radius:var(--radius);
+  box-shadow:0 5px 0 var(--cor-borda-forte);margin-bottom:14px;
+}
+.opcao:active:not(:disabled){transform:translateY(4px);box-shadow:0 1px 0 var(--cor-borda-forte)}
+.opcao.correta{background:var(--cor-sucesso);border-color:var(--cor-sucesso);color:#fff;box-shadow:0 5px 0 var(--cor-sucesso-3d)}
+.opcao.errada{border-color:var(--cor-alerta);box-shadow:0 5px 0 var(--cor-alerta)}
+
+/* Resposta: balão arredondado */
+.feedback{border-left:none;border-radius:var(--radius);font-size:1.08em;padding:16px 20px}
+.feedback.correto{border:3px solid var(--cor-sucesso)}
+.feedback.errado{border:3px solid var(--cor-alerta)}
+.apoio-visual{border:3px dashed #D8CCFF;border-radius:var(--radius-lg);background:linear-gradient(180deg,#F5F0FF,#fff)}
+
+/* Filtros */
+.filtro{border-width:3px;font-weight:700}
+.filtro.ativo{background:var(--cor-primaria);box-shadow:0 4px 0 var(--cor-primaria-escura)}
+
+/* Barra de baixo: cada área com a sua cor quando ativa */
+.nav-inferior a{font-family:var(--font-display);font-size:.8em;font-weight:700}
+.nav-inferior a:nth-child(2).ativo{color:var(--cor-ler-3d);background:var(--cor-ler-suave)}
+.nav-inferior a:nth-child(3).ativo{color:var(--cor-brincar-3d);background:var(--cor-brincar-suave)}
+.nav-inferior a:nth-child(4).ativo{color:var(--cor-selos-3d);background:var(--cor-selos-suave)}
+.opcao.correta:hover:not(:disabled),.opcao.correta:disabled{background:var(--cor-sucesso);border-color:var(--cor-sucesso);color:#fff}
+
+/* Mascote (Fase 7, etapa 3): mascote no início, no acerto e no fim da missão */
+.mascote-saudacao{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.mascote-botao{flex:0 0 auto;width:104px;height:98px;padding:0;border:none;background:none;cursor:pointer}
+.mascote-svg{width:100%;height:100%;display:block;overflow:visible}
+.balao-mascote{
+  position:relative;flex:1;background:#fff;border:3px solid #D8CCFF;border-radius:var(--radius-lg);
+  padding:12px 14px;font-family:var(--font-display);font-weight:700;color:#3A2E73;font-size:1.05em;
+  box-shadow:0 4px 0 #D8CCFF;
+}
+.balao-mascote::before{content:"";position:absolute;left:-12px;top:50%;margin-top:-9px;border:9px solid transparent;border-right:12px solid #D8CCFF;border-left:0}
+.mascote-mini{display:inline-block;width:40px;height:38px;vertical-align:middle;margin-right:4px}
+.mascote-grande{width:130px;height:122px;margin:0 auto 6px}

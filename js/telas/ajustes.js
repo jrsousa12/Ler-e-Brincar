@@ -29,6 +29,14 @@ LB.usarAjustes = function (ctx) {
     LB.voz.mudarVelocidade(v);
     LB.voz.falar('Olá! Esta é a minha voz.');
   }
+  // Lista de vozes do aparelho (o navegador pode entregá-las com atraso).
+  const vozes = ref(LB.voz.listar());
+  LB.voz.aoMudarLista = () => { vozes.value = LB.voz.listar(); };
+  function escolherVoz(nome) {
+    ctx.ajustes.value.nomeVoz = nome;
+    LB.voz.usar(nome);
+    LB.voz.falar('Olá! Esta é a minha voz.');
+  }
   async function resetarProgresso() {
     const sim = await ctx.perguntar({
       titulo: 'Zerar o progresso?',
@@ -57,7 +65,7 @@ LB.usarAjustes = function (ctx) {
 
   return {
     portaoAberto, portao, abrirPortao, fecharPortao, conferirPortao,
-    alternar, mudarTamanho, mudarVelocidade, resetarProgresso, vozDisponivel: LB.voz.disponivel,
+    alternar, mudarTamanho, mudarVelocidade, resetarProgresso, vozes, escolherVoz, vozDisponivel: LB.voz.disponivel,
     podeVibrar: typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function'
   };
 };

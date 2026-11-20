@@ -15,7 +15,7 @@ LB.moldes.missao = `
         <button class="btn-primario btn-gigante">▶ Vamos!</button>
       </div>
       <div v-if="missaoCompleta" class="missao-completa">
-        <div class="passo-emoji">🏅</div>
+        <div class="mascote-grande" v-html="mascote('festa')"></div>
         <h3>Missão completa!</h3>
         <p>Você ganhou 3 estrelas extras. Volte amanhã para uma nova missão.</p>
         <button class="btn-secundario" @click="irPara('recompensas')">🏆 Ver meus selos</button>

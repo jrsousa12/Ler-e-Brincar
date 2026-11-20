@@ -4,11 +4,41 @@
   const sintese = window.speechSynthesis || null;
   let vozBR = null;
   let velocidade = 0.9;
+  let preferida = ''; // nome da voz escolhida pelo adulto ('' = automática)
+
+  // Nota de cada voz: português do Brasil primeiro; entre elas, as mais naturais
+  // (Google no Android/Chrome, "Natural"/"Online" na Microsoft, "aprimorada" no iPhone).
+  function nota(v) {
+    let n = 0;
+    if (/pt[-_]BR/i.test(v.lang)) n += 100; else if (/^pt/i.test(v.lang)) n += 50; else return -1;
+    if (/natural|neural|online|enhanced|premium|aprimorad|melhorad/i.test(v.name)) n += 20;
+    if (/google/i.test(v.name)) n += 15;
+    if (/compact|espeak/i.test(v.name)) n -= 30;
+    if (v.default) n += 1;
+    return n;
+  }
 
   function escolherVoz() {
     if (!sintese) return;
-    const vozes = sintese.getVoices();
-    vozBR = vozes.find(v => /pt[-_]BR/i.test(v.lang)) || vozes.find(v => /^pt/i.test(v.lang)) || null;
+    const vozes = sintese.getVoices().filter(v => nota(v) >= 0);
+    vozes.sort((a, b) => nota(b) - nota(a));
+    vozBR = (preferida && vozes.find(v => v.name === preferida)) || vozes[0] || null;
+    if (LB.voz && LB.voz.aoMudarLista) LB.voz.aoMudarLista();
+  }
+
+  // Vozes em português do aparelho, da mais natural para a menos.
+  function listar() {
+    if (!sintese) return [];
+    return sintese.getVoices().filter(v => nota(v) >= 0).sort((a, b) => nota(b) - nota(a))
+      .map(v => ({ nome: v.name, lingua: v.lang }));
+  }
+
+  function usar(nome) { preferida = nome || ''; escolherVoz(); }
+
+  // Corta em frases: cada uma vira uma fala, com pausa natural entre elas.
+  // (No Android, falas longas demais também podem parar no meio.)
+  function frases(t) {
+    return t.split(/(?<=[.!?…])\s+/).map(s => s.trim()).filter(Boolean);
   }
   if (sintese) {
     escolherVoz();
@@ -31,11 +61,13 @@
   function falar(texto) {
     if (!sintese || !texto) return;
     sintese.cancel();
-    const u = new SpeechSynthesisUtterance(limpar(texto));
-    u.lang = 'pt-BR';
-    if (vozBR) u.voice = vozBR;
-    u.rate = velocidade;
-    sintese.speak(u);
+    for (const f of frases(limpar(texto))) {
+      const u = new SpeechSynthesisUtterance(f);
+      u.lang = 'pt-BR';
+      if (vozBR) u.voice = vozBR;
+      u.rate = velocidade;
+      sintese.speak(u);
+    }
   }
 
   // Pergunta + opções: "Qual é a cor? Azul. Vermelho. Verde."
@@ -44,7 +76,8 @@
   }
 
   LB.voz = {
-    falar, textoPergunta, limpar,
+    falar, textoPergunta, limpar, frases, nota, listar, usar, aoMudarLista: null,
+    vozEscolhida: () => (vozBR ? vozBR.name : null),
     parar: () => { if (sintese) sintese.cancel(); },
     disponivel: !!sintese,
     mudarVelocidade: v => { velocidade = v; }

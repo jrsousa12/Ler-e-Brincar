@@ -18,8 +18,11 @@ jobs:
           baixa() { [ -s "vendor/$1" ] || curl -fsSL "$2" -o "vendor/$1"; }
           baixa vue.global.prod.js https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.prod.js
           baixa dexie.min.js https://cdn.jsdelivr.net/npm/dexie@4.0.10/dist/dexie.min.js
+          mkdir -p vendor/fontes
+          for p in 600 700 800; do baixa fontes/baloo-2-$p.woff2 https://cdn.jsdelivr.net/npm/@fontsource/baloo-2@5/files/baloo-2-latin-$p-normal.woff2; done
+          for p in 400 600 700; do baixa fontes/lexend-$p.woff2 https://cdn.jsdelivr.net/npm/@fontsource/lexend@5/files/lexend-latin-$p-normal.woff2; done
           if [ -n "$(git status --porcelain vendor)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
-            git add vendor && git commit -m "Guarda cópia local do Vue e do Dexie (vendor/)" && git push
+            git add vendor && git commit -m "Guarda cópia local das bibliotecas e fontes (vendor/)" && git push
           fi

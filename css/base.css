@@ -9,28 +9,34 @@
   --radius: 20px;
   --radius-lg: 28px;
   --radius-pill: 999px;
-  --cor-primaria: #6C5CE7;
-  --cor-primaria-2: #9B8CFF;
-  --cor-primaria-escura: #5546C9;
-  --cor-primaria-suave: #EDE9FF;
+  --cor-primaria: #7B5CFA;
+  --cor-primaria-2: #A78BFA;
+  --cor-primaria-escura: #5B3FD9;
+  --cor-primaria-suave: #F0EAFF;
   --cor-acento: #FF7A59;
-  --cor-fundo: #F6F5FC;
+  --cor-fundo: #FFF8EE;
   --cor-card: #FFFFFF;
   --cor-nav-fundo: rgba(255,255,255,.9);
-  --cor-overlay: rgba(246,245,252,.95);
+  --cor-overlay: rgba(255,248,238,.96);
   --cor-texto: #1F1B2E;
   --cor-texto-suave: #6B6580;
-  --cor-borda: #E7E3F4;
-  --cor-borda-forte: #D5CFEA;
-  --cor-sucesso: #0E9F63;
-  --cor-sucesso-bg: #E4F8EE;
-  --cor-sucesso-texto: #0A7A4A;
+  --cor-borda: #F1E6D6;
+  --cor-borda-forte: #E4D4BE;
+  --cor-sucesso: #22B35E;
+  --cor-sucesso-bg: #E3F9EC;
+  --cor-sucesso-texto: #11803F;
   --cor-alerta: #D98200;
   --cor-alerta-bg: #FFF3E0;
   --cor-alerta-texto: #965900;
   --sombra-1: 0 1px 2px rgba(31,27,46,.05), 0 8px 20px -14px rgba(31,27,46,.35);
   --sombra-2: 0 2px 6px rgba(31,27,46,.06), 0 20px 40px -20px rgba(31,27,46,.40);
-  --sombra-primaria: 0 10px 24px -12px rgba(108,92,231,.85);
+  --sombra-primaria: 0 10px 24px -12px rgba(123,92,250,.85);
+  /* Uma cor para cada área (fundo do botão, sombra 3D embaixo, fundo suave) */
+  --cor-ler: #3B8BF6; --cor-ler-3d: #2563C9; --cor-ler-suave: #E3EFFF;
+  --cor-brincar: #FF8A3D; --cor-brincar-3d: #D9661C; --cor-brincar-suave: #FFEBDB;
+  --cor-colorir: #EE5A9E; --cor-colorir-3d: #C23B7A; --cor-colorir-suave: #FFE4F0;
+  --cor-selos: #FFB927; --cor-selos-3d: #D48E00; --cor-selos-suave: #FFF3D1;
+  --cor-sucesso-3d: #168A47; --cor-alerta-3d: #C26A00;
 }
 html.fonte-dislexia{
   --font-family:"Lexend",system-ui,sans-serif;
@@ -55,8 +61,11 @@ body{
   padding-bottom:104px;
   min-height:100vh;
   background-image:
-    radial-gradient(780px 420px at 6% -10%, rgba(155,140,255,.28), transparent 62%),
-    radial-gradient(680px 380px at 104% -2%, rgba(255,122,89,.16), transparent 60%);
+    radial-gradient(520px 360px at 0% 0%, rgba(167,139,250,.22), transparent 62%),
+    radial-gradient(480px 340px at 100% 18%, rgba(255,185,39,.20), transparent 60%),
+    radial-gradient(520px 380px at 10% 85%, rgba(59,139,246,.12), transparent 60%),
+    radial-gradient(480px 360px at 95% 100%, rgba(238,90,158,.14), transparent 60%);
+  background-attachment:fixed;
   background-repeat:no-repeat;
 }
 [v-cloak]{display:none!important}

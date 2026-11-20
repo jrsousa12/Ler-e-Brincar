@@ -35,7 +35,7 @@ LB.moldes.atividades = `
       <button v-for="(op, i) in atividadeAtual.opcoes" :key="i" class="opcao"
         :class="ra.classe(i)" :disabled="ra.bloqueada(i)" @click="ra.responder(i)">{{ op }}</button>
       <div v-if="ra.mensagem" class="feedback" :class="ra.acertou ? 'correto' : 'errado'">
-        {{ ra.acertou ? '🎉' : '💡' }} {{ ra.mensagem }} <span v-if="ra.terminou">{{ atividadeAtual.explicacao }}</span>
+        <span v-if="ra.acertou" class="mascote-mini" v-html="mascote('feliz')"></span><template v-else>💡</template> {{ ra.mensagem }} <span v-if="ra.terminou">{{ atividadeAtual.explicacao }}</span>
       </div>
       <button v-if="ra.terminou" class="btn-primario btn-gigante mt" @click="concluirAtividade">Continuar →</button>
     </div>

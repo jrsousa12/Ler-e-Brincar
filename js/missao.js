@@ -87,6 +87,7 @@ LB.usarMissao = function (ctx) {
   });
   const passosFeitos = computed(() => passosMissao.value.filter(p => p.feito).length);
   const missaoCompleta = computed(() => passosMissao.value.length > 0 && passosFeitos.value === passosMissao.value.length);
+  const fraseMascote = computed(() => LB.mascote.frase(missaoCompleta.value, passosFeitos.value, passosMissao.value.length));
   const proximoPasso = computed(() => passosMissao.value.findIndex(p => !p.feito));
 
   // Dias seguidos com missão completa (contando até hoje ou ontem).
@@ -130,6 +131,6 @@ LB.usarMissao = function (ctx) {
 
   return {
     garantir, marcarPasso, diasSeguidos,
-    publico: { passosMissao, passosFeitos, missaoCompleta, proximoPasso, abrirMissao, fazerPasso }
+    publico: { passosMissao, passosFeitos, missaoCompleta, fraseMascote, proximoPasso, abrirMissao, fazerPasso }
   };
 };

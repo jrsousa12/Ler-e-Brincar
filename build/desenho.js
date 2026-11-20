@@ -11,6 +11,19 @@ const grupo = (...p) => '<g>' + p.join('') + '</g>';
 // Metade desenhada à direita do eixo x=150, espelhada à esquerda (simetria perfeita).
 const espelhar = (...p) => grupo(...p) + `<g transform="translate(300,0) scale(-1,1)">${p.join('')}</g>`;
 const polar = (cx, cy, r, graus) => { const a = graus * Math.PI / 180; return [+(cx + r * Math.cos(a)).toFixed(1), +(cy + r * Math.sin(a)).toFixed(1)]; };
+// Contorno de curva livre por pontos [x, y] (fechado, sem quinas); ponto [x, y, 1] vira quina (ponta de asa, base chata). Usar com f('path', `d="${suave(pts)}"`).
+const suave = pts => {
+  const n = pts.length, P = i => pts[(i + n) % n], r = v => +v.toFixed(1);
+  let d = `M${r(P(0)[0])} ${r(P(0)[1])}`;
+  for (let i = 0; i < n; i++) {
+    const [a, b, c, e] = [P(i - 1), P(i), P(i + 1), P(i + 2)];
+    const c1 = b[2] ? b : [b[0] + (c[0] - a[0]) / 6, b[1] + (c[1] - a[1]) / 6], c2 = c[2] ? c : [c[0] - (e[0] - b[0]) / 6, c[1] - (e[1] - b[1]) / 6];
+    d += ` C${r(c1[0])} ${r(c1[1])} ${r(c2[0])} ${r(c2[1])} ${r(c[0])} ${r(c[1])}`;
+  }
+  return d + ' Z';
+};
+// Pedra/mancha irregular (não é círculo): n pontos em volta de (cx, cy), raios variados.
+const mancha = (cx, cy, r, n = 6, giro = 0) => suave(Array.from({ length: n }, (_, i) => polar(cx, cy, r * (1 + 0.22 * Math.sin(i * 2.3 + giro)), giro + i * 360 / n)));
 const marca = (nome, t) => `<g data-peca="${nome}">${t}</g>`;
 const nuvem = (x, y, e = 1) => marca('nuvem', f('path', `d="M${x} ${y} Q${x - 8 * e} ${y - 14 * e} ${x + 12 * e} ${y - 16 * e} Q${x + 18 * e} ${y - 34 * e} ${x + 42 * e} ${y - 26 * e} Q${x + 64 * e} ${y - 30 * e} ${x + 66 * e} ${y - 10 * e} Q${x + 80 * e} ${y - 2 * e} ${x + 66 * e} ${y + 8 * e} L${x + 6 * e} ${y + 8 * e} Q${x - 6 * e} ${y + 8 * e} ${x} ${y} Z"`, 'white', 2.5));
 // Copa de folhas: contorno ondulado em volta de uma elipse (n ondas). Serve para árvore, arbusto, nuvem fofa.
@@ -37,6 +50,8 @@ const AJUDA = {
   nuvem: 'nuvem(x, y, escala): nuvem pequena de céu',
   copa: 'copa(cx, cy, rx, ry, ondas, giro, traço, varia): contorno de folhas ondulado (árvore, arbusto, nuvem fofa)',
   colina: 'colina(y, onda, meio): chão ondulado de ponta a ponta',
+  suave: 'suave(pontos): contorno de curva livre por pontos [x,y] ([x,y,1] = quina); usar f(\'path\', `d="${suave(pts)}"`)',
+  mancha: 'mancha(cx, cy, r, n, giro): caminho de mancha irregular (pintinha, pedra) no lugar de círculo',
   svg: 'svg(...partes): folha 300x300 pronta'
 };
-module.exports = { f, solto, olho, grupo, espelhar, polar, nuvem, copa, colina, svg, AJUDA };
+module.exports = { f, solto, olho, grupo, espelhar, polar, nuvem, copa, colina, suave, mancha, svg, AJUDA };

@@ -14,6 +14,8 @@ Colocar: `p.nome({ x, y, e, espelho })` (sem x/y fica onde foi aprovada; `e` = e
 - nuvem(x, y, escala): nuvem pequena de céu
 - copa(cx, cy, rx, ry, ondas, giro, traço, varia): contorno de folhas ondulado (árvore, arbusto, nuvem fofa)
 - colina(y, onda, meio): chão ondulado de ponta a ponta
+- suave(pontos): contorno de curva livre por pontos [x,y] ([x,y,1] = quina); usar f('path', `d="${suave(pts)}"`)
+- mancha(cx, cy, r, n, giro): caminho de mancha irregular (pintinha, pedra) no lugar de círculo
 - svg(...partes): folha 300x300 pronta
 
 ## animais (`build/pecas/animais.js`)
@@ -44,6 +46,9 @@ Colocar: `p.nome({ x, y, e, espelho })` (sem x/y fica onde foi aprovada; `e` = e
 - **flor** (encaixe 0,0): florzinha de quatro pétalas redondas, para o chão
 - **tufo** (encaixe 0,284): tufo de grama de três fios (não pinta), base em y=284
 - **moita** (encaixe 0,0): moitinha em meia-lua no chão
+- **confeito** (encaixe 0,0): confeitinho oval de curva livre (granulado do sorvete); o.g gira em graus
+- **coneSorvete** (encaixe 150,170): cone de sorvete (casquinha) com quadriculado, ponta para baixo, base larga em y=170
+- **folhaJoaninha** (encaixe 150,236): folha larga de baixo, onde a joaninha pousa, com duas nervuras (centro em 150,236)
 - **chaoArvore** (encaixe 150,280): chão suave da árvore (colina baixa)
 - **arvoreMacas** (encaixe 150,286): árvore inteira aprovada: tronco, copa e sete maçãs (base no centro do tronco)
 

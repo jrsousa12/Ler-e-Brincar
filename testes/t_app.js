@@ -13,7 +13,7 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   const p = await b.newPage({ viewport: { width: 390, height: 844 } });
   const erros = [];
   p.on('pageerror', e => erros.push(e.message));
-  p.on('requestfailed', r => { if (!/^data:|fonts.g/.test(r.url())) erros.push('não carregou: ' + r.url()); });
+  p.on('requestfailed', r => { if (!/^data:|fonts.g|vendor\/fontes\//.test(r.url())) erros.push('não carregou: ' + r.url()); });
   const foto = async (n) => { if (pasta) await p.screenshot({ path: path.join(pasta, n + '.png') }); };
 
   await p.goto('file://' + path.join(raiz, 'index.html'));
@@ -22,6 +22,8 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   ok((await p.locator('.bloco-menu').count()) === 4, 'tela inicial com 4 botões grandes');
   ok((await p.locator('.mini-trilha span').count()) === 8, 'missão do dia com 8 passos na tela inicial');
   ok(await p.evaluate(() => !!(LB.voz && LB.festa && LB.tentativas)), 'voz, festa e tentativas carregados');
+  ok(await p.locator('.mascote-saudacao .humor-normal').count() === 1 && (await p.textContent('.balao-mascote')).includes('Começar'),
+    'mascote no início com balão de fala');
   await foto('1-inicio');
 
   // Abre uma história e responde a 1ª pergunta certo
@@ -42,6 +44,7 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   ok(await p.evaluate(() => String(LB.app.atividadeAtual.opcoes.find((_, i) => LB.respostas.ehCorreta(LB.app.atividadeAtual, i)))) === '2', 'mat-036: 2 é a certa');
   await p.locator('.opcao').nth(c).click();
   ok(await p.locator('.opcao').nth(c).evaluate(e => e.classList.contains('correta')), 'mat-036: tocar no 2 marca certa');
+  ok(await p.locator('.feedback .mascote-mini .humor-feliz').count() === 1, 'acerto: mascote feliz no balão');
   await foto('3-atividade');
 
   // Nova tentativa: 1º erro apaga a opção e deixa tentar; 2º erro mostra a certa
@@ -68,6 +71,14 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   await p.click('text=Continuar →');
   ok(await p.evaluate(() => LB.app.tela === 'missao' && LB.app.passosFeitos === 1), 'missão: passo feito volta para a trilha');
   await foto('5-missao');
+  const missaoAntes = await p.evaluate(() => JSON.stringify(LB.app.missao));
+  ok(await p.evaluate(() => { const m = LB.app.missao; LB.app.missao = { ...m, feitos: m.feitos.map(() => true) }; return LB.app.missaoCompleta; })
+    && await p.locator('.mascote-grande .humor-festa').count() === 1, 'missão completa: mascote em festa');
+  await foto('5b-missao-completa');
+  await p.evaluate(() => LB.app.irPara('home'));
+  ok(await p.locator('.mascote-saudacao .humor-festa').count() === 1, 'início: mascote em festa com a missão completa');
+  await foto('1b-inicio-festa');
+  await p.evaluate((m) => { LB.app.missao = JSON.parse(m); }, missaoAntes);
 
   // Colorir: abre o desenho 30 (novo) e pinta
   await p.evaluate(() => {
@@ -75,7 +86,7 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
     vm.abrirColorir(LB.CONTEUDO.colorir.find(c => c.id === 'colorir-30'));
   });
   await p.waitForTimeout(300);
-  ok((await p.locator('svg ellipse').count()) > 0, 'colorir-30 (Abelha) desenhado');
+  ok((await p.locator('svg path:not(.solto)').count()) > 8, 'colorir-30 (Abelha) desenhado');
   await foto('4-colorir');
 
   // Conquistas (selos) pela barra de baixo
@@ -96,6 +107,9 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   const folha = await p.evaluate(() => LB.impressao.atividades(LB.CONTEUDO.activities.slice(0, 2), 'Teste'));
   ok(folha.includes('Nome:') && folha.includes('print-questao'), 'folha de atividades para imprimir');
   await foto('6-responsavel');
+  // Escolher voz: aparelho de teste pode não ter vozes; então só confere que a tela e o botão existem
+  ok((await p.locator('text=Toque numa voz para ouvir e escolher').count()) === 1, 'ajustes mostra a escolha de voz');
+  ok((await p.locator('button.filtro:has-text("Automática"), p.card-meta:has-text("Nenhuma voz")').count()) >= 1, 'escolha de voz tem Automática ou aviso de sem voz');
 
   // Fase 6: cópia de segurança, caixa de confirmação própria, ajustes de movimento
   ok(await p.locator('text=Cópia de segurança').isVisible(), 'área do responsável mostra a cópia de segurança');
