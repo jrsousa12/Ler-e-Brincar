@@ -21,8 +21,6 @@ LB.mascote = (function () {
     '<rect x="23" y="20" width="74" height="58" rx="20" fill="' + PELO + '"/>' +
     '<circle cx="30" cy="52" r="4.5" fill="#FF8FB8" opacity=".6"/><circle cx="90" cy="52" r="4.5" fill="#FF8FB8" opacity=".6"/>' +
     '<ellipse cx="60" cy="58" rx="26" ry="17" fill="#A8764C"/>' +
-    '<ellipse cx="53" cy="52" rx="3.2" ry="2" fill="' + ESCURO + '" transform="rotate(25 53 52)"/>' +
-    '<ellipse cx="67" cy="52" rx="3.2" ry="2" fill="' + ESCURO + '" transform="rotate(-25 67 52)"/>' +
     '<path d="M60 55v6M55 64q5 3 5 -3q0 6 5 3" stroke="' + ESCURO + '" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>';
   const olhosAbertos =
     '<g class="c-olhos"><circle cx="40" cy="33" r="4.5" fill="' + ESCURO + '"/><circle cx="80" cy="33" r="4.5" fill="' + ESCURO + '"/>' +
