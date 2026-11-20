@@ -65,7 +65,7 @@ Decisões do dono (19/11/2026):
 ### Fase 7 — Visual alegre e fluido (decisão 20/11: coruja como mascote, estilo alegre e colorido)
 - 1 Base visual — feito (20/11): paleta viva com uma cor por área (`--cor-ler/brincar/colorir/selos` em `css/base.css`), botões "3D" que afundam (`css/alegre.css`), fontes locais (`css/fontes.css`, arquivos em `vendor/fontes/` baixados pelo robô do GitHub)
 - 2 Fluidez — feito (20/11): telas entram deslizando, opções aparecem uma a uma, acerto dá pulinho, erro balança (`css/movimento.css`; "Reduzir movimento" desliga)
-- 3 Início com a coruja (mascote que muda de humor) — a fazer
+- 3 Início com a coruja — feito (20/11): desenho em `js/coruja.js` (humores normal/feliz/festa); no início com balão de fala (tocar lê a frase), feliz no balão de acerto, em festa na missão completa; animações em `css/movimento.css`
 - 4 Perguntas e histórias: barra de progresso, estrela voando até o contador, frase lida destacada — a fazer
 - 5 Celebrações: fim da missão e selo novo animados — a fazer
 - 6 Tablet (layout largo) e acabamento: capturas de todas as telas para revisão — a fazer

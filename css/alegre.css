@@ -74,3 +74,16 @@ h2{color:#3A2E73}
 .nav-inferior a:nth-child(3).ativo{color:var(--cor-brincar-3d);background:var(--cor-brincar-suave)}
 .nav-inferior a:nth-child(4).ativo{color:var(--cor-selos-3d);background:var(--cor-selos-suave)}
 .opcao.correta:hover:not(:disabled),.opcao.correta:disabled{background:var(--cor-sucesso);border-color:var(--cor-sucesso);color:#fff}
+
+/* Coruja (Fase 7, etapa 3): mascote no início, no acerto e no fim da missão */
+.coruja-saudacao{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.coruja-botao{flex:0 0 auto;width:104px;height:98px;padding:0;border:none;background:none;cursor:pointer}
+.coruja-svg{width:100%;height:100%;display:block;overflow:visible}
+.balao-coruja{
+  position:relative;flex:1;background:#fff;border:3px solid #D8CCFF;border-radius:var(--radius-lg);
+  padding:12px 14px;font-family:var(--font-display);font-weight:700;color:#3A2E73;font-size:1.05em;
+  box-shadow:0 4px 0 #D8CCFF;
+}
+.balao-coruja::before{content:"";position:absolute;left:-12px;top:50%;margin-top:-9px;border:9px solid transparent;border-right:12px solid #D8CCFF;border-left:0}
+.coruja-mini{display:inline-block;width:40px;height:38px;vertical-align:middle;margin-right:4px}
+.coruja-grande{width:130px;height:122px;margin:0 auto 6px}

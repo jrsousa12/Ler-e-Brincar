@@ -22,6 +22,8 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   ok((await p.locator('.bloco-menu').count()) === 4, 'tela inicial com 4 botões grandes');
   ok((await p.locator('.mini-trilha span').count()) === 8, 'missão do dia com 8 passos na tela inicial');
   ok(await p.evaluate(() => !!(LB.voz && LB.festa && LB.tentativas)), 'voz, festa e tentativas carregados');
+  ok(await p.locator('.coruja-saudacao .humor-normal').count() === 1 && (await p.textContent('.balao-coruja')).includes('Começar'),
+    'coruja no início com balão de fala');
   await foto('1-inicio');
 
   // Abre uma história e responde a 1ª pergunta certo
@@ -42,6 +44,7 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   ok(await p.evaluate(() => String(LB.app.atividadeAtual.opcoes.find((_, i) => LB.respostas.ehCorreta(LB.app.atividadeAtual, i)))) === '2', 'mat-036: 2 é a certa');
   await p.locator('.opcao').nth(c).click();
   ok(await p.locator('.opcao').nth(c).evaluate(e => e.classList.contains('correta')), 'mat-036: tocar no 2 marca certa');
+  ok(await p.locator('.feedback .coruja-mini .humor-feliz').count() === 1, 'acerto: coruja feliz no balão');
   await foto('3-atividade');
 
   // Nova tentativa: 1º erro apaga a opção e deixa tentar; 2º erro mostra a certa
@@ -68,6 +71,14 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   await p.click('text=Continuar →');
   ok(await p.evaluate(() => LB.app.tela === 'missao' && LB.app.passosFeitos === 1), 'missão: passo feito volta para a trilha');
   await foto('5-missao');
+  const missaoAntes = await p.evaluate(() => JSON.stringify(LB.app.missao));
+  ok(await p.evaluate(() => { const m = LB.app.missao; LB.app.missao = { ...m, feitos: m.feitos.map(() => true) }; return LB.app.missaoCompleta; })
+    && await p.locator('.coruja-grande .humor-festa').count() === 1, 'missão completa: coruja em festa');
+  await foto('5b-missao-completa');
+  await p.evaluate(() => LB.app.irPara('home'));
+  ok(await p.locator('.coruja-saudacao .humor-festa').count() === 1, 'início: coruja em festa com a missão completa');
+  await foto('1b-inicio-festa');
+  await p.evaluate((m) => { LB.app.missao = JSON.parse(m); }, missaoAntes);
 
   // Colorir: abre o desenho 30 (novo) e pinta
   await p.evaluate(() => {

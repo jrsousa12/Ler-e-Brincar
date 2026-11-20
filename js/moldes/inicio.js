@@ -1,7 +1,12 @@
-// Molde (HTML do Vue): Tela inicial — missão do dia em destaque e 4 botões grandes.
+// Molde (HTML do Vue): Tela inicial — coruja com balão, missão do dia em destaque e 4 botões grandes.
 LB.moldes = LB.moldes || {};
 LB.moldes.inicio = `
     <div v-if="tela === 'home'">
+      <div class="coruja-saudacao">
+        <button class="coruja-botao" :class="{festa: missaoCompleta}" @click="ouvir(fraseCoruja)"
+                aria-label="Ouvir a coruja" v-html="coruja(missaoCompleta ? 'festa' : 'normal')"></button>
+        <div class="balao-coruja">{{ fraseCoruja }}</div>
+      </div>
       <div class="card card-missao" @click="abrirMissao" tabindex="0">
         <div class="missao-icone">{{ missaoCompleta ? '🏅' : '🚀' }}</div>
         <div class="card-titulo">{{ missaoCompleta ? 'Missão completa!' : 'Missão do dia' }}</div>

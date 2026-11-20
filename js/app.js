@@ -91,6 +91,7 @@
 
       return {
         conteudo: LB.CONTEUDO,
+        coruja: LB.coruja.desenho,
         textoPergunta: (p) => LB.voz.textoPergunta(p.enunciado, p.opcoes),
         ...ctx,
         ...historias,

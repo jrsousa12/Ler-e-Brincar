@@ -29,6 +29,19 @@
 .passo.atual{animation:pulsar 1.6s ease-in-out infinite}
 @keyframes pulsar{0%,100%{box-shadow:0 0 0 4px var(--cor-primaria-suave)}50%{box-shadow:0 0 0 9px var(--cor-primaria-suave)}}
 
+/* Coruja: pisca de vez em quando; balança ao ser tocada; pula no acerto; dança na festa */
+.coruja-svg .c-olhos{transform-box:fill-box;transform-origin:center;animation:piscar 4.5s infinite}
+@keyframes piscar{0%,92%,100%{transform:none}95%{transform:scaleY(.1)}}
+.coruja-botao:active .coruja-svg{transform:rotate(-8deg) scale(.95);transition:transform .12s}
+.coruja-mini .coruja-svg{animation:pulinho .6s cubic-bezier(.34,1.56,.64,1)}
+.humor-festa{animation:danca 1.2s ease-in-out infinite}
+.humor-festa .c-asa{transform-box:fill-box;transform-origin:100% 100%;animation:abanar .6s ease-in-out infinite alternate}
+.humor-festa .c-asa-d{transform-origin:0 100%;animation-direction:alternate-reverse}
+.humor-festa .c-confete{animation:brilhar 1.2s ease-in-out infinite}
+@keyframes danca{0%,100%{transform:rotate(-4deg)}50%{transform:translateY(-6px) rotate(4deg)}}
+@keyframes abanar{from{transform:rotate(-8deg)}to{transform:rotate(8deg)}}
+@keyframes brilhar{0%,100%{opacity:1}50%{opacity:.35}}
+
 /* Ícone da barra de baixo dá um pulo ao ser escolhido */
 .nav-inferior a.ativo .icone{animation:pulo .45s cubic-bezier(.34,1.56,.64,1)}
 @keyframes pulo{0%{transform:none}50%{transform:translateY(-7px) scale(1.2)}100%{transform:translateY(-2px) scale(1.1)}}
@@ -37,5 +50,6 @@
 .btn-primario,.btn-secundario,.bloco-menu,.opcao,.card,.btn-ouvir{transition:transform .12s ease,box-shadow .12s ease,background-color .2s ease}
 
 @media (prefers-reduced-motion: reduce){
-  .container > div,.bloco-menu,.opcao,.feedback,.missao-icone,.passo.atual,.nav-inferior a.ativo .icone{animation:none}
+  .container > div,.bloco-menu,.opcao,.feedback,.missao-icone,.passo.atual,.nav-inferior a.ativo .icone,
+  .coruja-svg,.coruja-svg *{animation:none}
 }

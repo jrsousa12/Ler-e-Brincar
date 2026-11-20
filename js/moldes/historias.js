@@ -33,7 +33,7 @@ LB.moldes.historias = `
         <button v-for="(op, i) in perguntaAtual.opcoes" :key="i" class="opcao"
           :class="rh.classe(i)" :disabled="rh.bloqueada(i)" @click="rh.responder(i)">{{ op }}</button>
         <div v-if="rh.mensagem" class="feedback" :class="rh.acertou ? 'correto' : 'errado'">
-          {{ rh.acertou ? '🎉' : '💡' }} {{ rh.mensagem }} <span v-if="rh.terminou">{{ perguntaAtual.explicacao }}</span>
+          <span v-if="rh.acertou" class="coruja-mini" v-html="coruja('feliz')"></span><template v-else>💡</template> {{ rh.mensagem }} <span v-if="rh.terminou">{{ perguntaAtual.explicacao }}</span>
         </div>
         <button v-if="rh.terminou" class="btn-primario btn-gigante mt" @click="proximaPergunta">
           {{ indicePergunta + 1 < historiaAtual.perguntas.length ? 'Próxima →' : 'Concluir ✓' }}

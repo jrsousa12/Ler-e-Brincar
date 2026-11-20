@@ -1,14 +1,14 @@
 // Guarda o app no aparelho para funcionar sem internet.
 // Ao mudar qualquer arquivo da lista, aumente VERSAO (o teste testes/t_offline.js confere a lista).
 'use strict';
-const VERSAO = 'lb-v28';
+const VERSAO = 'lb-v29';
 const ARQUIVOS = [
   './', 'index.html', 'manifest.json',
   'css/fontes.css', 'css/base.css', 'css/componentes.css', 'css/crianca.css', 'css/responsavel.css', 'css/alegre.css', 'css/movimento.css',
   'vendor/vue.global.prod.js', 'vendor/dexie.min.js',
   'conteudo/historias.js', 'conteudo/lp.js', 'conteudo/mat.js', 'conteudo/colorir.js',
   'js/respostas.js', 'js/sorteio.js', 'js/banco.js', 'js/registrar-sw.js',
-  'js/backup.js', 'js/voz.js', 'js/festa.js', 'js/tentativas.js', 'js/evolucao.js', 'js/impressao.js', 'js/caderno.js', 'js/pergunta.js', 'js/missao.js',
+  'js/backup.js', 'js/voz.js', 'js/festa.js', 'js/tentativas.js', 'js/evolucao.js', 'js/impressao.js', 'js/caderno.js', 'js/pergunta.js', 'js/missao.js', 'js/coruja.js',
   'js/telas/responsavel.js', 'js/moldes/missao.js', 'js/moldes/responsavel.js',
   'js/telas/historias.js', 'js/telas/atividades.js', 'js/telas/colorir.js',
   'js/telas/selos.js', 'js/telas/ajustes.js', 'js/telas/confirmar.js', 'js/telas/backup.js', 'js/telas/aparelho.js', 'js/app.js',
