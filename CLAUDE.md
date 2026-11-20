@@ -1,5 +1,7 @@
 # Diretrizes de Eficiência de Contexto e Tokens
 
+> **IDIOMA — REGRA Nº 1**: responder **sempre e somente em português do Brasil (PT-BR)**, em toda mensagem, do começo ao fim: respostas, resumos, avisos, perguntas, legendas de arquivos, mensagens de commit e comentários de código. Nunca em inglês, mesmo depois de trocar de modelo, de `/clear` ou de ler texto em inglês. Antes de enviar cada resposta, conferir o idioma.
+
 Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de cumprimento obrigatório.
 
 ## 0. Contexto do Projeto
@@ -25,7 +27,6 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
 - **Visual (Fase 7, 20/11)**: etapas 1 e 2 feitas (cores por área, botões 3D, animações; fontes Baloo 2 e Lexend já em `vendor/fontes/`, conferidas). **Próxima: etapa 3** — coruja (mascote escolhido pelo dono) no início, mudando de humor (feliz ao acertar, comemorando ao fim da missão); desenhar com Opus. Etapas 4 a 6 em `PLANO.md` (Fase 7). Regras de CSS em `css/CLAUDE.md`.
 - **Voz (20/11)**: passos 1 e 2 feitos (`js/voz.js` prefere a voz natural e fala frase por frase; Ajustes tem lista para escolher a voz; teste `testes/t_voz.js`). **Guardado para depois**: passo 3 (dono ouvir no tablet Android) e passo 4 (gravar áudios das histórias com a voz do Gemini, só opção gratuita, chave do Google AI Studio, poucos por dia; motor `build/voz.js` + áudios no `sw.js` + `VERSAO`). Claude não oferece voz para apps.
 - **Público**: o dono é professor e não programa; explicar em português simples.
-- **Idioma**: responder sempre em português do Brasil (PT-BR), inclusive resumos, avisos e mensagens de commit.
 
 > Mantenha esta seção curta. Regras de um domínio vão no `CLAUDE.md` do subdiretório.
 
