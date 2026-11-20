@@ -1,7 +1,7 @@
 // Peças de natureza, tiradas dos desenhos aprovados (árvore colorir-07, castelo colorir-19).
 // Peças pequenas (maçã, flor, tufo, moita) são desenhadas em volta do ponto 0,0: sempre passar x e y.
 'use strict';
-const { f, solto, copa, colina } = require('../desenho.js');
+const { f, solto, copa, colina, suave } = require('../desenho.js');
 const peca = require('./peca.js');
 const tema = 'natureza';
 
@@ -22,6 +22,16 @@ const lista = [
     desenho: () => solto('M0 284 L-4 274 M4 284 L4 272 M8 284 L12 275', 2) },
   { nome: 'moita', descricao: 'moitinha em meia-lua no chão', ancora: [0, 0],
     desenho: () => f('path', 'd="M-14 0 Q0 -20 14 0 Z"', 'white', 2.5) },
+  { nome: 'confeito', descricao: 'confeitinho oval de curva livre (granulado do sorvete); o.g gira em graus', ancora: [0, 0],
+    desenho: (o) => { const a = (o.g ?? 0) * Math.PI / 180, c = Math.cos(a), s = Math.sin(a);
+      const pts = Array.from({ length: 8 }, (_, i) => { const t = i * Math.PI / 4, k = 1 + 0.035 * Math.sin(i * 2.1), x = 7.5 * k * Math.cos(t), y = 4 * k * Math.sin(t); return [+(x * c - y * s).toFixed(1), +(x * s + y * c).toFixed(1)]; });
+      return f('path', `d="${suave(pts)}"`, 'white', 2.5); } },
+  { nome: 'coneSorvete', descricao: 'cone de sorvete (casquinha) com quadriculado, ponta para baixo, base larga em y=170', ancora: [150, 170],
+    desenho: () => f('path', 'd="M84 170 L144 282 Q150 292 156 282 L216 170 Z"') +
+      solto('M124 170 L165 246', 2) + solto('M176 170 L135 246', 2) + solto('M150 170 L180 224', 2) + solto('M150 170 L120 224', 2) + solto('M176 170 L194 202', 2) + solto('M124 170 L106 202', 2) },
+  { nome: 'folhaJoaninha', descricao: 'folha larga de baixo, onde a joaninha pousa, com duas nervuras (centro em 150,236)', ancora: [150, 236],
+    desenho: () => f('path', 'd="M10 236 Q60 160 150 176 Q240 160 290 236 Q250 300 150 296 Q50 300 10 236 Z"') +
+      solto('M50 262 Q92 256 120 276', 2.5) + solto('M250 262 Q208 256 180 276', 2.5) },
   { nome: 'chaoArvore', descricao: 'chão suave da árvore (colina baixa)', ancora: [150, 280],
     desenho: () => colina(280, 14, 278) }
 ];
