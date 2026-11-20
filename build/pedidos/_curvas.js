@@ -1,5 +1,5 @@
 // Auxiliares de curva suave para os pedidos de desenho (mesmo molde do lote 2).
-const { f, polar } = require('../desenho.js');
+const { f, polar, suave } = require('../desenho.js');
 
 const r1 = v => +v.toFixed(1), pt = q => q.map(r1).join(' ');
 // Polígono de retas com cantos arredondados (raio r).
@@ -22,4 +22,11 @@ const estrela = (cx, cy, R, r, giro = -90, sw = 3, fundo = 'white') =>
 const solMini = (x, y, R) => RP(Array.from({ length: 16 }, (_, i) => polar(x, y, i % 2 ? R * 0.74 : R, -90 + i * 22.5)), R * 0.13, 'white', 2.5) +
   f('circle', `cx="${x}" cy="${y}" r="${r1(R * 0.5)}"`, 'white', 2.5);
 
-module.exports = { RP, caixa, estrela, solMini };
+// Oval de curva livre (8 pontos, leve irregularidade): no lugar de ellipse/circle.
+const ov = (cx, cy, rx, ry, g = 0, sw = 3, fundo = 'white') => {
+  const a = g * Math.PI / 180, c = Math.cos(a), s = Math.sin(a);
+  const pts = Array.from({ length: 8 }, (_, i) => { const t = i * Math.PI / 4, k = 1 + 0.035 * Math.sin(i * 2.1), x = rx * k * Math.cos(t), y = ry * k * Math.sin(t); return [+(cx + x * c - y * s).toFixed(1), +(cy + x * s + y * c).toFixed(1)]; });
+  return f('path', `d="${suave(pts)}"`, fundo, sw);
+};
+
+module.exports = { RP, caixa, estrela, solMini, ov };
