@@ -101,10 +101,10 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/backup.js` | 35 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 33 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
 | `js/caderno.js` | 43 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
-| `js/coruja.js` | 49 | Coruja (mascote, Fase 7 etapa 3): desenho feito pelo próprio app, em 3 humores. |
 | `js/evolucao.js` | 77 | Evolução no tempo: só contas, a partir das respostas guardadas (js/tentativas.js). |
 | `js/festa.js` | 69 | Festa do acerto (confete + som) e incentivo no erro. Som feito pelo próprio app, sem arquivos. |
 | `js/impressao.js` | 36 | Monta folhas para imprimir (desenho ou lista de atividades) em #print-container. |
+| `js/mascote.js` | 56 | Mascote (Fase 7 etapa 3): capivara desenhada pelo próprio app, em 3 humores. |
 | `js/missao.js` | 136 | Missão do dia: 1 história + 3 de Português + 3 de Matemática + 1 desenho, em sequência. |
 | `js/pergunta.js` | 44 | Regra de responder (histórias e atividades): acertou → festa; errou → incentivo e nova |
 | `js/registrar-sw.js` | 23 | Liga o modo sem internet (só em https ou localhost; em arquivo aberto direto, ignora). |
@@ -128,7 +128,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/colorir.js` | 37 | Molde (HTML do Vue): Telas "Colorir" (lista) e desenho para pintar. |
 | `js/moldes/confirmar.js` | 14 | Molde (HTML do Vue): caixa de confirmação própria (js/telas/confirmar.js). |
 | `js/moldes/historias.js` | 43 | Molde (HTML do Vue): Telas "Ler" (lista) e "História" (leitura e perguntas). |
-| `js/moldes/inicio.js` | 25 | Molde (HTML do Vue): Tela inicial — coruja com balão, missão do dia em destaque e 4 botões grandes. |
+| `js/moldes/inicio.js` | 25 | Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 4 botões grandes. |
 | `js/moldes/missao.js` | 24 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
 | `js/moldes/navegacao.js` | 11 | Molde (HTML do Vue): Barra de navegação de baixo. |
 | `js/moldes/portao.js` | 16 | Molde (HTML do Vue): Trava dos adultos — uma conta de multiplicar. |
