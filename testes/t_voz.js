@@ -39,5 +39,14 @@ ok(faladas.length === 1, 'falar de novo deve parar a fala anterior');
 ok(voz.limpar('3 + 4 = 7') === '3 mais 4 é igual a 7', 'sinais viram palavras');
 ok(voz.frases('Tem 2,5 kg. Certo?').length === 2, 'vírgula de número não corta a frase');
 
+// Escolha manual do adulto
+ok(voz.listar().length === 4 && voz.listar()[0].nome === 'Google português do Brasil', 'lista só pt, a mais natural primeiro');
+voz.usar('eSpeak Portuguese');
+ok(voz.vozEscolhida() === 'eSpeak Portuguese', 'escolha manual vale');
+voz.usar('Voz que sumiu');
+ok(voz.vozEscolhida() === 'Google português do Brasil', 'nome que não existe volta para a automática');
+voz.usar('');
+ok(voz.vozEscolhida() === 'Google português do Brasil', 'vazio = automática');
+
 console.log(falhas ? `t_voz: ${falhas} falha(s)` : 't_voz: OK');
 process.exit(falhas ? 1 : 0);

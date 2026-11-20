@@ -96,6 +96,9 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   const folha = await p.evaluate(() => LB.impressao.atividades(LB.CONTEUDO.activities.slice(0, 2), 'Teste'));
   ok(folha.includes('Nome:') && folha.includes('print-questao'), 'folha de atividades para imprimir');
   await foto('6-responsavel');
+  // Escolher voz: aparelho de teste pode não ter vozes; então só confere que a tela e o botão existem
+  ok((await p.locator('text=Toque numa voz para ouvir e escolher').count()) === 1, 'ajustes mostra a escolha de voz');
+  ok((await p.locator('button.filtro:has-text("Automática"), p.card-meta:has-text("Nenhuma voz")').count()) >= 1, 'escolha de voz tem Automática ou aviso de sem voz');
 
   // Fase 6: cópia de segurança, caixa de confirmação própria, ajustes de movimento
   ok(await p.locator('text=Cópia de segurança').isVisible(), 'área do responsável mostra a cópia de segurança');
