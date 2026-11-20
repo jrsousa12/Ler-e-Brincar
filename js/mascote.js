@@ -9,18 +9,21 @@ LB.mascote = (function () {
     '<ellipse cx="60" cy="92" rx="19" ry="13" fill="#D9AE82"/>';
   const patas =
     '<ellipse cx="46" cy="104" rx="8" ry="5" fill="' + PELO_ESCURO + '"/><ellipse cx="74" cy="104" rx="8" ry="5" fill="' + PELO_ESCURO + '"/>';
+  // Bracinhos: patinhas gordinhas apoiadas na barriga; na festa, levantadas.
   const bracosBaixos =
-    '<path d="M30 82Q26 94 34 98M90 82Q94 94 86 98" stroke="' + PELO_ESCURO + '" stroke-width="9" fill="none" stroke-linecap="round"/>';
+    '<ellipse cx="47" cy="89" rx="5.5" ry="8" fill="' + PELO_ESCURO + '" transform="rotate(-35 47 89)"/>' +
+    '<ellipse cx="73" cy="89" rx="5.5" ry="8" fill="' + PELO_ESCURO + '" transform="rotate(35 73 89)"/>';
   const bracosAltos =
-    '<path class="c-braco" d="M32 84Q20 74 16 58" stroke="' + PELO_ESCURO + '" stroke-width="9" fill="none" stroke-linecap="round"/>' +
-    '<path class="c-braco c-braco-d" d="M88 84Q100 74 104 58" stroke="' + PELO_ESCURO + '" stroke-width="9" fill="none" stroke-linecap="round"/>';
+    '<g class="c-braco"><ellipse cx="22" cy="62" rx="6.5" ry="15" fill="' + PELO_ESCURO + '" transform="rotate(-22 22 62)"/><circle cx="17.5" cy="50" r="3.5" fill="#D9AE82"/></g>' +
+    '<g class="c-braco c-braco-d"><ellipse cx="98" cy="62" rx="6.5" ry="15" fill="' + PELO_ESCURO + '" transform="rotate(22 98 62)"/><circle cx="102.5" cy="50" r="3.5" fill="#D9AE82"/></g>';
   const cabeca =
     '<ellipse cx="33" cy="22" rx="5.5" ry="4.5" fill="' + PELO_ESCURO + '"/><ellipse cx="87" cy="22" rx="5.5" ry="4.5" fill="' + PELO_ESCURO + '"/>' +
     '<rect x="23" y="20" width="74" height="58" rx="20" fill="' + PELO + '"/>' +
     '<circle cx="30" cy="52" r="4.5" fill="#FF8FB8" opacity=".6"/><circle cx="90" cy="52" r="4.5" fill="#FF8FB8" opacity=".6"/>' +
-    '<rect x="35" y="43" width="50" height="33" rx="15" fill="' + PELO_ESCURO + '"/>' +
-    '<path d="M50 50v5M70 50v5" stroke="' + ESCURO + '" stroke-width="3.5" stroke-linecap="round"/>' +
-    '<path d="M54 64q6 5 12 0" stroke="' + ESCURO + '" stroke-width="2.5" fill="none" stroke-linecap="round"/>';
+    '<ellipse cx="60" cy="58" rx="26" ry="17" fill="#A8764C"/>' +
+    '<ellipse cx="53" cy="52" rx="3.2" ry="2" fill="' + ESCURO + '" transform="rotate(25 53 52)"/>' +
+    '<ellipse cx="67" cy="52" rx="3.2" ry="2" fill="' + ESCURO + '" transform="rotate(-25 67 52)"/>' +
+    '<path d="M60 55v6M55 64q5 3 5 -3q0 6 5 3" stroke="' + ESCURO + '" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>';
   const olhosAbertos =
     '<g class="c-olhos"><circle cx="40" cy="33" r="4.5" fill="' + ESCURO + '"/><circle cx="80" cy="33" r="4.5" fill="' + ESCURO + '"/>' +
     '<circle cx="41.6" cy="31.4" r="1.5" fill="#fff"/><circle cx="81.6" cy="31.4" r="1.5" fill="#fff"/></g>';
