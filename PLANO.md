@@ -61,3 +61,11 @@ Decisões do dono (19/11/2026):
 - 2 Treino pelos pontos fracos (a missão puxa mais as habilidades com mais erro) — feito (19/11, `js/caderno.js` + `js/missao.js`)
 - 3 a 7 — feitos (19/11): cópia de segurança baixar/trazer (`js/backup.js` + `js/telas/backup.js`, teste `t_backup`) · botão "Instalar" e aviso de versão nova com botão "Atualizar" (`js/telas/aparelho.js`, `js/registrar-sw.js`; o `sw.js` agora espera o aviso) · caixa de confirmação própria (`js/telas/confirmar.js`, usada em zerar e trazer cópia) · tela cheia (Área do responsável → "No tablet") · vibrar ao responder e "reduzir movimento" nos Ajustes (`js/festa.js`)
 - 8 Evolução no tempo na Área do responsável — feito (19/11, `js/evolucao.js` + cartão "📈 Evolução", teste `t_evolucao`)
+
+### Fase 7 — Visual alegre e fluido (decisão 20/11: coruja como mascote, estilo alegre e colorido)
+- 1 Base visual — feito (20/11): paleta viva com uma cor por área (`--cor-ler/brincar/colorir/selos` em `css/base.css`), botões "3D" que afundam (`css/alegre.css`), fontes locais (`css/fontes.css`, arquivos em `vendor/fontes/` baixados pelo robô do GitHub)
+- 2 Fluidez — feito (20/11): telas entram deslizando, opções aparecem uma a uma, acerto dá pulinho, erro balança (`css/movimento.css`; "Reduzir movimento" desliga)
+- 3 Início com a coruja (mascote que muda de humor) — a fazer
+- 4 Perguntas e histórias: barra de progresso, estrela voando até o contador, frase lida destacada — a fazer
+- 5 Celebrações: fim da missão e selo novo animados — a fazer
+- 6 Tablet (layout largo) e acabamento: capturas de todas as telas para revisão — a fazer

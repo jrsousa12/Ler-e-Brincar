@@ -1,0 +1,41 @@
+/* Fluidez (Fase 7, etapa 2): telas entram deslizando, opções aparecem uma a uma,
+   acerto dá pulinho, erro balança de leve. "Reduzir movimento" (Ajustes) desliga tudo
+   (regra em css/componentes.css). Só opacidade e deslocamento: leve no tablet. */
+
+/* Tela nova entra subindo (cada tela é um <div> filho de .container) */
+.container > div{animation:entrar .38s cubic-bezier(.2,.8,.3,1)}
+@keyframes entrar{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* Blocos do início e opções aparecem um depois do outro */
+.bloco-menu,.opcao{animation:surgir .42s cubic-bezier(.34,1.56,.64,1) both}
+.bloco-menu:nth-child(2),.opcao:nth-of-type(3){animation-delay:.07s}
+.bloco-menu:nth-child(3),.opcao:nth-of-type(4){animation-delay:.14s}
+.bloco-menu:nth-child(4),.opcao:nth-of-type(5){animation-delay:.21s}
+@keyframes surgir{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+
+/* Acertou: pulinho. Errou: balanço leve (sem susto). */
+.opcao.correta{animation:pulinho .55s cubic-bezier(.34,1.56,.64,1)}
+.opcao.errada{animation:balanco .45s ease}
+@keyframes pulinho{0%{transform:scale(1)}40%{transform:scale(1.06)}70%{transform:scale(.98)}100%{transform:scale(1)}}
+@keyframes balanco{0%,100%{transform:none}20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(2px)}}
+
+/* Balão de resposta aparece crescendo */
+.feedback{animation:balao .4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes balao{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+
+/* Foguete da missão flutua; passo atual pulsa */
+.missao-icone{animation:flutuar 3s ease-in-out infinite}
+@keyframes flutuar{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
+.passo.atual{animation:pulsar 1.6s ease-in-out infinite}
+@keyframes pulsar{0%,100%{box-shadow:0 0 0 4px var(--cor-primaria-suave)}50%{box-shadow:0 0 0 9px var(--cor-primaria-suave)}}
+
+/* Ícone da barra de baixo dá um pulo ao ser escolhido */
+.nav-inferior a.ativo .icone{animation:pulo .45s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pulo{0%{transform:none}50%{transform:translateY(-7px) scale(1.2)}100%{transform:translateY(-2px) scale(1.1)}}
+
+/* Toque: tudo que afunda volta macio */
+.btn-primario,.btn-secundario,.bloco-menu,.opcao,.card,.btn-ouvir{transition:transform .12s ease,box-shadow .12s ease,background-color .2s ease}
+
+@media (prefers-reduced-motion: reduce){
+  .container > div,.bloco-menu,.opcao,.feedback,.missao-icone,.passo.atual,.nav-inferior a.ativo .icone{animation:none}
+}

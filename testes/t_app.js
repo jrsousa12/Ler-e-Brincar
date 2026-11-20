@@ -13,7 +13,7 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   const p = await b.newPage({ viewport: { width: 390, height: 844 } });
   const erros = [];
   p.on('pageerror', e => erros.push(e.message));
-  p.on('requestfailed', r => { if (!/^data:|fonts.g/.test(r.url())) erros.push('não carregou: ' + r.url()); });
+  p.on('requestfailed', r => { if (!/^data:|fonts.g|vendor\/fontes\//.test(r.url())) erros.push('não carregou: ' + r.url()); });
   const foto = async (n) => { if (pasta) await p.screenshot({ path: path.join(pasta, n + '.png') }); };
 
   await p.goto('file://' + path.join(raiz, 'index.html'));

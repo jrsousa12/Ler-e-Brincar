@@ -1,1 +1,2 @@
 Vue 3.5.13 e Dexie 4.0.10, baixados pelo robô .github/workflows/verificar.yml
+Fontes Baloo 2 e Lexend (licença SIL OFL, via Fontsource) em vendor/fontes/, baixadas pelo mesmo robô.

@@ -1,10 +1,10 @@
 // Guarda o app no aparelho para funcionar sem internet.
 // Ao mudar qualquer arquivo da lista, aumente VERSAO (o teste testes/t_offline.js confere a lista).
 'use strict';
-const VERSAO = 'lb-v27';
+const VERSAO = 'lb-v28';
 const ARQUIVOS = [
   './', 'index.html', 'manifest.json',
-  'css/base.css', 'css/componentes.css', 'css/crianca.css', 'css/responsavel.css',
+  'css/fontes.css', 'css/base.css', 'css/componentes.css', 'css/crianca.css', 'css/responsavel.css', 'css/alegre.css', 'css/movimento.css',
   'vendor/vue.global.prod.js', 'vendor/dexie.min.js',
   'conteudo/historias.js', 'conteudo/lp.js', 'conteudo/mat.js', 'conteudo/colorir.js',
   'js/respostas.js', 'js/sorteio.js', 'js/banco.js', 'js/registrar-sw.js',
@@ -16,9 +16,13 @@ const ARQUIVOS = [
   'js/moldes/navegacao.js', 'js/moldes/confirmar.js', 'js/moldes/backup.js', 'js/moldes/versao.js',
   'icones/icone-192.png', 'icones/icone-512.png', 'icones/icone-mascara-512.png'
 ];
+// Fontes (vendor/fontes/, baixadas pelo robô do GitHub): guardadas se existirem; se faltarem, o app usa a fonte comum.
+const FONTES = ['baloo-2-600', 'baloo-2-700', 'baloo-2-800', 'lexend-400', 'lexend-600', 'lexend-700']
+  .map(n => 'vendor/fontes/' + n + '.woff2');
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(VERSAO).then(c => c.addAll(ARQUIVOS)));
+  e.waitUntil(caches.open(VERSAO).then(c => c.addAll(ARQUIVOS)
+    .then(() => Promise.all(FONTES.map(f => c.add(f).catch(() => null))))));
 });
 
 // A versão nova espera o aviso do app (botão "Atualizar") para não trocar no meio de uma atividade.
@@ -32,14 +36,14 @@ self.addEventListener('activate', e => {
   );
 });
 
-// Arquivos do app: do aparelho primeiro. Fontes do Google: guarda na 1ª vez e reusa depois.
+// Arquivos do app: do aparelho primeiro. Fontes: guarda na 1ª vez e reusa depois.
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   e.respondWith(
     caches.match(e.request, { ignoreSearch: true }).then(guardado => {
       if (guardado) return guardado;
       return fetch(e.request).then(resp => {
-        const ehFonte = /fonts\.(googleapis|gstatic)\.com/.test(e.request.url);
+        const ehFonte = /fonts\.(googleapis|gstatic)\.com|vendor\/fontes\//.test(e.request.url);
         if (ehFonte && resp && (resp.ok || resp.type === 'opaque')) {
           const copia = resp.clone();
           caches.open(VERSAO).then(c => c.put(e.request, copia));
