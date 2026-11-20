@@ -75,7 +75,7 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
     vm.abrirColorir(LB.CONTEUDO.colorir.find(c => c.id === 'colorir-30'));
   });
   await p.waitForTimeout(300);
-  ok((await p.locator('svg ellipse').count()) > 0, 'colorir-30 (Abelha) desenhado');
+  ok((await p.locator('svg path:not(.solto)').count()) > 8, 'colorir-30 (Abelha) desenhado');
   await foto('4-colorir');
 
   // Conquistas (selos) pela barra de baixo
