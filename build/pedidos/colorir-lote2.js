@@ -1,19 +1,28 @@
-// Lote 2 de desenhos (19/11): estrela, coração, barco, sol com nuvem, lua com estrelas. Rodar: node build/colorir.js build/pedidos/colorir-lote2.js [--gravar]
-const { f, solto, olho, svg, nuvem, colina, copa, polar } = require('../desenho.js');
+// Lote 2 de desenhos (19/11; suavizado 20/11): estrela, coração, barco, sol com nuvem, lua com estrelas. Rodar: node build/colorir.js build/pedidos/colorir-lote2.js [--gravar]
+const { f, solto, olho, svg, nuvem, colina, polar, suave } = require('../desenho.js');
 const p = require('../pecas/index.js');
 
-// Estrela de pontas redondas: vértices alternados (fora/dentro) viram curvas com o vértice de controle.
-const estrela = (cx, cy, R, r, giro = -90, sw = 3, fundo = 'white') => {
-  const v = Array.from({ length: 10 }, (_, i) => polar(cx, cy, i % 2 ? r : R, giro + i * 36));
-  const m = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2].map(n => +n.toFixed(1));
-  let d = 'M' + m(v[9], v[0]).join(' ');
-  v.forEach((q, i) => { d += ` Q${q.join(' ')} ${m(q, v[(i + 1) % 10]).join(' ')}`; });
-  return f('path', `d="${d} Z"`, fundo, sw);
+const r1 = v => +v.toFixed(1), pt = q => q.map(r1).join(' ');
+// Polígono de retas com cantos arredondados (raio r).
+const RP = (pts, r, fundo, sw) => {
+  const n = pts.length; let d = '';
+  pts.forEach((c, i) => {
+    const a = pts[(i + n - 1) % n], b = pts[(i + 1) % n], u = [a[0] - c[0], a[1] - c[1]], v = [b[0] - c[0], b[1] - c[1]];
+    const lu = Math.hypot(...u), lv = Math.hypot(...v), k = Math.min(r, lu / 2, lv / 2);
+    d += `${i ? 'L' : 'M'}${pt([c[0] + u[0] / lu * k, c[1] + u[1] / lu * k])} Q${pt(c)} ${pt([c[0] + v[0] / lv * k, c[1] + v[1] / lv * k])} `;
+  });
+  return f('path', `d="${d}Z"`, fundo, sw);
 };
-// Coração (centro x,y; e = escala).
+// Estrela de pontas e vales arredondados.
+const estrela = (cx, cy, R, r, giro = -90, sw = 3, fundo = 'white') =>
+  RP(Array.from({ length: 10 }, (_, i) => polar(cx, cy, i % 2 ? r : R, giro + i * 36)), R * 0.16, fundo, sw);
+// Coração clássico por equação (36 pontos, ponta de baixo em quina); centro x,y; e = escala.
 const coracao = (x, y, e = 1, sw = 3) => {
-  const t = (a, b) => `${(x + a * e).toFixed(1)} ${(y + b * e).toFixed(1)}`;
-  return f('path', `d="M${t(0, 80)} C${t(-110, 0)} ${t(-110, -90)} ${t(-52, -100)} C${t(-22, -104)} ${t(0, -80)} ${t(0, -68)} C${t(0, -80)} ${t(22, -104)} ${t(52, -100)} C${t(110, -90)} ${t(110, 0)} ${t(0, 80)} Z"`, 'white', sw);
+  const k = 6.6 * e, pts = Array.from({ length: 36 }, (_, i) => {
+    const t = i / 36 * 2 * Math.PI, X = 16 * Math.sin(t) ** 3, Y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+    return i === 18 ? [x + k * X, y + k * (Y - 2.5) - 10 * e, 1] : [x + k * X, y + k * (Y - 2.5) - 10 * e];
+  });
+  return f('path', `d="${suave(pts)}"`, 'white', sw);
 };
 
 const estrelaLia = svg(
@@ -32,11 +41,11 @@ const coracaoDesenho = svg(
 );
 
 const barco = svg(
-  f('circle', 'cx="240" cy="62" r="30"'), p.raiosSol({ x: 240, y: 62, e: 0.3 }),
+  p.raiosSol({ x: 238, y: 60, e: 0.36 }), f('circle', 'cx="238" cy="60" r="25"'),
   nuvem(30, 70, 0.9), nuvem(150, 44, 0.6),
   f('path', 'd="M0 250 Q40 232 75 246 Q112 262 150 246 Q190 230 225 246 Q262 262 300 244 L300 300 L0 300 Z"'),
-  f('path', 'd="M150 40 Q166 116 214 200 Q150 208 150 208 Z"'),
-  f('path', 'd="M142 74 Q124 140 78 196 Q112 204 142 204 Z"'),
+  f('path', 'd="M150 42 C156 104 180 158 212 196 Q214 202 206 204 Q178 208 154 208 Q148 208 150 200 Z"'),
+  f('path', 'd="M142 76 C134 128 114 168 82 194 Q76 199 84 201 Q112 205 138 204 Q144 204 142 198 Z"'),
   solto('M146 30 L146 224', 4),
   f('path', 'd="M146 30 Q168 22 188 32 Q168 42 146 42 Z"', 'white', 2.5),
   f('path', 'd="M52 206 Q150 224 248 206 Q242 252 216 262 Q150 276 84 262 Q58 252 52 206 Z"'),
@@ -49,8 +58,8 @@ const solNuvem = svg(
   colina(272, 14),
   p.raiosSol({ x: 100, y: 112, e: 0.6 }), p.discoSol({ x: 100, y: 112, e: 0.6 }), p.rostoFeliz({ x: 100, y: 112, e: 0.6 }),
   nuvem(206, 62, 0.8),
-  copa(204, 206, 80, 38, 9, 10, 3, 0.1), copa(70, 236, 44, 22, 7, 0, 3, 0.1),
-  solto('M180 212 Q196 204 212 212', 2),
+  nuvem(124, 232, 2.1), nuvem(26, 258, 1.2),
+  solto('M170 226 Q190 216 210 226', 2),
   p.flor({ x: 44, y: 264, e: 1.1 }), p.flor({ x: 250, y: 266 }), p.tufo({ x: 120 })
 );
 
