@@ -110,7 +110,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/respostas.js` | 22 | Regra única de "resposta certa", usada pelo app e pelo validador (build/validar.js). |
 | `js/sorteio.js` | 28 | Sorteio das opções: a cada vez que uma pergunta aparece, a ordem dos botões muda, |
 | `js/tentativas.js` | 46 | Guarda cada resposta da criança (certa ou errada) para a Área do responsável. |
-| `js/voz.js` | 52 | Leitura em voz alta com a voz do próprio aparelho (funciona sem internet). |
+| `js/voz.js` | 74 | Leitura em voz alta com a voz do próprio aparelho (funciona sem internet). |
 | `js/telas/ajustes.js` | 63 | Trava dos adultos (uma conta de multiplicar) e tela "Ajustes" (voz, som, fonte, tamanho, zerar). |
 | `js/telas/aparelho.js` | 51 | Coisas do aparelho: botão "Instalar", aviso de versão nova e tela cheia. |
 | `js/telas/atividades.js` | 35 | Telas "Atividades" (lista com filtro) e "Atividade" (uma questão de LP ou Matemática). |
@@ -160,3 +160,4 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_offline.js` | 44 | Teste guardado: modo sem internet. Confere a lista do sw.js, o manifesto e abre o app offline. |
 | `testes/t_sorteio.js` | 42 | Teste guardado: sorteio das opções (js/sorteio.js). Uso: node testes/t_sorteio.js |
 | `testes/t_tudo.js` | 44 | Teste do motor 6 (build/tudo.js): mapa de etapas, ficha coerente e etapas internas. |
+| `testes/t_voz.js` | 43 | Teste guardado: voz (js/voz.js). Uso: node testes/t_voz.js |

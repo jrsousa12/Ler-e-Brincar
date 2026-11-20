@@ -17,6 +17,7 @@
     "t_conferir": "testes/t_conferir.js",
     "t_item": "testes/t_item.js",
     "t_catalogo": "testes/t_catalogo.js",
+    "t_voz": "testes/t_voz.js",
     "t_tudo": "testes/t_tudo.js",
     "t_offline": "testes/t_offline.js",
     "t_app": "testes/t_app.js"
@@ -28,6 +29,10 @@
   ],
   "limite_linhas": 300,
   "mapa": {
+    "js/voz.js": [
+      "t_voz",
+      "t_app"
+    ],
     "js/caderno.js": [
       "t_caderno",
       "t_app"
