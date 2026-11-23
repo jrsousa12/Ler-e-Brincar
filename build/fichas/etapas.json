@@ -26,7 +26,9 @@
     "t_brincadeiras": "testes/t_brincadeiras.js",
     "t_mercado": "testes/t_mercado.js",
     "t_celebracoes": "testes/t_celebracoes.js",
-    "t_trem": "testes/t_trem.js"
+    "t_trem": "testes/t_trem.js",
+    "t_rodada": "testes/t_rodada.js",
+    "t_nova_brincadeira": "testes/t_nova_brincadeira.js"
   },
   "navegador": [
     "t_offline",
@@ -36,7 +38,8 @@
     "t_brincadeiras",
     "t_mercado",
     "t_trem",
-    "t_celebracoes"
+    "t_celebracoes",
+    "t_nova_brincadeira"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -90,11 +93,13 @@
     ],
     "index.html": [
       "t_app",
-      "t_offline"
+      "t_offline",
+      "t_nova_brincadeira"
     ],
     "sw.js": [
       "sintaxe",
-      "t_offline"
+      "t_offline",
+      "t_nova_brincadeira"
     ],
     "manifest": [
       "t_offline"
@@ -235,7 +240,8 @@
     "js/moldes/atividades.js": [
       "t_brincadeiras",
       "t_mercado",
-      "t_trem"
+      "t_trem",
+      "t_nova_brincadeira"
     ],
     "css/tema-creme.css": [
       "t_app"
@@ -253,7 +259,8 @@
       "t_celebracoes"
     ],
     "js/app.js": [
-      "t_celebracoes"
+      "t_celebracoes",
+      "t_nova_brincadeira"
     ],
     "testes/t_celebracoes.js": [
       "t_celebracoes"
@@ -290,6 +297,24 @@
     ],
     "testes/t_trem.js": [
       "t_trem"
+    ],
+    "js/rodada.js": [
+      "t_rodada",
+      "t_trem",
+      "t_mercado",
+      "t_nova_brincadeira"
+    ],
+    "testes/t_rodada.js": [
+      "t_rodada"
+    ],
+    "build/nova-brincadeira.js": [
+      "t_nova_brincadeira"
+    ],
+    "build/modelos/": [
+      "t_nova_brincadeira"
+    ],
+    "testes/t_nova_brincadeira.js": [
+      "t_nova_brincadeira"
     ]
   }
 }
