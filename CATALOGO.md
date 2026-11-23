@@ -6,7 +6,7 @@
 
 | Área | Itens | Próximo id livre |
 |---|---|---|
-| Histórias | 40 | `historia-41` |
+| Histórias | 41 | `historia-42` |
 | Português | 100 | `lp-101` |
 | Matemática | 100 | `mat-101` |
 | Colorir | 35 | `colorir-36` |
@@ -50,7 +50,7 @@
 
 - historia-01 🐱 O gato que perdeu o chapéu — nível 1, 3 perguntas, EF02LP26 EF02LP03
 - historia-02 ⭐ A menina e a estrela — nível 1, 3 perguntas, EF02LP26 EF15LP04
-- historia-03 🌧️ O dia de chuva — nível 2, 3 perguntas, EF02LP26 EF15LP03
+- historia-03 🌧️ A chuva que virou brincadeira no quintal — nível 2, 3 perguntas, EF02LP26 EF15LP03
 - historia-04 🐦 O passarinho corajoso — nível 2, 3 perguntas, EF02LP26 EF15LP04
 - historia-05 🌱 A horta da vovó — nível 2, 3 perguntas, EF02LP26 EF15LP03
 - historia-06 🐟 O menino e o peixe — nível 1, 3 perguntas, EF02LP26 EF15LP04
@@ -88,6 +88,7 @@
 - historia-38 🦋 A borboleta — nível 2, 3 perguntas, EF02LP26 EF15LP04
 - historia-39 🌙 A lua e o menino — nível 1, 3 perguntas, EF02LP26 EF15LP03
 - historia-40 🐞 A joaninha perdida — nível 2, 3 perguntas, EF02LP26 EF15LP04
+- historia-41 🍎 A tarde na feira e o caderno de anotações — nível 2, 3 perguntas, EF02LP26 EF15LP03
 
 ## Colorir
 
