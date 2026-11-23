@@ -88,7 +88,7 @@
 - historia-38 🦋 A borboleta — nível 2, 3 perguntas, EF02LP26 EF15LP04
 - historia-39 🌙 A lua e o menino — nível 1, 3 perguntas, EF02LP26 EF15LP03
 - historia-40 🐞 A joaninha perdida — nível 2, 3 perguntas, EF02LP26 EF15LP04
-- historia-41 🍎 A tarde na feira e o caderno de anotações — nível 2, 3 perguntas, EF02LP26 EF15LP03
+- historia-41 🧺 A tarde na feira e o caderno de anotações — nível 2, 3 perguntas, EF02LP26 EF15LP03
 
 ## Colorir
 
