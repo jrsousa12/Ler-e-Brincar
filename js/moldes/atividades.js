@@ -15,6 +15,16 @@ LB.moldes.atividades = `
         <div class="card-meta">Junte as sílabas para formar a palavra</div>
         <div class="card-meta" v-if="concluidos.silabas" style="color:var(--cor-sucesso);font-weight:700">✓ Já brincou</div>
       </div>
+      <div class="card" v-if="filtroMateria !== 'matematica'" @click="abrirMemoria" tabindex="0">
+        <div class="card-titulo">🃏 Memória</div>
+        <div class="card-meta">Ache o par: a figura e a palavra</div>
+        <div class="card-meta" v-if="concluidos.memoria" style="color:var(--cor-sucesso);font-weight:700">✓ Já brincou</div>
+      </div>
+      <div class="card" v-if="filtroMateria !== 'matematica'" @click="abrirSomFigura" tabindex="0">
+        <div class="card-titulo">🔊 Som e Figura</div>
+        <div class="card-meta">Ouça a palavra e toque na figura</div>
+        <div class="card-meta" v-if="concluidos['som-figura']" style="color:var(--cor-sucesso);font-weight:700">✓ Já brincou</div>
+      </div>
       <div class="card" v-for="a in atividadesFiltradas" :key="a.id" @click="abrirAtividade(a)" tabindex="0">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
           <div>
