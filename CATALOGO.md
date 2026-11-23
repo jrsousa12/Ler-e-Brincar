@@ -102,23 +102,23 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/banco.js` | 33 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
 | `js/caderno.js` | 43 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
 | `js/evolucao.js` | 77 | Evolução no tempo: só contas, a partir das respostas guardadas (js/tentativas.js). |
-| `js/festa.js` | 69 | Festa do acerto (confete + som) e incentivo no erro. Som feito pelo próprio app, sem arquivos. |
+| `js/festa.js` | 95 | Festa do acerto (confete + som) e incentivo no erro. Som feito pelo próprio app, sem arquivos. |
 | `js/impressao.js` | 36 | Monta folhas para imprimir (desenho ou lista de atividades) em #print-container. |
 | `js/mascote.js` | 57 | Mascote (Fase 7 etapa 3): capivara desenhada pelo próprio app, em 3 humores. |
 | `js/missao.js` | 136 | Missão do dia: 1 história + 3 de Português + 3 de Matemática + 1 desenho, em sequência. |
-| `js/pergunta.js` | 44 | Regra de responder (histórias e atividades): acertou → festa; errou → incentivo e nova |
+| `js/pergunta.js` | 45 | Regra de responder (histórias e atividades): acertou → festa; errou → incentivo e nova |
 | `js/registrar-sw.js` | 23 | Liga o modo sem internet (só em https ou localhost; em arquivo aberto direto, ignora). |
 | `js/respostas.js` | 22 | Regra única de "resposta certa", usada pelo app e pelo validador (build/validar.js). |
 | `js/sorteio.js` | 28 | Sorteio das opções: a cada vez que uma pergunta aparece, a ordem dos botões muda, |
 | `js/tentativas.js` | 46 | Guarda cada resposta da criança (certa ou errada) para a Área do responsável. |
-| `js/voz.js` | 85 | Leitura em voz alta com a voz do próprio aparelho (funciona sem internet). |
+| `js/voz.js` | 93 | Leitura em voz alta com a voz do próprio aparelho (funciona sem internet). |
 | `js/telas/ajustes.js` | 71 | Trava dos adultos (uma conta de multiplicar) e tela "Ajustes" (voz, som, fonte, tamanho, zerar). |
 | `js/telas/aparelho.js` | 51 | Coisas do aparelho: botão "Instalar", aviso de versão nova e tela cheia. |
 | `js/telas/atividades.js` | 35 | Telas "Atividades" (lista com filtro) e "Atividade" (uma questão de LP ou Matemática). |
 | `js/telas/backup.js` | 45 | Tela "Cópia de segurança" (na Área do responsável): baixar e importar o progresso. |
 | `js/telas/colorir.js` | 35 | Telas "Colorir" (lista) e "Colorir item" (pintar o desenho tocando nas partes). |
 | `js/telas/confirmar.js` | 22 | Caixa de confirmação própria (no lugar do confirm do navegador). |
-| `js/telas/historias.js` | 63 | Telas "Ler" e "História": leitura e as perguntas de cada história. |
+| `js/telas/historias.js` | 89 | Telas "Ler" e "História": leitura e as perguntas de cada história. |
 | `js/telas/responsavel.js` | 79 | Área do responsável: progresso, onde errou mais (por habilidade da BNCC) e impressão. |
 | `js/telas/selos.js` | 38 | Tela "Selos": progresso geral, conquistas e selos da missão do dia (missões e dias seguidos). |
 | `js/moldes/ajustes.js` | 63 | Molde (HTML do Vue): Ajustes (aparece embaixo da Área do responsável). |
@@ -127,7 +127,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/cabecalho.js` | 11 | Molde (HTML do Vue): Cabeçalho do topo (título, ⚙️ dos adultos, estrelas). |
 | `js/moldes/colorir.js` | 37 | Molde (HTML do Vue): Telas "Colorir" (lista) e desenho para pintar. |
 | `js/moldes/confirmar.js` | 14 | Molde (HTML do Vue): caixa de confirmação própria (js/telas/confirmar.js). |
-| `js/moldes/historias.js` | 43 | Molde (HTML do Vue): Telas "Ler" (lista) e "História" (leitura e perguntas). |
+| `js/moldes/historias.js` | 44 | Molde (HTML do Vue): Telas "Ler" (lista) e "História" (leitura e perguntas). |
 | `js/moldes/inicio.js` | 25 | Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 4 botões grandes. |
 | `js/moldes/missao.js` | 24 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
 | `js/moldes/navegacao.js` | 11 | Molde (HTML do Vue): Barra de navegação de baixo. |

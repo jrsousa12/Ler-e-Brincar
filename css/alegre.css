@@ -24,6 +24,10 @@
 .card.sem-clique:active{transform:none;box-shadow:0 4px 0 var(--cor-borda)}
 h2{color:#3A2E73}
 
+/* Frase que a voz está lendo (histórias) */
+.frase{border-radius:6px;padding:1px 2px;transition:background-color .2s ease}
+.frase.lida{background:var(--cor-acento-suave,#FFE9A8);box-shadow:0 0 0 2px var(--cor-acento-suave,#FFE9A8)}
+
 /* Início: missão em destaque */
 .card-missao{
   background:linear-gradient(160deg,#FFF3D1 0%,#FFE4F0 60%,#F0EAFF 100%);

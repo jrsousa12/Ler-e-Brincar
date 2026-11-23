@@ -66,6 +66,6 @@ Decisões do dono (19/11/2026):
 - 1 Base visual — feito (20/11): paleta viva com uma cor por área (`--cor-ler/brincar/colorir/selos` em `css/base.css`), botões "3D" que afundam (`css/alegre.css`), fontes locais (`css/fontes.css`, arquivos em `vendor/fontes/` baixados pelo robô do GitHub)
 - 2 Fluidez — feito (20/11): telas entram deslizando, opções aparecem uma a uma, acerto dá pulinho, erro balança (`css/movimento.css`; "Reduzir movimento" desliga)
 - 3 Início com o mascote — feito (20/11): capivara (trocou a coruja, pedido do dono) em `js/mascote.js` (humores normal/feliz/festa); no início com balão de fala (tocar lê a frase), feliz no balão de acerto, em festa na missão completa; animações em `css/movimento.css`
-- 4 Perguntas e histórias: barra de progresso, estrela voando até o contador, frase lida destacada — a fazer
+- 4 Perguntas e histórias: barra de progresso, estrela voando até o contador, frase lida destacada — feito (23/11): barra nas perguntas da história; `LB.festa.estrelaVoando` no acerto; `LB.voz.falar(texto, aoFrase)` avisa a frase lida e a história a destaca (`.frase.lida` em `css/alegre.css`)
 - 5 Celebrações: fim da missão e selo novo animados — a fazer
 - 6 Tablet (layout largo) e acabamento: capturas de todas as telas para revisão — a fazer

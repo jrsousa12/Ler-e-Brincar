@@ -46,7 +46,33 @@
     setTimeout(() => caixa.remove(), 2600);
   }
 
+  // Estrelinha sai do botão tocado (ou do meio da tela) e voa até o contador do topo.
+  function estrelaVoando() {
+    const alvo = document.querySelector('.contador-estrelas');
+    if (LB.festa.config.reduzirMovimento || !alvo || !document.body.animate) return;
+    const foco = document.activeElement && document.activeElement.closest && document.activeElement.closest('.opcao');
+    const a = foco ? foco.getBoundingClientRect() : { left: innerWidth / 2, top: innerHeight / 2, width: 0, height: 0 };
+    const b = alvo.getBoundingClientRect();
+    const x0 = a.left + a.width / 2, y0 = a.top + a.height / 2;
+    const x1 = b.left + b.width / 2, y1 = b.top + b.height / 2;
+    const e = document.createElement('div');
+    e.textContent = '⭐';
+    e.setAttribute('aria-hidden', 'true');
+    e.style.cssText = 'position:fixed;left:0;top:0;z-index:60;font-size:2rem;pointer-events:none';
+    document.body.appendChild(e);
+    const anim = e.animate([
+      { transform: `translate(${x0 - 16}px,${y0 - 16}px) scale(.6)`, opacity: 1 },
+      { transform: `translate(${x0 - 16}px,${y0 - 70}px) scale(1.5)`, opacity: 1, offset: .3 },
+      { transform: `translate(${x1 - 16}px,${y1 - 16}px) scale(.7)`, opacity: .9 }
+    ], { duration: 900, easing: 'cubic-bezier(.5,0,.3,1)' });
+    anim.onfinish = () => {
+      e.remove();
+      if (alvo.animate) alvo.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.25)' }, { transform: 'scale(1)' }], { duration: 300 });
+    };
+  }
+
   LB.festa = {
+    estrelaVoando,
     config: { vibrar: true, reduzirMovimento: false }, // ligado aos Ajustes (js/telas/ajustes.js)
     acerto(comSom) {
       confete(40);

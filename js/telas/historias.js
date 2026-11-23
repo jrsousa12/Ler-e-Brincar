@@ -5,6 +5,28 @@ LB.usarHistorias = function (ctx) {
   const historiaAtual = ref(null);
   const mostrandoPerguntas = ref(false);
   const indicePergunta = ref(0);
+  const fraseAtiva = ref(-1); // frase que a voz está lendo (número contado desde o título)
+
+  // Texto dividido em frases; g = número da frase na leitura da história inteira (o título é a 1ª).
+  const partes = computed(() => {
+    const h = historiaAtual.value;
+    if (!h) return [];
+    let g = LB.voz.frases(LB.voz.limpar(h.titulo + '.')).length;
+    return h.texto.map(linha => LB.voz.frases(linha).map(t => ({ t, g: g++ })));
+  });
+  const progressoPerguntas = computed(() => {
+    const h = historiaAtual.value;
+    return h ? Math.round(100 * (indicePergunta.value + (rh.terminou ? 1 : 0)) / h.perguntas.length) : 0;
+  });
+  const marcar = base => i => { fraseAtiva.value = i < 0 ? -1 : base + i; };
+  const ouvirHistoria = () => {
+    const h = historiaAtual.value;
+    LB.voz.falar(h.titulo + '. ' + h.texto.join(' '), marcar(0));
+  };
+  const ouvirLinha = i => {
+    const p = partes.value[i];
+    LB.voz.falar(historiaAtual.value.texto[i], marcar(p.length ? p[0].g : 0));
+  };
 
   // Cada pergunta aparece com os botões sorteados (ver js/sorteio.js).
   const perguntaAtual = computed(() =>
@@ -27,12 +49,14 @@ LB.usarHistorias = function (ctx) {
     historiaAtual.value = h;
     mostrandoPerguntas.value = false;
     indicePergunta.value = 0;
+    fraseAtiva.value = -1;
     rh.zerar();
     ctx.tela.value = 'historia';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function iniciarPerguntasHistoria() {
+    fraseAtiva.value = -1;
     mostrandoPerguntas.value = true;
     indicePergunta.value = 0;
     rh.zerar();
@@ -51,6 +75,7 @@ LB.usarHistorias = function (ctx) {
   }
 
   function zerar() {
+    fraseAtiva.value = -1;
     mostrandoPerguntas.value = false;
     indicePergunta.value = 0;
     rh.zerar();
@@ -58,6 +83,7 @@ LB.usarHistorias = function (ctx) {
 
   return {
     historiaAtual, mostrandoPerguntas, indicePergunta, perguntaAtual, rh,
+    fraseAtiva, partes, progressoPerguntas, ouvirHistoria, ouvirLinha,
     abrirHistoria, iniciarPerguntasHistoria, proximaPergunta, zerar
   };
 };
