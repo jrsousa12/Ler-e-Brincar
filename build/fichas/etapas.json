@@ -28,7 +28,8 @@
     "t_celebracoes": "testes/t_celebracoes.js",
     "t_trem": "testes/t_trem.js",
     "t_rodada": "testes/t_rodada.js",
-    "t_nova_brincadeira": "testes/t_nova_brincadeira.js"
+    "t_nova_brincadeira": "testes/t_nova_brincadeira.js",
+    "t_ordem": "testes/t_ordem.js"
   },
   "navegador": [
     "t_offline",
@@ -39,7 +40,8 @@
     "t_mercado",
     "t_trem",
     "t_celebracoes",
-    "t_nova_brincadeira"
+    "t_nova_brincadeira",
+    "t_ordem"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -241,7 +243,8 @@
       "t_brincadeiras",
       "t_mercado",
       "t_trem",
-      "t_nova_brincadeira"
+      "t_nova_brincadeira",
+      "t_ordem"
     ],
     "css/tema-creme.css": [
       "t_app"
@@ -302,7 +305,8 @@
       "t_rodada",
       "t_trem",
       "t_mercado",
-      "t_nova_brincadeira"
+      "t_nova_brincadeira",
+      "t_ordem"
     ],
     "testes/t_rodada.js": [
       "t_rodada"
@@ -315,6 +319,28 @@
     ],
     "testes/t_nova_brincadeira.js": [
       "t_nova_brincadeira"
+    ],
+    "js/ordemregras.js": [
+      "t_ordem"
+    ],
+    "js/telas/ordem.js": [
+      "t_ordem"
+    ],
+    "js/moldes/ordem.js": [
+      "t_ordem"
+    ],
+    "css/ordem.css": [
+      "t_ordem"
+    ],
+    "testes/t_ordem.js": [
+      "t_ordem"
+    ],
+    "conteudo/ordem.js": [
+      "validar",
+      "t_ordem"
+    ],
+    "build/pedidos/ordem-lote1.js": [
+      "t_ordem"
     ]
   }
 }

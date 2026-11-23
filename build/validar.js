@@ -70,8 +70,20 @@ for (const s of LB.silabas) {
   palavras.add(s.palavra);
 }
 
+// Ordem dos Fatos (conteudo/ordem.js): fora do carregar.js, lido aqui se existir.
+const arqOrdem = require('path').join(process.env.CONTEUDO_RAIZ || require('path').join(__dirname, '..', 'conteudo'), 'ordem.js');
+const ORDEM = require('fs').existsSync(arqOrdem) ? (new Function('window', 'LB', require('fs').readFileSync(arqOrdem, 'utf8') + ';return LB.ordem')({}, {})) : [];
+const titulosOrdem = new Set();
+for (const s of ORDEM) {
+  checaId(s, 'ord', 2);
+  if (!s.titulo || !s.enunciado) erro(s.id, 'sem título ou enunciado');
+  if (!Array.isArray(s.frases) || s.frases.length !== 3 || new Set(s.frases).size !== 3) erro(s.id, 'precisa de 3 frases diferentes');
+  if (titulosOrdem.has(s.titulo)) erro(s.id, 'título repetido ' + s.titulo);
+  titulosOrdem.add(s.titulo);
+}
+
 const total = LB.historias.length + LB.lp.length + LB.mat.length + LB.colorir.length + LB.silabas.length;
-console.log(`Conteúdo: ${LB.historias.length} histórias, ${LB.lp.length} LP, ${LB.mat.length} Mat, ${LB.colorir.length} colorir, ${LB.silabas.length} sílabas (${total} itens)`);
+console.log(`Conteúdo: ${LB.historias.length} histórias, ${LB.lp.length} LP, ${LB.mat.length} Mat, ${LB.colorir.length} colorir, ${LB.silabas.length} sílabas, ${ORDEM.length} ordem (${total + ORDEM.length} itens)`);
 if (erros.length) {
   console.log(`ERROS (${erros.length}):\n  ` + erros.slice(0, 30).join('\n  '));
   process.exit(1);
