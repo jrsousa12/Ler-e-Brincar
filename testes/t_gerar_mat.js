@@ -23,12 +23,12 @@ const mult = g.montar('3 x 4 | 🍪');
 ok(mult.correta === 12 && mult.apoioVisual.esquerda === '🍪🍪🍪🍪 🍪🍪🍪🍪 🍪🍪🍪🍪', 'multiplicação em grupos');
 ok(mult.habilidadeBNCC === 'EF03MA03' && mult.nivel >= 2, 'multiplicação: EF03MA03, nível 2 ou mais');
 const din = g.montar('10 − 4 | 🪙 | Caio tinha R$ 10 e gastou R$ 4. Quanto sobrou? | Sobraram R$ 6.');
-ok(din.habilidadeBNCC === 'EF02MA19' && din.explicacao === '10 − 4 = 6. Sobraram R$ 6.', 'dinheiro: EF02MA19 e frase dada');
+ok(din.habilidadeBNCC === 'EF02MA20' && din.explicacao === '10 − 4 = 6. Sobraram R$ 6.', 'dinheiro: EF02MA20 e frase dada');
 ok(g.montar('9 − 2 | 🐟 | Havia 9 peixes e 2 foram embora. Quantos ficaram?').habilidadeBNCC === 'EF02MA07', 'retirar: EF02MA07');
 ok(g.montar('6 + 3 | 🐞 | titulo=Joaninhas | nivel=2').titulo === 'Joaninhas', 'chave=valor muda o título');
 const esc = g.montar('? Qual número vem depois do 49? | 48 | *50 | 59 | Depois do 49 vem o 50. | bncc=EF02MA05');
 ok(esc.tipo === 'multipla' && esc.correta === 1 && esc.opcoes[1] === '50' && esc.titulo === 'Pense e escolha', 'questão de escolha com *');
-ok(g.montar('? Uma bala custa 2 reais. Com 5 reais, sobra troco? | *Sim | Não | Falta dinheiro | Sobram 3 reais.').habilidadeBNCC === 'EF02MA19', 'escolha com dinheiro: EF02MA19 sozinho');
+ok(g.montar('? Uma bala custa 2 reais. Com 5 reais, sobra troco? | *Sim | Não | Falta dinheiro | Sobram 3 reais.').habilidadeBNCC === 'EF02MA20', 'escolha com dinheiro: EF02MA20 sozinho');
 for (const ruim of ['? Sem bncc? | *1 | 2 | 3 | x', '? Sem certa | 1 | 2 | 3 | x | bncc=EF02MA05', '? Sem explicação | *1 | 2 | 3 | bncc=EF02MA05', '7 ÷ 2 | 🍎', '3 − 8 | 🍎', 'oito menos três | 🍎', '5 + 2']) {
   let erro = ''; try { g.montar(ruim); } catch (e) { erro = e.message; }
   ok(erro, 'deveria recusar: ' + ruim);

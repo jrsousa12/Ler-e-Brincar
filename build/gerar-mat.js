@@ -72,7 +72,7 @@ function montarEscolha(linha) {
   const enunciado = (campos[0] || '').replace(/(\d) - (\d)/g, '$1 − $2');
   const e = escolha(campos.slice(1));
   if (!e.explicacao) throw new Error('falta a explicação (depois das 3 opções)');
-  const bncc = extra.bncc || (temPalavra(enunciado, ficha.palavras_dinheiro) ? 'EF02MA19' : '');
+  const bncc = extra.bncc || (temPalavra(enunciado, ficha.palavras_dinheiro) ? 'EF02MA20' : '');
   if (!bncc) throw new Error('diga a habilidade: bncc=EF02MA05 (ou outra)');
   return {
     titulo: extra.titulo || ficha.titulos.escolha, materia: 'matematica', habilidadeBNCC: bncc,
@@ -98,7 +98,7 @@ function montar(linha) {
   const multDiv = op === '×' || op === '÷';
   let bncc = multDiv ? (problema ? 'EF03MA06' : 'EF03MA03') : 'EF02MA05';
   if (!multDiv && problema) bncc = temPalavra(enunciado, ficha.palavras_juntar_retirar) ? 'EF02MA07' : 'EF02MA06';
-  if (dinheiro) bncc = 'EF02MA19';
+  if (dinheiro) bncc = 'EF02MA20';
   const maior = Math.max(a, b, r);
   let nivel = maior <= 10 ? 1 : maior <= 20 ? 2 : 3;
   if (multDiv) nivel = Math.max(nivel, 2);

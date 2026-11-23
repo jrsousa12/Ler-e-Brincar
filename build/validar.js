@@ -6,7 +6,7 @@ const LB = require('./carregar')();
 const { indiceCorreto } = LB.respostas;
 
 const BNCC_LP = ['EF02LP03', 'EF02LP07', 'EF02LP26', 'EF15LP03', 'EF15LP04'];
-const BNCC_MAT = ['EF02MA05', 'EF02MA06', 'EF02MA07', 'EF02MA19', 'EF03MA03', 'EF03MA06'];
+const BNCC_MAT = ['EF02MA01', 'EF02MA04', 'EF02MA05', 'EF02MA06', 'EF02MA07', 'EF02MA08', 'EF02MA09', 'EF02MA20', 'EF03MA01', 'EF03MA03', 'EF03MA05', 'EF03MA06', 'EF03MA07', 'EF03MA08'];
 const erros = [];
 const erro = (id, msg) => erros.push(id + ': ' + msg);
 const ids = new Set();
