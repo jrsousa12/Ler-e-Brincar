@@ -1,7 +1,7 @@
 // Guarda o app no aparelho para funcionar sem internet.
 // Ao mudar qualquer arquivo da lista, aumente VERSAO (o teste testes/t_offline.js confere a lista).
 'use strict';
-const VERSAO = 'lb-v52';
+const VERSAO = 'lb-v53';
 const ARQUIVOS = [
   './', 'index.html', 'manifest.json',
   'css/fontes.css', 'css/base.css', 'css/componentes.css', 'css/crianca.css', 'css/responsavel.css', 'css/alegre.css', 'css/tema-azul.css', 'css/tema-creme.css', 'css/silabas.css', 'css/brincadeiras.css', 'css/mercado.css', 'css/trem.css', 'css/ordem.css', 'css/listas.css', 'css/acabamento.css', 'css/tablet.css', 'css/movimento.css',
