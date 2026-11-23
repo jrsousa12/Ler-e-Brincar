@@ -134,6 +134,13 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   ok(await p.evaluate(() => document.documentElement.classList.contains('reduzir-movimento') && LB.festa.config.reduzirMovimento), 'reduzir movimento liga a classe e tira o confete');
   await p.evaluate(() => { document.querySelectorAll('.confete').forEach(c => c.remove()); LB.festa.acerto(false); });
   ok(await p.locator('.confete').count() === 0, 'sem confete com movimento reduzido');
+  // Cor do app: Creme troca o fundo e fica guardada; Azul volta
+  await p.click('button.filtro:has-text("Creme")');
+  ok(await p.evaluate(() => document.documentElement.classList.contains('tema-creme') && LB.app.ajustes.tema === 'creme'
+    && getComputedStyle(document.body).backgroundColor === 'rgb(255, 248, 238)'), 'cor Creme troca o fundo');
+  await foto('8-creme');
+  await p.click('button.filtro:has-text("Azul")');
+  ok(await p.evaluate(() => !document.documentElement.classList.contains('tema-creme')), 'cor Azul volta');
   await p.evaluate(() => window.dispatchEvent(new Event('lb-versao-nova')));
   ok(await p.locator('.aviso-versao').isVisible(), 'aviso de versão nova aparece');
 

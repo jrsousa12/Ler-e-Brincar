@@ -5,10 +5,12 @@ LB.moldes.colorir = `
     <div v-if="tela === 'colorir'">
       <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
       <h2>Desenhos para colorir</h2>
-      <div class="card" v-for="c in conteudo.colorir" :key="c.id" @click="abrirColorir(c)" tabindex="0">
-        <div class="card-capa" style="background:linear-gradient(135deg,#FFF3E0,#FFE9E1);font-size:3em">{{ c.emoji }}</div>
-        <div class="card-titulo">{{ c.titulo }}</div>
-        <div class="card-meta" v-if="concluidos[c.id]" style="color:var(--cor-sucesso);font-weight:700">✓ Já pintou</div>
+      <div class="grade-cartoes">
+        <div class="card" v-for="c in conteudo.colorir" :key="c.id" @click="abrirColorir(c)" tabindex="0">
+          <div class="card-capa" style="background:linear-gradient(135deg,#FFF3E0,#FFE9E1);font-size:3em">{{ c.emoji }}</div>
+          <div class="card-titulo">{{ c.titulo }}</div>
+          <div class="card-meta" v-if="concluidos[c.id]" style="color:var(--cor-sucesso);font-weight:700">✓ Já pintou</div>
+        </div>
       </div>
     </div>
 

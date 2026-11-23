@@ -10,13 +10,13 @@
   const { createApp, ref, watch, onMounted } = Vue;
 
   LB.CONTEUDO = { stories: LB.historias, activities: [...LB.lp, ...LB.mat], colorir: LB.colorir };
-  const AJUSTES_PADRAO = { dislexia: false, tamanho: 'medio', vozAuto: true, velocidade: 0.9, nomeVoz: '', som: true, vibrar: true, reduzirMovimento: false };
+  const AJUSTES_PADRAO = { dislexia: false, tamanho: 'medio', vozAuto: true, velocidade: 0.9, nomeVoz: '', som: true, vibrar: true, reduzirMovimento: false, tema: 'azul' };
 
   // Junta os moldes das telas (js/moldes/) num só HTML.
   const m = LB.moldes;
   const molde = m.cabecalho +
     '<div class="container" v-if="!portaoAberto">' + m.versao +
-    m.inicio + m.missao + m.historias + m.atividades + m.silabas + m.colorir + m.selos + m.responsavel + m.ajustes + m.backup +
+    m.inicio + m.missao + m.historias + m.atividades + m.silabas + m.memoria + m.somfigura + m.colorir + m.selos + m.responsavel + m.ajustes + m.backup +
     '</div>' + m.portao + m.navegacao + m.confirmar;
 
   const App = {
@@ -97,7 +97,9 @@
         ...historias,
         ...atividades,
         ...colorir,
-      ...LB.usarSilabas(ctx),
+        ...LB.usarSilabas(ctx),
+        ...LB.usarMemoria(ctx),
+        ...LB.usarSomFigura(ctx),
         ...missao.publico,
         diasSeguidos: missao.diasSeguidos,
         ...LB.usarSelos(ctx),

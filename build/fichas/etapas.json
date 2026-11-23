@@ -22,13 +22,15 @@
     "t_offline": "testes/t_offline.js",
     "t_app": "testes/t_app.js",
     "t_silabas": "testes/t_silabas.js",
-    "t_gerar_silabas": "testes/t_gerar_silabas.js"
+    "t_gerar_silabas": "testes/t_gerar_silabas.js",
+    "t_brincadeiras": "testes/t_brincadeiras.js"
   },
   "navegador": [
     "t_offline",
     "t_app",
     "t_colorir",
-    "t_silabas"
+    "t_silabas",
+    "t_brincadeiras"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -194,6 +196,35 @@
     ],
     "testes/t_gerar_silabas.js": [
       "t_gerar_silabas"
+    ],
+    "js/telas/memoria.js": [
+      "t_brincadeiras"
+    ],
+    "js/telas/somfigura.js": [
+      "t_brincadeiras"
+    ],
+    "js/moldes/memoria.js": [
+      "t_brincadeiras"
+    ],
+    "js/moldes/somfigura.js": [
+      "t_brincadeiras"
+    ],
+    "css/brincadeiras.css": [
+      "t_brincadeiras"
+    ],
+    "testes/t_brincadeiras.js": [
+      "t_brincadeiras"
+    ],
+    "css/acabamento.css": ["t_app", "t_brincadeiras"],
+    "css/listas.css": [
+      "t_brincadeiras",
+      "t_app"
+    ],
+    "js/moldes/atividades.js": [
+      "t_brincadeiras"
+    ],
+    "css/tema-creme.css": [
+      "t_app"
     ]
   }
 }

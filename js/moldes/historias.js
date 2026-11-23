@@ -5,10 +5,12 @@ LB.moldes.historias = `
     <div v-if="tela === 'ler'">
       <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
       <h2>Histórias</h2>
-      <div class="card" v-for="h in conteudo.stories" :key="h.id" @click="abrirHistoria(h)" tabindex="0">
-        <div class="card-capa" :style="{background: h.corFundo}">{{ h.emoji }}</div>
-        <div class="card-titulo">{{ h.titulo }}</div>
-        <div class="card-meta" v-if="concluidos[h.id]" style="color:var(--cor-sucesso);font-weight:700">✓ Já leu</div>
+      <div class="grade-cartoes">
+        <div class="card" v-for="h in conteudo.stories" :key="h.id" @click="abrirHistoria(h)" tabindex="0">
+          <div class="card-capa" :style="{background: h.corFundo}">{{ h.emoji }}</div>
+          <div class="card-titulo">{{ h.titulo }}</div>
+          <div class="card-meta" v-if="concluidos[h.id]" style="color:var(--cor-sucesso);font-weight:700">✓ Já leu</div>
+        </div>
       </div>
     </div>
 
@@ -25,7 +27,7 @@ LB.moldes.historias = `
         Responder perguntinhas ✓
       </button>
       <div v-if="mostrandoPerguntas">
-        <h3 class="mt">Pergunta {{ indicePergunta + 1 }} de {{ historiaAtual.perguntas.length }}</h3>
+        <div class="etiqueta-linha"><span class="badge-fase">Pergunta {{ indicePergunta + 1 }} de {{ historiaAtual.perguntas.length }}</span></div>
         <div class="barra-progresso" role="progressbar" :aria-valuenow="progressoPerguntas" aria-valuemin="0" aria-valuemax="100"><div class="barra-preenchida" :style="{width: progressoPerguntas + '%'}"></div></div>
         <div class="enunciado">
           <button class="btn-ouvir redondo" @click="ouvir(textoPergunta(perguntaAtual))" aria-label="Ouvir a pergunta">🔊</button>
