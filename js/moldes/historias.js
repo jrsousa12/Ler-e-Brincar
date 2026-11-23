@@ -5,10 +5,12 @@ LB.moldes.historias = `
     <div v-if="tela === 'ler'">
       <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
       <h2>Histórias</h2>
-      <div class="card" v-for="h in conteudo.stories" :key="h.id" @click="abrirHistoria(h)" tabindex="0">
-        <div class="card-capa" :style="{background: h.corFundo}">{{ h.emoji }}</div>
-        <div class="card-titulo">{{ h.titulo }}</div>
-        <div class="card-meta" v-if="concluidos[h.id]" style="color:var(--cor-sucesso);font-weight:700">✓ Já leu</div>
+      <div class="grade-cartoes">
+        <div class="card" v-for="h in conteudo.stories" :key="h.id" @click="abrirHistoria(h)" tabindex="0">
+          <div class="card-capa" :style="{background: h.corFundo}">{{ h.emoji }}</div>
+          <div class="card-titulo">{{ h.titulo }}</div>
+          <div class="card-meta" v-if="concluidos[h.id]" style="color:var(--cor-sucesso);font-weight:700">✓ Já leu</div>
+        </div>
       </div>
     </div>
 

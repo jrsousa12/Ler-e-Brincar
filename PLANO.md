@@ -69,3 +69,7 @@ Decisões do dono (19/11/2026):
 - 4 Perguntas e histórias: barra de progresso, estrela voando até o contador, frase lida destacada — feito (23/11): barra nas perguntas da história; `LB.festa.estrelaVoando` no acerto; `LB.voz.falar(texto, aoFrase)` avisa a frase lida e a história a destaca (`.frase.lida` em `css/alegre.css`)
 - 5 Celebrações: fim da missão e selo novo animados — a fazer
 - 6 Tablet (layout largo) e acabamento: capturas de todas as telas para revisão — a fazer
+- Estilo das brincadeiras no app todo (pedido do dono, 23/11; plano aprovado):
+  - Etapa 1 — feita (23/11): listas em grade de cartões (`css/listas.css`); Atividades agrupadas por título ("3 de 14", abre a próxima não feita) e 3 blocos de brincadeiras no topo
+  - Etapa 2 — a fazer: acabamento igual nas telas da criança (botões, etiqueta, aviso, Voltar à esquerda); área do responsável fica sóbria
+  - Etapa 3 — a fazer: cor Creme (fundo creme, roxo, laranja) como opção em Ajustes; azul continua padrão

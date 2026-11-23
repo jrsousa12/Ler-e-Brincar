@@ -214,6 +214,13 @@
     ],
     "testes/t_brincadeiras.js": [
       "t_brincadeiras"
+    ],
+    "css/listas.css": [
+      "t_brincadeiras",
+      "t_app"
+    ],
+    "js/moldes/atividades.js": [
+      "t_brincadeiras"
     ]
   }
 }

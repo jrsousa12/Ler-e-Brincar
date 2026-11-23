@@ -61,6 +61,12 @@ const raiz = path.join(__dirname, '..');
   }
   ok(await estrelas() === e1 + rod, 'ganha 1 estrela por rodada');
   ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos['som-figura'] === true), 'som e figura concluída volta e marca');
+  // LISTA DE ATIVIDADES em grade: mesmo título vira um cartão; tocar abre uma atividade ainda não feita
+  const g = await p.evaluate(() => ({ n: LB.app.gruposAtividades.length, total: LB.app.atividadesFiltradas.length }));
+  ok(g.n > 0 && g.n < g.total, 'atividades agrupadas por título (' + g.n + ' cartões)');
+  ok(await p.locator('.grade-brincadeiras .bloco-brincadeira').count() === 3, '3 blocos de brincadeira');
+  await p.locator('.cartao-atividade').first().click();
+  ok(await p.evaluate(() => LB.app.tela === 'atividade' && !LB.app.concluidos[LB.app.atividadeAtual.id]), 'cartão abre atividade ainda não feita');
   ok(erros.length === 0, 'sem erros: ' + erros.join(' | '));
 
   await b.close();

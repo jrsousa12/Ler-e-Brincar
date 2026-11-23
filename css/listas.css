@@ -1,0 +1,29 @@
+/* Listas em grade de cartões (Fase 7, etapa "estilo das brincadeiras", 23/11):
+   Histórias, Colorir e Atividades em 2 colunas; brincadeiras em 3 blocos coloridos. Cores de base.css. */
+.titulo-secao{margin:18px 0 10px;font-family:var(--font-display);font-weight:800;color:var(--cor-texto)}
+
+/* Grade de 2 colunas (3 no tablet) */
+.grade-cartoes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.grade-cartoes .card{margin-bottom:0;padding:12px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.grade-cartoes .card-capa{width:100%;height:96px;font-size:3em !important;margin-bottom:10px}
+.grade-cartoes .card-titulo{font-size:1em;margin-bottom:2px}
+
+/* Cartão de atividade: emoji grande + título + "3 de 14" + ✓ */
+.cartao-atividade{justify-content:center;min-height:150px}
+.cartao-emoji{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2em;margin-bottom:8px}
+.cartao-atividade.lingua-portuguesa .cartao-emoji{background:var(--cor-ler-suave)}
+.cartao-atividade.matematica .cartao-emoji{background:var(--cor-brincar-suave)}
+.selo-feito{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;background:var(--cor-sucesso);color:#fff;font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 0 var(--cor-sucesso-3d)}
+
+/* Brincadeiras: 3 blocos coloridos lado a lado */
+.grade-brincadeiras{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.bloco-brincadeira{
+  position:relative;border:none;color:#fff;font-family:var(--font-display);font-weight:800;font-size:.95em;line-height:1.2;
+  border-radius:var(--radius);padding:14px 6px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;
+  text-shadow:0 1px 0 rgba(0,0,0,.18);cursor:pointer;
+}
+.bloco-emoji{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-size:1.9em;text-shadow:none}
+.bloco-brincadeira.ler{background:linear-gradient(180deg,#5CA0FF,var(--cor-ler));box-shadow:0 6px 0 var(--cor-ler-3d)}
+.bloco-brincadeira.colorir{background:linear-gradient(180deg,#FF7DB6,var(--cor-colorir));box-shadow:0 6px 0 var(--cor-colorir-3d)}
+.bloco-brincadeira.brincar{background:linear-gradient(180deg,#FFA45E,var(--cor-brincar));box-shadow:0 6px 0 var(--cor-brincar-3d)}
+.bloco-brincadeira:active{transform:translateY(5px);box-shadow:0 1px 0 rgba(0,0,0,.25)}

@@ -4,33 +4,33 @@ LB.moldes.atividades = `
     <!-- ATIVIDADES (lista) -->
     <div v-if="tela === 'atividades'">
       <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
-      <h2>Atividades</h2>
+      <h2>Brincar</h2>
       <div class="filtros">
         <button class="filtro" :class="{ativo: filtroMateria === 'todas'}" @click="filtroMateria = 'todas'">Todas</button>
         <button class="filtro" :class="{ativo: filtroMateria === 'lingua-portuguesa'}" @click="filtroMateria = 'lingua-portuguesa'">📝 Português</button>
         <button class="filtro" :class="{ativo: filtroMateria === 'matematica'}" @click="filtroMateria = 'matematica'">🧮 Matemática</button>
       </div>
-      <div class="card" v-if="filtroMateria !== 'matematica'" @click="abrirSilabas" tabindex="0">
-        <div class="card-titulo">🧩 Monte a Palavra</div>
-        <div class="card-meta">Junte as sílabas para formar a palavra</div>
-        <div class="card-meta" v-if="concluidos.silabas" style="color:var(--cor-sucesso);font-weight:700">✓ Já brincou</div>
-      </div>
-      <div class="card" v-if="filtroMateria !== 'matematica'" @click="abrirMemoria" tabindex="0">
-        <div class="card-titulo">🃏 Memória</div>
-        <div class="card-meta">Ache o par: a figura e a palavra</div>
-        <div class="card-meta" v-if="concluidos.memoria" style="color:var(--cor-sucesso);font-weight:700">✓ Já brincou</div>
-      </div>
-      <div class="card" v-if="filtroMateria !== 'matematica'" @click="abrirSomFigura" tabindex="0">
-        <div class="card-titulo">🔊 Som e Figura</div>
-        <div class="card-meta">Ouça a palavra e toque na figura</div>
-        <div class="card-meta" v-if="concluidos['som-figura']" style="color:var(--cor-sucesso);font-weight:700">✓ Já brincou</div>
-      </div>
-      <div class="card" v-for="a in atividadesFiltradas" :key="a.id" @click="abrirAtividade(a)" tabindex="0">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
-          <div>
-            <div class="card-titulo">{{ a.materia === 'matematica' ? '🧮' : '📝' }} {{ a.titulo }}</div>
-          </div>
-          <div v-if="concluidos[a.id]" style="color:var(--cor-sucesso);font-size:1.4em">✓</div>
+      <template v-if="filtroMateria !== 'matematica'">
+        <h3 class="titulo-secao">Brincadeiras</h3>
+        <div class="grade-brincadeiras">
+          <button type="button" class="bloco-brincadeira ler" @click="abrirSilabas">
+            <span class="bloco-emoji" aria-hidden="true">🧩</span>Monte a Palavra<span v-if="concluidos.silabas" class="selo-feito">✓</span>
+          </button>
+          <button type="button" class="bloco-brincadeira colorir" @click="abrirMemoria">
+            <span class="bloco-emoji" aria-hidden="true">🃏</span>Memória<span v-if="concluidos.memoria" class="selo-feito">✓</span>
+          </button>
+          <button type="button" class="bloco-brincadeira brincar" @click="abrirSomFigura">
+            <span class="bloco-emoji" aria-hidden="true">🔊</span>Som e Figura<span v-if="concluidos['som-figura']" class="selo-feito">✓</span>
+          </button>
+        </div>
+        <h3 class="titulo-secao">Atividades</h3>
+      </template>
+      <div class="grade-cartoes">
+        <div class="card cartao-atividade" :class="g.materia" v-for="g in gruposAtividades" :key="g.chave" @click="abrirGrupo(g)" tabindex="0">
+          <div class="cartao-emoji" aria-hidden="true">{{ g.materia === 'matematica' ? '🧮' : '📝' }}</div>
+          <div class="card-titulo">{{ g.titulo }}</div>
+          <div class="card-meta" v-if="g.itens.length > 1">{{ g.feitos }} de {{ g.itens.length }}</div>
+          <div class="selo-feito" v-if="g.feitos === g.itens.length">✓</div>
         </div>
       </div>
     </div>
