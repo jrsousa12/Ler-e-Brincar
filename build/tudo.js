@@ -20,7 +20,7 @@ function arquivos(pasta, exts) {
   if (fs.statSync(dir).isFile()) return [pasta];
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
     const rel = path.join(pasta, e.name);
-    if (e.isDirectory()) return arquivos(rel, exts);
+    if (e.isDirectory()) return rel === path.join('build', 'previas') ? [] : arquivos(rel, exts); // previas: gerados, fora do git
     return exts.some((x) => e.name.endsWith(x)) ? [rel] : [];
   });
 }
