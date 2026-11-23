@@ -1,9 +1,10 @@
-// Brincadeira "Mercadinho": produtos e dinheiro (reais inteiros, sem centavos). Para trocar produto ou preço, editar aqui.
-// min/max = faixa de preço em reais. Regras da conta: js/mercadoregras.js.
+// Brincadeira "Mercadinho": produtos e dinheiro. Para trocar produto ou preço, editar aqui.
+// min/max = faixa de preço em reais inteiros (o nível 4 tira 50 centavos do preço sorteado). Regras da conta: js/mercadoregras.js.
 window.LB = window.LB || {};
 LB.mercado = {
-  // Moedas e notas da carteira (valor em reais). Nível 1 usa só as de "carteira".
+  // Moedas e notas (valor em reais). Cada compra diz quais vão na carteira.
   dinheiro: [
+    { valor: 0.5, tipo: 'moeda' },
     { valor: 1, tipo: 'moeda' },
     { valor: 2, tipo: 'nota' },
     { valor: 5, tipo: 'nota' },

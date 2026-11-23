@@ -13,13 +13,20 @@ LB.usarMercado = function (ctx) {
   const somaBandeja = computed(() => bandejaMercado.value.reduce((s, d) => s + d.valor, 0));
   const perguntaMercado = computed(() => compraMercado.value && compraMercado.value.etapas ? compraMercado.value.etapas[etapaMercado.value] : null);
   const somLigado = () => ctx.ajustes.value.som !== false;
-  const reais = v => 'R$ ' + v;
-  const dinheiroDe = valor => LB.mercado.dinheiro.find(d => d.valor === valor);
+  const reais = v => LB.mercadoRegras.texto(v);          // "R$ 3,50"
+  const falado = v => LB.mercadoRegras.fala(v);          // "3 reais e 50 centavos"
+  // Classe da moeda/nota: tipo + cor do valor (0,5 vira "v0_5", pois o ponto não serve em classe).
+  const classeDinheiro = valor => LB.mercado.dinheiro.find(d => d.valor === valor).tipo + ' v' + String(valor).replace('.', '_');
+  const ouvirMercado = computed(() => {
+    const c = compraMercado.value;
+    if (!c) return '';
+    return c.tipo === 'montar' ? 'Pague ' + falado(c.total) : 'Troco de uma nota de ' + falado(c.pago);
+  });
 
   function frase(compra) {
-    const lista = compra.produtos.map(p => p.nome + ' por ' + p.preco + ' reais').join(' e ');
+    const lista = compra.produtos.map(p => p.nome + ' por ' + falado(p.preco)).join(' e ');
     if (compra.tipo === 'montar') return 'Compre ' + lista + '. Pague certinho!';
-    return 'Compre ' + lista + '. Você paga com uma nota de ' + compra.pago + ' reais.';
+    return 'Compre ' + lista + '. Você paga com uma nota de ' + falado(compra.pago) + '.';
   }
 
   function carregarCompra() {
@@ -86,9 +93,9 @@ LB.usarMercado = function (ctx) {
     }
     if (ultima) {
       ctx.estrelas.value += 1;
-      acertoMercado('Acertou! O troco é ' + reais(q.certa) + '! ⭐', 'Muito bem! O troco é ' + q.certa + ' reais!');
+      acertoMercado('Acertou! O troco é ' + reais(q.certa) + '! ⭐', 'Muito bem! O troco é ' + falado(q.certa) + '!');
     } else {
-      acertoMercado('Isso! Tudo junto dá ' + reais(q.certa) + '.', 'Isso! Dá ' + q.certa + ' reais.');
+      acertoMercado('Isso! Tudo junto dá ' + reais(q.certa) + '.', 'Isso! Dá ' + falado(q.certa) + '.');
     }
   }
 
@@ -115,7 +122,7 @@ LB.usarMercado = function (ctx) {
 
   return {
     comprasMercado, indiceMercado, bandejaMercado, somaBandeja, etapaMercado, escolhaMercado, mensagemMercado, estadoMercado,
-    compraMercado, perguntaMercado, ultimaDoMercado, dinheiroDe,
+    compraMercado, perguntaMercado, ultimaDoMercado, classeDinheiro, ouvirMercado, reaisMercado: reais,
     abrirMercado, porDinheiro, tirarDinheiro, escolherMercado, seguirMercado, concluirMercado
   };
 };

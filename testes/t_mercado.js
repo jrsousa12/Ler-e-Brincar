@@ -20,17 +20,28 @@ const raiz = path.join(__dirname, '..');
     const d = [];
     for (let i = 0; i < 300; i++) {
       const r = LB.mercadoRegras.sortearRodada();
-      if (r.map(c => c.nivel).join('') !== '11223') d.push('ordem dos níveis');
+      if (r.map(c => c.nivel).join('') !== '12344') d.push('ordem dos níveis');
       r.forEach(c => {
         const soma = c.produtos.reduce((s, x) => s + x.preco, 0);
         if (soma !== c.total) d.push('total errado');
         if (c.total > 49 || c.produtos.some(x => x.preco < 1)) d.push('preço fora da faixa');
-        if (c.tipo === 'montar') { if (c.total > 10 || c.total < 2) d.push('nível 1 fora de 2 a 10'); return; }
+        const meio = v => !Number.isInteger(v) && Number.isInteger(v * 2);   // termina em ,50
+        if (c.nivel === 4 && !meio(c.total)) d.push('nível 4 sem 50 centavos ' + c.total);
+        if (c.nivel < 4 && c.produtos.some(x => !Number.isInteger(x.preco))) d.push('centavos antes do nível 4');
+        if (c.tipo === 'montar') {
+          if (c.nivel === 1 && (c.total > 10 || c.total < 2)) d.push('nível 1 fora de 2 a 10');
+          if (c.nivel === 4 && (c.total > 9.5 || c.total < 1.5 || !c.carteira.includes(0.5))) d.push('nível 4 montar ruim');
+          return;
+        }
+        if (c.nivel === 4) {
+          const erradas = c.etapas[0].opcoes.filter(o => o !== c.troco);
+          if (!erradas.some(meio) || !erradas.some(Number.isInteger)) d.push('opções do troco com centavos entregam a resposta ' + c.etapas[0].opcoes);
+        }
         if (c.pago - c.total !== c.troco || c.troco < 1) d.push('troco errado');
         if (!LB.mercado.dinheiro.some(x => x.valor === c.pago && x.tipo === 'nota')) d.push('nota inexistente ' + c.pago);
         if (c.nivel === 3 && c.produtos[0].nome === c.produtos[1].nome) d.push('produto repetido');
         c.etapas.forEach(e => {
-          if (new Set(e.opcoes).size !== 3 || !e.opcoes.includes(e.certa) || e.opcoes.some(o => o < 1)) d.push('opções ruins ' + e.opcoes);
+          if (new Set(e.opcoes).size !== 3 || !e.opcoes.includes(e.certa) || e.opcoes.some(o => o <= 0)) d.push('opções ruins ' + e.opcoes);
         });
         if (c.etapas[c.etapas.length - 1].certa !== c.troco) d.push('última etapa não é o troco');
         if (c.nivel === 3 && c.etapas[0].certa !== c.total) d.push('1ª etapa não é o total');
@@ -39,6 +50,8 @@ const raiz = path.join(__dirname, '..');
     return [...new Set(d)];
   });
   ok(defeitos.length === 0, 'contas: ' + defeitos.join(' | '));
+  const escrita = await p.evaluate(() => [3.5, 0.5, 1, 12].map(v => LB.mercadoRegras.texto(v) + '/' + LB.mercadoRegras.fala(v)).join(' | '));
+  ok(escrita === 'R$ 3,50/3 reais e 50 centavos | R$ 0,50/50 centavos | R$ 1/1 real | R$ 12/12 reais', 'escrita e fala do dinheiro: ' + escrita);
 
   // TELA: abre pela lista de brincadeiras
   await p.click('.bloco-menu.brincar');
@@ -60,24 +73,14 @@ const raiz = path.join(__dirname, '..');
   ok(await p.locator('.feedback-jogo.correto').count() === 1 && await estrelas() === e0 + 1, 'ao tirar até o preço certo, confere: 1 estrela');
   await p.click('text=Próxima');
 
-  // 2ª compra do nível 1 com notas variadas (guloso)
-  const c2 = await p.evaluate(() => LB.app.compraMercado.total);
-  let resto = c2;
-  for (const v of [5, 2, 1]) while (resto >= v) { await p.click(`.carteira .dinheiro.v${v}`); resto -= v; }
-  ok(await p.locator('.feedback-jogo.correto').count() === 1, 'pagou com notas e moedas');
-  await p.click('text=Próxima');
-
   // Nível 2: erra uma opção, depois acerta
-  ok(await p.evaluate(() => LB.app.compraMercado.nivel) === 2, 'terceira compra é do nível 2');
+  ok(await p.evaluate(() => LB.app.compraMercado.nivel) === 2, 'segunda compra é do nível 2');
   const certa2 = await p.evaluate(() => LB.app.perguntaMercado.certa);
   const errada = await p.evaluate(() => LB.app.perguntaMercado.opcoes.find(o => o !== LB.app.perguntaMercado.certa));
   await p.click(`.opcoes-mercado button:text-is("R$ ${errada}")`);
   ok(await p.locator('.feedback-jogo.tentar-novamente').count() === 1, 'troco errado pede nova tentativa');
   await p.click(`.opcoes-mercado button:text-is("R$ ${certa2}")`);
   ok(await p.locator('.feedback-jogo.correto').count() === 1, 'troco certo');
-  await p.click('text=Próxima');
-  const certa2b = await p.evaluate(() => LB.app.perguntaMercado.certa);
-  await p.click(`.opcoes-mercado button:text-is("R$ ${certa2b}")`);
   await p.click('text=Próxima');
 
   // Nível 3: duas perguntas (total, depois troco); só a última dá estrela
@@ -88,6 +91,22 @@ const raiz = path.join(__dirname, '..');
   await p.click('text=Próxima');
   await p.click(`.opcoes-mercado button:text-is("R$ ${await p.evaluate(() => LB.app.perguntaMercado.certa)}")`);
   ok(await estrelas() === antes + 1, 'acertar o troco dá estrela');
+  await p.click('text=Próxima');
+
+  // Nível 4: pagar R$ X,50 com a moeda de 50 centavos (guloso), depois o troco com centavos
+  const c4 = await p.evaluate(() => LB.app.compraMercado);
+  ok(c4.nivel === 4 && c4.tipo === 'montar', 'quarta compra: nível 4, pagar certinho');
+  const etiqueta = await p.locator('.etiqueta-preco').innerText();
+  ok(/^R\$ \d+,50$/.test(etiqueta), 'etiqueta com centavos: ' + etiqueta);
+  let resto = c4.total;
+  for (const v of [5, 2, 1, 0.5]) while (resto >= v) { await p.click(`.carteira .dinheiro.v${String(v).replace('.', '_')}`); resto -= v; }
+  ok(await p.locator('.feedback-jogo.correto').count() === 1, 'pagou com centavos');
+  ok(await p.locator('.bandeja .dinheiro.moeda.v0_5').count() === 1, 'moeda de 50 centavos na bandeja');
+  await p.click('text=Próxima');
+  ok(await p.evaluate(() => LB.app.compraMercado.nivel === 4 && LB.app.compraMercado.tipo === 'perguntas'), 'quinta compra: troco com centavos');
+  const txt4 = await p.evaluate(() => LB.mercadoRegras.texto(LB.app.perguntaMercado.certa));
+  await p.click(`.opcoes-mercado button:text-is("${txt4}")`);
+  ok(await p.locator('.feedback-jogo.correto').count() === 1, 'troco com centavos certo');
   await p.click('text=Concluir');
   ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos.mercado === true), 'concluir volta e marca feito');
   ok(await estrelas() === e0 + 5, 'rodada rende 5 estrelas: ' + (await estrelas() - e0));
