@@ -23,7 +23,8 @@ const arquivos = {
         mat('mat-002', 2, 'Tinha 3 e ganhou 2.', [4, 5, 6], 5, '3 + 2 = 5.', { esquerda: '🍎🍎', operador: '+', direita: '🍎🍎' }),
         mat('mat-003', 2, 'Quanto é 5 − 2?', [-1, 3, 40], 3, 'Tire e conte.'),
         mat('mat-004', 2, 'Tinha 12 lápis.', [3, 4, 5], 4, '12 ÷ 3 = 4.', { esquerda: '✏️×12', operador: '÷3', direita: '?' })],
-  colorir: [{ id: 'colorir-01', emoji: '🌙', svg: svg(1) }, { id: 'colorir-02', emoji: '🌙', svg: svg(6) }]
+  colorir: [{ id: 'colorir-01', emoji: '🌙', svg: svg(1) }, { id: 'colorir-02', emoji: '🌙', svg: svg(6) }],
+  silabas: []
 };
 for (const [nome, lista] of Object.entries(arquivos))
   fs.writeFileSync(path.join(pasta, nome + '.js'), `LB.${nome} = ${JSON.stringify(lista)};`);

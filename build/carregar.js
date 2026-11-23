@@ -10,7 +10,7 @@ module.exports = function carregar() {
   globalThis.LB = {};
   delete require.cache[require.resolve(path.join(raiz, 'js/respostas.js'))];
   require(path.join(raiz, 'js/respostas.js'));
-  for (const f of ['historias', 'lp', 'mat', 'colorir']) {
+  for (const f of ['historias', 'lp', 'mat', 'colorir', 'silabas']) {
     new Function('LB', fs.readFileSync(path.join(pasta, f + '.js'), 'utf8'))(LB);
   }
   return LB;

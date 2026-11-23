@@ -17,15 +17,16 @@ LB.moldes.historias = `
       <button class="btn-voltar" @click="voltar('ler')">← Voltar</button>
       <div class="historia-capa">{{ historiaAtual.emoji }}</div>
       <h2>{{ historiaAtual.titulo }}</h2>
-      <button class="btn-ouvir" @click="ouvir(historiaAtual.titulo + '. ' + historiaAtual.texto.join(' '))">🔊 Ouvir a história</button>
+      <button class="btn-ouvir" @click="ouvirHistoria">🔊 Ouvir a história</button>
       <div class="historia-texto">
-        <p v-for="(linha, i) in historiaAtual.texto" :key="i" @click="ouvir(linha)">{{ linha }}</p>
+        <p v-for="(linha, i) in partes" :key="i" @click="ouvirLinha(i)"><span v-for="f in linha" :key="f.g" class="frase" :class="{lida: f.g === fraseAtiva}">{{ f.t }} </span></p>
       </div>
       <button class="btn-primario btn-gigante" @click="iniciarPerguntasHistoria" v-if="!mostrandoPerguntas">
         Responder perguntinhas ✓
       </button>
       <div v-if="mostrandoPerguntas">
         <h3 class="mt">Pergunta {{ indicePergunta + 1 }} de {{ historiaAtual.perguntas.length }}</h3>
+        <div class="barra-progresso" role="progressbar" :aria-valuenow="progressoPerguntas" aria-valuemin="0" aria-valuemax="100"><div class="barra-preenchida" :style="{width: progressoPerguntas + '%'}"></div></div>
         <div class="enunciado">
           <button class="btn-ouvir redondo" @click="ouvir(textoPergunta(perguntaAtual))" aria-label="Ouvir a pergunta">🔊</button>
           <strong>{{ perguntaAtual.enunciado }}</strong>

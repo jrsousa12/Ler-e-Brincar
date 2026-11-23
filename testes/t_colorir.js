@@ -28,7 +28,7 @@ ok(esp.includes('scale(-1,1)') && esp.split('<circle').length === 3, 'espelhar d
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 't_colorir-'));
 const cont = path.join(tmp, 'conteudo');
 fs.mkdirSync(cont);
-for (const f of ['historias', 'lp', 'mat', 'colorir']) fs.copyFileSync(path.join(raiz, 'conteudo', f + '.js'), path.join(cont, f + '.js'));
+for (const f of ['historias', 'lp', 'mat', 'colorir', 'silabas']) fs.copyFileSync(path.join(raiz, 'conteudo', f + '.js'), path.join(cont, f + '.js'));
 const env = Object.assign({}, process.env, { CONTEUDO_RAIZ: cont, PREVIA_PASTA: path.join(tmp, 'previas') });
 const pedido = (nome, lista) => { const a = path.join(tmp, nome + '.js'); fs.writeFileSync(a, 'module.exports = ' + JSON.stringify(lista)); return a; };
 const rodar = (...a) => { try { return execFileSync('node', [path.join(raiz, 'build/colorir.js'), ...a], { env, encoding: 'utf8' }); } catch (e) { return 'SAIU ' + e.status + '\n' + e.stdout; } };

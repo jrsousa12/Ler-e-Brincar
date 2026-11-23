@@ -1,0 +1,14 @@
+{
+  "_leia": "Ficha do gerador de sílabas (build/gerar-silabas.js). Calibrar aqui. 'consoantes': começo da sílaba -> troca que a criança costuma fazer (surda/sonora, letras parecidas, dígrafos). 'vogais': troca de vogal. 'reserva': sílabas usadas se nenhuma troca servir. 'extras': quantas sílabas para confundir por palavra. 'simples': sílaba simples (consoante + vogal ou só vogal); palavra com outra sílaba fica no nível 3.",
+  "extras": 2,
+  "consoantes": {
+    "NH": "LH", "LH": "NH", "CH": "X", "QU": "GU", "GU": "QU", "RR": "R", "SS": "S",
+    "BR": "PR", "PR": "BR", "TR": "DR", "DR": "TR", "CR": "GR", "GR": "CR", "FR": "VR", "VR": "FR",
+    "BL": "PL", "PL": "BL", "CL": "GL", "GL": "CL", "FL": "FR",
+    "B": "P", "P": "B", "T": "D", "D": "T", "F": "V", "V": "F", "C": "G", "G": "C",
+    "M": "N", "N": "M", "L": "R", "R": "L", "S": "Z", "Z": "S", "J": "X", "X": "J"
+  },
+  "vogais": { "A": "O", "O": "U", "U": "O", "E": "I", "I": "E" },
+  "reserva": ["MA", "PE", "LU", "TI", "RO", "NE", "BI", "SO"],
+  "simples": "^[BCDFGJLMNPRSTVXZ]?[AEIOUÁÉÍÓÚÂÊÔÃÕ]$"
+}

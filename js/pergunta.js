@@ -21,6 +21,7 @@ LB.criarResposta = function (ctx, info) {
       r.terminou = true;
       r.mensagem = LB.festa.elogio();
       LB.festa.acerto(comSom());
+      LB.festa.estrelaVoando();
       ctx.estrelas.value++;
       if (d.aoAcertar) d.aoAcertar();
       if (r.erradas.length === 0 && d.aoPrimeira) d.aoPrimeira(true);

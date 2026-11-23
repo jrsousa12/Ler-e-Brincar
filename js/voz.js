@@ -58,16 +58,24 @@
       .replace(/\s+/g, ' ').trim();
   }
 
-  function falar(texto) {
+  // aoFrase(i) é chamado quando a frase de número i começa; aoFrase(-1) quando termina ou é cortada.
+  let rodada = 0;
+  function falar(texto, aoFrase) {
     if (!sintese || !texto) return;
+    const minha = ++rodada;
     sintese.cancel();
-    for (const f of frases(limpar(texto))) {
+    const lista = frases(limpar(texto));
+    lista.forEach((f, i) => {
       const u = new SpeechSynthesisUtterance(f);
       u.lang = 'pt-BR';
       if (vozBR) u.voice = vozBR;
       u.rate = velocidade;
+      if (aoFrase) {
+        u.onstart = () => { if (minha === rodada) aoFrase(i); };
+        if (i === lista.length - 1) u.onend = u.onerror = () => { if (minha === rodada) aoFrase(-1); };
+      }
       sintese.speak(u);
-    }
+    });
   }
 
   // Pergunta + opções: "Qual é a cor? Azul. Vermelho. Verde."
@@ -78,7 +86,7 @@
   LB.voz = {
     falar, textoPergunta, limpar, frases, nota, listar, usar, aoMudarLista: null,
     vozEscolhida: () => (vozBR ? vozBR.name : null),
-    parar: () => { if (sintese) sintese.cancel(); },
+    parar: () => { rodada++; if (sintese) sintese.cancel(); },
     disponivel: !!sintese,
     mudarVelocidade: v => { velocidade = v; }
   };

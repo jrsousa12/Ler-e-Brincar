@@ -10,6 +10,11 @@ LB.moldes.atividades = `
         <button class="filtro" :class="{ativo: filtroMateria === 'lingua-portuguesa'}" @click="filtroMateria = 'lingua-portuguesa'">📝 Português</button>
         <button class="filtro" :class="{ativo: filtroMateria === 'matematica'}" @click="filtroMateria = 'matematica'">🧮 Matemática</button>
       </div>
+      <div class="card" v-if="filtroMateria !== 'matematica'" @click="abrirSilabas" tabindex="0">
+        <div class="card-titulo">🧩 Monte a Palavra</div>
+        <div class="card-meta">Junte as sílabas para formar a palavra</div>
+        <div class="card-meta" v-if="concluidos.silabas" style="color:var(--cor-sucesso);font-weight:700">✓ Já brincou</div>
+      </div>
       <div class="card" v-for="a in atividadesFiltradas" :key="a.id" @click="abrirAtividade(a)" tabindex="0">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
           <div>

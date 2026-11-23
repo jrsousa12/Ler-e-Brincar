@@ -11,11 +11,11 @@ const saida = process.env.CATALOGO_SAIDA || path.join(raiz, 'CATALOGO.md');
 const num = id => +String(id).split('-').pop();
 const proximo = (lista, prefixo) => {
   const n = Math.max(0, ...lista.map(i => num(i.id))) + 1;
-  return prefixo + '-' + String(n).padStart(prefixo === 'lp' || prefixo === 'mat' ? 3 : 2, '0');
+  return prefixo + '-' + String(n).padStart(['lp', 'mat', 'sil'].includes(prefixo) ? 3 : 2, '0');
 };
 
 function resumo() {
-  const areas = [['historias', 'historia', 'Histórias'], ['lp', 'lp', 'Português'], ['mat', 'mat', 'Matemática'], ['colorir', 'colorir', 'Colorir']];
+  const areas = [['historias', 'historia', 'Histórias'], ['lp', 'lp', 'Português'], ['mat', 'mat', 'Matemática'], ['colorir', 'colorir', 'Colorir'], ['silabas', 'sil', 'Monte a Palavra']];
   const l = ['| Área | Itens | Próximo id livre |', '|---|---|---|'];
   for (const [chave, pre, nome] of areas) l.push(`| ${nome} | ${LB[chave].length} | \`${proximo(LB[chave], pre)}\` |`);
   return l;
@@ -39,6 +39,7 @@ function porHabilidade(lista) {
 const historias = () => LB.historias.map(h =>
   `- ${h.id} ${h.emoji || ''} ${h.titulo} — nível ${h.nivel}, ${(h.perguntas || []).length} perguntas, ${(h.habilidadesBNCC || []).join(' ')}`);
 const colorir = () => [LB.colorir.map(c => `${c.id} ${c.emoji || ''} ${c.titulo}`).join(' · ')];
+const silabas = () => [1, 2, 3].map(n => `- **Nível ${n}**: ` + LB.silabas.filter(s => s.nivel === n).map(s => s.silabas.join('-')).join(' · '));
 
 // Código: cada arquivo, nº de linhas e a frase da 1ª linha (o comentário de cabeçalho).
 function codigo() {
@@ -67,6 +68,7 @@ function montar() {
     '## Matemática (por habilidade da BNCC)', '', ...porHabilidade(LB.mat), '',
     '## Histórias', '', ...historias(), '',
     '## Colorir', '', ...colorir(), '',
+    '## Monte a Palavra', '', ...silabas(), '',
     '## Código (⚠ acima de 200 linhas · ✖ acima de 300)', '', ...codigo(), ''
   ].join('\n');
 }
