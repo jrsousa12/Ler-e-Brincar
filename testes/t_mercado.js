@@ -94,9 +94,9 @@ const raiz = path.join(__dirname, '..');
 
   // Filtros da lista: Mercadinho só em Matemática/Todas
   await p.click('.filtro >> text=Português');
-  ok(await p.locator('.bloco-brincadeira.mercado').count() === 0, 'Português esconde o Mercadinho');
+  ok(await p.locator('.bloco-brincadeira:has-text("Mercadinho")').count() === 0, 'Português esconde o Mercadinho');
   await p.click('.filtro >> text=Matemática');
-  ok(await p.locator('.bloco-brincadeira.mercado').count() === 1 && await p.locator('.bloco-brincadeira.ler').count() === 0, 'Matemática mostra só o Mercadinho');
+  ok(await p.locator('.bloco-brincadeira:has-text("Mercadinho")').count() === 1 && await p.locator('.bloco-brincadeira.ler').count() === 0, 'Matemática mostra o Mercadinho e nenhuma de leitura');
   ok(erros.length === 0, 'sem erros: ' + erros.join(' | '));
 
   await b.close();

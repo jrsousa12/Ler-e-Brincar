@@ -1,0 +1,13 @@
+/* Brincadeira "Trem dos números" (js/moldes/trem.js). Vagões desenhados em CSS, sem imagens. Cores de base.css. */
+.trem{display:flex;justify-content:center;align-items:flex-end;gap:5px;padding:8px 0 14px}
+.locomotiva{font-size:2.2rem;line-height:1;flex:none}
+.vagao{position:relative;flex:1 1 0;min-width:0;max-width:68px;padding:10px 2px 12px;border-radius:12px 12px 6px 6px;background:var(--cor-ler);color:#fff;font-weight:800;font-size:1.35rem;text-align:center;box-shadow:0 5px 0 var(--cor-ler-3d)}
+.vagao::before,.vagao::after{content:"";position:absolute;bottom:-9px;width:14px;height:14px;border-radius:50%;background:#4a4a5a;border:2px solid #fff}
+.vagao::before{left:8px}
+.vagao::after{right:8px}
+.vagao.vazio{background:var(--cor-card);color:var(--cor-brincar-3d);border:3px dashed var(--cor-brincar);box-shadow:0 5px 0 var(--cor-borda)}
+.vagao.ativo{animation:vagao-pisca 1.1s ease-in-out infinite}
+.vagao.certo{background:var(--cor-sucesso);box-shadow:0 5px 0 var(--cor-sucesso-3d)}
+.opcoes-trem{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.opcoes-trem .bloco-silaba{min-width:84px;font-size:1.8rem}
+@keyframes vagao-pisca{50%{transform:translateY(-4px)}}

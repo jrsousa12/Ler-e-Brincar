@@ -25,7 +25,8 @@
     "t_gerar_silabas": "testes/t_gerar_silabas.js",
     "t_brincadeiras": "testes/t_brincadeiras.js",
     "t_mercado": "testes/t_mercado.js",
-    "t_celebracoes": "testes/t_celebracoes.js"
+    "t_celebracoes": "testes/t_celebracoes.js",
+    "t_trem": "testes/t_trem.js"
   },
   "navegador": [
     "t_offline",
@@ -34,6 +35,7 @@
     "t_silabas",
     "t_brincadeiras",
     "t_mercado",
+    "t_trem",
     "t_celebracoes"
   ],
   "limite_linhas": 300,
@@ -227,11 +229,13 @@
     "css/listas.css": [
       "t_brincadeiras",
       "t_app",
-      "t_mercado"
+      "t_mercado",
+      "t_trem"
     ],
     "js/moldes/atividades.js": [
       "t_brincadeiras",
-      "t_mercado"
+      "t_mercado",
+      "t_trem"
     ],
     "css/tema-creme.css": [
       "t_app"
@@ -271,6 +275,21 @@
     ],
     "testes/t_mercado.js": [
       "t_mercado"
+    ],
+    "js/telas/trem.js": [
+      "t_trem"
+    ],
+    "js/moldes/trem.js": [
+      "t_trem"
+    ],
+    "js/tremregras.js": [
+      "t_trem"
+    ],
+    "css/trem.css": [
+      "t_trem"
+    ],
+    "testes/t_trem.js": [
+      "t_trem"
     ]
   }
 }

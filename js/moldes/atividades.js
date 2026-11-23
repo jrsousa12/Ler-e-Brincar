@@ -26,6 +26,9 @@ LB.moldes.atividades = `
         <button v-if="filtroMateria !== 'lingua-portuguesa'" type="button" class="bloco-brincadeira mercado" @click="abrirMercado">
           <span class="bloco-emoji" aria-hidden="true">🛒</span>Mercadinho<span v-if="concluidos.mercado" class="selo-feito">✓</span>
         </button>
+        <button v-if="filtroMateria !== 'lingua-portuguesa'" type="button" class="bloco-brincadeira mercado" @click="abrirTrem">
+          <span class="bloco-emoji" aria-hidden="true">🚂</span>Trem dos números<span v-if="concluidos.trem" class="selo-feito">✓</span>
+        </button>
       </div>
       <h3 class="titulo-secao">Atividades</h3>
       <div class="grade-cartoes">

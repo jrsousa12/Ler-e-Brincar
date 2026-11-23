@@ -104,7 +104,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | Arquivo | Linhas | O que faz |
 |---|---|---|
 | `sw.js` | 56 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 126 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `js/app.js` | 127 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/backup.js` | 35 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 33 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
 | `js/caderno.js` | 43 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
@@ -119,6 +119,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/respostas.js` | 22 | Regra única de "resposta certa", usada pelo app e pelo validador (build/validar.js). |
 | `js/sorteio.js` | 28 | Sorteio das opções: a cada vez que uma pergunta aparece, a ordem dos botões muda, |
 | `js/tentativas.js` | 46 | Guarda cada resposta da criança (certa ou errada) para a Área do responsável. |
+| `js/tremregras.js` | 43 | Regras do "Trem dos números": sorteia o trem e calcula o certo. Sem tela: só contas (testadas em testes/t_trem.js). |
 | `js/voz.js` | 93 | Leitura em voz alta com a voz do próprio aparelho (funciona sem internet). |
 | `js/telas/ajustes.js` | 75 | Trava dos adultos (uma conta de multiplicar) e tela "Ajustes" (voz, som, fonte, tamanho, zerar). |
 | `js/telas/aparelho.js` | 51 | Coisas do aparelho: botão "Instalar", aviso de versão nova e tela cheia. |
@@ -134,8 +135,9 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/selos.js` | 38 | Tela "Selos": progresso geral, conquistas e selos da missão do dia (missões e dias seguidos). |
 | `js/telas/silabas.js` | 110 | Brincadeira "Monte a Palavra": tocar nas sílabas na ordem certa para formar a palavra da dica. |
 | `js/telas/somfigura.js` | 75 | Brincadeira "Som e Figura": ouvir a palavra e tocar na figura certa (palavras de conteudo/silabas.js). |
+| `js/telas/trem.js` | 79 | Brincadeira "Trem dos números": achar o número que falta na sequência de 2 em 2, 5 em 5 ou 10 em 10 (regras em js/tremregras.js). |
 | `js/moldes/ajustes.js` | 70 | Molde (HTML do Vue): Ajustes (aparece embaixo da Área do responsável). |
-| `js/moldes/atividades.js` | 60 | Molde (HTML do Vue): Telas "Atividades" (lista) e "Atividade" (resolver). |
+| `js/moldes/atividades.js` | 63 | Molde (HTML do Vue): Telas "Atividades" (lista) e "Atividade" (resolver). |
 | `js/moldes/backup.js` | 24 | Molde (HTML do Vue): Cópia de segurança e instalação (embaixo dos Ajustes, na Área do responsável). |
 | `js/moldes/cabecalho.js` | 11 | Molde (HTML do Vue): Cabeçalho do topo (título, ⚙️ dos adultos, estrelas). |
 | `js/moldes/colorir.js` | 39 | Molde (HTML do Vue): Telas "Colorir" (lista) e desenho para pintar. |
@@ -152,6 +154,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/selos.js` | 24 | Molde (HTML do Vue): Tela "Minhas conquistas" (selos e progresso). |
 | `js/moldes/silabas.js` | 40 | Molde (HTML do Vue): Brincadeira "Monte a Palavra" (juntar sílabas). |
 | `js/moldes/somfigura.js` | 27 | Molde (HTML do Vue): Brincadeira "Som e Figura" (ouvir e tocar na figura). |
+| `js/moldes/trem.js` | 35 | Molde (HTML do Vue): Brincadeira "Trem dos números" (achar o número que falta na sequência). |
 | `js/moldes/versao.js` | 8 | Molde (HTML do Vue): aviso de versão nova do app (só na tela inicial e na área dos adultos). |
 | `build/biblioteca.js` | 75 | Lista e prévia da biblioteca de peças (build/pecas/). Gerado: nunca editar PECAS.md à mão. |
 | `build/capturas.js` | 93 | Motor de capturas (Fase 7, etapa 6): percorre todas as telas do app em celular e tablet, |
@@ -185,5 +188,6 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_offline.js` | 44 | Teste guardado: modo sem internet. Confere a lista do sw.js, o manifesto e abre o app offline. |
 | `testes/t_silabas.js` | 57 | Teste guardado: brincadeira "Monte a Palavra" (js/telas/silabas.js) no navegador. |
 | `testes/t_sorteio.js` | 42 | Teste guardado: sorteio das opções (js/sorteio.js). Uso: node testes/t_sorteio.js |
+| `testes/t_trem.js` | 97 | Teste guardado: brincadeira "Trem dos números" (js/tremregras.js = contas; js/telas/trem.js = tela). |
 | `testes/t_tudo.js` | 44 | Teste do motor 6 (build/tudo.js): mapa de etapas, ficha coerente e etapas internas. |
 | `testes/t_voz.js` | 52 | Teste guardado: voz (js/voz.js). Uso: node testes/t_voz.js |
