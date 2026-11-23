@@ -6,7 +6,7 @@
 
 | Área | Itens | Próximo id livre |
 |---|---|---|
-| Histórias | 41 | `historia-42` |
+| Histórias | 61 | `historia-62` |
 | Português | 104 | `lp-105` |
 | Matemática | 104 | `mat-105` |
 | Colorir | 35 | `colorir-36` |
@@ -89,6 +89,26 @@
 - historia-39 🌙 A lua e o menino — nível 1, 3 perguntas, EF02LP26 EF15LP03
 - historia-40 🐞 A joaninha perdida — nível 2, 3 perguntas, EF02LP26 EF15LP04
 - historia-41 🧺 A tarde na feira e o caderno de anotações — nível 2, 3 perguntas, EF02LP26 EF15LP03
+- historia-42 🥖 O pão quentinho da manhã — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-43 🌿 A planta que precisava de sol — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-44 🎲 O jogo de dominó na varanda — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-45 🚲 A bicicleta com o pneu murcho — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-46 🎂 A receita de bolo da família — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-47 📓 O caderno perdido no caminho — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-48 🌳 A sombra das árvores no recreio — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-49 🔧 A caixa de ferramentas do vizinho — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-50 🔬 O cartaz da feira de ciências — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-51 🕯️ A tarde sem energia elétrica — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-52 💵 O troco na banca de revistas e jornais — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-53 🪁 A pipa presa no galho baixo — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-54 📚 A organização dos livros da estante — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-55 🥬 A visita à horta comunitária — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-56 🍊 A receita do suco natural — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-57 🎭 O ensaio da apresentação escolar — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-58 ♻️ A coleta de tampinhas e garrafas — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-59 ✉️ A carta para o primo distante — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-60 💡 O conserto da lâmpada do corredor — nível 3, 3 perguntas, EF02LP26 EF15LP04
+- historia-61 🎯 A tarde de jogos de tabuleiro — nível 3, 3 perguntas, EF02LP26 EF15LP04
 
 ## Colorir
 
