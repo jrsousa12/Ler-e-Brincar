@@ -200,14 +200,14 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/gerar-ordem.js` | 41 | Motor gerador da brincadeira "Ordem dos Fatos": uma linha de pedido → uma sequência de 3 fatos. |
 | `build/gerar-silabas.js` | 101 | Motor gerador da brincadeira "Monte a Palavra": de uma linha com a palavra separada em sílabas, |
 | `build/icones.js` | 29 | Gera os ícones PNG do app (icones/). Uso: node build/icones.js |
-| `build/importar-lp.js` | 52 | Importador de Português: transforma o lote em JSON enviado pelo dono num pedido do gerar-lp. |
+| `build/importar-lp.js` | 80 | Importador de Português: transforma o lote em JSON enviado pelo dono num pedido do gerar-lp. |
 | `build/item.js` | 131 | Motor de item único: mostra, busca e altera um item de conteudo/*.js sem abrir o arquivo. |
 | `build/nova-brincadeira.js` | 113 | Motor "brincadeira nova": cria os 5 arquivos de uma brincadeira e liga tudo no app, de uma vez. |
 | `build/pedido.js` | 100 | Peças comuns dos geradores de conteúdo (gerar-mat, gerar-lp, gerar-historia). |
 | `build/tudo.js` | 100 | (sem comentário no topo) |
 | `build/validar.js` | 91 | Validador do conteúdo. Uso: node build/validar.js |
 | `testes/_gerador.js` | 25 | Ajudante comum dos testes de geradores: cópia do conteúdo, rodar o motor nela e o validador. |
-| `testes/t_ajustar.js` | 64 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
+| `testes/t_ajustar.js` | 71 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
 | `testes/t_app.js` | 160 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
 | `testes/t_backup.js` | 32 | Teste guardado: cópia de segurança do progresso (js/backup.js). |
 | `testes/t_brincadeiras.js` | 87 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |

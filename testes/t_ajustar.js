@@ -7,7 +7,7 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 const R = require(path.join(__dirname, '../build/ajustar-regras.js'));
 const { lerLinha } = require(path.join(__dirname, '../build/ajustar-lp.js'));
-const { linhaDe } = require(path.join(__dirname, '../build/importar-lp.js'));
+const { linhaDe, conferirItem } = require(path.join(__dirname, '../build/importar-lp.js'));
 const copia = require('./_gerador');
 let falhas = 0;
 const ok = (cond, msg) => { if (!cond) { falhas++; console.log('FALHA: ' + msg); } };
@@ -39,13 +39,20 @@ ok(l.id === 'lp-001' && l.correta === 1 && l.opcoes.join() === 'Errada um,Certa,
 const li = linhaDe({ textoBase: 'O gato "Tom" dormiu | cedo.', enunciado: 'Quem dormiu?', opcoes: ['O cão', 'O gato', 'A ave'], correta: 1, explicacao: 'O texto diz.', categoria: 'Interpretação' }, { molde: 'interpretacao', nivel: '2' });
 ok(li === "interpretacao | Leia: \"O gato 'Tom' dormiu / cedo.\" Quem dormiu? | O cão | *O gato | A ave | O texto diz. | titulo=Interpretação | nivel=2", 'importar: aspas e | trocados, * na certa, chaves no fim');
 
+const bom = { textoBase: 'Lia calçou as botas e pegou o guarda-chuva.', enunciado: 'Qual pista mostra que chovia?', opcoes: ['Ela pegou o guarda-chuva.', 'Ela calçou as botas.', 'Ela saiu sem as botas.'], correta: 0, explicacao: 'Guarda-chuva é para chuva.', tiposErradas: ['trecho', 'contrario'] };
+ok(conferirItem(bom, 2).length === 0, 'conferir na chegada: item do roteiro passa');
+const ruins = conferirItem({ ...bom, opcoes: ['Ela pegou o guarda-chuva.', 'Viu um dinossauro na rua.', 'Não.'], tiposErradas: ['troca', 'troca'] }, 2).join(' | ');
+ok(/dinossauro/.test(ruins) && /mesmo tipo/.test(ruins) && /"Não\." com 4 letras/.test(ruins), 'conferir na chegada: acha absurdo, tipo repetido e errada curta');
+ok(/falta "tiposErradas"/.test(conferirItem({ ...bom, tiposErradas: undefined }, 2).join()), 'conferir na chegada: pede os tipos que faltam');
+
 // 4. Ponta a ponta numa cópia: importar → gerar-lp → folha → aplicar → validador e registro
 const cp = copia('build/gerar-lp.js');
 const env = { ...process.env, CONTEUDO_RAIZ: cp.pasta, REVISAO_RAIZ: cp.pasta };
 const node = (arq, args) => { try { return execFileSync('node', [path.join(__dirname, '..', arq), ...args], { env }).toString(); } catch (e) { return e.stdout.toString(); } };
 const json = path.join(cp.pasta, 'lote.json'), ped = path.join(cp.pasta, 'lote.txt'), folha = path.join(cp.pasta, 'lp-revisao.txt');
 fs.writeFileSync(json, JSON.stringify([{ textoBase: 'Pedro lavou as laranjas e coou o suco.', enunciado: 'Qual pista mostra o cuidado de Pedro?', opcoes: ['Lavou as laranjas e coou o suco, deixando tudo bem limpinho na cozinha.', 'Não lavou.', 'Jogou fora.'], correta: 0, explicacao: 'Lavar e coar mostram cuidado.' }]));
-node('build/importar-lp.js', [json, ped, '--titulo', 'Pistas do texto', '--nivel', '2']);
+ok(/fora do roteiro: nada/.test(node('build/importar-lp.js', [json, ped, '--nivel', '2'])) && !fs.existsSync(ped) && fs.readFileSync(json.replace(/\.json$/, '-conferencia.txt'), 'utf8').includes('tiposErradas'), 'importar: fora do roteiro não grava e escreve a conferência');
+node('build/importar-lp.js', [json, ped, '--titulo', 'Pistas do texto', '--nivel', '2', '--aceitar']);
 ok(cp.rodar([ped, '--gravar']).cod === 0, 'gerar-lp grava o pedido importado');
 const id = [...cp.ler('lp.js').matchAll(/\{id:'(lp-\d+)'[^\n]*Pedro lavou/g)].pop()[1]; // o último gravado
 ok(node('build/ajustar-lp.js', [id]).includes('1 item') && fs.readFileSync(folha, 'utf8').includes(id + ' | *Lavou'), 'monta a folha de revisão com o item');
