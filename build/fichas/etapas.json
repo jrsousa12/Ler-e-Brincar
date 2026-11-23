@@ -221,6 +221,9 @@
     ],
     "js/moldes/atividades.js": [
       "t_brincadeiras"
+    ],
+    "css/tema-creme.css": [
+      "t_app"
     ]
   }
 }

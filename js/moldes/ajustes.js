@@ -47,6 +47,13 @@ LB.moldes.ajustes = `
         <button class="filtro" :class="{ativo: ajustes.dislexia}" @click="alternar('dislexia')">{{ ajustes.dislexia ? '✓ Ativada' : 'Desativada' }}</button>
       </div>
       <div class="card sem-clique">
+        <div class="card-titulo">🎨 Cor do app</div>
+        <div class="filtros" style="margin-top:10px;margin-bottom:0">
+          <button class="filtro" :class="{ativo: ajustes.tema !== 'creme'}" @click="ajustes.tema = 'azul'">🔵 Azul</button>
+          <button class="filtro" :class="{ativo: ajustes.tema === 'creme'}" @click="ajustes.tema = 'creme'">🍦 Creme</button>
+        </div>
+      </div>
+      <div class="card sem-clique">
         <div class="card-titulo">Tamanho do texto</div>
         <div class="filtros" style="margin-top:10px;margin-bottom:0">
           <button class="filtro" :class="{ativo: ajustes.tamanho === 'pequeno'}" @click="mudarTamanho('pequeno')">Pequeno</button>

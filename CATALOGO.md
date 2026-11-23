@@ -119,7 +119,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/sorteio.js` | 28 | Sorteio das opções: a cada vez que uma pergunta aparece, a ordem dos botões muda, |
 | `js/tentativas.js` | 46 | Guarda cada resposta da criança (certa ou errada) para a Área do responsável. |
 | `js/voz.js` | 93 | Leitura em voz alta com a voz do próprio aparelho (funciona sem internet). |
-| `js/telas/ajustes.js` | 71 | Trava dos adultos (uma conta de multiplicar) e tela "Ajustes" (voz, som, fonte, tamanho, zerar). |
+| `js/telas/ajustes.js` | 74 | Trava dos adultos (uma conta de multiplicar) e tela "Ajustes" (voz, som, fonte, tamanho, zerar). |
 | `js/telas/aparelho.js` | 51 | Coisas do aparelho: botão "Instalar", aviso de versão nova e tela cheia. |
 | `js/telas/atividades.js` | 52 | Telas "Atividades" (lista com filtro) e "Atividade" (uma questão de LP ou Matemática). |
 | `js/telas/backup.js` | 45 | Tela "Cópia de segurança" (na Área do responsável): baixar e importar o progresso. |
@@ -131,7 +131,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/selos.js` | 38 | Tela "Selos": progresso geral, conquistas e selos da missão do dia (missões e dias seguidos). |
 | `js/telas/silabas.js` | 110 | Brincadeira "Monte a Palavra": tocar nas sílabas na ordem certa para formar a palavra da dica. |
 | `js/telas/somfigura.js` | 75 | Brincadeira "Som e Figura": ouvir a palavra e tocar na figura certa (palavras de conteudo/silabas.js). |
-| `js/moldes/ajustes.js` | 63 | Molde (HTML do Vue): Ajustes (aparece embaixo da Área do responsável). |
+| `js/moldes/ajustes.js` | 70 | Molde (HTML do Vue): Ajustes (aparece embaixo da Área do responsável). |
 | `js/moldes/atividades.js` | 57 | Molde (HTML do Vue): Telas "Atividades" (lista) e "Atividade" (resolver). |
 | `js/moldes/backup.js` | 24 | Molde (HTML do Vue): Cópia de segurança e instalação (embaixo dos Ajustes, na Área do responsável). |
 | `js/moldes/cabecalho.js` | 11 | Molde (HTML do Vue): Cabeçalho do topo (título, ⚙️ dos adultos, estrelas). |
@@ -162,7 +162,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/item.js` | 131 | Motor de item único: mostra, busca e altera um item de conteudo/*.js sem abrir o arquivo. |
 | `build/tudo.js` | 100 | (sem comentário no topo) |
 | `build/validar.js` | 79 | Validador do conteúdo. Uso: node build/validar.js |
-| `testes/t_app.js` | 144 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
+| `testes/t_app.js` | 151 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
 | `testes/t_backup.js` | 32 | Teste guardado: cópia de segurança do progresso (js/backup.js). |
 | `testes/t_brincadeiras.js` | 75 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |
 | `testes/t_caderno.js` | 76 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |

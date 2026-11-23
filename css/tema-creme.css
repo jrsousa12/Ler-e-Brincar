@@ -1,0 +1,24 @@
+/* Cor "Creme" (opção em Ajustes, 23/11): fundo creme, destaques roxos, botões laranja.
+   Só troca as variáveis de base.css (vale no modo claro; no modo escuro do aparelho fica o escuro).
+   Ligada pela classe html.tema-creme (js/telas/ajustes.js). Vem depois de tema-azul.css. */
+@media (prefers-color-scheme: light){
+  html.tema-creme{
+    --cor-primaria:#7C3AED; --cor-primaria-2:#8B5CF6; --cor-primaria-escura:#5B21B6; --cor-primaria-suave:#EDE9FE;
+    --cor-acento:#F97316; --cor-secundaria:#F97316; --cor-secundaria-3d:#C2410C;
+    --cor-fundo:#FFF8EE; --cor-card:#FFFFFF; --cor-overlay:rgba(255,248,238,.96); --cor-nav-fundo:rgba(255,250,242,.92);
+    --cor-texto:#3B2A1E; --cor-texto-suave:#7A6352;
+    --cor-borda:#EADCC8; --cor-borda-forte:#D9C3A5;
+    --cor-ler:#8B5CF6; --cor-ler-3d:#6D28D9; --cor-ler-suave:#F5F3FF;
+    --cor-brincar:#F97316; --cor-brincar-3d:#C2410C; --cor-brincar-suave:#FFEDD5;
+    --cor-selos:#F59E0B; --cor-selos-3d:#B45309; --cor-selos-suave:#FEF3C7;
+    --sombra-primaria:0 10px 24px -12px rgba(124,58,237,.75);
+  }
+  html.tema-creme body{
+    background-image:radial-gradient(rgba(124,58,237,.10) 2.5px,transparent 2.5px),radial-gradient(rgba(249,115,22,.14) 2.5px,transparent 2.5px);
+  }
+  html.tema-creme .cabecalho-app{background:linear-gradient(135deg,#8B5CF6 0%,#6D28D9 100%);border-bottom-color:#4C1D95}
+  html.tema-creme .bloco-menu.ler,html.tema-creme .bloco-brincadeira.ler{background:linear-gradient(180deg,#A78BFA,var(--cor-ler))}
+  html.tema-creme .bloco-menu.brincar,html.tema-creme .bloco-brincadeira.brincar{background:linear-gradient(180deg,#FB923C,var(--cor-brincar))}
+  html.tema-creme .card-missao{background:linear-gradient(135deg,#FFF3D6,#FFE9E1)}
+  html.tema-creme .btn-ouvir{color:var(--cor-primaria-escura);border-color:var(--cor-primaria-suave)}
+}

@@ -60,6 +60,9 @@ LB.usarAjustes = function (ctx) {
     html.classList.remove('tamanho-pequeno', 'tamanho-medio', 'tamanho-grande');
     html.classList.add('tamanho-' + v.tamanho);
     html.classList.toggle('reduzir-movimento', !!v.reduzirMovimento);
+    html.classList.toggle('tema-creme', v.tema === 'creme');
+    const meta = document.querySelector('meta[name=theme-color]');
+    if (meta) meta.content = v.tema === 'creme' ? '#7C3AED' : '#2B8BE6';
     LB.festa.config = { vibrar: v.vibrar !== false, reduzirMovimento: !!v.reduzirMovimento };
   }, { deep: true, immediate: true });
 
