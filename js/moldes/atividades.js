@@ -10,9 +10,9 @@ LB.moldes.atividades = `
         <button class="filtro" :class="{ativo: filtroMateria === 'lingua-portuguesa'}" @click="filtroMateria = 'lingua-portuguesa'">📝 Português</button>
         <button class="filtro" :class="{ativo: filtroMateria === 'matematica'}" @click="filtroMateria = 'matematica'">🧮 Matemática</button>
       </div>
-      <template v-if="filtroMateria !== 'matematica'">
-        <h3 class="titulo-secao">Brincadeiras</h3>
-        <div class="grade-brincadeiras">
+      <h3 class="titulo-secao">Brincadeiras</h3>
+      <div class="grade-brincadeiras">
+        <template v-if="filtroMateria !== 'matematica'">
           <button type="button" class="bloco-brincadeira ler" @click="abrirSilabas">
             <span class="bloco-emoji" aria-hidden="true">🧩</span>Monte a Palavra<span v-if="concluidos.silabas" class="selo-feito">✓</span>
           </button>
@@ -22,9 +22,12 @@ LB.moldes.atividades = `
           <button type="button" class="bloco-brincadeira brincar" @click="abrirSomFigura">
             <span class="bloco-emoji" aria-hidden="true">🔊</span>Som e Figura<span v-if="concluidos['som-figura']" class="selo-feito">✓</span>
           </button>
-        </div>
-        <h3 class="titulo-secao">Atividades</h3>
-      </template>
+        </template>
+        <button v-if="filtroMateria !== 'lingua-portuguesa'" type="button" class="bloco-brincadeira mercado" @click="abrirMercado">
+          <span class="bloco-emoji" aria-hidden="true">🛒</span>Mercadinho<span v-if="concluidos.mercado" class="selo-feito">✓</span>
+        </button>
+      </div>
+      <h3 class="titulo-secao">Atividades</h3>
       <div class="grade-cartoes">
         <div class="card cartao-atividade" :class="g.materia" v-for="g in gruposAtividades" :key="g.chave" @click="abrirGrupo(g)" tabindex="0">
           <div class="cartao-emoji" aria-hidden="true">{{ g.materia === 'matematica' ? '🧮' : '📝' }}</div>

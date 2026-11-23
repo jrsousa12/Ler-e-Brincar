@@ -16,7 +16,7 @@
   const m = LB.moldes;
   const molde = m.cabecalho +
     '<div class="container" v-if="!portaoAberto">' + m.versao +
-    m.inicio + m.missao + m.historias + m.atividades + m.silabas + m.memoria + m.somfigura + m.colorir + m.selos + m.responsavel + m.ajustes + m.backup +
+    m.inicio + m.missao + m.historias + m.atividades + m.silabas + m.memoria + m.somfigura + m.mercado + m.colorir + m.selos + m.responsavel + m.ajustes + m.backup +
     '</div>' + m.portao + m.navegacao + m.confirmar + m.selonovo;
 
   const App = {
@@ -105,6 +105,7 @@
         ...atividades,
         ...colorir,
         ...LB.usarSilabas(ctx),
+        ...LB.usarMercado(ctx),
         ...LB.usarMemoria(ctx),
         ...LB.usarSomFigura(ctx),
         ...missao.publico,

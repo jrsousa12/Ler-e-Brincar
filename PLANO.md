@@ -73,3 +73,6 @@ Decisões do dono (19/11/2026):
   - Etapa 1 — feita (23/11): listas em grade de cartões (`css/listas.css`); Atividades agrupadas por título ("3 de 14", abre a próxima não feita) e 3 blocos de brincadeiras no topo
   - Etapa 2 — feita (23/11, `css/acabamento.css`): acabamento igual nas telas da criança (botões, etiqueta, aviso, Voltar à esquerda); área do responsável fica sóbria
   - Etapa 3 — feita (23/11): cor Creme em `css/tema-creme.css` (só variáveis, modo claro), escolha "Cor do app" em Ajustes (`ajustes.tema`); azul continua padrão
+
+### Fase 8 — Brincadeiras de Matemática
+- Mercadinho — feito (23/11): rodada de 5 compras (2 de pagar certinho com moedas e notas até R$ 10; 2 de troco até R$ 20; 1 com dois produtos: total e troco, até R$ 50), só reais inteiros. `conteudo/mercado.js` (produtos), `js/mercadoregras.js` (contas), `js/telas/mercado.js`, `js/moldes/mercado.js`, `css/mercado.css`; teste `t_mercado`; sw v43. Ideia futura: nível 4 com centavos; Trem dos números (sequências de 2, 5 e 10).

@@ -27,3 +27,4 @@
 .bloco-brincadeira.colorir{background:linear-gradient(180deg,#FF7DB6,var(--cor-colorir));box-shadow:0 6px 0 var(--cor-colorir-3d)}
 .bloco-brincadeira.brincar{background:linear-gradient(180deg,#FFA45E,var(--cor-brincar));box-shadow:0 6px 0 var(--cor-brincar-3d)}
 .bloco-brincadeira:active{transform:translateY(5px);box-shadow:0 1px 0 rgba(0,0,0,.25)}
+.bloco-brincadeira.mercado{background:linear-gradient(180deg,#4FD18B,var(--cor-sucesso));box-shadow:0 6px 0 var(--cor-sucesso-3d)}

@@ -1,0 +1,25 @@
+/* Brincadeira "Mercadinho" (js/moldes/mercado.js). Dinheiro desenhado em CSS, sem imagens. Cores de base.css. */
+.prateleira{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.produto{background:var(--cor-card);border:2px solid var(--cor-borda);border-radius:20px;padding:12px 18px;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:120px}
+.produto-emoji{font-size:3rem;line-height:1}
+.produto-nome{font-weight:700}
+.etiqueta-preco{background:var(--cor-selos);color:#4a3300;font-weight:800;font-size:1.2rem;border-radius:10px;padding:2px 12px;transform:rotate(-3deg)}
+.bandeja{min-height:74px;border:3px dashed var(--cor-brincar);background:var(--cor-brincar-suave);border-radius:18px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
+.bandeja.correto{background:var(--cor-sucesso-bg);border-color:var(--cor-sucesso)}
+.bandeja.tentar-novamente{background:var(--cor-alerta-bg);border-color:var(--cor-alerta-texto)}
+.bandeja-vazia{color:var(--cor-brincar-3d);font-weight:700}
+.soma-bandeja,.pergunta-mercado{text-align:center;margin:0;font-size:1.15rem}
+.pergunta-mercado{font-weight:800;font-size:1.3rem}
+.carteira,.opcoes-mercado{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+/* Moeda (redonda) e nota (retangular, cada valor com a sua cor) */
+.dinheiro{border:none;cursor:pointer;font-weight:800;font-size:1.1rem;color:#fff;box-shadow:0 4px 0 rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center}
+.dinheiro:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.25)}
+.dinheiro.moeda{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe27a,#d9a300);color:#5a4200;border:3px solid #b98800}
+.dinheiro.nota{width:96px;height:56px;border-radius:8px;border:2px dashed rgba(255,255,255,.7)}
+.dinheiro.v2{background:#6b86c9}
+.dinheiro.v5{background:#8a5fc0}
+.dinheiro.v10{background:#e0693f}
+.dinheiro.v20{background:#e0a21b;color:#4a3300}
+.dinheiro.v50{background:#c9776a}
+.bloco-silaba.acertou{background:var(--cor-sucesso-bg);color:var(--cor-sucesso-texto);--sombra-3d:var(--cor-sucesso)}
+.bloco-silaba.quase{background:var(--cor-alerta-bg);color:var(--cor-alerta-texto);--sombra-3d:var(--cor-alerta-texto)}
