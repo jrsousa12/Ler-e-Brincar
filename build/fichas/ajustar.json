@@ -1,0 +1,9 @@
+{
+  "_leia": "Ficha do motor de ajuste (build/ajustar-lp.js). Calibrar = editar aqui. 'razao_aviso': a certa é 'comprida demais' quando passa desta vez a maior errada (igual ao aviso do gerar-lp). 'equilibrio': na revisão, cada errada deve ter entre 'min' e 'max' vezes o tamanho da certa. 'fora_minimo': quantas palavras fora do texto contam como problema (em pergunta de pista). 'pista': expressões do enunciado que pedem resposta presa ao texto. 'vazias': palavras pequenas que não contam na conferência com o texto. Distratores por série: build/fichas/distratores.json.",
+  "razao_aviso": 1.8,
+  "minimo_letras_aviso": 15,
+  "equilibrio": { "min": 0.75, "max": 1.3 },
+  "fora_minimo": 2,
+  "pista": ["pista", "segundo o texto"],
+  "vazias": ["para", "como", "pelo", "pela", "pelos", "pelas", "numa", "num", "dele", "dela", "deles", "delas", "eles", "elas", "ele", "ela", "isso", "isto", "esse", "essa", "este", "esta", "mais", "muito", "muita", "bem", "sem", "com", "uma", "uns", "umas", "porque", "que", "quando", "antes", "depois", "após", "seu", "sua", "seus", "suas", "todo", "toda", "todos", "todas", "estava", "estavam", "tinha", "foram", "texto", "menciona", "mostra"]
+}

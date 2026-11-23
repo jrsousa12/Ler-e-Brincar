@@ -1,0 +1,6 @@
+{
+  "_leia": "Ficha do gerador da Ordem dos Fatos (build/gerar-ordem.js). 'enunciado': usado quando o pedido não diz. 'palavras_por_fato': acima disso dá aviso (fato longo demais para a criança ler no botão). 'titulo_palavras': faixa aceita sem aviso.",
+  "enunciado": "Coloque os fatos na ordem em que acontecem:",
+  "palavras_por_fato": 14,
+  "titulo_palavras": { "min": 2, "max": 7 }
+}

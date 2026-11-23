@@ -1,0 +1,219 @@
+# Folha de revisão (build/ajustar-lp.js). Reescreva a linha de cada item: certa mais curta com outras
+# palavras, erradas maiores, cada errada com o {tipo} de distrator. Depois: node build/ajustar-lp.js --aplicar build/revisao/lp-revisao.txt
+
+# lp-080 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 12 a 21 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa comprida perto das erradas
+# texto: (sem texto)
+# pergunta: Rui pegou a pá e o balde e foi para a areia. O que ele vai fazer?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-080 | Tomar banho de mar com o pai {inventado} | Guardar a pá e o balde em casa {contrario} | *Fazer um castelo de areia
+
+# lp-245 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa comprida perto das erradas
+# texto: Todo dia antes de a escola abrir, Seu Antônio acende o forno da padaria da esquina. O cheiro de pão assando se espalha pela rua e faz muita gente apressar o passo para buscar o café da manhã.
+# pergunta: Qual pista do texto mostra que o pão atrai os moradores logo cedo?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-245 | *O cheiro do pão faz muita gente apressar o passo. | Seu Antônio acende o forno depois que a escola abre. {troca} | Todos os moradores da cidade tomam café na padaria. {exagero}
+
+# lp-246 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras; certa com palavras fora do texto: atento, padeiro
+# texto: Rafael percebeu que um pacote de pão havia ficado rasgado na ponta e avisou Seu Antônio antes que alguém levasse.
+# pergunta: Com base nas pistas da frase, qual atitude Rafael teve?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-246 | *Percebeu o pacote rasgado e avisou Seu Antônio. | Escondeu o pacote rasgado atrás do balcão da padaria. {contrario} | Avisou Seu Antônio só depois que alguém levou o pão. {troca}
+
+# lp-248 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: Bia sugeriu colocar o vaso na varanda durante a manhã, onde batia o sol suave. Depois de alguns dias, o manjericão recuperou a cor verde-escura.
+# pergunta: O que a mudança para a varanda provocou na planta, segundo o texto?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-248 | *O manjericão recuperou a cor verde-escura. | O manjericão perdeu as folhas e ficou mais claro. {contrario} | Bia passou a regar o vaso duas vezes por dia. {inventado}
+
+# lp-249 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras; certa com palavras fora do texto: espaço, preparado
+# texto: No domingo à tarde, o calor diminuiu e o avô de Tiago puxou uma mesinha de madeira para a varanda para jogar dominó.
+# pergunta: Qual pista explica por que eles escolheram a varanda no domingo à tarde?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-249 | *Porque o calor diminuiu à tarde. | Porque o avô queria jogar dominó sozinho. {inventado} | Porque o sol estava forte na varanda. {contrario}
+
+# lp-250 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: No começo, Tiago jogava sem pensar muito. Na segunda rodada, olhou os números na mesa com calma e planejou suas jogadas.
+# pergunta: Qual diferença aparece entre o começo do jogo e a segunda rodada?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-250 | *Na segunda rodada, ele jogou com calma e planejou. | No começo, ele jogava com calma e planejava tudo. {troca} | Na segunda rodada, ele jogou sem olhar os números. {contrario}
+
+# lp-251 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: Ao tirar a bicicleta da garagem, Mateus percebeu que o pneu de trás estava bem murcho e pegou a bomba de ar.
+# pergunta: Qual pista mostra que Mateus notou o problema antes de sair?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-251 | *Percebeu o pneu murcho ao tirar a bicicleta da garagem. | Percebeu o pneu murcho só quando voltou para casa. {troca} | Viu que o pneu da frente estava cheio e saiu pedalando. {contrario}
+
+# lp-252 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: Mateus encheu o pneu devagar, conferindo com a mão se estava ficando firme sem ficar duro demais.
+# pergunta: O que a expressão 'sem ficar duro demais' sugere sobre o cuidado de Mateus?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-252 | *Quis deixar o pneu firme, sem ar demais. | Quis deixar o pneu bem duro, com muito ar. {contrario} | Encheu o pneu bem rápido para sair logo. {troca}
+
+# lp-253 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 41 a 72 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa com palavras fora do texto: durante, preparo
+# texto: Helena e a mãe leram a receita juntas, passo a passo, para não esquecer nenhum ingrediente.
+# pergunta: Qual pista mostra o motivo de elas lerem a receita passo a passo?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-253 | *Para não esquecer nenhum ingrediente. | Porque a mãe não sabia fazer aquele bolo. {inventado} | Para terminar a receita bem depressa. {contrario}
+
+# lp-257 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: Durante o recreio, o sol forte deixava o pátio quente. Um grupo formou uma roda embaixo das mangueiras, onde havia sombra.
+# pergunta: Qual pista mostra por que o grupo escolheu ficar embaixo das mangueiras?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-257 | *O pátio estava quente e lá havia sombra. | O pátio estava frio e lá batia muito sol. {contrario} | As mangueiras tinham frutas para o lanche. {inventado}
+
+# lp-259 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa comprida perto das erradas; certa com palavras fora do texto: própria, entregar
+# texto: Seu Jorge consertava a dobradiça de um portão que fazia barulho toda vez que abria. Cauã foi buscar uma chave de fenda em casa.
+# pergunta: Qual pista mostra que Cauã quis ajudar o vizinho?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-259 | *Foi buscar uma chave de fenda em casa. | Fechou o portão para não ouvir o barulho. {contrario} | Seu Jorge foi buscar a chave de fenda. {troca}
+
+# lp-261 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: Luana e Davi revisaram o texto do cartaz antes de colar na cartolina e corrigiram duas palavras repetidas.
+# pergunta: O que a revisão feita por Luana e Davi melhorou no texto?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-261 | *Tirou duas palavras repetidas do cartaz. | Colou o cartaz na cartolina sem revisar. {contrario} | Corrigiu todas as palavras do cartaz. {exagero}
+
+# lp-262 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: No dia da apresentação, vários visitantes pararam para ler o cartaz e elogiaram os exemplos simples.
+# pergunta: Qual pista mostra que o público gostou do trabalho da turma?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-262 | *Pararam para ler o cartaz e elogiaram. | Passaram direto e nem olharam o cartaz. {contrario} | Só os professores leram o cartaz. {troca}
+
+# lp-263 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: Uma ventania derrubou um galho sobre a fiação e a energia elétrica acabou na rua. A televisão e o ventilador desligaram na mesma hora.
+# pergunta: Qual pista explica por que a televisão e o ventilador desligaram?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-263 | *Um galho caiu na fiação e a energia acabou. | Sofia desligou a televisão para dormir cedo. {inventado} | A ventania quebrou a televisão e o ventilador. {troca}
+
+# lp-264 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa comprida perto das erradas
+# texto: Sofia abriu as janelas para o vento entrar e chamou a irmã para lerem histórias enquanto havia claridade.
+# pergunta: Qual pista mostra como Sofia lidou com a falta de energia?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-264 | *Abriu as janelas e leu histórias com a irmã. | Fechou as janelas e ficou no escuro com a irmã. {contrario} | Chamou a irmã para ver televisão na sala. {troca}
+
+# lp-265 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa comprida perto das erradas
+# texto: Otávio juntou moedas e notas durante duas semanas para comprar um gibi. O gibi custava quinze reais e ele pagou com uma nota de vinte reais.
+# pergunta: Qual pista mostra que Otávio se planejou antes de ir à banca?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-265 | *Juntou moedas e notas por duas semanas. | Pegou dinheiro emprestado no dia da compra. {contrario} | Pagou o gibi com uma nota de vinte reais. {trecho}
+
+# lp-268 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa comprida perto das erradas; certa com palavras fora do texto: usaram, agiram
+# texto: Com uma vara comprida e sem pressa, eles soltaram a pipa sem estragar nada.
+# pergunta: Que pistas indicam que a retirada da pipa foi bem-sucedida?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-268 | *Soltaram a pipa com uma vara, sem estragar nada. | Puxaram a linha com força e rasgaram o papel. {contrario} | Subiram na árvore para pegar a pipa. {inventado}
+
+# lp-269 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: A estante de Lorena estava tão cheia que os livros ficavam empilhados. Na hora de procurar um livro, ela demorava e bagunçava os outros.
+# pergunta: Qual pista mostra o problema antes da organização?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-269 | *Os livros ficavam empilhados e ela demorava a procurar. | A estante estava vazia e os livros ficavam na caixa. {contrario} | Lorena tinha livros demais e queria dar todos embora. {inventado}
+
+# lp-270 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa comprida perto das erradas
+# texto: Lorena limpou a poeira das prateleiras e separou os livros por assunto: histórias de um lado, ciências e jogos do outro.
+# pergunta: Qual pista mostra como ela dividiu o acervo?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-270 | *Por assunto: histórias num lado, ciências e jogos no outro. | Pelo tamanho: livros grandes de um lado, pequenos do outro. {troca} | Por cor da capa: livros azuis de um lado, vermelhos do outro. {inventado}
+
+# lp-272 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: Na volta para a escola, a turma comentou sobre cuidar dos espaços coletivos e voltou inspirada para cuidar do jardim da escola.
+# pergunta: Qual pista mostra que a visita influenciou a atitude dos alunos na escola?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-272 | *Voltaram inspirados para cuidar do jardim da escola. | Voltaram cansados e esqueceram o que viram na horta. {contrario} | Decidiram cuidar sozinhos de toda a horta do bairro. {troca}
+
+# lp-273 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa comprida perto das erradas; certa com palavras fora do texto: frutas, suco
+# texto: Pedro lavou bem as laranjas, espremeu, coou para tirar os bagaços e provou um pouquinho.
+# pergunta: Qual pista mostra que Pedro teve cuidado com a higiene e o preparo do suco?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-273 | *Lavou bem as laranjas e coou o suco. | Espremeu as laranjas sem lavar e sem coar. {contrario} | Provou o suco antes de espremer as laranjas. {troca}
+
+# lp-278 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa comprida perto das erradas
+# texto: Toda sexta-feira, dois voluntários contavam o arrecadado e separavam as tampinhas por cor. Ao fim do mês, a caixa estava cheia.
+# pergunta: Qual pista mostra que havia organização semanal na coleta?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-278 | *Toda sexta, contavam e separavam as tampinhas. | Só no fim do ano alguém abria a caixa e contava. {contrario} | Todo dia, cada aluno contava todas as tampinhas. {exagero}
+
+# lp-279 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: Cauê decidiu escrever uma carta caprichada para o primo em vez de mandar só uma mensagem apressada.
+# pergunta: Qual pista mostra que Cauê dedicou atenção especial ao escrever?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-279 | *Escreveu uma carta caprichada, sem pressa. | Mandou só uma mensagem apressada para o primo. {contrario} | Escreveu uma carta para a professora da escola. {troca}
+
+# lp-284 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: Mesmo quando a partida ficou disputada, o clima continuou amigável e todos guardaram as peças na caixa no fim da tarde.
+# pergunta: Que pistas indicam que a partida terminou de forma positiva?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-284 | *O clima ficou amigável e todos guardaram as peças. | Todos brigaram e deixaram as peças pelo chão. {contrario} | Só o vencedor guardou as peças na caixa. {troca}
+
+# lp-287 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 40 a 69 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa comprida perto das erradas
+# texto: João anotou na agenda o dia da entrega do trabalho para não esquecer o prazo combinado com a professora.
+# pergunta: Qual pista mostra por que João usou a agenda?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-287 | *Para não esquecer o prazo do trabalho. | Para desenhar carrinhos no canto da página. {inventado} | Para lembrar o dia do aniversário da professora. {troca}
+
+# lp-291 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: Camila leu duas vezes a pergunta da atividade e sublinhou as palavras principais antes de responder.
+# pergunta: Que pistas mostram que Camila teve atenção ao resolver a atividade?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-291 | *Leu duas vezes e sublinhou as palavras principais. | Respondeu logo, sem ler a pergunta até o fim. {contrario} | Sublinhou todas as palavras da atividade. {exagero}
+
+# lp-295 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa comprida perto das erradas
+# texto: Em vez de jogar papel no chão da sala, André guardou o papelzinho no bolso até encontrar uma lixeira.
+# pergunta: Qual pista mostra o cuidado de André com a limpeza da sala?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-295 | *Guardou o papel no bolso até achar uma lixeira. | Jogou o papel no chão para limpar depois. {contrario} | Deu o papel para um colega jogar fora. {troca}
+
+# lp-302 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: Antes de sair de casa, Marta conferiu se a torneira do quintal estava bem fechada para não desperdiçar água.
+# pergunta: Qual pista mostra a preocupação de Marta com a água?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-302 | *Conferiu se a torneira estava bem fechada. | Deixou a torneira do quintal aberta o dia todo. {contrario} | Regou todas as plantas do quintal antes de sair. {inventado}
+
+# lp-310 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras
+# texto: O vento forte soprou durante a noite e derrubou várias folhas secas no quintal.
+# pergunta: Qual pista explica por que havia folhas secas espalhadas no quintal?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-310 | *O vento forte derrubou as folhas à noite. | Não ventou nada e as folhas caíram sozinhas. {contrario} | As crianças juntaram as folhas no quintal. {inventado}
+
+# lp-311 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa acima de 60 letras; certa com palavras fora do texto: final, depender, resultado
+# texto: Os jogadores cumprimentaram uns aos outros no fim da partida, independentemente de quem venceu.
+# pergunta: Qual pista mostra respeito esportivo entre os jogadores?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-311 | *Cumprimentaram uns aos outros no fim da partida. | Só quem venceu cumprimentou os colegas no fim. {troca} | Saíram do campo sem falar com ninguém do time. {contrario}
+
+# lp-314 · 3º ano · certa até 60 letras, com outras palavras (não cortar) · erradas de 45 a 78 letras (0,75 a 1,3 vezes a certa nova)
+# problema: certa comprida perto das erradas
+# texto: No fim da tarde, os alunos recolheram os pincéis, lavaram os copinhos de água e deixaram a sala limpa para a próxima turma.
+# pergunta: Que pistas mostram responsabilidade coletiva ao encerrar a aula?
+# distratores do 3º ano (um tipo diferente em cada errada): trecho = Outra informação do texto, verdadeira, mas que não responde à pergunta. · contrario = Diz o contrário do que o texto conta. · troca = Troca o personagem, o objeto, o lugar, o momento ou a causa. · inventado = Parece verdade (conhecimento do dia a dia), mas o texto não diz. · parcial = Só uma parte da resposta, ou junta uma parte certa com uma errada. · exagero = Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).
+lp-314 | *Recolheram os pincéis e deixaram a sala limpa. | Deixaram tinta derramada e copos sujos na mesa. {contrario} | Só a professora lavou os copinhos de água. {troca}

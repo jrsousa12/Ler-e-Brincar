@@ -26,7 +26,14 @@
     "t_brincadeiras": "testes/t_brincadeiras.js",
     "t_mercado": "testes/t_mercado.js",
     "t_celebracoes": "testes/t_celebracoes.js",
-    "t_trem": "testes/t_trem.js"
+    "t_trem": "testes/t_trem.js",
+    "t_rodada": "testes/t_rodada.js",
+    "t_nova_brincadeira": "testes/t_nova_brincadeira.js",
+    "t_ordem": "testes/t_ordem.js",
+    "t_gerar_lp": "testes/t_gerar_lp.js",
+    "t_gerar_historia": "testes/t_gerar_historia.js",
+    "t_gerar_ordem": "testes/t_gerar_ordem.js",
+    "t_ajustar": "testes/t_ajustar.js"
   },
   "navegador": [
     "t_offline",
@@ -36,7 +43,9 @@
     "t_brincadeiras",
     "t_mercado",
     "t_trem",
-    "t_celebracoes"
+    "t_celebracoes",
+    "t_nova_brincadeira",
+    "t_ordem"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -90,11 +99,13 @@
     ],
     "index.html": [
       "t_app",
-      "t_offline"
+      "t_offline",
+      "t_nova_brincadeira"
     ],
     "sw.js": [
       "sintaxe",
-      "t_offline"
+      "t_offline",
+      "t_nova_brincadeira"
     ],
     "manifest": [
       "t_offline"
@@ -113,7 +124,11 @@
     "build/escrever.js": [
       "t_item",
       "t_gerar_mat",
-      "t_colorir"
+      "t_colorir",
+      "t_gerar_lp",
+      "t_gerar_historia",
+      "t_gerar_ordem",
+      "t_ajustar"
     ],
     "build/validar.js": [
       "validar",
@@ -134,7 +149,8 @@
       "t_gerar_mat"
     ],
     "build/item.js": [
-      "t_item"
+      "t_item",
+      "t_ajustar"
     ],
     "build/catalogo.js": [
       "catalogo",
@@ -235,7 +251,9 @@
     "js/moldes/atividades.js": [
       "t_brincadeiras",
       "t_mercado",
-      "t_trem"
+      "t_trem",
+      "t_nova_brincadeira",
+      "t_ordem"
     ],
     "css/tema-creme.css": [
       "t_app"
@@ -253,7 +271,8 @@
       "t_celebracoes"
     ],
     "js/app.js": [
-      "t_celebracoes"
+      "t_celebracoes",
+      "t_nova_brincadeira"
     ],
     "testes/t_celebracoes.js": [
       "t_celebracoes"
@@ -290,6 +309,109 @@
     ],
     "testes/t_trem.js": [
       "t_trem"
+    ],
+    "js/rodada.js": [
+      "t_rodada",
+      "t_trem",
+      "t_mercado",
+      "t_nova_brincadeira",
+      "t_ordem"
+    ],
+    "testes/t_rodada.js": [
+      "t_rodada"
+    ],
+    "build/nova-brincadeira.js": [
+      "t_nova_brincadeira"
+    ],
+    "build/modelos/": [
+      "t_nova_brincadeira"
+    ],
+    "testes/t_nova_brincadeira.js": [
+      "t_nova_brincadeira"
+    ],
+    "js/ordemregras.js": [
+      "t_ordem"
+    ],
+    "js/telas/ordem.js": [
+      "t_ordem"
+    ],
+    "js/moldes/ordem.js": [
+      "t_ordem"
+    ],
+    "css/ordem.css": [
+      "t_ordem"
+    ],
+    "testes/t_ordem.js": [
+      "t_ordem"
+    ],
+    "conteudo/ordem.js": [
+      "validar",
+      "t_ordem",
+      "t_gerar_ordem"
+    ],
+    "build/pedidos/ordem-lote1.js": [
+      "t_ordem"
+    ],
+    "build/pedido.js": [
+      "t_gerar_mat",
+      "t_gerar_lp",
+      "t_gerar_historia",
+      "t_gerar_ordem"
+    ],
+    "testes/_gerador.js": [
+      "t_gerar_lp",
+      "t_gerar_historia",
+      "t_gerar_ordem",
+      "t_ajustar"
+    ],
+    "build/gerar-lp.js": [
+      "t_gerar_lp",
+      "t_ajustar"
+    ],
+    "build/fichas/lp.json": [
+      "t_gerar_lp"
+    ],
+    "testes/t_gerar_lp.js": [
+      "t_gerar_lp"
+    ],
+    "build/gerar-historia.js": [
+      "t_gerar_historia"
+    ],
+    "build/fichas/historias.json": [
+      "t_gerar_historia"
+    ],
+    "testes/t_gerar_historia.js": [
+      "t_gerar_historia"
+    ],
+    "testes/t_gerar_mat.js": [
+      "t_gerar_mat"
+    ],
+    "build/gerar-ordem.js": [
+      "t_gerar_ordem"
+    ],
+    "build/fichas/ordem.json": [
+      "t_gerar_ordem"
+    ],
+    "testes/t_gerar_ordem.js": [
+      "t_gerar_ordem"
+    ],
+    "build/ajustar-lp.js": [
+      "t_ajustar"
+    ],
+    "build/ajustar-regras.js": [
+      "t_ajustar"
+    ],
+    "build/importar-lp.js": [
+      "t_ajustar"
+    ],
+    "build/fichas/ajustar.json": [
+      "t_ajustar"
+    ],
+    "testes/t_ajustar.js": [
+      "t_ajustar"
+    ],
+    "build/fichas/distratores.json": [
+      "t_ajustar"
     ]
   }
 }

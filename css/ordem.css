@@ -1,0 +1,16 @@
+/* Brincadeira "Ordem dos Fatos" (js/moldes/ordem.js). Cores de base.css. */
+.titulo-ordem{text-align:center;font-size:1.5rem;margin:8px 0 4px;color:var(--cor-texto)}
+.enunciado-ordem{text-align:center;font-size:1.1rem;margin:0 0 14px;color:var(--cor-texto)}
+.linha-ordem{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:8px}
+.casa-ordem{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;border:2px dashed var(--cor-borda-forte);opacity:.55}
+.casa-ordem.ativa{opacity:1;border-style:solid}
+.casa-ordem.cheia{opacity:1;border-style:solid;background:var(--cor-sucesso-bg)}
+.num-ordem{font-weight:800;font-size:1.3rem;min-width:2.2em}
+.frase-casa{font-size:1.05rem;line-height:1.35}
+.pedido-ordem{text-align:center;font-weight:800;font-size:1.25rem;margin:4px 0 10px}
+.opcoes-ordem{display:flex;flex-direction:column;gap:10px}
+.opcao-ordem{display:flex;gap:8px;align-items:stretch}
+.btn-frase-ordem{flex:1;text-align:left;font:inherit;font-size:1.1rem;line-height:1.35;padding:14px;border-radius:14px;border:2px solid var(--cor-ler);background:var(--cor-card);color:var(--cor-texto);cursor:pointer;box-shadow:0 4px 0 var(--cor-ler-3d)}
+.btn-frase-ordem:active{transform:translateY(2px);box-shadow:0 1px 0 var(--cor-ler-3d)}
+.btn-frase-ordem.quase{background:var(--cor-alerta-bg);color:var(--cor-alerta-texto)}
+.btn-ouvir-frase{font-size:1.3rem;min-width:52px;border-radius:14px;border:2px solid var(--cor-ler);background:var(--cor-card);cursor:pointer}

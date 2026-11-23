@@ -15,7 +15,7 @@ const fs = require('fs');
 const path = require('path');
 const escrever = require('./escrever');
 const raiz = path.join(__dirname, '..');
-const ARQUIVOS = ['historias', 'lp', 'mat', 'colorir', 'silabas'];
+const ARQUIVOS = ['historias', 'lp', 'mat', 'colorir', 'silabas', 'ordem'];
 const pasta = () => process.env.CONTEUDO_RAIZ || path.join(raiz, 'conteudo');
 const ler = linha => new Function('return ' + linha.replace(/,\s*$/, ''))();
 

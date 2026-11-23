@@ -67,7 +67,7 @@ const raiz = path.join(__dirname, '..');
   // LISTA DE ATIVIDADES em grade: mesmo título vira um cartão; tocar abre uma atividade ainda não feita
   const g = await p.evaluate(() => ({ n: LB.app.gruposAtividades.length, total: LB.app.atividadesFiltradas.length }));
   ok(g.n > 0 && g.n < g.total, 'atividades agrupadas por título (' + g.n + ' cartões)');
-  ok(await p.locator('.grade-brincadeiras .bloco-brincadeira').count() === 5, '5 blocos de brincadeira (3 de leitura + Mercadinho + Trem)');
+  ok(await p.locator('.grade-brincadeiras .bloco-brincadeira').count() >= 5, 'pelo menos 5 blocos de brincadeira (3 de leitura + Mercadinho + Trem)');
   // ABAS: pular entre Monte a Palavra, Memória e Som e Figura sem voltar à lista
   await p.click('.bloco-brincadeira:has-text("Memória")');
   ok(await p.locator('.abas-palavras .aba-palavra').count() === 3 && await p.locator('.aba-palavra.ativa').innerText() === '🃏 Memória', 'abas aparecem com Memória ativa');

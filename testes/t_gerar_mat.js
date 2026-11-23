@@ -26,7 +26,10 @@ const din = g.montar('10 − 4 | 🪙 | Caio tinha R$ 10 e gastou R$ 4. Quanto s
 ok(din.habilidadeBNCC === 'EF02MA19' && din.explicacao === '10 − 4 = 6. Sobraram R$ 6.', 'dinheiro: EF02MA19 e frase dada');
 ok(g.montar('9 − 2 | 🐟 | Havia 9 peixes e 2 foram embora. Quantos ficaram?').habilidadeBNCC === 'EF02MA07', 'retirar: EF02MA07');
 ok(g.montar('6 + 3 | 🐞 | titulo=Joaninhas | nivel=2').titulo === 'Joaninhas', 'chave=valor muda o título');
-for (const ruim of ['7 ÷ 2 | 🍎', '3 − 8 | 🍎', 'oito menos três | 🍎', '5 + 2']) {
+const esc = g.montar('? Qual número vem depois do 49? | 48 | *50 | 59 | Depois do 49 vem o 50. | bncc=EF02MA05');
+ok(esc.tipo === 'multipla' && esc.correta === 1 && esc.opcoes[1] === '50' && esc.titulo === 'Pense e escolha', 'questão de escolha com *');
+ok(g.montar('? Uma bala custa 2 reais. Com 5 reais, sobra troco? | *Sim | Não | Falta dinheiro | Sobram 3 reais.').habilidadeBNCC === 'EF02MA19', 'escolha com dinheiro: EF02MA19 sozinho');
+for (const ruim of ['? Sem bncc? | *1 | 2 | 3 | x', '? Sem certa | 1 | 2 | 3 | x | bncc=EF02MA05', '? Sem explicação | *1 | 2 | 3 | bncc=EF02MA05', '7 ÷ 2 | 🍎', '3 − 8 | 🍎', 'oito menos três | 🍎', '5 + 2']) {
   let erro = ''; try { g.montar(ruim); } catch (e) { erro = e.message; }
   ok(erro, 'deveria recusar: ' + ruim);
 }
@@ -35,7 +38,7 @@ for (const ruim of ['7 ÷ 2 | 🍎', '3 − 8 | 🍎', 'oito menos três | 🍎'
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'lb-mat-'));
 for (const f of fs.readdirSync(path.join(raiz, 'conteudo'))) fs.copyFileSync(path.join(raiz, 'conteudo', f), path.join(tmp, f));
 const pedido = path.join(tmp, 'pedido.txt');
-fs.writeFileSync(pedido, '# teste\n7 + 5 | 🐸\n12 ÷ 3 | 🍓 | Lia repartiu 12 morangos em 3 pratos. Quantos em cada prato?\n42 − 15 | 🎈\n');
+fs.writeFileSync(pedido, '# teste\n7 + 5 | 🐸\n12 ÷ 3 | 🍓 | Lia repartiu 12 morangos em 3 pratos. Quantos em cada prato?\n42 − 15 | 🎈\n? Qual número vem antes do 30? | *29 | 31 | 20 | Antes do 30 vem o 29. | bncc=EF02MA05\n');
 const env = { ...process.env, CONTEUDO_RAIZ: tmp };
 const rodar = (args) => {
   try { return { cod: 0, saida: execFileSync('node', [path.join(raiz, 'build/gerar-mat.js'), ...args], { env }).toString() }; }
@@ -44,7 +47,7 @@ const rodar = (args) => {
 const antes = fs.readFileSync(path.join(tmp, 'mat.js'), 'utf8');
 ok(rodar([pedido]).cod === 0 && fs.readFileSync(path.join(tmp, 'mat.js'), 'utf8') === antes, 'sem --gravar não muda nada');
 const r = rodar([pedido, '--gravar']);
-ok(r.cod === 0 && r.saida.includes('3 atividade(s)'), 'grava 3 atividades');
+ok(r.cod === 0 && r.saida.includes('4 atividade(s)'), 'grava 4 atividades');
 const depois = fs.readFileSync(path.join(tmp, 'mat.js'), 'utf8');
 ok(depois.startsWith(antes.slice(0, antes.lastIndexOf('}') + 1)), 'o conteúdo antigo fica igual');
 let v; try { v = execFileSync('node', [path.join(raiz, 'build/validar.js')], { env }).toString(); } catch (e) { v = 'FALHOU ' + e.stdout; }
