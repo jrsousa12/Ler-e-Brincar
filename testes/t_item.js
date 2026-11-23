@@ -10,7 +10,7 @@ let falhas = 0;
 const ok = (cond, msg) => { if (!cond) { falhas++; console.log('FALHA: ' + msg); } };
 
 const pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'item-'));
-const nomes = ['historias', 'lp', 'mat', 'colorir'];
+const nomes = ['historias', 'lp', 'mat', 'colorir', 'silabas'];
 for (const n of nomes) fs.copyFileSync(path.join(raiz, 'conteudo', n + '.js'), path.join(pasta, n + '.js'));
 const original = Object.fromEntries(nomes.map(n => [n, fs.readFileSync(path.join(pasta, n + '.js'), 'utf8')]));
 const rodar = (...a) => {

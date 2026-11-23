@@ -3,19 +3,16 @@ LB.usarSilabas = function (ctx) {
   'use strict';
   const { ref, computed } = Vue;
 
-  // Palavras da brincadeira (silabas = certas, na ordem; extras = sílabas para confundir).
-  const palavrasSilabas = [
-    { palavra: 'BOLA', silabas: ['BO', 'LA'], extras: ['PA', 'DA'], emoji: '⚽', dica: 'Redonda e pula quando a gente chuta!' },
-    { palavra: 'CASA', silabas: ['CA', 'SA'], extras: ['TA', 'ZO'], emoji: '🏠', dica: 'Onde moramos com quem a gente ama.' },
-    { palavra: 'GATO', silabas: ['GA', 'TO'], extras: ['PA', 'DO'], emoji: '🐱', dica: 'Faz miau e adora um cochilo ao sol.' }
-  ];
+  // Palavras: conteudo/silabas.js (gerado por build/gerar-silabas.js). Rodada de 5, mais fáceis primeiro.
+  const POR_RODADA = 5;
+  const palavrasSilabas = ref([]);
 
   const indiceSilabas = ref(0);
   const slotsSilabas = ref([]);
   const bancoSilabas = ref([]);
   const mensagemSilabas = ref('');
   const estadoSilabas = ref(''); // '', 'correto', 'tentar-novamente'
-  const palavraSilabas = computed(() => palavrasSilabas[indiceSilabas.value]);
+  const palavraSilabas = computed(() => palavrasSilabas.value[indiceSilabas.value]);
   const somLigado = () => ctx.ajustes.value.som !== false;
 
   function embaralhar(lista) {
@@ -39,7 +36,17 @@ LB.usarSilabas = function (ctx) {
     ctx.falarSozinho(atual.dica);
   }
 
+  // Sorteia a rodada: primeiro as palavras que ela ainda não acertou; depois ordena por nível.
+  function sortearRodada() {
+    const lista = embaralhar(LB.silabas || []);
+    const feitas = ctx.concluidos.value;
+    const novas = lista.filter(p => !feitas[p.id]), velhas = lista.filter(p => feitas[p.id]);
+    return [...novas, ...velhas].slice(0, POR_RODADA).sort((a, b) => a.nivel - b.nivel);
+  }
+
   function abrirSilabas() {
+    palavrasSilabas.value = sortearRodada();
+    if (!palavrasSilabas.value.length) return;
     indiceSilabas.value = 0;
     carregarPalavra();
     ctx.tela.value = 'silabas';
@@ -74,6 +81,7 @@ LB.usarSilabas = function (ctx) {
       estadoSilabas.value = 'correto';
       mensagemSilabas.value = 'Muito bem! Você formou ' + certa + '! ⭐';
       ctx.estrelas.value += 1;
+      ctx.marcarConcluido(palavraSilabas.value.id);
       LB.festa.acerto(somLigado());
       LB.voz.falar('Muito bem! ' + certa);
     } else {
@@ -84,7 +92,7 @@ LB.usarSilabas = function (ctx) {
   }
 
   function proximaSilabas() {
-    if (indiceSilabas.value < palavrasSilabas.length - 1) {
+    if (indiceSilabas.value < palavrasSilabas.value.length - 1) {
       indiceSilabas.value += 1;
       carregarPalavra();
     }

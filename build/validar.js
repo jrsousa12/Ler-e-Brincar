@@ -57,9 +57,21 @@ for (const c of LB.colorir) {
   if (!c.svg.includes('viewBox="0 0 300 300"')) erro(c.id, 'SVG sem viewBox 0 0 300 300');
   if (/<text/.test(c.svg)) erro(c.id, 'SVG com texto');
 }
+const palavras = new Set();
+for (const s of LB.silabas) {
+  checaId(s, 'sil', 3);
+  if ((s.silabas || []).join('') !== s.palavra) erro(s.id, 'sílabas não formam a palavra ' + s.palavra);
+  if (!(s.silabas || []).length || s.silabas.length < 2) erro(s.id, 'precisa de 2 sílabas ou mais');
+  if (!(s.extras || []).length || s.extras.some(e => s.silabas.includes(e))) erro(s.id, 'sílabas extras faltando ou iguais às certas');
+  if (!s.emoji || !s.dica) erro(s.id, 'sem emoji ou dica');
+  if (s.dica && s.dica.toUpperCase().includes(s.palavra)) erro(s.id, 'a dica entrega a palavra');
+  if (![1, 2, 3].includes(s.nivel)) erro(s.id, 'nível inválido ' + s.nivel);
+  if (palavras.has(s.palavra)) erro(s.id, 'palavra repetida ' + s.palavra);
+  palavras.add(s.palavra);
+}
 
-const total = LB.historias.length + LB.lp.length + LB.mat.length + LB.colorir.length;
-console.log(`Conteúdo: ${LB.historias.length} histórias, ${LB.lp.length} LP, ${LB.mat.length} Mat, ${LB.colorir.length} colorir (${total} itens)`);
+const total = LB.historias.length + LB.lp.length + LB.mat.length + LB.colorir.length + LB.silabas.length;
+console.log(`Conteúdo: ${LB.historias.length} histórias, ${LB.lp.length} LP, ${LB.mat.length} Mat, ${LB.colorir.length} colorir, ${LB.silabas.length} sílabas (${total} itens)`);
 if (erros.length) {
   console.log(`ERROS (${erros.length}):\n  ` + erros.slice(0, 30).join('\n  '));
   process.exit(1);

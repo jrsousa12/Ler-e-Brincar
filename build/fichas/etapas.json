@@ -21,7 +21,8 @@
     "t_tudo": "testes/t_tudo.js",
     "t_offline": "testes/t_offline.js",
     "t_app": "testes/t_app.js",
-    "t_silabas": "testes/t_silabas.js"
+    "t_silabas": "testes/t_silabas.js",
+    "t_gerar_silabas": "testes/t_gerar_silabas.js"
   },
   "navegador": [
     "t_offline",
@@ -54,7 +55,9 @@
       "catalogo",
       "t_conteudo",
       "t_sorteio",
-      "t_app"
+      "t_app",
+      "t_silabas",
+      "t_gerar_silabas"
     ],
     "js/respostas.js": [
       "t_conteudo",
@@ -182,6 +185,15 @@
     ],
     "testes/t_silabas.js": [
       "t_silabas"
+    ],
+    "build/gerar-silabas.js": [
+      "t_gerar_silabas"
+    ],
+    "build/fichas/silabas.json": [
+      "t_gerar_silabas"
+    ],
+    "testes/t_gerar_silabas.js": [
+      "t_gerar_silabas"
     ]
   }
 }

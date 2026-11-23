@@ -20,24 +20,35 @@ const raiz = path.join(__dirname, '..');
   ok(await p.locator('.brincadeira-silabas').count() === 1, 'abre a brincadeira');
   ok(await p.locator('.slot-bloco').count() === 2 && await p.locator('.bloco-silaba').count() === 4, '2 espaços e 4 sílabas');
 
+  const atual = () => p.evaluate(() => ({ s: [...LB.app.palavraSilabas.silabas], n: LB.app.palavrasSilabas.length }));
+  const montar = async lista => { for (const s of lista) await p.locator(`.bloco-silaba >> text="${s}"`).first().click(); };
+  let { s, n } = await atual();
+  ok(n === 5, 'rodada com 5 palavras');
+  ok(await p.locator('.slot-bloco').count() === s.length, 'um espaço por sílaba');
+  ok(await p.locator('.bloco-silaba').count() === s.length + 2, 'sílabas certas + 2 para confundir');
   const estrelas = await p.evaluate(() => LB.app.estrelas);
-  // Erro: monta LA + BO
-  await p.click('.bloco-silaba >> text="LA"'); await p.click('.bloco-silaba >> text="BO"');
+  // Erro: monta na ordem ao contrário
+  await montar([...s].reverse());
   ok(await p.locator('.feedback-jogo.tentar-novamente').count() === 1, 'ordem errada pede nova tentativa');
-  // Devolve as duas e monta certo
-  await p.click('.slot-bloco >> nth=0'); await p.click('.slot-bloco >> nth=1');
-  ok(await p.locator('.bloco-silaba').count() === 4, 'sílabas voltam ao banco');
-  await p.click('.bloco-silaba >> text="BO"'); await p.click('.bloco-silaba >> text="LA"');
-  ok(await p.locator('.feedback-jogo.correto').count() === 1, 'BOLA certo');
+  for (let i = 0; i < s.length; i++) await p.click('.slot-bloco >> nth=' + i);
+  ok(await p.locator('.bloco-silaba').count() === s.length + 2, 'sílabas voltam ao banco');
+  await montar(s);
+  ok(await p.locator('.feedback-jogo.correto').count() === 1, 'palavra certa');
   ok(await p.evaluate(() => LB.app.estrelas) === estrelas + 1, 'ganha 1 estrela');
+  const id1 = await p.evaluate(() => LB.app.palavraSilabas.id);
+  ok(await p.evaluate(id => LB.app.concluidos[id] === true, id1), 'palavra acertada fica marcada');
 
-  // Resolve as outras duas e conclui
-  for (const [a, c] of [['CA', 'SA'], ['GA', 'TO']]) {
+  // Resolve as outras e conclui
+  for (let k = 1; k < n; k++) {
     await p.click('text=Próxima');
-    await p.click(`.bloco-silaba >> text="${a}"`); await p.click(`.bloco-silaba >> text="${c}"`);
+    ({ s } = await atual());
+    await montar(s);
   }
   await p.click('text=Concluir');
   ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos.silabas === true), 'concluir volta e marca feito');
+  // Nova rodada evita as palavras já acertadas
+  await p.click('text=Monte a Palavra');
+  ok(await p.evaluate(() => LB.app.palavrasSilabas.every(w => !LB.app.concluidos[w.id])), 'nova rodada traz palavras ainda não acertadas');
   ok(erros.length === 0, 'sem erros: ' + erros.join(' | '));
 
   await b.close();
