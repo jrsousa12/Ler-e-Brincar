@@ -71,5 +71,5 @@ Decisões do dono (19/11/2026):
 - 6 Tablet (layout largo) e acabamento: capturas de todas as telas para revisão — a fazer
 - Estilo das brincadeiras no app todo (pedido do dono, 23/11; plano aprovado):
   - Etapa 1 — feita (23/11): listas em grade de cartões (`css/listas.css`); Atividades agrupadas por título ("3 de 14", abre a próxima não feita) e 3 blocos de brincadeiras no topo
-  - Etapa 2 — a fazer: acabamento igual nas telas da criança (botões, etiqueta, aviso, Voltar à esquerda); área do responsável fica sóbria
+  - Etapa 2 — feita (23/11, `css/acabamento.css`): acabamento igual nas telas da criança (botões, etiqueta, aviso, Voltar à esquerda); área do responsável fica sóbria
   - Etapa 3 — feita (23/11): cor Creme em `css/tema-creme.css` (só variáveis, modo claro), escolha "Cor do app" em Ajustes (`ajustes.tema`); azul continua padrão

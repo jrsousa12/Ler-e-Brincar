@@ -27,7 +27,7 @@ LB.moldes.historias = `
         Responder perguntinhas ✓
       </button>
       <div v-if="mostrandoPerguntas">
-        <h3 class="mt">Pergunta {{ indicePergunta + 1 }} de {{ historiaAtual.perguntas.length }}</h3>
+        <div class="etiqueta-linha"><span class="badge-fase">Pergunta {{ indicePergunta + 1 }} de {{ historiaAtual.perguntas.length }}</span></div>
         <div class="barra-progresso" role="progressbar" :aria-valuenow="progressoPerguntas" aria-valuemin="0" aria-valuemax="100"><div class="barra-preenchida" :style="{width: progressoPerguntas + '%'}"></div></div>
         <div class="enunciado">
           <button class="btn-ouvir redondo" @click="ouvir(textoPergunta(perguntaAtual))" aria-label="Ouvir a pergunta">🔊</button>

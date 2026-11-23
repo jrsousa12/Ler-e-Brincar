@@ -20,6 +20,9 @@ const raiz = path.join(__dirname, '..');
   await p.click('.bloco-menu.brincar');
   await p.click('text=Memória');
   ok(await p.locator('.carta-memoria').count() === 8, 'memória com 8 cartas');
+  // Acabamento (etapa 2): "← Voltar" à esquerda, do tamanho do texto (não a largura toda)
+  const voltar = await p.locator('section.brincadeira-silabas:visible .btn-voltar').boundingBox();
+  ok(voltar && voltar.x < 40 && voltar.width < 200, '"Voltar" no canto esquerdo: ' + JSON.stringify(voltar));
   const cartas = await p.evaluate(() => LB.app.cartasMemoria.map(c => ({ par: c.par, tipo: c.tipo })));
   ok(cartas.filter(c => c.tipo === 'figura').length === 4, '4 figuras e 4 palavras');
   // Erro: duas cartas de pares diferentes desviram

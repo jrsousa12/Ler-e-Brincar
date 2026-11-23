@@ -215,6 +215,7 @@
     "testes/t_brincadeiras.js": [
       "t_brincadeiras"
     ],
+    "css/acabamento.css": ["t_app", "t_brincadeiras"],
     "css/listas.css": [
       "t_brincadeiras",
       "t_app"

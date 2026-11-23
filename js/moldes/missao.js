@@ -8,7 +8,7 @@ LB.moldes.missao = `
         <div v-for="(p, i) in passosMissao" :key="i" class="passo"
              :class="{feito: p.feito, atual: i === proximoPasso}">{{ p.feito ? '✓' : p.emoji }}</div>
       </div>
-      <p class="texto-centro texto-suave">{{ passosFeitos }} de {{ passosMissao.length }}</p>
+      <div class="etiqueta-linha"><span class="badge-fase">{{ passosFeitos }} de {{ passosMissao.length }} passos</span></div>
       <div v-if="!missaoCompleta && passosMissao[proximoPasso]" class="card passo-destaque" @click="fazerPasso(proximoPasso)" tabindex="0">
         <div class="passo-emoji">{{ passosMissao[proximoPasso].emoji }}</div>
         <div class="card-titulo">{{ passosMissao[proximoPasso].rotulo }}</div>
