@@ -1,5 +1,5 @@
 :root{
-  --font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-family: "Lexend",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --font-display: "Baloo 2", var(--font-family);
   --font-size-base: 18px;
   --line-height: 1.6;
@@ -9,19 +9,22 @@
   --radius: 20px;
   --radius-lg: 28px;
   --radius-pill: 999px;
-  --cor-primaria: #7B5CFA;
-  --cor-primaria-2: #A78BFA;
-  --cor-primaria-escura: #5B3FD9;
-  --cor-primaria-suave: #F0EAFF;
-  --cor-acento: #FF7A59;
-  --cor-fundo: #FFF8EE;
+  --cor-primaria: #2B8BE6;
+  --cor-primaria-2: #5AA9F0;
+  --cor-primaria-escura: #1864AB;
+  --cor-primaria-suave: #E0F2FE;
+  --cor-acento: #FF9F1C;
+  --cor-secundaria: #FF9F1C;
+  --cor-secundaria-3d: #D97706;
+  --cor-destaque-leitura: #FDE047;
+  --cor-fundo: #EEF6FD;
   --cor-card: #FFFFFF;
   --cor-nav-fundo: rgba(255,255,255,.9);
-  --cor-overlay: rgba(255,248,238,.96);
-  --cor-texto: #1F1B2E;
-  --cor-texto-suave: #6B6580;
-  --cor-borda: #F1E6D6;
-  --cor-borda-forte: #E4D4BE;
+  --cor-overlay: rgba(238,246,253,.96);
+  --cor-texto: #1E2D3D;
+  --cor-texto-suave: #5A6F87;
+  --cor-borda: #D6E6F5;
+  --cor-borda-forte: #BDD6EE;
   --cor-sucesso: #22B35E;
   --cor-sucesso-bg: #E3F9EC;
   --cor-sucesso-texto: #11803F;
@@ -30,7 +33,7 @@
   --cor-alerta-texto: #965900;
   --sombra-1: 0 1px 2px rgba(31,27,46,.05), 0 8px 20px -14px rgba(31,27,46,.35);
   --sombra-2: 0 2px 6px rgba(31,27,46,.06), 0 20px 40px -20px rgba(31,27,46,.40);
-  --sombra-primaria: 0 10px 24px -12px rgba(123,92,250,.85);
+  --sombra-primaria: 0 10px 24px -12px rgba(43,139,230,.85);
   /* Uma cor para cada área (fundo do botão, sombra 3D embaixo, fundo suave) */
   --cor-ler: #3B8BF6; --cor-ler-3d: #2563C9; --cor-ler-suave: #E3EFFF;
   --cor-brincar: #FF8A3D; --cor-brincar-3d: #D9661C; --cor-brincar-suave: #FFEBDB;
@@ -60,13 +63,12 @@ html,body{
 body{
   padding-bottom:104px;
   min-height:100vh;
+  /* Fundo de bolinhas azuis e laranja (tema azul, 23/11) */
   background-image:
-    radial-gradient(520px 360px at 0% 0%, rgba(167,139,250,.22), transparent 62%),
-    radial-gradient(480px 340px at 100% 18%, rgba(255,185,39,.20), transparent 60%),
-    radial-gradient(520px 380px at 10% 85%, rgba(59,139,246,.12), transparent 60%),
-    radial-gradient(480px 360px at 95% 100%, rgba(238,90,158,.14), transparent 60%);
-  background-attachment:fixed;
-  background-repeat:no-repeat;
+    radial-gradient(rgba(43,139,230,.14) 2.5px, transparent 2.5px),
+    radial-gradient(rgba(255,159,28,.16) 2.5px, transparent 2.5px);
+  background-size:48px 48px;
+  background-position:0 0,24px 24px;
 }
 [v-cloak]{display:none!important}
 ::selection{background:var(--cor-primaria-2);color:#fff}
@@ -87,11 +89,11 @@ button:focus-visible{outline:3px solid var(--cor-primaria);outline-offset:3px}
 img{max-width:100%;height:auto;border-radius:var(--radius)}
 .container{max-width:900px;margin:0 auto;padding:calc(var(--space) + 4px) var(--space) var(--space)}
 .cabecalho-app{
-  background:linear-gradient(115deg,var(--cor-primaria) 0%,#8B7BF5 58%,#FF9B7D 175%);
+  background:linear-gradient(135deg,#2B8BE6 0%,#1D6FC2 100%);
   color:#fff;padding:14px var(--space);
   display:flex;align-items:center;justify-content:space-between;gap:12px;
   position:sticky;top:0;z-index:10;
-  box-shadow:0 14px 34px -22px rgba(108,92,231,.95);
+  box-shadow:0 8px 20px rgba(29,111,194,.22);
 }
 .cabecalho-app h1{margin:0;font-size:1.28em;color:#fff;letter-spacing:.01em}
 .contador-estrelas{
