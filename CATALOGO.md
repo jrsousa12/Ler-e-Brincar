@@ -7,8 +7,8 @@
 | Área | Itens | Próximo id livre |
 |---|---|---|
 | Histórias | 41 | `historia-42` |
-| Português | 100 | `lp-101` |
-| Matemática | 100 | `mat-101` |
+| Português | 104 | `lp-105` |
+| Matemática | 104 | `mat-105` |
 | Colorir | 35 | `colorir-36` |
 | Monte a Palavra | 40 | `sil-041` |
 
@@ -16,34 +16,34 @@
 
 | Habilidade | Nível 1 | Nível 2 | Nível 3 | Total | Tipos |
 |---|---|---|---|---|---|
-| EF02LP03 | 14 | 13 | · | 27 | completar, multipla |
+| EF02LP03 | 15 | 14 | · | 29 | completar, multipla |
 | EF02LP07 | 17 | 27 | 3 | 47 | multipla, completar |
 | EF02LP26 | 1 | 2 | · | 3 | multipla |
-| EF15LP03 | 9 | · | · | 9 | multipla |
-| EF15LP04 | 3 | 10 | 1 | 14 | multipla |
+| EF15LP03 | 10 | · | · | 10 | multipla |
+| EF15LP04 | 3 | 11 | 1 | 15 | multipla |
 
-- **EF02LP03**: lp-001 Complete a frase (n1) · lp-006 Sílabas (n1) · lp-007 Rima (n1) · lp-017 Contando sílabas (n1) · lp-018 Sílabas curtas (n1) · lp-019 Letra inicial (n1) · lp-027 Rima (n1) · lp-031 Complete (n1) · lp-035 Contando palavras (n1) · lp-036 Ç ou SS (n2) · lp-037 Acento (n2) · lp-041 Sílabas (n1) · lp-042 Sílabas (n2) · lp-043 Sílabas (n1) · lp-044 Sílabas (n1) · lp-045 Sílabas (n2) · lp-046 R ou RR (n2) · lp-047 S ou SS (n2) · lp-048 Ç (n2) · lp-049 X ou CH (n2) · lp-050 M antes de P/B (n2) · lp-086 Contando sílabas (n1) · lp-087 Rima (n1) · lp-089 R ou RR (n2) · lp-090 X ou CH (n2) · lp-091 M ou N (n2) · lp-092 Ç ou SS (n2)
+- **EF02LP03**: lp-001 Complete a frase (n1) · lp-006 Sílabas (n1) · lp-007 Rima (n1) · lp-017 Contando sílabas (n1) · lp-018 Sílabas curtas (n1) · lp-019 Letra inicial (n1) · lp-027 Rima (n1) · lp-031 Complete (n1) · lp-035 Contando palavras (n1) · lp-036 Ç ou SS (n2) · lp-037 Acento (n2) · lp-041 Sílabas (n1) · lp-042 Sílabas (n2) · lp-043 Sílabas (n1) · lp-044 Sílabas (n1) · lp-045 Sílabas (n2) · lp-046 R ou RR (n2) · lp-047 S ou SS (n2) · lp-048 Ç (n2) · lp-049 X ou CH (n2) · lp-050 M antes de P/B (n2) · lp-086 Contando sílabas (n1) · lp-087 Rima (n1) · lp-089 R ou RR (n2) · lp-090 X ou CH (n2) · lp-091 M ou N (n2) · lp-092 Ç ou SS (n2) · lp-101 Mas ou mais? (n2) · lp-102 Som do CH (n1)
 - **EF02LP07**: lp-003 Qual é o plural? (n1) · lp-004 Sinônimo (n2) · lp-005 Pontuação (n2) · lp-009 Ordem alfabética (n2) · lp-010 Frase completa (n1) · lp-011 Plural (n1) · lp-012 Singular (n1) · lp-013 Sinônimo (n2) · lp-014 Antônimo (n2) · lp-015 Feminino (n1) · lp-016 Masculino (n1) · lp-020 Vírgula (n3) · lp-021 Complete com verbo (n2) · lp-022 Futuro (n2) · lp-023 Adjetivo (n2) · lp-024 Substantivo (n2) · lp-025 Verbo (n2) · lp-026 Plural no texto (n1) · lp-028 Ordem alfabética (n1) · lp-029 Ordem alfabética (n2) · lp-032 Sinônimo (n2) · lp-033 Antônimo (n2) · lp-034 Frase correta (n2) · lp-051 Sinônimo (n2) · lp-052 Antônimo (n2) · lp-053 Sinônimo (n2) · lp-054 Antônimo (n2) · lp-055 Sinônimo (n3) · lp-061 Substantivo (n1) · lp-062 Adjetivo (n2) · lp-063 Verbo (n2) · lp-064 Substantivo próprio (n2) · lp-065 Artigo (n1) · lp-066 Ponto final (n1) · lp-067 Interrogação (n1) · lp-068 Exclamação (n1) · lp-069 Ordem alfabética (n1) · lp-070 Frase com sentido (n2) · lp-088 Pontuação (n2) · lp-093 Ordem alfabética (n1) · lp-094 Sinônimo (n2) · lp-095 Antônimo (n1) · lp-096 Antônimo (n2) · lp-097 Sinônimo (n3) · lp-098 Verbo (n2) · lp-099 Adjetivo (n2) · lp-100 Pontuação (n1)
 - **EF02LP26**: lp-002 Leia e responda (n1) · lp-084 Leia e responda (n2) · lp-085 Por quê? (n2)
-- **EF15LP03**: lp-030 Quem fez? (n1) · lp-038 Interpretação (n1) · lp-040 Quando? (n1) · lp-056 Interpretação (n1) · lp-057 Interpretação (n1) · lp-058 Interpretação (n1) · lp-081 Interpretação (n1) · lp-082 Com quem? (n1) · lp-083 O que tomou? (n1)
-- **EF15LP04**: lp-008 Inferência (n2) · lp-039 Inferência (n2) · lp-059 Inferência (n2) · lp-060 Inferência (n2) · lp-071 Inferência (n2) · lp-072 Inferência (n2) · lp-073 Inferência (n2) · lp-074 Inferência (n1) · lp-075 Inferência (n1) · lp-076 Inferência (n2) · lp-077 Inferência (n2) · lp-078 Inferência (n1) · lp-079 Inferência (n2) · lp-080 Inferência (n3)
+- **EF15LP03**: lp-030 Quem fez? (n1) · lp-038 Interpretação (n1) · lp-040 Quando? (n1) · lp-056 Interpretação (n1) · lp-057 Interpretação (n1) · lp-058 Interpretação (n1) · lp-081 Interpretação (n1) · lp-082 Com quem? (n1) · lp-083 O que tomou? (n1) · lp-103 O que veio primeiro? (n1)
+- **EF15LP04**: lp-008 Inferência (n2) · lp-039 Inferência (n2) · lp-059 Inferência (n2) · lp-060 Inferência (n2) · lp-071 Inferência (n2) · lp-072 Inferência (n2) · lp-073 Inferência (n2) · lp-074 Inferência (n1) · lp-075 Inferência (n1) · lp-076 Inferência (n2) · lp-077 Inferência (n2) · lp-078 Inferência (n1) · lp-079 Inferência (n2) · lp-080 Inferência (n3) · lp-104 Lanche quentinho (n2)
 
 ## Matemática (por habilidade da BNCC)
 
 | Habilidade | Nível 1 | Nível 2 | Nível 3 | Total | Tipos |
 |---|---|---|---|---|---|
 | EF02MA05 | 9 | 1 | 6 | 16 | operacao, multipla |
-| EF02MA06 | 18 | 21 | 1 | 40 | operacao, multipla |
+| EF02MA06 | 18 | 22 | 2 | 42 | operacao, multipla |
 | EF02MA07 | 3 | 4 | · | 7 | operacao |
-| EF02MA19 | 3 | 7 | 2 | 12 | operacao |
-| EF03MA03 | 3 | 12 | · | 15 | operacao |
+| EF02MA19 | 3 | 7 | 3 | 13 | operacao, multipla |
+| EF03MA03 | 3 | 13 | · | 16 | operacao, multipla |
 | EF03MA06 | · | 5 | 5 | 10 | operacao |
 
 - **EF02MA05**: mat-005 Fatos básicos (n1) · mat-011 Somando até 10 (n1) · mat-012 Subtraindo até 10 (n1) · mat-017 Dobro (n1) · mat-024 Dobro (n1) · mat-025 Metade (n2) · mat-028 Contando (n1) · mat-041 Somando (n1) · mat-042 Subtraindo (n1) · mat-049 Dobro (n1) · mat-091 Somando (n3) · mat-092 Subtraindo (n3) · mat-093 Somando (n3) · mat-094 Subtraindo (n3) · mat-095 Somando (n3) · mat-096 Subtraindo (n3)
-- **EF02MA06**: mat-001 Somando frutas (n1) · mat-002 Subtraindo (n1) · mat-006 Somando com visual (n2) · mat-007 Subtração com visual (n2) · mat-013 Somando (n1) · mat-014 Subtraindo (n1) · mat-015 Somando com visual (n1) · mat-016 Subtraindo com visual (n2) · mat-018 Dezena (n1) · mat-026 Dezenas (n1) · mat-027 Dezenas e unidades (n2) · mat-029 Ordinal (n1) · mat-030 Sequência (n1) · mat-031 Somando dezenas (n2) · mat-032 Subtraindo dezenas (n2) · mat-033 Problema (n2) · mat-034 Problema (n2) · mat-037 Sequência de 5 (n2) · mat-038 Subtraindo de 100 (n3) · mat-039 Somando dezenas (n2) · mat-043 Somando (n1) · mat-044 Subtraindo (n1) · mat-045 Somando dezenas (n2) · mat-046 Subtraindo dezenas (n2) · mat-047 Somando com visual (n1) · mat-048 Subtraindo com visual (n2) · mat-059 Problema (n2) · mat-060 Problema (n2) · mat-063 Ordinal (n1) · mat-064 Antecessor (n1) · mat-065 Sucessor (n1) · mat-066 Números pares (n2) · mat-067 Números ímpares (n2) · mat-068 Sequência (n1) · mat-069 Maior ou menor (n1) · mat-082 Problema de tirar (n1) · mat-087 Problema de juntar (n2) · mat-088 Problema de tirar (n2) · mat-089 Problema de juntar (n2) · mat-090 Problema de tirar (n2)
+- **EF02MA06**: mat-001 Somando frutas (n1) · mat-002 Subtraindo (n1) · mat-006 Somando com visual (n2) · mat-007 Subtração com visual (n2) · mat-013 Somando (n1) · mat-014 Subtraindo (n1) · mat-015 Somando com visual (n1) · mat-016 Subtraindo com visual (n2) · mat-018 Dezena (n1) · mat-026 Dezenas (n1) · mat-027 Dezenas e unidades (n2) · mat-029 Ordinal (n1) · mat-030 Sequência (n1) · mat-031 Somando dezenas (n2) · mat-032 Subtraindo dezenas (n2) · mat-033 Problema (n2) · mat-034 Problema (n2) · mat-037 Sequência de 5 (n2) · mat-038 Subtraindo de 100 (n3) · mat-039 Somando dezenas (n2) · mat-043 Somando (n1) · mat-044 Subtraindo (n1) · mat-045 Somando dezenas (n2) · mat-046 Subtraindo dezenas (n2) · mat-047 Somando com visual (n1) · mat-048 Subtraindo com visual (n2) · mat-059 Problema (n2) · mat-060 Problema (n2) · mat-063 Ordinal (n1) · mat-064 Antecessor (n1) · mat-065 Sucessor (n1) · mat-066 Números pares (n2) · mat-067 Números ímpares (n2) · mat-068 Sequência (n1) · mat-069 Maior ou menor (n1) · mat-082 Problema de tirar (n1) · mat-087 Problema de juntar (n2) · mat-088 Problema de tirar (n2) · mat-089 Problema de juntar (n2) · mat-090 Problema de tirar (n2) · mat-102 Sacos de 10 (n2) · mat-103 Problema em duas etapas (n3)
 - **EF02MA07**: mat-003 Juntando (n1) · mat-004 Retirando (n1) · mat-081 Problema de juntar (n1) · mat-083 Problema de juntar (n2) · mat-084 Problema de tirar (n2) · mat-085 Problema de juntar (n2) · mat-086 Problema de tirar (n2)
-- **EF02MA19**: mat-040 Problema com dinheiro (n3) · mat-070 Problema com dinheiro (n3) · mat-071 Contando dinheiro (n1) · mat-072 Contando dinheiro (n1) · mat-073 Contando dinheiro (n2) · mat-074 Contando dinheiro (n2) · mat-075 Contando dinheiro (n2) · mat-076 Contando dinheiro (n1) · mat-077 Contando dinheiro (n2) · mat-078 Contando dinheiro (n2) · mat-079 Contando dinheiro (n2) · mat-080 Contando dinheiro (n2)
-- **EF03MA03**: mat-008 Multiplicação simples (n2) · mat-019 Dobro pequeno (n1) · mat-020 Dobro (n1) · mat-021 Triplo (n2) · mat-035 Problema com multiplicação (n2) · mat-050 Triplo (n2) · mat-051 Multiplicação ×2 (n1) · mat-052 Multiplicação ×3 (n2) · mat-053 Multiplicação ×4 (n2) · mat-054 Multiplicação ×5 (n2) · mat-061 Problema (n2) · mat-097 Multiplicando (n2) · mat-098 Multiplicando (n2) · mat-099 Dividindo (n2) · mat-100 Dividindo (n2)
+- **EF02MA19**: mat-040 Problema com dinheiro (n3) · mat-070 Problema com dinheiro (n3) · mat-071 Contando dinheiro (n1) · mat-072 Contando dinheiro (n1) · mat-073 Contando dinheiro (n2) · mat-074 Contando dinheiro (n2) · mat-075 Contando dinheiro (n2) · mat-076 Contando dinheiro (n1) · mat-077 Contando dinheiro (n2) · mat-078 Contando dinheiro (n2) · mat-079 Contando dinheiro (n2) · mat-080 Contando dinheiro (n2) · mat-101 Compras e troco (n3)
+- **EF03MA03**: mat-008 Multiplicação simples (n2) · mat-019 Dobro pequeno (n1) · mat-020 Dobro (n1) · mat-021 Triplo (n2) · mat-035 Problema com multiplicação (n2) · mat-050 Triplo (n2) · mat-051 Multiplicação ×2 (n1) · mat-052 Multiplicação ×3 (n2) · mat-053 Multiplicação ×4 (n2) · mat-054 Multiplicação ×5 (n2) · mat-061 Problema (n2) · mat-097 Multiplicando (n2) · mat-098 Multiplicando (n2) · mat-099 Dividindo (n2) · mat-100 Dividindo (n2) · mat-104 Dúzias (n2)
 - **EF03MA06**: mat-009 Divisão simples (n2) · mat-010 O dobro (n3) · mat-022 Divisão (n2) · mat-023 Divisão (n2) · mat-036 Problema com divisão (n3) · mat-055 Divisão ÷2 (n2) · mat-056 Divisão ÷3 (n2) · mat-057 Divisão ÷4 (n3) · mat-058 Divisão ÷5 (n3) · mat-062 Problema (n3)
 
 ## Histórias
