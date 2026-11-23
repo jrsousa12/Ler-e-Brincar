@@ -32,7 +32,8 @@
     "t_ordem": "testes/t_ordem.js",
     "t_gerar_lp": "testes/t_gerar_lp.js",
     "t_gerar_historia": "testes/t_gerar_historia.js",
-    "t_gerar_ordem": "testes/t_gerar_ordem.js"
+    "t_gerar_ordem": "testes/t_gerar_ordem.js",
+    "t_ajustar": "testes/t_ajustar.js"
   },
   "navegador": [
     "t_offline",
@@ -126,7 +127,8 @@
       "t_colorir",
       "t_gerar_lp",
       "t_gerar_historia",
-      "t_gerar_ordem"
+      "t_gerar_ordem",
+      "t_ajustar"
     ],
     "build/validar.js": [
       "validar",
@@ -147,7 +149,8 @@
       "t_gerar_mat"
     ],
     "build/item.js": [
-      "t_item"
+      "t_item",
+      "t_ajustar"
     ],
     "build/catalogo.js": [
       "catalogo",
@@ -358,10 +361,12 @@
     "testes/_gerador.js": [
       "t_gerar_lp",
       "t_gerar_historia",
-      "t_gerar_ordem"
+      "t_gerar_ordem",
+      "t_ajustar"
     ],
     "build/gerar-lp.js": [
-      "t_gerar_lp"
+      "t_gerar_lp",
+      "t_ajustar"
     ],
     "build/fichas/lp.json": [
       "t_gerar_lp"
@@ -389,6 +394,21 @@
     ],
     "testes/t_gerar_ordem.js": [
       "t_gerar_ordem"
+    ],
+    "build/ajustar-lp.js": [
+      "t_ajustar"
+    ],
+    "build/ajustar-regras.js": [
+      "t_ajustar"
+    ],
+    "build/importar-lp.js": [
+      "t_ajustar"
+    ],
+    "build/fichas/ajustar.json": [
+      "t_ajustar"
+    ],
+    "testes/t_ajustar.js": [
+      "t_ajustar"
     ]
   }
 }
