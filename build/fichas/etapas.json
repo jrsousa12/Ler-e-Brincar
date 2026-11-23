@@ -29,7 +29,9 @@
     "t_trem": "testes/t_trem.js",
     "t_rodada": "testes/t_rodada.js",
     "t_nova_brincadeira": "testes/t_nova_brincadeira.js",
-    "t_ordem": "testes/t_ordem.js"
+    "t_ordem": "testes/t_ordem.js",
+    "t_gerar_lp": "testes/t_gerar_lp.js",
+    "t_gerar_historia": "testes/t_gerar_historia.js"
   },
   "navegador": [
     "t_offline",
@@ -120,7 +122,9 @@
     "build/escrever.js": [
       "t_item",
       "t_gerar_mat",
-      "t_colorir"
+      "t_colorir",
+      "t_gerar_lp",
+      "t_gerar_historia"
     ],
     "build/validar.js": [
       "validar",
@@ -341,6 +345,36 @@
     ],
     "build/pedidos/ordem-lote1.js": [
       "t_ordem"
+    ],
+    "build/pedido.js": [
+      "t_gerar_mat",
+      "t_gerar_lp",
+      "t_gerar_historia"
+    ],
+    "testes/_gerador.js": [
+      "t_gerar_lp",
+      "t_gerar_historia"
+    ],
+    "build/gerar-lp.js": [
+      "t_gerar_lp"
+    ],
+    "build/fichas/lp.json": [
+      "t_gerar_lp"
+    ],
+    "testes/t_gerar_lp.js": [
+      "t_gerar_lp"
+    ],
+    "build/gerar-historia.js": [
+      "t_gerar_historia"
+    ],
+    "build/fichas/historias.json": [
+      "t_gerar_historia"
+    ],
+    "testes/t_gerar_historia.js": [
+      "t_gerar_historia"
+    ],
+    "testes/t_gerar_mat.js": [
+      "t_gerar_mat"
     ]
   }
 }

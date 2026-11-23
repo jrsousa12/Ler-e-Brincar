@@ -192,13 +192,17 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/conferir.js` | 90 | Conferidor de qualidade (motor 3). Uso: node build/conferir.js [--tipo codigo] [--todos] [--estrito] |
 | `build/desenho.js` | 57 | Kit base dos desenhos de colorir (viewBox 300x300): traços e formas simples. As peças prontas (orelha, tronco, torre...) |
 | `build/escrever.js` | 10 | Escreve um item no estilo de conteudo/*.js: {chave:'texto',...} numa linha só (usado por gerar-mat e item) |
-| `build/gerar-mat.js` | 144 | Motor gerador de Matemática: de uma linha curta de pedido, monta a atividade completa |
+| `build/gerar-historia.js` | 90 | Motor gerador de histórias: de um pedido em texto simples, monta a história com 3 perguntas conferidas. |
+| `build/gerar-lp.js` | 151 | Motor gerador de Língua Portuguesa: de uma linha curta de pedido, monta a atividade completa |
+| `build/gerar-mat.js` | 125 | Motor gerador de Matemática: de uma linha curta de pedido, monta a atividade completa |
 | `build/gerar-silabas.js` | 101 | Motor gerador da brincadeira "Monte a Palavra": de uma linha com a palavra separada em sílabas, |
 | `build/icones.js` | 29 | Gera os ícones PNG do app (icones/). Uso: node build/icones.js |
 | `build/item.js` | 131 | Motor de item único: mostra, busca e altera um item de conteudo/*.js sem abrir o arquivo. |
 | `build/nova-brincadeira.js` | 113 | Motor "brincadeira nova": cria os 5 arquivos de uma brincadeira e liga tudo no app, de uma vez. |
+| `build/pedido.js` | 100 | Peças comuns dos geradores de conteúdo (gerar-mat, gerar-lp, gerar-historia). |
 | `build/tudo.js` | 100 | (sem comentário no topo) |
 | `build/validar.js` | 91 | Validador do conteúdo. Uso: node build/validar.js |
+| `testes/_gerador.js` | 25 | Ajudante comum dos testes de geradores: cópia do conteúdo, rodar o motor nela e o validador. |
 | `testes/t_app.js` | 160 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
 | `testes/t_backup.js` | 32 | Teste guardado: cópia de segurança do progresso (js/backup.js). |
 | `testes/t_brincadeiras.js` | 87 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |
@@ -209,7 +213,9 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_conferir.js` | 64 | Teste guardado: conferidor de qualidade (build/conferir.js). Uso: node testes/t_conferir.js |
 | `testes/t_conteudo.js` | 47 | Teste guardado: regra de resposta certa + validador. Uso: node testes/t_conteudo.js |
 | `testes/t_evolucao.js` | 47 | Teste guardado: contas da Evolução no tempo (js/evolucao.js). |
-| `testes/t_gerar_mat.js` | 56 | Teste guardado: gerador de Matemática (build/gerar-mat.js). Uso: node testes/t_gerar_mat.js |
+| `testes/t_gerar_historia.js` | 38 | Teste guardado: gerador de histórias (build/gerar-historia.js). Uso: node testes/t_gerar_historia.js |
+| `testes/t_gerar_lp.js` | 48 | Teste guardado: gerador de Português (build/gerar-lp.js). Uso: node testes/t_gerar_lp.js |
+| `testes/t_gerar_mat.js` | 59 | Teste guardado: gerador de Matemática (build/gerar-mat.js). Uso: node testes/t_gerar_mat.js |
 | `testes/t_gerar_silabas.js` | 47 | Teste guardado: gerador da brincadeira "Monte a Palavra" (build/gerar-silabas.js). Uso: node testes/t_gerar_silabas.js |
 | `testes/t_item.js` | 62 | Teste guardado: motor de item único (build/item.js). Uso: node testes/t_item.js |
 | `testes/t_mercado.js` | 124 | Teste guardado: brincadeira "Mercadinho" (js/mercadoregras.js = contas; js/telas/mercado.js = tela). |

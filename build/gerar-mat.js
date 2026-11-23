@@ -8,12 +8,13 @@
 //   8 − 3 | 🍬 | Pedro tinha 8 balas e comeu 3. Quantas sobraram? | Sobraram 5 balas.
 //   7 + 5 | 🐸
 //   3 × 4 | 🍪 | titulo=Pacotes de biscoito | nivel=3 | bncc=EF03MA06
+// Questão de escolha (sem conta pronta): começa com "?"; a certa leva * na frente.
+//   ? Qual número vem depois do 49? | *50 | 48 | 59 | Depois do 49 vem o 50. | bncc=EF02MA05 | emoji=🔢
 // Sem enunciado, vira "Quanto é 8 − 3?". Nível, BNCC e título saem sozinhos (ver build/fichas/mat.json).
 'use strict';
 const fs = require('fs');
 const path = require('path');
 const raiz = path.join(__dirname, '..');
-const pastaConteudo = process.env.CONTEUDO_RAIZ || path.join(raiz, 'conteudo');
 const ficha = JSON.parse(fs.readFileSync(path.join(__dirname, 'fichas/mat.json'), 'utf8'));
 
 const CONTA = { '+': (a, b) => a + b, '−': (a, b) => a - b, '×': (a, b) => a * b, '÷': (a, b) => a / b };
@@ -63,11 +64,27 @@ function apoio(op, a, b, emoji) {
   return { esquerda: repetir(emoji, a), operador: op, direita: op === '+' ? repetir(emoji, b) : String(b) };
 }
 
+const { partir, escolha, rodar } = require('./pedido');
+
+// "? enunciado | *certa | errada | errada | explicação" → questão de escolha
+function montarEscolha(linha) {
+  const { campos, extra } = partir(linha.replace(/^\?\s*/, ''));
+  const enunciado = (campos[0] || '').replace(/(\d) - (\d)/g, '$1 − $2');
+  const e = escolha(campos.slice(1));
+  if (!e.explicacao) throw new Error('falta a explicação (depois das 3 opções)');
+  const bncc = extra.bncc || (temPalavra(enunciado, ficha.palavras_dinheiro) ? 'EF02MA19' : '');
+  if (!bncc) throw new Error('diga a habilidade: bncc=EF02MA05 (ou outra)');
+  return {
+    titulo: extra.titulo || ficha.titulos.escolha, materia: 'matematica', habilidadeBNCC: bncc,
+    nivel: extra.nivel ? +extra.nivel : 2, tipo: 'multipla', enunciado,
+    opcoes: e.opcoes, correta: e.correta, explicacao: e.explicacao, _emoji: extra.emoji
+  };
+}
+
 // Uma linha de pedido → atividade (sem id). Lança erro com motivo claro se a conta não serve.
 function montar(linha) {
-  const partes = linha.split('|').map(s => s.trim());
-  const extra = {};
-  const campos = partes.filter(p => { const m = p.match(/^(\w+)=(.*)$/); if (m) extra[m[1]] = m[2].trim(); return !m; });
+  if (linha.startsWith('?')) return montarEscolha(linha);
+  const { campos, extra } = partir(linha);
   const [conta, emoji, enunciadoDado, frase] = campos;
   const m = (conta || '').replace(/-/g, '−').replace(/[xX*]/g, '×').replace(/\//g, '÷').match(/^(\d+)\s*([+−×÷])\s*(\d+)$/);
   if (!m) throw new Error('conta não entendida: "' + conta + '" (use, por exemplo, 8 − 3)');
@@ -101,44 +118,8 @@ function montar(linha) {
   return Object.assign(q, { opcoes, correta: r, explicacao, _emoji: emoji });
 }
 
-const escrever = require('./escrever');
-
-function principal(args) {
-  const arq = args.find(a => !a.startsWith('--'));
-  if (!arq) { console.log('Uso: node build/gerar-mat.js <pedido.txt> [--gravar]'); return 1; }
-  const destino = path.join(pastaConteudo, 'mat.js');
-  const texto = fs.readFileSync(destino, 'utf8');
-  globalThis.LB = {};
-  new Function('LB', texto)(globalThis.LB);
-  const existentes = LB.mat;
-  let ultimo = Math.max(...existentes.map(q => +q.id.split('-')[1]));
-  const enunciados = new Set(existentes.map(q => q.enunciado));
-  const novas = [], problemas = [];
-  let emojiAnterior = null;
-  fs.readFileSync(arq, 'utf8').split('\n').forEach((l, n) => {
-    if (!l.trim() || l.trim().startsWith('#')) return;
-    try {
-      const q = montar(l);
-      if (enunciados.has(q.enunciado)) throw new Error('já existe no conteúdo: "' + q.enunciado + '"');
-      if (q._emoji === emojiAnterior) problemas.push('linha ' + (n + 1) + ': aviso, mesmo emoji da anterior (' + q._emoji + ')');
-      emojiAnterior = q._emoji; delete q._emoji;
-      enunciados.add(q.enunciado);
-      novas.push(Object.assign({ id: 'mat-' + String(++ultimo).padStart(3, '0') }, q));
-    } catch (e) { problemas.push('linha ' + (n + 1) + ': ' + e.message); }
-  });
-  const erros = problemas.filter(p => !p.includes(': aviso,'));
-  problemas.forEach(p => console.log(p));
-  const conta = {};
-  novas.forEach(q => { conta[q.habilidadeBNCC] = (conta[q.habilidadeBNCC] || 0) + 1; });
-  console.log(novas.length + ' atividade(s): ' + (novas[0] ? novas[0].id + ' a ' + novas[novas.length - 1].id : '-') + ' · ' + JSON.stringify(conta));
-  if (erros.length) { console.log('Nada gravado: corrija ' + erros.length + ' erro(s).'); return 1; }
-  if (!args.includes('--gravar')) { console.log('(prévia; use --gravar para acrescentar em conteudo/mat.js)'); return 0; }
-  const fim = texto.lastIndexOf('];');
-  const linhas = novas.map(q => escrever(q) + ',').join('\n');
-  fs.writeFileSync(destino, texto.slice(0, fim).replace(/,?\s*$/, ',\n') + linhas + '\n' + texto.slice(fim));
-  console.log('Gravado em conteudo/mat.js. Agora: node build/validar.js');
-  return 0;
-}
+const uso = 'Uso: node build/gerar-mat.js <pedido.txt> [--gravar] [--ver]';
+const principal = args => rodar({ arquivo: 'mat', chave: 'mat', prefixo: 'mat', digitos: 3, montar, uso }, args);
 
 if (require.main === module) process.exit(principal(process.argv.slice(2)));
-module.exports = { montar, erradas, escrever };
+module.exports = { montar, erradas };
