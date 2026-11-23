@@ -1,0 +1,39 @@
+/* Tablet (Fase 7, etapa 6): telas largas aproveitam o espaço.
+   Conferir com o motor de capturas: node build/capturas.js tablet */
+
+/* Tablet em pé ou deitado: brincadeiras maiores e mais fáceis de tocar */
+@media (min-width:700px){
+  .brincadeira-silabas{max-width:820px}
+  .carta-memoria{min-height:130px}
+  .carta-memoria .carta-costas,.carta-memoria .carta-emoji{font-size:2.6rem}
+  .carta-memoria .carta-palavra{font-size:1.4rem}
+  .grade-memoria{grid-template-columns:repeat(4,1fr);gap:16px}
+  .grade-figuras{grid-template-columns:repeat(3,1fr);gap:18px}
+  .carta-figura{min-height:150px}
+  .carta-figura .carta-emoji{font-size:4rem}
+  .bloco-silaba{min-width:96px;font-size:1.6rem;padding:16px 22px}
+  .dica-texto{font-size:1.15rem}
+}
+
+/* Tablet deitado: pouca altura, então lado a lado em vez de um embaixo do outro */
+@media (min-width:900px) and (orientation:landscape){
+  .container{max-width:1100px}
+
+  /* Início: missão à esquerda, 4 botões à direita, tudo sem rolar */
+  .tela-inicio{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+  .tela-inicio .mascote-saudacao{grid-column:1 / -1;margin-bottom:0}
+  .tela-inicio .card-missao{margin:0;display:flex;flex-direction:column;justify-content:center}
+  .tela-inicio .grade-menu{align-content:stretch}
+
+  /* História: figura mais baixa, para o texto aparecer logo */
+  .historia-capa{font-size:4em;padding:16px}
+
+  /* Colorir: cores e botões numa coluna à esquerda, desenho à direita cabendo na altura */
+  .tela-colorir{display:grid;grid-template-columns:240px 1fr;column-gap:24px;align-items:start}
+  .tela-colorir > *:not(.svg-colorir){grid-column:1}
+  .tela-colorir > .svg-colorir{grid-column:2;grid-row:1 / span 6}
+  .tela-colorir .btn-voltar{justify-self:start}
+  .tela-colorir .paleta{justify-content:flex-start}
+  .tela-colorir .linha-botoes{flex-direction:column}
+  .svg-colorir svg{max-height:calc(100vh - 240px);width:auto}
+}

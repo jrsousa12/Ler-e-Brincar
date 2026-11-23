@@ -144,6 +144,15 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   await p.evaluate(() => window.dispatchEvent(new Event('lb-versao-nova')));
   ok(await p.locator('.aviso-versao').isVisible(), 'aviso de versão nova aparece');
 
+  // Tablet deitado (css/tablet.css): início em duas colunas, os 4 botões à vista sem rolar
+  await p.setViewportSize({ width: 1280, height: 800 });
+  await p.evaluate(() => LB.app.irPara('home'));
+  ok(await p.evaluate(() => { const b = [...document.querySelectorAll('.bloco-menu')].pop().getBoundingClientRect(); return b.bottom < innerHeight - 60; }),
+    'tablet deitado: os 4 botões do início aparecem sem rolar');
+  await p.evaluate(() => LB.app.abrirColorir(LB.CONTEUDO.colorir[0]));
+  await p.waitForTimeout(200);
+  ok(await p.evaluate(() => document.querySelector('.svg-colorir svg').getBoundingClientRect().bottom < innerHeight - 60), 'tablet deitado: desenho de colorir cabe na tela');
+
   ok(erros.length === 0, 'erros no navegador: ' + erros.join(' | '));
   await b.close();
   console.log(falhas ? `t_app: ${falhas} falha(s)` : 't_app: OK');

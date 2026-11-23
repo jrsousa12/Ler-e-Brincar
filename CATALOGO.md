@@ -151,6 +151,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/somfigura.js` | 27 | Molde (HTML do Vue): Brincadeira "Som e Figura" (ouvir e tocar na figura). |
 | `js/moldes/versao.js` | 8 | Molde (HTML do Vue): aviso de versão nova do app (só na tela inicial e na área dos adultos). |
 | `build/biblioteca.js` | 75 | Lista e prévia da biblioteca de peças (build/pecas/). Gerado: nunca editar PECAS.md à mão. |
+| `build/capturas.js` | 93 | Motor de capturas (Fase 7, etapa 6): percorre todas as telas do app em celular e tablet, |
 | `build/carregar.js` | 17 | Carrega o conteúdo (conteudo/*.js) e a regra de resposta certa, para os motores de build/. |
 | `build/catalogo.js` | 85 | Catálogo (motor 5): gera CATALOGO.md com o que já existe (conteúdo e código), para achar sem abrir arquivos. |
 | `build/colorir-regras.js` | 35 | Regras do estilo dos desenhos de colorir (usadas por build/colorir.js). Só lê o texto do SVG; não abre navegador. |
@@ -164,7 +165,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/item.js` | 131 | Motor de item único: mostra, busca e altera um item de conteudo/*.js sem abrir o arquivo. |
 | `build/tudo.js` | 100 | (sem comentário no topo) |
 | `build/validar.js` | 79 | Validador do conteúdo. Uso: node build/validar.js |
-| `testes/t_app.js` | 151 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
+| `testes/t_app.js` | 160 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
 | `testes/t_backup.js` | 32 | Teste guardado: cópia de segurança do progresso (js/backup.js). |
 | `testes/t_brincadeiras.js` | 78 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |
 | `testes/t_caderno.js` | 76 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |

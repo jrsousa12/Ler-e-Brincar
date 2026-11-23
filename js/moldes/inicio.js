@@ -1,7 +1,7 @@
 // Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 4 botões grandes.
 LB.moldes = LB.moldes || {};
 LB.moldes.inicio = `
-    <div v-if="tela === 'home'">
+    <div v-if="tela === 'home'" class="tela-inicio">
       <div class="mascote-saudacao">
         <button class="mascote-botao" :class="{festa: missaoCompleta}" @click="ouvir(fraseMascote)"
                 aria-label="Ouvir a mascote" v-html="mascote(missaoCompleta ? 'festa' : 'normal')"></button>
