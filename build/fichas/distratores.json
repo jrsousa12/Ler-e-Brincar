@@ -1,0 +1,29 @@
+{
+  "_leia": "Ficha de distratores (respostas erradas) por série, usada pelo motor de ajuste (build/ajustar-lp.js). Calibrar = editar aqui. 'serie_do_nivel': nível do item → série. Em cada série, 'tipos' são os jeitos de errar aceitos (a folha de revisão marca cada errada com {tipo}); as duas erradas de um item devem ser de tipos diferentes. 'max_certa': tamanho máximo da resposta certa (letras). 'evitar': palavras de opção absurda, que a criança descarta sem ler o texto.",
+  "serie_do_nivel": { "1": "2", "2": "3", "3": "3" },
+  "series": {
+    "2": {
+      "nome": "2º ano",
+      "max_certa": 45,
+      "tipos": {
+        "trecho": { "como": "Outra informação do texto, verdadeira, mas que não responde à pergunta.", "exemplo": "Texto: o gato comeu e dormiu. Pergunta: o que o gato comeu? Errada: Ele dormiu no sofá." },
+        "contrario": { "como": "Diz o contrário do que o texto conta.", "exemplo": "Texto: a rua estava molhada. Errada: A rua estava seca." },
+        "troca": { "como": "Troca o personagem, o objeto, o lugar ou o momento do texto.", "exemplo": "Texto: Ana levou o bolo. Errada: O irmão levou o bolo." },
+        "inventado": { "como": "Coisa possível no dia a dia, mas que o texto não conta.", "exemplo": "Errada: A mãe pediu ajuda para ele." }
+      }
+    },
+    "3": {
+      "nome": "3º ano",
+      "max_certa": 60,
+      "tipos": {
+        "trecho": { "como": "Outra informação do texto, verdadeira, mas que não responde à pergunta.", "exemplo": "Pergunta: por que esperaram? Errada: Porque iam servir com suco natural." },
+        "contrario": { "como": "Diz o contrário do que o texto conta.", "exemplo": "Errada: Cortaram o bolo ainda quente, sem esperar." },
+        "troca": { "como": "Troca o personagem, o objeto, o lugar, o momento ou a causa.", "exemplo": "Errada: O primo puxou a linha com força." },
+        "inventado": { "como": "Parece verdade (conhecimento do dia a dia), mas o texto não diz.", "exemplo": "Errada: Ele comprou o gibi com o dinheiro da mesada." },
+        "parcial": { "como": "Só uma parte da resposta, ou junta uma parte certa com uma errada.", "exemplo": "Errada: Lavou as laranjas, mas não coou o suco." },
+        "exagero": { "como": "Generaliza ou exagera o que o texto diz (sempre, nunca, todos, nenhum).", "exemplo": "Errada: Todos os moradores acordavam com o cheiro do pão." }
+      }
+    }
+  },
+  "evitar": ["lua", "neve", "nevando", "nevou", "granizo", "dinossauro", "estádio", "foguete", "mágica"]
+}

@@ -1,62 +1,63 @@
-// Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js)
-// e importador do lote em JSON (build/importar-lp.js). Uso: node testes/t_ajustar.js
-// Trabalha em CÓPIAS; o conteudo/ real não é tocado.
+// Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js,
+// distratores por série em build/fichas/distratores.json) e importador do lote em JSON (build/importar-lp.js).
+// Uso: node testes/t_ajustar.js. Trabalha em CÓPIAS; o conteudo/ real não é tocado.
 'use strict';
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const R = require(path.join(__dirname, '../build/ajustar-regras.js'));
-const { ajustarLinha } = require(path.join(__dirname, '../build/ajustar-lp.js'));
+const { lerLinha } = require(path.join(__dirname, '../build/ajustar-lp.js'));
 const { linhaDe } = require(path.join(__dirname, '../build/importar-lp.js'));
 const copia = require('./_gerador');
 let falhas = 0;
 const ok = (cond, msg) => { if (!cond) { falhas++; console.log('FALHA: ' + msg); } };
 
-// 1. Regras
+// 1. Achar problemas
 const enun = 'Leia: "Ao chegar em casa, Gabriel sentiu falta do caderno." Qual pista mostra que ele esqueceu o caderno?';
 ok(R.textoDe(enun).startsWith('Ao chegar') && R.ehPista(enun), 'acha o texto lido e a pergunta de pista');
 ok(R.foraDoTexto('Sentiu falta dele quando chegou em casa e foi arrumar a mochila.', R.textoDe(enun)).join() === 'arrumar,mochila', 'palavras fora do texto (chegou = chegar)');
-ok(R.cortesDe('Lavou as frutas, coou o suco e provou.').join(' / ') === 'Lavou as frutas. / Lavou as frutas, coou o suco.', 'cortes só tiram o final');
-const f = R.ajustarCerta('Sentiu falta dele quando chegou em casa e foi arrumar a mochila.', ['A professora avisou por telefone.', 'O caderno estava no estojo.'], enun);
-ok(f.mudou && f.nova === 'Sentiu falta dele quando chegou em casa.' && !f.pendente, 'tira o trecho que não está no texto');
-const c = R.ajustarCerta('Recolheram os pincéis, lavaram os copinhos e deixaram a sala limpa para a próxima turma.', ['Deixaram tinta derramada e copos sujos.', 'Saíram correndo sem guardar nada.'], 'Que pistas mostram responsabilidade?');
-ok(c.mudou && c.nova === 'Recolheram os pincéis, lavaram os copinhos e deixaram a sala limpa.', 'certa comprida: fica o corte mais longo que resolve');
-const p = R.ajustarCerta('Para não esquecer o prazo combinado com a professora.', ['Para desenhar.', 'Para brincar.'], 'Por que João usou a agenda?');
-ok(!p.mudou && p.pendente.includes('ainda comprida'), 'sem corte seguro: não mexe e avisa como pendente');
-ok(!R.ajustarCerta('Feliz', ['Com medo', 'Doente'], 'Como ele estava?').mudou, 'certa boa: não mexe');
+const q = { enunciado: enun, nivel: 2, opcoes: ['Sentiu falta dele quando chegou em casa e foi arrumar a mochila.', 'A professora avisou.', 'Estava no estojo.'], correta: 0 };
+const m = R.motivos(q).join(' / ');
+ok(m.includes('comprida') && m.includes('arrumar, mochila'), 'motivos: certa comprida e palavras fora do texto');
+ok(!R.motivos({ enunciado: 'Como ele estava?', nivel: 1, opcoes: ['Com medo', 'Feliz', 'Doente'], correta: 1 }).length, 'item bom: sem motivos');
+ok(R.motivos({ enunciado: 'E?', nivel: 1, opcoes: ['Uma resposta certa com muito mais que quarenta e cinco letras', 'Uma errada também bem comprida e equilibrada aqui', 'Outra errada também bem comprida e equilibrada'], correta: 0 }).join().includes('acima de 45'), 'máximo da certa no 2º ano');
+const p = R.plano(q);
+ok(p.serie === '3º ano' && p.tipos.includes('parcial') && p.tipos.includes('exagero'), 'plano: nível 2 = 3º ano, com distratores do 3º ano');
+ok(R.serieDe(1).nome === '2º ano' && !Object.keys(R.serieDe(1).tipos).includes('parcial'), '2º ano não usa distrator parcial');
 
-// 2. Linha de pedido
-const l = ajustarLinha('interpretacao | ' + enun + ' | *Sentiu falta dele quando chegou em casa e foi arrumar a mochila. | A professora avisou por telefone. | O caderno estava no estojo. | Explica. | nivel=2');
-ok(l.mudou && l.linha.includes('| *Sentiu falta dele quando chegou em casa. |') && l.linha.endsWith('nivel=2'), 'pedido: troca só a certa e guarda as chaves');
-ok(ajustarLinha('grafia | pássaro | 🐦') === null, 'pedido: moldes sem escolha são ignorados');
+// 2. Conferir a reescrita
+const boa = { certa: 'Sentiu falta do caderno ao chegar em casa.', erradas: [{ texto: 'A professora avisou que ele esqueceu o caderno.', tipo: 'inventado' }, { texto: 'Sentiu falta do estojo ao sair da escola.', tipo: 'troca' }] };
+ok(!R.conferir(q, boa).length, 'reescrita equilibrada e com tipos do 3º ano é aceita');
+const erros = R.conferir(q, { certa: boa.certa, erradas: [{ texto: 'Dormiu.', tipo: 'troca' }, { texto: 'Foi para a lua e viu o caderno lá no alto do céu.', tipo: 'troca' }] }).join(' / ');
+ok(erros.includes('Dormiu') && erros.includes('"lua"') && erros.includes('mesmo tipo'), 'recusa errada curta, absurda e tipos repetidos');
+ok(R.conferir({ ...q, nivel: 1 }, { ...boa, erradas: [boa.erradas[0], { texto: boa.erradas[1].texto, tipo: 'parcial' }] }).join().includes('não é do 2º ano'), 'recusa distrator que não é da série');
+ok(R.conferir(q, { ...boa, certa: 'Foi arrumar a mochila depois de jantar.' }).join().includes('fora do texto'), 'recusa certa fora do texto em pergunta de pista');
 
-// 3. Importador
+// 3. Linha da folha e importador
+const l = lerLinha('lp-001 | Errada um {contrario} | *Certa | Errada dois {trecho} | explicacao=Nova.');
+ok(l.id === 'lp-001' && l.correta === 1 && l.opcoes.join() === 'Errada um,Certa,Errada dois' && l.tipos.join() === 'contrario,trecho' && l.explicacao === 'Nova.', 'folha: lê certa, tipos e explicação');
 const li = linhaDe({ textoBase: 'O gato "Tom" dormiu | cedo.', enunciado: 'Quem dormiu?', opcoes: ['O cão', 'O gato', 'A ave'], correta: 1, explicacao: 'O texto diz.', categoria: 'Interpretação' }, { molde: 'interpretacao', nivel: '2' });
 ok(li === "interpretacao | Leia: \"O gato 'Tom' dormiu / cedo.\" Quem dormiu? | O cão | *O gato | A ave | O texto diz. | titulo=Interpretação | nivel=2", 'importar: aspas e | trocados, * na certa, chaves no fim');
-let erro = '';
-try { linhaDe({ enunciado: 'E?', opcoes: ['a', 'b'], correta: 0, explicacao: 'x' }, { molde: 'interpretacao' }); } catch (e) { erro = e.message; }
-ok(erro.includes('3 opções'), 'importar: recusa item sem 3 opções');
 
-// 4. Ponta a ponta numa cópia: importar → gerar-lp --gravar → ajustar --conteudo → validador
+// 4. Ponta a ponta numa cópia: importar → gerar-lp → folha → aplicar → validador e registro
 const cp = copia('build/gerar-lp.js');
-const json = path.join(cp.pasta, 'lote.json'), ped = path.join(cp.pasta, 'lote.txt');
-const longo = { textoBase: 'Pedro lavou as laranjas e coou o suco.', enunciado: 'Qual pista mostra o cuidado de Pedro?', opcoes: ['Lavou as laranjas e coou o suco, deixando tudo bem limpinho na cozinha.', 'Não lavou as frutas antes.', 'Jogou o suco fora.'], correta: 0, explicacao: 'Lavar e coar mostram cuidado.' };
-fs.writeFileSync(json, JSON.stringify([longo]));
-const env = { ...process.env, CONTEUDO_RAIZ: cp.pasta };
-const node = (arq, args) => execFileSync('node', [path.join(__dirname, '..', arq), ...args], { env }).toString();
-const s1 = node('build/importar-lp.js', [json, ped, '--titulo', 'Pistas do texto']);
-ok(s1.includes('1 corrigido') && fs.readFileSync(ped, 'utf8').includes('*Lavou as laranjas e coou o suco.'), 'importar já corrige a certa comprida');
+const env = { ...process.env, CONTEUDO_RAIZ: cp.pasta, REVISAO_RAIZ: cp.pasta };
+const node = (arq, args) => { try { return execFileSync('node', [path.join(__dirname, '..', arq), ...args], { env }).toString(); } catch (e) { return e.stdout.toString(); } };
+const json = path.join(cp.pasta, 'lote.json'), ped = path.join(cp.pasta, 'lote.txt'), folha = path.join(cp.pasta, 'lp-revisao.txt');
+fs.writeFileSync(json, JSON.stringify([{ textoBase: 'Pedro lavou as laranjas e coou o suco.', enunciado: 'Qual pista mostra o cuidado de Pedro?', opcoes: ['Lavou as laranjas e coou o suco, deixando tudo bem limpinho na cozinha.', 'Não lavou.', 'Jogou fora.'], correta: 0, explicacao: 'Lavar e coar mostram cuidado.' }]));
+node('build/importar-lp.js', [json, ped, '--titulo', 'Pistas do texto', '--nivel', '2']);
 ok(cp.rodar([ped, '--gravar']).cod === 0, 'gerar-lp grava o pedido importado');
-fs.writeFileSync(json, JSON.stringify([Object.assign({}, longo, { enunciado: 'Qual pista mostra o capricho de Pedro?' })]));
-node('build/importar-lp.js', [json, ped]);
-fs.writeFileSync(ped, fs.readFileSync(ped, 'utf8').replace('*Lavou as laranjas e coou o suco.', '*' + longo.opcoes[0]));
-cp.rodar([ped, '--gravar']);
+const id = [...cp.ler('lp.js').matchAll(/\{id:'(lp-\d+)'[^\n]*Pedro lavou/g)].pop()[1]; // o último gravado
+ok(node('build/ajustar-lp.js', [id]).includes('1 item') && fs.readFileSync(folha, 'utf8').includes(id + ' | *Lavou'), 'monta a folha de revisão com o item');
 const antes = cp.ler('lp.js');
-const prev = node('build/ajustar-lp.js', ['--conteudo']);
-ok(prev.includes('corrigido') && cp.ler('lp.js') === antes, 'conteúdo: prévia acha e não grava');
-node('build/ajustar-lp.js', ['--conteudo', '--gravar']);
-ok(cp.ler('lp.js') !== antes && node('build/ajustar-lp.js', ['--conteudo']).includes('0 corrigido'), 'conteúdo: --gravar corrige e a segunda passada não acha mais nada');
+fs.writeFileSync(folha, id + ' | *Lavou as laranjas e coou o suco. | Espremeu as laranjas sem lavar. {contrario} | Só lavou as laranjas, sem coar. {parcial}\n');
+ok(node('build/ajustar-lp.js', ['--aplicar', folha]).includes('1 aceito') && cp.ler('lp.js') === antes, 'aplicar sem --gravar: só prévia');
+node('build/ajustar-lp.js', ['--aplicar', folha, '--gravar']);
+ok(cp.ler('lp.js').includes('Espremeu as laranjas sem lavar.') && node('build/ajustar-lp.js', [id]).includes('Nenhum'), 'aplicar --gravar troca as opções e o item sai da lista');
+ok(JSON.parse(cp.ler('registro.jsonl').trim()).tipos.join() === 'contrario,parcial', 'registro guarda antes, depois e tipos');
 ok(cp.validar().cod === 0, 'validador aceita o conteúdo ajustado');
+fs.writeFileSync(folha, id + ' | *Lavou as laranjas e coou o suco. | Não. {contrario} | Só lavou as laranjas, sem coar. {parcial}\n');
+ok(node('build/ajustar-lp.js', ['--aplicar', folha, '--gravar']).includes('nada gravado'), 'com recusa, nada é gravado');
 cp.apagar();
 
 console.log(falhas ? 't_ajustar: ' + falhas + ' FALHA(S)' : 't_ajustar: OK');

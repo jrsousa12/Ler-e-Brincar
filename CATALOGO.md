@@ -182,8 +182,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/somfigura.js` | 28 | Molde (HTML do Vue): Brincadeira "Som e Figura" (ouvir e tocar na figura). |
 | `js/moldes/trem.js` | 35 | Molde (HTML do Vue): Brincadeira "Trem dos números" (achar o número que falta na sequência). |
 | `js/moldes/versao.js` | 8 | Molde (HTML do Vue): aviso de versão nova do app (só na tela inicial e na área dos adultos). |
-| `build/ajustar-lp.js` | 95 | Motor de ajuste de Português: acha e corrige a resposta certa comprida demais (a criança acerta |
-| `build/ajustar-regras.js` | 73 | Regras do motor de ajuste (build/ajustar-lp.js), sem ler nem gravar arquivos. |
+| `build/ajustar-lp.js` | 117 | Motor de ajuste de Português: acha a resposta certa comprida demais (a criança acerta só pelo |
+| `build/ajustar-regras.js` | 72 | Regras do motor de ajuste (build/ajustar-lp.js), sem ler nem gravar arquivos. |
 | `build/arquivo-unico.js` | 45 | Motor: junta o app inteiro num só arquivo .html (abre com dois cliques, sem internet). |
 | `build/biblioteca.js` | 75 | Lista e prévia da biblioteca de peças (build/pecas/). Gerado: nunca editar PECAS.md à mão. |
 | `build/capturas.js` | 93 | Motor de capturas (Fase 7, etapa 6): percorre todas as telas do app em celular e tablet, |
@@ -200,14 +200,14 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/gerar-ordem.js` | 41 | Motor gerador da brincadeira "Ordem dos Fatos": uma linha de pedido → uma sequência de 3 fatos. |
 | `build/gerar-silabas.js` | 101 | Motor gerador da brincadeira "Monte a Palavra": de uma linha com a palavra separada em sílabas, |
 | `build/icones.js` | 29 | Gera os ícones PNG do app (icones/). Uso: node build/icones.js |
-| `build/importar-lp.js` | 62 | Importador de Português: transforma o lote em JSON enviado pelo dono num pedido do gerar-lp, |
+| `build/importar-lp.js` | 52 | Importador de Português: transforma o lote em JSON enviado pelo dono num pedido do gerar-lp. |
 | `build/item.js` | 131 | Motor de item único: mostra, busca e altera um item de conteudo/*.js sem abrir o arquivo. |
 | `build/nova-brincadeira.js` | 113 | Motor "brincadeira nova": cria os 5 arquivos de uma brincadeira e liga tudo no app, de uma vez. |
 | `build/pedido.js` | 100 | Peças comuns dos geradores de conteúdo (gerar-mat, gerar-lp, gerar-historia). |
 | `build/tudo.js` | 100 | (sem comentário no topo) |
 | `build/validar.js` | 91 | Validador do conteúdo. Uso: node build/validar.js |
 | `testes/_gerador.js` | 25 | Ajudante comum dos testes de geradores: cópia do conteúdo, rodar o motor nela e o validador. |
-| `testes/t_ajustar.js` | 63 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js) |
+| `testes/t_ajustar.js` | 64 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
 | `testes/t_app.js` | 160 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
 | `testes/t_backup.js` | 32 | Teste guardado: cópia de segurança do progresso (js/backup.js). |
 | `testes/t_brincadeiras.js` | 87 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |

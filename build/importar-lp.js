@@ -1,11 +1,9 @@
-// Importador de Português: transforma o lote em JSON enviado pelo dono num pedido do gerar-lp,
-// já passado pelo motor de ajuste (certa comprida, palavras fora do texto).
+// Importador de Português: transforma o lote em JSON enviado pelo dono num pedido do gerar-lp.
 // Uso: node build/importar-lp.js <lote.json> [pedido.txt] [--molde interpretacao] [--titulo "Pistas do texto"] [--nivel 2] [--bncc EF15LP03]
 // Cada item do JSON: { textoBase?, enunciado, opcoes: [3], correta: índice, explicacao, categoria? }
-// Depois: node build/gerar-lp.js <pedido.txt> (prévia) e --gravar.
+// Depois: node build/gerar-lp.js <pedido.txt> --gravar e node build/ajustar-lp.js <ids gravados> (folha de revisão).
 'use strict';
 const fs = require('fs');
-const { ajustarLinha } = require('./ajustar-lp');
 
 // Tira o que quebraria a linha do pedido: "|" separa campos, aspas fecham o texto do "Leia:"
 const limpar = s => String(s == null ? '' : s).replace(/\s+/g, ' ').replace(/\|/g, '/').trim();
@@ -39,22 +37,14 @@ function principal(argv) {
   if (!entrada) { console.log('Uso: node build/importar-lp.js <lote.json> [pedido.txt] [--molde interpretacao] [--titulo ...] [--nivel 2] [--bncc ...]'); return 1; }
   const lista = JSON.parse(fs.readFileSync(entrada, 'utf8'));
   const linhas = ['# Importado de ' + entrada + ' por build/importar-lp.js (' + lista.length + ' itens)'];
-  const erros = [], mudados = [], pendentes = [];
+  const erros = [];
   lista.forEach((item, n) => {
-    const rot = 'item ' + (item.id != null ? item.id : n + 1);
-    try {
-      const r = ajustarLinha(linhaDe(item, op));
-      if (r.mudou) mudados.push(rot + ': "' + r.antes.slice(0, 60) + '" → "' + r.nova + '"');
-      if (r.pendente) pendentes.push(rot + ': ' + r.pendente);
-      linhas.push(r.linha);
-    } catch (e) { erros.push(rot + ': ' + e.message); }
+    try { linhas.push(linhaDe(item, op)); } catch (e) { erros.push('item ' + (item.id != null ? item.id : n + 1) + ': ' + e.message); }
   });
-  mudados.forEach(l => console.log('corrigido ' + l));
-  pendentes.forEach(l => console.log('PENDENTE ' + l));
   erros.forEach(l => console.log('ERRO ' + l));
   if (erros.length) { console.log(erros.length + ' erro(s): nada foi gravado.'); return 1; }
   fs.writeFileSync(saida, linhas.join('\n') + '\n');
-  console.log(lista.length + ' item(ns) → ' + saida + ' · ' + mudados.length + ' corrigido(s), ' + pendentes.length + ' pendente(s). Agora: node build/gerar-lp.js ' + saida);
+  console.log(lista.length + ' item(ns) → ' + saida + '. Agora: node build/gerar-lp.js ' + saida + ' --gravar e node build/ajustar-lp.js <ids gravados>');
   return 0;
 }
 

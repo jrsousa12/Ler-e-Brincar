@@ -409,6 +409,9 @@
     ],
     "testes/t_ajustar.js": [
       "t_ajustar"
+    ],
+    "build/fichas/distratores.json": [
+      "t_ajustar"
     ]
   }
 }
