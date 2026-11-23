@@ -68,6 +68,15 @@ const raiz = path.join(__dirname, '..');
   const g = await p.evaluate(() => ({ n: LB.app.gruposAtividades.length, total: LB.app.atividadesFiltradas.length }));
   ok(g.n > 0 && g.n < g.total, 'atividades agrupadas por título (' + g.n + ' cartões)');
   ok(await p.locator('.grade-brincadeiras .bloco-brincadeira').count() === 5, '5 blocos de brincadeira (3 de leitura + Mercadinho + Trem)');
+  // ABAS: pular entre Monte a Palavra, Memória e Som e Figura sem voltar à lista
+  await p.click('.bloco-brincadeira:has-text("Memória")');
+  ok(await p.locator('.abas-palavras .aba-palavra').count() === 3 && await p.locator('.aba-palavra.ativa').innerText() === '🃏 Memória', 'abas aparecem com Memória ativa');
+  for (const [aba, tela] of [['Som e Figura', 'som-figura'], ['Monte a Palavra', 'silabas'], ['Memória', 'memoria']]) {
+    await p.click(`.aba-palavra:has-text("${aba}")`);
+    ok(await p.evaluate(t => LB.app.tela === t, tela) && await p.locator('.abas-palavras').count() === 1, 'aba ' + aba + ' abre ' + tela);
+  }
+  await p.click('.brincadeira-silabas .btn-voltar');
+  ok(await p.locator('.abas-palavras').count() === 0, 'abas só nas 3 brincadeiras de palavras');
   await p.locator('.cartao-atividade').first().click();
   ok(await p.evaluate(() => LB.app.tela === 'atividade' && !LB.app.concluidos[LB.app.atividadeAtual.id]), 'cartão abre atividade ainda não feita');
   ok(erros.length === 0, 'sem erros: ' + erros.join(' | '));

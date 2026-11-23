@@ -136,6 +136,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/silabas.js` | 110 | Brincadeira "Monte a Palavra": tocar nas sílabas na ordem certa para formar a palavra da dica. |
 | `js/telas/somfigura.js` | 75 | Brincadeira "Som e Figura": ouvir a palavra e tocar na figura certa (palavras de conteudo/silabas.js). |
 | `js/telas/trem.js` | 79 | Brincadeira "Trem dos números": achar o número que falta na sequência de 2 em 2, 5 em 5 ou 10 em 10 (regras em js/tremregras.js). |
+| `js/moldes/abas.js` | 12 | Molde (HTML do Vue): abas para trocar entre as brincadeiras de palavras (Monte a Palavra, Memória, Som e Figura). |
 | `js/moldes/ajustes.js` | 70 | Molde (HTML do Vue): Ajustes (aparece embaixo da Área do responsável). |
 | `js/moldes/atividades.js` | 63 | Molde (HTML do Vue): Telas "Atividades" (lista) e "Atividade" (resolver). |
 | `js/moldes/backup.js` | 24 | Molde (HTML do Vue): Cópia de segurança e instalação (embaixo dos Ajustes, na Área do responsável). |
@@ -144,7 +145,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/confirmar.js` | 14 | Molde (HTML do Vue): caixa de confirmação própria (js/telas/confirmar.js). |
 | `js/moldes/historias.js` | 46 | Molde (HTML do Vue): Telas "Ler" (lista) e "História" (leitura e perguntas). |
 | `js/moldes/inicio.js` | 25 | Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 4 botões grandes. |
-| `js/moldes/memoria.js` | 25 | Molde (HTML do Vue): Brincadeira "Memória" (par figura + palavra). |
+| `js/moldes/memoria.js` | 26 | Molde (HTML do Vue): Brincadeira "Memória" (par figura + palavra). |
 | `js/moldes/mercado.js` | 54 | Molde (HTML do Vue): Brincadeira "Mercadinho" (pagar certinho e calcular o troco). |
 | `js/moldes/missao.js` | 26 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
 | `js/moldes/navegacao.js` | 11 | Molde (HTML do Vue): Barra de navegação de baixo. |
@@ -152,8 +153,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/responsavel.js` | 75 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
 | `js/moldes/selonovo.js` | 16 | Molde (HTML do Vue): janela de festa do selo novo (js/telas/selonovo.js). |
 | `js/moldes/selos.js` | 24 | Molde (HTML do Vue): Tela "Minhas conquistas" (selos e progresso). |
-| `js/moldes/silabas.js` | 40 | Molde (HTML do Vue): Brincadeira "Monte a Palavra" (juntar sílabas). |
-| `js/moldes/somfigura.js` | 27 | Molde (HTML do Vue): Brincadeira "Som e Figura" (ouvir e tocar na figura). |
+| `js/moldes/silabas.js` | 41 | Molde (HTML do Vue): Brincadeira "Monte a Palavra" (juntar sílabas). |
+| `js/moldes/somfigura.js` | 28 | Molde (HTML do Vue): Brincadeira "Som e Figura" (ouvir e tocar na figura). |
 | `js/moldes/trem.js` | 35 | Molde (HTML do Vue): Brincadeira "Trem dos números" (achar o número que falta na sequência). |
 | `js/moldes/versao.js` | 8 | Molde (HTML do Vue): aviso de versão nova do app (só na tela inicial e na área dos adultos). |
 | `build/biblioteca.js` | 75 | Lista e prévia da biblioteca de peças (build/pecas/). Gerado: nunca editar PECAS.md à mão. |
@@ -173,7 +174,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/validar.js` | 79 | Validador do conteúdo. Uso: node build/validar.js |
 | `testes/t_app.js` | 160 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
 | `testes/t_backup.js` | 32 | Teste guardado: cópia de segurança do progresso (js/backup.js). |
-| `testes/t_brincadeiras.js` | 78 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |
+| `testes/t_brincadeiras.js` | 87 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |
 | `testes/t_caderno.js` | 76 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |
 | `testes/t_catalogo.js` | 37 | Teste guardado: catálogo (build/catalogo.js). Uso: node testes/t_catalogo.js |
 | `testes/t_celebracoes.js` | 76 | Teste guardado: celebrações (Fase 7, etapa 5) — janela do selo novo e fim da missão animado. |
