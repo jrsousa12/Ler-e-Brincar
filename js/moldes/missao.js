@@ -16,7 +16,9 @@ LB.moldes.missao = `
       </div>
       <div v-if="missaoCompleta" class="missao-completa">
         <div class="mascote-grande" v-html="mascote('festa')"></div>
+        <div class="medalha-missao" aria-hidden="true">🏅</div>
         <h3>Missão completa!</h3>
+        <div class="estrelas-premio" aria-label="Mais 3 estrelas"><span>⭐</span><span>⭐</span><span>⭐</span></div>
         <p>Você ganhou 3 estrelas extras. Volte amanhã para uma nova missão.</p>
         <button class="btn-secundario" @click="irPara('recompensas')">🏆 Ver meus selos</button>
       </div>

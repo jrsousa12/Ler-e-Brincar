@@ -4,7 +4,7 @@
   'use strict';
   const MARCA = 'ler-e-brincar';
   const VERSAO = 1;
-  const CAMPOS = ['estrelas', 'concluidos', 'ajustes', 'missao', 'diasMissao', 'caderno'];
+  const CAMPOS = ['estrelas', 'concluidos', 'ajustes', 'missao', 'diasMissao', 'caderno', 'selosVistos'];
 
   function gerar(estado, tentativas, agora) {
     const est = {};

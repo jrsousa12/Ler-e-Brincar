@@ -49,7 +49,24 @@
 /* Toque: tudo que afunda volta macio */
 .btn-primario,.btn-secundario,.bloco-menu,.opcao,.card,.btn-ouvir{transition:transform .12s ease,box-shadow .12s ease,background-color .2s ease}
 
+/* Celebrações (etapa 5): cartão da missão completa, medalha, estrelas do prêmio e selo novo */
+.missao-completa{animation:estourar .6s cubic-bezier(.2,1.6,.4,1) both}
+.medalha-missao{display:inline-block;animation:medalha 1.4s ease-in-out .5s infinite}
+.estrelas-premio span{display:inline-block;animation:estrela-premio .5s cubic-bezier(.2,1.8,.4,1) both}
+.estrelas-premio span:nth-child(1){animation-delay:.5s}
+.estrelas-premio span:nth-child(2){animation-delay:.8s}
+.estrelas-premio span:nth-child(3){animation-delay:1.1s}
+.caixa-selo{animation:estourar .5s cubic-bezier(.2,1.6,.4,1) both}
+.selo-ganho{display:inline-block;animation:selo-chegar .9s cubic-bezier(.2,1.5,.4,1) both,flutuar 2.4s ease-in-out .9s infinite}
+.selo-raios{animation:girar 12s linear infinite}
+@keyframes estourar{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@keyframes medalha{0%,100%{transform:rotate(-8deg)}50%{transform:translateY(-6px) rotate(8deg)}}
+@keyframes estrela-premio{from{opacity:0;transform:scale(0) rotate(-180deg)}to{opacity:1;transform:none}}
+@keyframes selo-chegar{from{opacity:0;transform:scale(.2) rotate(-360deg)}to{opacity:1;transform:none}}
+@keyframes girar{to{transform:rotate(360deg)}}
+
 @media (prefers-reduced-motion: reduce){
   .container > div,.bloco-menu,.opcao,.feedback,.missao-icone,.passo.atual,.nav-inferior a.ativo .icone,
-  .mascote-svg,.mascote-svg *{animation:none}
+  .mascote-svg,.mascote-svg *,.missao-completa,.medalha-missao,.estrelas-premio span,
+  .caixa-selo,.selo-ganho,.selo-raios{animation:none}
 }

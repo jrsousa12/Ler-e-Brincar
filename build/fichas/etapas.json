@@ -23,14 +23,16 @@
     "t_app": "testes/t_app.js",
     "t_silabas": "testes/t_silabas.js",
     "t_gerar_silabas": "testes/t_gerar_silabas.js",
-    "t_brincadeiras": "testes/t_brincadeiras.js"
+    "t_brincadeiras": "testes/t_brincadeiras.js",
+    "t_celebracoes": "testes/t_celebracoes.js"
   },
   "navegador": [
     "t_offline",
     "t_app",
     "t_colorir",
     "t_silabas",
-    "t_brincadeiras"
+    "t_brincadeiras",
+    "t_celebracoes"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -79,7 +81,8 @@
     "css/": [
       "tamanho",
       "t_app",
-      "t_offline"
+      "t_offline",
+      "t_celebracoes"
     ],
     "index.html": [
       "t_app",
@@ -215,7 +218,10 @@
     "testes/t_brincadeiras.js": [
       "t_brincadeiras"
     ],
-    "css/acabamento.css": ["t_app", "t_brincadeiras"],
+    "css/acabamento.css": [
+      "t_app",
+      "t_brincadeiras"
+    ],
     "css/listas.css": [
       "t_brincadeiras",
       "t_app"
@@ -225,6 +231,24 @@
     ],
     "css/tema-creme.css": [
       "t_app"
+    ],
+    "js/telas/selonovo.js": [
+      "t_celebracoes"
+    ],
+    "js/moldes/selonovo.js": [
+      "t_celebracoes"
+    ],
+    "js/moldes/missao.js": [
+      "t_celebracoes"
+    ],
+    "js/telas/selos.js": [
+      "t_celebracoes"
+    ],
+    "js/app.js": [
+      "t_celebracoes"
+    ],
+    "testes/t_celebracoes.js": [
+      "t_celebracoes"
     ]
   }
 }

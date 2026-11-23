@@ -67,7 +67,7 @@ Decisões do dono (19/11/2026):
 - 2 Fluidez — feito (20/11): telas entram deslizando, opções aparecem uma a uma, acerto dá pulinho, erro balança (`css/movimento.css`; "Reduzir movimento" desliga)
 - 3 Início com o mascote — feito (20/11): capivara (trocou a coruja, pedido do dono) em `js/mascote.js` (humores normal/feliz/festa); no início com balão de fala (tocar lê a frase), feliz no balão de acerto, em festa na missão completa; animações em `css/movimento.css`
 - 4 Perguntas e histórias: barra de progresso, estrela voando até o contador, frase lida destacada — feito (23/11): barra nas perguntas da história; `LB.festa.estrelaVoando` no acerto; `LB.voz.falar(texto, aoFrase)` avisa a frase lida e a história a destaca (`.frase.lida` em `css/alegre.css`)
-- 5 Celebrações: fim da missão e selo novo animados — a fazer
+- 5 Celebrações — feito (23/11): fim da missão com cartão estourando, medalha balançando e 3 estrelas do prêmio surgindo (`js/moldes/missao.js`); janela "Selo novo!" com raios girando, confete, som e voz (`js/telas/selonovo.js` + `js/moldes/selonovo.js`); selos já mostrados ficam em `selosVistos` (vai na cópia de segurança; cópia antiga conta os selos que já tem como vistos). Teste: `testes/t_celebracoes.js`
 - 6 Tablet (layout largo) e acabamento: capturas de todas as telas para revisão — a fazer
 - Estilo das brincadeiras no app todo (pedido do dono, 23/11; plano aprovado):
   - Etapa 1 — feita (23/11): listas em grade de cartões (`css/listas.css`); Atividades agrupadas por título ("3 de 14", abre a próxima não feita) e 3 blocos de brincadeiras no topo

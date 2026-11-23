@@ -49,6 +49,7 @@ LB.usarAjustes = function (ctx) {
     ctx.diasMissao.value = [];
     ctx.missao.value = null;
     ctx.caderno.value = LB.caderno.vazio();
+    ctx.selosVistos.value = [];
     await LB.tentativas.apagar();
     ctx.irPara('home');
   }

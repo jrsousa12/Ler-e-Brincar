@@ -1,7 +1,7 @@
 // Guarda o app no aparelho para funcionar sem internet.
 // Ao mudar qualquer arquivo da lista, aumente VERSAO (o teste testes/t_offline.js confere a lista).
 'use strict';
-const VERSAO = 'lb-v40';
+const VERSAO = 'lb-v41';
 const ARQUIVOS = [
   './', 'index.html', 'manifest.json',
   'css/fontes.css', 'css/base.css', 'css/componentes.css', 'css/crianca.css', 'css/responsavel.css', 'css/alegre.css', 'css/tema-azul.css', 'css/tema-creme.css', 'css/silabas.css', 'css/brincadeiras.css', 'css/listas.css', 'css/acabamento.css', 'css/movimento.css',
@@ -12,9 +12,9 @@ const ARQUIVOS = [
   'js/telas/responsavel.js', 'js/moldes/missao.js', 'js/moldes/responsavel.js',
   'js/telas/historias.js', 'js/telas/atividades.js', 'js/telas/colorir.js', 'js/telas/silabas.js', 'js/moldes/silabas.js',
   'js/telas/memoria.js', 'js/telas/somfigura.js', 'js/moldes/memoria.js', 'js/moldes/somfigura.js',
-  'js/telas/selos.js', 'js/telas/ajustes.js', 'js/telas/confirmar.js', 'js/telas/backup.js', 'js/telas/aparelho.js', 'js/app.js',
+  'js/telas/selos.js', 'js/telas/selonovo.js', 'js/telas/ajustes.js', 'js/telas/confirmar.js', 'js/telas/backup.js', 'js/telas/aparelho.js', 'js/app.js',
   'js/moldes/cabecalho.js', 'js/moldes/inicio.js', 'js/moldes/historias.js', 'js/moldes/atividades.js', 'js/moldes/colorir.js', 'js/moldes/selos.js', 'js/moldes/ajustes.js', 'js/moldes/portao.js',
-  'js/moldes/navegacao.js', 'js/moldes/confirmar.js', 'js/moldes/backup.js', 'js/moldes/versao.js',
+  'js/moldes/navegacao.js', 'js/moldes/confirmar.js', 'js/moldes/selonovo.js', 'js/moldes/backup.js', 'js/moldes/versao.js',
   'icones/icone-192.png', 'icones/icone-512.png', 'icones/icone-mascara-512.png'
 ];
 // Fontes (vendor/fontes/, baixadas pelo robô do GitHub): guardadas se existirem; se faltarem, o app usa a fonte comum.

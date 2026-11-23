@@ -104,7 +104,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | Arquivo | Linhas | O que faz |
 |---|---|---|
 | `sw.js` | 56 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 117 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `js/app.js` | 125 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/backup.js` | 35 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 33 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
 | `js/caderno.js` | 43 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
@@ -119,7 +119,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/sorteio.js` | 28 | Sorteio das opções: a cada vez que uma pergunta aparece, a ordem dos botões muda, |
 | `js/tentativas.js` | 46 | Guarda cada resposta da criança (certa ou errada) para a Área do responsável. |
 | `js/voz.js` | 93 | Leitura em voz alta com a voz do próprio aparelho (funciona sem internet). |
-| `js/telas/ajustes.js` | 74 | Trava dos adultos (uma conta de multiplicar) e tela "Ajustes" (voz, som, fonte, tamanho, zerar). |
+| `js/telas/ajustes.js` | 75 | Trava dos adultos (uma conta de multiplicar) e tela "Ajustes" (voz, som, fonte, tamanho, zerar). |
 | `js/telas/aparelho.js` | 51 | Coisas do aparelho: botão "Instalar", aviso de versão nova e tela cheia. |
 | `js/telas/atividades.js` | 52 | Telas "Atividades" (lista com filtro) e "Atividade" (uma questão de LP ou Matemática). |
 | `js/telas/backup.js` | 45 | Tela "Cópia de segurança" (na Área do responsável): baixar e importar o progresso. |
@@ -128,6 +128,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/historias.js` | 89 | Telas "Ler" e "História": leitura e as perguntas de cada história. |
 | `js/telas/memoria.js` | 67 | Brincadeira "Memória": achar os pares figura + palavra escrita (palavras de conteudo/silabas.js). |
 | `js/telas/responsavel.js` | 79 | Área do responsável: progresso, onde errou mais (por habilidade da BNCC) e impressão. |
+| `js/telas/selonovo.js` | 41 | Selo novo: quando um selo é ganho, mostra uma janela de festa (molde js/moldes/selonovo.js). |
 | `js/telas/selos.js` | 38 | Tela "Selos": progresso geral, conquistas e selos da missão do dia (missões e dias seguidos). |
 | `js/telas/silabas.js` | 110 | Brincadeira "Monte a Palavra": tocar nas sílabas na ordem certa para formar a palavra da dica. |
 | `js/telas/somfigura.js` | 75 | Brincadeira "Som e Figura": ouvir a palavra e tocar na figura certa (palavras de conteudo/silabas.js). |
@@ -140,10 +141,11 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/historias.js` | 46 | Molde (HTML do Vue): Telas "Ler" (lista) e "História" (leitura e perguntas). |
 | `js/moldes/inicio.js` | 25 | Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 4 botões grandes. |
 | `js/moldes/memoria.js` | 25 | Molde (HTML do Vue): Brincadeira "Memória" (par figura + palavra). |
-| `js/moldes/missao.js` | 24 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
+| `js/moldes/missao.js` | 26 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
 | `js/moldes/navegacao.js` | 11 | Molde (HTML do Vue): Barra de navegação de baixo. |
 | `js/moldes/portao.js` | 16 | Molde (HTML do Vue): Trava dos adultos — uma conta de multiplicar. |
 | `js/moldes/responsavel.js` | 75 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
+| `js/moldes/selonovo.js` | 16 | Molde (HTML do Vue): janela de festa do selo novo (js/telas/selonovo.js). |
 | `js/moldes/selos.js` | 24 | Molde (HTML do Vue): Tela "Minhas conquistas" (selos e progresso). |
 | `js/moldes/silabas.js` | 40 | Molde (HTML do Vue): Brincadeira "Monte a Palavra" (juntar sílabas). |
 | `js/moldes/somfigura.js` | 27 | Molde (HTML do Vue): Brincadeira "Som e Figura" (ouvir e tocar na figura). |
@@ -167,6 +169,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_brincadeiras.js` | 78 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |
 | `testes/t_caderno.js` | 76 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |
 | `testes/t_catalogo.js` | 37 | Teste guardado: catálogo (build/catalogo.js). Uso: node testes/t_catalogo.js |
+| `testes/t_celebracoes.js` | 76 | Teste guardado: celebrações (Fase 7, etapa 5) — janela do selo novo e fim da missão animado. |
 | `testes/t_colorir.js` | 77 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
 | `testes/t_conferir.js` | 64 | Teste guardado: conferidor de qualidade (build/conferir.js). Uso: node testes/t_conferir.js |
 | `testes/t_conteudo.js` | 47 | Teste guardado: regra de resposta certa + validador. Uso: node testes/t_conteudo.js |
