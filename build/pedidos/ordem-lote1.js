@@ -53,6 +53,8 @@ const L = [
 ['Despedida no fim da tarde', 'Ordene os acontecimentos do fim da tarde:', ['Guardou os brinquedos ou materiais usados durante a tarde.', 'Despediu-se dos amigos ou familiares com um sorriso.', 'Entrou em casa quando o sol começou a se pôr.']]
 ];
 const fs = require('fs');
+// Trava: este script REESCREVE o arquivo inteiro; só servia para o 1º lote. Lotes novos: node build/gerar-ordem.js
+if (fs.readFileSync(__dirname + '/../../conteudo/ordem.js', 'utf8').includes("id:'ord-01'")) { console.log('já gravado; para lotes novos use node build/gerar-ordem.js'); process.exit(0); }
 const aq = s => "'" + String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
 const linhas = L.map(([titulo, enunciado, frases], i) =>
   `{id:'ord-${String(i + 1).padStart(2, '0')}',titulo:${aq(titulo)},enunciado:${aq(enunciado)},frases:[${frases.map(aq).join(',')}]}`);

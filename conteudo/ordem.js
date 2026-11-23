@@ -1,5 +1,5 @@
 // Brincadeira "Ordem dos Fatos": 3 fatos na ordem certa (1º, 2º, 3º). A ordem dos botões é sorteada no app.
-// Um item por linha. Gerado por build/pedidos/ordem-lote1.js. Conferir: node build/validar.js
+// Um item por linha. Lote 1: build/pedidos/ordem-lote1.js; lotes novos: node build/gerar-ordem.js. Conferir: node build/validar.js
 window.LB = window.LB || {};
 LB.ordem = [
 {id:'ord-01',titulo:'Preparando o café da manhã',enunciado:'Coloque as ações da manhã na ordem em que acontecem:',frases:['Acordou cedo e abriu a janela do quarto.','Esquentou a água e passou o café.','Sentou à mesa e tomou o café com pão.']},

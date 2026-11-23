@@ -31,7 +31,8 @@
     "t_nova_brincadeira": "testes/t_nova_brincadeira.js",
     "t_ordem": "testes/t_ordem.js",
     "t_gerar_lp": "testes/t_gerar_lp.js",
-    "t_gerar_historia": "testes/t_gerar_historia.js"
+    "t_gerar_historia": "testes/t_gerar_historia.js",
+    "t_gerar_ordem": "testes/t_gerar_ordem.js"
   },
   "navegador": [
     "t_offline",
@@ -124,7 +125,8 @@
       "t_gerar_mat",
       "t_colorir",
       "t_gerar_lp",
-      "t_gerar_historia"
+      "t_gerar_historia",
+      "t_gerar_ordem"
     ],
     "build/validar.js": [
       "validar",
@@ -341,7 +343,8 @@
     ],
     "conteudo/ordem.js": [
       "validar",
-      "t_ordem"
+      "t_ordem",
+      "t_gerar_ordem"
     ],
     "build/pedidos/ordem-lote1.js": [
       "t_ordem"
@@ -349,11 +352,13 @@
     "build/pedido.js": [
       "t_gerar_mat",
       "t_gerar_lp",
-      "t_gerar_historia"
+      "t_gerar_historia",
+      "t_gerar_ordem"
     ],
     "testes/_gerador.js": [
       "t_gerar_lp",
-      "t_gerar_historia"
+      "t_gerar_historia",
+      "t_gerar_ordem"
     ],
     "build/gerar-lp.js": [
       "t_gerar_lp"
@@ -375,6 +380,15 @@
     ],
     "testes/t_gerar_mat.js": [
       "t_gerar_mat"
+    ],
+    "build/gerar-ordem.js": [
+      "t_gerar_ordem"
+    ],
+    "build/fichas/ordem.json": [
+      "t_gerar_ordem"
+    ],
+    "testes/t_gerar_ordem.js": [
+      "t_gerar_ordem"
     ]
   }
 }

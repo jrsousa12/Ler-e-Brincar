@@ -40,7 +40,7 @@ function abrir(arquivo, chave) {
   const destino = path.join(pastaConteudo(), arquivo + '.js');
   const texto = fs.readFileSync(destino, 'utf8');
   const LB = {};
-  new Function('LB', texto)(LB);
+  new Function('window', 'LB', texto)({ LB }, LB); // alguns arquivos usam window.LB
   return { destino, texto, lista: LB[chave] };
 }
 
@@ -55,21 +55,21 @@ function gravar(destino, texto, itens) {
 }
 
 // Roteiro comum dos geradores de uma linha por item.
-// cfg: { arquivo, chave, prefixo, digitos, montar(linha) → item (com _emoji opcional), uso }
+// cfg: { arquivo, chave, prefixo, digitos, montar(linha) → item (com _emoji opcional), uso, repetido?, grupo? }
 function rodar(cfg, args) {
   const arq = args.find(a => !a.startsWith('--'));
   if (!arq) { console.log(cfg.uso); return 1; }
   const { destino, texto, lista } = abrir(cfg.arquivo, cfg.chave);
   let ultimo = ultimoNumero(lista);
-  // repetido = mesmo enunciado com as mesmas opções
-  const chave = q => q.enunciado + ' | ' + [...(q.opcoes || [])].map(String).sort().join(' / ');
+  // repetido = mesmo enunciado com as mesmas opções (ou o que cfg.repetido disser)
+  const chave = cfg.repetido || (q => q.enunciado + ' | ' + [...(q.opcoes || [])].map(String).sort().join(' / '));
   const enunciados = new Set(lista.map(chave));
   const novas = [], problemas = [];
   let emojiAnterior = null;
   for (const { n, t } of linhas(arq)) {
     try {
       const q = cfg.montar(t);
-      if (enunciados.has(chave(q))) throw new Error('já existe no conteúdo: "' + q.enunciado + '"');
+      if (enunciados.has(chave(q))) throw new Error('já existe no conteúdo: "' + chave(q) + '"');
       (q._avisos || []).forEach(a => problemas.push('linha ' + n + ': aviso, ' + a));
       if (q._emoji && q._emoji === emojiAnterior) problemas.push('linha ' + n + ': aviso, mesmo emoji da anterior (' + q._emoji + ')');
       emojiAnterior = q._emoji;
@@ -78,7 +78,7 @@ function rodar(cfg, args) {
       novas.push(Object.assign({ id: novoId(cfg.prefixo, ++ultimo, cfg.digitos) }, q));
     } catch (e) { problemas.push('linha ' + n + ': ' + e.message); }
   }
-  return concluir(cfg, args, problemas, novas, destino, texto, q => q.habilidadeBNCC);
+  return concluir(cfg, args, problemas, novas, destino, texto, cfg.grupo || (q => q.habilidadeBNCC));
 }
 
 // Resumo + gravação (também usado pelo gerador de histórias)

@@ -195,6 +195,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/gerar-historia.js` | 90 | Motor gerador de histórias: de um pedido em texto simples, monta a história com 3 perguntas conferidas. |
 | `build/gerar-lp.js` | 151 | Motor gerador de Língua Portuguesa: de uma linha curta de pedido, monta a atividade completa |
 | `build/gerar-mat.js` | 125 | Motor gerador de Matemática: de uma linha curta de pedido, monta a atividade completa |
+| `build/gerar-ordem.js` | 41 | Motor gerador da brincadeira "Ordem dos Fatos": uma linha de pedido → uma sequência de 3 fatos. |
 | `build/gerar-silabas.js` | 101 | Motor gerador da brincadeira "Monte a Palavra": de uma linha com a palavra separada em sílabas, |
 | `build/icones.js` | 29 | Gera os ícones PNG do app (icones/). Uso: node build/icones.js |
 | `build/item.js` | 131 | Motor de item único: mostra, busca e altera um item de conteudo/*.js sem abrir o arquivo. |
@@ -216,6 +217,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_gerar_historia.js` | 38 | Teste guardado: gerador de histórias (build/gerar-historia.js). Uso: node testes/t_gerar_historia.js |
 | `testes/t_gerar_lp.js` | 48 | Teste guardado: gerador de Português (build/gerar-lp.js). Uso: node testes/t_gerar_lp.js |
 | `testes/t_gerar_mat.js` | 59 | Teste guardado: gerador de Matemática (build/gerar-mat.js). Uso: node testes/t_gerar_mat.js |
+| `testes/t_gerar_ordem.js` | 32 | Teste guardado: gerador da Ordem dos Fatos (build/gerar-ordem.js). Uso: node testes/t_gerar_ordem.js |
 | `testes/t_gerar_silabas.js` | 47 | Teste guardado: gerador da brincadeira "Monte a Palavra" (build/gerar-silabas.js). Uso: node testes/t_gerar_silabas.js |
 | `testes/t_item.js` | 62 | Teste guardado: motor de item único (build/item.js). Uso: node testes/t_item.js |
 | `testes/t_mercado.js` | 124 | Teste guardado: brincadeira "Mercadinho" (js/mercadoregras.js = contas; js/telas/mercado.js = tela). |
