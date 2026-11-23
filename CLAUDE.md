@@ -107,7 +107,7 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Revisão em lote**: capturas/relatórios de muitos itens de uma vez, em vez de um por um.
 - **Memória do projeto**: listas de ideias e pendências (`IDEIAS.md`, `NOTAS.md`) para não redescobrir decisões. Quando passarem de ~150 linhas, mover o que já foi feito para um arquivo de histórico.
 - **Travas e barra**: `.claude/settings.json` + `.claude/hooks/` impedem ler dados enormes direto e mostram o % do contexto usado (receita: `travas-e-barra.md` do protocolo-token).
-- **Instalado aqui**: barra de contexto (`.claude/settings.json` + `.claude/hooks/barra-contexto.sh`). Motor de item único: `build/item.js`. Trava de dados: ainda não.
+- **Instalado aqui**: barra de contexto (`.claude/settings.json` + `.claude/hooks/barra-contexto.sh`). Motor de item único: `build/item.js` (lp, mat, historias, colorir, silabas, ordem). Trava de dados (23/11): `.claude/hooks/bloquear-bancos.sh` + `permissions.deny` barram ler `conteudo/colorir.js` e `historias.js` direto.
 
 ## 9. Recursos de Apoio (criar quando o projeto pedir)
 

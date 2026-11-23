@@ -10,7 +10,7 @@ let falhas = 0;
 const ok = (cond, msg) => { if (!cond) { falhas++; console.log('FALHA: ' + msg); } };
 
 const pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'item-'));
-const nomes = ['historias', 'lp', 'mat', 'colorir', 'silabas'];
+const nomes = ['historias', 'lp', 'mat', 'colorir', 'silabas', 'ordem'];
 for (const n of nomes) fs.copyFileSync(path.join(raiz, 'conteudo', n + '.js'), path.join(pasta, n + '.js'));
 const original = Object.fromEntries(nomes.map(n => [n, fs.readFileSync(path.join(pasta, n + '.js'), 'utf8')]));
 const rodar = (...a) => {
@@ -20,7 +20,7 @@ const rodar = (...a) => {
 const linhaDe = (n, id) => fs.readFileSync(path.join(pasta, n + '.js'), 'utf8').split('\n').find(l => l.startsWith(`{id:'${id}'`));
 
 // Mostrar: um item de cada arquivo, saída pequena (svg encurtado)
-for (const id of ['historia-01', 'lp-001', 'mat-001', 'colorir-01']) {
+for (const id of ['historia-01', 'lp-001', 'mat-001', 'colorir-01', 'ord-01']) {
   const r = rodar(id);
   ok(r.cod === 0 && r.saida.includes(id), 'mostrar ' + id);
   ok(r.saida.length < 3000, 'saída curta ' + id + ' (' + r.saida.length + ')');
