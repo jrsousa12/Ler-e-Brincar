@@ -97,7 +97,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | Arquivo | Linhas | O que faz |
 |---|---|---|
 | `sw.js` | 55 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 114 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `js/app.js` | 115 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/backup.js` | 35 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 33 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
 | `js/caderno.js` | 43 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
@@ -121,8 +121,9 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/historias.js` | 89 | Telas "Ler" e "História": leitura e as perguntas de cada história. |
 | `js/telas/responsavel.js` | 79 | Área do responsável: progresso, onde errou mais (por habilidade da BNCC) e impressão. |
 | `js/telas/selos.js` | 38 | Tela "Selos": progresso geral, conquistas e selos da missão do dia (missões e dias seguidos). |
+| `js/telas/silabas.js` | 102 | Brincadeira "Monte a Palavra": tocar nas sílabas na ordem certa para formar a palavra da dica. |
 | `js/moldes/ajustes.js` | 63 | Molde (HTML do Vue): Ajustes (aparece embaixo da Área do responsável). |
-| `js/moldes/atividades.js` | 42 | Molde (HTML do Vue): Telas "Atividades" (lista) e "Atividade" (resolver). |
+| `js/moldes/atividades.js` | 47 | Molde (HTML do Vue): Telas "Atividades" (lista) e "Atividade" (resolver). |
 | `js/moldes/backup.js` | 24 | Molde (HTML do Vue): Cópia de segurança e instalação (embaixo dos Ajustes, na Área do responsável). |
 | `js/moldes/cabecalho.js` | 11 | Molde (HTML do Vue): Cabeçalho do topo (título, ⚙️ dos adultos, estrelas). |
 | `js/moldes/colorir.js` | 37 | Molde (HTML do Vue): Telas "Colorir" (lista) e desenho para pintar. |
@@ -134,6 +135,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/portao.js` | 16 | Molde (HTML do Vue): Trava dos adultos — uma conta de multiplicar. |
 | `js/moldes/responsavel.js` | 75 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
 | `js/moldes/selos.js` | 24 | Molde (HTML do Vue): Tela "Minhas conquistas" (selos e progresso). |
+| `js/moldes/silabas.js` | 40 | Molde (HTML do Vue): Brincadeira "Monte a Palavra" (juntar sílabas). |
 | `js/moldes/versao.js` | 8 | Molde (HTML do Vue): aviso de versão nova do app (só na tela inicial e na área dos adultos). |
 | `build/biblioteca.js` | 75 | Lista e prévia da biblioteca de peças (build/pecas/). Gerado: nunca editar PECAS.md à mão. |
 | `build/carregar.js` | 17 | Carrega o conteúdo (conteudo/*.js) e a regra de resposta certa, para os motores de build/. |
@@ -159,6 +161,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_gerar_mat.js` | 56 | Teste guardado: gerador de Matemática (build/gerar-mat.js). Uso: node testes/t_gerar_mat.js |
 | `testes/t_item.js` | 62 | Teste guardado: motor de item único (build/item.js). Uso: node testes/t_item.js |
 | `testes/t_offline.js` | 44 | Teste guardado: modo sem internet. Confere a lista do sw.js, o manifesto e abre o app offline. |
+| `testes/t_silabas.js` | 46 | Teste guardado: brincadeira "Monte a Palavra" (js/telas/silabas.js) no navegador. |
 | `testes/t_sorteio.js` | 42 | Teste guardado: sorteio das opções (js/sorteio.js). Uso: node testes/t_sorteio.js |
 | `testes/t_tudo.js` | 44 | Teste do motor 6 (build/tudo.js): mapa de etapas, ficha coerente e etapas internas. |
 | `testes/t_voz.js` | 52 | Teste guardado: voz (js/voz.js). Uso: node testes/t_voz.js |
