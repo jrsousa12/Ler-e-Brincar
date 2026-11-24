@@ -4,13 +4,19 @@ LB.moldes.pacote = `
     <section v-if="tela === 'pacote' && atualPacote" class="brincadeira-silabas brincadeira-pacote" aria-label="Brincadeira Pacotes de contas">
       <button class="btn-voltar" @click="voltar('atividades')">← Voltar</button>
       <div class="topo-jogo">
-        <span class="badge-fase">{{ atualPacote.titulo }} · Pacote {{ indicePacote + 1 }} de {{ listaPacote.length }} · Pergunta {{ etapaPacote + 1 }} de {{ atualPacote.perguntas.length }}</span>
+        <span class="badge-fase">Pacote {{ indicePacote + 1 }} de {{ listaPacote.length }} · Pergunta {{ etapaPacote + 1 }} de {{ atualPacote.perguntas.length }}</span>
         <button type="button" class="btn-silaba-3d btn-ouvir-palavra" @click="ouvir(perguntaPacote.fala)">🔊 Ouvir</button>
       </div>
 
-      <p class="enunciado-pacote">{{ perguntaPacote.enunciado }}</p>
+      <h2 class="titulo-pacote">📦 {{ atualPacote.titulo }}</h2>
+      <p v-if="perguntaPacote.revisao" class="revisao-pacote">🔁 Revisão: você errou esta antes</p>
 
-      <div class="opcoes-pacote">
+      <p class="enunciado-pacote">{{ perguntaPacote.enunciado }}</p>
+      <p v-if="perguntaPacote.apoio" class="apoio-pacote" aria-hidden="true">
+        {{ perguntaPacote.apoio.esquerda }} <b>{{ perguntaPacote.apoio.operador }}</b> {{ perguntaPacote.apoio.direita }}
+      </p>
+
+      <div class="opcoes-pacote" :class="{ longas: perguntaPacote.longas }">
         <button v-for="o in perguntaPacote.opcoes" :key="o" type="button" class="btn-silaba-3d bloco-silaba"
                 :class="{ acertou: estadoPacote === 'correto' && escolhaPacote === o, quase: estadoPacote === 'tentar-novamente' && escolhaPacote === o }"
                 @click="escolherPacote(o)">{{ o }}</button>

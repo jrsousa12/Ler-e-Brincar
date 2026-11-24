@@ -14,6 +14,7 @@ Exemplos:
 
 ## A conferir (do plano)
 - [ ] A impressão dos desenhos funciona no tablet/celular?
+- [ ] Pacotes de contas (Brincar → 📦): ela entende "Pacote 1 de 3 · Pergunta 1 de 4"? 3 pacotes de 4 cansam ou estão bons? As frases longas e as opções em coluna ficam fáceis de ler? Se aprovar, dá para fazer o mesmo com Português.
 
 ## Onde trava (dificuldade)
 

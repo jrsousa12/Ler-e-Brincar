@@ -177,6 +177,9 @@
       "catalogo",
       "t_catalogo"
     ],
+    "CATALOGO.md": [
+      "catalogo"
+    ],
     "build/tudo.js": [
       "t_tudo"
     ],

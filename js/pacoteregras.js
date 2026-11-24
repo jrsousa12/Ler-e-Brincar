@@ -1,67 +1,93 @@
-// Regras da brincadeira "Pacotes de contas": cada desafio é um pacote com 4 perguntas do mesmo tipo.
-// Cada pergunta: { nivel, enunciado (aparece grande), fala (lida em voz alta), certa, opcoes (3, com a certa) }.
-// O pacote: { nivel, titulo, fala, perguntas }. Testado em testes/t_pacote.js.
+// Regras da brincadeira "Pacotes de contas": monta pacotes com as questões do banco (conteudo/mat.js).
+// Pacote = 4 questões da MESMA habilidade da BNCC, da mais fácil à mais difícil.
+// Rodada = 3 pacotes de habilidades diferentes. Caderno de erros (js/caderno.js):
+//  - a habilidade da 1ª questão a revisar entra primeiro, e até 2 questões do caderno vão no pacote dela;
+//  - as outras habilidades são sorteadas com mais chance para as fracas (LB.caderno.peso).
+// Sem tela: só escolhas (testadas em testes/t_pacote.js).
 LB.pacoteRegras = (function () {
   'use strict';
   const TAMANHO_PACOTE = 4;
-  const TETO = [0, 10, 20, 50, 100];   // tamanho máximo dos números por nível
+  const PACOTES_POR_RODADA = 3;
+  const REVISAO_POR_PACOTE = 2;
+  const OPCAO_LONGA = 8;   // letras: acima disso, os botões ficam um embaixo do outro
 
-  const sortearEntre = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
-  function embaralhar(lista) {
+  // Nome curto de cada habilidade (texto oficial em build/fichas/bncc.json).
+  const NOMES = {
+    EF02MA01: 'Comparar números', EF02MA04: 'Montar e desmontar números', EF02MA05: 'Somas e subtrações',
+    EF02MA06: 'Problemas de somar e tirar', EF02MA07: 'Multiplicar', EF02MA08: 'Dobro e metade',
+    EF02MA09: 'Sequências', EF02MA20: 'Moedas e cédulas', EF03MA01: 'Números até 1000',
+    EF03MA03: 'Fatos de somar e multiplicar', EF03MA06: 'Problemas de contas', EF03MA07: 'Problemas de multiplicar',
+    EF03MA08: 'Dividir', EF03MA24: 'Compras e troco'
+  };
+  const nomeDe = h => NOMES[h] || 'Desafios';
+  const nivelDe = i => i.nivel || 1;
+
+  function embaralhar(lista, rnd) {
     const c = [...lista];
-    for (let i = c.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [c[i], c[j]] = [c[j], c[i]]; }
+    for (let i = c.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [c[i], c[j]] = [c[j], c[i]]; }
     return c;
   }
-  // Três opções: a certa e as duas primeiras erradas da lista (erros comuns primeiro).
-  function opcoes(certa, erradas) {
-    const erros = [];
-    erradas.forEach(v => { if (erros.length < 2 && v >= 0 && v !== certa && !erros.includes(v)) erros.push(v); });
-    return embaralhar([certa, ...erros]);
+
+  // Pergunta da tela a partir de uma questão do banco (a certa vem da regra única js/respostas.js).
+  function pergunta(item, revisao, rnd) {
+    const certa = item.opcoes[LB.respostas.indiceCorreto(item)];
+    return {
+      id: item.id, nivel: nivelDe(item), enunciado: item.enunciado, fala: item.enunciado,
+      apoio: item.apoioVisual || null, explicacao: item.explicacao || '', revisao,
+      certa, opcoes: embaralhar(item.opcoes, rnd),
+      longas: item.opcoes.some(o => String(o).length > OPCAO_LONGA), item
+    };
   }
 
-  // Cada tipo de pacote sabe montar uma conta com o teto do nível.
-  const TIPOS = {
-    soma: {
-      titulo: 'Somas',
-      conta(t) {
-        const a = sortearEntre(1, t / 2), b = sortearEntre(1, t - a), certa = a + b;
-        return { enunciado: a + ' + ' + b + ' = ?', fala: 'Quanto é ' + a + ' mais ' + b + '?', certa,
-          erradas: [certa + 1, certa - 1, certa + 10, certa - 10] };
-      }
-    },
-    subtracao: {
-      titulo: 'Subtrações',
-      conta(t) {
-        const a = sortearEntre(2, t), b = sortearEntre(1, a - 1), certa = a - b;
-        return { enunciado: a + ' − ' + b + ' = ?', fala: 'Quanto é ' + a + ' menos ' + b + '?', certa,
-          erradas: [certa + 1, certa - 1, a + b, certa + 10] };
-      }
-    },
-    dobro: {
-      titulo: 'Dobros',
-      conta(t) {
-        const a = sortearEntre(1, t / 2), certa = 2 * a;
-        return { enunciado: 'O dobro de ' + a + ' = ?', fala: 'Qual é o dobro de ' + a + '?', certa,
-          erradas: [certa + 1, certa - 1, certa + 2, a + 1] };
-      }
+  // Questões por habilidade; só ficam as habilidades com questões para um pacote inteiro.
+  function grupos(itens) {
+    const g = {};
+    itens.forEach(i => { if (i.habilidadeBNCC) (g[i.habilidadeBNCC] = g[i.habilidadeBNCC] || []).push(i); });
+    Object.keys(g).forEach(h => { if (g[h].length < TAMANHO_PACOTE) delete g[h]; });
+    return g;
+  }
+
+  // Sorteio com peso: habilidade fraca (mais erros no caderno) sai mais.
+  function sortearComPeso(lista, pesoDe, rnd) {
+    const pesos = lista.map(pesoDe);
+    let alvo = rnd() * pesos.reduce((a, b) => a + b, 0);
+    for (let i = 0; i < lista.length; i++) { alvo -= pesos[i]; if (alvo < 0) return lista[i]; }
+    return lista[lista.length - 1];
+  }
+
+  function escolherHabilidades(g, caderno, revisar, rnd) {
+    const escolhidas = [];
+    const primeira = revisar.map(id => Object.keys(g).find(h => g[h].some(i => i.id === id))).find(Boolean);
+    if (primeira) escolhidas.push(primeira);
+    while (escolhidas.length < PACOTES_POR_RODADA) {
+      const livres = Object.keys(g).filter(h => !escolhidas.includes(h));
+      if (!livres.length) break;
+      escolhidas.push(sortearComPeso(livres, h => LB.caderno.peso(caderno, h), rnd));
     }
-  };
-
-  function pergunta(tipo, nivel) {
-    const c = TIPOS[tipo].conta(TETO[nivel]);
-    return { nivel, enunciado: c.enunciado, fala: c.fala, certa: c.certa, opcoes: opcoes(c.certa, c.erradas) };
+    return escolhidas;
   }
 
-  // Um pacote: TAMANHO_PACOTE perguntas do mesmo tipo, no mesmo nível.
-  function pacote(tipo, nivel) {
-    const titulo = TIPOS[tipo].titulo;
-    const perguntas = [];
-    for (let i = 0; i < TAMANHO_PACOTE; i++) perguntas.push(pergunta(tipo, nivel));
-    return { nivel, titulo, fala: 'Pacote de ' + titulo.toLowerCase() + '. Vamos lá!', perguntas };
+  function pacote(habilidade, lista, revisar, rnd) {
+    const doCaderno = revisar.map(id => lista.find(i => i.id === id)).filter(Boolean).slice(0, REVISAO_POR_PACOTE);
+    const novas = embaralhar(lista.filter(i => !doCaderno.includes(i)), rnd).slice(0, TAMANHO_PACOTE - doCaderno.length);
+    const escolhidas = [...doCaderno, ...novas].sort((a, b) => nivelDe(a) - nivelDe(b));
+    const titulo = nomeDe(habilidade);
+    const media = escolhidas.reduce((s, i) => s + nivelDe(i), 0) / escolhidas.length;
+    return {
+      habilidade, titulo, nivel: Math.round(media), media, fala: 'Pacote ' + titulo + '. Vamos lá!',
+      perguntas: escolhidas.map(i => pergunta(i, doCaderno.includes(i), rnd))
+    };
   }
 
-  // Rodada de 3 pacotes, do fácil ao difícil.
-  const sortearRodada = () => [pacote('soma', 1), pacote('subtracao', 2), pacote('dobro', 3)];
+  // Rodada: 3 pacotes, do mais fácil ao mais difícil. itens = questões de uma matéria.
+  function sortearRodada(itens, caderno, rnd = Math.random) {
+    if (!itens || !itens.length) return [];
+    const g = grupos(itens);
+    const revisar = LB.caderno.paraRevisar(caderno, itens[0].materia);
+    return escolherHabilidades(g, caderno, revisar, rnd)
+      .map(h => pacote(h, g[h], revisar, rnd))
+      .sort((a, b) => a.media - b.media);
+  }
 
-  return { sortearRodada, pacote, pergunta, opcoes, TAMANHO_PACOTE };
+  return { sortearRodada, pacote, pergunta, grupos, nomeDe, TAMANHO_PACOTE, PACOTES_POR_RODADA, REVISAO_POR_PACOTE };
 })();

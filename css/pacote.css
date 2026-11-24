@@ -1,4 +1,9 @@
-/* Brincadeira "Pacotes de contas" (js/moldes/pacote.js). Cores de base.css. Criado por build/nova-brincadeira.js. */
-.enunciado-pacote{text-align:center;font-size:2.2rem;font-weight:800;letter-spacing:.04em;margin:10px 0 18px;color:var(--cor-texto)}
-.opcoes-pacote{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.opcoes-pacote .bloco-silaba{min-width:84px;font-size:1.8rem}
+/* Brincadeira "Pacotes de contas" (js/moldes/pacote.js). Cores de base.css. */
+.titulo-pacote{text-align:center;font-size:1.35rem;font-weight:800;margin:6px 0 2px;color:var(--cor-texto)}
+.revisao-pacote{text-align:center;font-size:.95rem;font-weight:700;margin:2px 0;opacity:.8}
+.enunciado-pacote{text-align:center;font-size:1.35rem;font-weight:700;line-height:1.4;margin:10px 0 8px;color:var(--cor-texto);overflow-wrap:anywhere}
+.apoio-pacote{text-align:center;font-size:1.8rem;line-height:1.3;margin:4px 0 14px;overflow-wrap:anywhere}
+.opcoes-pacote{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:8px}
+.opcoes-pacote .bloco-silaba{min-width:84px;font-size:1.6rem}
+.opcoes-pacote.longas{flex-direction:column;align-items:stretch}
+.opcoes-pacote.longas .bloco-silaba{font-size:1.15rem;white-space:normal;line-height:1.3}
