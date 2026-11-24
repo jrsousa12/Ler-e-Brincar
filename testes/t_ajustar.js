@@ -80,5 +80,25 @@ ok(nodeH('build/ajustar-historia.js', ['historia-01']).includes('Nenhuma') && /h
 ok(ch.validar().cod === 0, 'histórias: validador aceita o conteúdo ajustado');
 ch.apagar();
 
+// 6. Enunciados longos (build/ajustar-enunciado.js): texto encurtado mantém a pista e as opções do texto
+const E = require(path.join(__dirname, '../build/ajustar-enunciado.js'));
+const qe = { id: 'lp-x', nivel: 2, enunciado: 'Leia: "Gabriel parou para conversar perto da praça e deixou o caderno no banco. Ao chegar em casa, sentiu falta dele." Como ele percebeu?', opcoes: ['Sentiu falta dele ao chegar em casa.', 'A professora avisou.', 'Estava no estojo.'], correta: 0, explicacao: 'O texto diz "sentiu falta dele".' };
+ok(E.partes(qe.enunciado).pergunta === 'Como ele percebeu?', 'enunciado: separa texto e pergunta');
+ok(!E.conferir(qe, 'Leia: "Gabriel deixou o caderno no banco. Ao chegar em casa, sentiu falta dele." Como ele percebeu?').length, 'enunciado: texto curto com a pista é aceito');
+ok(E.conferir(qe, 'Leia: "Gabriel deixou o caderno no banco e foi para casa." Como ele percebeu?').join().includes('sumiu'), 'enunciado: recusa texto sem a pista da certa');
+ok(E.conferir(qe, 'Leia: "' + 'Gabriel deixou o caderno no banco. Ao chegar em casa, sentiu falta dele. '.repeat(3) + '" Como?').join().includes('até 160'), 'enunciado: recusa acima do limite');
+ok(E.conferir({ ...qe, opcoes: ['banco', 'praça', 'casa'] }, 'Leia: "Gabriel deixou o caderno no banco. Ao chegar em casa, sentiu falta dele." Onde?').join().includes('"praça"'), 'enunciado: recusa opção do texto que sumiu');
+const ce = copia('build/gerar-lp.js');
+const envE = { ...process.env, CONTEUDO_RAIZ: ce.pasta, REVISAO_RAIZ: ce.pasta };
+const nodeE = args => { try { return execFileSync('node', [path.join(__dirname, '../build/ajustar-enunciado.js'), ...args], { env: envE }).toString(); } catch (e) { return e.stdout.toString(); } };
+const curto = 'Helena e a mãe leram a receita juntas, passo a passo, para não esquecer nenhum ingrediente.';
+execFileSync('node', [path.join(__dirname, '../build/item.js'), 'lp-253', 'enunciado=Leia: "' + curto + ' Depois foram ao mercado da esquina comprar farinha, ovos e leite." Qual pista mostra o motivo de elas lerem a receita passo a passo?'], { env: envE });
+const folhaE = path.join(ce.pasta, 'enunciado-revisao.txt');
+ok(nodeE(['lp-253']).includes('1 enunciado') && fs.readFileSync(folhaE, 'utf8').includes('lp-253 | texto='), 'enunciado: monta a folha');
+fs.writeFileSync(folhaE, 'lp-253 | texto=' + curto + ' | pergunta=Qual pista mostra por que leram a receita passo a passo?\n');
+ok(nodeE(['--aplicar', folhaE, '--gravar']).includes('gravado') && nodeE(['lp-253']).includes('Nenhum') && /"ajuste":"enunciado"/.test(ce.ler('registro.jsonl')), 'enunciado: grava, sai da lista e fica no registro');
+ok(ce.validar().cod === 0, 'enunciado: validador aceita o conteúdo ajustado');
+ce.apagar();
+
 console.log(falhas ? 't_ajustar: ' + falhas + ' FALHA(S)' : 't_ajustar: OK');
 process.exit(falhas ? 1 : 0);

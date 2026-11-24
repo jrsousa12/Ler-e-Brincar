@@ -11,3 +11,4 @@ Receita para reescrever a folha `lp-revisao.txt` (nunca editar `conteudo/` à m�
 - Se a explicação deixar de combinar, acrescentar `| explicacao=...` na linha.
 - Depois: `--aplicar` (prévia) até 0 recusados, `--gravar`, `node build/tudo.js --mudados`, subir `VERSAO` do `sw.js`.
 - `registro.jsonl`: histórico do que já foi trocado (antes, depois, tipos). Não editar.
+- **Enunciados longos** (`build/ajustar-enunciado.js`, folha `enunciado-revisao.txt`): encurtar o `texto=` com outras palavras; manter as palavras da certa e as opções que vêm do texto; se a pergunta também for longa, mandar `pergunta=` mais curta.

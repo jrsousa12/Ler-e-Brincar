@@ -1,0 +1,56 @@
+# Folha dos enunciados longos (build/ajustar-enunciado.js), reescrita em 24/11 (Fase 9.5).
+# Depois: node build/ajustar-enunciado.js --aplicar build/revisao/enunciado-revisao.txt
+
+lp-109 | texto=A professora passou uma tarefa sobre os pássaros da região. | pergunta=Qual palavra é proparoxítona (sílaba forte na antepenúltima) e tem "ss"?
+lp-245 | texto=Antes de a escola abrir, Seu Antônio acende o forno. O cheiro do pão faz muita gente apressar o passo. | pergunta=Que pista mostra que o pão atrai as pessoas? | explicacao=O texto diz que o cheiro do pão faz muita gente apressar o passo.
+lp-246 | texto=Rafael percebeu um pacote de pão rasgado e avisou Seu Antônio antes que alguém o levasse. | pergunta=Pelas pistas, que atitude Rafael teve? | explicacao=Perceber o pacote rasgado e avisar Seu Antônio mostra atenção e cuidado.
+lp-247 | texto=O manjericão ficava numa janela pequena. As folhas ficaram mais claras e os ramos começaram a pender. | pergunta=Que pistas mostram que a planta não estava bem?
+lp-248 | texto=Bia pôs o vaso na varanda, onde batia sol de manhã. Dias depois, o manjericão recuperou a cor verde-escura. | pergunta=O que a mudança para a varanda causou?
+lp-249 | texto=No domingo à tarde, o calor diminuiu e o avô de Tiago levou a mesinha para a varanda para jogar dominó. | pergunta=Qual pista explica a escolha da varanda?
+lp-250 | texto=No começo, Tiago jogava sem pensar muito. Na segunda rodada, olhou os números com calma e planejou. | pergunta=Que diferença há entre o começo e a segunda rodada? | explicacao=No começo, Tiago jogava sem pensar; na segunda rodada, jogou com calma e planejou.
+lp-251 | texto=Ao tirar a bicicleta da garagem, Mateus percebeu o pneu de trás murcho e pegou a bomba de ar. | pergunta=Qual pista mostra que ele notou o problema antes de sair?
+lp-252 | texto=Mateus encheu o pneu devagar, vendo com a mão se ficava firme sem ficar duro demais. | pergunta=O que 'sem ficar duro demais' mostra sobre Mateus?
+lp-253 | texto=Helena e a mãe leram a receita juntas, passo a passo, para não esquecer nenhum ingrediente. | pergunta=Qual pista mostra por que leram a receita passo a passo?
+lp-254 | texto=Elas esperaram o bolo esfriar um pouco para cortar as fatias e servir com suco natural. | pergunta=Qual pista indica que elas tiveram paciência no fim do preparo?
+lp-255 | texto=Gabriel parou na praça e deixou o caderno no banco. Ao chegar em casa, sentiu falta dele. | pergunta=Como Gabriel percebeu que tinha esquecido o caderno?
+lp-256 | texto=Gabriel e o irmão viram o caderno num canteiro, onde uma senhora o havia recolhido para não molhar. | pergunta=Por que o caderno não estava mais no banco?
+lp-257 | texto=No recreio, o pátio estava quente. O grupo fez uma roda sob as mangueiras, onde havia sombra. | pergunta=Por que o grupo ficou embaixo das mangueiras?
+lp-258 | texto=Na roda, eles inventaram um jogo de adivinhação e cada um esperava a sua vez de falar sem tumulto. | pergunta=Que pista mostra boa convivência na brincadeira?
+lp-259 | texto=Seu Jorge consertava um portão que fazia barulho ao abrir. Cauã foi buscar uma chave de fenda em casa. | pergunta=Qual pista mostra que Cauã quis ajudar o vizinho?
+lp-261 | texto=Luana e Davi revisaram o cartaz antes de colar e corrigiram duas palavras repetidas. | pergunta=O que a revisão feita por Luana e Davi melhorou no texto?
+lp-262 | texto=Na apresentação, vários visitantes pararam para ler o cartaz e elogiaram os exemplos. | pergunta=Qual pista mostra que o público gostou do trabalho da turma?
+lp-263 | texto=Uma ventania derrubou um galho na fiação e a energia acabou. A televisão e o ventilador desligaram. | pergunta=Por que a televisão e o ventilador desligaram?
+lp-264 | texto=Sofia abriu as janelas para o vento entrar e chamou a irmã para ler histórias enquanto havia luz. | pergunta=Como Sofia lidou com a falta de energia?
+lp-265 | texto=Otávio juntou moedas e notas por duas semanas para comprar um gibi. Pagou com uma nota de vinte reais. | pergunta=Qual pista mostra que Otávio se planejou?
+lp-267 | texto=A pipa ficou presa num galho. Bruno quis puxar a linha com força, mas o primo disse que podia rasgar o papel. | pergunta=Por que puxar com força era arriscado?
+lp-269 | texto=Na estante cheia de Lorena, os livros ficavam empilhados. Ao procurar um, ela demorava. | pergunta=Qual pista mostra o problema antes da organização?
+lp-270 | texto=Lorena separou os livros por assunto: histórias de um lado, ciências e jogos do outro. | pergunta=Qual pista mostra como ela dividiu o acervo?
+lp-271 | texto=Na horta, o responsável mostrou que a terra úmida e fofa ajuda as raízes a crescer. | pergunta=Que tipo de terra o texto diz que ajuda as raízes?
+lp-272 | texto=Depois da visita à horta, a turma voltou inspirada para cuidar do jardim da escola. | pergunta=Qual pista mostra que a visita mudou a atitude dos alunos?
+lp-273 | texto=Pedro lavou bem as laranjas, espremeu, coou o suco e provou um pouquinho. | pergunta=Qual pista mostra o cuidado de Pedro com o suco?
+lp-275 | texto=No ensaio de teatro, alguns alunos ficavam nervosos, falavam rápido demais e erravam falas. | pergunta=Qual pista mostra uma dificuldade no começo do ensaio?
+lp-276 | texto=A professora pediu que respirassem fundo e falassem devagar. Repetiram duas vezes e o ritmo melhorou. | pergunta=O que aconteceu depois da orientação?
+lp-277 | texto=Os alunos juntaram tampinhas e garrafas limpas numa caixa para separar o reciclável do lixo comum. | pergunta=Qual pista mostra que as garrafas foram lavadas?
+lp-278 | texto=Toda sexta-feira, dois voluntários contavam e separavam as tampinhas por cor. | pergunta=Qual pista mostra que havia organização semanal na coleta?
+lp-279 | texto=Cauê escreveu uma carta caprichada para o primo, em vez de mandar uma mensagem apressada. | pergunta=Qual pista mostra o capricho de Cauê ao escrever?
+lp-280 | texto=Cauê contou sobre o campeonato, releu tudo para ver se fazia sentido e guardou num envelope. | pergunta=Qual pista mostra que Cauê conferiu o próprio texto?
+lp-281 | texto=A lâmpada do corredor piscava há dois dias. O pai disse que ia trocá-la. | pergunta=Qual pista mostra que havia um problema de iluminação no corredor?
+lp-283 | texto=Num dia de chuva, quatro amigos jogaram na sala. Antes de começar, leram juntos as regras rápidas. | pergunta=Que pista mostra que combinaram as regras antes?
+lp-284 | texto=Mesmo quando a partida ficou disputada, o clima continuou amigável e todos guardaram as peças no fim. | pergunta=Que pistas mostram que a partida terminou bem?
+lp-285 | texto=Ao acordar, Mariana viu pela janela as ruas molhadas pela chuva da madrugada. | pergunta=Qual pista mostra que havia chovido antes de Mariana acordar?
+lp-289 | texto=Durante o treino na quadra, os alunos fizeram alongamento antes de correr para preparar o corpo. | pergunta=Qual pista mostra para que serviu o alongamento?
+lp-290 | texto=Ao voltar da escola, Paulo lavou as mãos com água e sabão antes de pegar uma fruta. | pergunta=Qual pista mostra um hábito de higiene de Paulo antes do lanche?
+lp-291 | texto=Camila leu a pergunta duas vezes e sublinhou as palavras principais antes de responder. | pergunta=Que pistas mostram a atenção de Camila na atividade?
+lp-292 | texto=O cachorro abanava o rabo e pulava perto da porta ao ouvir os passos do dono. | pergunta=Qual pista mostra a alegria do cachorro ao perceber a chegada do dono?
+lp-293 | texto=A biblioteca estava silenciosa e iluminada, com mesas livres para estudar ou ler. | pergunta=Que pistas mostram que o espaço favorecia a leitura e o estudo?
+lp-294 | texto=Faltando dez minutos para o fim da aula, o professor pediu que todos guardassem os materiais. | pergunta=Qual pista mostra que a aula estava perto de terminar?
+lp-295 | texto=Em vez de jogar papel no chão, André guardou o papelzinho no bolso até achar uma lixeira. | pergunta=Qual pista mostra o cuidado de André com a limpeza?
+lp-296 | texto=O sol estava forte no meio-dia, então os moradores caminhavam devagar e usavam bonés ou guarda-sóis. | pergunta=Que pistas mostram que os moradores se protegiam?
+lp-300 | texto=Lucas separou as moedas de um real e de cinquenta centavos em dois montinhos para facilitar a contagem. | pergunta=Por que Lucas fez dois montinhos?
+lp-301 | texto=O livro tinha ilustrações coloridas e letras grandes, o que facilitou a leitura dos menores. | pergunta=Que pistas ajudaram na leitura dos alunos menores?
+lp-302 | texto=Antes de sair, Marta conferiu se a torneira do quintal estava bem fechada para não gastar água. | pergunta=Qual pista mostra a preocupação de Marta com a água?
+lp-303 | texto=Na apresentação, Felipe explicou o raciocínio passo a passo usando desenhos no quadro. | pergunta=Qual recurso Felipe usou para ajudar os colegas a acompanharem?
+lp-304 | texto=A chuva acalmou no fim da tarde e um arco-íris apareceu no céu. | pergunta=Qual pista mostra que a chuva diminuiu antes de o arco-íris surgir?
+lp-312 | texto=A garrafa térmica manteve o café quentinho por várias horas durante a manhã fria. | pergunta=Qual pista mostra que o café ficou quente apesar do frio?
+lp-313 | texto=Bruno conferiu o horário do ônibus antes de sair para não ficar esperando muito na parada. | pergunta=Qual pista mostra por que Bruno conferiu o horário?
+lp-314 | texto=No fim da aula, os alunos recolheram os pincéis, lavaram os copinhos e deixaram a sala limpa. | pergunta=Que pistas mostram que a turma cuidou da sala? | explicacao=Recolher os pincéis, lavar os copinhos e deixar a sala limpa mostra responsabilidade.
