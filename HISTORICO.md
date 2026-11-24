@@ -5,7 +5,7 @@ Regra: ao concluir um item do `PLANO.md`, movê-lo para cá (seção "Concluído
 
 ## Concluídos depois de 24/11
 
-(nenhum ainda)
+- **9.2 Lembrete de cópia de segurança (24/11)**: a Área do responsável mostra "Última cópia há X dias." e, com 7 dias ou mais (ou nunca), "⏰ ... Fazer agora?". Data em `ajustes.ultimaCopia`; frase em `LB.backup.lembrete` (`js/backup.js`); teste em `t_backup`.
 
 ## Notas que saíram do CLAUDE.md (24/11)
 - Refazer os 30 desenhos antigos no estilo novo, em lotes de 5 (Sonnet), prévia → aprovação do dono → `--gravar` → `tudo.js` → subir `VERSAO` do `sw.js` → atualizar `PLANO.md`. Feitos: lotes 1 a 7 (`colorir-lote2` a `7.js`, piloto em `colorir-modelos.js`); o lote 7 usa Bézier/retas arredondadas (auxiliares no começo do arquivo, bom molde). Suavização dos lotes 1 a 6 concluída; lote 6 refeito em Bézier (`colorir-lote6.js`) (auxiliares em `build/pedidos/_curvas.js`, incluindo `ov`) (curvas livres: `suave`/`mancha` em `build/desenho.js`). Detalhes em `PLANO.md` (Fase 6)

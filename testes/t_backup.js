@@ -28,5 +28,12 @@ ok(!B.ler(JSON.stringify({ app: 'ler-e-brincar', versao: 1, estado: { estrelas: 
 const semTent = B.ler(JSON.stringify({ app: 'ler-e-brincar', versao: 1, estado: { estrelas: 1 } }));
 ok(semTent.ok && semTent.tentativas.length === 0, 'cópia sem respostas é aceita');
 
+const L = B.lembrete;
+ok(L('', '2026-11-24T10:00:00Z').precisa && /Ainda não/.test(L('', '2026-11-24T10:00:00Z').texto), 'nunca fez cópia: lembra');
+ok(L('2026-11-24T08:00:00Z', '2026-11-24T10:00:00Z').texto === 'Última cópia hoje.' && !L('2026-11-24T08:00:00Z', '2026-11-24T10:00:00Z').precisa, 'cópia de hoje');
+ok(L('2026-11-23T08:00:00Z', '2026-11-24T10:00:00Z').texto === 'Última cópia há 1 dia.', 'há 1 dia');
+ok(!L('2026-11-19T08:00:00Z', '2026-11-24T10:00:00Z').precisa && /há 5 dias\.$/.test(L('2026-11-19T08:00:00Z', '2026-11-24T10:00:00Z').texto), 'há 5 dias: só informa');
+ok(L('2026-11-15T08:00:00Z', '2026-11-24T10:00:00Z').precisa && /Fazer agora\?/.test(L('2026-11-15T08:00:00Z', '2026-11-24T10:00:00Z').texto), 'há 9 dias: pede cópia');
+
 console.log(falhas ? `t_backup: ${falhas} falha(s)` : 't_backup: OK');
 process.exit(falhas ? 1 : 0);

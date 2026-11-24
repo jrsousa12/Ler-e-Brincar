@@ -5,6 +5,7 @@ LB.moldes.backup = `
       <div class="card sem-clique">
         <div class="card-titulo">💾 Cópia de segurança</div>
         <div class="card-meta" style="margin-bottom:10px">Guarda estrelas, selos, missões e respostas num arquivo. Serve para trocar de aparelho ou não perder nada.</div>
+        <p class="card-meta aviso-copia" :class="{ precisa: lembreteCopia.precisa }" style="margin-bottom:10px">{{ lembreteCopia.precisa ? '⏰ ' : '' }}{{ lembreteCopia.texto }}</p>
         <div class="linha-botoes">
           <button class="btn-secundario" @click="baixarCopia">⬇️ Baixar cópia</button>
           <label class="btn-secundario botao-arquivo">⬆️ Trazer cópia

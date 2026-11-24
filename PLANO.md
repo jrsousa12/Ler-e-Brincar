@@ -12,7 +12,6 @@ Regra: ao concluir um item, movê-lo para `HISTORICO.md` (com a data) e tirá-lo
 ### Fase 9 — Melhorias levantadas na revisão de 24/11 (uma conversa cada; `/clear` entre elas)
 Revisão: 24 conferências OK, app offline OK, nenhum arquivo acima de 200 linhas. Foco: proteger o progresso e afinar o conteúdo.
 - **Prioridade 1 — não perder o progresso (Sonnet)**
-  - 9.2 Lembrete de cópia de segurança na Área do responsável ("Última cópia há X dias. Fazer agora?"); guardar a data da última cópia (`js/backup.js`, `js/telas/backup.js`)
   - 9.3 Aviso amigável quando o app der erro (em vez de tela parada), com botão "Recomeçar"
 - **Prioridade 2 — conteúdo que se acerta sem ler (Sonnet, pelos motores)**
   - 9.4 Histórias: 61 perguntas com a certa bem mais longa que as erradas (`node build/conferir.js --tipo certa_mais_longa`); estender o motor `build/ajustar-lp.js` (ou irmão) às histórias e corrigir em lote

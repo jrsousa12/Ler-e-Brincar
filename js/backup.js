@@ -29,7 +29,17 @@
     return { ok: true, estado, tentativas, data: d.data || '' };
   }
 
+  // Frase do lembrete na Área do responsável. `ultima` = data ISO da última cópia ('' = nunca).
+  // Devolve { texto, precisa }: precisa = true quando nunca fez ou já faz 7 dias ou mais.
+  function lembrete(ultima, agora) {
+    const t = ultima ? Date.parse(ultima) : NaN;
+    if (isNaN(t)) return { texto: 'Ainda não existe cópia neste aparelho. Fazer agora?', precisa: true };
+    const dias = Math.max(0, Math.floor((Date.parse(agora || new Date().toISOString()) - t) / 86400000));
+    const quando = dias === 0 ? 'hoje' : dias === 1 ? 'há 1 dia' : 'há ' + dias + ' dias';
+    return { texto: 'Última cópia ' + quando + '.' + (dias >= 7 ? ' Fazer agora?' : ''), precisa: dias >= 7 };
+  }
+
   const nomeArquivo = (agora) => 'ler-e-brincar-copia-' + (agora || new Date().toISOString()).slice(0, 10) + '.json';
 
-  LB.backup = { gerar, ler, nomeArquivo, CAMPOS };
+  LB.backup = { gerar, ler, lembrete, nomeArquivo, CAMPOS };
 })();

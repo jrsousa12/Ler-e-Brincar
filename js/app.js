@@ -10,7 +10,7 @@
   const { createApp, ref, watch, onMounted } = Vue;
 
   LB.CONTEUDO = { stories: LB.historias, activities: [...LB.lp, ...LB.mat], colorir: LB.colorir };
-  const AJUSTES_PADRAO = { dislexia: false, tamanho: 'medio', vozAuto: true, velocidade: 0.9, nomeVoz: '', som: true, vibrar: true, reduzirMovimento: false, tema: 'azul' };
+  const AJUSTES_PADRAO = { dislexia: false, tamanho: 'medio', vozAuto: true, velocidade: 0.9, nomeVoz: '', som: true, vibrar: true, reduzirMovimento: false, tema: 'azul', ultimaCopia: '' };
 
   // Junta os moldes das telas (js/moldes/) num só HTML.
   const m = LB.moldes;

@@ -1,8 +1,11 @@
 // Tela "Cópia de segurança" (na Área do responsável): baixar e importar o progresso.
 LB.usarBackup = function (ctx) {
   'use strict';
-  const { ref } = Vue;
+  const { ref, computed } = Vue;
   const avisoCopia = ref('');
+
+  // Lembrete: "Última cópia há X dias" (a data fica nos ajustes, `ultimaCopia`).
+  const lembreteCopia = computed(() => LB.backup.lembrete(ctx.ajustes.value.ultimaCopia));
 
   async function baixarCopia() {
     const agora = new Date().toISOString();
@@ -15,6 +18,7 @@ LB.usarBackup = function (ctx) {
     a.click();
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
+    ctx.ajustes.value = { ...ctx.ajustes.value, ultimaCopia: agora };
     avisoCopia.value = '✓ Cópia baixada. Guarde o arquivo num lugar seguro.';
   }
 
@@ -41,5 +45,5 @@ LB.usarBackup = function (ctx) {
     if (arq) await importarTexto(await arq.text());
   }
 
-  return { avisoCopia, baixarCopia, importarCopia, importarTexto };
+  return { avisoCopia, lembreteCopia, baixarCopia, importarCopia, importarTexto };
 };
