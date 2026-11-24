@@ -421,6 +421,9 @@
     "build/ajustar-regras.js": [
       "t_ajustar"
     ],
+    "build/ajustar-historia.js": [
+      "t_ajustar"
+    ],
     "build/importar-lp.js": [
       "t_ajustar"
     ],

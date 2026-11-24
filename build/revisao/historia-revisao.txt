@@ -1,0 +1,63 @@
+historia-01#2 | *Na cabeça do espantalho | Embaixo da cama do quarto {trecho} | Dentro da gaveta do armário {inventado}
+historia-05#1 | *Tomates, alfaces e cenouras | Rosas, margaridas e girassóis {troca} | Bananas, maçãs e laranjas {inventado}
+historia-05#3 | *A cuidar de plantas | A cozinhar bolos doces {inventado} | A desenhar com a vovó {troca}
+historia-06#3 | *Porque o peixe pequeno precisava crescer | Porque o peixe era grande e pesado demais {contrario} | Porque o peixe estava machucado e doente {inventado}
+historia-07#3 | *Ficaram alimentadas e quentinhas | Ficaram com frio e com fome {contrario} | Foram embora para outro formigueiro {inventado}
+historia-11#3 | *Chamou os amigos para dividir | Comeu a cenoura sozinho em casa {contrario} | Vendeu a cenoura na feira {inventado}
+historia-12#2 | *Bolo de milho, pipoca e quentão | Pizza, sorvete e refrigerante {inventado} | Bolo de cenoura, pão e suco {troca}
+historia-14#1 | *Vermelho, azul e amarelo | Verde, preto e laranja {troca} | Rosa, roxo e marrom {inventado}
+historia-14#2 | *Por fazendas, rios e montanhas | Só por cidades e pontes {contrario} | Por praias, ilhas e desertos {inventado}
+historia-15#2 | *Ajuda para sair do poço | Comida e água fresca {inventado} | Para virar um príncipe {trecho}
+historia-16#2 | *Um castelo de areia | Uma pipa de papel {inventado} | Um sanduíche e suco {trecho}
+historia-17#3 | *Feliz por ajudar | Triste e com medo {contrario} | Cansada do calor {inventado}
+historia-19#1 | *Um passeio de balão | Uma bicicleta nova {inventado} | Um passeio de barco {troca}
+historia-19#2 | *Casas pequenas e rios compridos | Prédios altos e mar azul {troca} | Estradas largas e muitas pontes {inventado}
+historia-20#2 | *Se perdeu no quintal | Ficou preso no galinheiro {contrario} | Foi levado para a cidade {inventado}
+historia-22#3 | *Feliz e cansado | Triste e chorando {contrario} | Zangado com o tio {inventado}
+historia-24#1 | *Uma feira do livro | Uma feira de frutas {troca} | Uma festa de dança {inventado}
+historia-26#2 | *Cenoura com cobertura de chocolate | Bolo de milho com cobertura de leite {troca} | Chocolate com cobertura de morango {inventado}
+historia-26#3 | *Brincavam de adivinhação | Misturavam os ingredientes {trecho} | Assistiam a um filme {inventado}
+historia-27#1 | *Porque tinha penas brancas | Porque tinha penas cinzas {contrario} | Porque era menor e mais lento {inventado}
+historia-27#2 | *Porque os irmãos não brincavam com ele | Porque se machucou na água do lago {inventado} | Porque os irmãos foram embora do lago {troca}
+historia-28#1 | *Uma estrela cadente | Um avião no céu {inventado} | Uma lanterna acesa {troca}
+historia-28#2 | *Que sua família ficasse sempre unida | Que ganhasse um brinquedo novo {inventado} | Que seus primos nunca mais viessem {contrario}
+historia-29#2 | *Regava e olhava | Arrancava a planta {contrario} | Pintava o vaso {inventado}
+historia-31#2 | *Num buraco pequeno | No rio do jardim {troca} | Na casa da menina {inventado}
+historia-31#3 | *Precisava de ajuda para pegar a bola | Queria dormir perto da menina {inventado} | Estava com medo do buraco fundo {troca}
+historia-36#3 | *Cuidado e carinho | Raiva do passarinho {contrario} | Medo da mata escura {inventado}
+historia-37#2 | *Fez um amigo novo | Voltou para casa {inventado} | Chorou no portão {contrario}
+historia-39#3 | *Porque ficou calmo olhando a lua | Porque a mãe cantou uma canção {inventado} | Porque o dia já tinha amanhecido {contrario}
+historia-40#3 | *Triste e perdida | Feliz e brincando {contrario} | Com muito sono {inventado}
+historia-41#2 | *Uma lista do que estava acabando | Um desenho das frutas da banca {inventado} | A conta de duas dúzias de bananas {trecho}
+historia-41#3 | *Porque ele entregou o troco certo | Porque ele vendeu todas as mangas {inventado} | Porque ele se atrasou para a feira {contrario}
+historia-42#3 | *Porque ajudou a evitar desperdício | Porque ganhou um pacote de pães {inventado} | Porque o pai comprou um bolo novo {troca}
+historia-43#1 | *Porque recebiam pouca luz na cozinha | Porque recebiam água demais na terra {inventado} | Porque ficaram cobertas de poeira {troca}
+historia-43#2 | *Na varanda, durante a manhã | No quarto, durante a noite {contrario} | Perto da janela da cozinha {trecho}
+historia-43#3 | *Recuperou a cor verde-escura e o perfume | As folhas ficaram amarelas e secas {contrario} | Ganhou muitas flores e frutos novos {inventado}
+historia-44#1 | *Olhar os números e planejar com calma | Jogar mais rápido e sem pensar {contrario} | Pedir ao avô para escolher as peças {inventado}
+historia-44#3 | *Riu com o avô e combinou outra partida | Ficou bravo e foi embora da varanda {contrario} | Pediu para o avô jogar sozinho {inventado}
+historia-45#3 | *Para saber se o pneu estava firme | Para ver se a bomba funcionava {inventado} | Para deixar o pneu bem murcho {contrario}
+historia-47#1 | *Perto de um canteiro, com uma senhora | Em cima do banco, onde ele deixou {contrario} | Dentro da mochila do irmão mais novo {inventado}
+historia-47#2 | *Ao arrumar a mochila em casa | Na escola, durante o recreio {contrario} | Na praça, ao conversar com colegas {trecho}
+historia-48#1 | *Fez uma roda e brincou com charadas | Jogou bola no meio do pátio quente {contrario} | Leu livros de histórias sentados na roda {inventado}
+historia-49#1 | *Fazia barulho toda vez que abria | Não abria de jeito nenhum {contrario} | Estava caído no chão do quintal {inventado}
+historia-49#3 | *Porque Cauã trouxe a chave de fenda | Porque Cauã pintou o portão de azul {inventado} | Porque Cauã chegou depois do conserto {contrario}
+historia-50#3 | *Os visitantes pararam para ler e elogiaram | Os visitantes passaram sem olhar nada {contrario} | A turma ganhou um prêmio da escola {inventado}
+historia-51#1 | *Abriu as janelas e leu com a irmã | Ligou o ventilador e a televisão {contrario} | Saiu para brincar na rua com amigos {inventado}
+historia-51#2 | *Um galho caiu sobre a fiação | A conta de luz não foi paga {inventado} | Um raio caiu perto da casa {troca}
+historia-52#2 | *Duas semanas | Um dia inteiro {contrario} | Dois meses {exagero}
+historia-52#3 | *Porque comprou o gibi e conferiu o troco | Porque ganhou o gibi de presente {contrario} | Porque o atendente deu desconto {inventado}
+historia-53#1 | *Porque podia rasgar o papel da pipa | Porque a pipa era muito pesada {inventado} | Porque a linha era curta demais {troca}
+historia-53#2 | *Em um galho baixo de uma árvore | No telhado da casa do vizinho {troca} | Nos fios de luz da praça {inventado}
+historia-53#3 | *Uma vara comprida e calma | Um puxão forte na linha {contrario} | Uma escada bem alta {inventado}
+historia-54#3 | *Ficou fácil achar qualquer livro | A estante ficou mais bagunçada {contrario} | Lorena comprou livros novos {inventado}
+historia-55#1 | *Como a terra úmida ajuda as raízes | Como escolher as sementes de feijão {inventado} | Como a terra seca ajuda as raízes {contrario}
+historia-55#3 | *Cuidar melhor do jardim da escola | Fechar a horta e esquecer o jardim {contrario} | Plantar uma horta na casa da professora {inventado}
+historia-56#2 | *Lavou bem as frutas na pia | Colocou açúcar na jarra {contrario} | Coou o suco para tirar bagaços {trecho}
+historia-56#3 | *Porque fazia calor e queria dividir | Porque estava com a garganta doendo {inventado} | Porque ia vender o suco na rua {troca}
+historia-57#1 | *Respirar fundo e falar mais devagar | Gritar bem alto sem ouvir ninguém {contrario} | Trocar todas as falas da peça {inventado}
+historia-57#2 | *Erravam falas e falavam rápido | Ninguém decorou o texto da peça {exagero} | Faltavam roupas para o teatro {inventado}
+historia-58#1 | *Separar o material para reciclar | Guardar brinquedos para dar de presente {inventado} | Juntar todo o lixo da escola {contrario}
+historia-58#2 | *Contavam e separavam as tampinhas | Jogavam as tampinhas no lixo {contrario} | Pintavam as garrafas de azul {inventado}
+historia-58#3 | *Porque o trabalho em equipe deu resultado | Porque a escola ganhou um prêmio {inventado} | Porque a caixa ficou vazia e limpa {contrario}
+historia-60#3 | *Que tarefas ficam seguras com atenção | Que lâmpadas nunca precisam de troca {exagero} | Que o corredor ficou mais escuro {contrario}

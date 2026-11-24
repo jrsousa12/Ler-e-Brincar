@@ -67,5 +67,18 @@ fs.writeFileSync(folha, id + ' | *Lavou as laranjas e coou o suco. | Não. {cont
 ok(node('build/ajustar-lp.js', ['--aplicar', folha, '--gravar']).includes('nada gravado'), 'com recusa, nada é gravado');
 cp.apagar();
 
+// 5. Histórias (build/ajustar-historia.js): pergunta com certa comprida entra na folha, é reescrita e gravada
+const ch = copia('build/gerar-lp.js');
+const envH = { ...process.env, CONTEUDO_RAIZ: ch.pasta, REVISAO_RAIZ: ch.pasta };
+const nodeH = (arq, args) => { try { return execFileSync('node', [path.join(__dirname, '..', arq), ...args], { env: envH }).toString(); } catch (e) { return e.stdout.toString(); } };
+nodeH('build/item.js', ['historia-01', 'perguntas.0.opcoes:=["Azul","Um chapéu vermelho de gato","Verde"]', 'perguntas.0.correta:=1']);
+const folhaH = path.join(ch.pasta, 'historia-revisao.txt');
+ok(nodeH('build/ajustar-historia.js', ['historia-01']).includes('1 pergunta') && fs.readFileSync(folhaH, 'utf8').includes('historia-01#1 |'), 'histórias: acha a certa comprida e monta a folha');
+fs.writeFileSync(folhaH, 'historia-01#1 | *Vermelho vivo | Azul bem claro {troca} | Verde escuro {inventado}\n');
+ok(nodeH('build/ajustar-historia.js', ['--aplicar', folhaH, '--gravar']).includes('gravado'), 'histórias: aplica e grava');
+ok(nodeH('build/ajustar-historia.js', ['historia-01']).includes('Nenhuma') && /historia-01#1/.test(ch.ler('registro.jsonl')), 'histórias: a pergunta sai da lista e fica no registro');
+ok(ch.validar().cod === 0, 'histórias: validador aceita o conteúdo ajustado');
+ch.apagar();
+
 console.log(falhas ? 't_ajustar: ' + falhas + ' FALHA(S)' : 't_ajustar: OK');
 process.exit(falhas ? 1 : 0);
