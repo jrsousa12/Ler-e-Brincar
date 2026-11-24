@@ -1,0 +1,30 @@
+/* Modo escuro do aparelho: ajustes que as variáveis de componentes.css não alcançam.
+   Fundos suaves das áreas ficam escuros; brancos fixos viram cor de cartão;
+   textos que usavam a cor "-3d" (escura) passam para um tom claro da mesma área. */
+@media (prefers-color-scheme: dark){
+  :root{
+    --cor-ler-suave:#1B3456; --cor-brincar-suave:#3D2716;
+    --cor-colorir-suave:#3D1D30; --cor-selos-suave:#3A2E10;
+  }
+  /* Início: balão do mascote e cartão da missão */
+  .balao-mascote{background:var(--cor-card)}
+  .card-missao{
+    background:linear-gradient(135deg,#2B2410 0%,#3A2E10 100%);color:var(--cor-texto);
+    border-color:#A16207;box-shadow:0 6px 0 #713F12,0 18px 30px -18px rgba(0,0,0,.8);
+  }
+  .card-missao .card-titulo{color:var(--cor-primaria-2)}
+  .mini-trilha span{background:var(--cor-card)}
+  /* Etiqueta "Palavra 1 de 5", "0 de 8 passos" etc. */
+  .badge-fase{color:#FDE68A}
+  /* Textos das brincadeiras em fundo suave */
+  .slot-bloco,.carta-costas{color:#93C5FD}
+  .bloco-silaba,.aba-palavra{color:#FDBA74}
+  .aba-palavra.ativa{color:#fff}
+  .btn-ouvir-palavra{color:var(--cor-primaria-2)}
+  /* Barra de baixo: item ativo legível */
+  .nav-inferior a:nth-child(2).ativo{color:#93C5FD}
+  .nav-inferior a:nth-child(3).ativo{color:#FDBA74}
+  .nav-inferior a:nth-child(4).ativo{color:#FCD34D}
+  /* Selos ainda bloqueados: apagados, mas visíveis */
+  .selo{opacity:.7}
+}

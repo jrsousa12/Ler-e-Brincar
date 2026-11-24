@@ -250,7 +250,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/biblioteca.js` | 75 | Lista e prévia da biblioteca de peças (build/pecas/). Gerado: nunca editar PECAS.md à mão. |
 | `build/bncc-regras.js` | 39 | Regras da BNCC: diz qual habilidade combina com cada item (ficha build/fichas/bncc.json). |
 | `build/bncc.js` | 88 | Motor da BNCC: confere se o código de cada item combina com a atividade e corrige. |
-| `build/capturas.js` | 93 | Motor de capturas (Fase 7, etapa 6): percorre todas as telas do app em celular e tablet, |
+| `build/capturas.js` | 96 | Motor de capturas (Fase 7, etapa 6): percorre todas as telas do app em celular e tablet, |
 | `build/carregar.js` | 17 | Carrega o conteúdo (conteudo/*.js) e a regra de resposta certa, para os motores de build/. |
 | `build/catalogo.js` | 85 | Catálogo (motor 5): gera CATALOGO.md com o que já existe (conteúdo e código), para achar sem abrir arquivos. |
 | `build/colorir-regras.js` | 35 | Regras do estilo dos desenhos de colorir (usadas por build/colorir.js). Só lê o texto do SVG; não abre navegador. |

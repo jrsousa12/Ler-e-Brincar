@@ -2,6 +2,7 @@
 // salva uma foto de cada e monta uma folha-resumo por tamanho, para revisar tudo de uma vez.
 // Uso: node build/capturas.js            (todos os tamanhos)
 //      node build/capturas.js tablet     (só os tamanhos cujo nome tem "tablet")
+//      node build/capturas.js escuro     (celular com o aparelho no modo escuro)
 // Saída: build/previas/capturas/<tamanho>/<tela>.png e build/previas/capturas-<tamanho>.png
 'use strict';
 const fs = require('fs');
@@ -12,6 +13,7 @@ const saida = path.join(raiz, 'build', 'previas', 'capturas');
 
 const TAMANHOS = {
   celular: { width: 390, height: 844 },
+  'celular-escuro': { width: 390, height: 844, escuro: true },
   'tablet-deitado': { width: 1280, height: 800 },
   'tablet-em-pe': { width: 800, height: 1280 },
 };
@@ -34,10 +36,11 @@ const TELAS = [
   ['14-responsavel', () => { LB.app.tela = 'responsavel'; }],
 ];
 
-async function fotografar(b, nome, viewport) {
+async function fotografar(b, nome, tam) {
+  const { escuro, ...viewport } = tam;
   const pasta = path.join(saida, nome);
   fs.mkdirSync(pasta, { recursive: true });
-  const p = await b.newPage({ viewport });
+  const p = await b.newPage({ viewport, colorScheme: escuro ? 'dark' : 'light' });
   const erros = [];
   p.on('pageerror', e => erros.push(e.message));
   await p.goto('file://' + path.join(raiz, 'index.html'));
