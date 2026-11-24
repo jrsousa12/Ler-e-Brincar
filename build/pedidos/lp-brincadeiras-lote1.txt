@@ -1,0 +1,7 @@
+# Brincadeiras do banco (dígrafos e completar frase), vindas do código colado pelo dono
+palavra | No sábado de manhã, Lucas acordou cedo para ajudar a avó na feira do bairro. | Qual palavra do texto tem o dígrafo nh e duas sílabas? | ma-nhã | tem=nh | erradas=fei-ra/a-ju-dar
+palavra | As crianças escolhiam mangas maduras e conversavam perto das bancas. | Qual palavra do texto tem o dígrafo lh? | es-co-lhi-am | tem=lh | erradas=man-gas/ban-cas
+palavra | Depois do almoço, começou a cair uma chuva fina sobre o quintal. | Qual palavra do texto começa com o dígrafo ch e tem duas sílabas? | chu-va | tem=ch | erradas=quin-tal/al-mo-ço
+palavra | O cachorro do vizinho correu pelo corredor até encontrar a bolinha. | Qual palavra do texto tem rr e três sílabas? | cachorro | tem=rr | erradas=vizinho/bolinha
+troca | [Onde] você guardou a chave de fenda que Seu Jorge pediu emprestada?
+troca | Depois de regar as plantas do quintal, Marina colocou [mais] água no regador.

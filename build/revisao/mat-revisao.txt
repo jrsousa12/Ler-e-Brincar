@@ -1,17 +1,52 @@
 # Folha de revisão (build/ajustar-mat.js). Cada linha já traz a sugestão de erradas; troque se quiser,
 # sem mudar a certa, e escreva o {tipo} onde estiver {?}. Depois: node build/ajustar-mat.js --aplicar build/revisao/mat-revisao.txt
 
-# mat-025 · Qual é a metade de 8? · opções agora: 3, 4, 16
-# problema: não achei a conta na explicação
-# erros que dá para calcular: um_a_mais=5, um_a_menos=3 · perto = até 3 da certa
-mat-025 | *4 | 3 {?}
+# mat-110 · A professora tem 2 caixas de lápis com 12 lápis em cada e mais 5 lápis soltos. Quantos lápis há ao todo? · opções agora: 29 lápis, 17 lápis, 24 lápis
+# problema: a explicação não diz a certa
+# erros que dá para calcular: (nenhum) · perto = até 3 da certa · também: trocou_ideia, contrario
+mat-110 | *29 lápis | 17 lápis {um_grupo_a_menos} | 24 lápis {trocou_ideia}
 
-# mat-064 · Qual é o antecessor de 15? · opções agora: 13, 14, 16
-# problema: não achei a conta na explicação
-# erros que dá para calcular: um_a_mais=15, um_a_menos=13, dez_a_mais=24, inverteu_algarismos=41 · perto = até 3 da certa
-mat-064 | *14 | 13 {?} | 24 {dez_a_mais}
+# mat-111 · Os alunos fizeram 6 saquinhos com 10 tampinhas em cada e sobraram 3 tampinhas soltas. Quantas tampinhas há ao todo? · opções agora: 63 tampinhas, 9 tampinhas, 36 tampinhas
+# problema: a explicação não diz a certa
+# erros que dá para calcular: (nenhum) · perto = até 3 da certa · também: trocou_ideia, contrario
+mat-111 | *63 tampinhas | 9 tampinhas {um_grupo_a_menos} | 36 tampinhas {trocou_ideia}
 
-# mat-065 · Qual é o sucessor de 29? · opções agora: 28, 30, 31
-# problema: não achei a conta na explicação
-# erros que dá para calcular: um_a_mais=31, um_a_menos=29, dez_a_mais=40, dez_a_menos=20 · perto = até 3 da certa
-mat-065 | *30 | 28 {?} | 31 {um_a_mais}
+# mat-113 · Ana leu 19 páginas, Beatriz leu 35 e Carlos leu 42. Qual é a ordem do menor para o maior? · opções agora: 19, 35 e 42, 35, 19 e 42, 42, 35 e 19
+# problema: a explicação não diz a certa
+# erros que dá para calcular: (nenhum) · perto = até 3 da certa · também: trocou_ideia, contrario
+mat-113 | *19, 35 e 42 | 35, 19 e 42 {trocou_ideia} | 42, 35 e 19 {contrario}
+
+# mat-114 · Pacote de sal (R$ 3,00), garrafa de óleo (R$ 8,00) e pacote de arroz (R$ 24,00). Qual é a ordem do mais barato para o mais caro? · opções agora: R$ 3,00, R$ 8,00 e R$ 24,00, R$ 8,00, R$ 3,00 e R$ 24,00, R$ 24,00, R$ 8,00 e R$ 3,00
+# problema: a explicação não diz a certa
+# erros que dá para calcular: (nenhum) · perto = até 3 da certa · também: trocou_ideia, contrario
+mat-114 | *R$ 3,00, R$ 8,00 e R$ 24,00 | R$ 8,00, R$ 3,00 e R$ 24,00 {trocou_ideia} | R$ 24,00, R$ 8,00 e R$ 3,00 {contrario}
+
+# mat-115 · Sofia fez 68 pontos, Tiago fez 95 e Mateus fez 81. Qual é a ordem do maior para o menor? · opções agora: 95, 81 e 68, 68, 81 e 95, 81, 95 e 68
+# problema: a explicação não diz a certa
+# erros que dá para calcular: (nenhum) · perto = até 3 da certa · também: trocou_ideia, contrario
+mat-115 | *95, 81 e 68 | 68, 81 e 95 {contrario} | 81, 95 e 68 {trocou_ideia}
+
+# mat-116 · Na gincana, o 5º A arrecadou 128 garrafas, o 5º B arrecadou 142 e o 5º C arrecadou 119. Qual turma arrecadou mais garrafas? · opções agora: 5º B (142 garrafas), 5º A (128 garrafas), 5º C (119 garrafas)
+# problema: a explicação não diz a certa
+# erros que dá para calcular: (nenhum) · perto = até 3 da certa · também: trocou_ideia, contrario
+mat-116 | *5º B (142 garrafas) | 5º A (128 garrafas) {trocou_ideia} | 5º C (119 garrafas) {contrario}
+
+# mat-117 · Pedro tinha 28 figurinhas. Ganhou 15 do primo e deu 9 repetidas para um colega. Com quantas figurinhas ele ficou? · opções agora: 34 figurinhas, 43 figurinhas, 22 figurinhas
+# problema: a explicação não diz a certa
+# erros que dá para calcular: (nenhum) · perto = até 3 da certa · também: trocou_ideia, contrario
+mat-117 | *34 figurinhas | 43 figurinhas {trocou_por_soma} | 22 figurinhas {trocou_por_subtracao}
+
+# mat-118 · A biblioteca tinha 50 livros na prateleira. Chegaram 24 livros novos e 12 foram emprestados. Quantos ficaram na prateleira? · opções agora: 62 livros, 74 livros, 38 livros
+# problema: a explicação não diz a certa
+# erros que dá para calcular: (nenhum) · perto = até 3 da certa · também: trocou_ideia, contrario
+mat-118 | *62 livros | 74 livros {trocou_por_soma} | 38 livros {trocou_por_subtracao}
+
+# mat-119 · Dona Lúcia tinha 36 ovos, comprou mais 24 e usou 18 nas encomendas. Quantos ovos sobraram? · opções agora: 42 ovos, 60 ovos, 30 ovos
+# problema: a explicação não diz a certa
+# erros que dá para calcular: (nenhum) · perto = até 3 da certa · também: trocou_ideia, contrario
+mat-119 | *42 ovos | 60 ovos {trocou_por_soma} | 30 ovos {trocou_por_subtracao}
+
+# mat-120 · Um ônibus: subiram 17 alunos na primeira parada e mais 14 na segunda. Na escola desceram 25 alunos. Quantos alunos ficaram no ônibus? · opções agora: 6 alunos, 31 alunos, 11 alunos
+# problema: a explicação não diz a certa
+# erros que dá para calcular: (nenhum) · perto = até 3 da certa · também: trocou_ideia, contrario
+mat-120 | *6 alunos | 31 alunos {trocou_por_soma} | 11 alunos {trocou_por_subtracao}
