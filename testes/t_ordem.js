@@ -48,15 +48,15 @@ const raiz = path.join(__dirname, '..');
   ok(await p.locator('.feedback-jogo.tentar-novamente').count() === 1 && await estrelas() === e0, 'erro pede nova tentativa, sem estrela');
   await clicar(await certa());
   ok(await cheias() === 1 && await estrelas() === e0, '1º fato posto, ainda sem estrela');
-  await p.click('text=Continuar');
+  await p.click('.btn-proximo:has-text("Continuar")');
   ok(await p.locator('.btn-frase-ordem').count() === 2, '2ª pergunta tem 2 opções');
   await clicar(await certa());
   ok(await cheias() === 3 && await estrelas() === e0 + 1, 'sequência completa: 3 fatos e 1 estrela');
   for (let i = 0; i < 4; i++) {
-    await p.click('text=Próximo'); await clicar(await certa());
-    await p.click('text=Continuar'); await clicar(await certa());
+    await p.click('.btn-proximo:has-text("Próximo")'); await clicar(await certa());
+    await p.click('.btn-proximo:has-text("Continuar")'); await clicar(await certa());
   }
-  await p.click('text=Concluir');
+  await p.click('.btn-proximo:has-text("Concluir")');
   ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos['ordem'] === true), 'concluir volta e marca feito');
   ok(await estrelas() === e0 + 5, 'rodada rende 5 estrelas: ' + (await estrelas() - e0));
 

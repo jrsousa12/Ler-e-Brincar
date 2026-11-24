@@ -150,8 +150,8 @@ const raiz = path.join(__dirname, '..');
   ok(await p.locator('.feedback-jogo.tentar-novamente').count() === 1 && await estrelas() === e0, 'erro pede nova tentativa, sem estrela');
   await clicar(await certa());
   ok(await p.locator('.feedback-jogo.correto').count() === 1 && await estrelas() === e0 + 1, 'acerto: 1 estrela');
-  for (let i = 0; i < 4; i++) { await p.click('text=Próximo'); await clicar(await certa()); }
-  await p.click('text=Concluir');
+  for (let i = 0; i < 4; i++) { await p.click('.btn-proximo:has-text("Próximo")'); await clicar(await certa()); }
+  await p.click('.btn-proximo:has-text("Concluir")');
   ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos['${b.id}'] === true), 'concluir volta e marca feito');
   ok(await estrelas() === e0 + 5, 'rodada rende 5 estrelas: ' + (await estrelas() - e0));
 

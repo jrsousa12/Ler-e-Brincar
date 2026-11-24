@@ -86,11 +86,11 @@ const raiz = path.join(__dirname, '..');
   ok(await noCaderno() === c0 + 1, 'errou antes de acertar: a questão entra no caderno');
 
   // 11 perguntas restantes, todas de primeira (último pacote termina com Concluir)
-  for (let i = 0; i < 11; i++) { await p.click('text=Próximo'); await clicar(await certa()); }
+  for (let i = 0; i < 11; i++) { await p.click('.btn-proximo:has-text("Próximo")'); await clicar(await certa()); }
   ok(await estrelas() === e0 + 3, 'um pacote completo = 1 estrela; rodada = 3 estrelas: ' + (await estrelas() - e0));
   ok(await noCaderno() === c0 + 1, 'acertos de primeira não põem questão no caderno');
   ok(await p.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), 'sem rolagem para o lado no celular');
-  await p.click('text=Concluir');
+  await p.click('.btn-proximo:has-text("Concluir")');
   ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos['pacote'] === true), 'concluir volta e marca feito');
 
   // Filtros da lista
