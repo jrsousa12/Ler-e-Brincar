@@ -32,8 +32,7 @@ Regras: cada motor pequeno (abaixo de 200 linhas); peças comuns em `pedido.js`,
 - Peças comuns dos quatro: `build/ajustar-comum.js`.
 
 ## Desenhos de colorir
-- Desenhos de colorir (Motor 7): montar com a biblioteca de peças `build/pecas/` (lista `build/pecas/PECAS.md`; receita em `build/pecas/CLAUDE.md`); `node build/colorir.js build/pedidos/<lote>.js` (confere + prévia em `build/previas/colorir.png`) e `--gravar`; peça nova: `node build/biblioteca.js`. Exemplo: `build/pedidos/colorir-modelos.js`. Teste: `node testes/t_colorir.js`
-  - Molde bom de desenho: `build/pedidos/colorir-lote7.js` (Bézier/retas arredondadas); auxiliares de curva em `build/pedidos/_curvas.js` (inclui `ov`); curvas livres `suave`/`mancha` em `build/desenho.js`
+- Desenhos de colorir (Motor 7): lote do Gemini em `build/pedidos/colorir-gemini-<n>.js` → `node build/colorir.js <lote>` (confere + prévia em `build/previas/colorir.png`) → `--gravar` o que o dono aprovar → `node build/aprender.js` (o motor aprende as peças de todos os lotes Gemini em `build/pecas/aprendidas.js` e atualiza `PECAS.md`; as peças antigas foram esquecidas em 24/11). Receita em `build/pecas/CLAUDE.md`. Teste: `node testes/t_colorir.js`
 
 ## Brincadeira nova
 - **Brincadeira nova**: `node build/nova-brincadeira.js <id> "<Nome>" <emoji> <mat|lp>` (prévia) e `--gravar`: cria regras/tela/molde/CSS/teste e liga tudo (index, `sw.js`+VERSAO, `app.js`, botão, `etapas.json`); depois trocar o EXEMPLO em `js/<id>regras.js`. Moldes em `build/modelos/brincadeira.js`. A tela usa o kit de rodada `js/rodada.js` (vai e vem da rodada, estrela, Próximo/Concluir). Testes: `node testes/t_nova_brincadeira.js`, `node testes/t_rodada.js`

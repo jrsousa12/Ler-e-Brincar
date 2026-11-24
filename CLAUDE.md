@@ -13,7 +13,7 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
   - **Antes de cada commit**: `node build/tudo.js` (`--mudados` só o ligado ao que mudou; `--rapido` sem navegador).
   - Conteúdo: `node build/validar.js` sempre que mexer em `conteudo/`; avisos `node build/conferir.js`; ver ou alterar um item `node build/item.js lp-037` (nunca ler nem dar `grep` em `conteudo/`); catálogo `node build/catalogo.js` (consultar antes de criar; nunca editar à mão).
   - Criar conteúdo (nunca à mão): pedir a outra IA `build/pedir.js` → importar `build/importar-lp.js`/`importar-mat.js` → gerar `build/gerar-<mat|lp|historia|ordem|silabas>.js` → ajustar `build/ajustar-<lp|mat|historia|enunciado>.js`.
-  - Outros motores: desenhos `build/colorir.js`; BNCC `build/bncc.js`; brincadeira nova `build/nova-brincadeira.js`; varredura do código `build/varrer.js`.
+  - Outros motores: desenhos `build/colorir.js` + peças aprendidas `build/aprender.js`; BNCC `build/bncc.js`; brincadeira nova `build/nova-brincadeira.js`; varredura do código `build/varrer.js`.
   - Offline: `node testes/t_offline.js` (lista do `sw.js`, manifesto, app sem internet). Ao mudar arquivo do app, aumentar `VERSAO` em `sw.js` e incluir o arquivo novo na lista. Ícones: `node build/icones.js`
   - Arquivo único: `node build/arquivo-unico.js` junta o app num só `.html` (CSS, JS, fontes embutidos; sem service worker) → `build/previas/ler-e-brincar.html`
   - Robô do GitHub (`.github/workflows/verificar.yml`, autorizado 19/11): a cada envio, roda o validador e baixa Vue/Dexie e as fontes para `vendor/` se faltarem (faz commit sozinho: dar `git pull` depois).
@@ -21,10 +21,8 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
 - **Convenções**: nomes e comentários em português. Esquemas do conteúdo e regras pedagógicas: `original-deepseek/script-gerador-conteudo.md`. `original-deepseek/` é só consulta, não editar.
 - **Pendências** (só o que falta; feito vai para `HISTORICO.md`): Contínua: Fase 5 (uso real, anotar em `NOTAS.md`).
   - **Redesenho dos 35 desenhos de colorir pelo Gemini** (24/11): o dono mandou o arquivo das pinturas + o texto-pedido ao Gemini (cria referência no Nano Banana e devolve SVG, em 7 lotes de 5). Falta:
-    1. Receber cada lote do dono (`module.exports = [{ id, svg }]`) e salvar em `build/pedidos/colorir-gemini-<n>.js`.
-    2. Rodar `node build/colorir.js build/pedidos/colorir-gemini-<n>.js` (confere regras + prévia) e mostrar a prévia ao dono; só gravar (`--gravar`) o que ele aprovar.
-    3. Extrair as partes que se repetem (orelhas, olhos, rodas...) para a biblioteca `build/pecas/` (`node build/biblioteca.js`), para o motor aprender os traços novos.
-    4. Depois de gravar: `node build/validar.js`, `node build/tudo.js`, subir `VERSAO` em `sw.js`; mover o item para `HISTORICO.md`.
+    - Feito: lote 1 (01–05) gravado; peças antigas esquecidas; o motor `build/aprender.js` aprende só dos lotes Gemini. Faltam os lotes 2 a 7.
+    - Cada lote: salvar em `build/pedidos/colorir-gemini-<n>.js` → `node build/colorir.js <lote>` (prévia ao dono) → `--gravar` o aprovado → `node build/aprender.js` → `node build/tudo.js` e subir `VERSAO` em `sw.js`. No fim, mover o item para `HISTORICO.md`.
 - **Ao concluir um item**: movê-lo para `HISTORICO.md` (com a data) e tirá-lo do `PLANO.md` e desta lista, no mesmo commit.
 - **Referências visuais**: mascote em `js/mascote.js` (`mascote('normal'|'feliz'|'festa')`; trocar o bicho = refazer só esse arquivo); celebrações em `js/telas/selonovo.js` (teste `t_celebracoes`); tablet em `css/tablet.css`; capturas `node build/capturas.js [tablet]` → `build/previas/capturas-*.png`; regras de CSS em `css/CLAUDE.md`.
 - **Voz**: `js/voz.js` (voz natural, frase por frase; escolha da voz nos Ajustes; teste `testes/t_voz.js`).

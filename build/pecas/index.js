@@ -1,9 +1,9 @@
 // Biblioteca de peças dos desenhos de colorir. Usar nos pedidos:
 //   const p = require('../pecas');  p.orelhaGato({ x: 184, espelho: true })  (lista: build/pecas/PECAS.md)
-// Peça nova: escrever na ficha do tema (ou criar uma e pôr em TEMAS), com nome, descricao, ancora e desenho; depois node build/biblioteca.js
+// As peças são aprendidas dos lotes aprovados do Gemini: node build/aprender.js (gera aprendidas.js; nunca escrever à mão)
 'use strict';
 const peca = require('./peca.js');
-const TEMAS = ['animais', 'natureza', 'ceu', 'construcoes', 'formas', 'transportes'];
+const TEMAS = ['aprendidas']; // gerada por node build/aprender.js (lotes do Gemini)
 const pecas = {};
 for (const t of TEMAS) {
   for (const def of require('./' + t + '.js')) {

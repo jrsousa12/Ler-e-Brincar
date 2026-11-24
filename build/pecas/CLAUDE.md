@@ -1,22 +1,17 @@
 # Biblioteca de peças dos desenhos de colorir
 
-O motor aprende com cada desenho aprovado: as partes viram peças aqui e os próximos desenhos são montados com elas.
+O motor aprende só com os desenhos novos do Gemini (decisão do dono, 24/11): as peças antigas foram apagadas.
+Cada `<g data-peca="nome">` dos lotes `build/pedidos/colorir-gemini-<n>.js` vira uma peça em `aprendidas.js`.
 
-## Receita de um desenho novo (seguir sempre nesta ordem)
-1. Ler `PECAS.md` (lista gerada) e, se precisar ver, a foto `build/previas/pecas.png`.
-2. Montar o pedido em `build/pedidos/<lote>.js` com as peças (exemplo: `build/pedidos/colorir-modelos.js`).
-   - `p.nome()` fica onde foi aprovada; `p.nome({ x, y, e, espelho })` move, aumenta/diminui, vira; `p.par(p.nome)` faz o par simétrico.
-3. Só o que **não** existe na biblioteca é desenhado à mão com `f()`/`solto()` do kit `build/desenho.js`.
-4. `node build/colorir.js build/pedidos/<lote>.js` → olhar a prévia; mostrar ao dono e ajustar até ele aprovar.
-5. Aprovado: cada parte nova que sirva a outros desenhos vira peça na ficha do tema (aviso "forma(s) fora da biblioteca").
-   Refazer o pedido usando a peça nova, conferir que ficou igual e rodar `node build/biblioteca.js` (atualiza `PECAS.md`).
-6. `node build/colorir.js ... --gravar` e `node build/tudo.js`.
+## Receita de um lote novo (seguir sempre nesta ordem)
+1. Salvar o lote do dono em `build/pedidos/colorir-gemini-<n>.js` (`module.exports = [{ id, svg }]`).
+2. `node build/colorir.js build/pedidos/colorir-gemini-<n>.js` → mostrar a prévia ao dono.
+3. Aprovado: `node build/colorir.js ... --gravar`.
+4. `node build/aprender.js` (regera `aprendidas.js`, `PECAS.md` e a foto `build/previas/pecas.png`).
+5. `node build/tudo.js`; subir `VERSAO` em `sw.js`.
 
-## Regras de uma peça
-- Ficha por tema: `animais.js`, `natureza.js`, `ceu.js`, `construcoes.js`, `formas.js`, `transportes.js` (tema novo: criar a ficha e pôr em `TEMAS` no `index.js`).
-- Campos: `nome` (camelCase, único), `descricao` (uma frase: o que é e qual lado), `ancora` (ponto de encaixe), `desenho(o)`.
-- Desenhar nas coordenadas do desenho aprovado; peça pequena e solta (maçã, flor) em volta de 0,0.
-- Peça de um lado só: desenhar um lado e dizer na descrição; o outro sai com `espelho`.
-- Opções de tamanho (`o.l`, `o.meia`...) só quando o mesmo formato aparece em tamanhos diferentes.
-- Modelo inteiro aprovado também pode virar peça (ex.: `arvoreMacas`), para usar de fundo.
-- Nunca mudar o formato de uma peça já usada sem rever os desenhos que a usam (`node build/item.js --busca nomeDaPeca`).
+## Regras
+- `aprendidas.js` e `PECAS.md` são gerados: nunca editar à mão.
+- Mesmo nome com outro formato em outro desenho ganha número (`bochecha2`); a cópia repetida no mesmo desenho (2ª orelha) é o outro lado.
+- Usar num desenho: `p.nome()` fica onde foi aprovada; `p.nome({ x, y, e, espelho })` move, aumenta/diminui, vira; `p.par(p.nome)` faz o par simétrico.
+- Desenho que não vier do Gemini: o que faltar, desenhar com `f()`/`solto()` do kit `build/desenho.js`.

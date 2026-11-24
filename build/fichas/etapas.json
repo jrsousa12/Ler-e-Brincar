@@ -264,6 +264,14 @@
       "pecas",
       "t_colorir"
     ],
+    "build/aprender.js": [
+      "pecas",
+      "t_colorir"
+    ],
+    "build/pedidos/colorir-gemini-": [
+      "pecas",
+      "t_colorir"
+    ],
     "js/telas/silabas.js": [
       "t_silabas"
     ],
