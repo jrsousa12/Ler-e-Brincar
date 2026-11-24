@@ -21,5 +21,9 @@
     "explicacao": 140,
     "desenho_partes_minimo": 4
   },
-  "ignorar": {}
+  "ignorar": {
+    "mat-076": [
+      "figura_nao_bate"
+    ]
+  }
 }

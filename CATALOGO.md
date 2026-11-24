@@ -126,7 +126,7 @@
 - historia-26 🎂 A vovó e o bolo — nível 1, 3 perguntas, EF02LP26 EF15LP03
 - historia-27 🦢 O patinho diferente — nível 2, 3 perguntas, EF02LP26 EF35LP04
 - historia-28 🌠 A estrela cadente — nível 2, 3 perguntas, EF02LP26 EF35LP04
-- historia-29 🌱 A sementinha — nível 1, 3 perguntas, EF02LP26 EF15LP03
+- historia-29 🍀 A sementinha — nível 1, 3 perguntas, EF02LP26 EF15LP03
 - historia-30 👻 O amigo invisível — nível 2, 3 perguntas, EF02LP26 EF35LP04
 - historia-31 🐶 O cachorro Pipoca — nível 1, 3 perguntas, EF02LP26 EF15LP03
 - historia-32 🦁 O leão e o ratinho — nível 2, 3 perguntas, EF02LP26 EF35LP04
@@ -142,15 +142,15 @@
 - historia-42 🥖 O pão quentinho da manhã — nível 3, 3 perguntas, EF02LP26 EF35LP04
 - historia-43 🌿 A planta que precisava de sol — nível 3, 3 perguntas, EF02LP26 EF35LP04
 - historia-44 🎲 O jogo de dominó na varanda — nível 3, 3 perguntas, EF02LP26 EF35LP04
-- historia-45 🚲 A bicicleta com o pneu murcho — nível 3, 3 perguntas, EF02LP26 EF35LP04
-- historia-46 🎂 A receita de bolo da família — nível 3, 3 perguntas, EF02LP26 EF35LP04
+- historia-45 🛴 A bicicleta com o pneu murcho — nível 3, 3 perguntas, EF02LP26 EF35LP04
+- historia-46 🧁 A receita de bolo da família — nível 3, 3 perguntas, EF02LP26 EF35LP04
 - historia-47 📓 O caderno perdido no caminho — nível 3, 3 perguntas, EF02LP26 EF35LP04
 - historia-48 🌳 A sombra das árvores no recreio — nível 3, 3 perguntas, EF02LP26 EF35LP04
 - historia-49 🔧 A caixa de ferramentas do vizinho — nível 3, 3 perguntas, EF02LP26 EF35LP04
 - historia-50 🔬 O cartaz da feira de ciências — nível 3, 3 perguntas, EF02LP26 EF35LP04
 - historia-51 🕯️ A tarde sem energia elétrica — nível 3, 3 perguntas, EF02LP26 EF35LP04
 - historia-52 💵 O troco na banca de revistas e jornais — nível 3, 3 perguntas, EF02LP26 EF35LP04
-- historia-53 🪁 A pipa presa no galho baixo — nível 3, 3 perguntas, EF02LP26 EF35LP04
+- historia-53 🪄 A pipa presa no galho baixo — nível 3, 3 perguntas, EF02LP26 EF35LP04
 - historia-54 📚 A organização dos livros da estante — nível 3, 3 perguntas, EF02LP26 EF35LP04
 - historia-55 🥬 A visita à horta comunitária — nível 3, 3 perguntas, EF02LP26 EF35LP04
 - historia-56 🍊 A receita do suco natural — nível 3, 3 perguntas, EF02LP26 EF35LP04
@@ -162,7 +162,7 @@
 
 ## Colorir
 
-colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 ❤️ Coração · colorir-04 🏠 Casa · colorir-05 ☀️ Sol · colorir-06 🌸 Flor · colorir-07 🌳 Árvore · colorir-08 🚗 Carro · colorir-09 ⚽ Bola · colorir-10 🦋 Borboleta · colorir-11 🐠 Peixe · colorir-12 ⛅ Nuvem com sol · colorir-13 ⛵ Barco · colorir-14 ✨ Estrelas · colorir-15 🚀 Foguete · colorir-16 🐞 Joaninha · colorir-17 🐸 Sapo · colorir-18 🌤️ Sol e nuvem · colorir-19 🏰 Castelo · colorir-20 🌈 Arco-íris · colorir-21 🌙 Lua e estrela · colorir-22 🍦 Sorvete · colorir-23 🎈 Balão de ar quente · colorir-24 🎂 Bolo de aniversário · colorir-25 🌟 Estrela-do-mar · colorir-26 🤖 Robô · colorir-27 🦖 Dinossauro · colorir-28 🌙 Lua com estrelas · colorir-29 🐧 Pinguim · colorir-30 🐝 Abelha · colorir-31 🐢 Tartaruga · colorir-32 🌻 Girassol · colorir-33 🍎 Maçã · colorir-34 🦆 Pato · colorir-35 🚂 Trem
+colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 ❤️ Coração · colorir-04 🏠 Casa · colorir-05 ☀️ Sol · colorir-06 🌸 Flor · colorir-07 🌳 Árvore · colorir-08 🚗 Carro · colorir-09 ⚽ Bola · colorir-10 🦋 Borboleta · colorir-11 🐠 Peixe · colorir-12 ⛅ Nuvem com sol · colorir-13 ⛵ Barco · colorir-14 ✨ Estrelas · colorir-15 🚀 Foguete · colorir-16 🐞 Joaninha · colorir-17 🐸 Sapo · colorir-18 🌤️ Sol e nuvem · colorir-19 🏰 Castelo · colorir-20 🌈 Arco-íris · colorir-21 🌙 Lua e estrela · colorir-22 🍦 Sorvete · colorir-23 🎈 Balão de ar quente · colorir-24 🎂 Bolo de aniversário · colorir-25 🌟 Estrela-do-mar · colorir-26 🤖 Robô · colorir-27 🦖 Dinossauro · colorir-28 🌠 Lua com estrelas · colorir-29 🐧 Pinguim · colorir-30 🐝 Abelha · colorir-31 🐢 Tartaruga · colorir-32 🌻 Girassol · colorir-33 🍎 Maçã · colorir-34 🦆 Pato · colorir-35 🚂 Trem
 
 ## Monte a Palavra
 
