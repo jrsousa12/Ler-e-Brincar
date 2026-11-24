@@ -38,7 +38,8 @@ function confereQuestao(id, q, eMat, nivel) {
     if (+x < 0) avisa(id, 'opcao_negativa', String(x));
     else if (Math.abs(+x - r) > Math.max(L.distrator_distancia_minima, r)) avisa(id, 'distrator_facil', `${x} (certa ${r})`);
   });
-  if (!new RegExp('(^|\\D)' + certa.replace('.', '\\.') + '(\\D|$)').test(q.explicacao || ''))
+  const escapada = certa.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (!new RegExp('(^|\\D)' + escapada + '(\\D|$)').test(q.explicacao || ''))
     avisa(id, 'explicacao_sem_resposta', `certa ${certa}`);
 }
 

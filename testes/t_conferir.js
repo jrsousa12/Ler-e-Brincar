@@ -22,7 +22,8 @@ const arquivos = {
   mat: [mat('mat-001', 1, 'Quanto é 2 + 1?', [2, 3, 4], 3, '2 + 1 = 3.'),
         mat('mat-002', 2, 'Tinha 3 e ganhou 2.', [4, 5, 6], 5, '3 + 2 = 5.', { esquerda: '🍎🍎', operador: '+', direita: '🍎🍎' }),
         mat('mat-003', 2, 'Quanto é 5 − 2?', [-1, 3, 40], 3, 'Tire e conte.'),
-        mat('mat-004', 2, 'Tinha 12 lápis.', [3, 4, 5], 4, '12 ÷ 3 = 4.', { esquerda: '✏️×12', operador: '÷3', direita: '?' })],
+        mat('mat-004', 2, 'Tinha 12 lápis.', [3, 4, 5], 4, '12 ÷ 3 = 4.', { esquerda: '✏️×12', operador: '÷3', direita: '?' }),
+        mat('mat-005', 2, 'Pagou com R$ 20,00 uma conta de R$ 13,00.', ['R$ 7,00', 'R$ 11,00', 'R$ 9,00'], 0, 'Troco: R$ 7,00.')],
   colorir: [{ id: 'colorir-01', emoji: '🌙', svg: svg(1) }, { id: 'colorir-02', emoji: '🌙', svg: svg(6) }],
   silabas: []
 };
@@ -45,6 +46,7 @@ tem('explicacao_sem_resposta', 'mat-003');
 tem('emoji_repetido', 'colorir-02');
 tem('desenho_simples', 'colorir-01');
 ok(!/mat-004/.test(s), 'mat-004 (✏️×12, divisão) não deve dar aviso');
+ok(!/mat-005[^\n]*explicacao_sem_resposta|explicacao_sem_resposta[^\n]*mat-005/.test(s), 'certa com R$ (cifrão) na explicação não é aviso');
 ok(!/colorir-02: 6/.test(s), 'desenho com 6 partes não é simples');
 ok(roda().status === 0, 'sem --estrito, sai sem erro');
 ok(roda('--estrito').status === 1, 'com --estrito e avisos, sai com erro');
