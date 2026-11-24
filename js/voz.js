@@ -90,4 +90,7 @@
     disponivel: !!sintese,
     mudarVelocidade: v => { velocidade = v; }
   };
+
+  // Ao trocar de app ou apagar a tela, a voz para (não fica falando sozinha no fundo).
+  if (typeof document !== 'undefined') document.addEventListener('visibilitychange', () => { if (document.hidden) LB.voz.parar(); });
 })();

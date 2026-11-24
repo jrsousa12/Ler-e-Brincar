@@ -41,7 +41,8 @@
     "t_bncc": "testes/t_bncc.js",
     "t_figuras_mat": "testes/t_figuras_mat.js",
     "t_pedir": "testes/t_pedir.js",
-    "t_pacote": "testes/t_pacote.js"
+    "t_pacote": "testes/t_pacote.js",
+    "t_rolagem": "testes/t_rolagem.js"
   },
   "navegador": [
     "t_avisoerro",
@@ -55,13 +56,24 @@
     "t_celebracoes",
     "t_nova_brincadeira",
     "t_ordem",
-    "t_pacote"
+    "t_pacote",
+    "t_rolagem"
   ],
   "limite_linhas": 300,
   "mapa": {
     "js/voz.js": [
       "t_voz",
-      "t_app"
+      "t_app",
+      "t_rolagem"
+    ],
+    "js/rolagem.js": [
+      "t_rolagem"
+    ],
+    "js/voltar.js": [
+      "t_rolagem"
+    ],
+    "testes/t_rolagem.js": [
+      "t_rolagem"
     ],
     "js/caderno.js": [
       "t_caderno",

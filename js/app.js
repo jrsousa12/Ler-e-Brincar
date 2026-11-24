@@ -96,6 +96,7 @@
 
       const selos = LB.usarSelos(ctx);
       const seloNovo = LB.usarSeloNovo(ctx, selos.selos);
+      LB.usarVoltarAparelho(ctx);   // voltar do celular = "← Voltar" da tela (js/voltar.js)
 
       return {
         conteudo: LB.CONTEUDO,
