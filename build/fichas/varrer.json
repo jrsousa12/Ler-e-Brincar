@@ -1,0 +1,90 @@
+{
+  "_leia": "Ficha da varredura de código (build/varrer.js, Motor 9). 'pastas': onde procurar. 'fora': caminhos que não entram (dados, cópias de terceiros, gerados). 'graves': códigos que fazem a varredura FALHAR (quebram o app); os demais são avisos. 'aceitos': avisos já olhados e aceitos pelo dono, por arquivo (\"js/x.js\": [\"html_cru\"]) ou por linha (\"js/x.js\": [\"html_cru@12\"]); \"*\" aceita tudo no arquivo; chave terminada em \"/\" vale para a pasta.",
+  "pastas": [
+    "js",
+    "css",
+    "build",
+    "testes",
+    "index.html",
+    "sw.js",
+    "manifest.json",
+    ".github"
+  ],
+  "extensoes": [
+    ".js",
+    ".css",
+    ".html",
+    ".json",
+    ".yml"
+  ],
+  "fora": [
+    "build/previas/",
+    "vendor/",
+    "conteudo/",
+    "original-deepseek/"
+  ],
+  "graves": [
+    "json_invalido",
+    "css_chaves",
+    "arquivo_inexistente"
+  ],
+  "nomes": {
+    "espaco_no_fim": "espaço sobrando no fim da linha",
+    "tabulacao": "tabulação no começo da linha (o projeto usa espaços)",
+    "linhas_em_branco": "três ou mais linhas em branco seguidas",
+    "sem_quebra_final": "arquivo sem a quebra de linha no final",
+    "quebra_windows": "quebra de linha do Windows (CRLF)",
+    "json_invalido": "ficha JSON com erro de escrita (não abre)",
+    "css_chaves": "CSS com chave { } aberta sem fechar, ou fechada sobrando",
+    "arquivo_inexistente": "aponta para um arquivo que não existe (import, require, src ou href)",
+    "igualdade_fraca": "comparação com == ou != (usar === ou !==, que não misturam número com texto)",
+    "atribuicao_no_if": "um '=' só dentro do if/while (talvez quisesse comparar com ===)",
+    "catch_vazio": "catch vazio: o erro some sem aviso (pôr ao menos um comentário dizendo por quê)",
+    "console_esquecido": "console.log ou debugger esquecido no app",
+    "confirm_alert": "confirm/alert/prompt do navegador (regra do projeto: usar ctx.perguntar)",
+    "funcao_repetida": "duas funções com o mesmo nome no mesmo arquivo",
+    "codigo_dinamico": "eval, new Function ou setTimeout com texto: roda texto como código",
+    "html_cru": "innerHTML ou v-html: seguro só se o conteúdo for fixo, nunca digitado",
+    "document_write": "document.write (antigo e inseguro)",
+    "http_inseguro": "link http:// sem cadeado (usar https://)",
+    "blank_sem_rel": "link que abre em outra aba sem rel=\"noopener\"",
+    "arquivo_de_fora": "script ou estilo baixado da internet (quebra o modo sem internet; usar vendor/)",
+    "segredo": "texto com cara de senha ou chave secreta no código"
+  },
+  "aceitos": {
+    "build/": [
+      "codigo_dinamico"
+    ],
+    "testes/": [
+      "codigo_dinamico"
+    ],
+    "js/moldes/": [
+      "html_cru"
+    ],
+    "js/app.js": [
+      "html_cru"
+    ],
+    "js/avisoerro.js": [
+      "html_cru"
+    ],
+    "js/impressao.js": [
+      "html_cru"
+    ],
+    "js/telas/colorir.js": [
+      "html_cru"
+    ],
+    "index.html": [
+      "document_write",
+      "arquivo_de_fora"
+    ],
+    "testes/t_varrer.js": [
+      "*"
+    ]
+  },
+  "_porque": {
+    "build/ e testes/ codigo_dinamico": "new Function só lê os arquivos do próprio conteudo/ no computador; não roda no app",
+    "html_cru em js/": "só HTML fixo do próprio app (moldes, mascote, aviso de erro, desenhos de conteudo/colorir.js); a impressão passa os textos por esc()",
+    "index.html": "reserva: se vendor/ faltar, busca Vue/Dexie na internet (versão fixa); vendor/ está no git, então quase nunca roda",
+    "testes/t_varrer.js": "o teste da varredura tem um defeito de cada tipo de propósito"
+  }
+}

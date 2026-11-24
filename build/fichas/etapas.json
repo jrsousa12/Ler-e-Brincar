@@ -3,6 +3,7 @@
   "etapas": {
     "sintaxe": "interno",
     "tamanho": "interno",
+    "varredura": "build/varrer.js",
     "validar": "build/validar.js",
     "qualidade": "build/conferir.js",
     "catalogo": "build/catalogo.js --conferir",
@@ -43,7 +44,8 @@
     "t_pedir": "testes/t_pedir.js",
     "t_pacote": "testes/t_pacote.js",
     "t_rolagem": "testes/t_rolagem.js",
-    "t_ondeparou": "testes/t_ondeparou.js"
+    "t_ondeparou": "testes/t_ondeparou.js",
+    "t_varrer": "testes/t_varrer.js"
   },
   "navegador": [
     "t_avisoerro",
@@ -120,26 +122,31 @@
       "tamanho",
       "catalogo",
       "t_app",
-      "t_offline"
+      "t_offline",
+      "varredura"
     ],
     "css/": [
       "tamanho",
       "t_app",
       "t_offline",
-      "t_celebracoes"
+      "t_celebracoes",
+      "varredura"
     ],
     "index.html": [
       "t_app",
       "t_offline",
-      "t_nova_brincadeira"
+      "t_nova_brincadeira",
+      "varredura"
     ],
     "sw.js": [
       "sintaxe",
       "t_offline",
-      "t_nova_brincadeira"
+      "t_nova_brincadeira",
+      "varredura"
     ],
     "manifest": [
-      "t_offline"
+      "t_offline",
+      "varredura"
     ],
     "icones/": [
       "t_offline"
@@ -209,11 +216,13 @@
     "build/": [
       "sintaxe",
       "tamanho",
+      "varredura",
       "catalogo"
     ],
     "testes/": [
       "sintaxe",
       "tamanho",
+      "varredura",
       "catalogo"
     ],
     "js/avisoerro.js": [
@@ -565,6 +574,14 @@
     ],
     "testes/t_pacote.js": [
       "t_pacote"
+    ],
+    "build/varrer": [
+      "varredura",
+      "t_varrer"
+    ],
+    "build/fichas/varrer.json": [
+      "varredura",
+      "t_varrer"
     ]
   }
 }

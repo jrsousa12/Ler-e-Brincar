@@ -273,6 +273,9 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/pedir.js` | 117 | Motor "pedir a outra IA": monta o texto pronto para colar noutra IA, já preenchido, a partir dos roteiros. |
 | `build/tudo.js` | 100 | (sem comentário no topo) |
 | `build/validar.js` | 93 | Validador do conteúdo. Uso: node build/validar.js |
+| `build/varrer-limpar.js` | 80 | Ajudante da varredura (Motor 9): apaga o miolo de textos e comentários de um código JS, |
+| `build/varrer-regras.js` | 140 | Regras da varredura (Motor 9). Cada grupo recebe { rel, texto, existe } e devolve uma lista |
+| `build/varrer.js` | 95 | (sem comentário no topo) |
 | `testes/_gerador.js` | 25 | Ajudante comum dos testes de geradores: cópia do conteúdo, rodar o motor nela e o validador. |
 | `testes/t_ajustar.js` | 104 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
 | `testes/t_ajustar_mat.js` | 62 | Teste guardado: ajuste de Matemática (build/ajustar-mat.js e build/ajustar-mat-regras.js). |
@@ -310,4 +313,5 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_sorteio.js` | 42 | Teste guardado: sorteio das opções (js/sorteio.js). Uso: node testes/t_sorteio.js |
 | `testes/t_trem.js` | 97 | Teste guardado: brincadeira "Trem dos números" (js/tremregras.js = contas; js/telas/trem.js = tela). |
 | `testes/t_tudo.js` | 44 | Teste do motor 6 (build/tudo.js): mapa de etapas, ficha coerente e etapas internas. |
+| `testes/t_varrer.js` | 97 | Teste guardado: varredura do código (build/varrer.js, Motor 9). Uso: node testes/t_varrer.js |
 | `testes/t_voz.js` | 52 | Teste guardado: voz (js/voz.js). Uso: node testes/t_voz.js |
