@@ -419,9 +419,6 @@
       "t_ordem",
       "t_gerar_ordem"
     ],
-    "build/pedidos/ordem-lote1.js": [
-      "t_ordem"
-    ],
     "build/pedido.js": [
       "t_gerar_mat",
       "t_gerar_lp",

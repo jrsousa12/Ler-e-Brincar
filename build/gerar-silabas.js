@@ -1,8 +1,8 @@
 // Motor gerador da brincadeira "Monte a Palavra": de uma linha com a palavra separada em sílabas,
 // monta o item completo (sílabas para confundir tiradas de trocas típicas, nível) e grava em conteudo/silabas.js.
 // Uso:
-//   node build/gerar-silabas.js build/pedidos/silabas-lote1.txt            → só mostra a prévia
-//   node build/gerar-silabas.js build/pedidos/silabas-lote1.txt --gravar   → acrescenta no fim de conteudo/silabas.js
+//   node build/gerar-silabas.js build/pedidos/silabas-<lote>.txt            → só mostra a prévia
+//   node build/gerar-silabas.js build/pedidos/silabas-<lote>.txt --gravar   → acrescenta no fim de conteudo/silabas.js
 // Linha do pedido (campos separados por " | "; linhas com # são comentário):
 //   GA-LI-NHA | 🐔 | Bota ovo e faz có-có-ró.
 //   BO-LA | ⚽ | Redonda e pula quando a gente chuta! | extras=PA,DA | nivel=1

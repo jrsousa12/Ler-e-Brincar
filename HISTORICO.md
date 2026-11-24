@@ -109,3 +109,4 @@ Regra: ao concluir um item do `PLANO.md`, movê-lo para cá (seção "Concluído
 - 24/11/2026 — Avisos de qualidade zerados: `emoji_repetido` (5 histórias e desenhos trocaram o emoji de um item: historia-29, historia-45, historia-46, historia-53, colorir-28), `enunciado_repetido` (lp-069 e lp-423 com pergunta nova; certa mantida) e `figura_nao_bate` em mat-076 aceito como alarme falso (5 + 5 = 10) em `build/fichas/qualidade.json`. `sw` v70. `conferir` sem avisos.
 - 24/11/2026 — Impressão no tablet e no celular conferida pelo dono: está OK (Fase 5).
 - 24/11/2026 — Voz passo 4 (áudios das histórias com a voz do Gemini) excluída do plano pelo dono. Não será feita.
+- 24/11/2026 — Fase 10, etapa 3: apagados 22 lotes já gravados de `build/pedidos/` (continuam no histórico do Git); ficaram só os moldes `colorir-modelos.js`, `colorir-lote7.js` e `_curvas.js`. Exemplos dos motores passaram a `<lote>`; saiu do mapa de testes o `ordem-lote1.js`.

@@ -1,8 +1,8 @@
 // Motor gerador de Matemática: de uma linha curta de pedido, monta a atividade completa
 // (conta conferida, figuras, opções erradas tiradas de erros típicos e explicação).
 // Uso:
-//   node build/gerar-mat.js build/pedidos/mat-onda3.txt            → só mostra o resumo (não grava)
-//   node build/gerar-mat.js build/pedidos/mat-onda3.txt --gravar   → acrescenta no fim de conteudo/mat.js
+//   node build/gerar-mat.js build/pedidos/mat-<lote>.txt            → só mostra o resumo (não grava)
+//   node build/gerar-mat.js build/pedidos/mat-<lote>.txt --gravar   → acrescenta no fim de conteudo/mat.js
 // Linha do pedido (campos separados por " | "; linhas com # são comentário):
 //   conta | emoji | enunciado (opcional) | frase final da explicação (opcional) | chave=valor...
 //   8 − 3 | 🍬 | Pedro tinha 8 balas e comeu 3. Quantas sobraram? | Sobraram 5 balas.
