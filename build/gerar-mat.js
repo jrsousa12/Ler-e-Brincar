@@ -29,7 +29,7 @@ const ERROS = {
   dez_a_menos: (a, b, r) => (r >= 20 ? r - 10 : null),
   trocou_por_soma: (a, b) => a + b,
   trocou_por_subtracao: (a, b) => a - b,
-  esqueceu_vai_um: (a, b, r) => ((a % 10) + (b % 10) >= 10 ? r - 10 : null),
+  esqueceu_vai_um: (a, b, r) => ((a >= 10 || b >= 10) && (a % 10) + (b % 10) >= 10 ? r - 10 : null),
   subtraiu_ao_contrario: (a, b) => {
     if (!ehDuasCasas(a) || (a % 10) >= (b % 10)) return null;
     const [da, ua] = casas(a), [db, ub] = casas(b);
@@ -40,18 +40,22 @@ const ERROS = {
   um_grupo_a_menos: (a, b) => (a - 1) * b
 };
 
-function erradas(op, a, b, r) {
+// As 2 erradas com o tipo de erro de cada uma. Nunca simétricas (certa no meio, à mesma distância
+// das duas: a criança acertaria sem fazer a conta). Sem erro típico que sirva, usa um número "perto".
+function erradasComTipo(op, a, b, r) {
   const lista = [];
-  const aceita = v => v !== null && Number.isInteger(v) && v >= 0 && v !== r && !lista.includes(v);
+  const aceita = v => v !== null && Number.isInteger(v) && v > 0 && v !== r && !lista.some(x => x.valor === v) &&
+    !(lista.length === 1 && lista[0].valor + v === 2 * r);
   for (const nome of ficha.erros[op]) {
     if (!ERROS[nome]) throw new Error('erro "' + nome + '" da ficha não existe no motor');
     const v = ERROS[nome](a, b, r);
-    if (aceita(v)) lista.push(v);
+    if (aceita(v)) lista.push({ valor: v, tipo: nome });
     if (lista.length === 2) return lista;
   }
-  for (const v of [r + 2, r - 2, r + 3]) { if (aceita(v)) lista.push(v); if (lista.length === 2) break; }
+  for (const v of [r + 2, r - 2, r + 3, r - 3]) { if (aceita(v)) lista.push({ valor: v, tipo: 'perto' }); if (lista.length === 2) break; }
   return lista;
 }
+const erradas = (op, a, b, r) => erradasComTipo(op, a, b, r).map(x => x.valor);
 
 const temPalavra = (texto, lista) => lista.some(p => texto.toLowerCase().includes(p.toLowerCase()));
 const preencher = (modelo, v) => modelo.replace(/\{(\w+)\}/g, (_, k) => v[k]);
@@ -123,4 +127,4 @@ const uso = 'Uso: node build/gerar-mat.js <pedido.txt> [--gravar] [--ver]';
 const principal = args => rodar({ arquivo: 'mat', chave: 'mat', prefixo: 'mat', digitos: 3, montar, uso }, args);
 
 if (require.main === module) process.exit(principal(process.argv.slice(2)));
-module.exports = { montar, erradas, apoio };
+module.exports = { montar, erradas, erradasComTipo, apoio, ERROS };

@@ -36,6 +36,7 @@ ok(tem(com(escolha, { bncc: 'EF02LP01' }), 'não é um código'), 'BNCC de Portu
 ok(tem(com(escolha, { explicacao: 'Conte para a frente.' }), 'resposta certa'), 'explicação sem a certa');
 ok(tem(com(escolha, { opcoes: ['48', '50', '90'] }), 'longe demais'), 'errada absurda');
 ok(tem(com(escolha, { opcoes: ['48', '50', 'cinquenta e um'] }), 'também deve ser'), 'errada não numérica');
+ok(tem(com(escolha, { opcoes: ['49', '50', '51'] }), 'no meio'), 'certa no meio (49, 50, 51)');
 ok(tem(com(escolha, { tiposErradas: ['perto', 'perto'] }), 'tipos diferentes'), 'tipos iguais');
 ok(tem(com(escolha, { tiposErradas: ['perto', 'chute'] }), 'não existe'), 'tipo inventado');
 ok(tem(com(escolha, { tiposErradas: undefined }), 'falta "tiposErradas"'), 'sem tipos');

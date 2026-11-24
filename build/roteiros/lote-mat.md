@@ -67,6 +67,8 @@ Existem dois tipos de questão. Pode misturar os dois na mesma lista.
   - "perto": número perto da certa, que a criança daria contando errado.
 - Se a certa é um número, as erradas também são números, e perto dela
   (diferença de no máximo 10, ou de metade da certa quando ela for grande).
+- A certa NÃO pode ficar no meio, à mesma distância das duas erradas (ex.: 49, 50, 51 ou 40, 50, 60):
+  a criança acertaria sem pensar.
 - Nada de errada absurda, que a criança descarta sem pensar.
 - Códigos BNCC mais usados:
   - 2º ano: EF02MA01 (comparar e ordenar números), EF02MA04 (compor e decompor), EF02MA05 (fatos de mais e menos),

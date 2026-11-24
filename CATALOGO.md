@@ -228,6 +228,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/ajustar-enunciado.js` | 129 | Motor de ajuste dos enunciados longos de Português (irmão do ajustar-lp.js): acha o enunciado acima do |
 | `build/ajustar-historia.js` | 104 | Motor de ajuste das Histórias (irmão do ajustar-lp.js): acha a resposta certa comprida demais nas |
 | `build/ajustar-lp.js` | 117 | Motor de ajuste de Português: acha a resposta certa comprida demais (a criança acerta só pelo |
+| `build/ajustar-mat-regras.js` | 103 | Regras do motor de ajuste de Matemática (build/ajustar-mat.js), sem ler nem gravar arquivos. |
+| `build/ajustar-mat.js` | 114 | Motor de ajuste de Matemática: acha opções fracas (certa no meio à mesma distância das erradas, |
 | `build/ajustar-regras.js` | 72 | Regras do motor de ajuste (build/ajustar-lp.js), sem ler nem gravar arquivos. |
 | `build/arquivo-unico.js` | 45 | Motor: junta o app inteiro num só arquivo .html (abre com dois cliques, sem internet). |
 | `build/biblioteca.js` | 75 | Lista e prévia da biblioteca de peças (build/pecas/). Gerado: nunca editar PECAS.md à mão. |
@@ -244,12 +246,12 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/figuras-mat.js` | 66 | Motor de figuras da Matemática: põe apoioVisual (figuras) em contas que ainda não têm. |
 | `build/gerar-historia.js` | 91 | Motor gerador de histórias: de um pedido em texto simples, monta a história com 3 perguntas conferidas. |
 | `build/gerar-lp.js` | 153 | Motor gerador de Língua Portuguesa: de uma linha curta de pedido, monta a atividade completa |
-| `build/gerar-mat.js` | 126 | Motor gerador de Matemática: de uma linha curta de pedido, monta a atividade completa |
+| `build/gerar-mat.js` | 130 | Motor gerador de Matemática: de uma linha curta de pedido, monta a atividade completa |
 | `build/gerar-ordem.js` | 41 | Motor gerador da brincadeira "Ordem dos Fatos": uma linha de pedido → uma sequência de 3 fatos. |
 | `build/gerar-silabas.js` | 101 | Motor gerador da brincadeira "Monte a Palavra": de uma linha com a palavra separada em sílabas, |
 | `build/icones.js` | 29 | Gera os ícones PNG do app (icones/). Uso: node build/icones.js |
 | `build/importar-lp.js` | 80 | Importador de Português: transforma o lote em JSON enviado pelo dono num pedido do gerar-lp. |
-| `build/importar-mat.js` | 134 | Importador de Matemática: transforma o lote em JSON enviado pelo dono num pedido do gerar-mat. |
+| `build/importar-mat.js` | 136 | Importador de Matemática: transforma o lote em JSON enviado pelo dono num pedido do gerar-mat. |
 | `build/item.js` | 131 | Motor de item único: mostra, busca e altera um item de conteudo/*.js sem abrir o arquivo. |
 | `build/nova-brincadeira.js` | 113 | Motor "brincadeira nova": cria os 5 arquivos de uma brincadeira e liga tudo no app, de uma vez. |
 | `build/pedido.js` | 100 | Peças comuns dos geradores de conteúdo (gerar-mat, gerar-lp, gerar-historia). |
@@ -257,6 +259,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/validar.js` | 93 | Validador do conteúdo. Uso: node build/validar.js |
 | `testes/_gerador.js` | 25 | Ajudante comum dos testes de geradores: cópia do conteúdo, rodar o motor nela e o validador. |
 | `testes/t_ajustar.js` | 104 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
+| `testes/t_ajustar_mat.js` | 62 | Teste guardado: ajuste de Matemática (build/ajustar-mat.js e build/ajustar-mat-regras.js). |
 | `testes/t_app.js` | 160 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
 | `testes/t_avisoerro.js` | 40 | Teste guardado: aviso de erro com "Recomeçar" (js/avisoerro.js), no navegador. |
 | `testes/t_backup.js` | 39 | Teste guardado: cópia de segurança do progresso (js/backup.js). |
@@ -276,7 +279,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_gerar_mat.js` | 59 | Teste guardado: gerador de Matemática (build/gerar-mat.js). Uso: node testes/t_gerar_mat.js |
 | `testes/t_gerar_ordem.js` | 32 | Teste guardado: gerador da Ordem dos Fatos (build/gerar-ordem.js). Uso: node testes/t_gerar_ordem.js |
 | `testes/t_gerar_silabas.js` | 47 | Teste guardado: gerador da brincadeira "Monte a Palavra" (build/gerar-silabas.js). Uso: node testes/t_gerar_silabas.js |
-| `testes/t_importar_mat.js` | 68 | Teste guardado: importador de Matemática (build/importar-mat.js). Uso: node testes/t_importar_mat.js |
+| `testes/t_importar_mat.js` | 69 | Teste guardado: importador de Matemática (build/importar-mat.js). Uso: node testes/t_importar_mat.js |
 | `testes/t_item.js` | 62 | Teste guardado: motor de item único (build/item.js). Uso: node testes/t_item.js |
 | `testes/t_mercado.js` | 124 | Teste guardado: brincadeira "Mercadinho" (js/mercadoregras.js = contas; js/telas/mercado.js = tela). |
 | `testes/t_nova_brincadeira.js` | 66 | Teste guardado: motor build/nova-brincadeira.js. Trabalha numa cópia temporária do projeto (a pasta real não muda). |

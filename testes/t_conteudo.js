@@ -33,7 +33,7 @@ const troca = (arq, de, para) => {
   if (!t.includes(de)) throw new Error('trecho não achado em ' + arq + ': ' + de);
   fs.writeFileSync(p, t.replace(de, para));
 };
-troca('mat.js', "opcoes:[9,10,11],correta:10", "opcoes:[9,10,11],correta:11");       // mat-011 conta errada
+troca('mat.js', "opcoes:[10,11,20],correta:10", "opcoes:[10,11,20],correta:11");       // mat-011 conta errada
 troca('lp.js', "opcoes:['cafe','café','cafê']", "opcoes:['cafe','café','cafe']");    // lp-037 repetida
 troca('lp.js', "id:'lp-012'", "id:'lp-011'");                                          // id repetido
 const r = validar({ CONTEUDO_RAIZ: tmp });

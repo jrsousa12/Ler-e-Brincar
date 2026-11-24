@@ -17,6 +17,7 @@ const LIMITE_ENUNCIADO = ler('qualidade.json').limites.enunciado;
 const TIPOS = Object.keys({ ...ficha.nomes_dos_erros, ...ficha.tipos_escolha_extra });
 const MAIOR = { 2: 100, 3: 1000 }; // maior número aceito por série
 const gerar = require('./gerar-mat.js');
+const { simetrica } = require('./ajustar-mat-regras.js');
 
 // Tira o que quebraria a linha do pedido ("|" separa campos)
 const limpar = s => String(s == null ? '' : s).replace(/\s+/g, ' ').replace(/\|/g, '/').trim();
@@ -85,6 +86,7 @@ function conferirItem(item, serie) {
       if (ne === null) p.push('a certa é um número, então a errada "' + e + '" também deve ser');
       else if (Math.abs(ne - nc) > Math.max(10, nc / 2)) p.push('a errada ' + ne + ' está longe demais da certa ' + nc);
     }
+    if (simetrica(nc, erradas.map(numero))) p.push('a certa ' + nc + ' fica no meio, à mesma distância das erradas: dá para acertar sem pensar');
     for (const n of [nc, ...erradas.map(numero)]) if (n > maior) { p.push('o número ' + n + ' passa de ' + maior + ' (limite do ' + serie + 'º ano)'); break; }
   }
   const tipos = item.tiposErradas;

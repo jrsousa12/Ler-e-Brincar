@@ -1,0 +1,17 @@
+# Folha de revisão (build/ajustar-mat.js). Cada linha já traz a sugestão de erradas; troque se quiser,
+# sem mudar a certa, e escreva o {tipo} onde estiver {?}. Depois: node build/ajustar-mat.js --aplicar build/revisao/mat-revisao.txt
+
+# mat-025 · Qual é a metade de 8? · opções agora: 3, 4, 16
+# problema: não achei a conta na explicação
+# erros que dá para calcular: um_a_mais=5, um_a_menos=3 · perto = até 3 da certa
+mat-025 | *4 | 3 {?}
+
+# mat-064 · Qual é o antecessor de 15? · opções agora: 13, 14, 16
+# problema: não achei a conta na explicação
+# erros que dá para calcular: um_a_mais=15, um_a_menos=13, dez_a_mais=24, inverteu_algarismos=41 · perto = até 3 da certa
+mat-064 | *14 | 13 {?} | 24 {dez_a_mais}
+
+# mat-065 · Qual é o sucessor de 29? · opções agora: 28, 30, 31
+# problema: não achei a conta na explicação
+# erros que dá para calcular: um_a_mais=31, um_a_menos=29, dez_a_mais=40, dez_a_menos=20 · perto = até 3 da certa
+mat-065 | *30 | 28 {?} | 31 {um_a_mais}

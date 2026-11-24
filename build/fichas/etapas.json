@@ -16,6 +16,7 @@
     "t_evolucao": "testes/t_evolucao.js",
     "t_gerar_mat": "testes/t_gerar_mat.js",
     "t_importar_mat": "testes/t_importar_mat.js",
+    "t_ajustar_mat": "testes/t_ajustar_mat.js",
     "t_colorir": "testes/t_colorir.js",
     "t_conferir": "testes/t_conferir.js",
     "t_item": "testes/t_item.js",
@@ -84,7 +85,8 @@
     ],
     "js/respostas.js": [
       "t_conteudo",
-      "t_app"
+      "t_app",
+      "t_ajustar_mat"
     ],
     "js/sorteio.js": [
       "t_sorteio",
@@ -154,11 +156,13 @@
       "t_gerar_mat",
       "t_bncc",
       "t_figuras_mat",
-      "t_importar_mat"
+      "t_importar_mat",
+      "t_ajustar_mat"
     ],
     "build/fichas/mat.json": [
       "t_gerar_mat",
-      "t_importar_mat"
+      "t_importar_mat",
+      "t_ajustar_mat"
     ],
     "build/item.js": [
       "t_item",
@@ -423,10 +427,12 @@
       "t_gerar_ordem"
     ],
     "build/ajustar-lp.js": [
-      "t_ajustar"
+      "t_ajustar",
+      "t_ajustar_mat"
     ],
     "build/ajustar-regras.js": [
-      "t_ajustar"
+      "t_ajustar",
+      "t_ajustar_mat"
     ],
     "build/ajustar-historia.js": [
       "t_ajustar"
@@ -485,6 +491,16 @@
     ],
     "testes/t_importar_mat.js": [
       "t_importar_mat"
+    ],
+    "build/ajustar-mat.js": [
+      "t_ajustar_mat"
+    ],
+    "build/ajustar-mat-regras.js": [
+      "t_ajustar_mat",
+      "t_importar_mat"
+    ],
+    "testes/t_ajustar_mat.js": [
+      "t_ajustar_mat"
     ]
   }
 }

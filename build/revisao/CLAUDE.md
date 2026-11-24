@@ -12,3 +12,9 @@ Receita para reescrever a folha `lp-revisao.txt` (nunca editar `conteudo/` à m�
 - Depois: `--aplicar` (prévia) até 0 recusados, `--gravar`, `node build/tudo.js --mudados`, subir `VERSAO` do `sw.js`.
 - `registro.jsonl`: histórico do que já foi trocado (antes, depois, tipos). Não editar.
 - **Enunciados longos** (`build/ajustar-enunciado.js`, folha `enunciado-revisao.txt`): encurtar o `texto=` com outras palavras; manter as palavras da certa e as opções que vêm do texto; se a pergunta também for longa, mandar `pergunta=` mais curta.
+
+## Matemática (`build/ajustar-mat.js`, folha `mat-revisao.txt`)
+- A certa nunca muda; só as erradas. A linha da conta já vem com a sugestão (erros típicos da ficha `build/fichas/mat.json`).
+- **Certa nunca no meio** à mesma distância das duas erradas (8, 9, 10): a criança acerta sem a conta.
+- Onde houver `{?}`, escrever o tipo: os calculados (o comentário mostra o valor de cada um), `perto` (até 3 da certa), e, sem conta, `trocou_ideia` (antecessor/sucessor, dobro/metade, dezena/unidade) ou `contrario`.
+- Tipos diferentes nas duas erradas; nada de zero nem de número absurdo.
