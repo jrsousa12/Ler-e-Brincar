@@ -42,7 +42,8 @@
     "t_figuras_mat": "testes/t_figuras_mat.js",
     "t_pedir": "testes/t_pedir.js",
     "t_pacote": "testes/t_pacote.js",
-    "t_rolagem": "testes/t_rolagem.js"
+    "t_rolagem": "testes/t_rolagem.js",
+    "t_ondeparou": "testes/t_ondeparou.js"
   },
   "navegador": [
     "t_avisoerro",
@@ -57,7 +58,8 @@
     "t_nova_brincadeira",
     "t_ordem",
     "t_pacote",
-    "t_rolagem"
+    "t_rolagem",
+    "t_ondeparou"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -65,6 +67,12 @@
       "t_voz",
       "t_app",
       "t_rolagem"
+    ],
+    "js/ondeparou.js": [
+      "t_ondeparou"
+    ],
+    "testes/t_ondeparou.js": [
+      "t_ondeparou"
     ],
     "js/rolagem.js": [
       "t_rolagem"
@@ -217,7 +225,8 @@
     ],
     "js/banco.js": [
       "t_banco",
-      "t_app"
+      "t_app",
+      "t_ondeparou"
     ],
     "js/backup.js": [
       "t_backup",
@@ -322,7 +331,8 @@
     ],
     "js/app.js": [
       "t_celebracoes",
-      "t_nova_brincadeira"
+      "t_nova_brincadeira",
+      "t_ondeparou"
     ],
     "testes/t_celebracoes.js": [
       "t_celebracoes"

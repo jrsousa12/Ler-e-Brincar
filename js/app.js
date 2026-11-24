@@ -32,7 +32,8 @@
         diasMissao: ref([]),      // datas com missão completa
         passoAtivo: ref(null),    // passo da missão em andamento (null = fora da missão)
         caderno: ref(LB.caderno.vazio()), // caderno de erros e pontos fracos (js/caderno.js)
-        selosVistos: ref(null)    // selos já mostrados na festa (js/telas/selonovo.js)
+        selosVistos: ref(null),   // selos já mostrados na festa (js/telas/selonovo.js)
+        ondeParou: ref(null)      // história/atividade aberta, para continuar ao reabrir (js/ondeparou.js)
       };
       ctx.marcarConcluido = (id) => {
         if (!ctx.concluidos.value[id]) ctx.concluidos.value = { ...ctx.concluidos.value, [id]: true };
@@ -59,6 +60,7 @@
       const colorir = LB.usarColorir(ctx);
       ctx.abrir = { historia: historias.abrirHistoria, atividade: atividades.abrirAtividade, colorir: colorir.abrirColorir };
       const missao = LB.usarMissao(ctx);
+      const ondeParou = LB.usarOndeParou(ctx, historias, atividades);
       ctx.diasSeguidos = missao.diasSeguidos;
       ctx.terminarItem = (padrao) => {
         if (ctx.passoAtivo.value !== null) missao.marcarPasso(ctx.passoAtivo.value);
@@ -69,7 +71,7 @@
       ctx.estadoAtual = () => ({
         estrelas: ctx.estrelas.value, concluidos: ctx.concluidos.value, ajustes: ctx.ajustes.value,
         missao: ctx.missao.value, diasMissao: ctx.diasMissao.value, caderno: ctx.caderno.value,
-        selosVistos: ctx.selosVistos.value
+        selosVistos: ctx.selosVistos.value, ondeParou: ctx.ondeParou.value
       });
       ctx.aplicarEstado = (est) => {
         ctx.estrelas.value = est.estrelas || 0;
@@ -79,10 +81,11 @@
         ctx.diasMissao.value = est.diasMissao || [];
         ctx.caderno.value = est.caderno || LB.caderno.vazio();
         ctx.selosVistos.value = est.selosVistos || null;
+        ctx.ondeParou.value = est.ondeParou || null;
         missao.garantir();
         ctx.prepararSelos();
       };
-      watch([ctx.estrelas, ctx.concluidos, ctx.ajustes, ctx.missao, ctx.diasMissao, ctx.caderno, ctx.selosVistos],
+      watch([ctx.estrelas, ctx.concluidos, ctx.ajustes, ctx.missao, ctx.diasMissao, ctx.caderno, ctx.selosVistos, ctx.ondeParou],
         () => LB.banco.salvarEstado(ctx.estadoAtual()), { deep: true });
       watch(() => ctx.ajustes.value.velocidade, v => LB.voz.mudarVelocidade(v), { immediate: true });
       watch(() => ctx.ajustes.value.nomeVoz, n => LB.voz.usar(n), { immediate: true });
@@ -91,6 +94,7 @@
         const est = await LB.banco.carregarEstado();
         if (est) ctx.aplicarEstado(est);
         else { missao.garantir(); ctx.prepararSelos(); }
+        ondeParou.retomar();   // volta à pergunta em que a criança estava
         LB.banco.pedirGuarda();
       });
 

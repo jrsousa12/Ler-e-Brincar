@@ -22,11 +22,15 @@
     return null;
   }
 
+  // Guarda uma cópia simples: o IndexedDB recusa os objetos "vigiados" do Vue (DataCloneError),
+  // e sem a cópia nada era guardado. Se o IndexedDB falhar, guarda no localStorage. Teste: t_ondeparou.
   async function salvarEstado(est) {
+    let copia;
+    try { copia = JSON.parse(JSON.stringify(est)); } catch (e) { console.warn(e); return; }
     try {
-      if (db) await db.estado.put({ chave: 'main', ...est });
-      else localStorage.setItem('lb-estado', JSON.stringify(est));
+      if (db) { await db.estado.put({ chave: 'main', ...copia }); return; }
     } catch (e) { console.warn(e); }
+    try { localStorage.setItem('lb-estado', JSON.stringify(copia)); } catch (e) { console.warn(e); }
   }
 
   // Pede ao navegador para não apagar os dados quando faltar espaço (Android).
