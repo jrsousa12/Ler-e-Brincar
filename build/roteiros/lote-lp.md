@@ -1,6 +1,6 @@
 # Roteiro para pedir um lote de questões de Português a outra IA
 
-Como usar: copie tudo da linha "INÍCIO" até "FIM", troque o que está entre [colchetes] e cole na outra IA.
+Como usar: rode `node build/pedir.js lp` (escolhe o tema, preenche tudo e diz onde salvar), ou copie de "INÍCIO" até "FIM" e troque os [colchetes].
 Quando o lote chegar, salve como `build/pedidos/lp-<lote>.json` e rode `node build/importar-lp.js build/pedidos/lp-<lote>.json`.
 Se alguma questão fugir das regras, nada é gravado e sai o arquivo `lp-<lote>-conferencia.txt`: cole na outra IA, receba o lote corrigido e importe de novo. Depois, siga o passo "Lote em JSON do dono" do `CLAUDE.md`.
 

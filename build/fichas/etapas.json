@@ -39,7 +39,8 @@
     "t_gerar_ordem": "testes/t_gerar_ordem.js",
     "t_ajustar": "testes/t_ajustar.js",
     "t_bncc": "testes/t_bncc.js",
-    "t_figuras_mat": "testes/t_figuras_mat.js"
+    "t_figuras_mat": "testes/t_figuras_mat.js",
+    "t_pedir": "testes/t_pedir.js"
   },
   "navegador": [
     "t_avisoerro",
@@ -241,7 +242,8 @@
       "t_silabas"
     ],
     "build/gerar-silabas.js": [
-      "t_gerar_silabas"
+      "t_gerar_silabas",
+      "t_pedir"
     ],
     "build/fichas/silabas.json": [
       "t_gerar_silabas"
@@ -282,7 +284,8 @@
       "t_mercado",
       "t_trem",
       "t_nova_brincadeira",
-      "t_ordem"
+      "t_ordem",
+      "t_pedir"
     ],
     "css/tema-creme.css": [
       "t_app"
@@ -406,7 +409,8 @@
     ],
     "build/gerar-historia.js": [
       "t_gerar_historia",
-      "t_bncc"
+      "t_bncc",
+      "t_pedir"
     ],
     "build/fichas/historias.json": [
       "t_gerar_historia"
@@ -418,7 +422,8 @@
       "t_gerar_mat"
     ],
     "build/gerar-ordem.js": [
-      "t_gerar_ordem"
+      "t_gerar_ordem",
+      "t_pedir"
     ],
     "build/fichas/ordem.json": [
       "t_gerar_ordem"
@@ -501,6 +506,21 @@
     ],
     "testes/t_ajustar_mat.js": [
       "t_ajustar_mat"
+    ],
+    "build/pedir.js": [
+      "t_pedir"
+    ],
+    "build/pedir-dados.js": [
+      "t_pedir"
+    ],
+    "build/fichas/pedir.json": [
+      "t_pedir"
+    ],
+    "build/roteiros/": [
+      "t_pedir"
+    ],
+    "testes/t_pedir.js": [
+      "t_pedir"
     ]
   }
 }

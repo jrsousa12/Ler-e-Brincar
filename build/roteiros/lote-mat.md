@@ -1,6 +1,6 @@
 # Roteiro para pedir um lote de questões de Matemática a outra IA
 
-Como usar: copie tudo da linha "INÍCIO" até "FIM", troque o que está entre [colchetes] e cole na outra IA.
+Como usar: rode `node build/pedir.js mat` (escolhe o tema, preenche tudo e diz onde salvar), ou copie de "INÍCIO" até "FIM" e troque os [colchetes].
 Quando o lote chegar, salve como `build/pedidos/mat-<lote>.json` e rode `node build/importar-mat.js build/pedidos/mat-<lote>.json --serie 2` (ou `--serie 3`).
 Se alguma questão fugir das regras, nada é gravado e sai o arquivo `mat-<lote>-conferencia.txt`: cole na outra IA, receba o lote corrigido e importe de novo.
 Depois: `node build/gerar-mat.js build/pedidos/mat-<lote>.txt` (prévia) e, se estiver bom, o mesmo com `--gravar`.
