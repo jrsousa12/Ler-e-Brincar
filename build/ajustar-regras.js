@@ -5,6 +5,7 @@
 // O motor NÃO corta: monta o plano da revisão (tamanhos e distratores da série) e confere a reescrita.
 'use strict';
 const ficha = require('./fichas/ajustar.json');
+const QL = require('./fichas/qualidade.json').limites; // limites do aviso de certa mais longa (fonte única: conferir.js)
 const dist = require('./fichas/distratores.json');
 
 const minusc = s => s.toLocaleLowerCase('pt-BR');
@@ -33,7 +34,8 @@ function motivos(q) {
   const erradas = q.opcoes.filter((o, i) => i !== q.correta).map(String);
   const maior = Math.max(...erradas.map(e => e.length));
   const m = [];
-  if (certa.length > ficha.minimo_letras_aviso && certa.length > maior * ficha.razao_aviso) m.push('certa comprida perto das erradas');
+  // mesma regra do conferir.js (limites em fichas/qualidade.json): a certa é comprida se passa a maior errada em fator e em letras
+  if (certa.length >= maior * QL.certa_mais_longa_fator && certa.length - maior >= QL.certa_mais_longa_letras) m.push('certa comprida perto das erradas');
   else if (certa.length > serieDe(q.nivel).max_certa) m.push('certa acima de ' + serieDe(q.nivel).max_certa + ' letras');
   const f = foraConta(certa, q.enunciado);
   if (f.length) m.push('certa com palavras fora do texto: ' + f.join(', '));

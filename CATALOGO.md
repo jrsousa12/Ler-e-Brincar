@@ -244,7 +244,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/ajustar-lp.js` | 117 | Motor de ajuste de Português: acha a resposta certa comprida demais (a criança acerta só pelo |
 | `build/ajustar-mat-regras.js` | 103 | Regras do motor de ajuste de Matemática (build/ajustar-mat.js), sem ler nem gravar arquivos. |
 | `build/ajustar-mat.js` | 114 | Motor de ajuste de Matemática: acha opções fracas (certa no meio à mesma distância das erradas, |
-| `build/ajustar-regras.js` | 72 | Regras do motor de ajuste (build/ajustar-lp.js), sem ler nem gravar arquivos. |
+| `build/ajustar-regras.js` | 74 | Regras do motor de ajuste (build/ajustar-lp.js), sem ler nem gravar arquivos. |
 | `build/arquivo-unico.js` | 45 | Motor: junta o app inteiro num só arquivo .html (abre com dois cliques, sem internet). |
 | `build/biblioteca.js` | 75 | Lista e prévia da biblioteca de peças (build/pecas/). Gerado: nunca editar PECAS.md à mão. |
 | `build/bncc-regras.js` | 39 | Regras da BNCC: diz qual habilidade combina com cada item (ficha build/fichas/bncc.json). |
@@ -277,7 +277,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/varrer-regras.js` | 140 | Regras da varredura (Motor 9). Cada grupo recebe { rel, texto, existe } e devolve uma lista |
 | `build/varrer.js` | 95 | (sem comentário no topo) |
 | `testes/_gerador.js` | 25 | Ajudante comum dos testes de geradores: cópia do conteúdo, rodar o motor nela e o validador. |
-| `testes/t_ajustar.js` | 104 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
+| `testes/t_ajustar.js` | 108 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
 | `testes/t_ajustar_mat.js` | 62 | Teste guardado: ajuste de Matemática (build/ajustar-mat.js e build/ajustar-mat-regras.js). |
 | `testes/t_app.js` | 160 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
 | `testes/t_avisoerro.js` | 40 | Teste guardado: aviso de erro com "Recomeçar" (js/avisoerro.js), no navegador. |

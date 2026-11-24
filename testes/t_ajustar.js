@@ -100,5 +100,9 @@ ok(nodeE(['--aplicar', folhaE, '--gravar']).includes('gravado') && nodeE(['lp-25
 ok(ce.validar().cod === 0, 'enunciado: validador aceita o conteúdo ajustado');
 ce.apagar();
 
+// certa comprida: mesma regra do conferir (limites em fichas/qualidade.json)
+const comprida = (c, e) => R.motivos({ tipo: 'multipla', enunciado: 'Qual?', opcoes: [c, ...e], correta: 0 }).some(m => m.startsWith('certa comprida'));
+ok(comprida('Café com leite', ['Suco', 'Chá']), 'certa de 14 letras contra erradas de 3 e 4 é comprida');
+ok(!comprida('Ela guardou comida', ['Ela viajou para o sul', 'Ela passou muita fome']), 'certa parecida com as erradas não é comprida');
 console.log(falhas ? 't_ajustar: ' + falhas + ' FALHA(S)' : 't_ajustar: OK');
 process.exit(falhas ? 1 : 0);
