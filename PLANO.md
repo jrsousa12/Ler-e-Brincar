@@ -11,10 +11,10 @@ Regra: ao concluir um item, movê-lo para `HISTORICO.md` (com a data) e tirá-lo
 
 ### Fase 9 — Melhorias levantadas na revisão de 24/11 (uma conversa cada; `/clear` entre elas)
 Revisão: 24 conferências OK, app offline OK, nenhum arquivo acima de 200 linhas. Foco: proteger o progresso e afinar o conteúdo.
-- **Em paralelo — Fase 5**: criar `NOTAS.md` e anotar o uso real da criança (onde trava, o que acha chato, o que repete)
+- **Em paralelo — Fase 5**: anotar em `NOTAS.md` o uso real da criança (onde trava, o que acha chato, o que repete)
 
 ### Fase 5 — Ajustes pelo uso real (contínua)
-- O dono observa a criança usando e anota em `NOTAS.md` (ainda não criado); ajustes em tarefas pequenas.
+- O dono observa a criança usando e anota em `NOTAS.md`; ajustes em tarefas pequenas.
 - A conferir no uso real: voz do aparelho em pt-BR; impressão no tablet/celular.
 
 ### Guardado para depois — Voz
