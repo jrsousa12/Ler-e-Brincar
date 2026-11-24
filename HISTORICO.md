@@ -94,3 +94,4 @@ Regra: ao concluir um item do `PLANO.md`, movê-lo para cá (seção "Concluído
 - 9.5 — feito (24/11): motor `build/ajustar-enunciado.js` (acha enunciado acima do limite, monta a folha `build/revisao/enunciado-revisao.txt`, confere limite, pista da certa, opções tiradas do texto e trechos citados na explicação; grava e anota no `registro.jsonl`); 53 enunciados de Português encurtados (0 avisos `texto_longo`); teste em `t_ajustar`; sw v62.
 
 - 24/11/2026 — Criado `NOTAS.md` (modelo para o dono anotar o uso real da criança — Fase 5).
+- 24/11/2026 — Voz conferida pelo dono no aparelho: fala em português do Brasil (Fase 5; voz passo 3 concluído).

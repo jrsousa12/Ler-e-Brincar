@@ -13,7 +13,6 @@ Exemplos:
 - `26/11 | Voz | a voz saiu com sotaque de Portugal no tablet | —`
 
 ## A conferir (do plano)
-- [ ] A voz do aparelho fala em português do Brasil?
 - [ ] A impressão dos desenhos funciona no tablet/celular?
 
 ## Onde trava (dificuldade)
@@ -25,3 +24,4 @@ Exemplos:
 ## Outras ideias
 
 ## Decisões tomadas (para não perguntar de novo)
+- 24/11: a voz do aparelho fala em português do Brasil (conferido pelo dono).

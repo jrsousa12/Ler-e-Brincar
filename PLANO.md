@@ -15,8 +15,7 @@ Revisão: 24 conferências OK, app offline OK, nenhum arquivo acima de 200 linha
 
 ### Fase 5 — Ajustes pelo uso real (contínua)
 - O dono observa a criança usando e anota em `NOTAS.md`; ajustes em tarefas pequenas.
-- A conferir no uso real: voz do aparelho em pt-BR; impressão no tablet/celular.
+- A conferir no uso real: impressão no tablet/celular.
 
 ### Guardado para depois — Voz
-- Passo 3: dono ouvir a voz no tablet Android.
 - Passo 4: gravar áudios das histórias com a voz do Gemini (só opção gratuita, chave do Google AI Studio, poucos por dia; motor `build/voz.js` + áudios no `sw.js` + `VERSAO`). Claude não oferece voz para apps.
