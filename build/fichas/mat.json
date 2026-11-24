@@ -1,5 +1,5 @@
 {
-  "_leia": "Ficha do gerador de Matemática (build/gerar-mat.js). Calibrar = editar aqui, sem programar. 'erros': para cada conta, os erros típicos de criança, em ordem de preferência; o gerador usa os 2 primeiros que dão um número válido e diferente da resposta. 'nomes_dos_erros' explica cada um. 'titulos' e 'explicacoes': textos; {a}, {b}, {r} viram os números da conta; {soma} vira b + b + ... (só na multiplicação). '+dezenas' e '−dezenas' valem quando o 2º número tem dezena e unidade; ali {ad}/{au} são dezena/unidade do 1º, {bd}/{bu} do 2º, {sd}/{su} as somas e {p} o que fica depois de tirar a dezena. Linhas com '?' são questões de escolha: título 'escolha', nível 2 se não disser, bncc= obrigatório (menos dinheiro).",
+  "_leia": "Ficha do gerador de Matemática (build/gerar-mat.js). Calibrar = editar aqui, sem programar. 'erros': para cada conta, os erros típicos de criança, em ordem de preferência; o gerador usa os 2 primeiros que dão um número válido e diferente da resposta. 'nomes_dos_erros' explica cada um. 'titulos' e 'explicacoes': textos; {a}, {b}, {r} viram os números da conta; {soma} vira b + b + ... (só na multiplicação). '+dezenas' e '−dezenas' valem quando o 2º número tem dezena e unidade; ali {ad}/{au} são dezena/unidade do 1º, {bd}/{bu} do 2º, {sd}/{su} as somas e {p} o que fica depois de tirar a dezena. Linhas com '?' são questões de escolha: título 'escolha', nível 2 se não disser, bncc= obrigatório (menos dinheiro). 'tipos_escolha_extra': tipos de errada aceitos nas questões de escolha do lote em JSON (build/importar-mat.js), além dos de 'nomes_dos_erros'.",
   "nomes_dos_erros": {
     "um_a_mais": "contou um a mais",
     "um_a_menos": "contou um a menos",
@@ -89,5 +89,10 @@
     "foram embora",
     "comeu",
     "deu "
-  ]
+  ],
+  "tipos_escolha_extra": {
+    "trocou_ideia": "confundiu uma ideia com outra (antes e depois, dobro e metade, par e ímpar, maior e menor)",
+    "contrario": "diz o contrário da certa (sim e não, sobra e falta)",
+    "perto": "número perto da certa, que a criança daria contando errado"
+  }
 }

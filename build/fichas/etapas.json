@@ -15,6 +15,7 @@
     "t_avisoerro": "testes/t_avisoerro.js",
     "t_evolucao": "testes/t_evolucao.js",
     "t_gerar_mat": "testes/t_gerar_mat.js",
+    "t_importar_mat": "testes/t_importar_mat.js",
     "t_colorir": "testes/t_colorir.js",
     "t_conferir": "testes/t_conferir.js",
     "t_item": "testes/t_item.js",
@@ -146,15 +147,18 @@
     ],
     "build/fichas/qualidade.json": [
       "qualidade",
-      "t_conferir"
+      "t_conferir",
+      "t_importar_mat"
     ],
     "build/gerar-mat.js": [
       "t_gerar_mat",
       "t_bncc",
-      "t_figuras_mat"
+      "t_figuras_mat",
+      "t_importar_mat"
     ],
     "build/fichas/mat.json": [
-      "t_gerar_mat"
+      "t_gerar_mat",
+      "t_importar_mat"
     ],
     "build/item.js": [
       "t_item",
@@ -475,6 +479,12 @@
     ],
     "testes/t_figuras_mat.js": [
       "t_figuras_mat"
+    ],
+    "build/importar-mat.js": [
+      "t_importar_mat"
+    ],
+    "testes/t_importar_mat.js": [
+      "t_importar_mat"
     ]
   }
 }

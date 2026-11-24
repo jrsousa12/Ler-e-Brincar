@@ -32,7 +32,7 @@ r = escolher(['testes/t_item.js']);
 assert.ok(r.etapas.includes('t_item'), 'teste alterado roda a si mesmo');
 r = escolher(['README.md', 'build/fichas/mat.json']);
 assert.deepStrictEqual(r.soltos, ['README.md']);
-assert.deepStrictEqual(r.etapas, ['sintaxe', 'tamanho', 'catalogo', 't_gerar_mat']);
+assert.deepStrictEqual(r.etapas, ['sintaxe', 'tamanho', 'catalogo', 't_gerar_mat', 't_importar_mat']);
 // Ordem segue a ficha, não a do mapa.
 r = escolher(['conteudo/x.js']);
 assert.deepStrictEqual(r.etapas, nomes.filter((n) => r.etapas.includes(n)));

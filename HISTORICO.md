@@ -95,3 +95,4 @@ Regra: ao concluir um item do `PLANO.md`, movê-lo para cá (seção "Concluído
 
 - 24/11/2026 — Criado `NOTAS.md` (modelo para o dono anotar o uso real da criança — Fase 5).
 - 24/11/2026 — Voz conferida pelo dono no aparelho: fala em português do Brasil (Fase 5; voz passo 3 concluído).
+- 24/11/2026 — Motor `build/importar-mat.js` (lote de Matemática em JSON vindo de outra IA, igual ao de Português): confere se a conta dá a resposta dita, números do tamanho da série, enunciado com os números e a pergunta, frase final com o resultado; nas de escolha, BNCC oficial, explicação com a certa, erradas perto da certa e de tipos diferentes (`tipos_escolha_extra` em `build/fichas/mat.json`). Fora do roteiro, não grava e faz `<lote>-conferencia.txt`. Roteiro `build/roteiros/lote-mat.md` passou para JSON. Teste `t_importar_mat`.
