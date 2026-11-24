@@ -2,22 +2,17 @@
 // Uso: node testes/t_app.js   (precisa de vendor/vue.global.prod.js e vendor/dexie.min.js)
 'use strict';
 const path = require('path');
-const { chromium } = require('playwright');
-const raiz = path.join(__dirname, '..');
+const { novaPagina, abrirApp } = require('./_navegador');
 const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de tela nessa pasta
 
 (async () => {
   let falhas = 0;
   const ok = (cond, msg) => { if (!cond) { falhas++; console.log('FALHA: ' + msg); } };
-  const b = await chromium.launch();
-  const p = await b.newPage({ viewport: { width: 390, height: 844 } });
-  const erros = [];
-  p.on('pageerror', e => erros.push(e.message));
+  const { b, p, erros } = await novaPagina();
   p.on('requestfailed', r => { if (!/^data:|fonts.g|vendor\/fontes\//.test(r.url())) erros.push('não carregou: ' + r.url()); });
   const foto = async (n) => { if (pasta) await p.screenshot({ path: path.join(pasta, n + '.png') }); };
 
-  await p.goto('file://' + path.join(raiz, 'index.html'));
-  await p.waitForSelector('.card', { timeout: 5000 }).catch(() => {});
+  await abrirApp(p);
   ok(await p.evaluate(() => typeof Vue !== 'undefined' && typeof Dexie !== 'undefined'), 'Vue e Dexie locais');
   ok((await p.locator('.bloco-menu').count()) === 4, 'tela inicial com 4 botões grandes');
   ok((await p.locator('.mini-trilha span').count()) === 8, 'missão do dia com 8 passos na tela inicial');

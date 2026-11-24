@@ -579,6 +579,18 @@
     "build/fichas/varrer.json": [
       "varredura",
       "t_varrer"
+    ],
+    "testes/_navegador.js": [
+      "t_app",
+      "t_brincadeiras",
+      "t_celebracoes",
+      "t_mercado",
+      "t_ondeparou",
+      "t_ordem",
+      "t_pacote",
+      "t_rolagem",
+      "t_silabas",
+      "t_trem"
     ]
   }
 }

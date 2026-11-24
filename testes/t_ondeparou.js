@@ -1,17 +1,12 @@
 // Teste guardado: continuar de onde parou (js/ondeparou.js). Abre uma história/atividade, recarrega
 // a página (como fechar e abrir o app) e confere se voltou à mesma pergunta. Uso: node testes/t_ondeparou.js
 'use strict';
-const path = require('path');
-const { chromium } = require('playwright');
-const raiz = path.join(__dirname, '..');
+const { INDEX, novaPagina } = require('./_navegador');
 
 (async () => {
   let falhas = 0;
   const ok = (cond, msg) => { if (!cond) { falhas++; console.log('FALHA: ' + msg); } };
-  const b = await chromium.launch();
-  const p = await b.newPage({ viewport: { width: 390, height: 844 } });
-  const erros = [];
-  p.on('pageerror', e => erros.push(e.message));
+  const { b, p, erros } = await novaPagina();
   const espera = ms => p.waitForTimeout(ms);
   const abrirApp = async () => { await p.waitForSelector('#app .cabecalho-app', { timeout: 5000 }).catch(() => {}); await espera(600); };
   const reabrir = async () => { await espera(500); await p.reload(); await abrirApp(); };   // 500 ms: dá tempo de guardar
@@ -22,7 +17,7 @@ const raiz = path.join(__dirname, '..');
 
   let avisos = 0;
   p.on('console', m => { if (m.type() === 'warning' && /clone|IDB|Dexie/i.test(m.text() + '')) avisos++; });
-  await p.goto('file://' + path.join(raiz, 'index.html'));
+  await p.goto(INDEX);
   await abrirApp();
 
   // 0) Progresso guardado no aparelho (js/banco.js): estrelas e feitos sobrevivem a fechar e abrir

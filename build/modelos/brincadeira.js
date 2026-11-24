@@ -107,19 +107,13 @@ const teste = b => {
   return `// Teste guardado: brincadeira "${b.nome}" (js/${b.id}regras.js = contas; js/telas/${b.id}.js = tela).
 // Uso: node testes/t_${b.id}.js   (criado por build/nova-brincadeira.js; amplie ao mudar as contas)
 'use strict';
-const path = require('path');
-const { chromium } = require('playwright');
-const raiz = path.join(__dirname, '..');
+const { novaPagina, abrirApp } = require('./_navegador');
 
 (async () => {
   let falhas = 0;
   const ok = (cond, msg) => { if (!cond) { falhas++; console.log('FALHA: ' + msg); } };
-  const b = await chromium.launch();
-  const p = await b.newPage({ viewport: { width: 390, height: 844 } });
-  const erros = [];
-  p.on('pageerror', e => erros.push(e.message));
-  await p.goto('file://' + path.join(raiz, 'index.html'));
-  await p.waitForSelector('.card', { timeout: 5000 }).catch(() => {});
+  const { b, p, erros } = await novaPagina();
+  await abrirApp(p);
 
   // CONTAS: 300 rodadas sorteadas, todas coerentes
   const defeitos = await p.evaluate(() => {

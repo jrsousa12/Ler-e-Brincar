@@ -83,6 +83,9 @@
     ],
     "testes/t_varrer.js": [
       "*"
+    ],
+    "build/modelos/brincadeira.js": [
+      "arquivo_inexistente"
     ]
   },
   "_porque": {

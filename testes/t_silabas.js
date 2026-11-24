@@ -1,19 +1,13 @@
 // Teste guardado: brincadeira "Monte a Palavra" (js/telas/silabas.js) no navegador.
 // Uso: node testes/t_silabas.js
 'use strict';
-const path = require('path');
-const { chromium } = require('playwright');
-const raiz = path.join(__dirname, '..');
+const { novaPagina, abrirApp } = require('./_navegador');
 
 (async () => {
   let falhas = 0;
   const ok = (cond, msg) => { if (!cond) { falhas++; console.log('FALHA: ' + msg); } };
-  const b = await chromium.launch();
-  const p = await b.newPage({ viewport: { width: 390, height: 844 } });
-  const erros = [];
-  p.on('pageerror', e => erros.push(e.message));
-  await p.goto('file://' + path.join(raiz, 'index.html'));
-  await p.waitForSelector('.card', { timeout: 5000 }).catch(() => {});
+  const { b, p, erros } = await novaPagina();
+  await abrirApp(p);
 
   await p.click('.bloco-menu.brincar');
   await p.click('text=Monte a Palavra');
