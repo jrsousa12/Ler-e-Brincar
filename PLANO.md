@@ -9,9 +9,5 @@ Regra: ao concluir um item, movê-lo para `HISTORICO.md` (com a data) e tirá-lo
 - Originais do DeepSeek em `original-deepseek/` (só consulta, não editar).
 - Fase 6: fora do app desafio com tempo, PIN, relatório cifrado, vários alunos, tema escuro.
 
-### Fase 9 — Melhorias levantadas na revisão de 24/11 (uma conversa cada; `/clear` entre elas)
-Revisão: 24 conferências OK, app offline OK, nenhum arquivo acima de 200 linhas. Foco: proteger o progresso e afinar o conteúdo.
-- **Em paralelo — Fase 5**: anotar em `NOTAS.md` o uso real da criança (onde trava, o que acha chato, o que repete)
-
 ### Fase 5 — Ajustes pelo uso real (contínua)
 - O dono observa a criança usando e anota em `NOTAS.md`; ajustes em tarefas pequenas.
