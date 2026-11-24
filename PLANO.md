@@ -78,3 +78,17 @@ Decisões do dono (19/11/2026):
 - Mercadinho — feito (23/11): rodada de 5 compras (2 de pagar certinho com moedas e notas até R$ 10; 2 de troco até R$ 20; 1 com dois produtos: total e troco, até R$ 50), só reais inteiros. `conteudo/mercado.js` (produtos), `js/mercadoregras.js` (contas), `js/telas/mercado.js`, `js/moldes/mercado.js`, `css/mercado.css`; teste `t_mercado`; sw v43. Nível 4 feito (23/11): centavos só de 50 (R$ X,50): pagar certinho com moeda de 50 centavos e troco com nota de 5 ou 10; rodada agora é níveis 1, 2, 3, 4, 4; sw v45.
 - Trem dos números — feito (23/11): rodada de 5 trens com 5 vagões; um vagão vazio nos níveis 1 a 3 (de 2 em 2 até 30, de 5 em 5 até 100, de 10 em 10 até 200) e dois vazios, nunca lado a lado, nos dois trens do nível 4 (passos diferentes). Opções erradas: errar o passo ou contar de 1 em 1. `js/tremregras.js` (contas), `js/telas/trem.js`, `js/moldes/trem.js`, `css/trem.css`; teste `t_trem`; sw v44.
 - Kit de rodada e motor de brincadeira nova — feito (23/11): `js/rodada.js` (`LB.rodada(ctx, {...})`: sortear, "1 de 5", erro/acerto, estrela no fim de cada desafio, Próximo/Concluir; `exportar('Nome')` dá os nomes do molde); Trem e Mercadinho já usam o kit (Monte a Palavra, Memória e Som e Figura têm outro jeito e ficaram como estavam). Motor `node build/nova-brincadeira.js <id> "<Nome>" <emoji> <mat|lp> [--gravar]` cria regras (com EXEMPLO para trocar), tela, molde, CSS e teste, e liga index, sw.js (+VERSAO), app.js, botão em Atividades e `etapas.json`. Testes `t_rodada`, `t_nova_brincadeira`; sw v47.
+
+### Fase 9 — Melhorias levantadas na revisão de 24/11 (uma conversa cada; `/clear` entre elas)
+Revisão: 24 conferências OK, app offline OK, nenhum arquivo acima de 200 linhas. Foco: proteger o progresso e afinar o conteúdo.
+- **Prioridade 1 — não perder o progresso (Sonnet)**
+  - 9.1 Pedir guarda permanente dos dados (`navigator.storage.persist()` em `js/banco.js`): o Android pode apagar o IndexedDB quando falta espaço
+  - 9.2 Lembrete de cópia de segurança na Área do responsável ("Última cópia há X dias. Fazer agora?"); guardar a data da última cópia (`js/backup.js`, `js/telas/backup.js`)
+  - 9.3 Aviso amigável quando o app der erro (em vez de tela parada), com botão "Recomeçar"
+- **Prioridade 2 — conteúdo que se acerta sem ler (Sonnet, pelos motores)**
+  - 9.4 Histórias: 61 perguntas com a certa bem mais longa que as erradas (`node build/conferir.js --tipo certa_mais_longa`); estender o motor `build/ajustar-lp.js` (ou irmão) às histórias e corrigir em lote
+  - 9.5 Português: 53 enunciados longos demais (`--tipo texto_longo`); encurtar pelo motor de ajuste
+  - 9.6 Matemática nível 1: 25 contas sem figuras (`--tipo falta_figura`); acrescentar pelo motor de item/gerador
+- **Prioridade 3 — arrumação interna (Opus planeja, Sonnet faz)**
+  - 9.7 Monte a Palavra, Memória e Som e Figura passam a usar o kit `js/rodada.js` (mesmo jeito do Trem e do Mercadinho)
+- **Em paralelo — Fase 5**: criar `NOTAS.md` e anotar o uso real da criança (onde trava, o que acha chato, o que repete)
