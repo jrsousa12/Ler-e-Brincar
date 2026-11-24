@@ -40,7 +40,8 @@
     "t_ajustar": "testes/t_ajustar.js",
     "t_bncc": "testes/t_bncc.js",
     "t_figuras_mat": "testes/t_figuras_mat.js",
-    "t_pedir": "testes/t_pedir.js"
+    "t_pedir": "testes/t_pedir.js",
+    "t_pacote": "testes/t_pacote.js"
   },
   "navegador": [
     "t_avisoerro",
@@ -53,7 +54,8 @@
     "t_trem",
     "t_celebracoes",
     "t_nova_brincadeira",
-    "t_ordem"
+    "t_ordem",
+    "t_pacote"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -285,7 +287,8 @@
       "t_trem",
       "t_nova_brincadeira",
       "t_ordem",
-      "t_pedir"
+      "t_pedir",
+      "t_pacote"
     ],
     "css/tema-creme.css": [
       "t_app"
@@ -347,7 +350,8 @@
       "t_trem",
       "t_mercado",
       "t_nova_brincadeira",
-      "t_ordem"
+      "t_ordem",
+      "t_pacote"
     ],
     "testes/t_rodada.js": [
       "t_rodada"
@@ -521,6 +525,21 @@
     ],
     "testes/t_pedir.js": [
       "t_pedir"
+    ],
+    "js/pacoteregras.js": [
+      "t_pacote"
+    ],
+    "js/telas/pacote.js": [
+      "t_pacote"
+    ],
+    "js/moldes/pacote.js": [
+      "t_pacote"
+    ],
+    "css/pacote.css": [
+      "t_pacote"
+    ],
+    "testes/t_pacote.js": [
+      "t_pacote"
     ]
   }
 }

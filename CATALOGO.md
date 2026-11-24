@@ -174,8 +174,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 
 | Arquivo | Linhas | O que faz |
 |---|---|---|
-| `sw.js` | 57 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 131 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `sw.js` | 58 | Guarda o app no aparelho para funcionar sem internet. |
+| `js/app.js` | 132 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/avisoerro.js` | 40 | Aviso amigável quando o app dá erro: em vez de tela parada, mostra "Recomeçar" (o progresso fica guardado no aparelho). |
 | `js/backup.js` | 45 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 45 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
@@ -187,6 +187,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/mercadoregras.js` | 90 | Regras do "Mercadinho": sorteia a compra e calcula o certo. Sem tela: só contas (testadas em testes/t_mercado.js). |
 | `js/missao.js` | 136 | Missão do dia: 1 história + 3 de Português + 3 de Matemática + 1 desenho, em sequência. |
 | `js/ordemregras.js` | 29 | Regras da brincadeira "Ordem dos Fatos": sorteia as sequências e monta as perguntas. Sem tela (testado em testes/t_ordem.js). |
+| `js/pacoteregras.js` | 67 | Regras da brincadeira "Pacotes de contas": cada desafio é um pacote com 4 perguntas do mesmo tipo. |
 | `js/pergunta.js` | 45 | Regra de responder (histórias e atividades): acertou → festa; errou → incentivo e nova |
 | `js/registrar-sw.js` | 23 | Liga o modo sem internet (só em https ou localhost; em arquivo aberto direto, ignora). |
 | `js/respostas.js` | 22 | Regra única de "resposta certa", usada pelo app e pelo validador (build/validar.js). |
@@ -205,6 +206,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/memoria.js` | 58 | Brincadeira "Memória": achar os pares figura + palavra escrita (palavras de conteudo/silabas.js). |
 | `js/telas/mercado.js` | 65 | Brincadeira "Mercadinho": pagar o preço com moedas e notas, ou calcular o troco (regras em js/mercadoregras.js). |
 | `js/telas/ordem.js` | 27 | Brincadeira "Ordem dos Fatos" (regras em js/ordemregras.js; vai e vem da rodada no kit js/rodada.js). |
+| `js/telas/pacote.js` | 19 | Brincadeira "Pacotes de contas" (regras em js/pacoteregras.js; vai e vem da rodada no kit js/rodada.js). |
 | `js/telas/responsavel.js` | 79 | Área do responsável: progresso, onde errou mais (por habilidade da BNCC) e impressão. |
 | `js/telas/selonovo.js` | 41 | Selo novo: quando um selo é ganho, mostra uma janela de festa (molde js/moldes/selonovo.js). |
 | `js/telas/selos.js` | 38 | Tela "Selos": progresso geral, conquistas e selos da missão do dia (missões e dias seguidos). |
@@ -213,7 +215,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/trem.js` | 29 | Brincadeira "Trem dos números": achar o número que falta na sequência de 2 em 2, 5 em 5 ou 10 em 10 (regras em js/tremregras.js). |
 | `js/moldes/abas.js` | 12 | Molde (HTML do Vue): abas para trocar entre as brincadeiras de palavras (Monte a Palavra, Memória, Som e Figura). |
 | `js/moldes/ajustes.js` | 70 | Molde (HTML do Vue): Ajustes (aparece embaixo da Área do responsável). |
-| `js/moldes/atividades.js` | 66 | Molde (HTML do Vue): Telas "Atividades" (lista) e "Atividade" (resolver). |
+| `js/moldes/atividades.js` | 69 | Molde (HTML do Vue): Telas "Atividades" (lista) e "Atividade" (resolver). |
 | `js/moldes/backup.js` | 25 | Molde (HTML do Vue): Cópia de segurança e instalação (embaixo dos Ajustes, na Área do responsável). |
 | `js/moldes/cabecalho.js` | 11 | Molde (HTML do Vue): Cabeçalho do topo (título, ⚙️ dos adultos, estrelas). |
 | `js/moldes/colorir.js` | 39 | Molde (HTML do Vue): Telas "Colorir" (lista) e desenho para pintar. |
@@ -225,6 +227,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/missao.js` | 26 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
 | `js/moldes/navegacao.js` | 11 | Molde (HTML do Vue): Barra de navegação de baixo. |
 | `js/moldes/ordem.js` | 41 | Molde (HTML do Vue): Brincadeira "Ordem dos Fatos" (comportamento em js/telas/ordem.js). |
+| `js/moldes/pacote.js` | 27 | Molde (HTML do Vue): Brincadeira "Pacotes de contas". Criado por build/nova-brincadeira.js. |
 | `js/moldes/portao.js` | 16 | Molde (HTML do Vue): Trava dos adultos — uma conta de multiplicar. |
 | `js/moldes/responsavel.js` | 75 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
 | `js/moldes/selonovo.js` | 16 | Molde (HTML do Vue): janela de festa do selo novo (js/telas/selonovo.js). |
@@ -295,6 +298,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_nova_brincadeira.js` | 66 | Teste guardado: motor build/nova-brincadeira.js. Trabalha numa cópia temporária do projeto (a pasta real não muda). |
 | `testes/t_offline.js` | 44 | Teste guardado: modo sem internet. Confere a lista do sw.js, o manifesto e abre o app offline. |
 | `testes/t_ordem.js` | 73 | Teste guardado: brincadeira "Ordem dos Fatos" (js/ordemregras.js = contas; js/telas/ordem.js = tela). |
+| `testes/t_pacote.js` | 71 | Teste guardado: brincadeira "Pacotes de contas" (js/pacoteregras.js = contas; js/telas/pacote.js = tela). |
 | `testes/t_pedir.js` | 75 | Teste guardado: motor de pedidos para outra IA (build/pedir.js + build/pedir-dados.js). Uso: node testes/t_pedir.js |
 | `testes/t_rodada.js` | 88 | Teste guardado: kit de rodada (js/rodada.js), sem navegador. Uso: node testes/t_rodada.js |
 | `testes/t_silabas.js` | 57 | Teste guardado: brincadeira "Monte a Palavra" (js/telas/silabas.js) no navegador. |

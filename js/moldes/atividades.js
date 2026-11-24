@@ -32,6 +32,9 @@ LB.moldes.atividades = `
         <button v-if="filtroMateria !== 'matematica'" type="button" class="bloco-brincadeira ler" @click="abrirOrdem">
           <span class="bloco-emoji" aria-hidden="true">🔢</span>Ordem dos Fatos<span v-if="concluidos['ordem']" class="selo-feito">✓</span>
         </button>
+        <button v-if="filtroMateria !== 'lingua-portuguesa'" type="button" class="bloco-brincadeira mercado" @click="abrirPacote">
+          <span class="bloco-emoji" aria-hidden="true">📦</span>Pacotes de contas<span v-if="concluidos['pacote']" class="selo-feito">✓</span>
+        </button>
       </div>
       <h3 class="titulo-secao">Atividades</h3>
       <div class="grade-cartoes">
