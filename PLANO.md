@@ -13,9 +13,5 @@ Regra: ao concluir um item, movê-lo para `HISTORICO.md` (com a data) e tirá-lo
 Revisão: 24 conferências OK, app offline OK, nenhum arquivo acima de 200 linhas. Foco: proteger o progresso e afinar o conteúdo.
 - **Em paralelo — Fase 5**: anotar em `NOTAS.md` o uso real da criança (onde trava, o que acha chato, o que repete)
 
-### Fase 10 — Limpeza do código (aprovada 24/11; nada muda para a criança; `tudo.js` verde e commit a cada etapa)
-5. Documentação: detalhes dos motores do `CLAUDE.md` vão para `build/CLAUDE.md`; `README.md` simples para o dono.
-6. Conferência final: `tudo.js` completo (com navegador), offline, arquivo único e capturas.
-
 ### Fase 5 — Ajustes pelo uso real (contínua)
 - O dono observa a criança usando e anota em `NOTAS.md`; ajustes em tarefas pequenas.

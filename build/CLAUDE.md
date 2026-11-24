@@ -1,0 +1,39 @@
+# Motores e scripts de build (`build/`)
+
+Detalhes de cada motor. A raiz (`CLAUDE.md`) tem só o resumo. Motor novo: registrar aqui e uma linha na raiz.
+Regras: cada motor pequeno (abaixo de 200 linhas); peças comuns em `pedido.js`, `importar-comum.js`, `ajustar-comum.js`; teste guardado em `testes/` e no mapa `build/fichas/etapas.json`.
+
+## Conferir e consultar
+- Validar conteúdo: `node build/validar.js` (rodar sempre que mexer em `conteudo/`)
+- **BNCC (Motor 8)**: `node build/bncc.js` (prévia → `build/revisao/bncc.txt`), `--gravar` corrige, `--codigos` lista os usados com o texto oficial. Textos oficiais (PDF MEC 2018) e regras "atividade → código" em `build/fichas/bncc.json`; validador e geradores usam as mesmas regras (`build/bncc-regras.js`). Teste: `node testes/t_bncc.js`
+- **Varredura do código (Motor 9)**: `node build/varrer.js` (espaços, JSON/CSS, possíveis erros, segurança e sobras: função, variável, classe de CSS e animação sem uso, em `build/varrer-sobras.js`; lista em `build/previas/varredura.txt`); `--corrigir` arruma só os espaços; `--estrito` falha com aviso; "graves" (arquivo inexistente, JSON/CSS quebrado) sempre falham. Regras `build/varrer-regras.js`; aceitos e nomes em `build/fichas/varrer.json`. Etapa `varredura` do `tudo.js`; teste `t_varrer`
+- Qualidade (avisos, não bloqueia): `node build/conferir.js` (`--tipo codigo` lista um tipo; `--estrito` falha se houver aviso); limites e avisos aceitos em `build/fichas/qualidade.json`. Teste: `node testes/t_conferir.js`
+- Item único (Motor 4): `node build/item.js lp-037` mostra; `-c campos`; `--busca texto`; `campo=texto`, `campo:=json`, `perguntas.0.correta:=1`, `-x campo` alteram só a linha. Nunca ler nem dar `grep` nas linhas de `conteudo/`: usar o motor. Teste: `node testes/t_item.js`
+- Catálogo (Motor 5): `node build/catalogo.js` gera `CATALOGO.md` (o que existe por habilidade/nível, próximos ids livres, arquivos de código). Consultar antes de criar conteúdo ou código; nunca editar à mão; `--conferir` falha se estiver desatualizado. Teste: `node testes/t_catalogo.js`
+- **Conferir tudo (Motor 6)**: `node build/tudo.js` (uma linha por etapa: sintaxe, tamanho, validador, qualidade, catálogo, todos os testes). `--mudados` roda só o ligado aos arquivos alterados; `--rapido` pula o navegador; `--lista` só mostra. Etapas e mapa: `build/fichas/etapas.json` (teste novo entra ali). Rodar antes de cada commit. Teste: `node testes/t_tudo.js`
+
+## Criar conteúdo (nunca escrever itens à mão)
+- **Pedir a outra IA** (questões e brincadeiras): `node build/pedir.js <lp|mat|silabas|ordem|historia|ideia> [--qtd N] [--serie 2|3] [--bncc X] [--tema ...]` → texto pronto em `build/previas/pedido-<tipo>.txt` (escolhe o tema/nível com menos itens e lista o que já existe), diz onde salvar a resposta e o que rodar; roteiros em `build/roteiros/`, ficha `build/fichas/pedir.json`. Teste `t_pedir`
+- **Peças comuns dos motores**: `build/importar-comum.js` (ler lote JSON, folha de conferência, `opcao` da linha de comando) e `build/ajustar-comum.js` (ler folha, regravar linha, `registro.jsonl`, resumo e linha de comando dos `ajustar-*`). Motor novo parecido usa essas peças.
+- **Gerar conteúdo** (prévia; `--ver` mostra cada item; `--gravar` acrescenta): peças comuns em `build/pedido.js`; testes `t_gerar_mat`, `t_gerar_lp`, `t_gerar_historia`, `t_gerar_ordem` (ajudante `testes/_gerador.js`). Nunca escrever itens à mão: usar o motor.
+  - Matemática: `node build/gerar-mat.js build/pedidos/<arq>.txt`; linha `8 − 3 | 🍬 | enunciado` ou escolha `? enunciado | *certa | errada | errada | explicação | bncc=`; ficha `build/fichas/mat.json`. Figuras em conta já existente: `node build/figuras-mat.js build/pedidos/figuras-<lote>.txt` (linha `mat-005 | 🍬` ou `id | esquerda | operador | direita`; `--gravar`; teste `t_figuras_mat`)
+  - Português: `node build/gerar-lp.js build/pedidos/lp-<lote>.txt`; moldes `troca | frase com [certa]`, `grafia | palavra | emoji`, `palavra | texto | pergunta | certa | tem=nh`, `silabas | ca-va-lo`, `alfabetica | a, b, c`, e de escolha (`inferencia | enunciado | *certa | e | e | explicação`, também interpretacao, leia, sinonimo...); ficha `build/fichas/lp.json` (grupos mas/mais, trocas típicas)
+  - **Lote em JSON do dono, Português**: roteiro para a outra IA `build/roteiros/lote-lp.md`; salvar em `build/pedidos/lp-<lote>.json` → `node build/importar-lp.js <json> [--titulo ...] [--nivel 2]` (confere o roteiro na chegada; fora dele, não grava e faz `<lote>-conferencia.txt` para a outra IA; `--aceitar` importa assim mesmo) → `gerar-lp --gravar` → ajuste (abaixo).
+  - **Lote em JSON do dono, Matemática**: roteiro `build/roteiros/lote-mat.md`; `node build/importar-mat.js build/pedidos/mat-<lote>.json --serie 2` (confere a conta e as erradas; fora do roteiro, faz `<lote>-conferencia.txt`) → `gerar-mat --gravar`. Teste `t_importar_mat`.
+  - Ordem dos Fatos: `node build/gerar-ordem.js build/pedidos/ordem-<lote>.txt`; linha `Título | 1º fato | 2º | 3º | enunciado=...` (fatos na ordem certa); ficha `build/fichas/ordem.json`
+  - Histórias: `node build/gerar-historia.js build/pedidos/historia-<onda>.txt`; `= Título | emoji | nivel=3`, parágrafos, `? pergunta | *certa | ...` e `! inferência`; ficha `build/fichas/historias.json`
+- Gerar Monte a Palavra: `node build/gerar-silabas.js build/pedidos/silabas-<lote>.txt` (prévia; `--ver` lista cada palavra) e `--gravar` → `conteudo/silabas.js`; linha `GA-LI-NHA | 🐔 | dica`; trocas típicas e níveis em `build/fichas/silabas.json`. Teste: `node testes/t_gerar_silabas.js`
+
+## Ajustar conteúdo já gravado (folha de revisão → `--aplicar <folha> --gravar`; anota em `build/revisao/registro.jsonl`)
+- **Português**: `node build/ajustar-lp.js lp-A..lp-B` (acha certa comprida/fora do texto e monta `build/revisao/lp-revisao.txt`; NÃO corta) → reescrever a folha (receita `build/revisao/CLAUDE.md`, distratores por série em `build/fichas/distratores.json`) → `--aplicar` confere tamanhos e tipos. Teste `t_ajustar`.
+- **Matemática**: `node build/ajustar-mat.js [mat-A..mat-B]` (acha certa no meio das erradas, errada sem erro típico ou longe, explicação sem a certa; folha `build/revisao/mat-revisao.txt` já com a sugestão; `{?}` = completar o tipo); nunca muda a certa. Teste `t_ajustar_mat`.
+- **Histórias**: `node build/ajustar-historia.js` (mesma receita; linha `historia-05#1 | *certa | errada {tipo} | errada {tipo}`; folha `build/revisao/historia-revisao.txt`).
+- **Enunciados longos**: `node build/ajustar-enunciado.js` (folha `build/revisao/enunciado-revisao.txt`, linha `lp-245 | texto=... | pergunta=... | explicacao=...`; confere limite, pista da certa e opções do texto).
+- Peças comuns dos quatro: `build/ajustar-comum.js`.
+
+## Desenhos de colorir
+- Desenhos de colorir (Motor 7): montar com a biblioteca de peças `build/pecas/` (lista `build/pecas/PECAS.md`; receita em `build/pecas/CLAUDE.md`); `node build/colorir.js build/pedidos/<lote>.js` (confere + prévia em `build/previas/colorir.png`) e `--gravar`; peça nova: `node build/biblioteca.js`. Exemplo: `build/pedidos/colorir-modelos.js`. Teste: `node testes/t_colorir.js`
+  - Molde bom de desenho: `build/pedidos/colorir-lote7.js` (Bézier/retas arredondadas); auxiliares de curva em `build/pedidos/_curvas.js` (inclui `ov`); curvas livres `suave`/`mancha` em `build/desenho.js`
+
+## Brincadeira nova
+- **Brincadeira nova**: `node build/nova-brincadeira.js <id> "<Nome>" <emoji> <mat|lp>` (prévia) e `--gravar`: cria regras/tela/molde/CSS/teste e liga tudo (index, `sw.js`+VERSAO, `app.js`, botão, `etapas.json`); depois trocar o EXEMPLO em `js/<id>regras.js`. Moldes em `build/modelos/brincadeira.js`. A tela usa o kit de rodada `js/rodada.js` (vai e vem da rodada, estrela, Próximo/Concluir). Testes: `node testes/t_nova_brincadeira.js`, `node testes/t_rodada.js`
