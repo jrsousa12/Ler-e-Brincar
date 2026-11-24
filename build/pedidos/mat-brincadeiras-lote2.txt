@@ -1,0 +1,157 @@
+# Lote 2 de brincadeiras de Matemática (banco colado). Sem os repetidos do lote 1 (troco 1-4, agrupamentos 1-4, comparação 1-4, duas etapas 1-4).
+# Troco sem os de resposta "sem troco". Agrupamentos: 20 de 50. Ordenação virou escolha entre 3 ordens.
+? Tabela: 1 kg de arroz = R$ 6,00; 1 kg de feijão = R$ 8,00; 1 óleo = R$ 7,00. Comprou 1 kg de arroz e 1 kg de feijão. Pagou com R$ 20,00. Qual o troco? | *R$ 6,00 | R$ 14,00 | R$ 8,00 | 6,00 + 8,00 = R$ 14,00. Troco: 20,00 − 14,00 = R$ 6,00. | bncc=EF03MA24 | emoji=🍚
+? Tabela: 1 maçã = R$ 2,00; 1 laranja = R$ 1,00; 1 mamão = R$ 5,00. Comprou 3 maçãs e 2 laranjas. Quanto gastou ao todo? | *R$ 8,00 | R$ 10,00 | R$ 6,00 | (3 × 2,00) + (2 × 1,00) = 6,00 + 2,00 = R$ 8,00. | bncc=EF03MA24 | emoji=🍎
+? Tabela: 1 caneta = R$ 3,00; 1 régua = R$ 4,00; 1 cola = R$ 5,00. Comprou 2 canetas e 1 régua. Pagou com R$ 15,00. Qual o troco? | *R$ 5,00 | R$ 10,00 | R$ 7,00 | 6,00 + 4,00 = R$ 10,00. Troco: 15,00 − 10,00 = R$ 5,00. | bncc=EF03MA24 | emoji=✏️
+? Tabela: 1 pacote de biscoito = R$ 4,00; 1 suco de caixa = R$ 3,00; 1 iogurte = R$ 2,00. Comprou 2 biscoitos e 2 iogurtes. Quanto gastou? | *R$ 12,00 | R$ 10,00 | R$ 14,00 | 8,00 + 4,00 = R$ 12,00. | bncc=EF03MA24 | emoji=🍪
+? Tabela: 1 kg de tomate = R$ 5,00; 1 kg de batata = R$ 4,00; 1 cebola = R$ 3,00. Comprou 2 kg de batata e 1 cebola. Pagou com R$ 20,00. Qual o troco? | *R$ 9,00 | R$ 11,00 | R$ 12,00 | 8,00 + 3,00 = R$ 11,00. Troco: 20,00 − 11,00 = R$ 9,00. | bncc=EF03MA24 | emoji=🥔
+? Tabela: 1 tapioca = R$ 6,00; 1 café = R$ 3,00; 1 bolo = R$ 5,00. Comprou 1 tapioca e 1 café. Pagou com R$ 10,00. Qual o troco? | *R$ 1,00 | R$ 9,00 | R$ 4,00 | 6,00 + 3,00 = R$ 9,00. Troco: 10,00 − 9,00 = R$ 1,00. | bncc=EF03MA24 | emoji=☕
+? Tabela: 1 figurinha = R$ 1,00; 1 álbum = R$ 12,00; 1 chaveiro = R$ 5,00. Comprou 1 álbum e 4 figurinhas. Quanto gastou? | *R$ 16,00 | R$ 13,00 | R$ 17,00 | 12,00 + 4,00 = R$ 16,00. | bncc=EF03MA24 | emoji=📔
+? Tabela: 1 sabonete = R$ 3,00; 1 pasta de dente = R$ 6,00; 1 escova = R$ 8,00. Comprou 2 sabonetes e 1 pasta de dente. Pagou com R$ 20,00. Qual o troco? | *R$ 8,00 | R$ 12,00 | R$ 9,00 | 6,00 + 6,00 = R$ 12,00. Troco: 20,00 − 12,00 = R$ 8,00. | bncc=EF03MA24 | emoji=🧼
+? Tabela: 1 água = R$ 2,00; 1 pastel = R$ 7,00; 1 empada = R$ 5,00. Comprou 1 pastel e 1 água. Pagou com R$ 10,00. Qual o troco? | *R$ 1,00 | R$ 9,00 | R$ 3,00 | 7,00 + 2,00 = R$ 9,00. Troco: 10,00 − 9,00 = R$ 1,00. | bncc=EF03MA24 | emoji=🥟
+? Tabela: 1 kg de cenoura = R$ 4,00; 1 repolho = R$ 3,00; 1 alface = R$ 2,00. Comprou 1 kg de cenoura, 1 repolho e 1 alface. Quanto gastou? | *R$ 9,00 | R$ 7,00 | R$ 10,00 | 4,00 + 3,00 + 2,00 = R$ 9,00. | bncc=EF03MA24 | emoji=🥕
+? Tabela: 1 pote de geleia = R$ 9,00; 1 pão de forma = R$ 7,00; 1 manteiga = R$ 8,00. Comprou 1 pão de forma e 1 manteiga. Pagou com R$ 20,00. Qual o troco? | *R$ 5,00 | R$ 15,00 | R$ 6,00 | 7,00 + 8,00 = R$ 15,00. Troco: 20,00 − 15,00 = R$ 5,00. | bncc=EF03MA24 | emoji=🍞
+? Tabela: 1 melancia = R$ 12,00; 1 melão = R$ 6,00; 1 cacho de uva = R$ 8,00. Comprou 1 melão e 1 cacho de uva. Pagou com R$ 20,00. Qual o troco? | *R$ 6,00 | R$ 14,00 | R$ 8,00 | 6,00 + 8,00 = R$ 14,00. Troco: 20,00 − 14,00 = R$ 6,00. | bncc=EF03MA24 | emoji=🍈
+? Tabela: 1 lápis = R$ 2,00; 1 apontador = R$ 3,00; 1 estojo = R$ 10,00. Comprou 1 estojo e 1 apontador. Pagou com R$ 20,00. Qual o troco? | *R$ 7,00 | R$ 13,00 | R$ 10,00 | 10,00 + 3,00 = R$ 13,00. Troco: 20,00 − 13,00 = R$ 7,00. | bncc=EF03MA24 | emoji=🧰
+? Tabela: 1 pão doce = R$ 2,00; 1 leite = R$ 5,00; 1 queijo = R$ 11,00. Comprou 3 pães doces e 1 leite. Quanto gastou? | *R$ 11,00 | R$ 7,00 | R$ 13,00 | (3 × 2,00) + 5,00 = R$ 11,00. | bncc=EF03MA24 | emoji=🥛
+? Tabela: 1 coco = R$ 4,00; 1 kg de manga = R$ 3,00; 1 kg de goiaba = R$ 5,00. Comprou 2 cocos e 1 kg de manga. Pagou com R$ 20,00. Qual o troco? | *R$ 9,00 | R$ 11,00 | R$ 8,00 | 8,00 + 3,00 = R$ 11,00. Troco: 20,00 − 11,00 = R$ 9,00. | bncc=EF03MA24 | emoji=🥥
+? Tabela: 1 livro infantil = R$ 15,00; 1 marcador = R$ 3,00; 1 adesivo = R$ 2,00. Comprou 1 livro infantil e 1 marcador. Pagou com R$ 20,00. Qual o troco? | *R$ 2,00 | R$ 18,00 | R$ 5,00 | 15,00 + 3,00 = R$ 18,00. Troco: 20,00 − 18,00 = R$ 2,00. | bncc=EF03MA24 | emoji=📚
+? Tabela: 1 espiga de milho = R$ 2,00; 1 pamonha = R$ 6,00; 1 curau = R$ 5,00. Comprou 1 pamonha e 1 curau. Pagou com R$ 20,00. Qual o troco? | *R$ 9,00 | R$ 11,00 | R$ 7,00 | 6,00 + 5,00 = R$ 11,00. Troco: 20,00 − 11,00 = R$ 9,00. | bncc=EF03MA24 | emoji=🌽
+? Tabela: 1 suco = R$ 4,00; 1 sanduíche = R$ 8,00; 1 fruta = R$ 3,00. Comprou 1 sanduíche e 1 suco. Pagou com R$ 20,00. Qual o troco? | *R$ 8,00 | R$ 12,00 | R$ 5,00 | 8,00 + 4,00 = R$ 12,00. Troco: 20,00 − 12,00 = R$ 8,00. | bncc=EF03MA24 | emoji=🥪
+? Tabela: 1 kg de açúcar = R$ 4,00; 1 kg de farinha = R$ 5,00; 1 café = R$ 9,00. Comprou 1 kg de açúcar e 1 kg de farinha. Quanto gastou? | *R$ 9,00 | R$ 8,00 | R$ 10,00 | 4,00 + 5,00 = R$ 9,00. | bncc=EF03MA24 | emoji=🧂
+? Tabela: 1 vela = R$ 2,00; 1 fósforo = R$ 1,00; 1 detergente = R$ 3,00. Comprou 2 detergentes e 1 fósforo. Pagou com R$ 10,00. Qual o troco? | *R$ 3,00 | R$ 7,00 | R$ 4,00 | (2 × 3,00) + 1,00 = R$ 7,00. Troco: 10,00 − 7,00 = R$ 3,00. | bncc=EF03MA24 | emoji=🧴
+? Tabela: 1 kg de limão = R$ 4,00; 1 alho = R$ 3,00; 1 pimentão = R$ 2,00. Comprou 1 kg de limão, 1 alho e 2 pimentões. Quanto gastou? | *R$ 11,00 | R$ 9,00 | R$ 13,00 | 4,00 + 3,00 + (2 × 2,00) = R$ 11,00. | bncc=EF03MA24 | emoji=🍋
+? Tabela: 1 meia = R$ 7,00; 1 boné = R$ 12,00; 1 cinto = R$ 10,00. Comprou 1 meia e 1 cinto. Pagou com R$ 20,00. Qual o troco? | *R$ 3,00 | R$ 17,00 | R$ 7,00 | 7,00 + 10,00 = R$ 17,00. Troco: 20,00 − 17,00 = R$ 3,00. | bncc=EF03MA24 | emoji=🧦
+? Tabela: 1 kg de pera = R$ 6,00; 1 kiwi = R$ 2,00; 1 morango = R$ 7,00. Comprou 1 kg de pera e 3 kiwis. Quanto gastou? | *R$ 12,00 | R$ 8,00 | R$ 10,00 | 6,00 + (3 × 2,00) = 6,00 + 6,00 = R$ 12,00. | bncc=EF03MA24 | emoji=🍐
+? Tabela: 1 cartolina = R$ 2,00; 1 canetão = R$ 4,00; 1 fita = R$ 3,00. Comprou 2 cartolinas e 1 canetão. Pagou com R$ 10,00. Qual o troco? | *R$ 2,00 | R$ 8,00 | R$ 4,00 | 4,00 + 4,00 = R$ 8,00. Troco: 10,00 − 8,00 = R$ 2,00. | bncc=EF03MA24 | emoji=🖊️
+? Tabela: 1 pão de queijo = R$ 2,00; 1 suco = R$ 4,00; 1 vitamina = R$ 6,00. Comprou 2 pães de queijo e 1 vitamina. Quanto gastou? | *R$ 10,00 | R$ 8,00 | R$ 12,00 | 4,00 + 6,00 = R$ 10,00. | bncc=EF03MA24 | emoji=🧀
+? Tabela: 1 molho de macarrão = R$ 5,00; 1 macarrão = R$ 4,00; 1 queijo ralado = R$ 6,00. Comprou 1 macarrão e 1 molho. Pagou com R$ 10,00. Qual o troco? | *R$ 1,00 | R$ 9,00 | R$ 2,00 | 4,00 + 5,00 = R$ 9,00. Troco: 10,00 − 9,00 = R$ 1,00. | bncc=EF03MA24 | emoji=🍝
+? Tabela: 1 abacate = R$ 5,00; 1 mamão = R$ 6,00; 1 kg de laranja = R$ 4,00. Comprou 1 abacate e 1 kg de laranja. Pagou com R$ 10,00. Qual o troco? | *R$ 1,00 | R$ 9,00 | R$ 2,00 | 5,00 + 4,00 = R$ 9,00. Troco: 10,00 − 9,00 = R$ 1,00. | bncc=EF03MA24 | emoji=🥑
+? Tabela: 1 bloco de notas = R$ 6,00; 1 post-it = R$ 5,00; 1 clipe = R$ 3,00. Comprou 1 bloco de notas e 1 clipe. Pagou com R$ 10,00. Qual o troco? | *R$ 1,00 | R$ 9,00 | R$ 3,00 | 6,00 + 3,00 = R$ 9,00. Troco: 10,00 − 9,00 = R$ 1,00. | bncc=EF03MA24 | emoji=📝
+? Tabela: 1 água de coco = R$ 4,00; 1 cuscuz = R$ 5,00; 1 café = R$ 3,00. Comprou 1 cuscuz e 1 água de coco. Pagou com R$ 10,00. Qual o troco? | *R$ 1,00 | R$ 9,00 | R$ 2,00 | 5,00 + 4,00 = R$ 9,00. Troco: 10,00 − 9,00 = R$ 1,00. | bncc=EF03MA24 | emoji=🥥
+? Tabela: 1 kg de banana = R$ 4,00; 1 kg de maçã = R$ 7,00; 1 uva = R$ 8,00. Comprou 2 kg de banana e 1 kg de maçã. Pagou com R$ 20,00. Qual o troco? | *R$ 5,00 | R$ 15,00 | R$ 6,00 | 8,00 + 7,00 = R$ 15,00. Troco: 20,00 − 15,00 = R$ 5,00. | bncc=EF03MA24 | emoji=🍌
+? Tabela: 1 esponja = R$ 2,00; 1 sabão em pedra = R$ 3,00; 1 pano de prato = R$ 5,00. Comprou 1 pano de prato, 1 sabão e 1 esponja. Quanto gastou? | *R$ 10,00 | R$ 8,00 | R$ 12,00 | 5,00 + 3,00 + 2,00 = R$ 10,00. | bncc=EF03MA24 | emoji=🧽
+? Tabela: 1 coxinha = R$ 5,00; 1 esfirra = R$ 4,00; 1 suco = R$ 4,00. Comprou 1 coxinha e 1 suco. Pagou com R$ 10,00. Qual o troco? | *R$ 1,00 | R$ 9,00 | R$ 2,00 | 5,00 + 4,00 = R$ 9,00. Troco: 10,00 − 9,00 = R$ 1,00. | bncc=EF03MA24 | emoji=🍗
+? Tabela: 1 caixa de chá = R$ 6,00; 1 bolacha = R$ 4,00; 1 leite = R$ 5,00. Comprou 1 caixa de chá e 1 bolacha. Pagou com R$ 20,00. Qual o troco? | *R$ 10,00 | R$ 12,00 | R$ 8,00 | 6,00 + 4,00 = R$ 10,00. Troco: 20,00 − 10,00 = R$ 10,00. | bncc=EF03MA24 | emoji=🍵
+? Tabela: 1 milho verde = R$ 2,00; 1 pastel de forno = R$ 6,00; 1 refrigerante = R$ 5,00. Comprou 2 milhos verdes e 1 refrigerante. Pagou com R$ 10,00. Qual o troco? | *R$ 1,00 | R$ 9,00 | R$ 2,00 | (2 × 2,00) + 5,00 = R$ 9,00. Troco: 10,00 − 9,00 = R$ 1,00. | bncc=EF03MA24 | emoji=🌽
+? Tabela: 1 laranja = R$ 1,00; 1 tangerina = R$ 2,00; 1 abacaxi = R$ 7,00. Comprou 1 abacaxi e 1 tangerina. Pagou com R$ 10,00. Qual o troco? | *R$ 1,00 | R$ 9,00 | R$ 2,00 | 7,00 + 2,00 = R$ 9,00. Troco: 10,00 − 9,00 = R$ 1,00. | bncc=EF03MA24 | emoji=🍍
+? Tabela: 1 iogurte = R$ 3,00; 1 cereal = R$ 9,00; 1 kg de banana = R$ 4,00. Comprou 1 iogurte e 1 kg de banana. Pagou com R$ 10,00. Qual o troco? | *R$ 3,00 | R$ 7,00 | R$ 2,00 | 3,00 + 4,00 = R$ 7,00. Troco: 10,00 − 7,00 = R$ 3,00. | bncc=EF03MA24 | emoji=🥣
+? Tabela: 1 kg de batata = R$ 4,00; 1 kg de cebola = R$ 5,00; 1 kg de tomate = R$ 6,00. Comprou 1 kg de batata e 1 kg de cebola. Pagou com R$ 10,00. Qual o troco? | *R$ 1,00 | R$ 9,00 | R$ 2,00 | 4,00 + 5,00 = R$ 9,00. Troco: 10,00 − 9,00 = R$ 1,00. | bncc=EF03MA24 | emoji=🥔
+? Tabela: 1 biscoito = R$ 4,00; 1 achocolatado = R$ 5,00; 1 pão = R$ 1,00. Comprou 1 biscoito, 1 achocolatado e 1 pão. Quanto gastou? | *R$ 10,00 | R$ 9,00 | R$ 11,00 | 4,00 + 5,00 + 1,00 = R$ 10,00. | bncc=EF03MA24 | emoji=🍪
+? Tabela: 1 melão = R$ 6,00; 1 mamão = R$ 5,00; 1 kg de goiaba = R$ 4,00. Comprou 1 mamão e 1 kg de goiaba. Pagou com R$ 10,00. Qual o troco? | *R$ 1,00 | R$ 9,00 | R$ 2,00 | 5,00 + 4,00 = R$ 9,00. Troco: 10,00 − 9,00 = R$ 1,00. | bncc=EF03MA24 | emoji=🍈
+? Tabela: 1 borracha = R$ 2,00; 1 lápis = R$ 2,00; 1 régua = R$ 4,00. Comprou 1 borracha, 1 lápis e 1 régua. Pagou com R$ 10,00. Qual o troco? | *R$ 2,00 | R$ 8,00 | R$ 4,00 | 2,00 + 2,00 + 4,00 = R$ 8,00. Troco: 10,00 − 8,00 = R$ 2,00. | bncc=EF03MA24 | emoji=📏
+? Tabela: 1 suco = R$ 4,00; 1 salgado = R$ 5,00; 1 doce = R$ 3,00. Comprou 1 salgado e 1 doce. Pagou com R$ 10,00. Qual o troco? | *R$ 2,00 | R$ 8,00 | R$ 3,00 | 5,00 + 3,00 = R$ 8,00. Troco: 10,00 − 8,00 = R$ 2,00. | bncc=EF03MA24 | emoji=🥟
+? Tabela: 1 kg de arroz = R$ 6,00; 1 sal = R$ 3,00; 1 kg de açúcar = R$ 4,00. Comprou 1 kg de arroz e 1 sal. Pagou com R$ 10,00. Qual o troco? | *R$ 1,00 | R$ 9,00 | R$ 2,00 | 6,00 + 3,00 = R$ 9,00. Troco: 10,00 − 9,00 = R$ 1,00. | bncc=EF03MA24 | emoji=🍚
+? Tabela: 1 empada = R$ 5,00; 1 água = R$ 2,00; 1 bolo = R$ 4,00. Comprou 1 empada e 1 água. Pagou com R$ 10,00. Qual o troco? | *R$ 3,00 | R$ 7,00 | R$ 2,00 | 5,00 + 2,00 = R$ 7,00. Troco: 10,00 − 7,00 = R$ 3,00. | bncc=EF03MA24 | emoji=🥧
+? Pacotes com 10 figurinhas cada: 5 pacotes fechados e 8 soltas. Quantas há ao todo? | *58 figurinhas | 13 figurinhas | 85 figurinhas | 50 + 8 = 58 figurinhas. | bncc=EF02MA04 | emoji=🃏
+? Cestas com 10 maçãs cada: 3 cestas fechadas e 9 soltas. Quantas há ao todo? | *39 maçãs | 12 maçãs | 93 maçãs | 30 + 9 = 39 maçãs. | bncc=EF02MA04 | emoji=🍎
+? Caixas com 10 canetas cada: 7 caixas fechadas e 2 soltas. Quantas há ao todo? | *72 canetas | 9 canetas | 27 canetas | 70 + 2 = 72 canetas. | bncc=EF02MA04 | emoji=🖊️
+? Sacos com 10 batatas cada: 2 sacos fechados e 6 soltas. Quantas há ao todo? | *26 batatas | 8 batatas | 62 batatas | 20 + 6 = 26 batatas. | bncc=EF02MA04 | emoji=🥔
+? Bandejas com 10 ovos cada: 4 bandejas cheias e 4 ovos soltos. Quantos há ao todo? | *44 ovos | 8 ovos | 14 ovos | 40 + 4 = 44 ovos. | bncc=EF02MA04 | emoji=🥚
+? Grupos com 10 alunos cada: 8 grupos de 10 e mais 5 alunos. Quantos há ao todo? | *85 alunos | 13 alunos | 58 alunos | 80 + 5 = 85 alunos. | bncc=EF02MA04 | emoji=🧒
+? Caixas com 10 bolinhas cada: 1 caixa de 10 e 9 bolinhas soltas. Quantas há ao todo? | *19 bolinhas | 10 bolinhas | 91 bolinhas | 10 + 9 = 19 bolinhas. | bncc=EF02MA04 | emoji=⚪
+? Pacotes com 10 borrachas cada: 9 pacotes de 10 e 1 borracha solta. Quantas há ao todo? | *91 borrachas | 10 borrachas | 19 borrachas | 90 + 1 = 91 borrachas. | bncc=EF02MA04 | emoji=✏️
+? Sacos com 20 mangas cada: 2 sacos de 20 e 5 mangas soltas. Quantas há ao todo? | *45 mangas | 25 mangas | 52 mangas | 40 + 5 = 45 mangas. | bncc=EF02MA04 | emoji=🥭
+? Caixas com 10 livros cada: 3 caixas de 10 e 6 livros soltos. Quantos há ao todo? | *36 livros | 9 livros | 63 livros | 30 + 6 = 36 livros. | bncc=EF02MA04 | emoji=📚
+? Saquinhos com 10 moedas cada: 5 saquinhos de 10 e 4 moedas soltas. Quantas há ao todo? | *54 moedas | 9 moedas | 45 moedas | 50 + 4 = 54 moedas. | bncc=EF02MA04 | emoji=🪙
+? Fardos com 10 garrafas cada: 6 fardos de 10 e 7 garrafas soltas. Quantas há ao todo? | *67 garrafas | 13 garrafas | 76 garrafas | 60 + 7 = 67 garrafas. | bncc=EF02MA04 | emoji=🍾
+? Caixas com 10 cartões cada: 4 caixas de 10 e 8 cartões soltos. Quantos há ao todo? | *48 cartões | 12 cartões | 84 cartões | 40 + 8 = 48 cartões. | bncc=EF02MA04 | emoji=🃏
+? Sacos com 10 limões cada: 7 sacos de 10 e 5 limões soltos. Quantos há ao todo? | *75 limões | 12 limões | 57 limões | 70 + 5 = 75 limões. | bncc=EF02MA04 | emoji=🍋
+? Caixas com 10 réguas cada: 2 caixas de 10 e 8 réguas soltas. Quantas há ao todo? | *28 réguas | 10 réguas | 82 réguas | 20 + 8 = 28 réguas. | bncc=EF02MA04 | emoji=📏
+? Pacotes com 10 adesivos cada: 6 pacotes de 10 e 6 adesivos soltos. Quantos há ao todo? | *66 adesivos | 12 adesivos | 16 adesivos | 60 + 6 = 66 adesivos. | bncc=EF02MA04 | emoji=⭐
+? Cestas com 10 goiabas cada: 3 cestas de 10 e 1 goiaba solta. Quantas há ao todo? | *31 goiabas | 4 goiabas | 13 goiabas | 30 + 1 = 31 goiabas. | bncc=EF02MA04 | emoji=🍈
+? Saquinhos com 10 sementes cada: 8 saquinhos de 10 e 9 sementes soltas. Quantas há ao todo? | *89 sementes | 17 sementes | 98 sementes | 80 + 9 = 89 sementes. | bncc=EF02MA04 | emoji=🌱
+? Caixas com 10 picolés cada: 5 caixas de 10 e 2 picolés soltos. Quantos há ao todo? | *52 picolés | 7 picolés | 25 picolés | 50 + 2 = 52 picolés. | bncc=EF02MA04 | emoji=🍦
+? Sacos com 10 cebolas cada: 4 sacos de 10 e 3 cebolas soltas. Quantas há ao todo? | *43 cebolas | 7 cebolas | 34 cebolas | 40 + 3 = 43 cebolas. | bncc=EF02MA04 | emoji=🧅
+? Qual é a ordem do mais novo para o mais velho: 12, 7 e 10 anos? | *7, 10 e 12 anos | 10, 7 e 12 anos | 12, 10 e 7 anos | Do mais novo para o mais velho: 7 < 10 < 12. | bncc=EF02MA01 | emoji=🎂
+? Qual é a ordem da menor para a maior altura: 145 cm, 128 cm e 136 cm? | *128 cm, 136 cm e 145 cm | 136 cm, 128 cm e 145 cm | 145 cm, 136 cm e 128 cm | Da menor para a maior: 128 < 136 < 145. | bncc=EF03MA01 | emoji=📏
+? Qual é a ordem do maior para o menor número de figurinhas: 54, 79 e 63? | *79, 63 e 54 | 63, 54 e 79 | 54, 63 e 79 | Do maior para o menor: 79 > 63 > 54. | bncc=EF02MA01 | emoji=🃏
+? Qual valor é o MENOR: R$ 47,00, R$ 39,00 ou R$ 51,00? | *R$ 39,00 | R$ 47,00 | R$ 51,00 | 39 < 47 < 51. | bncc=EF02MA20 | emoji=💰
+? Qual é a ordem do menor para o maior: 89, 34 e 61? | *34, 61 e 89 | 61, 34 e 89 | 89, 61 e 34 | Do menor para o maior: 34 < 61 < 89. | bncc=EF02MA01 | emoji=🔢
+? Qual é a ordem do maior para o menor: 112, 150 e 134? | *150, 134 e 112 | 134, 112 e 150 | 112, 134 e 150 | Do maior para o menor: 150 > 134 > 112. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do mais rápido (menor tempo) para o mais lento: 25, 18 e 21 segundos? | *18, 21 e 25 segundos | 21, 18 e 25 segundos | 25, 21 e 18 segundos | 18 < 21 < 25 segundos. | bncc=EF02MA01 | emoji=⏱️
+? Qual número está entre 60 e 75? | *68 | 59 | 78 | 68 é maior que 60 e menor que 75. | bncc=EF02MA01 | emoji=🔢
+? Qual é a ordem da massa do mais leve para o mais pesado: 15 kg, 4 kg e 9 kg? | *4 kg, 9 kg e 15 kg | 9 kg, 4 kg e 15 kg | 15 kg, 9 kg e 4 kg | Do mais leve para o mais pesado: 4 < 9 < 15. | bncc=EF02MA01 | emoji=⚖️
+? Qual é a ordem do menor para o maior: 205, 198 e 214? | *198, 205 e 214 | 205, 198 e 214 | 214, 205 e 198 | Do menor para o maior: 198 < 205 < 214. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do maior para o menor: 310, 405 e 290? | *405, 310 e 290 | 310, 405 e 290 | 290, 310 e 405 | Do maior para o menor: 405 > 310 > 290. | bncc=EF03MA01 | emoji=🔢
+? Qual é o MAIOR número formado pelos algarismos 3, 8 e 5? | *853 | 835 | 583 | Colocando o maior algarismo na centena: 853. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do menor para o maior valor: R$ 75,00, R$ 29,00 e R$ 50,00? | *R$ 29,00, R$ 50,00 e R$ 75,00 | R$ 50,00, R$ 29,00 e R$ 75,00 | R$ 75,00, R$ 50,00 e R$ 29,00 | 29 < 50 < 75. | bncc=EF02MA20 | emoji=💰
+? Qual é a ordem do maior para o menor número de livros: 44, 82 e 67? | *82, 67 e 44 | 67, 44 e 82 | 44, 67 e 82 | Do maior para o menor: 82 > 67 > 44. | bncc=EF02MA01 | emoji=📚
+? Qual é a ordem da distância mais curta para a mais longa: 300 m, 120 m e 250 m? | *120 m, 250 m e 300 m | 250 m, 120 m e 300 m | 300 m, 250 m e 120 m | 120 < 250 < 300. | bncc=EF03MA01 | emoji=🛤️
+? Qual número é MENOR que 94? | *89 | 96 | 102 | 89 < 94. | bncc=EF02MA01 | emoji=🔢
+? Qual é a ordem do menor para o maior: 77, 23 e 51? | *23, 51 e 77 | 51, 23 e 77 | 77, 51 e 23 | 23 < 51 < 77. | bncc=EF02MA01 | emoji=🔢
+? Qual é a ordem do maior para o menor: 64, 91 e 78? | *91, 78 e 64 | 78, 64 e 91 | 64, 78 e 91 | 91 > 78 > 64. | bncc=EF02MA01 | emoji=🔢
+? Qual é a ordem do mais caro para o mais barato: R$ 19,00, R$ 45,00 e R$ 32,00? | *R$ 45,00, R$ 32,00 e R$ 19,00 | R$ 32,00, R$ 45,00 e R$ 19,00 | R$ 19,00, R$ 32,00 e R$ 45,00 | 45 > 32 > 19. | bncc=EF02MA20 | emoji=💲
+? Qual turma tem MAIS alunos: 3º A (28), 3º B (32) ou 3º C (30)? | *3º B (32) | 3º C (30) | 3º A (28) | 32 > 30 > 28. | bncc=EF02MA01 | emoji=🏫
+? Qual é a ordem do menor para o maior: 160, 106 e 116? | *106, 116 e 160 | 116, 106 e 160 | 160, 116 e 106 | 106 < 116 < 160. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do maior para o menor: 240, 204 e 244? | *244, 240 e 204 | 240, 244 e 204 | 204, 240 e 244 | 244 > 240 > 204. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem da menor para a maior capacidade: 20 litros, 5 litros e 12 litros? | *5 litros, 12 litros e 20 litros | 12 litros, 5 litros e 20 litros | 20 litros, 12 litros e 5 litros | 5 < 12 < 20. | bncc=EF02MA01 | emoji=🪣
+? Qual número é MAIOR que 175? | *181 | 169 | 172 | 181 > 175. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do menor para o maior: 58, 14 e 39? | *14, 39 e 58 | 39, 14 e 58 | 58, 39 e 14 | 14 < 39 < 58. | bncc=EF02MA01 | emoji=🔢
+? Qual é a ordem do maior para o menor: 83, 99 e 87? | *99, 87 e 83 | 87, 83 e 99 | 83, 87 e 99 | 99 > 87 > 83. | bncc=EF02MA01 | emoji=🔢
+? Qual é a ordem do menor para o maior número de tampinhas: 135, 98 e 112? | *98, 112 e 135 | 112, 98 e 135 | 135, 112 e 98 | 98 < 112 < 135. | bncc=EF03MA01 | emoji=🔵
+? Qual é o MENOR número formado por 4, 1 e 9? | *149 | 194 | 419 | Colocando o menor algarismo na centena: 149. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do menor para o maior valor: R$ 88,00, R$ 62,00 e R$ 74,00? | *R$ 62,00, R$ 74,00 e R$ 88,00 | R$ 74,00, R$ 62,00 e R$ 88,00 | R$ 88,00, R$ 74,00 e R$ 62,00 | 62 < 74 < 88. | bncc=EF02MA20 | emoji=💰
+? Qual é a ordem do maior para o menor: 320, 350 e 310? | *350, 320 e 310 | 320, 350 e 310 | 310, 320 e 350 | 350 > 320 > 310. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem da temperatura mais fria para a mais quente: 31 °C, 22 °C e 27 °C? | *22 °C, 27 °C e 31 °C | 27 °C, 22 °C e 31 °C | 31 °C, 27 °C e 22 °C | 22 < 27 < 31. | bncc=EF02MA01 | emoji=🌡️
+? Qual número está entre 120 e 135? | *129 | 118 | 137 | 120 < 129 < 135. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do menor para o maior: 49, 94 e 64? | *49, 64 e 94 | 64, 49 e 94 | 94, 64 e 49 | 49 < 64 < 94. | bncc=EF02MA01 | emoji=🔢
+? Qual é a ordem do maior para o menor: 72, 27 e 57? | *72, 57 e 27 | 57, 72 e 27 | 27, 57 e 72 | 72 > 57 > 27. | bncc=EF02MA01 | emoji=🔢
+? Qual é a ordem dos ingressos vendidos do menor para o maior: 180, 145 e 162? | *145, 162 e 180 | 162, 145 e 180 | 180, 162 e 145 | 145 < 162 < 180. | bncc=EF03MA01 | emoji=🎟️
+? Qual valor é MAIOR: R$ 105,00, R$ 95,00 ou R$ 110,00? | *R$ 110,00 | R$ 105,00 | R$ 95,00 | 110 > 105 > 95. | bncc=EF03MA01 | emoji=💰
+? Qual é a ordem do menor para o maior: 308, 299 e 315? | *299, 308 e 315 | 308, 299 e 315 | 315, 308 e 299 | 299 < 308 < 315. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do maior para o menor: 412, 451 e 429? | *451, 429 e 412 | 429, 451 e 412 | 412, 429 e 451 | 451 > 429 > 412. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do menor para o maior páginas lidas: 66, 38 e 52? | *38, 52 e 66 | 52, 38 e 66 | 66, 52 e 38 | 38 < 52 < 66. | bncc=EF02MA01 | emoji=📖
+? Qual número é MENOR: 215, 251 ou 209? | *209 | 215 | 251 | 209 < 215 < 251. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do menor para o maior: 93, 47 e 85? | *47, 85 e 93 | 85, 47 e 93 | 93, 85 e 47 | 47 < 85 < 93. | bncc=EF02MA01 | emoji=🔢
+? Qual é a ordem do maior para o menor: 170, 195 e 182? | *195, 182 e 170 | 182, 195 e 170 | 170, 182 e 195 | 195 > 182 > 170. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do menor para o maior total de moedas: 33, 17 e 26? | *17, 26 e 33 | 26, 17 e 33 | 33, 26 e 17 | 17 < 26 < 33. | bncc=EF02MA01 | emoji=🪙
+? Qual número está entre 240 e 260? | *252 | 238 | 264 | 240 < 252 < 260. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do menor para o maior: 504, 490 e 512? | *490, 504 e 512 | 504, 490 e 512 | 512, 504 e 490 | 490 < 504 < 512. | bncc=EF03MA01 | emoji=🔢
+? Qual é a ordem do maior para o menor: 618, 681 e 645? | *681, 645 e 618 | 645, 681 e 618 | 618, 645 e 681 | 681 > 645 > 618. | bncc=EF03MA01 | emoji=🔢
+? Havia 45 bananas, chegaram 30 e foram vendidas 50. Quantas sobraram? | *25 bananas | 75 bananas | 15 bananas | 45 + 30 = 75; 75 − 50 = 25. | bncc=EF02MA06 | emoji=🍌
+? Ana tinha R$ 32,00, ganhou R$ 18,00 e gastou R$ 15,00. Quanto restou? | *R$ 35,00 | R$ 50,00 | R$ 29,00 | 32 + 18 = 50; 50 − 15 = 35. | bncc=EF02MA06 | emoji=💰
+? Lucas tinha 24 lápis, ganhou 12 novos e emprestou 7. Com quantos ficou? | *29 lápis | 36 lápis | 19 lápis | 24 + 12 = 36; 36 − 7 = 29. | bncc=EF02MA06 | emoji=🖍️
+? Foram assados 60 pães, depois mais 40, e venderam 75. Quantos sobraram? | *25 pães | 100 pães | 35 pães | 60 + 40 = 100; 100 − 75 = 25. | bncc=EF02MA06 | emoji=🍞
+? Sofia fez 40 pontos na 1ª rodada, 35 na 2ª e perdeu 20 por falta. Qual o total? | *55 pontos | 75 pontos | 25 pontos | 40 + 35 = 75; 75 − 20 = 55. | bncc=EF02MA06 | emoji=🎲
+? Plantaram 18 mudas ontem e 22 hoje; 6 secaram. Quantas mudas restaram? | *34 mudas | 40 mudas | 28 mudas | 18 + 22 = 40; 40 − 6 = 34. | bncc=EF02MA06 | emoji=🌱
+? Encheram 35 balões azuis e 25 brancos, mas 8 estouraram. Quantos ficaram? | *52 balões | 60 balões | 42 balões | 35 + 25 = 60; 60 − 8 = 52. | bncc=EF02MA06 | emoji=🎈
+? A turma juntou 48 garrafas de manhã, 32 à tarde e entregou 60. Quantas sobraram? | *20 garrafas | 80 garrafas | 16 garrafas | 48 + 32 = 80; 80 − 60 = 20. | bncc=EF02MA06 | emoji=♻️
+? Tiago tinha 19 gibis, ganhou 11 e doou 10. Com quantos ficou? | *20 gibis | 30 gibis | 18 gibis | 19 + 11 = 30; 30 − 10 = 20. | bncc=EF02MA06 | emoji=📚
+? Havia 70 laranjas, chegaram 30 e venderam 65. Quantas ficaram? | *35 laranjas | 100 laranjas | 45 laranjas | 70 + 30 = 100; 100 − 65 = 35. | bncc=EF02MA06 | emoji=🍊
+? Dona Rosa tinha 55 botões, achou 25 e usou 30 numa costura. Quantos sobraram? | *50 botões | 80 botões | 40 botões | 55 + 25 = 80; 80 − 30 = 50. | bncc=EF02MA06 | emoji=🔘
+? Entraram 42 crianças, depois mais 28, e saíram 35. Quantas ficaram? | *35 crianças | 70 crianças | 25 crianças | 42 + 28 = 70; 70 − 35 = 35. | bncc=EF02MA06 | emoji=🎡
+? Um caderno tinha 80 folhas, colocaram 20 avulsas e usaram 45. Quantas restaram? | *55 folhas | 100 folhas | 35 folhas | 80 + 20 = 100; 100 − 45 = 55. | bncc=EF02MA06 | emoji=📓
+? Havia 26 pães, compraram mais 14 e comeram 12 no café. Quantos sobraram? | *28 pães | 40 pães | 18 pães | 26 + 14 = 40; 40 − 12 = 28. | bncc=EF02MA06 | emoji=🥖
+? Bia achou 23 conchas, depois 17, e deu 15 para a irmã. Com quantas ficou? | *25 conchas | 40 conchas | 20 conchas | 23 + 17 = 40; 40 − 15 = 25. | bncc=EF02MA06 | emoji=🐚
+? Seu Jorge tinha 64 pregos, comprou 36 e usou 40 na cerca. Quantos sobraram? | *60 pregos | 100 pregos | 50 pregos | 64 + 36 = 100; 100 − 40 = 60. | bncc=EF02MA06 | emoji=🔩
+? Fizeram 30 biscoitos de coco e 20 de chocolate; comeram 22. Quantos sobraram? | *28 biscoitos | 50 biscoitos | 18 biscoitos | 30 + 20 = 50; 50 − 22 = 28. | bncc=EF02MA06 | emoji=🍪
+? Havia 38 carros, entraram 16 e saíram 24. Quantos carros ficaram? | *30 carros | 54 carros | 20 carros | 38 + 16 = 54; 54 − 24 = 30. | bncc=EF02MA06 | emoji=🚗
+? Cauê juntou 45 tampinhas, achou 25 e usou 30 num trabalho. Quantas restaram? | *40 tampinhas | 70 tampinhas | 35 tampinhas | 45 + 25 = 70; 70 − 30 = 40. | bncc=EF02MA06 | emoji=🔵
+? Havia 90 pacotes de arroz, chegaram 30 e venderam 85. Quantos sobraram? | *35 pacotes | 120 pacotes | 45 pacotes | 90 + 30 = 120; 120 − 85 = 35. | bncc=EF03MA06 | emoji=🍚
+? Havia 27 passarinhos no galho, chegaram 13 e voaram 18. Quantos ficaram? | *22 passarinhos | 40 passarinhos | 12 passarinhos | 27 + 13 = 40; 40 − 18 = 22. | bncc=EF02MA06 | emoji=🐦
+? Um livro tem 95 páginas. Ana leu 30 ontem e 25 hoje. Quantas faltam? | *40 páginas | 55 páginas | 35 páginas | Leu 30 + 25 = 55; faltam 95 − 55 = 40. | bncc=EF02MA06 | emoji=📖
+? Davi tinha R$ 50,00, gastou R$ 18,00 no almoço e R$ 12,00 no lanche. Quanto sobrou? | *R$ 20,00 | R$ 30,00 | R$ 15,00 | Gastou 18 + 12 = 30; sobrou 50 − 30 = 20. | bncc=EF02MA20 | emoji=💰
+? Havia 65 revistas, chegaram 25 e venderam 50. Quantas ficaram? | *40 revistas | 90 revistas | 30 revistas | 65 + 25 = 90; 90 − 50 = 40. | bncc=EF02MA06 | emoji=📰
+? Havia 44 balas, colocaram mais 26 e distribuíram 45. Quantas sobraram? | *25 balas | 70 balas | 15 balas | 44 + 26 = 70; 70 − 45 = 25. | bncc=EF02MA06 | emoji=🍬
+? Havia 34 cadeiras, trouxeram 16 e retiraram 12 quebradas. Quantas ficaram? | *38 cadeiras | 50 cadeiras | 28 cadeiras | 34 + 16 = 50; 50 − 12 = 38. | bncc=EF02MA06 | emoji=🪑
+? Tinha 75 sementes, ganhou 25 e plantou 60. Quantas sobraram? | *40 sementes | 100 sementes | 30 sementes | 75 + 25 = 100; 100 − 60 = 40. | bncc=EF02MA06 | emoji=🌱
+? Cabem 80 fotos. Helena colou 35 e depois 25. Quantas faltam? | *20 fotos | 60 fotos | 30 fotos | Colou 35 + 25 = 60; faltam 80 − 60 = 20. | bncc=EF02MA06 | emoji=📸
+? O feirante levou 55 abacaxis, buscou mais 25 e vendeu 62. Quantos sobraram? | *18 abacaxis | 80 abacaxis | 28 abacaxis | 55 + 25 = 80; 80 − 62 = 18. | bncc=EF02MA06 | emoji=🍍
+? Havia 33 gizes brancos e 27 coloridos; usaram 20 na semana. Quantos restaram? | *40 gizes | 60 gizes | 30 gizes | 33 + 27 = 60; 60 − 20 = 40. | bncc=EF02MA06 | emoji=🖍️
+? Gabriel tinha R$ 45,00, ganhou R$ 35,00 e comprou um jogo de R$ 50,00. Quanto sobrou? | *R$ 30,00 | R$ 80,00 | R$ 20,00 | 45 + 35 = 80; 80 − 50 = 30. | bncc=EF02MA20 | emoji=🎮
+? Havia 29 pombos, pousaram 21 e voaram 17. Quantos ficaram? | *33 pombos | 50 pombos | 23 pombos | 29 + 21 = 50; 50 − 17 = 33. | bncc=EF02MA06 | emoji=🕊️
+? Havia 85 cadernos, chegaram 35 e venderam 90. Quantos ficaram? | *30 cadernos | 120 cadernos | 40 cadernos | 85 + 35 = 120; 120 − 90 = 30. | bncc=EF03MA06 | emoji=📓
+? Prepararam 40 copos de suco de laranja e 30 de manga; venderam 52. Quantos sobraram? | *18 copos | 70 copos | 28 copos | 40 + 30 = 70; 70 − 52 = 18. | bncc=EF02MA06 | emoji=🥤
+? Mateus tinha 22 carrinhos, ganhou 18 e doou 14. Com quantos ficou? | *26 carrinhos | 40 carrinhos | 16 carrinhos | 22 + 18 = 40; 40 − 14 = 26. | bncc=EF02MA06 | emoji=🚗
+? Havia 68 pessoas, entraram 22 na estação e desceram 45. Quantas ficaram? | *45 pessoas | 90 pessoas | 35 pessoas | 68 + 22 = 90; 90 − 45 = 45. | bncc=EF02MA06 | emoji=🚆
+? Colheram 37 mangas de manhã, 23 à tarde e deram 25 aos vizinhos. Quantas sobraram? | *35 mangas | 60 mangas | 25 mangas | 37 + 23 = 60; 60 − 25 = 35. | bncc=EF02MA06 | emoji=🥭
+? Havia 46 garrafas, compraram 34 e beberam 50 no evento. Quantas restaram? | *30 garrafas | 80 garrafas | 20 garrafas | 46 + 34 = 80; 80 − 50 = 30. | bncc=EF02MA06 | emoji=🍶
+? A equipe tinha 52 pontos, ganhou 28 e perdeu 15. Qual o total final? | *65 pontos | 80 pontos | 55 pontos | 52 + 28 = 80; 80 − 15 = 65. | bncc=EF02MA06 | emoji=🏅
+? Havia 74 camisetas, chegaram 26 e venderam 68. Quantas ficaram? | *32 camisetas | 100 camisetas | 42 camisetas | 74 + 26 = 100; 100 − 68 = 32. | bncc=EF02MA06 | emoji=👕
+? Tinha 58 clipes, colocaram mais 22 e usaram 35. Quantos sobraram? | *45 clipes | 80 clipes | 35 clipes | 58 + 22 = 80; 80 − 35 = 45. | bncc=EF02MA06 | emoji=📎
+? Havia 39 flores, nasceram 21 e colheram 16 para o vaso. Quantas ficaram? | *44 flores | 60 flores | 34 flores | 39 + 21 = 60; 60 − 16 = 44. | bncc=EF02MA06 | emoji=🌷
+? Lorena tinha 31 adesivos, ganhou 19 e colou 27 no caderno. Quantos restaram? | *23 adesivos | 50 adesivos | 13 adesivos | 31 + 19 = 50; 50 − 27 = 23. | bncc=EF02MA06 | emoji=⭐
+? Havia 48 sonhos, fizeram mais 32 e venderam 65. Quantos sobraram? | *15 sonhos | 80 sonhos | 25 sonhos | 48 + 32 = 80; 80 − 65 = 15. | bncc=EF02MA06 | emoji=🍩
+? Rafael tinha 43 bolinhas de gude, ganhou 27 e perdeu 19 no jogo. Com quantas ficou? | *51 bolinhas | 70 bolinhas | 41 bolinhas | 43 + 27 = 70; 70 − 19 = 51. | bncc=EF02MA06 | emoji=⚪
+? Fizeram 65 brigadeiros e 35 beijinhos; entregaram 75 na festa. Quantos sobraram? | *25 doces | 100 doces | 35 doces | 65 + 35 = 100; 100 − 75 = 25. | bncc=EF02MA06 | emoji=🍫
