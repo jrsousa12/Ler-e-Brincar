@@ -33,7 +33,9 @@ LB.rodada = function (ctx, cfg) {
   }
 
   function abrir() {
-    lista.value = cfg.sortear();
+    const sorteados = cfg.sortear();
+    if (!sorteados || !sorteados.length) return;   // sem conteúdo: não abre a tela
+    lista.value = sorteados;
     indice.value = 0;
     carregar();
     ctx.tela.value = cfg.id;
@@ -85,4 +87,14 @@ LB.rodada = function (ctx, cfg) {
     return saida;
   };
   return kit;
+};
+
+// Embaralha uma cópia da lista (a original não muda). Usado pelas brincadeiras para sortear.
+LB.rodada.embaralhar = function (lista) {
+  const copia = [...lista];
+  for (let i = copia.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copia[i], copia[j]] = [copia[j], copia[i]];
+  }
+  return copia;
 };

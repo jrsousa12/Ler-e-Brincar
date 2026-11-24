@@ -1,40 +1,12 @@
 // Brincadeira "Monte a Palavra": tocar nas sílabas na ordem certa para formar a palavra da dica.
+// Palavras: conteudo/silabas.js (gerado por build/gerar-silabas.js). O vai e vem da rodada fica no kit js/rodada.js.
 LB.usarSilabas = function (ctx) {
   'use strict';
-  const { ref, computed } = Vue;
-
-  // Palavras: conteudo/silabas.js (gerado por build/gerar-silabas.js). Rodada de 5, mais fáceis primeiro.
+  const { ref } = Vue;
   const POR_RODADA = 5;
-  const palavrasSilabas = ref([]);
-
-  const indiceSilabas = ref(0);
+  const embaralhar = LB.rodada.embaralhar;
   const slotsSilabas = ref([]);
   const bancoSilabas = ref([]);
-  const mensagemSilabas = ref('');
-  const estadoSilabas = ref(''); // '', 'correto', 'tentar-novamente'
-  const palavraSilabas = computed(() => palavrasSilabas.value[indiceSilabas.value]);
-  const somLigado = () => ctx.ajustes.value.som !== false;
-
-  function embaralhar(lista) {
-    const copia = [...lista];
-    for (let i = copia.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copia[i], copia[j]] = [copia[j], copia[i]];
-    }
-    return copia;
-  }
-
-  function carregarPalavra() {
-    const atual = palavraSilabas.value;
-    slotsSilabas.value = Array(atual.silabas.length).fill(null);
-    mensagemSilabas.value = '';
-    estadoSilabas.value = '';
-    bancoSilabas.value = embaralhar([
-      ...atual.silabas.map((texto, i) => ({ id: 'certa-' + i + '-' + texto, texto })),
-      ...atual.extras.map((texto, i) => ({ id: 'extra-' + i + '-' + texto, texto }))
-    ]);
-    ctx.falarSozinho(atual.dica);
-  }
 
   // Sorteia a rodada: primeiro as palavras que ela ainda não acertou; depois ordena por nível.
   function sortearRodada() {
@@ -44,17 +16,28 @@ LB.usarSilabas = function (ctx) {
     return [...novas, ...velhas].slice(0, POR_RODADA).sort((a, b) => a.nivel - b.nivel);
   }
 
-  function abrirSilabas() {
-    palavrasSilabas.value = sortearRodada();
-    if (!palavrasSilabas.value.length) return;
-    indiceSilabas.value = 0;
-    carregarPalavra();
-    ctx.tela.value = 'silabas';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Cada palavra: casas vazias + banco com as sílabas certas e as extras, embaralhadas.
+  function montarPalavra(atual) {
+    slotsSilabas.value = Array(atual.silabas.length).fill(null);
+    bancoSilabas.value = embaralhar([
+      ...atual.silabas.map((texto, i) => ({ id: 'certa-' + i + '-' + texto, texto })),
+      ...atual.extras.map((texto, i) => ({ id: 'extra-' + i + '-' + texto, texto }))
+    ]);
+  }
+
+  const r = LB.rodada(ctx, { id: 'silabas', sortear: sortearRodada, frase: p => p.dica, aoCarregar: montarPalavra });
+
+  function conferirPalavra() {
+    if (slotsSilabas.value.some(item => item === null)) return;
+    const montada = slotsSilabas.value.map(b => b.texto).join('');
+    const certa = r.atual.value.palavra;
+    if (montada !== certa) return r.errou('Quase lá! Toque em uma sílaba para trocar e tentar de novo.');
+    ctx.marcarConcluido(r.atual.value.id);
+    r.acertou('Muito bem! Você formou ' + certa + '! ⭐', 'Muito bem! ' + certa);
   }
 
   function encaixarSilaba(bloco) {
-    if (estadoSilabas.value === 'correto') return;
+    if (r.estado.value === 'correto') return;
     const vazio = slotsSilabas.value.findIndex(item => item === null);
     if (vazio === -1) return;
     slotsSilabas.value[vazio] = bloco;
@@ -64,47 +47,16 @@ LB.usarSilabas = function (ctx) {
   }
 
   function devolverSilaba(idx) {
-    if (estadoSilabas.value === 'correto') return;
+    if (r.estado.value === 'correto') return;
     const bloco = slotsSilabas.value[idx];
     if (!bloco) return;
     slotsSilabas.value[idx] = null;
     bancoSilabas.value.push(bloco);
-    mensagemSilabas.value = '';
-    estadoSilabas.value = '';
-  }
-
-  function conferirPalavra() {
-    if (slotsSilabas.value.some(item => item === null)) return;
-    const montada = slotsSilabas.value.map(b => b.texto).join('');
-    const certa = palavraSilabas.value.palavra;
-    if (montada === certa) {
-      estadoSilabas.value = 'correto';
-      mensagemSilabas.value = 'Muito bem! Você formou ' + certa + '! ⭐';
-      ctx.estrelas.value += 1;
-      ctx.marcarConcluido(palavraSilabas.value.id);
-      LB.festa.acerto(somLigado());
-      LB.voz.falar('Muito bem! ' + certa);
-    } else {
-      estadoSilabas.value = 'tentar-novamente';
-      mensagemSilabas.value = 'Quase lá! Toque em uma sílaba para trocar e tentar de novo.';
-      LB.festa.erro(somLigado());
-    }
-  }
-
-  function proximaSilabas() {
-    if (indiceSilabas.value < palavrasSilabas.value.length - 1) {
-      indiceSilabas.value += 1;
-      carregarPalavra();
-    }
-  }
-
-  function concluirSilabas() {
-    ctx.marcarConcluido('silabas');
-    ctx.terminarItem('atividades');
+    r.limpar();
   }
 
   return {
-    palavrasSilabas, indiceSilabas, slotsSilabas, bancoSilabas, mensagemSilabas, estadoSilabas, palavraSilabas,
-    abrirSilabas, encaixarSilaba, devolverSilaba, proximaSilabas, concluirSilabas
+    palavrasSilabas: r.lista, indiceSilabas: r.indice, palavraSilabas: r.atual, mensagemSilabas: r.mensagem, estadoSilabas: r.estado,
+    slotsSilabas, bancoSilabas, abrirSilabas: r.abrir, encaixarSilaba, devolverSilaba, proximaSilabas: r.seguir, concluirSilabas: r.concluir
   };
 };

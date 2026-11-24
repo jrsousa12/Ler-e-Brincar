@@ -74,5 +74,15 @@ const nomes = Object.keys(r.exportar('Teste'));
 ['abrirTeste', 'escolherTeste', 'seguirTeste', 'concluirTeste', 'perguntaTeste', 'estadoTeste', 'ultimoTeste', 'indiceTeste', 'listaTeste']
   .forEach(n => ok(nomes.includes(n), 'exportar tem ' + n));
 
+// Rodada sem conteúdo não abre a tela.
+ctx.tela.value = 'atividades';
+caixa.LB.rodada(ctx, { id: 'vazia', sortear: () => [], textos: {} }).abrir();
+ok(ctx.tela.value === 'atividades', 'rodada vazia não abre a tela');
+
+// Embaralhar: mesma lista em outra ordem, sem mexer na original.
+const original = [1, 2, 3, 4, 5, 6];
+const mist = caixa.LB.rodada.embaralhar(original);
+ok(mist !== original && original.join() === '1,2,3,4,5,6' && [...mist].sort().join() === '1,2,3,4,5,6', 'embaralhar copia e mantém os itens');
+
 console.log(falhas ? `t_rodada: ${falhas} falha(s)` : 't_rodada: OK');
 process.exit(falhas ? 1 : 0);

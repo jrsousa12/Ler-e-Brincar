@@ -1,43 +1,36 @@
 // Brincadeira "Memória": achar os pares figura + palavra escrita (palavras de conteudo/silabas.js).
+// Abrir, embaralhar de novo e Concluir vêm do kit js/rodada.js; aqui a rodada é um tabuleiro só,
+// e cada par achado vale 1 estrela.
 LB.usarMemoria = function (ctx) {
   'use strict';
   const { ref, computed } = Vue;
   const PARES = 4;
-  const cartasMemoria = ref([]);
+  const embaralhar = LB.rodada.embaralhar;
   const paresMemoria = ref(0);
   let viradas = [];
   let travado = false;
   const somLigado = () => ctx.ajustes.value.som !== false;
-  const memoriaCompleta = computed(() => paresMemoria.value === PARES);
-
-  function embaralhar(lista) {
-    const copia = [...lista];
-    for (let i = copia.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copia[i], copia[j]] = [copia[j], copia[i]];
-    }
-    return copia;
-  }
 
   // Cada par: uma carta com a figura e outra com a palavra escrita (treina a leitura).
-  function montarCartas() {
+  function montarTabuleiro() {
     const palavras = embaralhar(LB.silabas || []).filter(p => p.nivel <= 2).slice(0, PARES);
+    if (!palavras.length) return [];
     const cartas = palavras.flatMap(p => [
       { uid: p.id + '-f', par: p.id, tipo: 'figura', emoji: p.emoji, palavra: p.palavra, virada: false, achada: false },
       { uid: p.id + '-p', par: p.id, tipo: 'palavra', emoji: p.emoji, palavra: p.palavra, virada: false, achada: false }
     ]);
-    cartasMemoria.value = embaralhar(cartas);
-    paresMemoria.value = 0;
-    viradas = [];
-    travado = false;
+    return [embaralhar(cartas)];
   }
 
-  function abrirMemoria() {
-    montarCartas();
-    ctx.tela.value = 'memoria';
-    ctx.falarSozinho('Ache os pares: a figura e a palavra.');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  const r = LB.rodada(ctx, {
+    id: 'memoria',
+    sortear: montarTabuleiro,
+    frase: () => 'Ache os pares: a figura e a palavra.',
+    aoCarregar: () => { paresMemoria.value = 0; viradas = []; travado = false; }
+  });
+
+  const cartasMemoria = computed(() => r.atual.value || []);
+  const memoriaCompleta = computed(() => paresMemoria.value === PARES);
 
   function virarCarta(carta) {
     if (travado || carta.virada || carta.achada) return;
@@ -58,10 +51,8 @@ LB.usarMemoria = function (ctx) {
     }
   }
 
-  function concluirMemoria() {
-    ctx.marcarConcluido('memoria');
-    ctx.terminarItem('atividades');
-  }
-
-  return { cartasMemoria, paresMemoria, memoriaCompleta, totalParesMemoria: PARES, abrirMemoria, virarCarta, embaralharMemoria: montarCartas, concluirMemoria };
+  return {
+    cartasMemoria, paresMemoria, memoriaCompleta, totalParesMemoria: PARES,
+    abrirMemoria: r.abrir, virarCarta, embaralharMemoria: r.abrir, concluirMemoria: r.concluir
+  };
 };
