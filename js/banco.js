@@ -29,5 +29,17 @@
     } catch (e) { console.warn(e); }
   }
 
-  LB.banco = { carregarEstado, salvarEstado, db };
+  // Pede ao navegador para não apagar os dados quando faltar espaço (Android).
+  // Devolve true (guarda garantida), false (negada) ou null (sem suporte).
+  async function pedirGuarda(nav) {
+    nav = nav || (typeof navigator !== 'undefined' ? navigator : null);
+    try {
+      const sg = nav && nav.storage;
+      if (!sg || !sg.persist) return null;
+      if (sg.persisted && await sg.persisted()) return true;
+      return !!(await sg.persist());
+    } catch (e) { return null; }
+  }
+
+  LB.banco = { carregarEstado, salvarEstado, pedirGuarda, db };
 })();

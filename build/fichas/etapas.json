@@ -11,6 +11,7 @@
     "t_sorteio": "testes/t_sorteio.js",
     "t_caderno": "testes/t_caderno.js",
     "t_backup": "testes/t_backup.js",
+    "t_banco": "testes/t_banco.js",
     "t_evolucao": "testes/t_evolucao.js",
     "t_gerar_mat": "testes/t_gerar_mat.js",
     "t_colorir": "testes/t_colorir.js",
@@ -175,6 +176,10 @@
       "sintaxe",
       "tamanho",
       "catalogo"
+    ],
+    "js/banco.js": [
+      "t_banco",
+      "t_app"
     ],
     "js/backup.js": [
       "t_backup",

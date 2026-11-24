@@ -12,7 +12,6 @@ Regra: ao concluir um item, movê-lo para `HISTORICO.md` (com a data) e tirá-lo
 ### Fase 9 — Melhorias levantadas na revisão de 24/11 (uma conversa cada; `/clear` entre elas)
 Revisão: 24 conferências OK, app offline OK, nenhum arquivo acima de 200 linhas. Foco: proteger o progresso e afinar o conteúdo.
 - **Prioridade 1 — não perder o progresso (Sonnet)**
-  - 9.1 Pedir guarda permanente dos dados (`navigator.storage.persist()` em `js/banco.js`): o Android pode apagar o IndexedDB quando falta espaço
   - 9.2 Lembrete de cópia de segurança na Área do responsável ("Última cópia há X dias. Fazer agora?"); guardar a data da última cópia (`js/backup.js`, `js/telas/backup.js`)
   - 9.3 Aviso amigável quando o app der erro (em vez de tela parada), com botão "Recomeçar"
 - **Prioridade 2 — conteúdo que se acerta sem ler (Sonnet, pelos motores)**

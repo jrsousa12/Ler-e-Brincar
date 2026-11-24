@@ -91,6 +91,7 @@
         const est = await LB.banco.carregarEstado();
         if (est) ctx.aplicarEstado(est);
         else { missao.garantir(); ctx.prepararSelos(); }
+        LB.banco.pedirGuarda();
       });
 
       const selos = LB.usarSelos(ctx);

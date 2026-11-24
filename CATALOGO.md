@@ -167,9 +167,9 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | Arquivo | Linhas | O que faz |
 |---|---|---|
 | `sw.js` | 57 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 128 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `js/app.js` | 129 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/backup.js` | 35 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
-| `js/banco.js` | 33 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
+| `js/banco.js` | 45 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
 | `js/caderno.js` | 43 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
 | `js/evolucao.js` | 77 | Evolução no tempo: só contas, a partir das respostas guardadas (js/tentativas.js). |
 | `js/festa.js` | 95 | Festa do acerto (confete + som) e incentivo no erro. Som feito pelo próprio app, sem arquivos. |
@@ -254,6 +254,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_ajustar.js` | 71 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
 | `testes/t_app.js` | 160 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
 | `testes/t_backup.js` | 32 | Teste guardado: cópia de segurança do progresso (js/backup.js). |
+| `testes/t_banco.js` | 23 | Teste guardado: pedido de guarda permanente dos dados (js/banco.js, pedirGuarda). |
 | `testes/t_bncc.js` | 60 | Teste guardado: motor da BNCC (build/bncc.js + build/bncc-regras.js + build/fichas/bncc.json). |
 | `testes/t_brincadeiras.js` | 87 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |
 | `testes/t_caderno.js` | 76 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |
