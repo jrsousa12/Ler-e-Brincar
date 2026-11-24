@@ -52,7 +52,6 @@ const raiz = path.join(__dirname, '..');
   const e0 = await estrelas();
   const clicar = n => p.click(`.opcoes-trem button:text-is("${n}")`);
   const certa = () => p.evaluate(() => LB.app.perguntaTrem.certa);
-  const certas = async () => (await p.evaluate(() => LB.app.tremAtual.faltam.map(f => f.certa)));
 
   // Trem 1: erra uma opção (sem estrela), depois acerta
   ok(await p.locator('.vagao.vazio').count() === 1 && (await p.locator('.vagao.vazio').innerText()).trim() === '?', 'um vagão vazio com "?"');

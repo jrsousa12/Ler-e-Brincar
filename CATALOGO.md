@@ -239,7 +239,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/somfigura.js` | 28 | Molde (HTML do Vue): Brincadeira "Som e Figura" (ouvir e tocar na figura). |
 | `js/moldes/trem.js` | 35 | Molde (HTML do Vue): Brincadeira "Trem dos números" (achar o número que falta na sequência). |
 | `js/moldes/versao.js` | 8 | Molde (HTML do Vue): aviso de versão nova do app (só na tela inicial e na área dos adultos). |
-| `build/ajustar-enunciado.js` | 129 | Motor de ajuste dos enunciados longos de Português (irmão do ajustar-lp.js): acha o enunciado acima do |
+| `build/ajustar-enunciado.js` | 128 | Motor de ajuste dos enunciados longos de Português (irmão do ajustar-lp.js): acha o enunciado acima do |
 | `build/ajustar-historia.js` | 104 | Motor de ajuste das Histórias (irmão do ajustar-lp.js): acha a resposta certa comprida demais nas |
 | `build/ajustar-lp.js` | 117 | Motor de ajuste de Português: acha a resposta certa comprida demais (a criança acerta só pelo |
 | `build/ajustar-mat-regras.js` | 103 | Regras do motor de ajuste de Matemática (build/ajustar-mat.js), sem ler nem gravar arquivos. |
@@ -260,7 +260,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/figuras-mat.js` | 66 | Motor de figuras da Matemática: põe apoioVisual (figuras) em contas que ainda não têm. |
 | `build/gerar-historia.js` | 91 | Motor gerador de histórias: de um pedido em texto simples, monta a história com 3 perguntas conferidas. |
 | `build/gerar-lp.js` | 153 | Motor gerador de Língua Portuguesa: de uma linha curta de pedido, monta a atividade completa |
-| `build/gerar-mat.js` | 130 | Motor gerador de Matemática: de uma linha curta de pedido, monta a atividade completa |
+| `build/gerar-mat.js` | 129 | Motor gerador de Matemática: de uma linha curta de pedido, monta a atividade completa |
 | `build/gerar-ordem.js` | 41 | Motor gerador da brincadeira "Ordem dos Fatos": uma linha de pedido → uma sequência de 3 fatos. |
 | `build/gerar-silabas.js` | 101 | Motor gerador da brincadeira "Monte a Palavra": de uma linha com a palavra separada em sílabas, |
 | `build/icones.js` | 29 | Gera os ícones PNG do app (icones/). Uso: node build/icones.js |
@@ -275,7 +275,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/validar.js` | 93 | Validador do conteúdo. Uso: node build/validar.js |
 | `build/varrer-limpar.js` | 80 | Ajudante da varredura (Motor 9): apaga o miolo de textos e comentários de um código JS, |
 | `build/varrer-regras.js` | 140 | Regras da varredura (Motor 9). Cada grupo recebe { rel, texto, existe } e devolve uma lista |
-| `build/varrer.js` | 95 | (sem comentário no topo) |
+| `build/varrer-sobras.js` | 95 | Motor 9, parte 2: sobras do código. Diferente de varrer-regras.js (um arquivo por vez), |
+| `build/varrer.js` | 107 | (sem comentário no topo) |
 | `testes/_gerador.js` | 25 | Ajudante comum dos testes de geradores: cópia do conteúdo, rodar o motor nela e o validador. |
 | `testes/t_ajustar.js` | 108 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
 | `testes/t_ajustar_mat.js` | 62 | Teste guardado: ajuste de Matemática (build/ajustar-mat.js e build/ajustar-mat-regras.js). |
@@ -311,7 +312,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_rolagem.js` | 83 | Teste guardado: rolagem automática até a resposta (js/rolagem.js), voltar do aparelho (js/voltar.js) |
 | `testes/t_silabas.js` | 57 | Teste guardado: brincadeira "Monte a Palavra" (js/telas/silabas.js) no navegador. |
 | `testes/t_sorteio.js` | 42 | Teste guardado: sorteio das opções (js/sorteio.js). Uso: node testes/t_sorteio.js |
-| `testes/t_trem.js` | 97 | Teste guardado: brincadeira "Trem dos números" (js/tremregras.js = contas; js/telas/trem.js = tela). |
+| `testes/t_trem.js` | 96 | Teste guardado: brincadeira "Trem dos números" (js/tremregras.js = contas; js/telas/trem.js = tela). |
 | `testes/t_tudo.js` | 44 | Teste do motor 6 (build/tudo.js): mapa de etapas, ficha coerente e etapas internas. |
-| `testes/t_varrer.js` | 97 | Teste guardado: varredura do código (build/varrer.js, Motor 9). Uso: node testes/t_varrer.js |
+| `testes/t_varrer.js` | 107 | Teste guardado: varredura do código (build/varrer.js, Motor 9). Uso: node testes/t_varrer.js |
 | `testes/t_voz.js` | 52 | Teste guardado: voz (js/voz.js). Uso: node testes/t_voz.js |

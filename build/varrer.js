@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Motor 9: varredura do código. Procura problemas de espaços, sintaxe (JSON e CSS), possíveis
-// erros e riscos de segurança. Mostra um resumo curto; a lista completa vai para
-// build/previas/varredura.txt (fora do git).
+// erros, riscos de segurança e sobras (código que ninguém usa: build/varrer-sobras.js).
+// Mostra um resumo curto; a lista completa vai para build/previas/varredura.txt (fora do git).
 // Uso: node build/varrer.js             -> só mostra
 //      node build/varrer.js --corrigir  -> arruma os espaços (não muda o que o código faz)
 //      node build/varrer.js --estrito   -> falha se sobrar qualquer aviso
@@ -12,6 +12,7 @@
 const fs = require('fs');
 const path = require('path');
 const { analisar, corrigirEspacos } = require('./varrer-regras');
+const { sobras } = require('./varrer-sobras');
 
 const RAIZ = path.join(__dirname, '..');
 const FICHA = JSON.parse(fs.readFileSync(path.join(__dirname, 'fichas/varrer.json'), 'utf8'));
@@ -62,6 +63,16 @@ function varrer(arquivos, { raiz = RAIZ, ficha = FICHA, corrigir = false } = {})
   return { avisos, corrigidos };
 }
 
+// Sobras (função, variável, classe de CSS e animação sem uso): olha o projeto todo de uma vez.
+// O conteúdo (conteudo/) entra só como lugar onde uma classe pode ser usada.
+function varrerSobras(arquivos, { raiz = RAIZ, ficha = FICHA } = {}) {
+  const ler = (rel) => fs.readFileSync(path.join(raiz, rel), 'utf8');
+  const codigo = arquivos.filter((rel) => /\.(js|css|html)$/.test(rel)).map((rel) => ({ rel, texto: ler(rel) }));
+  const pasta = path.join(raiz, 'conteudo');
+  const extras = fs.existsSync(pasta) ? fs.readdirSync(pasta).map((f) => ler('conteudo/' + f)) : [];
+  return sobras(codigo, extras).filter((a) => !aceito(a.rel, a, ficha));
+}
+
 // Resumo curto por código: "  3  igualdade_fraca  comparação com == ... (js/a.js:4, ...)".
 function resumir(avisos, ficha = FICHA) {
   const por = new Map();
@@ -78,8 +89,9 @@ function principal(argv) {
   const escolhidos = argv.filter((a) => !a.startsWith('--')).map(posix);
   const arquivos = escolhidos.length ? escolhidos : listar();
   const { avisos, corrigidos } = varrer(arquivos, { corrigir });
+  if (!escolhidos.length) avisos.push(...varrerSobras(arquivos));
   fs.mkdirSync(path.dirname(RELATORIO), { recursive: true });
-  fs.writeFileSync(RELATORIO, avisos.map((a) => `${a.rel}:${a.linha}  ${a.codigo}  ${FICHA.nomes[a.codigo] || ''}`).join('\n') + '\n');
+  fs.writeFileSync(RELATORIO, avisos.map((a) => `${a.rel}:${a.linha}  ${a.codigo}  ${FICHA.nomes[a.codigo] || ''}${a.nome ? ' (' + a.nome + ')' : ''}`).join('\n') + '\n');
 
   if (corrigidos) console.log(`Espaços arrumados em ${corrigidos} arquivo(s).`);
   resumir(avisos).forEach((l) => console.log(l));
@@ -92,4 +104,4 @@ function principal(argv) {
 }
 
 if (require.main === module) process.exit(principal(process.argv.slice(2)));
-module.exports = { listar, varrer, resumir };
+module.exports = { listar, varrer, varrerSobras, resumir };

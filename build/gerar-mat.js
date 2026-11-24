@@ -14,7 +14,6 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const raiz = path.join(__dirname, '..');
 const ficha = JSON.parse(fs.readFileSync(path.join(__dirname, 'fichas/mat.json'), 'utf8'));
 
 const CONTA = { '+': (a, b) => a + b, '−': (a, b) => a - b, '×': (a, b) => a * b, '÷': (a, b) => a / b };

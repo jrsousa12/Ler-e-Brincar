@@ -93,5 +93,15 @@ ok(r2.corrigidos === 1 && r2.avisos.length === 0, 'corrigir: ' + JSON.stringify(
 ok(fs.readFileSync(path.join(pasta, 'js/a.js'), 'utf8') === 'a();\nif (b == 1) c();\n', 'corrigir mudou mais que espaços');
 fs.rmSync(pasta, { recursive: true, force: true });
 
-console.log(falhas ? `${falhas} falha(s)` : 'OK: varredura (espaços, sintaxe, erros, segurança, aceitos, corrigir)');
+// 6. Sobras: função, variável, classe e animação que ninguém usa (projeto inteiro de uma vez).
+const { sobras } = require('../build/varrer-sobras');
+const projeto = [
+  { rel: 'js/a.js', texto: "function usada() {}\nfunction sobrou() {}\nconst lida = 1; const largada = 2; const { x, y: z } = LB;\nusada(lida, x);\n" },
+  { rel: 'js/b.js', texto: "const molde = `<div class=\"ativa\" :class=\"'v' + valor\"></div>`;\nel.classList.add('tema-' + cor);\nLB.molde = molde;\n" },
+  { rel: 'css/c.css', texto: '.ativa{a:b}\n.esquecida{a:b}\n.v5,.tema-azul{a:b}\n.do-conteudo{a:b}\n@media (max-width:9px){.dentro{a:b}}\n@keyframes gira{}\n@keyframes parada{}\n.ativa{animation:gira 1s}\n' },
+];
+const achou = sobras(projeto, ['<p class="do-conteudo">']).map((a) => `${a.codigo}:${a.nome}`).sort().join(' ');
+ok(achou === 'animacao_sem_uso:parada classe_sem_uso:dentro classe_sem_uso:esquecida funcao_sem_uso:sobrou variavel_sem_uso:largada variavel_sem_uso:z', 'sobras: ' + achou);
+
+console.log(falhas ? `${falhas} falha(s)` : 'OK: varredura (espaços, sintaxe, erros, segurança, aceitos, corrigir, sobras)');
 process.exit(falhas ? 1 : 0);

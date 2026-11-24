@@ -49,7 +49,11 @@
     "http_inseguro": "link http:// sem cadeado (usar https://)",
     "blank_sem_rel": "link que abre em outra aba sem rel=\"noopener\"",
     "arquivo_de_fora": "script ou estilo baixado da internet (quebra o modo sem internet; usar vendor/)",
-    "segredo": "texto com cara de senha ou chave secreta no código"
+    "segredo": "texto com cara de senha ou chave secreta no código",
+    "funcao_sem_uso": "função que ninguém chama (o nome só aparece onde ela é criada)",
+    "variavel_sem_uso": "variável criada e nunca lida",
+    "classe_sem_uso": "classe de CSS que nenhuma tela, molde ou conteúdo usa",
+    "animacao_sem_uso": "animação de CSS (@keyframes) que nenhum estilo chama"
   },
   "aceitos": {
     "build/": [

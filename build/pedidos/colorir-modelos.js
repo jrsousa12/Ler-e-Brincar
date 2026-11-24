@@ -1,6 +1,6 @@
 // Os 5 desenhos aprovados (19/11) montados só com peças da biblioteca (build/pecas/). Serve de exemplo para os próximos lotes.
 // Rodar: node build/colorir.js build/pedidos/colorir-modelos.js [--gravar]
-const { f, solto, svg, nuvem, colina } = require('../desenho.js');
+const { solto, svg, nuvem, colina } = require('../desenho.js');
 const p = require('../pecas/index.js');
 const par = p.par;
 

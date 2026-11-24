@@ -14,7 +14,6 @@ Revisão: 24 conferências OK, app offline OK, nenhum arquivo acima de 200 linha
 - **Em paralelo — Fase 5**: anotar em `NOTAS.md` o uso real da criança (onde trava, o que acha chato, o que repete)
 
 ### Fase 10 — Limpeza do código (aprovada 24/11; nada muda para a criança; `tudo.js` verde e commit a cada etapa)
-1. Código sem uso: ensinar o `varrer.js` a achar função, classe de CSS e variável que ninguém usa; limpar o que listar.
 2. Código repetido: achar trechos iguais em arquivos diferentes e passar a usar a peça comum (ex.: `rodada.js`).
 4. Testes: todo arquivo do app com teste ligado em `etapas.json`; ajudantes repetidos juntos; testes lentos ou repetidos.
 5. Documentação: detalhes dos motores do `CLAUDE.md` vão para `build/CLAUDE.md`; `README.md` simples para o dono.

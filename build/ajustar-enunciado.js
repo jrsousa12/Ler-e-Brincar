@@ -13,7 +13,6 @@ const fs = require('fs');
 const path = require('path');
 const escrever = require('./escrever');
 const { achar, todos } = require('./item');
-const R = require('./ajustar-regras');
 const L = require('./fichas/qualidade.json').limites; // mesmos limites do conferir.js
 const vazias = new Set(require('./fichas/ajustar.json').vazias);
 
