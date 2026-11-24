@@ -6,8 +6,8 @@
 // <lote>-conferencia.txt para colar na outra IA; --aceitar importa mesmo assim (o ajuste corrige depois).
 // Depois: node build/gerar-lp.js <pedido.txt> --gravar e node build/ajustar-lp.js <ids gravados> (folha de revisão).
 'use strict';
-const fs = require('fs');
 const regras = require('./ajustar-regras.js');
+const { opcao, importarLote } = require('./importar-comum.js');
 
 // Tira o que quebraria a linha do pedido: "|" separa campos, aspas fecham o texto do "Leia:"
 const limpar = s => String(s == null ? '' : s).replace(/\s+/g, ' ').replace(/\|/g, '/').trim();
@@ -42,38 +42,18 @@ function conferirItem(item, nivel) {
   return p;
 }
 
-function opcao(args, nome) {
-  const i = args.indexOf('--' + nome);
-  return i >= 0 ? args.splice(i, 2)[1] : '';
-}
-
 function principal(argv) {
   const args = [...argv];
   const aceitar = args.includes('--aceitar');
   const op = { molde: opcao(args, 'molde') || 'interpretacao', titulo: opcao(args, 'titulo'), nivel: opcao(args, 'nivel'), bncc: opcao(args, 'bncc') };
   const [entrada, saida = (entrada || '').replace(/\.json$/, '') + '.txt'] = args.filter(a => !a.startsWith('--'));
   if (!entrada) { console.log('Uso: node build/importar-lp.js <lote.json> [pedido.txt] [--molde interpretacao] [--titulo ...] [--nivel 2] [--bncc ...] [--aceitar]'); return 1; }
-  const lista = JSON.parse(fs.readFileSync(entrada, 'utf8'));
-  const linhas = ['# Importado de ' + entrada + ' por build/importar-lp.js (' + lista.length + ' itens)'];
-  const erros = [], avisos = [];
-  lista.forEach((item, n) => {
-    const nome = 'Questão ' + (item.id != null ? item.id : n + 1);
-    try { linhas.push(linhaDe(item, op)); } catch (e) { erros.push(nome + ': ' + e.message); return; }
-    const p = conferirItem(item, op.nivel || item.nivel || 2);
-    if (p.length) avisos.push(nome + ':\n' + p.map(x => '  - ' + x).join('\n'));
+  return importarLote({
+    motor: 'importar-lp.js', entrada, saida, aceitar, notaAceitar: ' (o ajuste corrige depois)',
+    linhaDe: (item) => linhaDe(item, op),
+    conferir: (item) => conferirItem(item, op.nivel || item.nivel || 2),
+    depois: 'node build/gerar-lp.js ' + saida + ' --gravar e node build/ajustar-lp.js <ids gravados>',
   });
-  const problemas = [...erros, ...avisos];
-  if (problemas.length && !aceitar) {
-    const folha = entrada.replace(/\.json$/, '') + '-conferencia.txt';
-    fs.writeFileSync(folha, 'Corrija só estas questões, sem mudar as outras, e mande o lote inteiro de novo, em JSON, no mesmo formato:\n\n' + problemas.join('\n\n') + '\n');
-    console.log(problemas.length + ' questão(ões) fora do roteiro: nada foi gravado. Cole ' + folha + ' na outra IA (ou use --aceitar).');
-    return 1;
-  }
-  if (erros.length) { erros.forEach(l => console.log('ERRO ' + l)); console.log(erros.length + ' erro(s): nada foi gravado.'); return 1; }
-  if (avisos.length) console.log(avisos.length + ' questão(ões) fora do roteiro, importadas com --aceitar (o ajuste corrige depois).');
-  fs.writeFileSync(saida, linhas.join('\n') + '\n');
-  console.log(lista.length + ' item(ns) → ' + saida + '. Agora: node build/gerar-lp.js ' + saida + ' --gravar e node build/ajustar-lp.js <ids gravados>');
-  return 0;
 }
 
 if (require.main === module) process.exit(principal(process.argv.slice(2)));

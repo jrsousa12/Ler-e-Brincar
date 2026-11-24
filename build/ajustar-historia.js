@@ -9,13 +9,12 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const escrever = require('./escrever');
 const { achar, todos } = require('./item');
 const R = require('./ajustar-regras');
 const { lerLinha } = require('./ajustar-lp');
 const L = require('./fichas/qualidade.json').limites; // mesmos limites do conferir.js
 
-const pastaRev = () => process.env.REVISAO_RAIZ || path.join(__dirname, 'revisao');
+const { lerFolha, regravar, anotar, fechar, principalAjuste } = require('./ajustar-comum');
 const escolha = p => Array.isArray(p.opcoes) && p.opcoes.length === 3 && typeof p.correta === 'number';
 // pergunta como item de escolha (nível vem da história)
 const comoItem = (h, p) => ({ enunciado: p.enunciado, opcoes: p.opcoes, correta: p.correta, nivel: h.nivel });
@@ -57,7 +56,7 @@ function montarFolha(pedidos, arq) {
 }
 
 function aplicar(arq, gravar) {
-  const linhas = fs.readFileSync(arq, 'utf8').split('\n').map(t => t.trim()).filter(t => t && !t.startsWith('#'));
+  const linhas = lerFolha(arq);
   const prontos = [], erros = [];
   for (const l of linhas) {
     const n = lerLinha(l);
@@ -80,24 +79,16 @@ function aplicar(arq, gravar) {
       const p = r0.item.perguntas[num - 1];
       const antes = { opcoes: p.opcoes, correta: p.correta };
       Object.assign(p, { opcoes: n.opcoes, correta: n.correta }, n.explicacao ? { explicacao: n.explicacao } : {});
-      r0.linhas[r0.i] = escrever(r0.item) + (/,\s*$/.test(r0.linhas[r0.i]) ? ',' : '');
-      fs.writeFileSync(r0.arquivo, r0.linhas.join('\n'));
-      reg.push(JSON.stringify({ data: new Date().toISOString().slice(0, 10), id: n.id, serie: R.serieDe(h.nivel).nome, antes, depois: { opcoes: n.opcoes, correta: n.correta }, tipos: n.tipos }));
+      regravar(r0);
+      reg.push({ id: n.id, serie: R.serieDe(h.nivel).nome, antes, depois: { opcoes: n.opcoes, correta: n.correta }, tipos: n.tipos });
     }
-    fs.mkdirSync(pastaRev(), { recursive: true });
-    if (reg.length) fs.appendFileSync(path.join(pastaRev(), 'registro.jsonl'), reg.join('\n') + '\n');
+    anotar(reg);
   }
-  console.log(prontos.length + ' aceito(s), ' + erros.length + ' recusado(s)' + (gravar ? (erros.length ? ' · nada gravado: corrija os recusados' : ' · gravado e anotado em build/revisao/registro.jsonl. Agora: node build/validar.js') : ' (prévia; use --gravar)'));
-  return erros.length ? 1 : 0;
+  return fechar(prontos.length, erros.length, gravar);
 }
 
 function principal(argv) {
-  const args = [...argv];
-  const iF = args.indexOf('--folha');
-  const folha = iF >= 0 ? args.splice(iF, 2)[1] : path.join(pastaRev(), 'historia-revisao.txt');
-  const iA = args.indexOf('--aplicar');
-  if (iA >= 0) { const arq = args[iA + 1]; if (!arq) { console.log('Diga a folha: --aplicar <folha.txt>'); return 1; } return aplicar(arq, args.includes('--gravar')); }
-  return montarFolha(args.filter(a => !a.startsWith('--')), folha);
+  return principalAjuste(argv, { folha: 'historia-revisao.txt', aplicar, montarFolha: (ids, folha) => montarFolha(ids, folha) });
 }
 
 if (require.main === module) process.exit(principal(process.argv.slice(2)));

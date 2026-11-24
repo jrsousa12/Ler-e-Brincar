@@ -14,14 +14,10 @@
 const fs = require('fs');
 const path = require('path');
 const D = require('./pedir-dados');
+const { opcao } = require('./importar-comum.js');
 const raiz = path.join(__dirname, '..');
 const TIPOS = Object.keys(D.ficha.roteiros);
 const NOME_NIVEL = { 1: 'tipo 1 (2 sílabas simples)', 2: 'tipo 2 (3 sílabas simples)', 3: 'tipo 3 (com sílaba difícil)' };
-
-function opcao(args, nome) {
-  const i = args.indexOf('--' + nome);
-  return i >= 0 ? args.splice(i, 2)[1] || '' : '';
-}
 
 // Só o trecho entre "---- INÍCIO ----" e "---- FIM ----" do roteiro
 function trecho(tipo) {

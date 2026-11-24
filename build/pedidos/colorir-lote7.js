@@ -2,19 +2,12 @@
 // Rodar: node build/colorir.js build/pedidos/colorir-lote7.js [--gravar]
 const { f, solto, olho, svg, nuvem, colina, polar, copa, suave } = require('../desenho.js');
 const p = require('../pecas/index.js');
+const curvas = require('./_curvas.js');
 
 const W = 'white', r1 = v => +v.toFixed(1), pt = q => q.map(r1).join(' ');
 const D = (d, fundo, sw) => f('path', `d="${d}"`, fundo, sw);                       // caminho com curvas à mão (M, C, Q, L)
 const S = (pts, fundo, sw) => D(suave(pts), fundo, sw);                              // curva livre por pontos
-const RP = (pts, r = 6, fundo, sw) => {                                              // polígono de retas com cantos arredondados
-  const n = pts.length; let d = '';
-  pts.forEach((c, i) => {
-    const a = pts[(i + n - 1) % n], b = pts[(i + 1) % n], u = [a[0] - c[0], a[1] - c[1]], v = [b[0] - c[0], b[1] - c[1]];
-    const lu = Math.hypot(...u), lv = Math.hypot(...v), k = Math.min(r, lu / 2, lv / 2);
-    d += `${i ? 'L' : 'M'}${pt([c[0] + u[0] / lu * k, c[1] + u[1] / lu * k])} Q${pt(c)} ${pt([c[0] + v[0] / lv * k, c[1] + v[1] / lv * k])} `;
-  });
-  return D(d + 'Z', fundo, sw);
-};
+const RP = (pts, r = 6, fundo, sw) => curvas.RP(pts, r, fundo, sw);                 // polígono de retas com cantos arredondados
 const RECT = (x, y, w, h, rx, fundo, sw) => f('rect', `x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}"`, fundo, sw);
 const CIRC = (x, y, r, fundo, sw) => f('circle', `cx="${x}" cy="${y}" r="${r}"`, fundo, sw);
 const hex = (cx, cy, R, giro = 30) => Array.from({ length: 6 }, (_, i) => polar(cx, cy, R, giro + i * 60));

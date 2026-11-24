@@ -46,7 +46,8 @@ function sobras(arquivos, extras = []) {
   const avisos = [];
   for (const a of js.filter((x) => x.rel.endsWith('.js'))) {
     const codigo = limpar(a.texto);
-    const doArquivo = contarPalavras([codigo, a.texto]);
+    // O caminho de um require ('./escrever') não é uso do nome escrever.
+    const doArquivo = contarPalavras([codigo, a.texto.replace(/require\((['"])[^'"]*\1\)/g, 'require()')]);
     for (const n of nomesCriados(codigo)) {
       // Cada nome conta duas vezes (código limpo + texto original); 2 = só a própria criação.
       // Variável: conta só no arquivo (nomes como "ok" se repetem em outros). Função: no projeto todo.

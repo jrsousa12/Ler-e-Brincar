@@ -239,11 +239,12 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/somfigura.js` | 28 | Molde (HTML do Vue): Brincadeira "Som e Figura" (ouvir e tocar na figura). |
 | `js/moldes/trem.js` | 35 | Molde (HTML do Vue): Brincadeira "Trem dos números" (achar o número que falta na sequência). |
 | `js/moldes/versao.js` | 8 | Molde (HTML do Vue): aviso de versão nova do app (só na tela inicial e na área dos adultos). |
-| `build/ajustar-enunciado.js` | 128 | Motor de ajuste dos enunciados longos de Português (irmão do ajustar-lp.js): acha o enunciado acima do |
-| `build/ajustar-historia.js` | 104 | Motor de ajuste das Histórias (irmão do ajustar-lp.js): acha a resposta certa comprida demais nas |
-| `build/ajustar-lp.js` | 117 | Motor de ajuste de Português: acha a resposta certa comprida demais (a criança acerta só pelo |
+| `build/ajustar-comum.js` | 45 | Peças comuns dos motores de ajuste (ajustar-lp, ajustar-mat, ajustar-historia, ajustar-enunciado). |
+| `build/ajustar-enunciado.js` | 119 | Motor de ajuste dos enunciados longos de Português (irmão do ajustar-lp.js): acha o enunciado acima do |
+| `build/ajustar-historia.js` | 95 | Motor de ajuste das Histórias (irmão do ajustar-lp.js): acha a resposta certa comprida demais nas |
+| `build/ajustar-lp.js` | 108 | Motor de ajuste de Português: acha a resposta certa comprida demais (a criança acerta só pelo |
 | `build/ajustar-mat-regras.js` | 103 | Regras do motor de ajuste de Matemática (build/ajustar-mat.js), sem ler nem gravar arquivos. |
-| `build/ajustar-mat.js` | 114 | Motor de ajuste de Matemática: acha opções fracas (certa no meio à mesma distância das erradas, |
+| `build/ajustar-mat.js` | 105 | Motor de ajuste de Matemática: acha opções fracas (certa no meio à mesma distância das erradas, |
 | `build/ajustar-regras.js` | 74 | Regras do motor de ajuste (build/ajustar-lp.js), sem ler nem gravar arquivos. |
 | `build/arquivo-unico.js` | 45 | Motor: junta o app inteiro num só arquivo .html (abre com dois cliques, sem internet). |
 | `build/biblioteca.js` | 75 | Lista e prévia da biblioteca de peças (build/pecas/). Gerado: nunca editar PECAS.md à mão. |
@@ -264,18 +265,19 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/gerar-ordem.js` | 41 | Motor gerador da brincadeira "Ordem dos Fatos": uma linha de pedido → uma sequência de 3 fatos. |
 | `build/gerar-silabas.js` | 101 | Motor gerador da brincadeira "Monte a Palavra": de uma linha com a palavra separada em sílabas, |
 | `build/icones.js` | 29 | Gera os ícones PNG do app (icones/). Uso: node build/icones.js |
-| `build/importar-lp.js` | 80 | Importador de Português: transforma o lote em JSON enviado pelo dono num pedido do gerar-lp. |
-| `build/importar-mat.js` | 136 | Importador de Matemática: transforma o lote em JSON enviado pelo dono num pedido do gerar-mat. |
+| `build/importar-comum.js` | 39 | Peças comuns dos importadores de lote em JSON (importar-lp, importar-mat) e da linha de comando. |
+| `build/importar-lp.js` | 60 | Importador de Português: transforma o lote em JSON enviado pelo dono num pedido do gerar-lp. |
+| `build/importar-mat.js` | 117 | Importador de Matemática: transforma o lote em JSON enviado pelo dono num pedido do gerar-mat. |
 | `build/item.js` | 131 | Motor de item único: mostra, busca e altera um item de conteudo/*.js sem abrir o arquivo. |
 | `build/nova-brincadeira.js` | 113 | Motor "brincadeira nova": cria os 5 arquivos de uma brincadeira e liga tudo no app, de uma vez. |
 | `build/pedido.js` | 100 | Peças comuns dos geradores de conteúdo (gerar-mat, gerar-lp, gerar-historia). |
 | `build/pedir-dados.js` | 92 | Dados do motor build/pedir.js: o que o app já tem e as escolhas automáticas (tema, série, níveis, lote). |
-| `build/pedir.js` | 117 | Motor "pedir a outra IA": monta o texto pronto para colar noutra IA, já preenchido, a partir dos roteiros. |
+| `build/pedir.js` | 113 | Motor "pedir a outra IA": monta o texto pronto para colar noutra IA, já preenchido, a partir dos roteiros. |
 | `build/tudo.js` | 100 | (sem comentário no topo) |
 | `build/validar.js` | 93 | Validador do conteúdo. Uso: node build/validar.js |
 | `build/varrer-limpar.js` | 80 | Ajudante da varredura (Motor 9): apaga o miolo de textos e comentários de um código JS, |
 | `build/varrer-regras.js` | 140 | Regras da varredura (Motor 9). Cada grupo recebe { rel, texto, existe } e devolve uma lista |
-| `build/varrer-sobras.js` | 95 | Motor 9, parte 2: sobras do código. Diferente de varrer-regras.js (um arquivo por vez), |
+| `build/varrer-sobras.js` | 96 | Motor 9, parte 2: sobras do código. Diferente de varrer-regras.js (um arquivo por vez), |
 | `build/varrer.js` | 107 | (sem comentário no topo) |
 | `testes/_gerador.js` | 25 | Ajudante comum dos testes de geradores: cópia do conteúdo, rodar o motor nela e o validador. |
 | `testes/t_ajustar.js` | 108 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |

@@ -18,6 +18,7 @@ const TIPOS = Object.keys({ ...ficha.nomes_dos_erros, ...ficha.tipos_escolha_ext
 const MAIOR = { 2: 100, 3: 1000 }; // maior número aceito por série
 const gerar = require('./gerar-mat.js');
 const { simetrica } = require('./ajustar-mat-regras.js');
+const { opcao, importarLote } = require('./importar-comum.js');
 
 // Tira o que quebraria a linha do pedido ("|" separa campos)
 const limpar = s => String(s == null ? '' : s).replace(/\s+/g, ' ').replace(/\|/g, '/').trim();
@@ -98,38 +99,18 @@ function conferirItem(item, serie) {
   return p;
 }
 
-function opcao(args, nome) {
-  const i = args.indexOf('--' + nome);
-  return i >= 0 ? args.splice(i, 2)[1] : '';
-}
-
 function principal(argv) {
   const args = [...argv];
   const aceitar = args.includes('--aceitar');
   const op = { serie: +opcao(args, 'serie') || 2, titulo: opcao(args, 'titulo'), nivel: opcao(args, 'nivel') };
   const [entrada, saida = (entrada || '').replace(/\.json$/, '') + '.txt'] = args.filter(a => !a.startsWith('--'));
   if (!entrada) { console.log('Uso: node build/importar-mat.js <lote.json> [pedido.txt] [--serie 2] [--titulo ...] [--nivel 2] [--aceitar]'); return 1; }
-  const lista = JSON.parse(fs.readFileSync(entrada, 'utf8'));
-  const linhas = ['# Importado de ' + entrada + ' por build/importar-mat.js (' + lista.length + ' itens)'];
-  const erros = [], avisos = [];
-  lista.forEach((item, n) => {
-    const nome = 'Questão ' + (item.id != null ? item.id : n + 1);
-    try { linhas.push(linhaDe(item, op)); } catch (e) { erros.push(nome + ': ' + e.message); return; }
-    const p = conferirItem(item, op.serie);
-    if (p.length) avisos.push(nome + ':\n' + p.map(x => '  - ' + x).join('\n'));
+  return importarLote({
+    motor: 'importar-mat.js', entrada, saida, aceitar,
+    linhaDe: (item) => linhaDe(item, op),
+    conferir: (item) => conferirItem(item, op.serie),
+    depois: 'node build/gerar-mat.js ' + saida + ' (prévia) e depois com --gravar',
   });
-  const problemas = [...erros, ...avisos];
-  if (problemas.length && !aceitar) {
-    const folha = entrada.replace(/\.json$/, '') + '-conferencia.txt';
-    fs.writeFileSync(folha, 'Corrija só estas questões, sem mudar as outras, e mande o lote inteiro de novo, em JSON, no mesmo formato:\n\n' + problemas.join('\n\n') + '\n');
-    console.log(problemas.length + ' questão(ões) fora do roteiro: nada foi gravado. Cole ' + folha + ' na outra IA (ou use --aceitar).');
-    return 1;
-  }
-  if (erros.length) { erros.forEach(l => console.log('ERRO ' + l)); console.log(erros.length + ' erro(s): nada foi gravado.'); return 1; }
-  if (avisos.length) console.log(avisos.length + ' questão(ões) fora do roteiro, importadas com --aceitar.');
-  fs.writeFileSync(saida, linhas.join('\n') + '\n');
-  console.log(lista.length + ' item(ns) → ' + saida + '. Agora: node build/gerar-mat.js ' + saida + ' (prévia) e depois com --gravar');
-  return 0;
 }
 
 if (require.main === module) process.exit(principal(process.argv.slice(2)));

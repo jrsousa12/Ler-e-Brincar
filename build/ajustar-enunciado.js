@@ -11,12 +11,11 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const escrever = require('./escrever');
 const { achar, todos } = require('./item');
 const L = require('./fichas/qualidade.json').limites; // mesmos limites do conferir.js
 const vazias = new Set(require('./fichas/ajustar.json').vazias);
 
-const pastaRev = () => process.env.REVISAO_RAIZ || path.join(__dirname, 'revisao');
+const { lerFolha, regravar, anotar, fechar, principalAjuste } = require('./ajustar-comum');
 const limite = q => (q.nivel === 1 ? L.enunciado_nivel1 : L.enunciado);
 const minusc = s => String(s).toLocaleLowerCase('pt-BR');
 const limpo = s => minusc(s).replace(/[.!?…]+$/, '').trim();
@@ -82,7 +81,7 @@ function montarFolha(pedidos, arq) {
 }
 
 function aplicar(arq, gravar) {
-  const linhas = fs.readFileSync(arq, 'utf8').split('\n').map(t => t.trim()).filter(t => t && !t.startsWith('#'));
+  const linhas = lerFolha(arq);
   const prontos = [], erros = [];
   for (const l of linhas) {
     const n = lerLinha(l);
@@ -104,24 +103,16 @@ function aplicar(arq, gravar) {
       const r0 = achar(n.id); // relê: o arquivo muda a cada item gravado
       const antes = { enunciado: r0.item.enunciado, explicacao: r0.item.explicacao };
       Object.assign(r0.item, { enunciado: novo }, n.explicacao ? { explicacao: n.explicacao } : {});
-      r0.linhas[r0.i] = escrever(r0.item) + (/,\s*$/.test(r0.linhas[r0.i]) ? ',' : '');
-      fs.writeFileSync(r0.arquivo, r0.linhas.join('\n'));
-      reg.push(JSON.stringify({ data: new Date().toISOString().slice(0, 10), id: n.id, ajuste: 'enunciado', antes, depois: { enunciado: novo, explicacao: r0.item.explicacao } }));
+      regravar(r0);
+      reg.push({ id: n.id, ajuste: 'enunciado', antes, depois: { enunciado: novo, explicacao: r0.item.explicacao } });
     }
-    fs.mkdirSync(pastaRev(), { recursive: true });
-    if (reg.length) fs.appendFileSync(path.join(pastaRev(), 'registro.jsonl'), reg.join('\n') + '\n');
+    anotar(reg);
   }
-  console.log(prontos.length + ' aceito(s), ' + erros.length + ' recusado(s)' + (gravar ? (erros.length ? ' · nada gravado: corrija os recusados' : ' · gravado e anotado em build/revisao/registro.jsonl. Agora: node build/validar.js') : ' (prévia; use --gravar)'));
-  return erros.length ? 1 : 0;
+  return fechar(prontos.length, erros.length, gravar);
 }
 
 function principal(argv) {
-  const args = [...argv];
-  const iF = args.indexOf('--folha');
-  const folha = iF >= 0 ? args.splice(iF, 2)[1] : path.join(pastaRev(), 'enunciado-revisao.txt');
-  const iA = args.indexOf('--aplicar');
-  if (iA >= 0) { const arq = args[iA + 1]; if (!arq) { console.log('Diga a folha: --aplicar <folha.txt>'); return 1; } return aplicar(arq, args.includes('--gravar')); }
-  return montarFolha(args.filter(a => !a.startsWith('--')), folha);
+  return principalAjuste(argv, { folha: 'enunciado-revisao.txt', aplicar, montarFolha: (ids, folha) => montarFolha(ids, folha) });
 }
 
 if (require.main === module) process.exit(principal(process.argv.slice(2)));
