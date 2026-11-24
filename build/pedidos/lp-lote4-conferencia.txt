@@ -1,0 +1,134 @@
+Corrija só estas questões, sem mudar as outras, e mande o lote inteiro de novo, em JSON, no mesmo formato:
+
+Questão 6:
+  - certa com 64 letras (máximo 60 no 3º ano)
+
+Questão 7:
+  - certa com 61 letras (máximo 60 no 3º ano)
+
+Questão 11:
+  - certa com 63 letras (máximo 60 no 3º ano)
+
+Questão 13:
+  - certa com 64 letras (máximo 60 no 3º ano)
+  - errada "O texto fala sobre um diretor que lê uma carta." com 47 letras (a certa tem 64; peça entre 48 e 83)
+
+Questão 15:
+  - certa com 65 letras (máximo 60 no 3º ano)
+
+Questão 16:
+  - certa com 62 letras (máximo 60 no 3º ano)
+
+Questão 24:
+  - certa com 66 letras (máximo 60 no 3º ano)
+
+Questão 29:
+  - certa com 66 letras (máximo 60 no 3º ano)
+  - errada "O texto fala sobre um menino que machuca o braço." com 49 letras (a certa tem 66; peça entre 50 e 85)
+
+Questão 33:
+  - certa com 63 letras (máximo 60 no 3º ano)
+
+Questão 37:
+  - certa com 62 letras (máximo 60 no 3º ano)
+
+Questão 38:
+  - certa com 64 letras (máximo 60 no 3º ano)
+
+Questão 41:
+  - certa com 73 letras (máximo 60 no 3º ano)
+  - errada "O texto fala sobre um menino que guarda os brinquedos." com 54 letras (a certa tem 73; peça entre 55 e 94)
+
+Questão 49:
+  - certa com 65 letras (máximo 60 no 3º ano)
+
+Questão 50:
+  - certa com 62 letras (máximo 60 no 3º ano)
+
+Questão 51:
+  - certa com 64 letras (máximo 60 no 3º ano)
+
+Questão 52:
+  - certa com 66 letras (máximo 60 no 3º ano)
+
+Questão 53:
+  - certa com 62 letras (máximo 60 no 3º ano)
+
+Questão 54:
+  - certa com 65 letras (máximo 60 no 3º ano)
+
+Questão 55:
+  - certa com 64 letras (máximo 60 no 3º ano)
+  - errada "O texto fala sobre uma aluna que apaga a lousa." com 47 letras (a certa tem 64; peça entre 48 e 83)
+
+Questão 56:
+  - certa com 68 letras (máximo 60 no 3º ano)
+
+Questão 57:
+  - certa com 65 letras (máximo 60 no 3º ano)
+
+Questão 62:
+  - certa com 62 letras (máximo 60 no 3º ano)
+
+Questão 65:
+  - certa com 61 letras (máximo 60 no 3º ano)
+
+Questão 66:
+  - certa com 65 letras (máximo 60 no 3º ano)
+
+Questão 67:
+  - certa com 64 letras (máximo 60 no 3º ano)
+
+Questão 68:
+  - certa com 61 letras (máximo 60 no 3º ano)
+
+Questão 69:
+  - certa com 61 letras (máximo 60 no 3º ano)
+
+Questão 71:
+  - certa com 64 letras (máximo 60 no 3º ano)
+
+Questão 72:
+  - certa com 62 letras (máximo 60 no 3º ano)
+
+Questão 73:
+  - certa com 64 letras (máximo 60 no 3º ano)
+
+Questão 76:
+  - certa com 61 letras (máximo 60 no 3º ano)
+
+Questão 78:
+  - certa com 66 letras (máximo 60 no 3º ano)
+
+Questão 79:
+  - certa com 64 letras (máximo 60 no 3º ano)
+
+Questão 80:
+  - certa com 61 letras (máximo 60 no 3º ano)
+
+Questão 81:
+  - certa com 62 letras (máximo 60 no 3º ano)
+
+Questão 82:
+  - certa com 66 letras (máximo 60 no 3º ano)
+
+Questão 86:
+  - certa com 65 letras (máximo 60 no 3º ano)
+
+Questão 88:
+  - certa com 73 letras (máximo 60 no 3º ano)
+
+Questão 89:
+  - certa com 61 letras (máximo 60 no 3º ano)
+
+Questão 91:
+  - certa com 65 letras (máximo 60 no 3º ano)
+
+Questão 94:
+  - certa com 62 letras (máximo 60 no 3º ano)
+
+Questão 96:
+  - certa com 61 letras (máximo 60 no 3º ano)
+
+Questão 98:
+  - certa com 66 letras (máximo 60 no 3º ano)
