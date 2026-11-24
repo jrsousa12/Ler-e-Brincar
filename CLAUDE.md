@@ -21,7 +21,7 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
 - **Convenções**: nomes e comentários em português. Esquemas do conteúdo e regras pedagógicas: `original-deepseek/script-gerador-conteudo.md`. `original-deepseek/` é só consulta, não editar.
 - **Pendências** (só o que falta; feito vai para `HISTORICO.md`): Contínua: Fase 5 (uso real, anotar em `NOTAS.md`).
   - **Redesenho dos 35 desenhos de colorir pelo Gemini** (24/11): o dono mandou o arquivo das pinturas + o texto-pedido ao Gemini (cria referência no Nano Banana e devolve SVG, em 7 lotes de 5). Falta:
-    - Feito: lote 1 (01–05) gravado; peças antigas esquecidas; o motor `build/aprender.js` aprende só dos lotes Gemini. Faltam os lotes 2 a 7.
+    - Feito: lote 1 (01–05) e lote 2 parcial (07 Árvore, 10 Borboleta, 36 Cachorro novo; faltam 06 Flor, 08 Carro, 09 Bola) gravados; peças antigas esquecidas; o motor `build/aprender.js` aprende só dos lotes Gemini. Faltam os lotes 2 a 7.
     - Cada lote: salvar em `build/pedidos/colorir-gemini-<n>.js` → `node build/colorir.js <lote>` (prévia ao dono) → `--gravar` o aprovado → `node build/aprender.js` → `node build/tudo.js` e subir `VERSAO` em `sw.js`. No fim, mover o item para `HISTORICO.md`.
 - **Ao concluir um item**: movê-lo para `HISTORICO.md` (com a data) e tirá-lo do `PLANO.md` e desta lista, no mesmo commit.
 - **Referências visuais**: mascote em `js/mascote.js` (`mascote('normal'|'feliz'|'festa')`; trocar o bicho = refazer só esse arquivo); celebrações em `js/telas/selonovo.js` (teste `t_celebracoes`); tablet em `css/tablet.css`; capturas `node build/capturas.js [tablet]` → `build/previas/capturas-*.png`; regras de CSS em `css/CLAUDE.md`.
