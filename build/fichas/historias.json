@@ -1,7 +1,7 @@
 {
   "_leia": "Ficha do gerador de histórias (build/gerar-historia.js). Valores usados quando o pedido não diz: autor, habilidades BNCC, nível, cores de fundo (uma por história, em rodízio). 'frases': o texto final precisa ter de 'min' a 'max' frases; 'palavras_por_frase' acima disso dá aviso.",
   "autor": "Domínio público",
-  "bncc": ["EF02LP26", "EF15LP04"],
+  "bncc": ["EF02LP26", "EF35LP04"],
   "nivel": 2,
   "frases": { "min": 5, "max": 6 },
   "palavras_por_frase": 15,

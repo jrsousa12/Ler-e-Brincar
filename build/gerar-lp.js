@@ -15,6 +15,7 @@
 const fs = require('fs');
 const path = require('path');
 const { partir, escolha, rodar } = require('./pedido');
+const BNCC = require('./bncc-regras');
 const ficha = JSON.parse(fs.readFileSync(path.join(__dirname, 'fichas/lp.json'), 'utf8'));
 
 const minusc = s => s.toLocaleLowerCase('pt-BR');
@@ -138,6 +139,7 @@ function montar(linha) {
   const [o1, o2, o3] = corpo.opcoes;
   if (new Set([o1, o2, o3].map(minusc)).size !== 3) throw new Error('opções repetidas: ' + corpo.opcoes.join(', '));
   const q = Object.assign(base(molde, extra), corpo);
+  q.habilidadeBNCC = BNCC.certo(q).bncc; // regras de build/fichas/bncc.json
   q._avisos = avisos(q);
   // ordem dos campos igual à do conteúdo existente
   const { titulo, materia, habilidadeBNCC, nivel, tipo, enunciado, opcoes, correta, explicacao, _emoji, _avisos } = q;

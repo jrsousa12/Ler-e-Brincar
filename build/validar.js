@@ -5,8 +5,8 @@
 const LB = require('./carregar')();
 const { indiceCorreto } = LB.respostas;
 
-const BNCC_LP = ['EF02LP03', 'EF02LP07', 'EF02LP26', 'EF15LP03', 'EF15LP04'];
-const BNCC_MAT = ['EF02MA01', 'EF02MA04', 'EF02MA05', 'EF02MA06', 'EF02MA07', 'EF02MA08', 'EF02MA09', 'EF02MA20', 'EF03MA01', 'EF03MA03', 'EF03MA05', 'EF03MA06', 'EF03MA07', 'EF03MA08'];
+// Códigos válidos e regras: build/fichas/bncc.json (motor build/bncc.js corrige)
+const BNCC = require('./bncc-regras');
 const erros = [];
 const erro = (id, msg) => erros.push(id + ': ' + msg);
 const ids = new Set();
@@ -40,14 +40,16 @@ for (const h of LB.historias) {
   checaId(h, 'historia', 2);
   if (h.texto.length < 5 || h.texto.length > 6) erro(h.id, h.texto.length + ' parágrafos (5 ou 6)');
   if (h.perguntas.length !== 3) erro(h.id, h.perguntas.length + ' perguntas (precisa de 3)');
-  h.habilidadesBNCC.forEach(c => BNCC_LP.includes(c) || erro(h.id, 'BNCC inválida ' + c));
+  h.habilidadesBNCC.forEach(c => BNCC.valido(c, 'lp') || erro(h.id, 'BNCC inválida ' + c));
+  if (BNCC.trocarLista(h.habilidadesBNCC).join() !== h.habilidadesBNCC.join()) erro(h.id, 'BNCC não combina (rode node build/bncc.js)');
   h.perguntas.forEach((p, j) => checaQuestao(h.id + '#' + (j + 1), p));
 }
-for (const [lista, pref, materia, bncc] of [[LB.lp, 'lp', 'lingua-portuguesa', BNCC_LP], [LB.mat, 'mat', 'matematica', BNCC_MAT]]) {
+for (const [lista, pref, materia, bncc] of [[LB.lp, 'lp', 'lingua-portuguesa', 'lp'], [LB.mat, 'mat', 'matematica', 'mat']]) {
   for (const a of lista) {
     checaId(a, pref, 3);
     if (a.materia !== materia) erro(a.id, 'matéria errada: ' + a.materia);
-    if (!bncc.includes(a.habilidadeBNCC)) erro(a.id, 'BNCC inválida ' + a.habilidadeBNCC);
+    if (!BNCC.valido(a.habilidadeBNCC, bncc)) erro(a.id, 'BNCC inválida ' + a.habilidadeBNCC);
+    else if (BNCC.certo(a).bncc !== a.habilidadeBNCC) erro(a.id, `BNCC não combina: ${a.habilidadeBNCC} → ${BNCC.certo(a).bncc} (rode node build/bncc.js)`);
     if (![1, 2, 3].includes(a.nivel)) erro(a.id, 'nível inválido ' + a.nivel);
     checaQuestao(a.id, a);
   }

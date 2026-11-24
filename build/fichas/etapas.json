@@ -33,7 +33,8 @@
     "t_gerar_lp": "testes/t_gerar_lp.js",
     "t_gerar_historia": "testes/t_gerar_historia.js",
     "t_gerar_ordem": "testes/t_gerar_ordem.js",
-    "t_ajustar": "testes/t_ajustar.js"
+    "t_ajustar": "testes/t_ajustar.js",
+    "t_bncc": "testes/t_bncc.js"
   },
   "navegador": [
     "t_offline",
@@ -132,7 +133,8 @@
     ],
     "build/validar.js": [
       "validar",
-      "t_conteudo"
+      "t_conteudo",
+      "t_bncc"
     ],
     "build/conferir.js": [
       "qualidade",
@@ -143,14 +145,16 @@
       "t_conferir"
     ],
     "build/gerar-mat.js": [
-      "t_gerar_mat"
+      "t_gerar_mat",
+      "t_bncc"
     ],
     "build/fichas/mat.json": [
       "t_gerar_mat"
     ],
     "build/item.js": [
       "t_item",
-      "t_ajustar"
+      "t_ajustar",
+      "t_bncc"
     ],
     "build/catalogo.js": [
       "catalogo",
@@ -366,7 +370,8 @@
     ],
     "build/gerar-lp.js": [
       "t_gerar_lp",
-      "t_ajustar"
+      "t_ajustar",
+      "t_bncc"
     ],
     "build/fichas/lp.json": [
       "t_gerar_lp"
@@ -375,7 +380,8 @@
       "t_gerar_lp"
     ],
     "build/gerar-historia.js": [
-      "t_gerar_historia"
+      "t_gerar_historia",
+      "t_bncc"
     ],
     "build/fichas/historias.json": [
       "t_gerar_historia"
@@ -412,6 +418,34 @@
     ],
     "build/fichas/distratores.json": [
       "t_ajustar"
+    ],
+    "build/bncc.js": [
+      "validar",
+      "t_bncc",
+      "t_gerar_lp",
+      "t_gerar_mat",
+      "t_gerar_historia"
+    ],
+    "build/bncc-regras.js": [
+      "validar",
+      "t_bncc",
+      "t_gerar_lp",
+      "t_gerar_mat",
+      "t_gerar_historia"
+    ],
+    "build/fichas/bncc.json": [
+      "validar",
+      "t_bncc",
+      "t_gerar_lp",
+      "t_gerar_mat",
+      "t_gerar_historia"
+    ],
+    "testes/t_bncc.js": [
+      "validar",
+      "t_bncc",
+      "t_gerar_lp",
+      "t_gerar_mat",
+      "t_gerar_historia"
     ]
   }
 }

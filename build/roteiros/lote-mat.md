@@ -53,7 +53,8 @@ Exemplo:
     EF02MA06 (problemas de mais e menos), EF02MA07 (multiplicação), EF02MA08 (dobro e metade),
     EF02MA09 (sequências), EF02MA20 (dinheiro).
   - 3º ano: EF03MA01 (ler e escrever números), EF03MA03 (fatos básicos), EF03MA05 (cálculo mental),
-    EF03MA06 (problemas de mais e menos), EF03MA07 (multiplicação), EF03MA08 (divisão).
+    EF03MA06 (problemas de mais e menos), EF03MA07 (multiplicação), EF03MA08 (divisão), EF03MA24 (compras e troco).
+  - O código é conferido pelo motor `build/bncc.js` (regras em `build/fichas/bncc.json`): se a regra disser outro, vale a regra.
 
 ## Cuidados de escrita
 

@@ -28,7 +28,7 @@ const a = g.montar('alfabetica | casa, bola, dado');
 ok(a.opcoes[a.correta] === 'bola' && a.nivel === 1, 'alfabetica: primeira');
 ok(g.montar('alfabetica | macaco, mala, mesa | ultima=sim').nivel === 2, 'alfabetica: mesma letra inicial sobe o nível');
 const i = g.montar('inferencia | O cão pulava ao ver o dono. Como ele estava? | Com medo | *Feliz | Doente | Pulos mostram alegria.');
-ok(i.correta === 1 && i.habilidadeBNCC === 'EF15LP04' && i.titulo === 'Inferência', 'molde de escolha: * marca a certa; BNCC do molde');
+ok(i.correta === 1 && i.habilidadeBNCC === 'EF35LP04' && i.titulo === 'Inferência', 'molde de escolha: * marca a certa; BNCC do molde');
 ok(g.montar('sinonimo | Igual a "alegre"? | *Contente | Triste | Bravo | Contente é alegre. | nivel=3 | titulo=Sinônimo fácil').nivel === 3, 'chave=valor muda o nível');
 for (const ruim of ['xyz | a | b', 'troca | sem lacuna', 'grafia | tampa', 'inferencia | E? | A | B | C | x', 'inferencia | E? | *A | B | C', 'silabas | cavalo']) ok(recusa(ruim), 'deveria recusar: ' + ruim);
 

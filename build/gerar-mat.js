@@ -7,10 +7,10 @@
 //   conta | emoji | enunciado (opcional) | frase final da explicação (opcional) | chave=valor...
 //   8 − 3 | 🍬 | Pedro tinha 8 balas e comeu 3. Quantas sobraram? | Sobraram 5 balas.
 //   7 + 5 | 🐸
-//   3 × 4 | 🍪 | titulo=Pacotes de biscoito | nivel=3 | bncc=EF03MA06
+//   3 × 4 | 🍪 | titulo=Pacotes de biscoito | nivel=3 | bncc=EF03MA07
 // Questão de escolha (sem conta pronta): começa com "?"; a certa leva * na frente.
-//   ? Qual número vem depois do 49? | *50 | 48 | 59 | Depois do 49 vem o 50. | bncc=EF02MA05 | emoji=🔢
-// Sem enunciado, vira "Quanto é 8 − 3?". Nível, BNCC e título saem sozinhos (ver build/fichas/mat.json).
+//   ? Qual número vem depois do 49? | *50 | 48 | 59 | Depois do 49 vem o 50. | bncc=EF02MA01 | emoji=🔢
+// Sem enunciado, vira "Quanto é 8 − 3?". Nível, BNCC e título saem sozinhos (ver build/fichas/mat.json; BNCC pelas regras de build/fichas/bncc.json).
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -65,6 +65,7 @@ function apoio(op, a, b, emoji) {
 }
 
 const { partir, escolha, rodar } = require('./pedido');
+const BNCC = require('./bncc-regras'); // código da BNCC pelas regras de build/fichas/bncc.json
 
 // "? enunciado | *certa | errada | errada | explicação" → questão de escolha
 function montarEscolha(linha) {
@@ -72,13 +73,14 @@ function montarEscolha(linha) {
   const enunciado = (campos[0] || '').replace(/(\d) - (\d)/g, '$1 − $2');
   const e = escolha(campos.slice(1));
   if (!e.explicacao) throw new Error('falta a explicação (depois das 3 opções)');
-  const bncc = extra.bncc || (temPalavra(enunciado, ficha.palavras_dinheiro) ? 'EF02MA20' : '');
-  if (!bncc) throw new Error('diga a habilidade: bncc=EF02MA05 (ou outra)');
-  return {
-    titulo: extra.titulo || ficha.titulos.escolha, materia: 'matematica', habilidadeBNCC: bncc,
+  const q = {
+    titulo: extra.titulo || ficha.titulos.escolha, materia: 'matematica', habilidadeBNCC: extra.bncc || '',
     nivel: extra.nivel ? +extra.nivel : 2, tipo: 'multipla', enunciado,
     opcoes: e.opcoes, correta: e.correta, explicacao: e.explicacao, _emoji: extra.emoji
   };
+  q.habilidadeBNCC = BNCC.certo(q).bncc;
+  if (!q.habilidadeBNCC) throw new Error('diga a habilidade: bncc=EF02MA05 (ou outra)');
+  return q;
 }
 
 // Uma linha de pedido → atividade (sem id). Lança erro com motivo claro se a conta não serve.
@@ -96,9 +98,6 @@ function montar(linha) {
   const problema = !!enunciadoDado;
   const dinheiro = temPalavra(enunciado, ficha.palavras_dinheiro);
   const multDiv = op === '×' || op === '÷';
-  let bncc = multDiv ? (problema ? 'EF03MA06' : 'EF03MA03') : 'EF02MA05';
-  if (!multDiv && problema) bncc = temPalavra(enunciado, ficha.palavras_juntar_retirar) ? 'EF02MA07' : 'EF02MA06';
-  if (dinheiro) bncc = 'EF02MA20';
   const maior = Math.max(a, b, r);
   let nivel = maior <= 10 ? 1 : maior <= 20 ? 2 : 3;
   if (multDiv) nivel = Math.max(nivel, 2);
@@ -109,13 +108,15 @@ function montar(linha) {
   const explicacao = a + ' ' + op + ' ' + b + ' = ' + r + '. ' + (frase || preencher(modelo, v));
   const titulo = extra.titulo || ficha.titulos[dinheiro ? 'dinheiro' : (problema ? 'problema' : '') + op];
   const q = {
-    titulo, materia: 'matematica', habilidadeBNCC: extra.bncc || bncc, nivel: extra.nivel ? +extra.nivel : nivel,
+    titulo, materia: 'matematica', habilidadeBNCC: extra.bncc || '', nivel: extra.nivel ? +extra.nivel : nivel,
     tipo: 'operacao', enunciado
   };
   const vis = apoio(op, a, b, emoji);
   if (vis) q.apoioVisual = vis;
   const opcoes = [r, ...erradas(op, a, b, r)].sort((x, y) => x - y);
-  return Object.assign(q, { opcoes, correta: r, explicacao, _emoji: emoji });
+  Object.assign(q, { opcoes, correta: r, explicacao, _emoji: emoji });
+  q.habilidadeBNCC = BNCC.certo(q).bncc;
+  return q;
 }
 
 const uso = 'Uso: node build/gerar-mat.js <pedido.txt> [--gravar] [--ver]';

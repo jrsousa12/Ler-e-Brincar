@@ -3,7 +3,7 @@
 //   node build/gerar-historia.js build/pedidos/historia-<onda>.txt            → prévia (--ver mostra cada uma)
 //   node build/gerar-historia.js build/pedidos/historia-<onda>.txt --gravar   → acrescenta em conteudo/historias.js
 // Formato (linhas com # são comentário):
-//   = O pão quentinho | 🥖 | nivel=3 | ano=3 | bncc=EF02LP26,EF15LP04   ← começa uma história
+//   = O pão quentinho | 🥖 | nivel=3 | ano=3 | bncc=EF02LP26,EF35LP04   ← começa uma história
 //   Todo dia, Seu Antônio acende o forno. O cheiro se espalha pela rua.  ← parágrafos (viram frases)
 //   ? Quem acende o forno? | *Seu Antônio | Rafael | O pai | O texto diz que é Seu Antônio.
 //   ? ...                                                                ← pergunta de escolha
@@ -13,6 +13,7 @@
 const fs = require('fs');
 const path = require('path');
 const { partir, escolha, linhas, abrir, ultimoNumero, novoId, concluir } = require('./pedido');
+const BNCC = require('./bncc-regras');
 const ficha = JSON.parse(fs.readFileSync(path.join(__dirname, 'fichas/historias.json'), 'utf8'));
 
 const frasesDe = p => p.split(/(?<=[.!?])\s+/).map(s => s.trim()).filter(Boolean);
@@ -43,7 +44,7 @@ function montar(bloco) {
   const nivel = extra.nivel ? +extra.nivel : ficha.nivel;
   return {
     titulo, autor: extra.autor || ficha.autor, anoEscolar: extra.ano ? +extra.ano : (nivel >= 3 ? 3 : 2),
-    habilidadesBNCC: extra.bncc ? extra.bncc.split(',').map(s => s.trim()) : ficha.bncc, nivel, emoji,
+    habilidadesBNCC: BNCC.trocarLista(extra.bncc ? extra.bncc.split(',').map(s => s.trim()) : ficha.bncc), nivel, emoji,
     corFundo: '', texto, perguntas, _avisos: avisos
   };
 }

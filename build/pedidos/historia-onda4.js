@@ -4,7 +4,7 @@ const cores = ['linear-gradient(135deg,#ffe8cc,#fff3d6)', 'linear-gradient(135de
 const frases = ps => ps.flatMap(p => p.split(/(?<=[.!?])\s+/));
 const H = (n, titulo, emoji, ps, q) => ({
   id: 'historia-' + n, titulo, autor: 'Domínio público', anoEscolar: 3,
-  habilidadesBNCC: ['EF02LP26', 'EF15LP04'], nivel: 3, emoji, corFundo: cores[n % 4], texto: frases(ps),
+  habilidadesBNCC: ['EF02LP26', 'EF35LP04'], nivel: 3, emoji, corFundo: cores[n % 4], texto: frases(ps),
   perguntas: q.map((x, i) => ({ tipo: i === 2 ? 'inferencia' : 'multipla', enunciado: x[0], opcoes: x[1], correta: x[2], explicacao: x[3] }))
 });
 const novas = [

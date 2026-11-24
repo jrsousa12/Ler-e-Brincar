@@ -1,7 +1,7 @@
 // Onda 3 de histórias (historia-31 a 40). Rodar: node build/pedidos/historia-onda3.js  (acrescenta ao fim de conteudo/historias.js)
 const H = (n, titulo, emoji, nivel, cor, texto, p) => ({
   id: 'historia-' + n, titulo, autor: 'Domínio público', anoEscolar: 2,
-  habilidadesBNCC: ['EF02LP26', nivel === 1 ? 'EF15LP03' : 'EF15LP04'], nivel, emoji, corFundo: cor, texto,
+  habilidadesBNCC: ['EF02LP26', nivel === 1 ? 'EF15LP03' : 'EF35LP04'], nivel, emoji, corFundo: cor, texto,
   perguntas: p.map((q, i) => ({ tipo: i === 2 ? 'inferencia' : 'multipla', enunciado: q[0], opcoes: q[1], correta: q[2], explicacao: q[3] }))
 });
 const novas = [
