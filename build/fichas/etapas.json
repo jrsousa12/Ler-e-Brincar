@@ -12,6 +12,7 @@
     "t_caderno": "testes/t_caderno.js",
     "t_backup": "testes/t_backup.js",
     "t_banco": "testes/t_banco.js",
+    "t_avisoerro": "testes/t_avisoerro.js",
     "t_evolucao": "testes/t_evolucao.js",
     "t_gerar_mat": "testes/t_gerar_mat.js",
     "t_colorir": "testes/t_colorir.js",
@@ -38,6 +39,7 @@
     "t_bncc": "testes/t_bncc.js"
   },
   "navegador": [
+    "t_avisoerro",
     "t_offline",
     "t_app",
     "t_colorir",
@@ -176,6 +178,13 @@
       "sintaxe",
       "tamanho",
       "catalogo"
+    ],
+    "js/avisoerro.js": [
+      "t_avisoerro",
+      "t_offline"
+    ],
+    "testes/t_avisoerro.js": [
+      "t_avisoerro"
     ],
     "js/banco.js": [
       "t_banco",

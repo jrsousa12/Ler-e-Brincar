@@ -1,13 +1,13 @@
 // Guarda o app no aparelho para funcionar sem internet.
 // Ao mudar qualquer arquivo da lista, aumente VERSAO (o teste testes/t_offline.js confere a lista).
 'use strict';
-const VERSAO = 'lb-v59';
+const VERSAO = 'lb-v60';
 const ARQUIVOS = [
   './', 'index.html', 'manifest.json',
   'css/fontes.css', 'css/base.css', 'css/componentes.css', 'css/crianca.css', 'css/responsavel.css', 'css/alegre.css', 'css/tema-azul.css', 'css/tema-creme.css', 'css/silabas.css', 'css/brincadeiras.css', 'css/mercado.css', 'css/trem.css', 'css/ordem.css', 'css/listas.css', 'css/acabamento.css', 'css/tablet.css', 'css/movimento.css',
   'vendor/vue.global.prod.js', 'vendor/dexie.min.js',
   'conteudo/historias.js', 'conteudo/lp.js', 'conteudo/mat.js', 'conteudo/colorir.js', 'conteudo/silabas.js', 'conteudo/mercado.js', 'conteudo/ordem.js',
-  'js/respostas.js', 'js/sorteio.js', 'js/banco.js', 'js/registrar-sw.js',
+  'js/avisoerro.js', 'js/respostas.js', 'js/sorteio.js', 'js/banco.js', 'js/registrar-sw.js',
   'js/backup.js', 'js/voz.js', 'js/festa.js', 'js/tentativas.js', 'js/evolucao.js', 'js/impressao.js', 'js/caderno.js', 'js/pergunta.js', 'js/missao.js', 'js/mascote.js', 'js/rodada.js',
   'js/telas/responsavel.js', 'js/moldes/missao.js', 'js/moldes/responsavel.js',
   'js/telas/historias.js', 'js/telas/atividades.js', 'js/telas/colorir.js', 'js/telas/silabas.js', 'js/moldes/abas.js', 'js/moldes/silabas.js',

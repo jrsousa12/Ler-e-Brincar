@@ -167,7 +167,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | Arquivo | Linhas | O que faz |
 |---|---|---|
 | `sw.js` | 57 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 129 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `js/app.js` | 131 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `js/avisoerro.js` | 40 | Aviso amigável quando o app dá erro: em vez de tela parada, mostra "Recomeçar" (o progresso fica guardado no aparelho). |
 | `js/backup.js` | 45 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 45 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
 | `js/caderno.js` | 43 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
@@ -253,6 +254,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/_gerador.js` | 25 | Ajudante comum dos testes de geradores: cópia do conteúdo, rodar o motor nela e o validador. |
 | `testes/t_ajustar.js` | 71 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
 | `testes/t_app.js` | 160 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
+| `testes/t_avisoerro.js` | 40 | Teste guardado: aviso de erro com "Recomeçar" (js/avisoerro.js), no navegador. |
 | `testes/t_backup.js` | 39 | Teste guardado: cópia de segurança do progresso (js/backup.js). |
 | `testes/t_banco.js` | 23 | Teste guardado: pedido de guarda permanente dos dados (js/banco.js, pedirGuarda). |
 | `testes/t_bncc.js` | 60 | Teste guardado: motor da BNCC (build/bncc.js + build/bncc-regras.js + build/fichas/bncc.json). |

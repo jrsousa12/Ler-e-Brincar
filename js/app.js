@@ -125,5 +125,7 @@
   };
 
   // LB.app: acesso ao app montado (usado pelos testes em testes/t_app.js)
-  LB.app = createApp(App).mount('#app');
+  const app = createApp(App);
+  app.config.errorHandler = (erro) => LB.avisoErro.tratar(erro);   // erro numa tela: aviso com "Recomeçar"
+  LB.app = app.mount('#app');
 })();

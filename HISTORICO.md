@@ -87,3 +87,4 @@ Regra: ao concluir um item do `PLANO.md`, movê-lo para cá (seção "Concluído
 
 ### Fase 9 — Melhorias da revisão de 24/11
 - 9.1 — feito (24/11): o app pede ao navegador a guarda permanente dos dados (`pedirGuarda` em `js/banco.js`, chamada ao abrir o app); teste `t_banco`; sw v58.
+- 9.3 — feito (24/11): aviso amigável de erro com botão "Recomeçar" (`js/avisoerro.js`, sem Vue nem CSS; pega erros soltos e os do Vue via `app.config.errorHandler`; ignora ResizeObserver; o progresso fica guardado); teste `t_avisoerro`; sw v60.
