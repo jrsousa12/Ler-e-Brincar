@@ -241,6 +241,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/conferir.js` | 90 | Conferidor de qualidade (motor 3). Uso: node build/conferir.js [--tipo codigo] [--todos] [--estrito] |
 | `build/desenho.js` | 57 | Kit base dos desenhos de colorir (viewBox 300x300): traços e formas simples. As peças prontas (orelha, tronco, torre...) |
 | `build/escrever.js` | 10 | Escreve um item no estilo de conteudo/*.js: {chave:'texto',...} numa linha só (usado por gerar-mat e item) |
+| `build/figuras-mat.js` | 66 | Motor de figuras da Matemática: põe apoioVisual (figuras) em contas que ainda não têm. |
 | `build/gerar-historia.js` | 91 | Motor gerador de histórias: de um pedido em texto simples, monta a história com 3 perguntas conferidas. |
 | `build/gerar-lp.js` | 153 | Motor gerador de Língua Portuguesa: de uma linha curta de pedido, monta a atividade completa |
 | `build/gerar-mat.js` | 126 | Motor gerador de Matemática: de uma linha curta de pedido, monta a atividade completa |
@@ -268,6 +269,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_conferir.js` | 64 | Teste guardado: conferidor de qualidade (build/conferir.js). Uso: node testes/t_conferir.js |
 | `testes/t_conteudo.js` | 47 | Teste guardado: regra de resposta certa + validador. Uso: node testes/t_conteudo.js |
 | `testes/t_evolucao.js` | 47 | Teste guardado: contas da Evolução no tempo (js/evolucao.js). |
+| `testes/t_figuras_mat.js` | 36 | Teste guardado: motor de figuras da Matemática (build/figuras-mat.js). Uso: node testes/t_figuras_mat.js |
 | `testes/t_gerar_historia.js` | 38 | Teste guardado: gerador de histórias (build/gerar-historia.js). Uso: node testes/t_gerar_historia.js |
 | `testes/t_gerar_lp.js` | 48 | Teste guardado: gerador de Português (build/gerar-lp.js). Uso: node testes/t_gerar_lp.js |
 | `testes/t_gerar_mat.js` | 59 | Teste guardado: gerador de Matemática (build/gerar-mat.js). Uso: node testes/t_gerar_mat.js |

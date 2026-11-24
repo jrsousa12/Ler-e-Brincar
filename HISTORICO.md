@@ -5,6 +5,7 @@ Regra: ao concluir um item do `PLANO.md`, movê-lo para cá (seção "Concluído
 
 ## Concluídos depois de 24/11
 
+- **9.6 Figuras na Matemática nível 1 (24/11)**: novo motor `build/figuras-mat.js` (pedido `id | emoji` faz as figuras pelo enunciado, reaproveitando o `apoio` do `gerar-mat`; ou `id | esquerda | operador | direita` à mão); as 25 contas de nível 1 ganharam figuras (pedido `build/pedidos/figuras-mat1.txt`); `falta_figura` caiu de 25 para 0. Teste `testes/t_figuras_mat.js`; `VERSAO` do `sw.js` = lb-v63.
 - **9.4 Histórias com a certa mais longa (24/11)**: novo motor `build/ajustar-historia.js` (irmão do `ajustar-lp`, mesmas regras e limites do `conferir`); 63 perguntas de 36 histórias reescritas (certa mais curta, erradas do mesmo tamanho, tipos de distrator por série); `certa_mais_longa` caiu de 70 para 9 avisos (os 9 restantes são de Português, já aceitos como pendência menor). Registro em `build/revisao/registro.jsonl`; teste na seção 5 de `testes/t_ajustar.js`; `VERSAO` do `sw.js` = lb-v61.
 - **9.2 Lembrete de cópia de segurança (24/11)**: a Área do responsável mostra "Última cópia há X dias." e, com 7 dias ou mais (ou nunca), "⏰ ... Fazer agora?". Data em `ajustes.ultimaCopia`; frase em `LB.backup.lembrete` (`js/backup.js`); teste em `t_backup`.
 

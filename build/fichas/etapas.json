@@ -36,7 +36,8 @@
     "t_gerar_historia": "testes/t_gerar_historia.js",
     "t_gerar_ordem": "testes/t_gerar_ordem.js",
     "t_ajustar": "testes/t_ajustar.js",
-    "t_bncc": "testes/t_bncc.js"
+    "t_bncc": "testes/t_bncc.js",
+    "t_figuras_mat": "testes/t_figuras_mat.js"
   },
   "navegador": [
     "t_avisoerro",
@@ -149,7 +150,8 @@
     ],
     "build/gerar-mat.js": [
       "t_gerar_mat",
-      "t_bncc"
+      "t_bncc",
+      "t_figuras_mat"
     ],
     "build/fichas/mat.json": [
       "t_gerar_mat"
@@ -157,7 +159,8 @@
     "build/item.js": [
       "t_item",
       "t_ajustar",
-      "t_bncc"
+      "t_bncc",
+      "t_figuras_mat"
     ],
     "build/catalogo.js": [
       "catalogo",
@@ -466,6 +469,12 @@
       "t_gerar_lp",
       "t_gerar_mat",
       "t_gerar_historia"
+    ],
+    "build/figuras-mat.js": [
+      "t_figuras_mat"
+    ],
+    "testes/t_figuras_mat.js": [
+      "t_figuras_mat"
     ]
   }
 }

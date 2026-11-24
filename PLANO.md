@@ -11,8 +11,6 @@ Regra: ao concluir um item, movê-lo para `HISTORICO.md` (com a data) e tirá-lo
 
 ### Fase 9 — Melhorias levantadas na revisão de 24/11 (uma conversa cada; `/clear` entre elas)
 Revisão: 24 conferências OK, app offline OK, nenhum arquivo acima de 200 linhas. Foco: proteger o progresso e afinar o conteúdo.
-- **Prioridade 2 — conteúdo que se acerta sem ler (Sonnet, pelos motores)**
-  - 9.6 Matemática nível 1: 25 contas sem figuras (`--tipo falta_figura`); acrescentar pelo motor de item/gerador
 - **Prioridade 3 — arrumação interna (Opus planeja, Sonnet faz)**
   - 9.7 Monte a Palavra, Memória e Som e Figura passam a usar o kit `js/rodada.js` (mesmo jeito do Trem e do Mercadinho)
 - **Em paralelo — Fase 5**: criar `NOTAS.md` e anotar o uso real da criança (onde trava, o que acha chato, o que repete)

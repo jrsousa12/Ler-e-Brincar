@@ -123,4 +123,4 @@ const uso = 'Uso: node build/gerar-mat.js <pedido.txt> [--gravar] [--ver]';
 const principal = args => rodar({ arquivo: 'mat', chave: 'mat', prefixo: 'mat', digitos: 3, montar, uso }, args);
 
 if (require.main === module) process.exit(principal(process.argv.slice(2)));
-module.exports = { montar, erradas };
+module.exports = { montar, erradas, apoio };
