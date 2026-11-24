@@ -280,6 +280,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/varrer-regras.js` | 140 | Regras da varredura (Motor 9). Cada grupo recebe { rel, texto, existe } e devolve uma lista |
 | `build/varrer-sobras.js` | 96 | Motor 9, parte 2: sobras do código. Diferente de varrer-regras.js (um arquivo por vez), |
 | `build/varrer.js` | 107 | (sem comentário no topo) |
+| `build/vetorizar-tracar.js` | 114 | Peças do motor vetorizar.js: trabalham com a "máscara" (1 = pixel marcado) de uma imagem quadrada. |
+| `build/vetorizar.js` | 92 | Motor vetorizar (desenhos de colorir a partir de imagens do Gemini): copia o traço preto da imagem |
 | `testes/_gerador.js` | 25 | Ajudante comum dos testes de geradores: cópia do conteúdo, rodar o motor nela e o validador. |
 | `testes/_navegador.js` | 24 | Ajudante comum dos testes que abrem o app no navegador (Playwright, Chromium já instalado). |
 | `testes/t_ajustar.js` | 108 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
@@ -293,7 +295,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_caderno.js` | 76 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |
 | `testes/t_catalogo.js` | 37 | Teste guardado: catálogo (build/catalogo.js). Uso: node testes/t_catalogo.js |
 | `testes/t_celebracoes.js` | 71 | Teste guardado: celebrações (Fase 7, etapa 5) — janela do selo novo e fim da missão animado. |
-| `testes/t_colorir.js` | 83 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
+| `testes/t_colorir.js` | 94 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
 | `testes/t_conferir.js` | 68 | Teste guardado: conferidor de qualidade (build/conferir.js). Uso: node testes/t_conferir.js |
 | `testes/t_conteudo.js` | 47 | Teste guardado: regra de resposta certa + validador. Uso: node testes/t_conteudo.js |
 | `testes/t_evolucao.js` | 47 | Teste guardado: contas da Evolução no tempo (js/evolucao.js). |
