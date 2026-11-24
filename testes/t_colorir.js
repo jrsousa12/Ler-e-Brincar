@@ -80,5 +80,15 @@ ok(ap.includes('em dia'), 'biblioteca aprendida em dia com os lotes');
 const b = execFileSync('node', [path.join(raiz, 'build/biblioteca.js'), '--conferir'], { encoding: 'utf8' });
 ok(b.includes('em dia'), 'PECAS.md em dia e peças sem erro');
 
+// 5. Motor vetorizar (imagem → desenho): quadrado preto com furo e um risco no meio
+const tr = require(path.join(raiz, 'build/vetorizar-tracar.js'));
+const n = 40, m = new Uint8Array(n * n);
+for (let y = 4; y < 36; y++) for (let x = 4; x < 36; x++) m[y * n + x] = (x < 7 || x > 32 || y < 7 || y > 32 || x === 20) ? 1 : 0;
+const reg = tr.separar(m, n);
+ok(reg.filter(r => !r.borda).length === 2, 'risco divide o quadrado em 2 partes fechadas');
+const d = tr.contornos(m, n);
+const nums = d.match(/[\d.]+/g).map(Number);
+ok((d.match(/M/g) || []).length === 3 && Math.min(...nums) < 35 && Math.max(...nums) > 265, 'contorno do traço não encolhe (borda de fora + 2 furos)');
+
 console.log(falhas ? `t_colorir: ${falhas} FALHA(S)` : 't_colorir: OK');
 process.exit(falhas ? 1 : 0);

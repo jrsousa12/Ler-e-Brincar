@@ -599,6 +599,12 @@
       "t_rolagem",
       "t_silabas",
       "t_trem"
+    ],
+    "build/vetorizar.js": [
+      "t_colorir"
+    ],
+    "build/vetorizar-tracar.js": [
+      "t_colorir"
     ]
   }
 }
