@@ -4,7 +4,7 @@
     "certa_mais_longa": "a opção certa é bem mais longa que as outras (a criança acerta pelo tamanho)",
     "falta_figura": "Matemática nível 1 sem figuras (apoio visual)",
     "figura_nao_bate": "a quantidade de figuras não bate com o número da conta",
-    "distrator_facil": "opção errada longe demais da certa (fácil de descartar)",
+    "distrator_facil": "opção errada longe demais da certa e que não é erro típico da conta (fácil de descartar)",
     "opcao_negativa": "opção com número negativo",
     "explicacao_sem_resposta": "a explicação de Matemática não mostra o número certo",
     "enunciado_repetido": "pergunta igual à de outro item",

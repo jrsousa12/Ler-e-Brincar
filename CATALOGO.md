@@ -254,7 +254,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/catalogo.js` | 85 | Catálogo (motor 5): gera CATALOGO.md com o que já existe (conteúdo e código), para achar sem abrir arquivos. |
 | `build/colorir-regras.js` | 35 | Regras do estilo dos desenhos de colorir (usadas por build/colorir.js). Só lê o texto do SVG; não abre navegador. |
 | `build/colorir.js` | 111 | Motor de desenhos de colorir: confere, mostra a prévia e grava um lote de desenhos. |
-| `build/conferir.js` | 91 | Conferidor de qualidade (motor 3). Uso: node build/conferir.js [--tipo codigo] [--todos] [--estrito] |
+| `build/conferir.js` | 92 | Conferidor de qualidade (motor 3). Uso: node build/conferir.js [--tipo codigo] [--todos] [--estrito] |
 | `build/desenho.js` | 57 | Kit base dos desenhos de colorir (viewBox 300x300): traços e formas simples. As peças prontas (orelha, tronco, torre...) |
 | `build/escrever.js` | 10 | Escreve um item no estilo de conteudo/*.js: {chave:'texto',...} numa linha só (usado por gerar-mat e item) |
 | `build/figuras-mat.js` | 66 | Motor de figuras da Matemática: põe apoioVisual (figuras) em contas que ainda não têm. |
@@ -289,7 +289,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_catalogo.js` | 37 | Teste guardado: catálogo (build/catalogo.js). Uso: node testes/t_catalogo.js |
 | `testes/t_celebracoes.js` | 76 | Teste guardado: celebrações (Fase 7, etapa 5) — janela do selo novo e fim da missão animado. |
 | `testes/t_colorir.js` | 77 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
-| `testes/t_conferir.js` | 66 | Teste guardado: conferidor de qualidade (build/conferir.js). Uso: node testes/t_conferir.js |
+| `testes/t_conferir.js` | 68 | Teste guardado: conferidor de qualidade (build/conferir.js). Uso: node testes/t_conferir.js |
 | `testes/t_conteudo.js` | 47 | Teste guardado: regra de resposta certa + validador. Uso: node testes/t_conteudo.js |
 | `testes/t_evolucao.js` | 47 | Teste guardado: contas da Evolução no tempo (js/evolucao.js). |
 | `testes/t_figuras_mat.js` | 36 | Teste guardado: motor de figuras da Matemática (build/figuras-mat.js). Uso: node testes/t_figuras_mat.js |

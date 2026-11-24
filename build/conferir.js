@@ -7,6 +7,7 @@ const LB = require('./carregar')();
 const ficha = require(process.env.FICHA_QUALIDADE || path.join(__dirname, 'fichas/qualidade.json'));
 const L = ficha.limites;
 const { indiceCorreto } = LB.respostas;
+const R = require('./ajustar-mat-regras'); // erros típicos da conta (mesma regra do ajuste de Matemática)
 const args = process.argv.slice(2);
 const soTipo = args.includes('--tipo') ? args[args.indexOf('--tipo') + 1] : null;
 
@@ -33,10 +34,10 @@ function confereQuestao(id, q, eMat, nivel) {
   if ((q.enunciado || '').length > lim) avisa(id, 'texto_longo', `enunciado com ${q.enunciado.length} letras (até ${lim})`);
   if ((q.explicacao || '').length > L.explicacao) avisa(id, 'texto_longo', `explicação com ${q.explicacao.length} letras (até ${L.explicacao})`);
   if (!eMat) return;
-  const r = +certa;
+  const r = +certa, tipicos = Object.values(R.valores(q)).map(Number); // erro típico da criança não é fácil de descartar
   o.forEach(x => {
     if (+x < 0) avisa(id, 'opcao_negativa', String(x));
-    else if (Math.abs(+x - r) > Math.max(L.distrator_distancia_minima, r)) avisa(id, 'distrator_facil', `${x} (certa ${r})`);
+    else if (Math.abs(+x - r) > Math.max(L.distrator_distancia_minima, r) && !tipicos.includes(+x)) avisa(id, 'distrator_facil', `${x} (certa ${r})`);
   });
   const escapada = certa.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   if (!new RegExp('(^|\\D)' + escapada + '(\\D|$)').test(q.explicacao || ''))
