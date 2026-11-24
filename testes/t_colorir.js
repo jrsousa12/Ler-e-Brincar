@@ -71,6 +71,7 @@ ok(p.par(p.orelhaGato).includes(`translate(${300 - p.orelhaGato.def.ancora[0]} `
 ok(String(ancora('<circle cx="10" cy="20" r="5"/>')) === '10,20', 'encaixe no meio da peça');
 const lotes = fs.readdirSync(path.join(raiz, 'build/pedidos')).filter(a => /^colorir-gemini-\d+\.js$/.test(a))
   .flatMap(a => require(path.join(raiz, 'build/pedidos', a)));
+ok(lotes.every(d => /^colorir-\d+$/.test(d.id)), 'todo desenho de lote tem número (senão, gravar de novo duplica)');
 ok(lotes.length >= 5 && lotes.every(d => avulsas(d.svg) === 0 && !conferir(d.svg).erros.length), 'desenhos dos lotes novos só com peças e sem erro');
 ok(aprender().every(q => lotes.some(d => d.svg.includes(">" + p[q.nome].def.desenho() + "</g>"))), 'cada peça no lugar repete o traço do desenho aprovado');
 ok(avulsas(k.svg(p.guizo(), k.f('circle', 'r="3"'), k.solto('M0 0 L1 1'))) === 1, 'conta só a forma pintável fora da biblioteca');
