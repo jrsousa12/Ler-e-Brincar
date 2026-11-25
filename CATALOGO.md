@@ -9,7 +9,7 @@
 | Histórias | 61 | `historia-62` |
 | Português | 423 | `lp-424` |
 | Matemática | 275 | `mat-276` |
-| Colorir | 36 | `colorir-37` |
+| Colorir | 40 | `colorir-41` |
 | Monte a Palavra | 40 | `sil-041` |
 
 ## Português (por habilidade da BNCC)
@@ -162,7 +162,7 @@
 
 ## Colorir
 
-colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 ❤️ Coração · colorir-04 🏠 Casa · colorir-05 ☀️ Sol · colorir-06 🌸 Flor · colorir-07 🌳 Árvore · colorir-08 🚗 Carro · colorir-09 ⚽ Bola · colorir-10 🦋 Borboleta · colorir-11 🐠 Peixe · colorir-12 ⛅ Nuvem com sol · colorir-13 ⛵ Barco · colorir-14 ✨ Estrelas · colorir-15 🚀 Foguete · colorir-16 🐞 Joaninha · colorir-17 🐸 Sapo · colorir-18 🌤️ Sol e nuvem · colorir-19 🏰 Castelo · colorir-20 🌈 Arco-íris · colorir-21 🌙 Lua e estrela · colorir-22 🍦 Sorvete · colorir-23 🎈 Balão de ar quente · colorir-24 🎂 Bolo de aniversário · colorir-25 🌟 Estrela-do-mar · colorir-26 🤖 Robô · colorir-27 🦖 Dinossauro · colorir-28 🌠 Lua com estrelas · colorir-29 🐧 Pinguim · colorir-30 🐝 Abelha · colorir-31 🐢 Tartaruga · colorir-32 🌻 Girassol · colorir-33 🍎 Maçã · colorir-34 🦆 Pato · colorir-35 🚂 Trem · colorir-36 🐶 Cachorro
+colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 ❤️ Coração · colorir-04 🏠 Casa · colorir-05 ☀️ Sol · colorir-06 🌸 Flor · colorir-07 🌳 Árvore · colorir-08 🚗 Carro · colorir-09 ⚽ Bola · colorir-10 🦋 Borboleta · colorir-11 🐠 Peixe · colorir-12 ⛅ Nuvem com sol · colorir-13 ⛵ Barco · colorir-14 ✨ Estrelas · colorir-15 🚀 Foguete · colorir-16 🐞 Joaninha · colorir-17 🐸 Sapo · colorir-18 🌤️ Sol e nuvem · colorir-19 🏰 Castelo · colorir-20 🌈 Arco-íris · colorir-21 🌙 Lua e estrela · colorir-22 🍦 Sorvete · colorir-23 🎈 Balão de ar quente · colorir-24 🎂 Bolo de aniversário · colorir-25 🌟 Estrela-do-mar · colorir-26 🤖 Robô · colorir-27 🦖 Dinossauro · colorir-28 🌠 Lua com estrelas · colorir-29 🐧 Pinguim · colorir-30 🐝 Abelha · colorir-31 🐢 Tartaruga · colorir-32 🌻 Girassol · colorir-33 🍎 Maçã · colorir-34 🦆 Pato · colorir-35 🚂 Trem · colorir-36 🐶 Cachorro · colorir-37 🏡 Casa na árvore · colorir-38 🐘 Elefante · colorir-39 🦉 Coruja · colorir-40 🐬 Golfinho
 
 ## Monte a Palavra
 
@@ -281,7 +281,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/varrer-sobras.js` | 96 | Motor 9, parte 2: sobras do código. Diferente de varrer-regras.js (um arquivo por vez), |
 | `build/varrer.js` | 107 | (sem comentário no topo) |
 | `build/vetorizar-tracar.js` | 114 | Peças do motor vetorizar.js: trabalham com a "máscara" (1 = pixel marcado) de uma imagem quadrada. |
-| `build/vetorizar.js` | 92 | Motor vetorizar (desenhos de colorir a partir de imagens do Gemini): copia o traço preto da imagem |
+| `build/vetorizar.js` | 95 | Motor vetorizar (desenhos de colorir a partir de imagens do Gemini): copia o traço preto da imagem |
 | `testes/_gerador.js` | 25 | Ajudante comum dos testes de geradores: cópia do conteúdo, rodar o motor nela e o validador. |
 | `testes/_navegador.js` | 24 | Ajudante comum dos testes que abrem o app no navegador (Playwright, Chromium já instalado). |
 | `testes/t_ajustar.js` | 108 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
@@ -295,7 +295,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_caderno.js` | 76 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |
 | `testes/t_catalogo.js` | 37 | Teste guardado: catálogo (build/catalogo.js). Uso: node testes/t_catalogo.js |
 | `testes/t_celebracoes.js` | 71 | Teste guardado: celebrações (Fase 7, etapa 5) — janela do selo novo e fim da missão animado. |
-| `testes/t_colorir.js` | 94 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
+| `testes/t_colorir.js` | 97 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
 | `testes/t_conferir.js` | 68 | Teste guardado: conferidor de qualidade (build/conferir.js). Uso: node testes/t_conferir.js |
 | `testes/t_conteudo.js` | 47 | Teste guardado: regra de resposta certa + validador. Uso: node testes/t_conteudo.js |
 | `testes/t_evolucao.js` | 47 | Teste guardado: contas da Evolução no tempo (js/evolucao.js). |

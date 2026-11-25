@@ -4,7 +4,7 @@
 //   node build/colorir.js build/pedidos/<lote>.js --gravar   o mesmo e grava em conteudo/colorir.js
 //   --sem-previa   pula a prévia (mais rápido)
 // O pedido exporta uma lista: [{ id:'colorir-07', svg }] troca um desenho; [{ titulo, emoji, svg }] cria um novo
-// (id seguinte livre). Desenhar com o kit build/desenho.js. Regras do estilo: build/colorir-regras.js.
+// (id seguinte livre; com id, ele precisa ser o próximo livre). Desenhar com o kit build/desenho.js. Regras do estilo: build/colorir-regras.js.
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -25,9 +25,9 @@ function montar(pedido, existentes) {
   let ultimo = Math.max(0, ...existentes.map(c => +c.id.split('-')[1]));
   return pedido.map((p, n) => {
     const velho = p.id && existentes.find(c => c.id === p.id);
-    if (p.id && !velho) throw new Error('desenho ' + (n + 1) + ': ' + p.id + ' não existe (para criar, tire o id)');
-    if (!velho && !(p.titulo && p.emoji)) throw new Error('desenho ' + (n + 1) + ': novo precisa de titulo e emoji');
+    if (!velho && !(p.titulo && p.emoji)) throw new Error('desenho ' + (n + 1) + ': ' + (p.id ? p.id + ' não existe; ' : '') + 'novo precisa de titulo e emoji');
     const id = velho ? velho.id : 'colorir-' + String(++ultimo).padStart(2, '0');
+    if (p.id && !velho && p.id !== id) throw new Error('desenho ' + (n + 1) + ': ' + p.id + ' não existe; o próximo livre é ' + id);
     return { id, titulo: p.titulo || velho.titulo, emoji: p.emoji || velho.emoji, svg: p.svg, novo: !velho };
   });
 }

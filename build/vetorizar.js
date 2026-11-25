@@ -5,6 +5,7 @@
 //   node build/vetorizar.js <imagem> [...]      só essas
 //   --gravar      grava no app (passa ao build/colorir.js, que confere e faz a prévia)
 // Nome da imagem: número do desenho que ela troca (ex.: 04-casa.jpg troca colorir-04).
+// Desenho novo: usar o próximo número livre e pôr título e emoji em build/fichas/colorir-novos.json.
 // Saída: build/pedidos/colorir-imagens.js (pedido) → build/colorir.js (prévia build/previas/colorir.png).
 'use strict';
 const fs = require('fs');
@@ -13,6 +14,8 @@ const { execFileSync } = require('child_process');
 const { chromium } = require('playwright');
 const { engordar, separar, contornos } = require('./vetorizar-tracar');
 const raiz = path.join(__dirname, '..');
+// Desenhos novos (número que ainda não existe): título e emoji vêm desta ficha
+const novos = JSON.parse(fs.readFileSync(path.join(__dirname, 'fichas/colorir-novos.json'), 'utf8'));
 const N = 600;            // tamanho do quadro de trabalho (pixels)
 const LIMIAR = 140;       // abaixo disto (0 a 255) é traço preto
 const MENOR = 70;         // espaço menor que isto (pixels) não vira parte
@@ -81,7 +84,7 @@ function montarSvg(traco) {
     if (!num) { console.log('PULADA ' + path.basename(arq) + ': o nome precisa começar pelo número do desenho'); continue; }
     const id = 'colorir-' + num[1].padStart(2, '0');
     const { svg, partes } = montarSvg(await lerTraco(b, arq));
-    pedido.push({ id, svg });
+    pedido.push(Object.assign({ id, svg }, novos[num[1].padStart(2, '0')] || {}));
     console.log(id + ' ← ' + path.basename(arq) + ': ' + partes + ' partes para pintar, ' + Math.round(svg.length / 1024) + ' KB');
   }
   await b.close();

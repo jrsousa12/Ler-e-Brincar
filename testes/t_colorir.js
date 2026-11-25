@@ -39,6 +39,9 @@ const ruim = pedido('ruim', [{ id: 'colorir-02', svg: bom.replace('class="solto"
 const s1 = rodar(ruim, '--gravar', '--sem-previa');
 ok(s1.startsWith('SAIU 1') && s1.includes('Nada gravado'), 'com erro não grava');
 ok(rodar(pedido('semid', [{ id: 'colorir-99', svg: bom }]), '--sem-previa').includes('não existe'), 'id inexistente é recusado');
+const livre = 'colorir-' + String(total + 1).padStart(2, '0');
+ok(!rodar(pedido('novoid', [{ id: livre, titulo: 'Novo', emoji: '🧪', svg: bom }]), '--sem-previa').startsWith('SAIU'), 'novo com o próximo id livre (vetorizar) é aceito');
+ok(rodar(pedido('pulou', [{ id: 'colorir-99', titulo: 'Novo', emoji: '🧪', svg: bom }]), '--sem-previa').includes('próximo livre'), 'novo com id que pula números é recusado');
 
 const fora = k.svg(k.f('circle', 'cx="290" cy="150" r="40"'));
 const lote = pedido('lote', [{ id: 'colorir-02', svg: bom }, { titulo: 'Teste', emoji: '🧪', svg: fora }]);
