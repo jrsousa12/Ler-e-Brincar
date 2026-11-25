@@ -47,7 +47,8 @@ for (const f of ['01-gato.jpg', '02-estrela.jpg']) fs.writeFileSync(path.join(pe
 const dz = rodar(['desenho', '--qtd', '3']);
 ok(dz.saida.includes('Coração') && !texto('desenho').includes('Tobias') && !texto('desenho').includes('Estrela de Lia'), 'desenho: pula os que já têm imagem');
 ok(texto('desenho').includes('Estilo') && texto('desenho').includes('traço preto') && texto('desenho').includes('FECHADAS'), 'desenho: leva o estilo do livro de colorir');
-ok(dz.saida.includes('39 desenhos ainda sem imagem'), 'desenho: conta quantos faltam (41 menos 2 com imagem)');
+const totalDesenhos = require('../build/carregar')().colorir.length;
+ok(dz.saida.includes((totalDesenhos - 2) + ' desenhos ainda sem imagem'), 'desenho: conta quantos faltam (total menos 2 com imagem)');
 
 // lp/mat: tema e série
 const m3 = rodar(['mat', '--serie', '3']);

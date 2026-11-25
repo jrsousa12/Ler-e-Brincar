@@ -9,7 +9,7 @@
 | Histórias | 61 | `historia-62` |
 | Português | 423 | `lp-424` |
 | Matemática | 275 | `mat-276` |
-| Colorir | 41 | `colorir-42` |
+| Colorir | 45 | `colorir-46` |
 | Monte a Palavra | 40 | `sil-041` |
 
 ## Português (por habilidade da BNCC)
@@ -162,7 +162,7 @@
 
 ## Colorir
 
-colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 ❤️ Coração · colorir-04 🏠 Casa · colorir-05 ☀️ Sol · colorir-06 🌸 Flor · colorir-07 🌳 Árvore · colorir-08 🚗 Carro · colorir-09 ⚽ Bola · colorir-10 🦋 Borboleta · colorir-11 🐠 Peixe · colorir-12 ⛅ Nuvem com sol · colorir-13 ⛵ Barco · colorir-14 ✨ Estrelas · colorir-15 🚀 Foguete · colorir-16 🐞 Joaninha · colorir-17 🐸 Sapo · colorir-18 🌤️ Sol e nuvem · colorir-19 🏰 Castelo · colorir-20 🌈 Arco-íris · colorir-21 🌙 Lua e estrela · colorir-22 🍦 Sorvete · colorir-23 🎈 Balão de ar quente · colorir-24 🎂 Bolo de aniversário · colorir-25 🌟 Estrela-do-mar · colorir-26 🤖 Robô · colorir-27 🦖 Dinossauro · colorir-28 🌠 Lua com estrelas · colorir-29 🐧 Pinguim · colorir-30 🐝 Abelha · colorir-31 🐢 Tartaruga · colorir-32 🌻 Girassol · colorir-33 🍎 Maçã · colorir-34 🦆 Pato · colorir-35 🚂 Trem · colorir-36 🐶 Cachorro · colorir-37 🏡 Casa na árvore · colorir-38 🐘 Elefante · colorir-39 🦉 Coruja · colorir-40 🐬 Golfinho · colorir-41 🐻 Ursinho
+colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 ❤️ Coração · colorir-04 🏠 Casa · colorir-05 ☀️ Sol · colorir-06 🌸 Flor · colorir-07 🌳 Árvore · colorir-08 🚗 Carro · colorir-09 ⚽ Bola · colorir-10 🦋 Borboleta · colorir-11 🐠 Peixe · colorir-12 ⛅ Nuvem com sol · colorir-13 ⛵ Barco · colorir-14 ✨ Estrelas · colorir-15 🚀 Foguete · colorir-16 🐞 Joaninha · colorir-17 🐸 Sapo · colorir-18 🌤️ Sol e nuvem · colorir-19 🏰 Castelo · colorir-20 🌈 Arco-íris · colorir-21 🌙 Lua e estrela · colorir-22 🍦 Sorvete · colorir-23 🎈 Balão de ar quente · colorir-24 🎂 Bolo de aniversário · colorir-25 🌟 Estrela-do-mar · colorir-26 🤖 Robô · colorir-27 🦖 Dinossauro · colorir-28 🌠 Lua com estrelas · colorir-29 🐧 Pinguim · colorir-30 🐝 Abelha · colorir-31 🐢 Tartaruga · colorir-32 🌻 Girassol · colorir-33 🍎 Maçã · colorir-34 🦆 Pato · colorir-35 🚂 Trem · colorir-36 🐶 Cachorro · colorir-37 🏡 Casa na árvore · colorir-38 🐘 Elefante · colorir-39 🦉 Coruja · colorir-40 🐬 Golfinho · colorir-41 🐻 Ursinho · colorir-42 🐳 Baleia · colorir-43 🦊 Raposa · colorir-44 🏡 Casinha do jardim · colorir-45 🐬 Golfinho saltitante
 
 ## Monte a Palavra
 
@@ -313,7 +313,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_ondeparou.js` | 90 | Teste guardado: continuar de onde parou (js/ondeparou.js). Abre uma história/atividade, recarrega |
 | `testes/t_ordem.js` | 67 | Teste guardado: brincadeira "Ordem dos Fatos" (js/ordemregras.js = contas; js/telas/ordem.js = tela). |
 | `testes/t_pacote.js` | 100 | Teste guardado: brincadeira "Pacotes de contas" (js/pacoteregras.js = escolhas; js/telas/pacote.js = tela). |
-| `testes/t_pedir.js` | 85 | Teste guardado: motor de pedidos para outra IA (build/pedir.js + build/pedir-dados.js). Uso: node testes/t_pedir.js |
+| `testes/t_pedir.js` | 86 | Teste guardado: motor de pedidos para outra IA (build/pedir.js + build/pedir-dados.js). Uso: node testes/t_pedir.js |
 | `testes/t_rodada.js` | 88 | Teste guardado: kit de rodada (js/rodada.js), sem navegador. Uso: node testes/t_rodada.js |
 | `testes/t_rolagem.js` | 78 | Teste guardado: rolagem automática até a resposta (js/rolagem.js), voltar do aparelho (js/voltar.js) |
 | `testes/t_silabas.js` | 51 | Teste guardado: brincadeira "Monte a Palavra" (js/telas/silabas.js) no navegador. |
