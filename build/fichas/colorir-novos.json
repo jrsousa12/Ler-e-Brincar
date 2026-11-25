@@ -1,6 +1,22 @@
 {
-  "37": { "titulo": "Casa na árvore", "emoji": "🏡" },
-  "38": { "titulo": "Elefante", "emoji": "🐘" },
-  "39": { "titulo": "Coruja", "emoji": "🦉" },
-  "40": { "titulo": "Golfinho", "emoji": "🐬" }
+  "37": {
+    "titulo": "Casa na árvore",
+    "emoji": "🏡"
+  },
+  "38": {
+    "titulo": "Elefante",
+    "emoji": "🐘"
+  },
+  "39": {
+    "titulo": "Coruja",
+    "emoji": "🦉"
+  },
+  "40": {
+    "titulo": "Golfinho",
+    "emoji": "🐬"
+  },
+  "41": {
+    "titulo": "Ursinho",
+    "emoji": "🐻"
+  }
 }
