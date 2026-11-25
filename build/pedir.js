@@ -6,6 +6,7 @@
 //   node build/pedir.js ordem     [--qtd 10]          (Ordem dos Fatos)
 //   node build/pedir.js historia  [--qtd 3] [--nivel 1|2|3]
 //   node build/pedir.js ideia     [--qtd 5] [--materia mat|lp]   (ideias de brincadeira nova)
+//   node build/pedir.js desenho   [--qtd 5]           (texto para o Gemini desenhar os que faltam em colorir)
 //   --lote nome troca o nome do lote (padrão: o próximo loteN livre em build/pedidos/)
 // Escolhe sozinho: o tema com menos itens (lp/mat), os níveis com menos itens, e manda a lista do que já
 // existe para a outra IA não repetir. Grava o texto em build/previas/pedido-<tipo>.txt e mostra onde
@@ -61,6 +62,12 @@ function preencher(tipo, op) {
     v.MATÉRIA = mat === 'mat' ? 'Matemática' : 'Língua Portuguesa';
     v['JÁ EXISTEM'] = lista(b.existem.map(x => x.emoji + ' ' + x.nome));
     resumo = b.existem.length + ' brincadeiras já existem; foco: ' + v.MATÉRIA;
+  } else if (tipo === 'desenho') {
+    const d = D.desenhos(op.qtd);
+    if (!d.pedir.length) throw new Error('todos os desenhos já têm imagem em build/pedidos/imagens/');
+    v.QUANTIDADE = d.pedir.length;
+    v.LISTA = d.pedir.map((x, i) => (i + 1) + '. ' + x.emoji + ' ' + x.titulo + (x.cena ? ' (' + x.cena + ')' : '')).join('\n');
+    resumo = d.faltam + ' desenhos ainda sem imagem; pedido: ' + d.pedir.map(x => x.num + ' ' + x.titulo).join(', ');
   }
   v['2º ou 3º'] = serie + 'º';
   return { v, resumo, serie, bncc };

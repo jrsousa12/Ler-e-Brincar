@@ -272,8 +272,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/item.js` | 131 | Motor de item único: mostra, busca e altera um item de conteudo/*.js sem abrir o arquivo. |
 | `build/nova-brincadeira.js` | 113 | Motor "brincadeira nova": cria os 5 arquivos de uma brincadeira e liga tudo no app, de uma vez. |
 | `build/pedido.js` | 100 | Peças comuns dos geradores de conteúdo (gerar-mat, gerar-lp, gerar-historia). |
-| `build/pedir-dados.js` | 92 | Dados do motor build/pedir.js: o que o app já tem e as escolhas automáticas (tema, série, níveis, lote). |
-| `build/pedir.js` | 113 | Motor "pedir a outra IA": monta o texto pronto para colar noutra IA, já preenchido, a partir dos roteiros. |
+| `build/pedir-dados.js` | 101 | Dados do motor build/pedir.js: o que o app já tem e as escolhas automáticas (tema, série, níveis, lote). |
+| `build/pedir.js` | 120 | Motor "pedir a outra IA": monta o texto pronto para colar noutra IA, já preenchido, a partir dos roteiros. |
 | `build/tudo.js` | 100 | (sem comentário no topo) |
 | `build/validar.js` | 93 | Validador do conteúdo. Uso: node build/validar.js |
 | `build/varrer-limpar.js` | 80 | Ajudante da varredura (Motor 9): apaga o miolo de textos e comentários de um código JS, |
@@ -313,7 +313,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_ondeparou.js` | 90 | Teste guardado: continuar de onde parou (js/ondeparou.js). Abre uma história/atividade, recarrega |
 | `testes/t_ordem.js` | 67 | Teste guardado: brincadeira "Ordem dos Fatos" (js/ordemregras.js = contas; js/telas/ordem.js = tela). |
 | `testes/t_pacote.js` | 100 | Teste guardado: brincadeira "Pacotes de contas" (js/pacoteregras.js = escolhas; js/telas/pacote.js = tela). |
-| `testes/t_pedir.js` | 75 | Teste guardado: motor de pedidos para outra IA (build/pedir.js + build/pedir-dados.js). Uso: node testes/t_pedir.js |
+| `testes/t_pedir.js` | 85 | Teste guardado: motor de pedidos para outra IA (build/pedir.js + build/pedir-dados.js). Uso: node testes/t_pedir.js |
 | `testes/t_rodada.js` | 88 | Teste guardado: kit de rodada (js/rodada.js), sem navegador. Uso: node testes/t_rodada.js |
 | `testes/t_rolagem.js` | 78 | Teste guardado: rolagem automática até a resposta (js/rolagem.js), voltar do aparelho (js/voltar.js) |
 | `testes/t_silabas.js` | 51 | Teste guardado: brincadeira "Monte a Palavra" (js/telas/silabas.js) no navegador. |

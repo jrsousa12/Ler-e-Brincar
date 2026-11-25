@@ -23,7 +23,7 @@ const rodar = args => {
 const texto = tipo => fs.readFileSync(path.join(tmp, 'pedido-' + tipo + '.txt'), 'utf8');
 
 // Cada tipo monta o texto, sem colchete sobrando e com a quantidade
-for (const tipo of ['lp', 'mat', 'silabas', 'ordem', 'historia', 'ideia']) {
+for (const tipo of ['lp', 'mat', 'silabas', 'ordem', 'historia', 'ideia', 'desenho']) {
   const r = rodar([tipo, '--qtd', '7']);
   ok(r.cod === 0, tipo + ' roda: ' + r.saida.trim().split('\n')[0]);
   if (r.cod !== 0) continue;
@@ -38,6 +38,16 @@ ok(rodar(['silabas']).saida.includes('silabas-lote2.txt'), 'silabas: próximo lo
 ok(texto('ordem').includes('- Preparando o café da manhã'), 'ordem: manda os títulos que já existem');
 ok(texto('ideia').includes('Mercadinho') && texto('ideia').includes('Monte a Palavra'), 'ideia: lista as brincadeiras do app');
 ok(rodar(['ideia', '--materia', 'lp']).cod === 0 && texto('ideia').includes('de Língua Portuguesa'), 'ideia: --materia lp');
+
+// desenho: lista só o que ainda não tem imagem em pedidos/imagens (número do arquivo = número do desenho)
+rodar(['desenho', '--qtd', '3']);
+ok(texto('desenho').includes('1. 🐱 O gato Tobias') && texto('desenho').includes('3. ❤️ Coração'), 'desenho: sem imagens, começa pelo 01');
+fs.mkdirSync(path.join(pedidos, 'imagens'));
+for (const f of ['01-gato.jpg', '02-estrela.jpg']) fs.writeFileSync(path.join(pedidos, 'imagens', f), '');
+const dz = rodar(['desenho', '--qtd', '3']);
+ok(dz.saida.includes('Coração') && !texto('desenho').includes('Tobias') && !texto('desenho').includes('Estrela de Lia'), 'desenho: pula os que já têm imagem');
+ok(texto('desenho').includes('Estilo') && texto('desenho').includes('traço preto') && texto('desenho').includes('FECHADAS'), 'desenho: leva o estilo do livro de colorir');
+ok(dz.saida.includes('39 desenhos ainda sem imagem'), 'desenho: conta quantos faltam (41 menos 2 com imagem)');
 
 // lp/mat: tema e série
 const m3 = rodar(['mat', '--serie', '3']);

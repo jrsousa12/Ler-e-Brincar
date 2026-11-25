@@ -81,6 +81,15 @@ function brincadeiras() {
   return { existem: lista, materia: mat <= lp ? 'mat' : 'lp' };
 }
 
+// Desenhos de colorir que ainda não têm imagem em build/pedidos/imagens/ (o número do arquivo = número do desenho)
+function desenhos(qtd) {
+  const pasta = path.join(pastaPedidos(), 'imagens');
+  const feitos = new Set(fs.existsSync(pasta) ? fs.readdirSync(pasta).map(f => (f.match(/^(\d+)-/) || [])[1]).filter(Boolean).map(Number) : []);
+  const faltam = LB().colorir.filter(c => !feitos.has(+c.id.split('-')[1]))
+    .map(c => ({ num: c.id.split('-')[1], titulo: c.titulo, emoji: c.emoji, cena: ficha.cenas[+c.id.split('-')[1]] || '' }));
+  return { faltam: faltam.length, pedir: faltam.slice(0, qtd) };
+}
+
 // Próximo nome de lote livre em build/pedidos (lote1, lote2...), olhando <tipo>-loteN.*
 function proximoLote(tipo) {
   const pasta = pastaPedidos();
@@ -89,4 +98,4 @@ function proximoLote(tipo) {
   return 'lote' + (Math.max(0, ...nums) + 1);
 }
 
-module.exports = { ficha, tema, silabas, historias, ordem, brincadeiras, proximoLote, repartir, pastaPedidos };
+module.exports = { ficha, tema, silabas, historias, ordem, brincadeiras, desenhos, proximoLote, repartir, pastaPedidos };

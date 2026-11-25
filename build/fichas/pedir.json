@@ -1,44 +1,158 @@
 {
-  "_leia": "Ficha do motor build/pedir.js (pedidos para outra IA). 'temas': para lp e mat, o motor escolhe o tema cujo código BNCC tem MENOS itens no app (calibrar = editar aqui). 'serie': série do tema. 'qtd': quantidade padrão de cada tipo. 'roteiros': arquivo de build/roteiros/ de cada tipo; 'destino': onde salvar a resposta; 'depois': comandos para rodar ({arq} = arquivo salvo, {serie} = série).",
-  "qtd": { "lp": 20, "mat": 20, "silabas": 15, "ordem": 10, "historia": 3, "ideia": 5 },
+  "_leia": "Ficha do motor build/pedir.js (pedidos para outra IA). 'temas': para lp e mat, o motor escolhe o tema cujo código BNCC tem MENOS itens no app (calibrar = editar aqui). 'serie': série do tema. 'qtd': quantidade padrão de cada tipo. 'roteiros': arquivo de build/roteiros/ de cada tipo; 'destino': onde salvar a resposta; 'depois': comandos para rodar ({arq} = arquivo salvo, {serie} = série). 'cenas': ideia de cena (número do desenho → frase) para o tipo desenho, quando o título sozinho repetiria outro desenho.",
+  "qtd": {
+    "lp": 20,
+    "mat": 20,
+    "silabas": 15,
+    "ordem": 10,
+    "historia": 3,
+    "ideia": 5,
+    "desenho": 5
+  },
   "temas": {
     "lp": [
-      { "tema": "localizar informações escritas no texto (quem, onde, quando)", "bncc": "EF15LP03", "serie": 2 },
-      { "tema": "pistas do texto: descobrir o que não está escrito", "bncc": "EF35LP04", "serie": 3 },
-      { "tema": "ideia principal do texto (do que o texto fala)", "bncc": "EF35LP03", "serie": 3 },
-      { "tema": "sentido de uma palavra pelo resto da frase", "bncc": "EF35LP05", "serie": 3 },
-      { "tema": "a quem uma palavra se refere (ele, ela, o menino, o bicho)", "bncc": "EF35LP06", "serie": 3 },
-      { "tema": "para que serve o texto (bilhete, receita, convite, aviso)", "bncc": "EF15LP01", "serie": 2 }
+      {
+        "tema": "localizar informações escritas no texto (quem, onde, quando)",
+        "bncc": "EF15LP03",
+        "serie": 2
+      },
+      {
+        "tema": "pistas do texto: descobrir o que não está escrito",
+        "bncc": "EF35LP04",
+        "serie": 3
+      },
+      {
+        "tema": "ideia principal do texto (do que o texto fala)",
+        "bncc": "EF35LP03",
+        "serie": 3
+      },
+      {
+        "tema": "sentido de uma palavra pelo resto da frase",
+        "bncc": "EF35LP05",
+        "serie": 3
+      },
+      {
+        "tema": "a quem uma palavra se refere (ele, ela, o menino, o bicho)",
+        "bncc": "EF35LP06",
+        "serie": 3
+      },
+      {
+        "tema": "para que serve o texto (bilhete, receita, convite, aviso)",
+        "bncc": "EF15LP01",
+        "serie": 2
+      }
     ],
     "mat": [
-      { "tema": "comparar e ordenar números até 100", "bncc": "EF02MA01", "serie": 2 },
-      { "tema": "compor e decompor números (dezenas e unidades)", "bncc": "EF02MA04", "serie": 2 },
-      { "tema": "problemas de juntar e tirar", "bncc": "EF02MA06", "serie": 2 },
-      { "tema": "multiplicação como grupos iguais", "bncc": "EF02MA07", "serie": 2 },
-      { "tema": "dobro e metade", "bncc": "EF02MA08", "serie": 2 },
-      { "tema": "sequências de números (de 2 em 2, de 5 em 5, de 10 em 10)", "bncc": "EF02MA09", "serie": 2 },
-      { "tema": "dinheiro: moedas e notas", "bncc": "EF02MA20", "serie": 2 },
-      { "tema": "ler e escrever números até 1000", "bncc": "EF03MA01", "serie": 3 },
-      { "tema": "cálculo mental de mais e menos", "bncc": "EF03MA05", "serie": 3 },
-      { "tema": "problemas de multiplicação", "bncc": "EF03MA07", "serie": 3 },
-      { "tema": "divisão: repartir em partes iguais", "bncc": "EF03MA08", "serie": 3 },
-      { "tema": "compras e troco", "bncc": "EF03MA24", "serie": 3 }
+      {
+        "tema": "comparar e ordenar números até 100",
+        "bncc": "EF02MA01",
+        "serie": 2
+      },
+      {
+        "tema": "compor e decompor números (dezenas e unidades)",
+        "bncc": "EF02MA04",
+        "serie": 2
+      },
+      {
+        "tema": "problemas de juntar e tirar",
+        "bncc": "EF02MA06",
+        "serie": 2
+      },
+      {
+        "tema": "multiplicação como grupos iguais",
+        "bncc": "EF02MA07",
+        "serie": 2
+      },
+      {
+        "tema": "dobro e metade",
+        "bncc": "EF02MA08",
+        "serie": 2
+      },
+      {
+        "tema": "sequências de números (de 2 em 2, de 5 em 5, de 10 em 10)",
+        "bncc": "EF02MA09",
+        "serie": 2
+      },
+      {
+        "tema": "dinheiro: moedas e notas",
+        "bncc": "EF02MA20",
+        "serie": 2
+      },
+      {
+        "tema": "ler e escrever números até 1000",
+        "bncc": "EF03MA01",
+        "serie": 3
+      },
+      {
+        "tema": "cálculo mental de mais e menos",
+        "bncc": "EF03MA05",
+        "serie": 3
+      },
+      {
+        "tema": "problemas de multiplicação",
+        "bncc": "EF03MA07",
+        "serie": 3
+      },
+      {
+        "tema": "divisão: repartir em partes iguais",
+        "bncc": "EF03MA08",
+        "serie": 3
+      },
+      {
+        "tema": "compras e troco",
+        "bncc": "EF03MA24",
+        "serie": 3
+      }
     ]
   },
   "roteiros": {
-    "lp": "lote-lp.md", "mat": "lote-mat.md", "silabas": "lote-silabas.md",
-    "ordem": "lote-ordem.md", "historia": "lote-historia.md", "ideia": "ideia-brincadeira.md"
+    "lp": "lote-lp.md",
+    "mat": "lote-mat.md",
+    "silabas": "lote-silabas.md",
+    "ordem": "lote-ordem.md",
+    "historia": "lote-historia.md",
+    "ideia": "ideia-brincadeira.md",
+    "desenho": "desenho-colorir.md"
   },
   "destino": {
-    "lp": "lp-{lote}.json", "mat": "mat-{lote}.json", "silabas": "silabas-{lote}.txt",
-    "ordem": "ordem-{lote}.txt", "historia": "historia-{lote}.txt", "ideia": "ideia-{lote}.txt"
+    "lp": "lp-{lote}.json",
+    "mat": "mat-{lote}.json",
+    "silabas": "silabas-{lote}.txt",
+    "ordem": "ordem-{lote}.txt",
+    "historia": "historia-{lote}.txt",
+    "ideia": "ideia-{lote}.txt",
+    "desenho": "imagens/<número>-<nome>.jpg"
   },
   "depois": {
-    "lp": ["node build/importar-lp.js {arq} --nivel {serie} --bncc {bncc}", "depois siga o passo \"Lote em JSON do dono\" do CLAUDE.md"],
-    "mat": ["node build/importar-mat.js {arq} --serie {serie}", "node build/gerar-mat.js {txt}   (prévia; depois o mesmo com --gravar)"],
-    "silabas": ["node build/gerar-silabas.js {arq} --ver   (prévia; depois o mesmo com --gravar)"],
-    "ordem": ["node build/gerar-ordem.js {arq} --ver   (prévia; depois o mesmo com --gravar)"],
-    "historia": ["node build/gerar-historia.js {arq} --ver   (prévia; depois o mesmo com --gravar)"],
-    "ideia": ["peça ao Claude: \"leia {arq} e monte a ideia N\" (ele usa build/nova-brincadeira.js)"]
+    "lp": [
+      "node build/importar-lp.js {arq} --nivel {serie} --bncc {bncc}",
+      "depois siga o passo \"Lote em JSON do dono\" do CLAUDE.md"
+    ],
+    "mat": [
+      "node build/importar-mat.js {arq} --serie {serie}",
+      "node build/gerar-mat.js {txt}   (prévia; depois o mesmo com --gravar)"
+    ],
+    "silabas": [
+      "node build/gerar-silabas.js {arq} --ver   (prévia; depois o mesmo com --gravar)"
+    ],
+    "ordem": [
+      "node build/gerar-ordem.js {arq} --ver   (prévia; depois o mesmo com --gravar)"
+    ],
+    "historia": [
+      "node build/gerar-historia.js {arq} --ver   (prévia; depois o mesmo com --gravar)"
+    ],
+    "ideia": [
+      "peça ao Claude: \"leia {arq} e monte a ideia N\" (ele usa build/nova-brincadeira.js)"
+    ],
+    "desenho": [
+      "mande as imagens para o Claude dizendo o número de cada uma e rode: node build/vetorizar.js   (prévia; depois o mesmo com --gravar)"
+    ]
+  },
+  "cenas": {
+    "12": "uma nuvem fofa com um sol sorridente espiando atrás dela",
+    "14": "um céu com cinco estrelas de tamanhos diferentes e uma estrela cadente",
+    "18": "um sol grande sorrindo, duas nuvens pequenas e um passarinho",
+    "21": "uma lua crescente dorminhoca com uma estrela ao lado",
+    "28": "uma lua cheia grande, várias estrelinhas e duas nuvens pequenas"
   }
 }
