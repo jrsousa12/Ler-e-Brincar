@@ -1,0 +1,36 @@
+/* Tela Selos (progresso e conquistas) e janela de selo novo (js/telas/selonovo.js). */
+.grid-selos{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:12px;margin:var(--space) 0;
+}
+.selo{
+  background:var(--cor-card);border:2px dashed var(--cor-borda-forte);
+  border-radius:var(--radius);padding:18px 14px;text-align:center;
+  opacity:.45;filter:grayscale(1);transition:all .3s ease;
+}
+.selo.desbloqueado{
+  opacity:1;filter:none;background:var(--cor-sucesso-bg);
+  border:2px solid var(--cor-sucesso);
+  box-shadow:0 12px 26px -18px var(--cor-sucesso);
+  transform:translateY(-2px);
+}
+.selo .emoji{display:block;font-size:2em;margin-bottom:8px;line-height:1}
+.selo .nome{font-weight:700;font-size:.85em;line-height:1.3}
+.barra-progresso{
+  background:var(--cor-borda);height:18px;border-radius:var(--radius-pill);
+  overflow:hidden;margin:var(--space) 0;
+  box-shadow:inset 0 1px 3px rgba(31,27,46,.12);
+}
+.barra-preenchida{
+  height:100%;border-radius:inherit;
+  background:linear-gradient(90deg,var(--cor-primaria) 0%,var(--cor-acento) 100%);
+  transition:width .5s cubic-bezier(.22,1,.36,1);
+}
+/* Selo novo */
+.caixa-selo{position:relative;overflow:hidden;text-align:center}
+.caixa-selo h2{margin:6px 0 2px;color:var(--cor-selos-3d)}
+.selo-ganho{position:relative;font-size:5rem;line-height:1.2;margin-top:4px}
+.selo-ganho-nome{position:relative;font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin:0 0 14px}
+.selo-raios{position:absolute;left:50%;top:58px;width:260px;height:260px;margin:-130px 0 0 -130px;border-radius:50%;
+  background:repeating-conic-gradient(var(--cor-selos-suave) 0 15deg,transparent 15deg 30deg);opacity:.7}
+.caixa-selo .linha-botoes{position:relative}

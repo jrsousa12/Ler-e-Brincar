@@ -2,8 +2,7 @@
 LB.moldes = LB.moldes || {};
 LB.moldes.missao = `
     <div v-if="tela === 'missao'">
-      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
-      <h2>🚀 Missão do dia</h2>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="irPara('home')">← Voltar</button></teleport>
       <div class="trilha">
         <div v-for="(p, i) in passosMissao" :key="i" class="passo"
              :class="{feito: p.feito, atual: i === proximoPasso}">{{ p.feito ? '✓' : p.emoji }}</div>

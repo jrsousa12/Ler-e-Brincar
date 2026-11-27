@@ -70,7 +70,7 @@ const molde = b => `// Molde (HTML do Vue): Brincadeira "${b.nome}". Criado por 
 LB.moldes = LB.moldes || {};
 LB.moldes.${b.id} = \`
     <section v-if="tela === '${b.id}' && atual${b.Cap}" class="brincadeira-silabas brincadeira-${b.id}" aria-label="Brincadeira ${b.nome}">
-      <button class="btn-voltar" @click="voltar('atividades')">← Voltar</button>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="voltar('${b.tela}')">← Voltar</button></teleport>
       <div class="topo-jogo">
         <span class="badge-fase">Desafio {{ indice${b.Cap} + 1 }} de {{ lista${b.Cap}.length }}</span>
         <button type="button" class="btn-silaba-3d btn-ouvir-palavra" @click="ouvir(atual${b.Cap}.fala)">🔊 Ouvir</button>
@@ -101,9 +101,9 @@ const css = b => `/* Brincadeira "${b.nome}" (js/moldes/${b.id}.js). Cores de ba
 .opcoes-${b.id} .bloco-silaba{min-width:84px;font-size:1.8rem}
 `;
 
-// Teste: contas coerentes em 300 rodadas + rodada inteira na tela (erra, acerta, 5 estrelas, Concluir, filtro).
+// Teste: contas coerentes em 300 rodadas + rodada inteira na tela (erra, acerta, 5 estrelas, Concluir, tela da matéria).
 const teste = b => {
-  const outra = b.materia === 'mat' ? 'Português' : 'Matemática', mesma = b.materia === 'mat' ? 'Matemática' : 'Português';
+  const outra = b.materia === 'mat' ? 'portugues' : 'matematica', menu = b.materia === 'mat' ? 'brincar' : 'ler';
   return `// Teste guardado: brincadeira "${b.nome}" (js/${b.id}regras.js = contas; js/telas/${b.id}.js = tela).
 // Uso: node testes/t_${b.id}.js   (criado por build/nova-brincadeira.js; amplie ao mudar as contas)
 'use strict';
@@ -131,7 +131,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   ok(defeitos.length === 0, 'contas: ' + defeitos.join(' | '));
 
   // TELA: abre pela lista de brincadeiras
-  await p.click('.bloco-menu.brincar');
+  await p.click('.bloco-menu.${menu}');
   await p.click('.bloco-brincadeira:has-text("${b.nome}")');
   ok(await p.locator('.brincadeira-${b.id}').count() === 1, 'abre a brincadeira');
   const estrelas = () => p.evaluate(() => LB.app.estrelas);
@@ -146,14 +146,14 @@ const { novaPagina, abrirApp } = require('./_navegador');
   ok(await p.locator('.feedback-jogo.correto').count() === 1 && await estrelas() === e0 + 1, 'acerto: 1 estrela');
   for (let i = 0; i < 4; i++) { await p.click('.btn-proximo:has-text("Próximo")'); await clicar(await certa()); }
   await p.click('.btn-proximo:has-text("Concluir")');
-  ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos['${b.id}'] === true), 'concluir volta e marca feito');
+  ok(await p.evaluate(() => LB.app.tela === '${b.tela}' && LB.app.concluidos['${b.id}'] === true), 'concluir volta e marca feito');
   ok(await estrelas() === e0 + 5, 'rodada rende 5 estrelas: ' + (await estrelas() - e0));
 
-  // Filtros da lista
-  await p.click('.filtro >> text=${outra}');
-  ok(await p.locator('.bloco-brincadeira:has-text("${b.nome}")').count() === 0, '${outra} esconde a brincadeira');
-  await p.click('.filtro >> text=${mesma}');
-  ok(await p.locator('.bloco-brincadeira:has-text("${b.nome}")').count() === 1, '${mesma} mostra a brincadeira');
+  // Fica só na tela da sua matéria (js/telas/materias.js)
+  await p.evaluate(() => LB.app.irPara('${outra}'));
+  ok(await p.locator('.bloco-brincadeira:has-text("${b.nome}")').count() === 0, 'a outra matéria não mostra a brincadeira');
+  await p.evaluate(() => LB.app.irPara('${b.tela}'));
+  ok(await p.locator('.bloco-brincadeira:has-text("${b.nome}")').count() === 1, 'a matéria certa mostra a brincadeira');
   ok(erros.length === 0, 'sem erros: ' + erros.join(' | '));
 
   await b.close();

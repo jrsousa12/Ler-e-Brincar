@@ -3,8 +3,7 @@ LB.moldes = LB.moldes || {};
 LB.moldes.historias = `
     <!-- LER (lista de histórias) -->
     <div v-if="tela === 'ler'">
-      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
-      <h2>Histórias</h2>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="irPara('portugues')">← Voltar</button></teleport>
       <div class="grade-cartoes">
         <div class="card" v-for="h in conteudo.stories" :key="h.id" @click="abrirHistoria(h)" tabindex="0">
           <div class="card-capa" :style="{background: h.corFundo}">{{ h.emoji }}</div>
@@ -16,7 +15,7 @@ LB.moldes.historias = `
 
     <!-- HISTÓRIA (leitura) -->
     <div v-if="tela === 'historia' && historiaAtual">
-      <button class="btn-voltar" @click="voltar('ler')">← Voltar</button>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="voltar('ler')">← Voltar</button></teleport>
       <div class="historia-capa">{{ historiaAtual.emoji }}</div>
       <h2>{{ historiaAtual.titulo }}</h2>
       <button class="btn-ouvir" @click="ouvirHistoria">🔊 Ouvir a história</button>

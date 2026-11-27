@@ -45,7 +45,9 @@
     "t_pacote": "testes/t_pacote.js",
     "t_rolagem": "testes/t_rolagem.js",
     "t_ondeparou": "testes/t_ondeparou.js",
-    "t_varrer": "testes/t_varrer.js"
+    "t_varrer": "testes/t_varrer.js",
+    "t_estilos": "testes/t_estilos.js",
+    "t_materias": "testes/t_materias.js"
   },
   "navegador": [
     "t_avisoerro",
@@ -61,7 +63,8 @@
     "t_ordem",
     "t_pacote",
     "t_rolagem",
-    "t_ondeparou"
+    "t_ondeparou",
+    "t_materias"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -130,18 +133,21 @@
       "t_app",
       "t_offline",
       "t_celebracoes",
-      "varredura"
+      "varredura",
+      "t_estilos"
     ],
     "index.html": [
       "t_app",
-      "t_offline",
+      "t_estilos",
       "t_nova_brincadeira",
+      "t_offline",
       "varredura"
     ],
     "sw.js": [
       "sintaxe",
-      "t_offline",
+      "t_estilos",
       "t_nova_brincadeira",
+      "t_offline",
       "varredura"
     ],
     "manifest": [
@@ -278,7 +284,7 @@
     "js/moldes/silabas.js": [
       "t_silabas"
     ],
-    "css/silabas.css": [
+    "css/telas/silabas.css": [
       "t_silabas"
     ],
     "testes/t_silabas.js": [
@@ -306,17 +312,20 @@
     "js/moldes/somfigura.js": [
       "t_brincadeiras"
     ],
-    "css/brincadeiras.css": [
+    "css/telas/memoria.css": [
+      "t_brincadeiras"
+    ],
+    "css/telas/somfigura.css": [
       "t_brincadeiras"
     ],
     "testes/t_brincadeiras.js": [
       "t_brincadeiras"
     ],
-    "css/acabamento.css": [
+    "css/pecas/": [
       "t_app",
       "t_brincadeiras"
     ],
-    "css/listas.css": [
+    "css/telas/listas.css": [
       "t_brincadeiras",
       "t_app",
       "t_mercado",
@@ -329,7 +338,8 @@
       "t_nova_brincadeira",
       "t_ordem",
       "t_pedir",
-      "t_pacote"
+      "t_pacote",
+      "t_materias"
     ],
     "css/tema-creme.css": [
       "t_app"
@@ -366,7 +376,7 @@
     "conteudo/mercado.js": [
       "t_mercado"
     ],
-    "css/mercado.css": [
+    "css/telas/mercado.css": [
       "t_mercado"
     ],
     "testes/t_mercado.js": [
@@ -381,7 +391,7 @@
     "js/tremregras.js": [
       "t_trem"
     ],
-    "css/trem.css": [
+    "css/telas/trem.css": [
       "t_trem"
     ],
     "testes/t_trem.js": [
@@ -416,7 +426,7 @@
     "js/moldes/ordem.js": [
       "t_ordem"
     ],
-    "css/ordem.css": [
+    "css/telas/ordem.css": [
       "t_ordem"
     ],
     "testes/t_ordem.js": [
@@ -574,7 +584,7 @@
     "js/moldes/pacote.js": [
       "t_pacote"
     ],
-    "css/pacote.css": [
+    "css/telas/pacote.css": [
       "t_pacote"
     ],
     "testes/t_pacote.js": [
@@ -605,6 +615,33 @@
     ],
     "build/vetorizar-tracar.js": [
       "t_colorir"
+    ],
+    "testes/t_estilos.js": [
+      "t_estilos"
+    ],
+    "build/capturas-telas.js": [
+      "t_estilos"
+    ],
+    "js/moldes/materias.js": [
+      "t_materias",
+      "t_nova_brincadeira"
+    ],
+    "js/telas/materias.js": [
+      "t_materias",
+      "t_rodada",
+      "t_nova_brincadeira"
+    ],
+    "testes/t_materias.js": [
+      "t_materias"
+    ],
+    "js/moldes/navegacao.js": [
+      "t_materias"
+    ],
+    "js/moldes/inicio.js": [
+      "t_materias"
+    ],
+    "js/telas/atividades.js": [
+      "t_materias"
     ]
   }
 }

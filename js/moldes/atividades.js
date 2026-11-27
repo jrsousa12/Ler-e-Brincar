@@ -1,42 +1,9 @@
-// Molde (HTML do Vue): Telas "Atividades" (lista) e "Atividade" (resolver).
+// Molde (HTML do Vue): Telas "Atividades" (lista de Questões ou Contas, conforme filtroMateria) e "Atividade" (resolver).
 LB.moldes = LB.moldes || {};
 LB.moldes.atividades = `
     <!-- ATIVIDADES (lista) -->
     <div v-if="tela === 'atividades'">
-      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
-      <h2>Brincar</h2>
-      <div class="filtros">
-        <button class="filtro" :class="{ativo: filtroMateria === 'todas'}" @click="filtroMateria = 'todas'">Todas</button>
-        <button class="filtro" :class="{ativo: filtroMateria === 'lingua-portuguesa'}" @click="filtroMateria = 'lingua-portuguesa'">📝 Português</button>
-        <button class="filtro" :class="{ativo: filtroMateria === 'matematica'}" @click="filtroMateria = 'matematica'">🧮 Matemática</button>
-      </div>
-      <h3 class="titulo-secao">Brincadeiras</h3>
-      <div class="grade-brincadeiras">
-        <template v-if="filtroMateria !== 'matematica'">
-          <button type="button" class="bloco-brincadeira ler" @click="abrirSilabas">
-            <span class="bloco-emoji" aria-hidden="true">🧩</span>Monte a Palavra<span v-if="concluidos.silabas" class="selo-feito">✓</span>
-          </button>
-          <button type="button" class="bloco-brincadeira colorir" @click="abrirMemoria">
-            <span class="bloco-emoji" aria-hidden="true">🃏</span>Memória<span v-if="concluidos.memoria" class="selo-feito">✓</span>
-          </button>
-          <button type="button" class="bloco-brincadeira brincar" @click="abrirSomFigura">
-            <span class="bloco-emoji" aria-hidden="true">🔊</span>Som e Figura<span v-if="concluidos['som-figura']" class="selo-feito">✓</span>
-          </button>
-        </template>
-        <button v-if="filtroMateria !== 'lingua-portuguesa'" type="button" class="bloco-brincadeira mercado" @click="abrirMercado">
-          <span class="bloco-emoji" aria-hidden="true">🛒</span>Mercadinho<span v-if="concluidos.mercado" class="selo-feito">✓</span>
-        </button>
-        <button v-if="filtroMateria !== 'lingua-portuguesa'" type="button" class="bloco-brincadeira mercado" @click="abrirTrem">
-          <span class="bloco-emoji" aria-hidden="true">🚂</span>Trem dos números<span v-if="concluidos.trem" class="selo-feito">✓</span>
-        </button>
-        <button v-if="filtroMateria !== 'matematica'" type="button" class="bloco-brincadeira ler" @click="abrirOrdem">
-          <span class="bloco-emoji" aria-hidden="true">🔢</span>Ordem dos Fatos<span v-if="concluidos['ordem']" class="selo-feito">✓</span>
-        </button>
-        <button v-if="filtroMateria !== 'lingua-portuguesa'" type="button" class="bloco-brincadeira mercado" @click="abrirPacote">
-          <span class="bloco-emoji" aria-hidden="true">📦</span>Pacotes de contas<span v-if="concluidos['pacote']" class="selo-feito">✓</span>
-        </button>
-      </div>
-      <h3 class="titulo-secao">Atividades</h3>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="irPara(filtroMateria === 'matematica' ? 'matematica' : 'portugues')">← Voltar</button></teleport>
       <div class="grade-cartoes">
         <div class="card cartao-atividade" :class="g.materia" v-for="g in gruposAtividades" :key="g.chave" @click="abrirGrupo(g)" tabindex="0">
           <div class="cartao-emoji" aria-hidden="true">{{ g.materia === 'matematica' ? '🧮' : '📝' }}</div>
@@ -49,7 +16,7 @@ LB.moldes.atividades = `
 
     <!-- ATIVIDADE (resolver) -->
     <div v-if="tela === 'atividade' && atividadeAtual">
-      <button class="btn-voltar" @click="voltar('atividades')">← Voltar</button>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="voltar('atividades')">← Voltar</button></teleport>
       <h2>{{ atividadeAtual.materia === 'matematica' ? '🧮' : '📝' }} {{ atividadeAtual.titulo }}</h2>
       <div class="enunciado">
         <button class="btn-ouvir redondo" @click="ouvir(textoPergunta(atividadeAtual))" aria-label="Ouvir a pergunta">🔊</button>

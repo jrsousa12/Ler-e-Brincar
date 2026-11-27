@@ -9,7 +9,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   const { b, p, erros } = await novaPagina();
   await abrirApp(p);
 
-  await p.click('.bloco-menu.brincar');
+  await p.click('.bloco-menu.ler');   // Português
   await p.click('text=Monte a Palavra');
   ok(await p.locator('.brincadeira-silabas').count() === 1, 'abre a brincadeira');
   const nSil = await p.evaluate(() => LB.app.palavraSilabas.silabas.length);
@@ -40,7 +40,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
     await montar(s);
   }
   await p.click('text=Concluir');
-  ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos.silabas === true), 'concluir volta e marca feito');
+  ok(await p.evaluate(() => LB.app.tela === 'portugues' && LB.app.concluidos.silabas === true), 'concluir volta e marca feito');
   // Nova rodada evita as palavras já acertadas
   await p.click('text=Monte a Palavra');
   ok(await p.evaluate(() => LB.app.palavrasSilabas.every(w => !LB.app.concluidos[w.id])), 'nova rodada traz palavras ainda não acertadas');

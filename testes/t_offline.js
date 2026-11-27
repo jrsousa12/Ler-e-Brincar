@@ -36,7 +36,7 @@ const srv = http.createServer((q, r) => {
   const q = await ctx.newPage();
   await q.goto(url);
   await q.waitForSelector('.card', { timeout: 5000 }).catch(() => {});
-  ok((await q.locator('.bloco-menu').count()) === 4 && (await q.locator('.card-missao').count()) === 1, 'sem internet: tela inicial não abriu');
+  ok((await q.locator('.bloco-menu').count()) === 3 && (await q.locator('.card-missao').count()) === 1, 'sem internet: tela inicial não abriu');
   ok(await q.evaluate(() => typeof Vue !== 'undefined' && typeof Dexie !== 'undefined'), 'sem internet: Vue/Dexie');
   await b.close(); srv.close();
   console.log(falhas ? falhas + ' falha(s)' : 'OK: app instalável e funciona sem internet');

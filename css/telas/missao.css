@@ -1,0 +1,16 @@
+/* Tela Missão do dia: trilha de passos, placar e cartão de missão completa (com medalha e estrelas). */
+.missao-icone,.passo-emoji{font-size:4em;line-height:1.1;margin-bottom:6px}
+.trilha{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin:var(--space) 0 8px}
+.passo{
+  width:38px;height:38px;border-radius:50%;background:var(--cor-card);border:3px solid var(--cor-borda-forte);
+  display:flex;align-items:center;justify-content:center;font-size:1.15em
+}
+.passo.feito{background:var(--cor-sucesso);border-color:var(--cor-sucesso);color:#fff;font-weight:800}
+.passo.atual{border-color:var(--cor-primaria);transform:scale(1.15);box-shadow:0 0 0 5px var(--cor-primaria-suave)}
+.passo-destaque,.missao-completa{text-align:center}
+.missao-completa{padding:var(--space);background:var(--cor-sucesso-bg);border-radius:var(--radius)}
+.placar-missao{display:flex;gap:12px;justify-content:center;margin:var(--space) 0}
+.placar-missao div{background:var(--cor-card);border-radius:var(--radius);padding:12px 18px;box-shadow:var(--sombra-1);text-align:center}
+.placar-missao span{display:block;font-size:2em}
+.medalha-missao{font-size:3.2rem;line-height:1}
+.estrelas-premio{display:flex;justify-content:center;gap:8px;font-size:2rem;margin:4px 0 8px}

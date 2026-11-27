@@ -1,0 +1,14 @@
+/* Tela Colorir: paleta de cores e moldura do desenho. Tocar dentro da forma também pinta. */
+.paleta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:var(--space) 0}
+.cor{
+  width:44px;height:44px;border-radius:50%;border:3px solid transparent;
+  cursor:pointer;padding:0;min-height:auto;box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+.cor.selecionada{border-color:var(--cor-primaria);transform:scale(1.12)}
+.svg-colorir{
+  background:#fff;border:3px solid var(--cor-borda);border-radius:22px;
+  box-shadow:0 6px 0 var(--cor-borda-forte);padding:14px;
+}
+.svg-colorir svg{max-width:100%;height:auto;display:block;margin:0 auto;background:#fff;border-radius:var(--radius);cursor:crosshair}
+.svg-colorir svg *{cursor:crosshair;pointer-events:visible}
+.svg-colorir svg .solto{pointer-events:none} /* enfeites (sorriso, bigode): o toque passa para a forma de baixo */

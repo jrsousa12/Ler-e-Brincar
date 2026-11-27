@@ -1,9 +1,9 @@
-// Telas "Atividades" (lista com filtro) e "Atividade" (uma questão de LP ou Matemática).
+// Telas "Atividades" (lista de uma matéria) e "Atividade" (uma questão de LP ou Matemática).
 LB.usarAtividades = function (ctx) {
   'use strict';
   const { ref, computed } = Vue;
   const atividadeAtual = ref(null);
-  const filtroMateria = ref('todas');
+  const filtroMateria = ref('lingua-portuguesa');   // 'lingua-portuguesa' (Questões) ou 'matematica' (Contas)
 
   const atividadesFiltradas = computed(() => {
     const todas = LB.CONTEUDO.activities;
@@ -40,6 +40,7 @@ LB.usarAtividades = function (ctx) {
   function abrirAtividade(a) {
     atividadeAtual.value = LB.sortearOpcoes(a); // ordem dos botões muda a cada vez
     a = atividadeAtual.value;
+    filtroMateria.value = a.materia;   // o Voltar leva à lista da matéria certa
     ra.zerar();
     ctx.tela.value = 'atividade';
     window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -1,4 +1,8 @@
 {
+ "28": {
+  "titulo": "Astronauta na lua",
+  "emoji": "🌙"
+ },
  "37": {
   "titulo": "Casa na árvore",
   "emoji": "🏡"
@@ -66,10 +70,6 @@
  "53": {
   "titulo": "Ursinho com mel",
   "emoji": "🍯"
- },
- "28": {
-  "titulo": "Astronauta na lua",
-  "emoji": "🌙"
  },
  "54": {
   "titulo": "Preguiça",
@@ -144,34 +144,14 @@
   "emoji": "📚"
  },
  "72": {
-  "titulo": "Lua e estrela",
-  "emoji": "🌙"
- },
- "73": {
-  "titulo": "Sorvete",
-  "emoji": "🍦"
- },
- "74": {
-  "titulo": "Balão de ar quente",
-  "emoji": "🎈"
- },
- "75": {
-  "titulo": "Bolo de aniversário",
-  "emoji": "🎂"
- },
- "76": {
-  "titulo": "Estrela-do-mar",
-  "emoji": "🌟"
- },
- "77": {
   "titulo": "Girafa",
   "emoji": "🦒"
  },
- "78": {
+ "73": {
   "titulo": "Trator",
   "emoji": "🚜"
  },
- "79": {
+ "74": {
   "titulo": "Melancia",
   "emoji": "🍉"
  }

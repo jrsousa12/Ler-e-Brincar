@@ -14,7 +14,7 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
 
   await abrirApp(p);
   ok(await p.evaluate(() => typeof Vue !== 'undefined' && typeof Dexie !== 'undefined'), 'Vue e Dexie locais');
-  ok((await p.locator('.bloco-menu').count()) === 4, 'tela inicial com 4 botões grandes');
+  ok((await p.locator('.bloco-menu').count()) === 3, 'tela inicial com 3 botões grandes (Português, Matemática, Prêmios)');
   ok((await p.locator('.mini-trilha span').count()) === 8, 'missão do dia com 8 passos na tela inicial');
   ok(await p.evaluate(() => !!(LB.voz && LB.festa && LB.tentativas)), 'voz, festa e tentativas carregados');
   ok(await p.locator('.mascote-saudacao .humor-normal').count() === 1 && (await p.textContent('.balao-mascote')).includes('Começar'),
@@ -22,7 +22,8 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   await foto('1-inicio');
 
   // Abre uma história e responde a 1ª pergunta certo
-  await p.click('nav >> text=Ler');
+  await p.click('nav >> text=Português');
+  await p.click('.bloco-brincadeira:has-text("Histórias")');
   await p.locator('.card').first().click();
   await foto('2-historia');
   await p.getByRole('button', { name: /pergunta|responder|vamos/i }).first().click().catch(() => ok(false, 'botão de ir às perguntas'));
@@ -84,8 +85,9 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   ok((await p.locator('svg path:not(.solto)').count()) > 8, 'colorir-30 (Abelha) desenhado');
   await foto('4-colorir');
 
-  // Conquistas (selos) pela barra de baixo
-  await p.click('nav >> text=Selos');
+  // Conquistas (selos) pela barra de baixo: Prêmios → Meus selos
+  await p.click('nav >> text=Prêmios');
+  await p.click('.bloco-brincadeira:has-text("Meus selos")');
   ok((await p.locator('.selo').count()) > 0, 'tela de conquistas mostra os selos');
   // Portão dos adultos abre pelo ⚙️
   await p.click('button[title=Ajustes]');

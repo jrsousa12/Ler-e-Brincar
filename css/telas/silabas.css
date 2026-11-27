@@ -1,0 +1,12 @@
+/* Brincadeira "Monte a Palavra" (js/moldes/silabas.js). Também a caixa comum das brincadeiras (.brincadeira-silabas, .topo-jogo).
+   Botões 3D, etiqueta e aviso ficam nas peças (css/pecas/). */
+.brincadeira-silabas{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.topo-jogo{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.dica-card{background:var(--cor-card);border:2px solid var(--cor-borda);border-radius:20px;padding:16px;display:flex;align-items:center;gap:14px;cursor:pointer}
+.dica-emoji{font-size:2.6rem;line-height:1}
+.dica-texto{margin:0;font-size:1.05rem}
+
+.slots-palavra,.banco-silabas{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.slot-bloco{min-width:78px;height:70px;border-radius:16px;border:2px dashed var(--cor-ler);background:var(--cor-ler-suave);font-size:1.45rem;font-weight:800;color:var(--cor-ler-3d);cursor:pointer}
+.slot-bloco.preenchido{border-style:solid}
+.slots-palavra.correto .slot-bloco{background:var(--cor-sucesso-bg);border-color:var(--cor-sucesso);color:var(--cor-sucesso-texto)}

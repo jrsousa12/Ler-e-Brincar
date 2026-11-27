@@ -1,0 +1,32 @@
+/* Tela Início: cartão da missão em destaque e os 4 blocos coloridos (Ler, Brincar, Colorir, Selos). */
+.card-missao{
+  text-align:center;
+  background:linear-gradient(135deg,#FFFBEB 0%,#FEF3C7 100%);
+  color:#1E2D3D;   /* borda e sombra: as do cartão comum (a amarela antiga nunca aparecia) */
+}
+.card-missao .card-titulo{font-size:1.5em;font-weight:800;color:var(--cor-primaria-escura)}
+.mini-trilha{display:flex;justify-content:center;gap:4px;flex-wrap:wrap;margin:10px 0}
+.mini-trilha span{
+  width:36px;height:36px;border-radius:50%;background:#fff;display:inline-flex;
+  align-items:center;justify-content:center;font-size:1.05em;border:3px solid var(--cor-borda-forte)
+}
+.mini-trilha span.feito{background:var(--cor-sucesso);color:#fff;border-color:var(--cor-sucesso);font-weight:800}
+.grade-menu{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bloco-menu{
+  background:var(--cor-card);border:none;border-radius:var(--radius-lg);
+  box-shadow:var(--sombra-1);padding:20px 8px 16px;font-family:var(--font-display);font-weight:800;font-size:1.3em;
+  color:#fff;display:flex;flex-direction:column;align-items:center;gap:6px;text-shadow:0 2px 0 rgba(0,0,0,.15);
+}
+.bloco-menu span{
+  width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.9);
+  display:flex;align-items:center;justify-content:center;font-size:2.6em;line-height:1;text-shadow:none;
+  box-shadow:inset 0 -4px 0 rgba(0,0,0,.08);
+}
+.bloco-menu.ler{background:linear-gradient(180deg,#5CA0FF,var(--cor-ler));box-shadow:0 7px 0 var(--cor-ler-3d)}
+.bloco-menu.brincar{background:linear-gradient(180deg,#FFA45E,var(--cor-brincar));box-shadow:0 7px 0 var(--cor-brincar-3d)}
+.bloco-menu.colorir{background:linear-gradient(180deg,#FF7DB6,var(--cor-colorir));box-shadow:0 7px 0 var(--cor-colorir-3d)}
+.bloco-menu.selos{background:linear-gradient(180deg,#FFCB55,var(--cor-selos));box-shadow:0 7px 0 var(--cor-selos-3d)}
+.bloco-menu:active{transform:translateY(6px);box-shadow:0 1px 0 rgba(0,0,0,.25)}
+
+/* Etapa B (27/11): 3 botões (Português, Matemática, Prêmios); Prêmios ocupa a linha toda */
+.grade-menu .bloco-menu.selos{grid-column:1 / -1}

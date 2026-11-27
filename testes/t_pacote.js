@@ -61,7 +61,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   ok(caderno.comPeso > caderno.semPeso * 1.5, `habilidade fraca sai mais: ${caderno.comPeso} × ${caderno.semPeso}`);
 
   // TELA: abre pela lista de brincadeiras
-  await p.click('.bloco-menu.brincar');
+  await p.click('.bloco-menu.brincar');   // Matemática
   await p.click('.bloco-brincadeira:has-text("Pacotes de contas")');
   ok(await p.locator('.brincadeira-pacote').count() === 1, 'abre a brincadeira');
   ok(await p.locator('.titulo-pacote').count() === 1, 'mostra o nome do pacote');
@@ -85,13 +85,14 @@ const { novaPagina, abrirApp } = require('./_navegador');
   ok(await noCaderno() === c0 + 1, 'acertos de primeira não põem questão no caderno');
   ok(await p.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), 'sem rolagem para o lado no celular');
   await p.click('.btn-proximo:has-text("Concluir")');
-  ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos['pacote'] === true), 'concluir volta e marca feito');
+  ok(await p.evaluate(() => LB.app.tela === 'matematica' && LB.app.concluidos['pacote'] === true), 'concluir volta e marca feito');
 
   // Filtros da lista
-  await p.click('.filtro >> text=Português');
-  ok(await p.locator('.bloco-brincadeira:has-text("Pacotes de contas")').count() === 0, 'Português esconde a brincadeira');
-  await p.click('.filtro >> text=Matemática');
-  ok(await p.locator('.bloco-brincadeira:has-text("Pacotes de contas")').count() === 1, 'Matemática mostra a brincadeira');
+  // Fica só na tela de Matemática (js/telas/materias.js)
+  await p.evaluate(() => LB.app.irPara('portugues'));
+  ok(await p.locator('.bloco-brincadeira:has-text("Pacotes de contas")').count() === 0, 'a outra matéria não mostra Pacotes de contas');
+  await p.evaluate(() => LB.app.irPara('matematica'));
+  ok(await p.locator('.bloco-brincadeira:has-text("Pacotes de contas")').count() === 1, 'a matéria certa mostra Pacotes de contas');
   ok(erros.length === 0, 'sem erros: ' + erros.join(' | '));
 
   await b.close();

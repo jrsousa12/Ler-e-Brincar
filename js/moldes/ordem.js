@@ -2,7 +2,7 @@
 LB.moldes = LB.moldes || {};
 LB.moldes.ordem = `
     <section v-if="tela === 'ordem' && atualOrdem" class="brincadeira-silabas brincadeira-ordem" aria-label="Brincadeira Ordem dos Fatos">
-      <button class="btn-voltar" @click="voltar('atividades')">← Voltar</button>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="voltar('portugues')">← Voltar</button></teleport>
       <div class="topo-jogo">
         <span class="badge-fase">Desafio {{ indiceOrdem + 1 }} de {{ listaOrdem.length }}</span>
         <button type="button" class="btn-silaba-3d btn-ouvir-palavra" @click="ouvir(atualOrdem.fala)">🔊 Ouvir</button>

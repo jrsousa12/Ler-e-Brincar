@@ -48,10 +48,10 @@ const { novaPagina, abrirApp } = require('./_navegador');
   ok(escrita === 'R$ 3,50/3 reais e 50 centavos | R$ 0,50/50 centavos | R$ 1/1 real | R$ 12/12 reais', 'escrita e fala do dinheiro: ' + escrita);
 
   // TELA: abre pela lista de brincadeiras
-  await p.click('.bloco-menu.brincar');
+  await p.click('.bloco-menu.brincar');   // Matemática
   await p.click('text=Mercadinho');
   ok(await p.locator('.brincadeira-mercado').count() === 1, 'abre o Mercadinho');
-  const voltar = await p.locator('section.brincadeira-mercado .btn-voltar').boundingBox();
+  const voltar = await p.locator('.cabecalho-app .btn-voltar').boundingBox();
   ok(voltar && voltar.x < 40 && voltar.width < 200, '"Voltar" no canto esquerdo');
   const estrelas = () => p.evaluate(() => LB.app.estrelas);
   const e0 = await estrelas();
@@ -102,14 +102,14 @@ const { novaPagina, abrirApp } = require('./_navegador');
   await p.click(`.opcoes-mercado button:text-is("${txt4}")`);
   ok(await p.locator('.feedback-jogo.correto').count() === 1, 'troco com centavos certo');
   await p.click('text=Concluir');
-  ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos.mercado === true), 'concluir volta e marca feito');
+  ok(await p.evaluate(() => LB.app.tela === 'matematica' && LB.app.concluidos.mercado === true), 'concluir volta e marca feito');
   ok(await estrelas() === e0 + 5, 'rodada rende 5 estrelas: ' + (await estrelas() - e0));
 
-  // Filtros da lista: Mercadinho só em Matemática/Todas
-  await p.click('.filtro >> text=Português');
-  ok(await p.locator('.bloco-brincadeira:has-text("Mercadinho")').count() === 0, 'Português esconde o Mercadinho');
-  await p.click('.filtro >> text=Matemática');
-  ok(await p.locator('.bloco-brincadeira:has-text("Mercadinho")').count() === 1 && await p.locator('.bloco-brincadeira.ler').count() === 0, 'Matemática mostra o Mercadinho e nenhuma de leitura');
+  // Fica só na tela de Matemática (js/telas/materias.js)
+  await p.evaluate(() => LB.app.irPara('portugues'));
+  ok(await p.locator('.bloco-brincadeira:has-text("Mercadinho")').count() === 0, 'a outra matéria não mostra Mercadinho');
+  await p.evaluate(() => LB.app.irPara('matematica'));
+  ok(await p.locator('.bloco-brincadeira:has-text("Mercadinho")').count() === 1, 'a matéria certa mostra Mercadinho');
   ok(erros.length === 0, 'sem erros: ' + erros.join(' | '));
 
   await b.close();

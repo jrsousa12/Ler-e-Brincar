@@ -1,0 +1,41 @@
+/* Peça: opção de resposta (grande, redonda, afunda ao tocar), balão de resposta e apoio visual. */
+.enunciado{display:flex;gap:12px;align-items:flex-start;font-size:1.15em;margin:var(--space) 0}
+.opcao{
+  display:block;width:100%;text-align:left;
+  background:var(--cor-card);color:var(--cor-texto);
+  border:3px solid var(--cor-borda-forte);border-radius:var(--radius);
+  padding:18px 20px;margin-bottom:14px;min-height:64px;
+  font-family:var(--font-display);font-size:1.25em;font-weight:700;
+  box-shadow:0 5px 0 var(--cor-borda-forte);
+}
+.opcao:disabled{cursor:default}
+.opcao.correta{background:var(--cor-sucesso);border-color:var(--cor-sucesso);color:#fff;font-weight:700;box-shadow:0 5px 0 var(--cor-sucesso-3d)}
+.opcao.errada{
+  background:var(--cor-alerta-bg);border-color:var(--cor-alerta);color:var(--cor-alerta-texto);
+  box-shadow:0 5px 0 var(--cor-alerta);opacity:.55;text-decoration:line-through;
+}
+@media (hover:hover){
+  .opcao:hover:not(:disabled){border-color:var(--cor-primaria-2);background:var(--cor-primaria-suave);transform:translateY(-1px)}
+}
+.opcao:active:not(:disabled){transform:translateY(4px);box-shadow:0 1px 0 var(--cor-borda-forte)}
+.opcao.correta:hover:not(:disabled),.opcao.correta:disabled{background:var(--cor-sucesso);border-color:var(--cor-sucesso);color:#fff}
+
+/* Balão de resposta (perguntas) e aviso das brincadeiras: o mesmo balão */
+.feedback{
+  padding:16px 20px;border-radius:var(--radius);border-left:none;margin-top:var(--space);
+  font-weight:600;line-height:1.5;font-size:1.08em;
+}
+.feedback.correto{background:var(--cor-sucesso-bg);color:var(--cor-sucesso-texto);border:3px solid var(--cor-sucesso)}
+.feedback.errado{background:var(--cor-alerta-bg);color:var(--cor-alerta-texto);border:3px solid var(--cor-alerta)}
+.feedback-jogo{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-radius:var(--radius);font-weight:700;flex-wrap:wrap;font-size:1.08em}
+.feedback-jogo.correto{background:var(--cor-sucesso-bg);color:var(--cor-sucesso-texto);border:3px solid var(--cor-sucesso)}
+.feedback-jogo.tentar-novamente{background:var(--cor-alerta-bg);color:var(--cor-alerta-texto);border:3px solid var(--cor-alerta)}
+
+/* Apoio visual (figuras da conta) */
+.apoio-visual{
+  background:linear-gradient(180deg,var(--cor-primaria-suave),var(--cor-card));
+  border:3px dashed var(--cor-primaria-2);
+  padding:22px 16px;border-radius:var(--radius-lg);
+  text-align:center;font-size:1.6em;line-height:1.5;
+  word-break:break-word;margin:var(--space) 0;
+}

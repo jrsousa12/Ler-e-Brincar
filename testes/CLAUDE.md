@@ -16,3 +16,4 @@
 - `node testes/t_trem.js` (Trem dos números: sequências de 2, 5 e 10; contas em `js/tremregras.js`)
 - `node testes/t_ordem.js` (Ordem dos Fatos: pôr 3 fatos em ordem; sequências em `conteudo/ordem.js`)
 - `node testes/t_pacote.js` (Pacotes de contas: questões do banco de Matemática em pacotes de 4 por habilidade BNCC, ligadas ao caderno de erros; regras em `js/pacoteregras.js`)
+- `node testes/t_estilos.js` (organização do CSS: todo arquivo no `index.html` e no `sw.js`, peças antes das telas, cada seletor com um só dono; lista de telas do motor antes/depois)

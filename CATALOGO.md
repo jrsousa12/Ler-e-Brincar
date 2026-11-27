@@ -7,10 +7,10 @@
 | Área | Itens | Próximo id livre |
 |---|---|---|
 | Histórias | 61 | `historia-62` |
-| Português | 423 | `lp-424` |
-| Matemática | 275 | `mat-276` |
-| Colorir | 76 | `colorir-77` |
-| Monte a Palavra | 40 | `sil-041` |
+| Português | 453 | `lp-454` |
+| Matemática | 298 | `mat-299` |
+| Colorir | 74 | `colorir-75` |
+| Monte a Palavra | 60 | `sil-061` |
 
 ## Português (por habilidade da BNCC)
 
@@ -20,14 +20,14 @@
 | EF01LP10 | 3 | 2 | · | 5 | multipla |
 | EF02LP02 | 7 | 9 | · | 16 | multipla |
 | EF02LP04 | · | 21 | · | 21 | multipla |
-| EF02LP05 | · | 2 | · | 2 | completar, multipla |
+| EF02LP05 | 5 | 3 | · | 8 | completar, multipla |
 | EF02LP08 | 1 | · | · | 1 | multipla |
 | EF02LP09 | 4 | 2 | · | 6 | multipla |
 | EF02LP10 | 1 | 11 | 2 | 14 | multipla |
 | EF02LP26 | 1 | 2 | · | 3 | multipla |
-| EF03LP01 | · | 27 | · | 27 | multipla, completar |
+| EF03LP01 | 9 | 31 | · | 40 | multipla, completar |
 | EF03LP03 | 1 | 20 | · | 21 | multipla |
-| EF03LP04 | · | 1 | · | 1 | multipla |
+| EF03LP04 | 5 | 2 | · | 7 | multipla, completar |
 | EF03LP05 | · | 1 | · | 1 | multipla |
 | EF03LP06 | · | 4 | · | 4 | multipla |
 | EF03LP08 | 1 | 6 | · | 7 | completar, multipla |
@@ -37,20 +37,20 @@
 | EF35LP03 | · | · | 100 | 100 | multipla |
 | EF35LP04 | 3 | 11 | 4 | 18 | multipla |
 | EF35LP07 | 10 | 76 | 1 | 87 | completar, multipla |
-| EF35LP13 | · | 2 | · | 2 | completar, multipla |
+| EF35LP13 | 4 | 3 | · | 7 | completar, multipla |
 
 - **EF01LP08**: lp-019 Letra inicial (n1)
 - **EF01LP10**: lp-009 Ordem alfabética (n2) · lp-028 Ordem alfabética (n1) · lp-029 Ordem alfabética (n2) · lp-069 Ordem alfabética (n1) · lp-093 Ordem alfabética (n1)
 - **EF02LP02**: lp-006 Sílabas (n1) · lp-017 Contando sílabas (n1) · lp-018 Sílabas curtas (n1) · lp-041 Sílabas (n1) · lp-042 Sílabas (n2) · lp-043 Sílabas (n1) · lp-044 Sílabas (n1) · lp-045 Sílabas (n2) · lp-086 Contando sílabas (n1) · lp-116 Palavra no texto (n2) · lp-152 Palavra no texto (n2) · lp-156 Palavra no texto (n2) · lp-418 Palavra no texto (n2) · lp-419 Palavra no texto (n2) · lp-420 Palavra no texto (n2) · lp-421 Palavra no texto (n2)
 - **EF02LP04**: lp-112 Palavra no texto (n2) · lp-113 Palavra no texto (n2) · lp-114 Palavra no texto (n2) · lp-117 Palavra no texto (n2) · lp-118 Palavra no texto (n2) · lp-126 Palavra no texto (n2) · lp-127 Palavra no texto (n2) · lp-128 Palavra no texto (n2) · lp-136 Palavra no texto (n2) · lp-137 Palavra no texto (n2) · lp-138 Palavra no texto (n2) · lp-139 Palavra no texto (n2) · lp-147 Palavra no texto (n2) · lp-148 Palavra no texto (n2) · lp-149 Palavra no texto (n2) · lp-157 Palavra no texto (n2) · lp-158 Palavra no texto (n2) · lp-159 Palavra no texto (n2) · lp-167 Palavra no texto (n2) · lp-168 Palavra no texto (n2) · lp-169 Palavra no texto (n2)
-- **EF02LP05**: lp-050 M antes de P/B (n2) · lp-091 M ou N (n2)
+- **EF02LP05**: lp-050 M antes de P/B (n2) · lp-091 M ou N (n2) · lp-437 M ou N (n1) · lp-438 M ou N (n1) · lp-439 M ou N (n1) · lp-440 M ou N (n1) · lp-441 M ou N (n1) · lp-442 M ou N (n2)
 - **EF02LP08**: lp-035 Contando palavras (n1)
 - **EF02LP09**: lp-005 Pontuação (n2) · lp-066 Ponto final (n1) · lp-067 Interrogação (n1) · lp-068 Exclamação (n1) · lp-088 Pontuação (n2) · lp-100 Pontuação (n1)
 - **EF02LP10**: lp-004 Sinônimo (n2) · lp-013 Sinônimo (n2) · lp-014 Antônimo (n2) · lp-032 Sinônimo (n2) · lp-033 Antônimo (n2) · lp-051 Sinônimo (n2) · lp-052 Antônimo (n2) · lp-053 Sinônimo (n2) · lp-054 Antônimo (n2) · lp-055 Sinônimo (n3) · lp-094 Sinônimo (n2) · lp-095 Antônimo (n1) · lp-096 Antônimo (n2) · lp-097 Sinônimo (n3)
 - **EF02LP26**: lp-002 Leia e responda (n1) · lp-084 Leia e responda (n2) · lp-085 Por quê? (n2)
-- **EF03LP01**: lp-036 Ç ou SS (n2) · lp-046 R ou RR (n2) · lp-047 S ou SS (n2) · lp-048 Ç (n2) · lp-089 R ou RR (n2) · lp-092 Ç ou SS (n2) · lp-108 Palavra no texto (n2) · lp-110 Palavra no texto (n2) · lp-111 Palavra no texto (n2) · lp-122 Palavra no texto (n2) · lp-123 Palavra no texto (n2) · lp-124 Palavra no texto (n2) · lp-125 Palavra no texto (n2) · lp-132 Palavra no texto (n2) · lp-134 Palavra no texto (n2) · lp-135 Palavra no texto (n2) · lp-143 Palavra no texto (n2) · lp-144 Palavra no texto (n2) · lp-145 Palavra no texto (n2) · lp-146 Palavra no texto (n2) · lp-153 Palavra no texto (n2) · lp-163 Palavra no texto (n2) · lp-164 Palavra no texto (n2) · lp-165 Palavra no texto (n2) · lp-166 Palavra no texto (n2) · lp-173 Palavra no texto (n2) · lp-174 Palavra no texto (n2)
+- **EF03LP01**: lp-036 Ç ou SS (n2) · lp-046 R ou RR (n2) · lp-047 S ou SS (n2) · lp-048 Ç (n2) · lp-089 R ou RR (n2) · lp-092 Ç ou SS (n2) · lp-108 Palavra no texto (n2) · lp-110 Palavra no texto (n2) · lp-111 Palavra no texto (n2) · lp-122 Palavra no texto (n2) · lp-123 Palavra no texto (n2) · lp-124 Palavra no texto (n2) · lp-125 Palavra no texto (n2) · lp-132 Palavra no texto (n2) · lp-134 Palavra no texto (n2) · lp-135 Palavra no texto (n2) · lp-143 Palavra no texto (n2) · lp-144 Palavra no texto (n2) · lp-145 Palavra no texto (n2) · lp-146 Palavra no texto (n2) · lp-153 Palavra no texto (n2) · lp-163 Palavra no texto (n2) · lp-164 Palavra no texto (n2) · lp-165 Palavra no texto (n2) · lp-166 Palavra no texto (n2) · lp-173 Palavra no texto (n2) · lp-174 Palavra no texto (n2) · lp-424 R ou RR (n1) · lp-425 R ou RR (n1) · lp-426 R ou RR (n1) · lp-427 R ou RR (n1) · lp-428 R ou RR (n2) · lp-429 R ou RR (n1) · lp-430 R ou RR (n2) · lp-431 S ou SS (n1) · lp-432 S ou SS (n1) · lp-433 S ou SS (n1) · lp-434 S ou SS (n1) · lp-435 S ou SS (n2) · lp-436 S ou SS (n2)
 - **EF03LP03**: lp-102 Som do CH (n1) · lp-105 Palavra no texto (n2) · lp-106 Palavra no texto (n2) · lp-107 Palavra no texto (n2) · lp-119 Palavra no texto (n2) · lp-120 Palavra no texto (n2) · lp-121 Palavra no texto (n2) · lp-129 Palavra no texto (n2) · lp-130 Palavra no texto (n2) · lp-131 Palavra no texto (n2) · lp-140 Palavra no texto (n2) · lp-141 Palavra no texto (n2) · lp-142 Palavra no texto (n2) · lp-150 Palavra no texto (n2) · lp-151 Palavra no texto (n2) · lp-155 Palavra no texto (n2) · lp-160 Palavra no texto (n2) · lp-161 Palavra no texto (n2) · lp-170 Palavra no texto (n2) · lp-171 Palavra no texto (n2) · lp-172 Palavra no texto (n2)
-- **EF03LP04**: lp-037 Acento (n2)
+- **EF03LP04**: lp-037 Acento (n2) · lp-448 Acento (n1) · lp-449 Acento (n1) · lp-450 Acento (n1) · lp-451 Acento (n1) · lp-452 Acento (n1) · lp-453 Acento (n2)
 - **EF03LP05**: lp-115 Palavra no texto (n2)
 - **EF03LP06**: lp-109 Palavra no texto (n2) · lp-133 Palavra no texto (n2) · lp-154 Palavra no texto (n2) · lp-162 Palavra no texto (n2)
 - **EF03LP08**: lp-021 Complete com verbo (n2) · lp-024 Substantivo (n2) · lp-025 Verbo (n2) · lp-061 Substantivo (n1) · lp-063 Verbo (n2) · lp-064 Substantivo próprio (n2) · lp-098 Verbo (n2)
@@ -60,7 +60,7 @@
 - **EF35LP03**: lp-315 Interpretação (n3) · lp-316 Interpretação (n3) · lp-317 Interpretação (n3) · lp-318 Interpretação (n3) · lp-319 Interpretação (n3) · lp-320 Interpretação (n3) · lp-321 Interpretação (n3) · lp-322 Interpretação (n3) · lp-323 Interpretação (n3) · lp-324 Interpretação (n3) · lp-325 Interpretação (n3) · lp-326 Interpretação (n3) · lp-327 Interpretação (n3) · lp-328 Interpretação (n3) · lp-329 Interpretação (n3) · lp-330 Interpretação (n3) · lp-331 Interpretação (n3) · lp-332 Interpretação (n3) · lp-333 Interpretação (n3) · lp-334 Interpretação (n3) · lp-335 Interpretação (n3) · lp-336 Interpretação (n3) · lp-337 Interpretação (n3) · lp-338 Interpretação (n3) · lp-339 Interpretação (n3) · lp-340 Interpretação (n3) · lp-341 Interpretação (n3) · lp-342 Interpretação (n3) · lp-343 Interpretação (n3) · lp-344 Interpretação (n3) · lp-345 Interpretação (n3) · lp-346 Interpretação (n3) · lp-347 Interpretação (n3) · lp-348 Interpretação (n3) · lp-349 Interpretação (n3) · lp-350 Interpretação (n3) · lp-351 Interpretação (n3) · lp-352 Interpretação (n3) · lp-353 Interpretação (n3) · lp-354 Interpretação (n3) · lp-355 Interpretação (n3) · lp-356 Interpretação (n3) · lp-357 Interpretação (n3) · lp-358 Interpretação (n3) · lp-359 Interpretação (n3) · lp-360 Interpretação (n3) · lp-361 Interpretação (n3) · lp-362 Interpretação (n3) · lp-363 Interpretação (n3) · lp-364 Interpretação (n3) · lp-365 Interpretação (n3) · lp-366 Interpretação (n3) · lp-367 Interpretação (n3) · lp-368 Interpretação (n3) · lp-369 Interpretação (n3) · lp-370 Interpretação (n3) · lp-371 Interpretação (n3) · lp-372 Interpretação (n3) · lp-373 Interpretação (n3) · lp-374 Interpretação (n3) · lp-375 Interpretação (n3) · lp-376 Interpretação (n3) · lp-377 Interpretação (n3) · lp-378 Interpretação (n3) · lp-379 Interpretação (n3) · lp-380 Interpretação (n3) · lp-381 Interpretação (n3) · lp-382 Interpretação (n3) · lp-383 Interpretação (n3) · lp-384 Interpretação (n3) · lp-385 Interpretação (n3) · lp-386 Interpretação (n3) · lp-387 Interpretação (n3) · lp-388 Interpretação (n3) · lp-389 Interpretação (n3) · lp-390 Interpretação (n3) · lp-391 Interpretação (n3) · lp-392 Interpretação (n3) · lp-393 Interpretação (n3) · lp-394 Interpretação (n3) · lp-395 Interpretação (n3) · lp-396 Interpretação (n3) · lp-397 Interpretação (n3) · lp-398 Interpretação (n3) · lp-399 Interpretação (n3) · lp-400 Interpretação (n3) · lp-401 Interpretação (n3) · lp-402 Interpretação (n3) · lp-403 Interpretação (n3) · lp-404 Interpretação (n3) · lp-405 Interpretação (n3) · lp-406 Interpretação (n3) · lp-407 Interpretação (n3) · lp-408 Interpretação (n3) · lp-409 Interpretação (n3) · lp-410 Interpretação (n3) · lp-411 Interpretação (n3) · lp-412 Interpretação (n3) · lp-413 Interpretação (n3) · lp-414 Interpretação (n3)
 - **EF35LP04**: lp-008 Inferência (n2) · lp-039 Inferência (n2) · lp-059 Inferência (n2) · lp-060 Inferência (n2) · lp-071 Inferência (n2) · lp-072 Inferência (n2) · lp-073 Inferência (n2) · lp-074 Inferência (n1) · lp-075 Inferência (n1) · lp-076 Inferência (n2) · lp-077 Inferência (n2) · lp-078 Inferência (n1) · lp-079 Inferência (n2) · lp-080 Inferência (n3) · lp-104 Lanche quentinho (n2) · lp-415 Interpretação (n3) · lp-416 Interpretação (n3) · lp-417 Interpretação (n3)
 - **EF35LP07**: lp-001 Complete a frase (n1) · lp-003 Qual é o plural? (n1) · lp-010 Frase completa (n1) · lp-011 Plural (n1) · lp-012 Singular (n1) · lp-015 Feminino (n1) · lp-016 Masculino (n1) · lp-020 Vírgula (n3) · lp-022 Futuro (n2) · lp-026 Plural no texto (n1) · lp-031 Complete (n1) · lp-034 Frase correta (n2) · lp-065 Artigo (n1) · lp-070 Frase com sentido (n2) · lp-101 Mas ou mais? (n2) · lp-175 Complete a frase (n2) · lp-176 Complete a frase (n2) · lp-177 Complete a frase (n2) · lp-178 Complete a frase (n2) · lp-179 Complete a frase (n2) · lp-180 Complete a frase (n2) · lp-181 Complete a frase (n2) · lp-182 Complete a frase (n2) · lp-183 Complete a frase (n2) · lp-184 Complete a frase (n2) · lp-185 Complete a frase (n2) · lp-186 Complete a frase (n2) · lp-187 Complete a frase (n2) · lp-188 Complete a frase (n2) · lp-189 Complete a frase (n2) · lp-190 Complete a frase (n2) · lp-191 Complete a frase (n2) · lp-192 Complete a frase (n2) · lp-193 Complete a frase (n2) · lp-194 Complete a frase (n2) · lp-195 Complete a frase (n2) · lp-196 Complete a frase (n2) · lp-197 Complete a frase (n2) · lp-198 Complete a frase (n2) · lp-199 Complete a frase (n2) · lp-200 Complete a frase (n2) · lp-201 Complete a frase (n2) · lp-202 Complete a frase (n2) · lp-203 Complete a frase (n2) · lp-204 Complete a frase (n2) · lp-205 Complete a frase (n2) · lp-206 Complete a frase (n2) · lp-207 Complete a frase (n2) · lp-208 Complete a frase (n2) · lp-209 Complete a frase (n2) · lp-210 Complete a frase (n2) · lp-211 Complete a frase (n2) · lp-212 Complete a frase (n2) · lp-213 Complete a frase (n2) · lp-214 Complete a frase (n2) · lp-215 Complete a frase (n2) · lp-216 Complete a frase (n2) · lp-217 Complete a frase (n2) · lp-218 Complete a frase (n2) · lp-219 Complete a frase (n2) · lp-220 Complete a frase (n2) · lp-221 Complete a frase (n2) · lp-222 Complete a frase (n2) · lp-223 Complete a frase (n2) · lp-224 Complete a frase (n2) · lp-225 Complete a frase (n2) · lp-226 Complete a frase (n2) · lp-227 Complete a frase (n2) · lp-228 Complete a frase (n2) · lp-229 Complete a frase (n2) · lp-230 Complete a frase (n2) · lp-231 Complete a frase (n2) · lp-232 Complete a frase (n2) · lp-233 Complete a frase (n2) · lp-234 Complete a frase (n2) · lp-235 Complete a frase (n2) · lp-236 Complete a frase (n2) · lp-237 Complete a frase (n2) · lp-238 Complete a frase (n2) · lp-239 Complete a frase (n2) · lp-240 Complete a frase (n2) · lp-241 Complete a frase (n2) · lp-242 Complete a frase (n2) · lp-243 Complete a frase (n2) · lp-244 Complete a frase (n2) · lp-422 Complete a frase (n2) · lp-423 Complete a frase (n2)
-- **EF35LP13**: lp-049 X ou CH (n2) · lp-090 X ou CH (n2)
+- **EF35LP13**: lp-049 X ou CH (n2) · lp-090 X ou CH (n2) · lp-443 X ou CH (n1) · lp-444 X ou CH (n1) · lp-445 X ou CH (n1) · lp-446 X ou CH (n1) · lp-447 X ou CH (n2)
 
 ## Matemática (por habilidade da BNCC)
 
@@ -75,9 +75,9 @@
 | EF02MA09 | 2 | 3 | · | 5 | multipla |
 | EF02MA20 | 3 | 17 | 2 | 22 | operacao, multipla |
 | EF03MA01 | · | 23 | · | 23 | multipla |
-| EF03MA03 | 1 | 9 | · | 10 | operacao, multipla |
+| EF03MA03 | 9 | 16 | 4 | 29 | operacao, multipla |
 | EF03MA06 | · | 2 | · | 2 | multipla |
-| EF03MA07 | · | 6 | · | 6 | operacao, multipla |
+| EF03MA07 | 2 | 8 | · | 10 | operacao, multipla |
 | EF03MA08 | · | 7 | 4 | 11 | operacao |
 | EF03MA24 | · | 42 | 1 | 43 | multipla |
 
@@ -90,9 +90,9 @@
 - **EF02MA09**: mat-030 Sequência (n1) · mat-037 Sequência de 5 (n2) · mat-066 Números pares (n2) · mat-067 Números ímpares (n2) · mat-068 Sequência (n1)
 - **EF02MA20**: mat-040 Problema com dinheiro (n3) · mat-060 Problema (n2) · mat-070 Problema com dinheiro (n3) · mat-071 Contando dinheiro (n1) · mat-072 Contando dinheiro (n1) · mat-073 Contando dinheiro (n2) · mat-074 Contando dinheiro (n2) · mat-075 Contando dinheiro (n2) · mat-076 Contando dinheiro (n1) · mat-077 Contando dinheiro (n2) · mat-078 Contando dinheiro (n2) · mat-079 Contando dinheiro (n2) · mat-080 Contando dinheiro (n2) · mat-114 Pense e escolha (n2) · mat-174 Pense e escolha (n2) · mat-187 Pense e escolha (n2) · mat-196 Pense e escolha (n2) · mat-202 Pense e escolha (n2) · mat-212 Pense e escolha (n2) · mat-226 Pense e escolha (n2) · mat-252 Pense e escolha (n2) · mat-260 Pense e escolha (n2)
 - **EF03MA01**: mat-116 Pense e escolha (n2) · mat-185 Pense e escolha (n2) · mat-189 Pense e escolha (n2) · mat-193 Pense e escolha (n2) · mat-194 Pense e escolha (n2) · mat-195 Pense e escolha (n2) · mat-198 Pense e escolha (n2) · mat-204 Pense e escolha (n2) · mat-205 Pense e escolha (n2) · mat-207 Pense e escolha (n2) · mat-210 Pense e escolha (n2) · mat-211 Pense e escolha (n2) · mat-213 Pense e escolha (n2) · mat-215 Pense e escolha (n2) · mat-218 Pense e escolha (n2) · mat-219 Pense e escolha (n2) · mat-220 Pense e escolha (n2) · mat-221 Pense e escolha (n2) · mat-223 Pense e escolha (n2) · mat-225 Pense e escolha (n2) · mat-227 Pense e escolha (n2) · mat-228 Pense e escolha (n2) · mat-229 Pense e escolha (n2)
-- **EF03MA03**: mat-051 Multiplicação ×2 (n1) · mat-052 Multiplicação ×3 (n2) · mat-053 Multiplicação ×4 (n2) · mat-054 Multiplicação ×5 (n2) · mat-097 Multiplicando (n2) · mat-098 Multiplicando (n2) · mat-122 Pense e escolha (n2) · mat-134 Pense e escolha (n2) · mat-141 Pense e escolha (n2) · mat-143 Pense e escolha (n2)
+- **EF03MA03**: mat-051 Multiplicação ×2 (n1) · mat-052 Multiplicação ×3 (n2) · mat-053 Multiplicação ×4 (n2) · mat-054 Multiplicação ×5 (n2) · mat-097 Multiplicando (n2) · mat-098 Multiplicando (n2) · mat-122 Pense e escolha (n2) · mat-134 Pense e escolha (n2) · mat-141 Pense e escolha (n2) · mat-143 Pense e escolha (n2) · mat-276 Multiplicando (n1) · mat-277 Multiplicando (n1) · mat-278 Multiplicando (n1) · mat-279 Multiplicando (n1) · mat-280 Multiplicando (n1) · mat-281 Problema de grupos (n1) · mat-282 Multiplicando (n1) · mat-283 Multiplicando (n1) · mat-285 Multiplicando (n2) · mat-287 Multiplicando (n2) · mat-289 Problema de grupos (n2) · mat-290 Multiplicando (n2) · mat-291 Multiplicando (n2) · mat-292 Multiplicando (n2) · mat-293 Multiplicando (n3) · mat-294 Multiplicando (n3) · mat-296 Multiplicando (n3) · mat-297 Multiplicando (n2) · mat-298 Multiplicando (n3)
 - **EF03MA06**: mat-249 Pense e escolha (n2) · mat-262 Pense e escolha (n2)
-- **EF03MA07**: mat-008 Multiplicação simples (n2) · mat-035 Problema com multiplicação (n2) · mat-061 Problema (n2) · mat-102 Sacos de 10 (n2) · mat-104 Dúzias (n2) · mat-106 Pense e escolha (n2)
+- **EF03MA07**: mat-008 Multiplicação simples (n2) · mat-035 Problema com multiplicação (n2) · mat-061 Problema (n2) · mat-102 Sacos de 10 (n2) · mat-104 Dúzias (n2) · mat-106 Pense e escolha (n2) · mat-284 Problema de grupos (n1) · mat-286 Problema de grupos (n1) · mat-288 Problema de grupos (n2) · mat-295 Problema de grupos (n2)
 - **EF03MA08**: mat-009 Divisão simples (n2) · mat-022 Divisão (n2) · mat-023 Divisão (n2) · mat-036 Problema com divisão (n3) · mat-055 Divisão ÷2 (n2) · mat-056 Divisão ÷3 (n2) · mat-057 Divisão ÷4 (n3) · mat-058 Divisão ÷5 (n3) · mat-062 Problema (n3) · mat-099 Dividindo (n2) · mat-100 Dividindo (n2)
 - **EF03MA24**: mat-101 Compras e troco (n3) · mat-105 Pense e escolha (n2) · mat-107 Pense e escolha (n2) · mat-108 Pense e escolha (n2) · mat-121 Pense e escolha (n2) · mat-123 Pense e escolha (n2) · mat-124 Pense e escolha (n2) · mat-125 Pense e escolha (n2) · mat-126 Pense e escolha (n2) · mat-127 Pense e escolha (n2) · mat-128 Pense e escolha (n2) · mat-129 Pense e escolha (n2) · mat-130 Pense e escolha (n2) · mat-131 Pense e escolha (n2) · mat-132 Pense e escolha (n2) · mat-133 Pense e escolha (n2) · mat-135 Pense e escolha (n2) · mat-136 Pense e escolha (n2) · mat-137 Pense e escolha (n2) · mat-138 Pense e escolha (n2) · mat-139 Pense e escolha (n2) · mat-140 Pense e escolha (n2) · mat-142 Pense e escolha (n2) · mat-144 Pense e escolha (n2) · mat-145 Pense e escolha (n2) · mat-146 Pense e escolha (n2) · mat-147 Pense e escolha (n2) · mat-148 Pense e escolha (n2) · mat-149 Pense e escolha (n2) · mat-150 Pense e escolha (n2) · mat-151 Pense e escolha (n2) · mat-152 Pense e escolha (n2) · mat-153 Pense e escolha (n2) · mat-154 Pense e escolha (n2) · mat-155 Pense e escolha (n2) · mat-156 Pense e escolha (n2) · mat-157 Pense e escolha (n2) · mat-158 Pense e escolha (n2) · mat-159 Pense e escolha (n2) · mat-160 Pense e escolha (n2) · mat-161 Pense e escolha (n2) · mat-162 Pense e escolha (n2) · mat-163 Pense e escolha (n2)
 
@@ -162,20 +162,20 @@
 
 ## Colorir
 
-colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 ❤️ Coração · colorir-04 🏠 Casa · colorir-05 ☀️ Sol · colorir-06 🌸 Flor · colorir-07 🌳 Árvore · colorir-08 🚗 Carro · colorir-09 ⚽ Bola · colorir-10 🦋 Borboleta · colorir-11 🐠 Peixe · colorir-12 ⛅ Nuvem com sol · colorir-13 ⛵ Barco · colorir-14 ✨ Estrelas · colorir-15 🚀 Foguete · colorir-16 🐞 Joaninha · colorir-17 🐸 Sapo · colorir-18 🌤️ Sol e nuvem · colorir-19 🏰 Castelo · colorir-20 🌈 Arco-íris · colorir-21 🌙 Lua e estrela · colorir-22 🍦 Sorvete · colorir-23 🎈 Balão de ar quente · colorir-24 🎂 Bolo de aniversário · colorir-25 🌟 Estrela-do-mar · colorir-26 🤖 Robô · colorir-27 🦖 Dinossauro · colorir-28 🌙 Astronauta na lua · colorir-29 🐧 Pinguim · colorir-30 🐝 Abelha · colorir-31 🐢 Tartaruga · colorir-32 🌻 Girassol · colorir-33 🍎 Maçã · colorir-34 🦆 Pato · colorir-35 🚂 Trem · colorir-36 🐶 Cachorro · colorir-37 🏡 Casa na árvore · colorir-38 🐘 Elefante · colorir-39 🦉 Coruja · colorir-40 🐬 Golfinho · colorir-41 🐻 Ursinho · colorir-42 🐳 Baleia · colorir-43 🦊 Raposa · colorir-44 🏡 Casinha do jardim · colorir-45 🐬 Golfinho saltitante · colorir-46 🦁 Leão · colorir-47 🦋 Borboleta nas flores · colorir-48 ☕ Chocolate quente · colorir-49 🐿️ Esquilo · colorir-50 🫖 Bule de chá · colorir-51 🐷 Fazenda · colorir-52 🐛 Lagarta · colorir-53 🍯 Ursinho com mel · colorir-54 🦥 Preguiça · colorir-55 🐢 Tartaruga marinha · colorir-56 🥖 Padaria · colorir-57 🐼 Panda · colorir-58 🐙 Polvo · colorir-59 🦔 Ouriço · colorir-60 🌾 Moinho · colorir-61 🐉 Dragão · colorir-62 🪐 Astronauta e planeta · colorir-63 🌴 Leão na palmeira · colorir-64 🏴‍☠️ Navio pirata · colorir-65 🦩 Flamingo · colorir-66 🚒 Caminhão de bombeiro · colorir-67 🎸 Música · colorir-68 🐒 Macaco · colorir-69 🚩 Astronauta com bandeira · colorir-70 🦀 Caranguejo · colorir-71 📚 Sala de leitura · colorir-72 🌙 Lua e estrela · colorir-73 🍦 Sorvete · colorir-74 🎈 Balão de ar quente · colorir-75 🎂 Bolo de aniversário · colorir-76 🌟 Estrela-do-mar
+colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 ❤️ Coração · colorir-04 🏠 Casa · colorir-05 ☀️ Sol · colorir-06 🌸 Flor · colorir-07 🌳 Árvore · colorir-08 🚗 Carro · colorir-09 ⚽ Bola · colorir-10 🦋 Borboleta · colorir-11 🐠 Peixe · colorir-12 ⛅ Nuvem com sol · colorir-13 ⛵ Barco · colorir-14 ✨ Estrelas · colorir-15 🚀 Foguete · colorir-16 🐞 Joaninha · colorir-17 🐸 Sapo · colorir-18 🌤️ Sol e nuvem · colorir-19 🏰 Castelo · colorir-20 🌈 Arco-íris · colorir-21 🌙 Lua e estrela · colorir-22 🍦 Sorvete · colorir-23 🎈 Balão de ar quente · colorir-24 🎂 Bolo de aniversário · colorir-25 🌟 Estrela-do-mar · colorir-26 🤖 Robô · colorir-27 🦖 Dinossauro · colorir-28 🌙 Astronauta na lua · colorir-29 🐧 Pinguim · colorir-30 🐝 Abelha · colorir-31 🐢 Tartaruga · colorir-32 🌻 Girassol · colorir-33 🍎 Maçã · colorir-34 🦆 Pato · colorir-35 🚂 Trem · colorir-36 🐶 Cachorro · colorir-37 🏡 Casa na árvore · colorir-38 🐘 Elefante · colorir-39 🦉 Coruja · colorir-40 🐬 Golfinho · colorir-41 🐻 Ursinho · colorir-42 🐳 Baleia · colorir-43 🦊 Raposa · colorir-44 🏡 Casinha do jardim · colorir-45 🐬 Golfinho saltitante · colorir-46 🦁 Leão · colorir-47 🦋 Borboleta nas flores · colorir-48 ☕ Chocolate quente · colorir-49 🐿️ Esquilo · colorir-50 🫖 Bule de chá · colorir-51 🐷 Fazenda · colorir-52 🐛 Lagarta · colorir-53 🍯 Ursinho com mel · colorir-54 🦥 Preguiça · colorir-55 🐢 Tartaruga marinha · colorir-56 🥖 Padaria · colorir-57 🐼 Panda · colorir-58 🐙 Polvo · colorir-59 🦔 Ouriço · colorir-60 🌾 Moinho · colorir-61 🐉 Dragão · colorir-62 🪐 Astronauta e planeta · colorir-63 🌴 Leão na palmeira · colorir-64 🏴‍☠️ Navio pirata · colorir-65 🦩 Flamingo · colorir-66 🚒 Caminhão de bombeiro · colorir-67 🎸 Música · colorir-68 🐒 Macaco · colorir-69 🚩 Astronauta com bandeira · colorir-70 🦀 Caranguejo · colorir-71 📚 Sala de leitura · colorir-72 🦒 Girafa · colorir-73 🚜 Trator · colorir-74 🍉 Melancia
 
 ## Monte a Palavra
 
 - **Nível 1**: BO-LA · CA-SA · GA-TO · PA-TO · SA-PO · DA-DO · BO-LO · LU-A · VA-CA · SU-CO · PI-PA · LO-BO · MO-TO
 - **Nível 2**: BA-NA-NA · CA-VA-LO · SA-PA-TO · MA-CA-CO · BO-NE-CA · JA-NE-LA · ME-NI-NA · TO-MA-TE · GI-RA-FA · CO-RU-JA · PI-PO-CA · PI-RU-LI-TO
-- **Nível 3**: CHU-VA · GA-LI-NHA · CO-E-LHO · A-BE-LHA · MI-NHO-CA · PRA-TO · LI-VRO · ZE-BRA · PEI-XE · QUEI-JO · CAR-RO · ES-CO-LA · SOR-VE-TE · BOR-BO-LE-TA · TAR-TA-RU-GA
+- **Nível 3**: CHU-VA · GA-LI-NHA · CO-E-LHO · A-BE-LHA · MI-NHO-CA · PRA-TO · LI-VRO · ZE-BRA · PEI-XE · QUEI-JO · CAR-RO · ES-CO-LA · SOR-VE-TE · BOR-BO-LE-TA · TAR-TA-RU-GA · CO-BRA · CA-BRA · BRA-ÇO · BRU-XA · BRO-CO-LIS · BRI-GA-DEI-RO · O-VE-LHA · CO-LHER · A-GU-LHA · FO-LHA · MI-LHO · ES-PE-LHO · A-RA-NHA · LE-NHA · MON-TA-NHA · NI-NHO · SO-NHO · ES-PI-NHO · BI-LHE-TE · FA-RI-NHA
 
 ## Código (⚠ acima de 200 linhas · ✖ acima de 300)
 
 | Arquivo | Linhas | O que faz |
 |---|---|---|
 | `sw.js` | 58 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 137 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `js/app.js` | 139 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/avisoerro.js` | 40 | Aviso amigável quando o app dá erro: em vez de tela parada, mostra "Recomeçar" (o progresso fica guardado no aparelho). |
 | `js/backup.js` | 45 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 49 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
@@ -201,11 +201,12 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/voz.js` | 96 | Leitura em voz alta com a voz do próprio aparelho (funciona sem internet). |
 | `js/telas/ajustes.js` | 75 | Trava dos adultos (uma conta de multiplicar) e tela "Ajustes" (voz, som, fonte, tamanho, zerar). |
 | `js/telas/aparelho.js` | 51 | Coisas do aparelho: botão "Instalar", aviso de versão nova e tela cheia. |
-| `js/telas/atividades.js` | 52 | Telas "Atividades" (lista com filtro) e "Atividade" (uma questão de LP ou Matemática). |
+| `js/telas/atividades.js` | 53 | Telas "Atividades" (lista de uma matéria) e "Atividade" (uma questão de LP ou Matemática). |
 | `js/telas/backup.js` | 49 | Tela "Cópia de segurança" (na Área do responsável): baixar e importar o progresso. |
 | `js/telas/colorir.js` | 35 | Telas "Colorir" (lista) e "Colorir item" (pintar o desenho tocando nas partes). |
 | `js/telas/confirmar.js` | 22 | Caixa de confirmação própria (no lugar do confirm do navegador). |
 | `js/telas/historias.js` | 89 | Telas "Ler" e "História": leitura e as perguntas de cada história. |
+| `js/telas/materias.js` | 29 | Mapa do app por matéria (Etapa B, 27/11): telas "Português", "Matemática" e "Prêmios". |
 | `js/telas/memoria.js` | 58 | Brincadeira "Memória": achar os pares figura + palavra escrita (palavras de conteudo/silabas.js). |
 | `js/telas/mercado.js` | 65 | Brincadeira "Mercadinho": pagar o preço com moedas e notas, ou calcular o troco (regras em js/mercadoregras.js). |
 | `js/telas/ordem.js` | 27 | Brincadeira "Ordem dos Fatos" (regras em js/ordemregras.js; vai e vem da rodada no kit js/rodada.js). |
@@ -215,26 +216,28 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/selos.js` | 38 | Tela "Selos": progresso geral, conquistas e selos da missão do dia (missões e dias seguidos). |
 | `js/telas/silabas.js` | 62 | Brincadeira "Monte a Palavra": tocar nas sílabas na ordem certa para formar a palavra da dica. |
 | `js/telas/somfigura.js` | 40 | Brincadeira "Som e Figura": ouvir a palavra e tocar na figura certa (palavras de conteudo/silabas.js). |
+| `js/telas/topo.js` | 19 | Título que aparece no cabeçalho de cada tela (Etapa C, 27/11). O "← Voltar" de cada tela é |
 | `js/telas/trem.js` | 29 | Brincadeira "Trem dos números": achar o número que falta na sequência de 2 em 2, 5 em 5 ou 10 em 10 (regras em js/tremregras.js). |
 | `js/moldes/abas.js` | 12 | Molde (HTML do Vue): abas para trocar entre as brincadeiras de palavras (Monte a Palavra, Memória, Som e Figura). |
 | `js/moldes/ajustes.js` | 70 | Molde (HTML do Vue): Ajustes (aparece embaixo da Área do responsável). |
-| `js/moldes/atividades.js` | 69 | Molde (HTML do Vue): Telas "Atividades" (lista) e "Atividade" (resolver). |
+| `js/moldes/atividades.js` | 36 | Molde (HTML do Vue): Telas "Atividades" (lista de Questões ou Contas, conforme filtroMateria) e "Atividade" (resolver). |
 | `js/moldes/backup.js` | 25 | Molde (HTML do Vue): Cópia de segurança e instalação (embaixo dos Ajustes, na Área do responsável). |
-| `js/moldes/cabecalho.js` | 11 | Molde (HTML do Vue): Cabeçalho do topo (título, ⚙️ dos adultos, estrelas). |
-| `js/moldes/colorir.js` | 39 | Molde (HTML do Vue): Telas "Colorir" (lista) e desenho para pintar. |
+| `js/moldes/cabecalho.js` | 14 | Molde (HTML do Vue): Cabeçalho do topo — "← Voltar" (levado para cá pelas telas) + título da tela, estrelas e ⚙️ dos adultos. |
+| `js/moldes/colorir.js` | 38 | Molde (HTML do Vue): Telas "Colorir" (lista) e desenho para pintar. |
 | `js/moldes/confirmar.js` | 14 | Molde (HTML do Vue): caixa de confirmação própria (js/telas/confirmar.js). |
-| `js/moldes/historias.js` | 46 | Molde (HTML do Vue): Telas "Ler" (lista) e "História" (leitura e perguntas). |
-| `js/moldes/inicio.js` | 25 | Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 4 botões grandes. |
+| `js/moldes/historias.js` | 45 | Molde (HTML do Vue): Telas "Ler" (lista) e "História" (leitura e perguntas). |
+| `js/moldes/inicio.js` | 24 | Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 3 botões grandes (Português, Matemática, Prêmios). |
+| `js/moldes/materias.js` | 62 | Molde (HTML do Vue): telas "Português", "Matemática" e "Prêmios" (comportamento em js/telas/materias.js). |
 | `js/moldes/memoria.js` | 26 | Molde (HTML do Vue): Brincadeira "Memória" (par figura + palavra). |
 | `js/moldes/mercado.js` | 54 | Molde (HTML do Vue): Brincadeira "Mercadinho" (pagar certinho e calcular o troco). |
-| `js/moldes/missao.js` | 26 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
+| `js/moldes/missao.js` | 25 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
 | `js/moldes/navegacao.js` | 11 | Molde (HTML do Vue): Barra de navegação de baixo. |
 | `js/moldes/ordem.js` | 41 | Molde (HTML do Vue): Brincadeira "Ordem dos Fatos" (comportamento em js/telas/ordem.js). |
 | `js/moldes/pacote.js` | 33 | Molde (HTML do Vue): Brincadeira "Pacotes de contas". Criado por build/nova-brincadeira.js. |
 | `js/moldes/portao.js` | 16 | Molde (HTML do Vue): Trava dos adultos — uma conta de multiplicar. |
-| `js/moldes/responsavel.js` | 75 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
+| `js/moldes/responsavel.js` | 74 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
 | `js/moldes/selonovo.js` | 16 | Molde (HTML do Vue): janela de festa do selo novo (js/telas/selonovo.js). |
-| `js/moldes/selos.js` | 24 | Molde (HTML do Vue): Tela "Minhas conquistas" (selos e progresso). |
+| `js/moldes/selos.js` | 23 | Molde (HTML do Vue): Tela "Minhas conquistas" (selos e progresso). |
 | `js/moldes/silabas.js` | 41 | Molde (HTML do Vue): Brincadeira "Monte a Palavra" (juntar sílabas). |
 | `js/moldes/somfigura.js` | 28 | Molde (HTML do Vue): Brincadeira "Som e Figura" (ouvir e tocar na figura). |
 | `js/moldes/trem.js` | 35 | Molde (HTML do Vue): Brincadeira "Trem dos números" (achar o número que falta na sequência). |
@@ -246,12 +249,16 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/ajustar-mat-regras.js` | 103 | Regras do motor de ajuste de Matemática (build/ajustar-mat.js), sem ler nem gravar arquivos. |
 | `build/ajustar-mat.js` | 105 | Motor de ajuste de Matemática: acha opções fracas (certa no meio à mesma distância das erradas, |
 | `build/ajustar-regras.js` | 74 | Regras do motor de ajuste (build/ajustar-lp.js), sem ler nem gravar arquivos. |
+| `build/antes-depois-pagina.js` | 62 | Peças do motor antes/depois (build/antes-depois.js) que rodam dentro da página ou no navegador. |
+| `build/antes-depois.js` | 163 | Motor antes/depois (Etapa A, 27/11): prova que uma mudança no CSS não mudou nada na tela. |
+| `build/apagar-item.js` | 15 | Apaga itens inteiros de um banco de conteúdo pelo id (sem imprimir o conteúdo). |
 | `build/aprender.js` | 83 | Motor que aprende as peças dos desenhos de colorir: lê os lotes aprovados do Gemini |
 | `build/arquivo-unico.js` | 45 | Motor: junta o app inteiro num só arquivo .html (abre com dois cliques, sem internet). |
 | `build/biblioteca.js` | 75 | Lista e prévia da biblioteca de peças (build/pecas/). Gerado: nunca editar PECAS.md à mão. |
 | `build/bncc-regras.js` | 39 | Regras da BNCC: diz qual habilidade combina com cada item (ficha build/fichas/bncc.json). |
 | `build/bncc.js` | 88 | Motor da BNCC: confere se o código de cada item combina com a atividade e corrige. |
-| `build/capturas.js` | 96 | Motor de capturas (Fase 7, etapa 6): percorre todas as telas do app em celular e tablet, |
+| `build/capturas-telas.js` | 60 | Lista única das telas e tamanhos fotografados (usada por build/capturas.js e build/antes-depois.js). |
+| `build/capturas.js` | 74 | Motor de capturas (Fase 7, etapa 6): percorre todas as telas do app em celular e tablet, |
 | `build/carregar.js` | 17 | Carrega o conteúdo (conteudo/*.js) e a regra de resposta certa, para os motores de build/. |
 | `build/catalogo.js` | 85 | Catálogo (motor 5): gera CATALOGO.md com o que já existe (conteúdo e código), para achar sem abrir arquivos. |
 | `build/colorir-regras.js` | 35 | Regras do estilo dos desenhos de colorir (usadas por build/colorir.js). Só lê o texto do SVG; não abre navegador. |
@@ -270,9 +277,9 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/importar-lp.js` | 60 | Importador de Português: transforma o lote em JSON enviado pelo dono num pedido do gerar-lp. |
 | `build/importar-mat.js` | 117 | Importador de Matemática: transforma o lote em JSON enviado pelo dono num pedido do gerar-mat. |
 | `build/item.js` | 131 | Motor de item único: mostra, busca e altera um item de conteudo/*.js sem abrir o arquivo. |
-| `build/nova-brincadeira.js` | 113 | Motor "brincadeira nova": cria os 5 arquivos de uma brincadeira e liga tudo no app, de uma vez. |
+| `build/nova-brincadeira.js` | 116 | Motor "brincadeira nova": cria os 5 arquivos de uma brincadeira e liga tudo no app, de uma vez. |
 | `build/pedido.js` | 100 | Peças comuns dos geradores de conteúdo (gerar-mat, gerar-lp, gerar-historia). |
-| `build/pedir-dados.js` | 101 | Dados do motor build/pedir.js: o que o app já tem e as escolhas automáticas (tema, série, níveis, lote). |
+| `build/pedir-dados.js` | 100 | Dados do motor build/pedir.js: o que o app já tem e as escolhas automáticas (tema, série, níveis, lote). |
 | `build/pedir.js` | 120 | Motor "pedir a outra IA": monta o texto pronto para colar noutra IA, já preenchido, a partir dos roteiros. |
 | `build/tudo.js` | 100 | (sem comentário no topo) |
 | `build/validar.js` | 93 | Validador do conteúdo. Uso: node build/validar.js |
@@ -286,18 +293,19 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/_navegador.js` | 24 | Ajudante comum dos testes que abrem o app no navegador (Playwright, Chromium já instalado). |
 | `testes/t_ajustar.js` | 108 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
 | `testes/t_ajustar_mat.js` | 62 | Teste guardado: ajuste de Matemática (build/ajustar-mat.js e build/ajustar-mat-regras.js). |
-| `testes/t_app.js` | 155 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
+| `testes/t_app.js` | 157 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
 | `testes/t_avisoerro.js` | 40 | Teste guardado: aviso de erro com "Recomeçar" (js/avisoerro.js), no navegador. |
 | `testes/t_backup.js` | 39 | Teste guardado: cópia de segurança do progresso (js/backup.js). |
 | `testes/t_banco.js` | 23 | Teste guardado: pedido de guarda permanente dos dados (js/banco.js, pedirGuarda). |
 | `testes/t_bncc.js` | 60 | Teste guardado: motor da BNCC (build/bncc.js + build/bncc-regras.js + build/fichas/bncc.json). |
-| `testes/t_brincadeiras.js` | 81 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |
+| `testes/t_brincadeiras.js` | 82 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |
 | `testes/t_caderno.js` | 76 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |
 | `testes/t_catalogo.js` | 37 | Teste guardado: catálogo (build/catalogo.js). Uso: node testes/t_catalogo.js |
 | `testes/t_celebracoes.js` | 71 | Teste guardado: celebrações (Fase 7, etapa 5) — janela do selo novo e fim da missão animado. |
 | `testes/t_colorir.js` | 97 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
 | `testes/t_conferir.js` | 68 | Teste guardado: conferidor de qualidade (build/conferir.js). Uso: node testes/t_conferir.js |
 | `testes/t_conteudo.js` | 47 | Teste guardado: regra de resposta certa + validador. Uso: node testes/t_conteudo.js |
+| `testes/t_estilos.js` | 62 | Teste guardado: organização do CSS (Etapa A, 27/11). Uso: node testes/t_estilos.js |
 | `testes/t_evolucao.js` | 47 | Teste guardado: contas da Evolução no tempo (js/evolucao.js). |
 | `testes/t_figuras_mat.js` | 36 | Teste guardado: motor de figuras da Matemática (build/figuras-mat.js). Uso: node testes/t_figuras_mat.js |
 | `testes/t_gerar_historia.js` | 38 | Teste guardado: gerador de histórias (build/gerar-historia.js). Uso: node testes/t_gerar_historia.js |
@@ -307,18 +315,19 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_gerar_silabas.js` | 47 | Teste guardado: gerador da brincadeira "Monte a Palavra" (build/gerar-silabas.js). Uso: node testes/t_gerar_silabas.js |
 | `testes/t_importar_mat.js` | 69 | Teste guardado: importador de Matemática (build/importar-mat.js). Uso: node testes/t_importar_mat.js |
 | `testes/t_item.js` | 62 | Teste guardado: motor de item único (build/item.js). Uso: node testes/t_item.js |
+| `testes/t_materias.js` | 72 | Teste guardado: mapa por matéria (Etapa B, 27/11): Início · Português · Matemática · Prêmios. |
 | `testes/t_mercado.js` | 118 | Teste guardado: brincadeira "Mercadinho" (js/mercadoregras.js = contas; js/telas/mercado.js = tela). |
-| `testes/t_nova_brincadeira.js` | 66 | Teste guardado: motor build/nova-brincadeira.js. Trabalha numa cópia temporária do projeto (a pasta real não muda). |
+| `testes/t_nova_brincadeira.js` | 67 | Teste guardado: motor build/nova-brincadeira.js. Trabalha numa cópia temporária do projeto (a pasta real não muda). |
 | `testes/t_offline.js` | 44 | Teste guardado: modo sem internet. Confere a lista do sw.js, o manifesto e abre o app offline. |
 | `testes/t_ondeparou.js` | 90 | Teste guardado: continuar de onde parou (js/ondeparou.js). Abre uma história/atividade, recarrega |
-| `testes/t_ordem.js` | 67 | Teste guardado: brincadeira "Ordem dos Fatos" (js/ordemregras.js = contas; js/telas/ordem.js = tela). |
-| `testes/t_pacote.js` | 100 | Teste guardado: brincadeira "Pacotes de contas" (js/pacoteregras.js = escolhas; js/telas/pacote.js = tela). |
+| `testes/t_ordem.js` | 68 | Teste guardado: brincadeira "Ordem dos Fatos" (js/ordemregras.js = contas; js/telas/ordem.js = tela). |
+| `testes/t_pacote.js` | 101 | Teste guardado: brincadeira "Pacotes de contas" (js/pacoteregras.js = escolhas; js/telas/pacote.js = tela). |
 | `testes/t_pedir.js` | 86 | Teste guardado: motor de pedidos para outra IA (build/pedir.js + build/pedir-dados.js). Uso: node testes/t_pedir.js |
-| `testes/t_rodada.js` | 88 | Teste guardado: kit de rodada (js/rodada.js), sem navegador. Uso: node testes/t_rodada.js |
-| `testes/t_rolagem.js` | 78 | Teste guardado: rolagem automática até a resposta (js/rolagem.js), voltar do aparelho (js/voltar.js) |
+| `testes/t_rodada.js` | 89 | Teste guardado: kit de rodada (js/rodada.js), sem navegador. Uso: node testes/t_rodada.js |
+| `testes/t_rolagem.js` | 80 | Teste guardado: rolagem automática até a resposta (js/rolagem.js), voltar do aparelho (js/voltar.js) |
 | `testes/t_silabas.js` | 52 | Teste guardado: brincadeira "Monte a Palavra" (js/telas/silabas.js) no navegador. |
 | `testes/t_sorteio.js` | 42 | Teste guardado: sorteio das opções (js/sorteio.js). Uso: node testes/t_sorteio.js |
-| `testes/t_trem.js` | 90 | Teste guardado: brincadeira "Trem dos números" (js/tremregras.js = contas; js/telas/trem.js = tela). |
+| `testes/t_trem.js` | 91 | Teste guardado: brincadeira "Trem dos números" (js/tremregras.js = contas; js/telas/trem.js = tela). |
 | `testes/t_tudo.js` | 44 | Teste do motor 6 (build/tudo.js): mapa de etapas, ficha coerente e etapas internas. |
 | `testes/t_varrer.js` | 107 | Teste guardado: varredura do código (build/varrer.js, Motor 9). Uso: node testes/t_varrer.js |
 | `testes/t_voz.js` | 52 | Teste guardado: voz (js/voz.js). Uso: node testes/t_voz.js |

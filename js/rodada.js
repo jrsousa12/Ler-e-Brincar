@@ -74,7 +74,7 @@ LB.rodada = function (ctx, cfg) {
 
   function concluir() {
     ctx.marcarConcluido(cfg.id);
-    ctx.terminarItem('atividades');
+    ctx.terminarItem((LB.materiaDe || {})[cfg.id] || 'home');   // volta para a matéria (js/telas/materias.js)
   }
 
   const kit = { lista, indice, etapa, escolha, mensagem, estado, atual, pergunta, ultimo, abrir, carregar, limpar, errou, acertou, escolher, seguir, concluir };

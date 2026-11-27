@@ -1,0 +1,16 @@
+/* Tela História: capa, texto (tocar na frase lê em voz alta) e a frase que a voz está lendo. */
+.historia-texto{
+  background:var(--cor-card);border:1px solid var(--cor-borda);
+  border-radius:var(--radius);padding:calc(var(--space) + 4px);
+  margin:var(--space) 0;box-shadow:var(--sombra-1);font-size:1.06em;
+}
+.historia-texto p{margin-bottom:var(--space);cursor:pointer}
+.historia-texto p:last-child{margin-bottom:0}
+.historia-capa{
+  font-size:6em;text-align:center;padding:44px 20px;
+  border-radius:var(--radius);margin-bottom:var(--space);
+  background:linear-gradient(135deg,#E8E3FF 0%,#FFE9E1 100%);
+  box-shadow:inset 0 0 0 1px rgba(31,27,46,.05);
+}
+.frase{border-radius:6px;padding:1px 2px;transition:background-color .2s ease}
+.frase.lida{background:var(--cor-destaque-leitura);color:#1E2D3D;box-shadow:0 0 0 2px var(--cor-destaque-leitura)}

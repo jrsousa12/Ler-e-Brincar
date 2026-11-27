@@ -11,30 +11,8 @@ const { chromium } = require('playwright');
 const raiz = path.join(__dirname, '..');
 const saida = path.join(raiz, 'build', 'previas', 'capturas');
 
-const TAMANHOS = {
-  celular: { width: 390, height: 844 },
-  'celular-escuro': { width: 390, height: 844, escuro: true },
-  'tablet-deitado': { width: 1280, height: 800 },
-  'tablet-em-pe': { width: 800, height: 1280 },
-};
-
-// Cada tela: nome da foto + o que fazer para chegar nela (roda dentro da página)
-const TELAS = [
-  ['01-inicio', () => LB.app.irPara('home')],
-  ['02-missao', () => LB.app.irPara('missao')],
-  ['03-ler', () => LB.app.irPara('ler')],
-  ['04-historia', () => LB.app.abrirHistoria(LB.CONTEUDO.stories[0])],
-  ['05-historia-pergunta', () => { LB.app.abrirHistoria(LB.CONTEUDO.stories[0]); LB.app.iniciarPerguntasHistoria(); }],
-  ['06-atividades', () => LB.app.irPara('atividades')],
-  ['07-atividade', () => LB.app.abrirAtividade(LB.CONTEUDO.activities.find(a => a.id === 'mat-036'))],
-  ['08-silabas', () => LB.app.abrirSilabas()],
-  ['09-memoria', () => LB.app.abrirMemoria()],
-  ['10-som-figura', () => LB.app.abrirSomFigura()],
-  ['11-colorir-lista', () => LB.app.irPara('colorir')],
-  ['12-colorir', () => LB.app.abrirColorir(LB.CONTEUDO.colorir[0])],
-  ['13-selos', () => LB.app.irPara('recompensas')],
-  ['14-responsavel', () => { LB.app.tela = 'responsavel'; }],
-];
+// Telas e tamanhos: lista única em build/capturas-telas.js
+const { TAMANHOS, TELAS } = require('./capturas-telas');
 
 async function fotografar(b, nome, tam) {
   const { escuro, ...viewport } = tam;

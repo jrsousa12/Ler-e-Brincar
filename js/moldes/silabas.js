@@ -2,7 +2,7 @@
 LB.moldes = LB.moldes || {};
 LB.moldes.silabas = `
     <section v-if="tela === 'silabas'" class="brincadeira-silabas" aria-label="Brincadeira Monte a Palavra">
-      <button class="btn-voltar" @click="voltar('atividades')">← Voltar</button>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="voltar('portugues')">← Voltar</button></teleport>
 ${LB.moldes.abasPalavras}
       <div class="topo-jogo">
         <span class="badge-fase">Palavra {{ indiceSilabas + 1 }} de {{ palavrasSilabas.length }}</span>

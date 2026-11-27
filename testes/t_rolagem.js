@@ -38,7 +38,7 @@ const { INDEX, novaPagina } = require('./_navegador');
   ok(medida.baixo <= medida.fundo + 1, 'resposta e botão Continuar aparecem inteiros (acima da barra de baixo)');
   ok(medida.topo >= 0, 'o começo da mensagem continua visível');
 
-  // 2) Voltar do aparelho: na atividade → lista; na lista → início; no início, o app continua aberto
+  // 2) Voltar do aparelho: na atividade → lista; na lista → Matemática → início; no início, o app continua aberto
   await p.evaluate(() => LB.app.irPara('atividades'));
   await espera(200);
   await p.evaluate(() => LB.app.abrirAtividade(LB.CONTEUDO.activities.find(a => a.id === 'mat-036')));
@@ -48,7 +48,9 @@ const { INDEX, novaPagina } = require('./_navegador');
   await p.goBack(); await espera(300);
   ok(await tela() === 'atividades', 'voltar do aparelho na atividade leva à lista (estava em ' + telaAtividade + ')');
   await p.goBack(); await espera(300);
-  ok(await tela() === 'home', 'voltar do aparelho na lista leva ao início');
+  ok(await tela() === 'matematica', 'voltar do aparelho na lista de contas leva à tela Matemática');
+  await p.goBack(); await espera(300);
+  ok(await tela() === 'home', 'voltar do aparelho na tela Matemática leva ao início');
   ok(await p.evaluate(() => !!window.LB && !!LB.app), 'o app continua aberto depois de voltar');
 
   // 3) Caixa "Tem certeza?" aberta: voltar fecha a caixa e fica na mesma tela

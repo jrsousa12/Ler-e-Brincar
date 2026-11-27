@@ -11,11 +11,11 @@ const { novaPagina, abrirApp } = require('./_navegador');
   const estrelas = () => p.evaluate(() => LB.app.estrelas);
 
   // MEMÓRIA
-  await p.click('.bloco-menu.brincar');
+  await p.click('.bloco-menu.ler');   // Português
   await p.click('text=Memória');
   ok(await p.locator('.carta-memoria').count() === 8, 'memória com 8 cartas');
   // Acabamento (etapa 2): "← Voltar" à esquerda, do tamanho do texto (não a largura toda)
-  const voltar = await p.locator('section.brincadeira-silabas:visible .btn-voltar').boundingBox();
+  const voltar = await p.locator('.cabecalho-app .btn-voltar').boundingBox();
   ok(voltar && voltar.x < 40 && voltar.width < 200, '"Voltar" no canto esquerdo: ' + JSON.stringify(voltar));
   const cartas = await p.evaluate(() => LB.app.cartasMemoria.map(c => ({ par: c.par, tipo: c.tipo })));
   ok(cartas.filter(c => c.tipo === 'figura').length === 4, '4 figuras e 4 palavras');
@@ -33,7 +33,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   ok(await p.locator('.carta-memoria.achada').count() === 8, 'todos os pares achados');
   ok(await estrelas() === e0 + 4, 'ganha 1 estrela por par');
   await p.click('text=Concluir');
-  ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos.memoria === true), 'memória concluída volta e marca');
+  ok(await p.evaluate(() => LB.app.tela === 'portugues' && LB.app.concluidos.memoria === true), 'memória concluída volta e marca');
 
   // SOM E FIGURA
   await p.click('text=Som e Figura');
@@ -57,7 +57,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
     await p.click(k < rod - 1 ? 'text=Próxima' : 'text=Concluir');
   }
   ok(await estrelas() === e1 + rod, 'ganha 1 estrela por rodada');
-  ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos['som-figura'] === true), 'som e figura concluída volta e marca');
+  ok(await p.evaluate(() => LB.app.tela === 'portugues' && LB.app.concluidos['som-figura'] === true), 'som e figura concluída volta e marca');
   // LISTA DE ATIVIDADES em grade: mesmo título vira um cartão; tocar abre uma atividade ainda não feita
   const g = await p.evaluate(() => ({ n: LB.app.gruposAtividades.length, total: LB.app.atividadesFiltradas.length }));
   ok(g.n > 0 && g.n < g.total, 'atividades agrupadas por título (' + g.n + ' cartões)');
@@ -69,8 +69,9 @@ const { novaPagina, abrirApp } = require('./_navegador');
     await p.click(`.aba-palavra:has-text("${aba}")`);
     ok(await p.evaluate(t => LB.app.tela === t, tela) && await p.locator('.abas-palavras').count() === 1, 'aba ' + aba + ' abre ' + tela);
   }
-  await p.click('.brincadeira-silabas .btn-voltar');
+  await p.click('.cabecalho-app .btn-voltar');
   ok(await p.locator('.abas-palavras').count() === 0, 'abas só nas 3 brincadeiras de palavras');
+  await p.click('.bloco-brincadeira:has-text("Questões")');   // lista de Questões de Português
   await p.locator('.cartao-atividade').first().click();
   ok(await p.evaluate(() => LB.app.tela === 'atividade' && !LB.app.concluidos[LB.app.atividadeAtual.id]), 'cartão abre atividade ainda não feita');
   ok(erros.length === 0, 'sem erros: ' + erros.join(' | '));

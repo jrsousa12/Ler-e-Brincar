@@ -3,8 +3,7 @@ LB.moldes = LB.moldes || {};
 LB.moldes.colorir = `
     <!-- COLORIR (lista) -->
     <div v-if="tela === 'colorir'">
-      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
-      <h2>Desenhos para colorir</h2>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="irPara('premios')">← Voltar</button></teleport>
       <div class="grade-cartoes">
         <div class="card" v-for="c in conteudo.colorir" :key="c.id" @click="abrirColorir(c)" tabindex="0">
           <div class="card-capa" style="background:linear-gradient(135deg,#FFF3E0,#FFE9E1);font-size:3em">{{ c.emoji }}</div>
@@ -16,7 +15,7 @@ LB.moldes.colorir = `
 
     <!-- COLORIR-ITEM -->
     <div v-if="tela === 'colorir-item' && colorirAtual" class="tela-colorir">
-      <button class="btn-voltar" @click="voltar('colorir')">← Voltar</button>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="voltar('colorir')">← Voltar</button></teleport>
       <h2>{{ colorirAtual.titulo }}</h2>
       <p class="texto-suave">Toque nas formas para pintar</p>
       <div class="paleta">

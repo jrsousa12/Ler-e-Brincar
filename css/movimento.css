@@ -1,6 +1,6 @@
 /* Fluidez (Fase 7, etapa 2): telas entram deslizando, opções aparecem uma a uma,
    acerto dá pulinho, erro balança de leve. "Reduzir movimento" (Ajustes) desliga tudo
-   (regra em css/componentes.css). Só opacidade e deslocamento: leve no tablet. */
+   (fim deste arquivo). Só opacidade e deslocamento: leve no tablet. */
 
 /* Tela nova entra subindo (cada tela é um <div> filho de .container) */
 .container > div{animation:entrar .38s cubic-bezier(.2,.8,.3,1)}
@@ -65,6 +65,18 @@
 @keyframes selo-chegar{from{opacity:0;transform:scale(.2) rotate(-360deg)}to{opacity:1;transform:none}}
 @keyframes girar{to{transform:rotate(360deg)}}
 
+/* Confete da festa (js/festa.js) */
+.confete{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:999}
+.confete i{position:absolute;top:-20px;width:10px;height:14px;border-radius:2px;animation:cair 2.2s ease-in forwards}
+@keyframes cair{to{top:110%;transform:rotate(720deg)}}
+
+/* Sem movimento: aviso do sistema ou ajuste "Reduzir movimento" (vale mesmo sem o aviso do sistema) */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .confete{display:none}
+}
+.reduzir-movimento *,.reduzir-movimento *::before,.reduzir-movimento *::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+.reduzir-movimento .confete{display:none}
 @media (prefers-reduced-motion: reduce){
   .container > div,.bloco-menu,.opcao,.feedback,.missao-icone,.passo.atual,.nav-inferior a.ativo .icone,
   .mascote-svg,.mascote-svg *,.missao-completa,.medalha-missao,.estrelas-premio span,
