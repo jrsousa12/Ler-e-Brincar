@@ -13,8 +13,7 @@ Regra: ao concluir um item, movê-lo para `HISTORICO.md` (com a data) e tirá-lo
 - O dono observa a criança usando e anota em `NOTAS.md`; ajustes em tarefas pequenas.
 
 ### Reestruturação + Fase 10 — plano aprovado pelo dono em 27/11
-Decisões: menu **por matéria**; estilo **o atual, mais caprichado**; expansão **só a Fase 10**. Fazer na ordem (A, B e C feitas, ver `HISTORICO.md`):
-- **Etapa D — Fase 10, conteúdo** (Sonnet): mais nível 1 e ortografia em LP (R/RR, S/SS, M/N, X/CH, acento); sílabas complexas BR/LH/NH (EF02LP03, hoje 0); multiplicação simples. Tudo pelos motores.
+Decisões: menu **por matéria**; estilo **o atual, mais caprichado**; expansão **só a Fase 10**. Fazer na ordem (A a D feitas, ver `HISTORICO.md`): nada pendente.
 
 ### Depois (rascunho de 24/11, não aprovado)
 - **Fase 11 — Matemática que falta** (Opus planeja, Sonnet faz): brincadeiras Relógio (EF02MA18/19), Régua/medidas (EF02MA16/17), Formas (EF02MA14/15), Gráfico de barras (EF02MA22/23) + questões no banco.

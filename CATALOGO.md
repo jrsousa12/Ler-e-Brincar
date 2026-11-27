@@ -7,10 +7,10 @@
 | Área | Itens | Próximo id livre |
 |---|---|---|
 | Histórias | 61 | `historia-62` |
-| Português | 423 | `lp-424` |
-| Matemática | 275 | `mat-276` |
+| Português | 453 | `lp-454` |
+| Matemática | 298 | `mat-299` |
 | Colorir | 74 | `colorir-75` |
-| Monte a Palavra | 40 | `sil-041` |
+| Monte a Palavra | 60 | `sil-061` |
 
 ## Português (por habilidade da BNCC)
 
@@ -20,14 +20,14 @@
 | EF01LP10 | 3 | 2 | · | 5 | multipla |
 | EF02LP02 | 7 | 9 | · | 16 | multipla |
 | EF02LP04 | · | 21 | · | 21 | multipla |
-| EF02LP05 | · | 2 | · | 2 | completar, multipla |
+| EF02LP05 | 5 | 3 | · | 8 | completar, multipla |
 | EF02LP08 | 1 | · | · | 1 | multipla |
 | EF02LP09 | 4 | 2 | · | 6 | multipla |
 | EF02LP10 | 1 | 11 | 2 | 14 | multipla |
 | EF02LP26 | 1 | 2 | · | 3 | multipla |
-| EF03LP01 | · | 27 | · | 27 | multipla, completar |
+| EF03LP01 | 9 | 31 | · | 40 | multipla, completar |
 | EF03LP03 | 1 | 20 | · | 21 | multipla |
-| EF03LP04 | · | 1 | · | 1 | multipla |
+| EF03LP04 | 5 | 2 | · | 7 | multipla, completar |
 | EF03LP05 | · | 1 | · | 1 | multipla |
 | EF03LP06 | · | 4 | · | 4 | multipla |
 | EF03LP08 | 1 | 6 | · | 7 | completar, multipla |
@@ -37,20 +37,20 @@
 | EF35LP03 | · | · | 100 | 100 | multipla |
 | EF35LP04 | 3 | 11 | 4 | 18 | multipla |
 | EF35LP07 | 10 | 76 | 1 | 87 | completar, multipla |
-| EF35LP13 | · | 2 | · | 2 | completar, multipla |
+| EF35LP13 | 4 | 3 | · | 7 | completar, multipla |
 
 - **EF01LP08**: lp-019 Letra inicial (n1)
 - **EF01LP10**: lp-009 Ordem alfabética (n2) · lp-028 Ordem alfabética (n1) · lp-029 Ordem alfabética (n2) · lp-069 Ordem alfabética (n1) · lp-093 Ordem alfabética (n1)
 - **EF02LP02**: lp-006 Sílabas (n1) · lp-017 Contando sílabas (n1) · lp-018 Sílabas curtas (n1) · lp-041 Sílabas (n1) · lp-042 Sílabas (n2) · lp-043 Sílabas (n1) · lp-044 Sílabas (n1) · lp-045 Sílabas (n2) · lp-086 Contando sílabas (n1) · lp-116 Palavra no texto (n2) · lp-152 Palavra no texto (n2) · lp-156 Palavra no texto (n2) · lp-418 Palavra no texto (n2) · lp-419 Palavra no texto (n2) · lp-420 Palavra no texto (n2) · lp-421 Palavra no texto (n2)
 - **EF02LP04**: lp-112 Palavra no texto (n2) · lp-113 Palavra no texto (n2) · lp-114 Palavra no texto (n2) · lp-117 Palavra no texto (n2) · lp-118 Palavra no texto (n2) · lp-126 Palavra no texto (n2) · lp-127 Palavra no texto (n2) · lp-128 Palavra no texto (n2) · lp-136 Palavra no texto (n2) · lp-137 Palavra no texto (n2) · lp-138 Palavra no texto (n2) · lp-139 Palavra no texto (n2) · lp-147 Palavra no texto (n2) · lp-148 Palavra no texto (n2) · lp-149 Palavra no texto (n2) · lp-157 Palavra no texto (n2) · lp-158 Palavra no texto (n2) · lp-159 Palavra no texto (n2) · lp-167 Palavra no texto (n2) · lp-168 Palavra no texto (n2) · lp-169 Palavra no texto (n2)
-- **EF02LP05**: lp-050 M antes de P/B (n2) · lp-091 M ou N (n2)
+- **EF02LP05**: lp-050 M antes de P/B (n2) · lp-091 M ou N (n2) · lp-437 M ou N (n1) · lp-438 M ou N (n1) · lp-439 M ou N (n1) · lp-440 M ou N (n1) · lp-441 M ou N (n1) · lp-442 M ou N (n2)
 - **EF02LP08**: lp-035 Contando palavras (n1)
 - **EF02LP09**: lp-005 Pontuação (n2) · lp-066 Ponto final (n1) · lp-067 Interrogação (n1) · lp-068 Exclamação (n1) · lp-088 Pontuação (n2) · lp-100 Pontuação (n1)
 - **EF02LP10**: lp-004 Sinônimo (n2) · lp-013 Sinônimo (n2) · lp-014 Antônimo (n2) · lp-032 Sinônimo (n2) · lp-033 Antônimo (n2) · lp-051 Sinônimo (n2) · lp-052 Antônimo (n2) · lp-053 Sinônimo (n2) · lp-054 Antônimo (n2) · lp-055 Sinônimo (n3) · lp-094 Sinônimo (n2) · lp-095 Antônimo (n1) · lp-096 Antônimo (n2) · lp-097 Sinônimo (n3)
 - **EF02LP26**: lp-002 Leia e responda (n1) · lp-084 Leia e responda (n2) · lp-085 Por quê? (n2)
-- **EF03LP01**: lp-036 Ç ou SS (n2) · lp-046 R ou RR (n2) · lp-047 S ou SS (n2) · lp-048 Ç (n2) · lp-089 R ou RR (n2) · lp-092 Ç ou SS (n2) · lp-108 Palavra no texto (n2) · lp-110 Palavra no texto (n2) · lp-111 Palavra no texto (n2) · lp-122 Palavra no texto (n2) · lp-123 Palavra no texto (n2) · lp-124 Palavra no texto (n2) · lp-125 Palavra no texto (n2) · lp-132 Palavra no texto (n2) · lp-134 Palavra no texto (n2) · lp-135 Palavra no texto (n2) · lp-143 Palavra no texto (n2) · lp-144 Palavra no texto (n2) · lp-145 Palavra no texto (n2) · lp-146 Palavra no texto (n2) · lp-153 Palavra no texto (n2) · lp-163 Palavra no texto (n2) · lp-164 Palavra no texto (n2) · lp-165 Palavra no texto (n2) · lp-166 Palavra no texto (n2) · lp-173 Palavra no texto (n2) · lp-174 Palavra no texto (n2)
+- **EF03LP01**: lp-036 Ç ou SS (n2) · lp-046 R ou RR (n2) · lp-047 S ou SS (n2) · lp-048 Ç (n2) · lp-089 R ou RR (n2) · lp-092 Ç ou SS (n2) · lp-108 Palavra no texto (n2) · lp-110 Palavra no texto (n2) · lp-111 Palavra no texto (n2) · lp-122 Palavra no texto (n2) · lp-123 Palavra no texto (n2) · lp-124 Palavra no texto (n2) · lp-125 Palavra no texto (n2) · lp-132 Palavra no texto (n2) · lp-134 Palavra no texto (n2) · lp-135 Palavra no texto (n2) · lp-143 Palavra no texto (n2) · lp-144 Palavra no texto (n2) · lp-145 Palavra no texto (n2) · lp-146 Palavra no texto (n2) · lp-153 Palavra no texto (n2) · lp-163 Palavra no texto (n2) · lp-164 Palavra no texto (n2) · lp-165 Palavra no texto (n2) · lp-166 Palavra no texto (n2) · lp-173 Palavra no texto (n2) · lp-174 Palavra no texto (n2) · lp-424 R ou RR (n1) · lp-425 R ou RR (n1) · lp-426 R ou RR (n1) · lp-427 R ou RR (n1) · lp-428 R ou RR (n2) · lp-429 R ou RR (n1) · lp-430 R ou RR (n2) · lp-431 S ou SS (n1) · lp-432 S ou SS (n1) · lp-433 S ou SS (n1) · lp-434 S ou SS (n1) · lp-435 S ou SS (n2) · lp-436 S ou SS (n2)
 - **EF03LP03**: lp-102 Som do CH (n1) · lp-105 Palavra no texto (n2) · lp-106 Palavra no texto (n2) · lp-107 Palavra no texto (n2) · lp-119 Palavra no texto (n2) · lp-120 Palavra no texto (n2) · lp-121 Palavra no texto (n2) · lp-129 Palavra no texto (n2) · lp-130 Palavra no texto (n2) · lp-131 Palavra no texto (n2) · lp-140 Palavra no texto (n2) · lp-141 Palavra no texto (n2) · lp-142 Palavra no texto (n2) · lp-150 Palavra no texto (n2) · lp-151 Palavra no texto (n2) · lp-155 Palavra no texto (n2) · lp-160 Palavra no texto (n2) · lp-161 Palavra no texto (n2) · lp-170 Palavra no texto (n2) · lp-171 Palavra no texto (n2) · lp-172 Palavra no texto (n2)
-- **EF03LP04**: lp-037 Acento (n2)
+- **EF03LP04**: lp-037 Acento (n2) · lp-448 Acento (n1) · lp-449 Acento (n1) · lp-450 Acento (n1) · lp-451 Acento (n1) · lp-452 Acento (n1) · lp-453 Acento (n2)
 - **EF03LP05**: lp-115 Palavra no texto (n2)
 - **EF03LP06**: lp-109 Palavra no texto (n2) · lp-133 Palavra no texto (n2) · lp-154 Palavra no texto (n2) · lp-162 Palavra no texto (n2)
 - **EF03LP08**: lp-021 Complete com verbo (n2) · lp-024 Substantivo (n2) · lp-025 Verbo (n2) · lp-061 Substantivo (n1) · lp-063 Verbo (n2) · lp-064 Substantivo próprio (n2) · lp-098 Verbo (n2)
@@ -60,7 +60,7 @@
 - **EF35LP03**: lp-315 Interpretação (n3) · lp-316 Interpretação (n3) · lp-317 Interpretação (n3) · lp-318 Interpretação (n3) · lp-319 Interpretação (n3) · lp-320 Interpretação (n3) · lp-321 Interpretação (n3) · lp-322 Interpretação (n3) · lp-323 Interpretação (n3) · lp-324 Interpretação (n3) · lp-325 Interpretação (n3) · lp-326 Interpretação (n3) · lp-327 Interpretação (n3) · lp-328 Interpretação (n3) · lp-329 Interpretação (n3) · lp-330 Interpretação (n3) · lp-331 Interpretação (n3) · lp-332 Interpretação (n3) · lp-333 Interpretação (n3) · lp-334 Interpretação (n3) · lp-335 Interpretação (n3) · lp-336 Interpretação (n3) · lp-337 Interpretação (n3) · lp-338 Interpretação (n3) · lp-339 Interpretação (n3) · lp-340 Interpretação (n3) · lp-341 Interpretação (n3) · lp-342 Interpretação (n3) · lp-343 Interpretação (n3) · lp-344 Interpretação (n3) · lp-345 Interpretação (n3) · lp-346 Interpretação (n3) · lp-347 Interpretação (n3) · lp-348 Interpretação (n3) · lp-349 Interpretação (n3) · lp-350 Interpretação (n3) · lp-351 Interpretação (n3) · lp-352 Interpretação (n3) · lp-353 Interpretação (n3) · lp-354 Interpretação (n3) · lp-355 Interpretação (n3) · lp-356 Interpretação (n3) · lp-357 Interpretação (n3) · lp-358 Interpretação (n3) · lp-359 Interpretação (n3) · lp-360 Interpretação (n3) · lp-361 Interpretação (n3) · lp-362 Interpretação (n3) · lp-363 Interpretação (n3) · lp-364 Interpretação (n3) · lp-365 Interpretação (n3) · lp-366 Interpretação (n3) · lp-367 Interpretação (n3) · lp-368 Interpretação (n3) · lp-369 Interpretação (n3) · lp-370 Interpretação (n3) · lp-371 Interpretação (n3) · lp-372 Interpretação (n3) · lp-373 Interpretação (n3) · lp-374 Interpretação (n3) · lp-375 Interpretação (n3) · lp-376 Interpretação (n3) · lp-377 Interpretação (n3) · lp-378 Interpretação (n3) · lp-379 Interpretação (n3) · lp-380 Interpretação (n3) · lp-381 Interpretação (n3) · lp-382 Interpretação (n3) · lp-383 Interpretação (n3) · lp-384 Interpretação (n3) · lp-385 Interpretação (n3) · lp-386 Interpretação (n3) · lp-387 Interpretação (n3) · lp-388 Interpretação (n3) · lp-389 Interpretação (n3) · lp-390 Interpretação (n3) · lp-391 Interpretação (n3) · lp-392 Interpretação (n3) · lp-393 Interpretação (n3) · lp-394 Interpretação (n3) · lp-395 Interpretação (n3) · lp-396 Interpretação (n3) · lp-397 Interpretação (n3) · lp-398 Interpretação (n3) · lp-399 Interpretação (n3) · lp-400 Interpretação (n3) · lp-401 Interpretação (n3) · lp-402 Interpretação (n3) · lp-403 Interpretação (n3) · lp-404 Interpretação (n3) · lp-405 Interpretação (n3) · lp-406 Interpretação (n3) · lp-407 Interpretação (n3) · lp-408 Interpretação (n3) · lp-409 Interpretação (n3) · lp-410 Interpretação (n3) · lp-411 Interpretação (n3) · lp-412 Interpretação (n3) · lp-413 Interpretação (n3) · lp-414 Interpretação (n3)
 - **EF35LP04**: lp-008 Inferência (n2) · lp-039 Inferência (n2) · lp-059 Inferência (n2) · lp-060 Inferência (n2) · lp-071 Inferência (n2) · lp-072 Inferência (n2) · lp-073 Inferência (n2) · lp-074 Inferência (n1) · lp-075 Inferência (n1) · lp-076 Inferência (n2) · lp-077 Inferência (n2) · lp-078 Inferência (n1) · lp-079 Inferência (n2) · lp-080 Inferência (n3) · lp-104 Lanche quentinho (n2) · lp-415 Interpretação (n3) · lp-416 Interpretação (n3) · lp-417 Interpretação (n3)
 - **EF35LP07**: lp-001 Complete a frase (n1) · lp-003 Qual é o plural? (n1) · lp-010 Frase completa (n1) · lp-011 Plural (n1) · lp-012 Singular (n1) · lp-015 Feminino (n1) · lp-016 Masculino (n1) · lp-020 Vírgula (n3) · lp-022 Futuro (n2) · lp-026 Plural no texto (n1) · lp-031 Complete (n1) · lp-034 Frase correta (n2) · lp-065 Artigo (n1) · lp-070 Frase com sentido (n2) · lp-101 Mas ou mais? (n2) · lp-175 Complete a frase (n2) · lp-176 Complete a frase (n2) · lp-177 Complete a frase (n2) · lp-178 Complete a frase (n2) · lp-179 Complete a frase (n2) · lp-180 Complete a frase (n2) · lp-181 Complete a frase (n2) · lp-182 Complete a frase (n2) · lp-183 Complete a frase (n2) · lp-184 Complete a frase (n2) · lp-185 Complete a frase (n2) · lp-186 Complete a frase (n2) · lp-187 Complete a frase (n2) · lp-188 Complete a frase (n2) · lp-189 Complete a frase (n2) · lp-190 Complete a frase (n2) · lp-191 Complete a frase (n2) · lp-192 Complete a frase (n2) · lp-193 Complete a frase (n2) · lp-194 Complete a frase (n2) · lp-195 Complete a frase (n2) · lp-196 Complete a frase (n2) · lp-197 Complete a frase (n2) · lp-198 Complete a frase (n2) · lp-199 Complete a frase (n2) · lp-200 Complete a frase (n2) · lp-201 Complete a frase (n2) · lp-202 Complete a frase (n2) · lp-203 Complete a frase (n2) · lp-204 Complete a frase (n2) · lp-205 Complete a frase (n2) · lp-206 Complete a frase (n2) · lp-207 Complete a frase (n2) · lp-208 Complete a frase (n2) · lp-209 Complete a frase (n2) · lp-210 Complete a frase (n2) · lp-211 Complete a frase (n2) · lp-212 Complete a frase (n2) · lp-213 Complete a frase (n2) · lp-214 Complete a frase (n2) · lp-215 Complete a frase (n2) · lp-216 Complete a frase (n2) · lp-217 Complete a frase (n2) · lp-218 Complete a frase (n2) · lp-219 Complete a frase (n2) · lp-220 Complete a frase (n2) · lp-221 Complete a frase (n2) · lp-222 Complete a frase (n2) · lp-223 Complete a frase (n2) · lp-224 Complete a frase (n2) · lp-225 Complete a frase (n2) · lp-226 Complete a frase (n2) · lp-227 Complete a frase (n2) · lp-228 Complete a frase (n2) · lp-229 Complete a frase (n2) · lp-230 Complete a frase (n2) · lp-231 Complete a frase (n2) · lp-232 Complete a frase (n2) · lp-233 Complete a frase (n2) · lp-234 Complete a frase (n2) · lp-235 Complete a frase (n2) · lp-236 Complete a frase (n2) · lp-237 Complete a frase (n2) · lp-238 Complete a frase (n2) · lp-239 Complete a frase (n2) · lp-240 Complete a frase (n2) · lp-241 Complete a frase (n2) · lp-242 Complete a frase (n2) · lp-243 Complete a frase (n2) · lp-244 Complete a frase (n2) · lp-422 Complete a frase (n2) · lp-423 Complete a frase (n2)
-- **EF35LP13**: lp-049 X ou CH (n2) · lp-090 X ou CH (n2)
+- **EF35LP13**: lp-049 X ou CH (n2) · lp-090 X ou CH (n2) · lp-443 X ou CH (n1) · lp-444 X ou CH (n1) · lp-445 X ou CH (n1) · lp-446 X ou CH (n1) · lp-447 X ou CH (n2)
 
 ## Matemática (por habilidade da BNCC)
 
@@ -75,9 +75,9 @@
 | EF02MA09 | 2 | 3 | · | 5 | multipla |
 | EF02MA20 | 3 | 17 | 2 | 22 | operacao, multipla |
 | EF03MA01 | · | 23 | · | 23 | multipla |
-| EF03MA03 | 1 | 9 | · | 10 | operacao, multipla |
+| EF03MA03 | 9 | 16 | 4 | 29 | operacao, multipla |
 | EF03MA06 | · | 2 | · | 2 | multipla |
-| EF03MA07 | · | 6 | · | 6 | operacao, multipla |
+| EF03MA07 | 2 | 8 | · | 10 | operacao, multipla |
 | EF03MA08 | · | 7 | 4 | 11 | operacao |
 | EF03MA24 | · | 42 | 1 | 43 | multipla |
 
@@ -90,9 +90,9 @@
 - **EF02MA09**: mat-030 Sequência (n1) · mat-037 Sequência de 5 (n2) · mat-066 Números pares (n2) · mat-067 Números ímpares (n2) · mat-068 Sequência (n1)
 - **EF02MA20**: mat-040 Problema com dinheiro (n3) · mat-060 Problema (n2) · mat-070 Problema com dinheiro (n3) · mat-071 Contando dinheiro (n1) · mat-072 Contando dinheiro (n1) · mat-073 Contando dinheiro (n2) · mat-074 Contando dinheiro (n2) · mat-075 Contando dinheiro (n2) · mat-076 Contando dinheiro (n1) · mat-077 Contando dinheiro (n2) · mat-078 Contando dinheiro (n2) · mat-079 Contando dinheiro (n2) · mat-080 Contando dinheiro (n2) · mat-114 Pense e escolha (n2) · mat-174 Pense e escolha (n2) · mat-187 Pense e escolha (n2) · mat-196 Pense e escolha (n2) · mat-202 Pense e escolha (n2) · mat-212 Pense e escolha (n2) · mat-226 Pense e escolha (n2) · mat-252 Pense e escolha (n2) · mat-260 Pense e escolha (n2)
 - **EF03MA01**: mat-116 Pense e escolha (n2) · mat-185 Pense e escolha (n2) · mat-189 Pense e escolha (n2) · mat-193 Pense e escolha (n2) · mat-194 Pense e escolha (n2) · mat-195 Pense e escolha (n2) · mat-198 Pense e escolha (n2) · mat-204 Pense e escolha (n2) · mat-205 Pense e escolha (n2) · mat-207 Pense e escolha (n2) · mat-210 Pense e escolha (n2) · mat-211 Pense e escolha (n2) · mat-213 Pense e escolha (n2) · mat-215 Pense e escolha (n2) · mat-218 Pense e escolha (n2) · mat-219 Pense e escolha (n2) · mat-220 Pense e escolha (n2) · mat-221 Pense e escolha (n2) · mat-223 Pense e escolha (n2) · mat-225 Pense e escolha (n2) · mat-227 Pense e escolha (n2) · mat-228 Pense e escolha (n2) · mat-229 Pense e escolha (n2)
-- **EF03MA03**: mat-051 Multiplicação ×2 (n1) · mat-052 Multiplicação ×3 (n2) · mat-053 Multiplicação ×4 (n2) · mat-054 Multiplicação ×5 (n2) · mat-097 Multiplicando (n2) · mat-098 Multiplicando (n2) · mat-122 Pense e escolha (n2) · mat-134 Pense e escolha (n2) · mat-141 Pense e escolha (n2) · mat-143 Pense e escolha (n2)
+- **EF03MA03**: mat-051 Multiplicação ×2 (n1) · mat-052 Multiplicação ×3 (n2) · mat-053 Multiplicação ×4 (n2) · mat-054 Multiplicação ×5 (n2) · mat-097 Multiplicando (n2) · mat-098 Multiplicando (n2) · mat-122 Pense e escolha (n2) · mat-134 Pense e escolha (n2) · mat-141 Pense e escolha (n2) · mat-143 Pense e escolha (n2) · mat-276 Multiplicando (n1) · mat-277 Multiplicando (n1) · mat-278 Multiplicando (n1) · mat-279 Multiplicando (n1) · mat-280 Multiplicando (n1) · mat-281 Problema de grupos (n1) · mat-282 Multiplicando (n1) · mat-283 Multiplicando (n1) · mat-285 Multiplicando (n2) · mat-287 Multiplicando (n2) · mat-289 Problema de grupos (n2) · mat-290 Multiplicando (n2) · mat-291 Multiplicando (n2) · mat-292 Multiplicando (n2) · mat-293 Multiplicando (n3) · mat-294 Multiplicando (n3) · mat-296 Multiplicando (n3) · mat-297 Multiplicando (n2) · mat-298 Multiplicando (n3)
 - **EF03MA06**: mat-249 Pense e escolha (n2) · mat-262 Pense e escolha (n2)
-- **EF03MA07**: mat-008 Multiplicação simples (n2) · mat-035 Problema com multiplicação (n2) · mat-061 Problema (n2) · mat-102 Sacos de 10 (n2) · mat-104 Dúzias (n2) · mat-106 Pense e escolha (n2)
+- **EF03MA07**: mat-008 Multiplicação simples (n2) · mat-035 Problema com multiplicação (n2) · mat-061 Problema (n2) · mat-102 Sacos de 10 (n2) · mat-104 Dúzias (n2) · mat-106 Pense e escolha (n2) · mat-284 Problema de grupos (n1) · mat-286 Problema de grupos (n1) · mat-288 Problema de grupos (n2) · mat-295 Problema de grupos (n2)
 - **EF03MA08**: mat-009 Divisão simples (n2) · mat-022 Divisão (n2) · mat-023 Divisão (n2) · mat-036 Problema com divisão (n3) · mat-055 Divisão ÷2 (n2) · mat-056 Divisão ÷3 (n2) · mat-057 Divisão ÷4 (n3) · mat-058 Divisão ÷5 (n3) · mat-062 Problema (n3) · mat-099 Dividindo (n2) · mat-100 Dividindo (n2)
 - **EF03MA24**: mat-101 Compras e troco (n3) · mat-105 Pense e escolha (n2) · mat-107 Pense e escolha (n2) · mat-108 Pense e escolha (n2) · mat-121 Pense e escolha (n2) · mat-123 Pense e escolha (n2) · mat-124 Pense e escolha (n2) · mat-125 Pense e escolha (n2) · mat-126 Pense e escolha (n2) · mat-127 Pense e escolha (n2) · mat-128 Pense e escolha (n2) · mat-129 Pense e escolha (n2) · mat-130 Pense e escolha (n2) · mat-131 Pense e escolha (n2) · mat-132 Pense e escolha (n2) · mat-133 Pense e escolha (n2) · mat-135 Pense e escolha (n2) · mat-136 Pense e escolha (n2) · mat-137 Pense e escolha (n2) · mat-138 Pense e escolha (n2) · mat-139 Pense e escolha (n2) · mat-140 Pense e escolha (n2) · mat-142 Pense e escolha (n2) · mat-144 Pense e escolha (n2) · mat-145 Pense e escolha (n2) · mat-146 Pense e escolha (n2) · mat-147 Pense e escolha (n2) · mat-148 Pense e escolha (n2) · mat-149 Pense e escolha (n2) · mat-150 Pense e escolha (n2) · mat-151 Pense e escolha (n2) · mat-152 Pense e escolha (n2) · mat-153 Pense e escolha (n2) · mat-154 Pense e escolha (n2) · mat-155 Pense e escolha (n2) · mat-156 Pense e escolha (n2) · mat-157 Pense e escolha (n2) · mat-158 Pense e escolha (n2) · mat-159 Pense e escolha (n2) · mat-160 Pense e escolha (n2) · mat-161 Pense e escolha (n2) · mat-162 Pense e escolha (n2) · mat-163 Pense e escolha (n2)
 
@@ -168,7 +168,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 
 - **Nível 1**: BO-LA · CA-SA · GA-TO · PA-TO · SA-PO · DA-DO · BO-LO · LU-A · VA-CA · SU-CO · PI-PA · LO-BO · MO-TO
 - **Nível 2**: BA-NA-NA · CA-VA-LO · SA-PA-TO · MA-CA-CO · BO-NE-CA · JA-NE-LA · ME-NI-NA · TO-MA-TE · GI-RA-FA · CO-RU-JA · PI-PO-CA · PI-RU-LI-TO
-- **Nível 3**: CHU-VA · GA-LI-NHA · CO-E-LHO · A-BE-LHA · MI-NHO-CA · PRA-TO · LI-VRO · ZE-BRA · PEI-XE · QUEI-JO · CAR-RO · ES-CO-LA · SOR-VE-TE · BOR-BO-LE-TA · TAR-TA-RU-GA
+- **Nível 3**: CHU-VA · GA-LI-NHA · CO-E-LHO · A-BE-LHA · MI-NHO-CA · PRA-TO · LI-VRO · ZE-BRA · PEI-XE · QUEI-JO · CAR-RO · ES-CO-LA · SOR-VE-TE · BOR-BO-LE-TA · TAR-TA-RU-GA · CO-BRA · CA-BRA · BRA-ÇO · BRU-XA · BRO-CO-LIS · BRI-GA-DEI-RO · O-VE-LHA · CO-LHER · A-GU-LHA · FO-LHA · MI-LHO · ES-PE-LHO · A-RA-NHA · LE-NHA · MON-TA-NHA · NI-NHO · SO-NHO · ES-PI-NHO · BI-LHE-TE · FA-RI-NHA
 
 ## Código (⚠ acima de 200 linhas · ✖ acima de 300)
 

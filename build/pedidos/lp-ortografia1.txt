@@ -1,0 +1,30 @@
+troca | O [carro] do papai é azul. | titulo=R ou RR | bncc=EF03LP01 | nivel=1 | erradas=caro/carrro
+troca | A [terra] está molhada de chuva. | titulo=R ou RR | bncc=EF03LP01 | nivel=1 | erradas=tera/terrra
+troca | O [rato] comeu o queijo. | titulo=R ou RR | bncc=EF03LP01 | nivel=1 | erradas=rrato/ratto
+troca | Eu ganhei uma [barata] de brinquedo. | titulo=R ou RR | bncc=EF03LP01 | nivel=1 | erradas=barrata/baratta
+troca | A [garrafa] está cheia de água. | titulo=R ou RR | bncc=EF03LP01 | nivel=2 | erradas=garafa/garrrafa
+troca | O [cachorro] late no quintal. | titulo=R ou RR | bncc=EF03LP01 | nivel=1 | erradas=cachoro/cachorrro
+troca | O [macarrão] estava gostoso. | titulo=R ou RR | bncc=EF03LP01 | nivel=2 | erradas=macarão/macarrrão
+troca | Minha [amiga] mora perto de casa. | titulo=S ou SS | bncc=EF03LP01 | nivel=1 | erradas=amija/amigua
+troca | Vou [passear] no parque hoje. | titulo=S ou SS | bncc=EF03LP01 | nivel=1 | erradas=pasear/paçear
+troca | O [osso] é do cachorro. | titulo=S ou SS | bncc=EF03LP01 | nivel=1 | erradas=oso/oço
+troca | Mamãe fez um [suco] de laranja. | titulo=S ou SS | bncc=EF03LP01 | nivel=1 | erradas=susso/zuco
+troca | A [vassoura] está atrás da porta. | titulo=S ou SS | bncc=EF03LP01 | nivel=2 | erradas=vasoura/vaçoura
+troca | Vovó faz um [pássaro] de papel. | titulo=S ou SS | bncc=EF03LP01 | nivel=2 | erradas=pásaro/páçaro
+troca | Eu comi um [bombom] de chocolate. | titulo=M ou N | bncc=EF02LP05 | nivel=1 | erradas=bonbom/bonbon
+troca | A [lâmpada] ficou acesa a noite toda. | titulo=M ou N | bncc=EF02LP05 | nivel=1 | erradas=lânpada/lâmpda
+troca | Que [campo] bonito! | titulo=M ou N | bncc=EF02LP05 | nivel=1 | erradas=canpo/canmpo
+troca | Ele tocou [bumbo] na festa. | titulo=M ou N | bncc=EF02LP05 | nivel=1 | erradas=bunbo/bunmbo
+troca | O [sinal] ficou verde. | titulo=M ou N | bncc=EF02LP05 | nivel=1 | erradas=simal/sinau
+troca | Ela [sempre] chega cedo. | titulo=M ou N | bncc=EF02LP05 | nivel=2 | erradas=senpre/semppre
+troca | O [chapéu] caiu no chão. | titulo=X ou CH | bncc=EF35LP13 | nivel=1 | erradas=xapéu/chapel
+troca | A [chave] está na gaveta. | titulo=X ou CH | bncc=EF35LP13 | nivel=1 | erradas=xave/chavi
+troca | O [peixe] nadou no rio. | titulo=X ou CH | bncc=EF35LP13 | nivel=1 | erradas=peiche/peixi
+troca | A [caixa] está cheia de brinquedos. | titulo=X ou CH | bncc=EF35LP13 | nivel=1 | erradas=caicha/caiza
+troca | Eu bebo [xarope] quando estou gripada. | titulo=X ou CH | bncc=EF35LP13 | nivel=2 | erradas=charope/xarrope
+troca | Mamãe tomou um [café] quentinho. | titulo=Acento | bncc=EF03LP04 | nivel=1 | erradas=cafe/cafê
+troca | Eu sentei no [sofá] da sala. | titulo=Acento | bncc=EF03LP04 | nivel=1 | erradas=sofa/sofâ
+troca | A [maçã] caiu da árvore. | titulo=Acento | bncc=EF03LP04 | nivel=1 | erradas=maca/maçá
+troca | O [avô] contou uma história. | titulo=Acento | bncc=EF03LP04 | nivel=1 | erradas=avo/avó
+troca | Ele chutou a bola com o [pé]. | titulo=Acento | bncc=EF03LP04 | nivel=1 | erradas=pe/pê
+troca | O [coração] bate forte. | titulo=Acento | bncc=EF03LP04 | nivel=2 | erradas=coracao/coraçao
