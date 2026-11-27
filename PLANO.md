@@ -12,7 +12,7 @@ Regra: ao concluir um item, movê-lo para `HISTORICO.md` (com a data) e tirá-lo
 ### Fase 5 — Ajustes pelo uso real (contínua)
 - O dono observa a criança usando e anota em `NOTAS.md`; ajustes em tarefas pequenas.
 
-### Expansão do app — planejar DEPOIS de terminar os desenhos de colorir (decisão 25/11)
+### Expansão do app — próxima tarefa (desenhos de colorir prontos em 27/11) (decisão 25/11)
 Rascunho de 24/11 (ainda não aprovado; rever com o dono antes de começar):
 - **Fase 10 — Equilibrar o que existe** (Sonnet): mais nível 1 e ortografia em LP (R/RR, S/SS, M/N, X/CH, acento); sílabas complexas BR/LH/NH (EF02LP03, hoje 0); multiplicação simples. Tudo pelos motores.
 - **Fase 11 — Matemática que falta** (Opus planeja, Sonnet faz): brincadeiras Relógio (EF02MA18/19), Régua/medidas (EF02MA16/17), Formas (EF02MA14/15), Gráfico de barras (EF02MA22/23) + questões no banco.

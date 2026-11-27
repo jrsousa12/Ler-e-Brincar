@@ -121,3 +121,4 @@ Regra: ao concluir um item do `PLANO.md`, movê-lo para cá (seção "Concluído
 - 27/11/2026 — Colorir: 08 Carro, 09 Bola, 11 Peixe e 12 Nuvem com sol refeitos pela imagem do Gemini (grade 2×2 recortada); sw v85.
 - 27/11/2026 — Colorir: novos 72 Lua e estrela, 73 Sorvete, 74 Balão de ar quente, 75 Bolo de aniversário e 76 Estrela-do-mar pela imagem do Gemini (grade 2×2 recortada). Total de 76 desenhos; sw v87.
 - 27/11/2026 — Colorir: 14 Estrelas, 16 Joaninha, 17 Sapo, 18 Sol e nuvem e 20 Arco-íris refeitos pela imagem do Gemini; sw v86.
+- 27/11/2026 — Colorir concluído: todos os 74 desenhos agora vêm da imagem do Gemini. Os repetidos 72 a 76 (mesmos temas de 21 a 25) saíram e as imagens ocuparam 21 a 25; novos 72 Girafa, 73 Trator e 74 Melancia. Motor `build/apagar-item.js` (apaga item inteiro pelo id). sw v88.
