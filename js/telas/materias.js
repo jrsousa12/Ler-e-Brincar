@@ -4,7 +4,8 @@
 LB.materiaDe = {
   silabas: 'portugues', memoria: 'portugues', 'som-figura': 'portugues', ordem: 'portugues',
   mercado: 'matematica', trem: 'matematica', pacote: 'matematica',
-  relogio: 'matematica'
+  relogio: 'matematica',
+  regua: 'matematica'
 };
 
 // Telas de cada aba do menu de baixo (para acender a aba certa)

@@ -46,6 +46,9 @@ LB.moldes.materias = `
         <button type="button" class="bloco-brincadeira mercado" @click="abrirRelogio">
           <span class="bloco-emoji" aria-hidden="true">🕐</span>Que horas são?<span v-if="concluidos['relogio']" class="selo-feito">✓</span>
         </button>
+        <button type="button" class="bloco-brincadeira mercado" @click="abrirRegua">
+          <span class="bloco-emoji" aria-hidden="true">📏</span>Régua<span v-if="concluidos['regua']" class="selo-feito">✓</span>
+        </button>
       </div>
     </div>
 

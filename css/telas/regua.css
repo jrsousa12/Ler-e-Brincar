@@ -1,0 +1,12 @@
+/* Brincadeira "Régua" (js/moldes/regua.js). Cores de base.css. */
+.enunciado-regua{text-align:center;font-size:1.7rem;font-weight:800;margin:10px 0 14px;color:var(--cor-texto)}
+.desenho-regua{max-width:560px;margin:0 auto 16px}
+.opcoes-regua{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.opcoes-regua .bloco-silaba{min-width:104px;font-size:1.6rem}
+.regua-svg{display:block;width:100%;height:auto}
+.reg-objeto{stroke:#5d4037;stroke-width:1.5}
+.reg-nome{fill:#3e2723;font-size:12px;font-weight:800}
+.reg-guia{stroke:var(--cor-texto);stroke-width:1.5;stroke-dasharray:4 3}
+.reg-regua{fill:var(--cor-card);stroke:var(--cor-borda-forte);stroke-width:2.5}
+.reg-risco{stroke:var(--cor-texto);stroke-width:2}
+.reg-num{fill:var(--cor-texto);font-size:11px;font-weight:800}

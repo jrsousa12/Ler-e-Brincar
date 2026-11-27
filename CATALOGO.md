@@ -174,8 +174,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 
 | Arquivo | Linhas | O que faz |
 |---|---|---|
-| `sw.js` | 59 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 140 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `sw.js` | 60 | Guarda o app no aparelho para funcionar sem internet. |
+| `js/app.js` | 141 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/avisoerro.js` | 40 | Aviso amigável quando o app dá erro: em vez de tela parada, mostra "Recomeçar" (o progresso fica guardado no aparelho). |
 | `js/backup.js` | 45 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 49 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
@@ -191,6 +191,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/pacoteregras.js` | 93 | Regras da brincadeira "Pacotes de contas": monta pacotes com as questões do banco (conteudo/mat.js). |
 | `js/pergunta.js` | 45 | Regra de responder (histórias e atividades): acertou → festa; errou → incentivo e nova |
 | `js/registrar-sw.js` | 23 | Liga o modo sem internet (só em https ou localhost; em arquivo aberto direto, ignora). |
+| `js/reguadesenho.js` | 21 | Desenho da régua com objetos (SVG feito pelo código, sem imagem): LB.reguaDesenho(objetos, regua, guias). |
+| `js/reguaregras.js` | 65 | Regras da brincadeira "Régua": sorteia os desafios e calcula o certo. Sem tela: só contas (testadas em testes/t_regua.js). |
 | `js/relogiodesenho.js` | 23 | Desenho do relógio de ponteiros (SVG feito pelo código, sem imagem): LB.relogioDesenho(h, m, tamanho). |
 | `js/relogioregras.js` | 73 | Regras da brincadeira "Que horas são?": sorteia os desafios e calcula o certo. Sem tela: só contas (testadas em testes/t_relogio.js). |
 | `js/respostas.js` | 22 | Regra única de "resposta certa", usada pelo app e pelo validador (build/validar.js). |
@@ -208,11 +210,12 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/colorir.js` | 35 | Telas "Colorir" (lista) e "Colorir item" (pintar o desenho tocando nas partes). |
 | `js/telas/confirmar.js` | 22 | Caixa de confirmação própria (no lugar do confirm do navegador). |
 | `js/telas/historias.js` | 89 | Telas "Ler" e "História": leitura e as perguntas de cada história. |
-| `js/telas/materias.js` | 30 | Mapa do app por matéria (Etapa B, 27/11): telas "Português", "Matemática" e "Prêmios". |
+| `js/telas/materias.js` | 31 | Mapa do app por matéria (Etapa B, 27/11): telas "Português", "Matemática" e "Prêmios". |
 | `js/telas/memoria.js` | 58 | Brincadeira "Memória": achar os pares figura + palavra escrita (palavras de conteudo/silabas.js). |
 | `js/telas/mercado.js` | 65 | Brincadeira "Mercadinho": pagar o preço com moedas e notas, ou calcular o troco (regras em js/mercadoregras.js). |
 | `js/telas/ordem.js` | 27 | Brincadeira "Ordem dos Fatos" (regras em js/ordemregras.js; vai e vem da rodada no kit js/rodada.js). |
 | `js/telas/pacote.js` | 26 | Brincadeira "Pacotes de contas" (regras em js/pacoteregras.js; vai e vem da rodada no kit js/rodada.js). |
+| `js/telas/regua.js` | 14 | Brincadeira "Régua" (regras em js/reguaregras.js, desenho em js/reguadesenho.js; vai e vem da rodada no kit js/rodada.js). |
 | `js/telas/relogio.js` | 14 | Brincadeira "Que horas são?" (regras em js/relogioregras.js, desenho em js/relogiodesenho.js; vai e vem da rodada no kit js/rodada.js). |
 | `js/telas/responsavel.js` | 79 | Área do responsável: progresso, onde errou mais (por habilidade da BNCC) e impressão. |
 | `js/telas/selonovo.js` | 41 | Selo novo: quando um selo é ganho, mostra uma janela de festa (molde js/moldes/selonovo.js). |
@@ -230,7 +233,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/confirmar.js` | 14 | Molde (HTML do Vue): caixa de confirmação própria (js/telas/confirmar.js). |
 | `js/moldes/historias.js` | 45 | Molde (HTML do Vue): Telas "Ler" (lista) e "História" (leitura e perguntas). |
 | `js/moldes/inicio.js` | 24 | Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 3 botões grandes (Português, Matemática, Prêmios). |
-| `js/moldes/materias.js` | 65 | Molde (HTML do Vue): telas "Português", "Matemática" e "Prêmios" (comportamento em js/telas/materias.js). |
+| `js/moldes/materias.js` | 68 | Molde (HTML do Vue): telas "Português", "Matemática" e "Prêmios" (comportamento em js/telas/materias.js). |
 | `js/moldes/memoria.js` | 26 | Molde (HTML do Vue): Brincadeira "Memória" (par figura + palavra). |
 | `js/moldes/mercado.js` | 54 | Molde (HTML do Vue): Brincadeira "Mercadinho" (pagar certinho e calcular o troco). |
 | `js/moldes/missao.js` | 25 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
@@ -238,6 +241,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/ordem.js` | 41 | Molde (HTML do Vue): Brincadeira "Ordem dos Fatos" (comportamento em js/telas/ordem.js). |
 | `js/moldes/pacote.js` | 33 | Molde (HTML do Vue): Brincadeira "Pacotes de contas". Criado por build/nova-brincadeira.js. |
 | `js/moldes/portao.js` | 16 | Molde (HTML do Vue): Trava dos adultos — uma conta de multiplicar. |
+| `js/moldes/regua.js` | 29 | Molde (HTML do Vue): Brincadeira "Régua". Criado por build/nova-brincadeira.js. |
 | `js/moldes/relogio.js` | 38 | Molde (HTML do Vue): Brincadeira "Que horas são?" (ponteiros, digital e quanto tempo passou). |
 | `js/moldes/responsavel.js` | 74 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
 | `js/moldes/selonovo.js` | 16 | Molde (HTML do Vue): janela de festa do selo novo (js/telas/selonovo.js). |
@@ -327,6 +331,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_ordem.js` | 68 | Teste guardado: brincadeira "Ordem dos Fatos" (js/ordemregras.js = contas; js/telas/ordem.js = tela). |
 | `testes/t_pacote.js` | 101 | Teste guardado: brincadeira "Pacotes de contas" (js/pacoteregras.js = escolhas; js/telas/pacote.js = tela). |
 | `testes/t_pedir.js` | 86 | Teste guardado: motor de pedidos para outra IA (build/pedir.js + build/pedir-dados.js). Uso: node testes/t_pedir.js |
+| `testes/t_regua.js` | 74 | Teste guardado: brincadeira "Régua" (js/reguaregras.js = contas; js/telas/regua.js = tela). |
 | `testes/t_relogio.js` | 74 | Teste guardado: brincadeira "Que horas são?" (js/relogioregras.js = contas; js/telas/relogio.js = tela). |
 | `testes/t_rodada.js` | 89 | Teste guardado: kit de rodada (js/rodada.js), sem navegador. Uso: node testes/t_rodada.js |
 | `testes/t_rolagem.js` | 80 | Teste guardado: rolagem automática até a resposta (js/rolagem.js), voltar do aparelho (js/voltar.js) |

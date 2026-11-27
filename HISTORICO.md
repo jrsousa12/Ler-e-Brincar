@@ -128,3 +128,4 @@ Regra: ao concluir um item do `PLANO.md`, movê-lo para cá (seção "Concluído
 - 27/11/2026 — Etapa D (Fase 10, conteúdo): +20 palavras de sílabas complexas BR/LH/NH (sil-041 a sil-060), +30 questões de ortografia em LP (R/RR, S/SS, M/N, X/CH, acento; lp-424 a lp-453, nível 1 e 2), +23 contas de multiplicação simples (mat-276 a mat-298). Tudo pelos motores `gerar-silabas`, `gerar-lp`, `gerar-mat`; `tudo.js --rapido` OK.
 
 - 27/11/2026 — Fase 11.1: brincadeira Que horas são? (Matemática, EF02MA19): hora cheia, meia hora, ponteiros ↔ digital e quanto tempo passou; relógio desenhado pelo código (`js/relogiodesenho.js`), rodada de 5, teste `t_relogio`; sw v93.
+- 27/11/2026 — Fase 11.2: brincadeira Régua (Matemática, EF02MA16): medir objeto no zero (até 8 e até 15 cm), objeto fora do zero (fim − começo) e qual é o mais comprido; régua desenhada pelo código (`js/reguadesenho.js`), rodada de 5, teste `t_regua`; sw v94.

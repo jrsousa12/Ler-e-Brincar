@@ -23,7 +23,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   // Cada tela da matéria: botões na ordem combinada
   const esperado = {
     portugues: ['Histórias', 'Questões', 'Monte a Palavra', 'Memória', 'Som e Figura', 'Ordem dos Fatos'],
-    matematica: ['Contas', 'Mercadinho', 'Trem dos números', 'Pacotes de contas', 'Que horas são?'],
+    matematica: ['Contas', 'Mercadinho', 'Trem dos números', 'Pacotes de contas', 'Que horas são?', 'Régua'],
     premios: ['Meus selos', 'Colorir']
   };
   for (const [t, nomes] of Object.entries(esperado)) {
