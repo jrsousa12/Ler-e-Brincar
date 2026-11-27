@@ -126,3 +126,5 @@ Regra: ao concluir um item do `PLANO.md`, movê-lo para cá (seção "Concluído
 - 27/11/2026 — Colorir: 14 Estrelas, 16 Joaninha, 17 Sapo, 18 Sol e nuvem e 20 Arco-íris refeitos pela imagem do Gemini; sw v86.
 - 27/11/2026 — Colorir concluído: todos os 74 desenhos agora vêm da imagem do Gemini. Os repetidos 72 a 76 (mesmos temas de 21 a 25) saíram e as imagens ocuparam 21 a 25; novos 72 Girafa, 73 Trator e 74 Melancia. Motor `build/apagar-item.js` (apaga item inteiro pelo id). sw v88.
 - 27/11/2026 — Etapa D (Fase 10, conteúdo): +20 palavras de sílabas complexas BR/LH/NH (sil-041 a sil-060), +30 questões de ortografia em LP (R/RR, S/SS, M/N, X/CH, acento; lp-424 a lp-453, nível 1 e 2), +23 contas de multiplicação simples (mat-276 a mat-298). Tudo pelos motores `gerar-silabas`, `gerar-lp`, `gerar-mat`; `tudo.js --rapido` OK.
+
+- 27/11/2026 — Fase 11.1: brincadeira Que horas são? (Matemática, EF02MA19): hora cheia, meia hora, ponteiros ↔ digital e quanto tempo passou; relógio desenhado pelo código (`js/relogiodesenho.js`), rodada de 5, teste `t_relogio`; sw v93.

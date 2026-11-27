@@ -17,7 +17,6 @@ Decisões: menu **por matéria**; estilo **o atual, mais caprichado**; expansão
 
 ### Fase 11 — Matemática que falta — plano aprovado pelo dono em 27/11 (Sonnet faz, uma etapa por conversa)
 Decisões: brincadeiras com desafios sorteados pelo código (não pelo banco); desenhos feitos pelo app (sem imagem); rodada de 5 do fácil ao difícil, no jeito do Trem; cada uma criada com `build/nova-brincadeira.js`; conta certa sempre calculada e com teste guardado; arquivos abaixo de 200 linhas (desenho grande vira peça à parte).
-- **11.1 Relógio 🕐** (EF02MA19): n1 hora cheia; n2 meia hora; n3 ponteiros ↔ digital; n4 quanto tempo passou (horas inteiras). Erradas: trocou os ponteiros, uma hora a mais/menos. Só até meia hora (minutos de 5 em 5 ficam para depois do uso real).
 - **11.2 Régua 📏** (EF02MA16): objeto sobre a régua em cm ("quantos centímetros?"); nível alto com o objeto fora do zero; comparar qual é mais comprido.
 - **11.3 Formas 🔺** (EF02MA15): círculo, quadrado, retângulo, triângulo em tamanhos e posições diferentes (girados); "toque no triângulo", "quantos lados?".
 - **11.4 Gráfico de barras 📊** (EF02MA22): gráfico com figuras; 3 perguntas por gráfico (qual tem mais, quantos, quanto a mais). Só ler (montar as barras, EF02MA23, fica para depois).

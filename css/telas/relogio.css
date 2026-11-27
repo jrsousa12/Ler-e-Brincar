@@ -1,0 +1,14 @@
+/* Brincadeira "Que horas são?" (js/moldes/relogio.js). Cores de base.css. */
+.enunciado-relogio{text-align:center;font-size:1.7rem;font-weight:800;margin:10px 0 14px;color:var(--cor-texto)}
+.relogios-relogio{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.relogio-grande{margin:0;text-align:center;font-weight:800;font-size:1.2rem}
+.relogio-grande figcaption{margin-top:4px}
+.opcoes-relogio{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.opcoes-relogio .bloco-silaba{min-width:104px;font-size:1.8rem}
+.opcoes-relogio.com-relogios .bloco-silaba{padding:6px;min-width:0}
+.relogio-svg{display:block;max-width:100%;height:auto}
+.rel-face{fill:var(--cor-card);stroke:var(--cor-borda-forte);stroke-width:4}
+.rel-num{fill:var(--cor-texto);font-size:11px;font-weight:800}
+.rel-hora{stroke:var(--cor-acento);stroke-width:6;stroke-linecap:round}
+.rel-minuto{stroke:var(--cor-primaria);stroke-width:3.5;stroke-linecap:round}
+.rel-centro{fill:var(--cor-texto)}

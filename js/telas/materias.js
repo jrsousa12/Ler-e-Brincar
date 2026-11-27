@@ -3,7 +3,8 @@
 // Teste: testes/t_materias.js
 LB.materiaDe = {
   silabas: 'portugues', memoria: 'portugues', 'som-figura': 'portugues', ordem: 'portugues',
-  mercado: 'matematica', trem: 'matematica', pacote: 'matematica'
+  mercado: 'matematica', trem: 'matematica', pacote: 'matematica',
+  relogio: 'matematica'
 };
 
 // Telas de cada aba do menu de baixo (para acender a aba certa)
