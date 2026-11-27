@@ -1,0 +1,18 @@
+/* Brincadeira "Gráfico de barras" (js/moldes/grafico.js e js/graficodesenho.js). Cores de base.css. */
+.enunciado-grafico{text-align:center;font-size:1.7rem;font-weight:800;margin:10px 0 12px;color:var(--cor-texto)}
+.opcoes-grafico{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.opcoes-grafico .bloco-silaba{min-width:84px;font-size:1.7rem}
+.gr-grafico{max-width:420px;margin:0 auto 16px;padding:10px 12px 8px;border:3px solid var(--cor-texto);border-radius:16px;background:var(--cor-cartao,#fff)}
+.gr-titulo{text-align:center;font-weight:800;font-size:1.15rem;margin:0 0 8px;color:var(--cor-texto)}
+.gr-corpo{display:flex;gap:6px;align-items:flex-start}
+.gr-regua{display:flex;flex-direction:column;font-size:.8rem;font-weight:700;color:var(--cor-texto)}
+.gr-num{height:var(--gr-celula,28px);line-height:var(--gr-celula,28px);text-align:right;min-width:1.1em}
+.gr-lado{flex:1}
+.gr-barras{height:calc(var(--gr-linhas) * var(--gr-celula));display:flex;justify-content:space-around;align-items:flex-end;border-left:3px solid var(--cor-texto);border-bottom:3px solid var(--cor-texto);padding:0 6px;
+  background:repeating-linear-gradient(to top,transparent 0,transparent calc(var(--gr-celula,28px) - 1px),rgba(0,0,0,.12) calc(var(--gr-celula,28px) - 1px),rgba(0,0,0,.12) var(--gr-celula,28px))}
+.gr-grafico{--gr-celula:28px}
+.gr-coluna{display:flex;flex-direction:column;justify-content:flex-end;width:30%}
+.gr-barra{display:flex;flex-direction:column-reverse;width:100%;background:var(--cor-barra);border:2px solid var(--cor-texto);border-bottom:0;border-radius:8px 8px 0 0}
+.gr-figura{height:var(--gr-celula);line-height:var(--gr-celula);text-align:center;font-size:1.1rem}
+.gr-rotulos{display:flex;justify-content:space-around;padding:0 6px}
+.gr-rotulo{width:30%;text-align:center;font-size:1.7rem;margin-top:4px}

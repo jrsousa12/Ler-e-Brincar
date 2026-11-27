@@ -52,6 +52,9 @@ LB.moldes.materias = `
         <button type="button" class="bloco-brincadeira mercado" @click="abrirFormas">
           <span class="bloco-emoji" aria-hidden="true">🔺</span>Formas<span v-if="concluidos['formas']" class="selo-feito">✓</span>
         </button>
+        <button type="button" class="bloco-brincadeira mercado" @click="abrirGrafico">
+          <span class="bloco-emoji" aria-hidden="true">📊</span>Gráfico de barras<span v-if="concluidos['grafico']" class="selo-feito">✓</span>
+        </button>
       </div>
     </div>
 

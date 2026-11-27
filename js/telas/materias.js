@@ -6,7 +6,8 @@ LB.materiaDe = {
   mercado: 'matematica', trem: 'matematica', pacote: 'matematica',
   relogio: 'matematica',
   regua: 'matematica',
-  formas: 'matematica'
+  formas: 'matematica',
+  grafico: 'matematica'
 };
 
 // Telas de cada aba do menu de baixo (para acender a aba certa)

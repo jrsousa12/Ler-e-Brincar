@@ -174,8 +174,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 
 | Arquivo | Linhas | O que faz |
 |---|---|---|
-| `sw.js` | 61 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 142 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `sw.js` | 62 | Guarda o app no aparelho para funcionar sem internet. |
+| `js/app.js` | 143 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/avisoerro.js` | 40 | Aviso amigável quando o app dá erro: em vez de tela parada, mostra "Recomeçar" (o progresso fica guardado no aparelho). |
 | `js/backup.js` | 45 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 49 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
@@ -184,6 +184,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/festa.js` | 95 | Festa do acerto (confete + som) e incentivo no erro. Som feito pelo próprio app, sem arquivos. |
 | `js/formasdesenho.js` | 14 | Desenho de uma forma (SVG feito pelo código, sem imagem): LB.formasDesenho({ forma, cor, tam, giro }). |
 | `js/formasregras.js` | 66 | Regras da brincadeira "Formas": sorteia os desafios e calcula o certo. Sem tela: só contas (testadas em testes/t_formas.js). |
+| `js/graficodesenho.js` | 15 | Desenho do gráfico de barras (HTML feito pelo código, sem imagem): LB.graficoDesenho({ titulo, barras: [{ e, nome, valor, cor }] }). |
+| `js/graficoregras.js` | 79 | Regras da brincadeira "Gráfico de barras" (EF02MA22): monta gráficos de figuras e calcula o certo. Sem tela: só contas (testadas em testes/t_grafico.js). |
 | `js/impressao.js` | 36 | Monta folhas para imprimir (desenho ou lista de atividades) em #print-container. |
 | `js/mascote.js` | 57 | Mascote (Fase 7 etapa 3): capivara desenhada pelo próprio app, em 3 humores. |
 | `js/mercadoregras.js` | 90 | Regras do "Mercadinho": sorteia a compra e calcula o certo. Sem tela: só contas (testadas em testes/t_mercado.js). |
@@ -212,8 +214,9 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/colorir.js` | 35 | Telas "Colorir" (lista) e "Colorir item" (pintar o desenho tocando nas partes). |
 | `js/telas/confirmar.js` | 22 | Caixa de confirmação própria (no lugar do confirm do navegador). |
 | `js/telas/formas.js` | 14 | Brincadeira "Formas" (regras em js/formasregras.js, desenho em js/formasdesenho.js; vai e vem da rodada no kit js/rodada.js). |
+| `js/telas/grafico.js` | 14 | Brincadeira "Gráfico de barras" (regras em js/graficoregras.js, desenho em js/graficodesenho.js; vai e vem da rodada no kit js/rodada.js). |
 | `js/telas/historias.js` | 89 | Telas "Ler" e "História": leitura e as perguntas de cada história. |
-| `js/telas/materias.js` | 32 | Mapa do app por matéria (Etapa B, 27/11): telas "Português", "Matemática" e "Prêmios". |
+| `js/telas/materias.js` | 33 | Mapa do app por matéria (Etapa B, 27/11): telas "Português", "Matemática" e "Prêmios". |
 | `js/telas/memoria.js` | 58 | Brincadeira "Memória": achar os pares figura + palavra escrita (palavras de conteudo/silabas.js). |
 | `js/telas/mercado.js` | 65 | Brincadeira "Mercadinho": pagar o preço com moedas e notas, ou calcular o troco (regras em js/mercadoregras.js). |
 | `js/telas/ordem.js` | 27 | Brincadeira "Ordem dos Fatos" (regras em js/ordemregras.js; vai e vem da rodada no kit js/rodada.js). |
@@ -235,9 +238,10 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/colorir.js` | 38 | Molde (HTML do Vue): Telas "Colorir" (lista) e desenho para pintar. |
 | `js/moldes/confirmar.js` | 14 | Molde (HTML do Vue): caixa de confirmação própria (js/telas/confirmar.js). |
 | `js/moldes/formas.js` | 32 | Molde (HTML do Vue): Brincadeira "Formas". Criado por build/nova-brincadeira.js. |
+| `js/moldes/grafico.js` | 29 | Molde (HTML do Vue): Brincadeira "Gráfico de barras". Criado por build/nova-brincadeira.js. |
 | `js/moldes/historias.js` | 45 | Molde (HTML do Vue): Telas "Ler" (lista) e "História" (leitura e perguntas). |
 | `js/moldes/inicio.js` | 24 | Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 3 botões grandes (Português, Matemática, Prêmios). |
-| `js/moldes/materias.js` | 71 | Molde (HTML do Vue): telas "Português", "Matemática" e "Prêmios" (comportamento em js/telas/materias.js). |
+| `js/moldes/materias.js` | 74 | Molde (HTML do Vue): telas "Português", "Matemática" e "Prêmios" (comportamento em js/telas/materias.js). |
 | `js/moldes/memoria.js` | 26 | Molde (HTML do Vue): Brincadeira "Memória" (par figura + palavra). |
 | `js/moldes/mercado.js` | 54 | Molde (HTML do Vue): Brincadeira "Mercadinho" (pagar certinho e calcular o troco). |
 | `js/moldes/missao.js` | 25 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
@@ -326,6 +330,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_gerar_mat.js` | 59 | Teste guardado: gerador de Matemática (build/gerar-mat.js). Uso: node testes/t_gerar_mat.js |
 | `testes/t_gerar_ordem.js` | 32 | Teste guardado: gerador da Ordem dos Fatos (build/gerar-ordem.js). Uso: node testes/t_gerar_ordem.js |
 | `testes/t_gerar_silabas.js` | 47 | Teste guardado: gerador da brincadeira "Monte a Palavra" (build/gerar-silabas.js). Uso: node testes/t_gerar_silabas.js |
+| `testes/t_grafico.js` | 82 | Teste guardado: brincadeira "Gráfico de barras" (js/graficoregras.js = contas; js/telas/grafico.js = tela). |
 | `testes/t_importar_mat.js` | 69 | Teste guardado: importador de Matemática (build/importar-mat.js). Uso: node testes/t_importar_mat.js |
 | `testes/t_item.js` | 62 | Teste guardado: motor de item único (build/item.js). Uso: node testes/t_item.js |
 | `testes/t_materias.js` | 72 | Teste guardado: mapa por matéria (Etapa B, 27/11): Início · Português · Matemática · Prêmios. |
