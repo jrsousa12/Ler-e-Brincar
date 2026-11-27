@@ -3,7 +3,7 @@ LB.moldes = LB.moldes || {};
 LB.moldes.historias = `
     <!-- LER (lista de histórias) -->
     <div v-if="tela === 'ler'">
-      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
+      <button class="btn-voltar" @click="irPara('portugues')">← Voltar</button>
       <h2>Histórias</h2>
       <div class="grade-cartoes">
         <div class="card" v-for="h in conteudo.stories" :key="h.id" @click="abrirHistoria(h)" tabindex="0">

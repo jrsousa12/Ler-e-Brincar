@@ -5,7 +5,8 @@
 // id: só letras minúsculas sem acento (vira o nome dos arquivos); matéria: mat ou lp (diz em que filtro aparece).
 // Cria: js/<id>regras.js (contas, com um EXEMPLO para trocar), js/telas/<id>.js (usa o kit js/rodada.js),
 //       js/moldes/<id>.js, css/telas/<id>.css, testes/t_<id>.js.
-// Liga: index.html, sw.js (lista + VERSAO), js/app.js, botão em js/moldes/atividades.js, build/fichas/etapas.json.
+// Liga: index.html, sw.js (lista + VERSAO), js/app.js, botão na tela da matéria (js/moldes/materias.js),
+//       LB.materiaDe (js/telas/materias.js), build/fichas/etapas.json.
 // Moldes dos arquivos: build/modelos/brincadeira.js. Teste do motor: testes/t_nova_brincadeira.js
 'use strict';
 const fs = require('fs');
@@ -29,7 +30,8 @@ function lerPedido(args) {
   if (!/^[a-z]{3,20}$/.test(id)) parar('o id deve ter só letras minúsculas sem acento (3 a 20), ex.: relogio');
   if (/['"`<>\\{}$]/.test(nome)) parar('o nome não pode ter aspas, < >, { } ou $');
   if (!['mat', 'lp'].includes(materia)) parar('a matéria deve ser mat ou lp');
-  return { id, nome, emoji, materia, Cap: id[0].toUpperCase() + id.slice(1) };
+  const tela = materia === 'mat' ? 'matematica' : 'portugues';   // tela da matéria (Voltar e Concluir)
+  return { id, nome, emoji, materia, tela, Cap: id[0].toUpperCase() + id.slice(1) };
 }
 
 // Arquivos novos: caminho → texto.
@@ -67,20 +69,21 @@ function ligacoes(b) {
   app = encaixar(app, 'js/app.js', '        ...LB.usarSomFigura(ctx),\n', `        ...LB.usarSomFigura(ctx),\n        ...LB.usar${b.Cap}(ctx),\n`);
   saida['js/app.js'] = app;
 
-  const filtro = b.materia === 'mat' ? "filtroMateria !== 'lingua-portuguesa'" : "filtroMateria !== 'matematica'";
   const cor = b.materia === 'mat' ? 'mercado' : 'ler';
-  const botao = `        <button v-if="${filtro}" type="button" class="bloco-brincadeira ${cor}" @click="abrir${b.Cap}">\n` +
+  const botao = `        <button type="button" class="bloco-brincadeira ${cor}" @click="abrir${b.Cap}">\n` +
     `          <span class="bloco-emoji" aria-hidden="true">${b.emoji}</span>${b.nome}<span v-if="concluidos['${b.id}']" class="selo-feito">✓</span>\n` +
     '        </button>\n';
-  const fimGrade = '      </div>\n      <h3 class="titulo-secao">Atividades</h3>';
-  saida['js/moldes/atividades.js'] = encaixar(ler('js/moldes/atividades.js'), 'js/moldes/atividades.js', fimGrade, botao + fimGrade);
+  const fimGrade = '      </div>\n    </div>\n\n    <!-- ' + (b.materia === 'mat' ? 'PRÊMIOS' : 'MATEMÁTICA') + ' -->';
+  saida['js/moldes/materias.js'] = encaixar(ler('js/moldes/materias.js'), 'js/moldes/materias.js', fimGrade, botao + fimGrade);
+  const fimMapa = "\n};\n\n// Telas de cada aba";
+  saida['js/telas/materias.js'] = encaixar(ler('js/telas/materias.js'), 'js/telas/materias.js', fimMapa, `,\n  ${b.id}: '${b.tela}'` + fimMapa);
 
   const etapas = JSON.parse(ler('build/fichas/etapas.json'));
   const t = 't_' + b.id;
   etapas.etapas[t] = `testes/${t}.js`;
   if (!etapas.navegador.includes(t)) etapas.navegador.push(t);
   [`js/${b.id}regras.js`, `js/telas/${b.id}.js`, `js/moldes/${b.id}.js`, `css/telas/${b.id}.css`, `testes/${t}.js`].forEach(f => { etapas.mapa[f] = [t]; });
-  ['js/moldes/atividades.js', 'js/rodada.js'].forEach(f => {
+  ['js/moldes/materias.js', 'js/telas/materias.js', 'js/rodada.js'].forEach(f => {
     if (etapas.mapa[f] && !etapas.mapa[f].includes(t)) etapas.mapa[f].push(t);
   });
   saida['build/fichas/etapas.json'] = JSON.stringify(etapas, null, 2) + '\n';

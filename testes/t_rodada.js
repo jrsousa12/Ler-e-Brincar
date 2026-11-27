@@ -16,6 +16,7 @@ vm.createContext(caixa);
 vm.runInContext(fs.readFileSync(path.join(raiz, 'vendor/vue.global.prod.js'), 'utf8') + ';this.Vue = Vue;', caixa);
 vm.runInContext(fs.readFileSync(path.join(raiz, 'js/rodada.js'), 'utf8'), caixa);
 const { ref } = caixa.Vue;
+caixa.LB.materiaDe = { teste: 'matematica' };   // onde fica a brincadeira (js/telas/materias.js)
 
 const ctx = { tela: ref('atividades'), estrelas: ref(0), ajustes: ref({ som: true }), concluidos: {}, falados: [], terminou: null };
 ctx.falarSozinho = t => ctx.falados.push(t);
@@ -68,7 +69,7 @@ ok(r.ultimo.value, 'último desafio reconhecido');
 r.seguir();
 ok(r.atual.value.nome === 'c', 'seguir no último não passa do fim');
 r.concluir();
-ok(ctx.concluidos.teste === true && ctx.terminou === 'atividades', 'concluir marca feito e volta');
+ok(ctx.concluidos.teste === true && ctx.terminou === 'matematica', 'concluir marca feito e volta para a matéria');
 
 const nomes = Object.keys(r.exportar('Teste'));
 ['abrirTeste', 'escolherTeste', 'seguirTeste', 'concluirTeste', 'perguntaTeste', 'estadoTeste', 'ultimoTeste', 'indiceTeste', 'listaTeste']

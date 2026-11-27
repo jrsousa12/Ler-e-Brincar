@@ -37,7 +37,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   ok(defeitos.length === 0, 'contas: ' + defeitos.join(' | '));
 
   // TELA: abre pela lista de brincadeiras
-  await p.click('.bloco-menu.brincar');
+  await p.click('.bloco-menu.brincar');   // Matemática
   await p.click('text=Trem dos números');
   ok(await p.locator('.brincadeira-trem').count() === 1, 'abre o Trem dos números');
   const voltar = await p.locator('section.brincadeira-trem .btn-voltar').boundingBox();
@@ -74,14 +74,15 @@ const { novaPagina, abrirApp } = require('./_navegador');
   await clicar(await certa()); await p.click('text=Próximo');
   await clicar(await certa());
   await p.click('text=Concluir');
-  ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos.trem === true), 'concluir volta e marca feito');
+  ok(await p.evaluate(() => LB.app.tela === 'matematica' && LB.app.concluidos.trem === true), 'concluir volta e marca feito');
   ok(await estrelas() === e0 + 5, 'rodada rende 5 estrelas: ' + (await estrelas() - e0));
 
   // Filtros da lista: só em Matemática/Todas
-  await p.click('.filtro >> text=Português');
-  ok(await p.locator('.bloco-brincadeira:has-text("Trem dos números")').count() === 0, 'Português esconde o Trem');
-  await p.click('.filtro >> text=Matemática');
-  ok(await p.locator('.bloco-brincadeira:has-text("Trem dos números")').count() === 1, 'Matemática mostra o Trem');
+  // Fica só na tela de Matemática (js/telas/materias.js)
+  await p.evaluate(() => LB.app.irPara('portugues'));
+  ok(await p.locator('.bloco-brincadeira:has-text("Trem dos números")').count() === 0, 'a outra matéria não mostra Trem dos números');
+  await p.evaluate(() => LB.app.irPara('matematica'));
+  ok(await p.locator('.bloco-brincadeira:has-text("Trem dos números")').count() === 1, 'a matéria certa mostra Trem dos números');
   ok(erros.length === 0, 'sem erros: ' + erros.join(' | '));
 
   await b.close();

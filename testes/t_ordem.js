@@ -28,7 +28,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   ok(defeitos.length === 0, 'contas: ' + defeitos.join(' | '));
 
   // TELA: abre pela lista de brincadeiras
-  await p.click('.bloco-menu.brincar');
+  await p.click('.bloco-menu.ler');   // Português
   await p.click('.bloco-brincadeira:has-text("Ordem dos Fatos")');
   ok(await p.locator('.brincadeira-ordem').count() === 1, 'abre a brincadeira');
   const estrelas = () => p.evaluate(() => LB.app.estrelas);
@@ -51,14 +51,15 @@ const { novaPagina, abrirApp } = require('./_navegador');
     await p.click('.btn-proximo:has-text("Continuar")'); await clicar(await certa());
   }
   await p.click('.btn-proximo:has-text("Concluir")');
-  ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos['ordem'] === true), 'concluir volta e marca feito');
+  ok(await p.evaluate(() => LB.app.tela === 'portugues' && LB.app.concluidos['ordem'] === true), 'concluir volta e marca feito');
   ok(await estrelas() === e0 + 5, 'rodada rende 5 estrelas: ' + (await estrelas() - e0));
 
   // Filtros da lista
-  await p.click('.filtro >> text=Matemática');
-  ok(await p.locator('.bloco-brincadeira:has-text("Ordem dos Fatos")').count() === 0, 'Matemática esconde a brincadeira');
-  await p.click('.filtro >> text=Português');
-  ok(await p.locator('.bloco-brincadeira:has-text("Ordem dos Fatos")').count() === 1, 'Português mostra a brincadeira');
+  // Fica só na tela de Português (js/telas/materias.js)
+  await p.evaluate(() => LB.app.irPara('matematica'));
+  ok(await p.locator('.bloco-brincadeira:has-text("Ordem dos Fatos")').count() === 0, 'a outra matéria não mostra Ordem dos Fatos');
+  await p.evaluate(() => LB.app.irPara('portugues'));
+  ok(await p.locator('.bloco-brincadeira:has-text("Ordem dos Fatos")').count() === 1, 'a matéria certa mostra Ordem dos Fatos');
   ok(erros.length === 0, 'sem erros: ' + erros.join(' | '));
 
   await b.close();

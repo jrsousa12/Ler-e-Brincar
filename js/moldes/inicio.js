@@ -1,4 +1,4 @@
-// Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 4 botões grandes.
+// Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 3 botões grandes (Português, Matemática, Prêmios).
 LB.moldes = LB.moldes || {};
 LB.moldes.inicio = `
     <div v-if="tela === 'home'" class="tela-inicio">
@@ -16,10 +16,9 @@ LB.moldes.inicio = `
         <div class="btn-primario btn-gigante" v-if="!missaoCompleta">{{ passosFeitos ? '▶ Continuar' : '▶ Começar' }}</div>
       </div>
       <div class="grade-menu">
-        <button class="bloco-menu ler" @click="irPara('ler')"><span>📖</span>Ler</button>
-        <button class="bloco-menu brincar" @click="irPara('atividades')"><span>🧮</span>Brincar</button>
-        <button class="bloco-menu colorir" @click="irPara('colorir')"><span>🎨</span>Colorir</button>
-        <button class="bloco-menu selos" @click="irPara('recompensas')"><span>🏆</span>Selos</button>
+        <button class="bloco-menu ler" @click="irPara('portugues')"><span>📝</span>Português</button>
+        <button class="bloco-menu brincar" @click="irPara('matematica')"><span>🧮</span>Matemática</button>
+        <button class="bloco-menu selos" @click="irPara('premios')"><span>🏆</span>Prêmios</button>
       </div>
     </div>
 `;

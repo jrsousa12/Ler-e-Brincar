@@ -2,7 +2,7 @@
 LB.moldes = LB.moldes || {};
 LB.moldes.memoria = `
     <section v-if="tela === 'memoria'" class="brincadeira-silabas" aria-label="Brincadeira da Memória">
-      <button class="btn-voltar" @click="voltar('atividades')">← Voltar</button>
+      <button class="btn-voltar" @click="voltar('portugues')">← Voltar</button>
 ${LB.moldes.abasPalavras}
       <div class="topo-jogo">
         <span class="badge-fase">Pares: {{ paresMemoria }} de {{ totalParesMemoria }}</span>

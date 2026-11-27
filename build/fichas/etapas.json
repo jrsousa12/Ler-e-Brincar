@@ -46,7 +46,8 @@
     "t_rolagem": "testes/t_rolagem.js",
     "t_ondeparou": "testes/t_ondeparou.js",
     "t_varrer": "testes/t_varrer.js",
-    "t_estilos": "testes/t_estilos.js"
+    "t_estilos": "testes/t_estilos.js",
+    "t_materias": "testes/t_materias.js"
   },
   "navegador": [
     "t_avisoerro",
@@ -62,7 +63,8 @@
     "t_ordem",
     "t_pacote",
     "t_rolagem",
-    "t_ondeparou"
+    "t_ondeparou",
+    "t_materias"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -336,7 +338,8 @@
       "t_nova_brincadeira",
       "t_ordem",
       "t_pedir",
-      "t_pacote"
+      "t_pacote",
+      "t_materias"
     ],
     "css/tema-creme.css": [
       "t_app"
@@ -618,6 +621,27 @@
     ],
     "build/capturas-telas.js": [
       "t_estilos"
+    ],
+    "js/moldes/materias.js": [
+      "t_materias",
+      "t_nova_brincadeira"
+    ],
+    "js/telas/materias.js": [
+      "t_materias",
+      "t_rodada",
+      "t_nova_brincadeira"
+    ],
+    "testes/t_materias.js": [
+      "t_materias"
+    ],
+    "js/moldes/navegacao.js": [
+      "t_materias"
+    ],
+    "js/moldes/inicio.js": [
+      "t_materias"
+    ],
+    "js/telas/atividades.js": [
+      "t_materias"
     ]
   }
 }

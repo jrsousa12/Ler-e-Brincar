@@ -2,7 +2,7 @@
 LB.moldes = LB.moldes || {};
 LB.moldes.pacote = `
     <section v-if="tela === 'pacote' && atualPacote" class="brincadeira-silabas brincadeira-pacote" aria-label="Brincadeira Pacotes de contas">
-      <button class="btn-voltar" @click="voltar('atividades')">← Voltar</button>
+      <button class="btn-voltar" @click="voltar('matematica')">← Voltar</button>
       <div class="topo-jogo">
         <span class="badge-fase">Pacote {{ indicePacote + 1 }} de {{ listaPacote.length }} · Pergunta {{ etapaPacote + 1 }} de {{ atualPacote.perguntas.length }}</span>
         <button type="button" class="btn-silaba-3d btn-ouvir-palavra" @click="ouvir(perguntaPacote.fala)">🔊 Ouvir</button>

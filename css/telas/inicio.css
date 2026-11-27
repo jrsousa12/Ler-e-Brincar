@@ -27,3 +27,6 @@
 .bloco-menu.colorir{background:linear-gradient(180deg,#FF7DB6,var(--cor-colorir));box-shadow:0 7px 0 var(--cor-colorir-3d)}
 .bloco-menu.selos{background:linear-gradient(180deg,#FFCB55,var(--cor-selos));box-shadow:0 7px 0 var(--cor-selos-3d)}
 .bloco-menu:active{transform:translateY(6px);box-shadow:0 1px 0 rgba(0,0,0,.25)}
+
+/* Etapa B (27/11): 3 botões (Português, Matemática, Prêmios); Prêmios ocupa a linha toda */
+.grade-menu .bloco-menu.selos{grid-column:1 / -1}

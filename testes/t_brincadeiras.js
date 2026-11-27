@@ -11,7 +11,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   const estrelas = () => p.evaluate(() => LB.app.estrelas);
 
   // MEMÓRIA
-  await p.click('.bloco-menu.brincar');
+  await p.click('.bloco-menu.ler');   // Português
   await p.click('text=Memória');
   ok(await p.locator('.carta-memoria').count() === 8, 'memória com 8 cartas');
   // Acabamento (etapa 2): "← Voltar" à esquerda, do tamanho do texto (não a largura toda)
@@ -33,7 +33,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   ok(await p.locator('.carta-memoria.achada').count() === 8, 'todos os pares achados');
   ok(await estrelas() === e0 + 4, 'ganha 1 estrela por par');
   await p.click('text=Concluir');
-  ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos.memoria === true), 'memória concluída volta e marca');
+  ok(await p.evaluate(() => LB.app.tela === 'portugues' && LB.app.concluidos.memoria === true), 'memória concluída volta e marca');
 
   // SOM E FIGURA
   await p.click('text=Som e Figura');
@@ -57,7 +57,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
     await p.click(k < rod - 1 ? 'text=Próxima' : 'text=Concluir');
   }
   ok(await estrelas() === e1 + rod, 'ganha 1 estrela por rodada');
-  ok(await p.evaluate(() => LB.app.tela === 'atividades' && LB.app.concluidos['som-figura'] === true), 'som e figura concluída volta e marca');
+  ok(await p.evaluate(() => LB.app.tela === 'portugues' && LB.app.concluidos['som-figura'] === true), 'som e figura concluída volta e marca');
   // LISTA DE ATIVIDADES em grade: mesmo título vira um cartão; tocar abre uma atividade ainda não feita
   const g = await p.evaluate(() => ({ n: LB.app.gruposAtividades.length, total: LB.app.atividadesFiltradas.length }));
   ok(g.n > 0 && g.n < g.total, 'atividades agrupadas por título (' + g.n + ' cartões)');
@@ -71,6 +71,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   }
   await p.click('.brincadeira-silabas .btn-voltar');
   ok(await p.locator('.abas-palavras').count() === 0, 'abas só nas 3 brincadeiras de palavras');
+  await p.click('.bloco-brincadeira:has-text("Questões")');   // lista de Questões de Português
   await p.locator('.cartao-atividade').first().click();
   ok(await p.evaluate(() => LB.app.tela === 'atividade' && !LB.app.concluidos[LB.app.atividadeAtual.id]), 'cartão abre atividade ainda não feita');
   ok(erros.length === 0, 'sem erros: ' + erros.join(' | '));

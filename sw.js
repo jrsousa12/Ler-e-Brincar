@@ -1,7 +1,7 @@
 // Guarda o app no aparelho para funcionar sem internet.
 // Ao mudar qualquer arquivo da lista, aumente VERSAO (o teste testes/t_offline.js confere a lista).
 'use strict';
-const VERSAO = 'lb-v89';
+const VERSAO = 'lb-v90';
 const ARQUIVOS = [
   './', 'index.html', 'manifest.json',
   'css/fontes.css', 'css/base.css', 'css/pecas/cabecalho.css', 'css/pecas/botoes.css', 'css/pecas/cartao.css', 'css/pecas/opcao.css', 'css/pecas/etiquetas.css', 'css/pecas/janelas.css', 'css/pecas/mascote.css', 'css/telas/inicio.css', 'css/telas/missao.css', 'css/telas/historias.css', 'css/telas/listas.css', 'css/telas/colorir.css', 'css/telas/selos.css', 'css/telas/responsavel.css', 'css/telas/silabas.css', 'css/telas/memoria.css', 'css/telas/somfigura.css', 'css/telas/mercado.css', 'css/telas/trem.css', 'css/telas/ordem.css', 'css/telas/pacote.css', 'css/tema-creme.css', 'css/escuro.css', 'css/impressao.css', 'css/tablet.css', 'css/movimento.css',
@@ -10,12 +10,12 @@ const ARQUIVOS = [
   'js/avisoerro.js', 'js/respostas.js', 'js/sorteio.js', 'js/banco.js', 'js/registrar-sw.js',
   'js/backup.js', 'js/voz.js', 'js/festa.js', 'js/tentativas.js', 'js/evolucao.js', 'js/impressao.js', 'js/caderno.js', 'js/pergunta.js', 'js/missao.js', 'js/mascote.js', 'js/rodada.js', 'js/rolagem.js', 'js/voltar.js', 'js/ondeparou.js',
   'js/telas/responsavel.js', 'js/moldes/missao.js', 'js/moldes/responsavel.js',
-  'js/telas/historias.js', 'js/telas/atividades.js', 'js/telas/colorir.js', 'js/telas/silabas.js', 'js/moldes/abas.js', 'js/moldes/silabas.js',
+  'js/telas/historias.js', 'js/telas/atividades.js', 'js/telas/materias.js', 'js/telas/colorir.js', 'js/telas/silabas.js', 'js/moldes/abas.js', 'js/moldes/silabas.js',
   'js/telas/memoria.js', 'js/telas/somfigura.js', 'js/moldes/memoria.js', 'js/moldes/somfigura.js', 'js/mercadoregras.js', 'js/telas/mercado.js', 'js/moldes/mercado.js', 'js/tremregras.js', 'js/telas/trem.js', 'js/moldes/trem.js',
   'js/ordemregras.js', 'js/telas/ordem.js', 'js/moldes/ordem.js',
   'js/pacoteregras.js', 'js/telas/pacote.js', 'js/moldes/pacote.js',
   'js/telas/selos.js', 'js/telas/selonovo.js', 'js/telas/ajustes.js', 'js/telas/confirmar.js', 'js/telas/backup.js', 'js/telas/aparelho.js', 'js/app.js',
-  'js/moldes/cabecalho.js', 'js/moldes/inicio.js', 'js/moldes/historias.js', 'js/moldes/atividades.js', 'js/moldes/colorir.js', 'js/moldes/selos.js', 'js/moldes/ajustes.js', 'js/moldes/portao.js',
+  'js/moldes/cabecalho.js', 'js/moldes/inicio.js', 'js/moldes/materias.js', 'js/moldes/historias.js', 'js/moldes/atividades.js', 'js/moldes/colorir.js', 'js/moldes/selos.js', 'js/moldes/ajustes.js', 'js/moldes/portao.js',
   'js/moldes/navegacao.js', 'js/moldes/confirmar.js', 'js/moldes/selonovo.js', 'js/moldes/backup.js', 'js/moldes/versao.js',
   'icones/icone-192.png', 'icones/icone-512.png', 'icones/icone-mascara-512.png'
 ];

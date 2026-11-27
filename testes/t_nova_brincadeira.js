@@ -46,7 +46,8 @@ try {
   ok(versao() === v0 + 1, 'VERSAO do sw.js subiu 1');
   ok(/'js\/telas\/relogio\.js'/.test(ler('sw.js')), 'sw.js guarda a tela nova');
   ok(ler('js/app.js').includes('m.relogio') && ler('js/app.js').includes('LB.usarRelogio(ctx)'), 'app.js liga molde e tela');
-  ok(/abrirRelogio[\s\S]*Que horas são\?/.test(ler('js/moldes/atividades.js')), 'botão na lista de brincadeiras');
+  ok(/abrirRelogio[\s\S]*Que horas são\?[\s\S]*PRÊMIOS/.test(ler('js/moldes/materias.js')), 'botão na tela Matemática');
+  ok(/relogio: 'matematica'/.test(ler('js/telas/materias.js')), 'LB.materiaDe sabe que fica em Matemática');
   const etapas = JSON.parse(ler('build/fichas/etapas.json'));
   ok(etapas.etapas.t_relogio && etapas.navegador.includes('t_relogio') && etapas.mapa['js/telas/relogio.js'], 'teste novo no mapa do tudo.js');
 

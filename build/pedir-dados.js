@@ -63,19 +63,18 @@ function historias(op) {
   return { existem: lista.map(h => h.titulo), nivel, serie: nivel >= 3 ? 3 : 2 };
 }
 
-// Brincadeiras que já existem (lidas dos botões da tela de atividades) e a matéria com menos
+// Brincadeiras que já existem (lidas dos botões das telas Português e Matemática) e a matéria com menos
 function brincadeiras() {
-  const linhas = fs.readFileSync(path.join(raiz, 'js/moldes/atividades.js'), 'utf8').split('\n');
+  const linhas = fs.readFileSync(path.join(raiz, 'js/moldes/materias.js'), 'utf8').split('\n');
   const lista = [];
-  let materia = '', dentroLP = false;
+  let materia = '', brincadeira = false;
   for (const l of linhas) {
-    if (l.includes('<template v-if="filtroMateria !== \'matematica\'">')) dentroLP = true;
-    else if (dentroLP && l.includes('</template>')) dentroLP = false;
-    if (l.includes('bloco-brincadeira')) {
-      materia = l.includes("!== 'lingua-portuguesa'") ? 'mat' : (dentroLP || l.includes("!== 'matematica'")) ? 'lp' : '';
-    }
+    if (l.includes('<!-- PORTUGUÊS -->')) materia = 'lp';
+    else if (l.includes('<!-- MATEMÁTICA -->')) materia = 'mat';
+    else if (l.includes('<!-- PRÊMIOS -->')) materia = '';
+    if (l.includes('bloco-brincadeira')) brincadeira = /@click="abrir(?!Questoes)/.test(l);   // Histórias, Questões e Contas não são brincadeiras
     const m = l.match(/aria-hidden="true">([^<]+)<\/span>([^<]+)</);
-    if (m) lista.push({ emoji: m[1], nome: m[2].trim(), materia });
+    if (m && materia && brincadeira) lista.push({ emoji: m[1], nome: m[2].trim(), materia });
   }
   const mat = lista.filter(b => b.materia === 'mat').length, lp = lista.filter(b => b.materia === 'lp').length;
   return { existem: lista, materia: mat <= lp ? 'mat' : 'lp' };

@@ -3,7 +3,7 @@ LB.moldes = LB.moldes || {};
 LB.moldes.colorir = `
     <!-- COLORIR (lista) -->
     <div v-if="tela === 'colorir'">
-      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
+      <button class="btn-voltar" @click="irPara('premios')">← Voltar</button>
       <h2>Desenhos para colorir</h2>
       <div class="grade-cartoes">
         <div class="card" v-for="c in conteudo.colorir" :key="c.id" @click="abrirColorir(c)" tabindex="0">

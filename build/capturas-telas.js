@@ -32,6 +32,9 @@ const TELAS = [
   ['12-colorir', () => LB.app.abrirColorir(LB.CONTEUDO.colorir[0])],
   ['13-selos', () => LB.app.irPara('recompensas')],
   ['14-responsavel', () => { LB.app.tela = 'responsavel'; }],
+  ['14a-portugues', () => LB.app.irPara('portugues')],
+  ['14b-matematica', () => LB.app.irPara('matematica')],
+  ['14c-premios', () => LB.app.irPara('premios')],
 ];
 
 // Telas a mais do antes/depois: respostas, brincadeiras de matemática e janelas
