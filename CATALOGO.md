@@ -316,7 +316,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_pedir.js` | 86 | Teste guardado: motor de pedidos para outra IA (build/pedir.js + build/pedir-dados.js). Uso: node testes/t_pedir.js |
 | `testes/t_rodada.js` | 88 | Teste guardado: kit de rodada (js/rodada.js), sem navegador. Uso: node testes/t_rodada.js |
 | `testes/t_rolagem.js` | 78 | Teste guardado: rolagem automática até a resposta (js/rolagem.js), voltar do aparelho (js/voltar.js) |
-| `testes/t_silabas.js` | 51 | Teste guardado: brincadeira "Monte a Palavra" (js/telas/silabas.js) no navegador. |
+| `testes/t_silabas.js` | 52 | Teste guardado: brincadeira "Monte a Palavra" (js/telas/silabas.js) no navegador. |
 | `testes/t_sorteio.js` | 42 | Teste guardado: sorteio das opções (js/sorteio.js). Uso: node testes/t_sorteio.js |
 | `testes/t_trem.js` | 90 | Teste guardado: brincadeira "Trem dos números" (js/tremregras.js = contas; js/telas/trem.js = tela). |
 | `testes/t_tudo.js` | 44 | Teste do motor 6 (build/tudo.js): mapa de etapas, ficha coerente e etapas internas. |
