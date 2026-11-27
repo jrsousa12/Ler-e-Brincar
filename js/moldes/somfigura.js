@@ -2,7 +2,7 @@
 LB.moldes = LB.moldes || {};
 LB.moldes.somfigura = `
     <section v-if="tela === 'som-figura' && alvoSom" class="brincadeira-silabas" aria-label="Brincadeira Som e Figura">
-      <button class="btn-voltar" @click="voltar('portugues')">← Voltar</button>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="voltar('portugues')">← Voltar</button></teleport>
 ${LB.moldes.abasPalavras}
       <div class="topo-jogo">
         <span class="badge-fase">Rodada {{ indiceSom + 1 }} de {{ rodadasSom.length }}</span>

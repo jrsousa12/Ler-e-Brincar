@@ -40,7 +40,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
     const cartoes = await p.locator('.cartao-atividade').evaluateAll(els => els.map(e => e.className));
     ok(await tela() === 'atividades' && cartoes.length > 0 && cartoes.every(c => c.includes(mat)), botao + ': só cartões de ' + mat);
     ok(await p.locator('.filtros, .grade-brincadeiras').count() === 0, botao + ': sem filtros nem brincadeiras na lista');
-    await p.click('.container .btn-voltar'); await espera(150);
+    await p.click('.cabecalho-app .btn-voltar'); await espera(150);
     ok(await tela() === t, botao + ': Voltar leva a ' + t);
   }
 
@@ -48,7 +48,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   await p.evaluate(() => { LB.app.irPara('home'); LB.app.abrirAtividade(LB.CONTEUDO.activities.find(a => a.materia === 'matematica')); });
   await espera(150);
   ok((await aba()).includes('Matemática'), 'conta aberta acende a aba Matemática');
-  await p.click('.container .btn-voltar'); await espera(150);
+  await p.click('.cabecalho-app .btn-voltar'); await espera(150);
   ok(await tela() === 'atividades' && await p.evaluate(() => LB.app.filtroMateria) === 'matematica', 'Voltar da conta leva à lista de Contas');
 
   // Voltar de cada brincadeira e das listas de prêmios
@@ -56,12 +56,12 @@ const { novaPagina, abrirApp } = require('./_navegador');
     ['abrirMercado', 'matematica'], ['abrirTrem', 'matematica'], ['abrirPacote', 'matematica']];
   for (const [abrir, destino] of casos) {
     await p.evaluate(f => { LB.app.irPara('home'); LB.app[f](); }, abrir); await espera(150);
-    await p.click('.container .btn-voltar'); await espera(150);
+    await p.click('.cabecalho-app .btn-voltar'); await espera(150);
     ok(await tela() === destino, abrir + ': Voltar leva a ' + destino + ' (foi a ' + await tela() + ')');
   }
   for (const [t, destino] of [['ler', 'portugues'], ['colorir', 'premios'], ['recompensas', 'premios'], ['portugues', 'home']]) {
     await p.evaluate(x => LB.app.irPara(x), t); await espera(150);
-    await p.click('.container .btn-voltar'); await espera(150);
+    await p.click('.cabecalho-app .btn-voltar'); await espera(150);
     ok(await tela() === destino, t + ': Voltar leva a ' + destino);
   }
 

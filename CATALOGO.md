@@ -175,7 +175,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | Arquivo | Linhas | O que faz |
 |---|---|---|
 | `sw.js` | 58 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 138 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `js/app.js` | 139 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/avisoerro.js` | 40 | Aviso amigável quando o app dá erro: em vez de tela parada, mostra "Recomeçar" (o progresso fica guardado no aparelho). |
 | `js/backup.js` | 45 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 49 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
@@ -216,27 +216,28 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/selos.js` | 38 | Tela "Selos": progresso geral, conquistas e selos da missão do dia (missões e dias seguidos). |
 | `js/telas/silabas.js` | 62 | Brincadeira "Monte a Palavra": tocar nas sílabas na ordem certa para formar a palavra da dica. |
 | `js/telas/somfigura.js` | 40 | Brincadeira "Som e Figura": ouvir a palavra e tocar na figura certa (palavras de conteudo/silabas.js). |
+| `js/telas/topo.js` | 19 | Título que aparece no cabeçalho de cada tela (Etapa C, 27/11). O "← Voltar" de cada tela é |
 | `js/telas/trem.js` | 29 | Brincadeira "Trem dos números": achar o número que falta na sequência de 2 em 2, 5 em 5 ou 10 em 10 (regras em js/tremregras.js). |
 | `js/moldes/abas.js` | 12 | Molde (HTML do Vue): abas para trocar entre as brincadeiras de palavras (Monte a Palavra, Memória, Som e Figura). |
 | `js/moldes/ajustes.js` | 70 | Molde (HTML do Vue): Ajustes (aparece embaixo da Área do responsável). |
-| `js/moldes/atividades.js` | 37 | Molde (HTML do Vue): Telas "Atividades" (lista de Questões ou Contas, conforme filtroMateria) e "Atividade" (resolver). |
+| `js/moldes/atividades.js` | 36 | Molde (HTML do Vue): Telas "Atividades" (lista de Questões ou Contas, conforme filtroMateria) e "Atividade" (resolver). |
 | `js/moldes/backup.js` | 25 | Molde (HTML do Vue): Cópia de segurança e instalação (embaixo dos Ajustes, na Área do responsável). |
-| `js/moldes/cabecalho.js` | 11 | Molde (HTML do Vue): Cabeçalho do topo (título, ⚙️ dos adultos, estrelas). |
-| `js/moldes/colorir.js` | 39 | Molde (HTML do Vue): Telas "Colorir" (lista) e desenho para pintar. |
+| `js/moldes/cabecalho.js` | 14 | Molde (HTML do Vue): Cabeçalho do topo — "← Voltar" (levado para cá pelas telas) + título da tela, estrelas e ⚙️ dos adultos. |
+| `js/moldes/colorir.js` | 38 | Molde (HTML do Vue): Telas "Colorir" (lista) e desenho para pintar. |
 | `js/moldes/confirmar.js` | 14 | Molde (HTML do Vue): caixa de confirmação própria (js/telas/confirmar.js). |
-| `js/moldes/historias.js` | 46 | Molde (HTML do Vue): Telas "Ler" (lista) e "História" (leitura e perguntas). |
+| `js/moldes/historias.js` | 45 | Molde (HTML do Vue): Telas "Ler" (lista) e "História" (leitura e perguntas). |
 | `js/moldes/inicio.js` | 24 | Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 3 botões grandes (Português, Matemática, Prêmios). |
-| `js/moldes/materias.js` | 65 | Molde (HTML do Vue): telas "Português", "Matemática" e "Prêmios" (comportamento em js/telas/materias.js). |
+| `js/moldes/materias.js` | 62 | Molde (HTML do Vue): telas "Português", "Matemática" e "Prêmios" (comportamento em js/telas/materias.js). |
 | `js/moldes/memoria.js` | 26 | Molde (HTML do Vue): Brincadeira "Memória" (par figura + palavra). |
 | `js/moldes/mercado.js` | 54 | Molde (HTML do Vue): Brincadeira "Mercadinho" (pagar certinho e calcular o troco). |
-| `js/moldes/missao.js` | 26 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
+| `js/moldes/missao.js` | 25 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
 | `js/moldes/navegacao.js` | 11 | Molde (HTML do Vue): Barra de navegação de baixo. |
 | `js/moldes/ordem.js` | 41 | Molde (HTML do Vue): Brincadeira "Ordem dos Fatos" (comportamento em js/telas/ordem.js). |
 | `js/moldes/pacote.js` | 33 | Molde (HTML do Vue): Brincadeira "Pacotes de contas". Criado por build/nova-brincadeira.js. |
 | `js/moldes/portao.js` | 16 | Molde (HTML do Vue): Trava dos adultos — uma conta de multiplicar. |
-| `js/moldes/responsavel.js` | 75 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
+| `js/moldes/responsavel.js` | 74 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
 | `js/moldes/selonovo.js` | 16 | Molde (HTML do Vue): janela de festa do selo novo (js/telas/selonovo.js). |
-| `js/moldes/selos.js` | 24 | Molde (HTML do Vue): Tela "Minhas conquistas" (selos e progresso). |
+| `js/moldes/selos.js` | 23 | Molde (HTML do Vue): Tela "Minhas conquistas" (selos e progresso). |
 | `js/moldes/silabas.js` | 41 | Molde (HTML do Vue): Brincadeira "Monte a Palavra" (juntar sílabas). |
 | `js/moldes/somfigura.js` | 28 | Molde (HTML do Vue): Brincadeira "Som e Figura" (ouvir e tocar na figura). |
 | `js/moldes/trem.js` | 35 | Molde (HTML do Vue): Brincadeira "Trem dos números" (achar o número que falta na sequência). |

@@ -70,7 +70,7 @@ const molde = b => `// Molde (HTML do Vue): Brincadeira "${b.nome}". Criado por 
 LB.moldes = LB.moldes || {};
 LB.moldes.${b.id} = \`
     <section v-if="tela === '${b.id}' && atual${b.Cap}" class="brincadeira-silabas brincadeira-${b.id}" aria-label="Brincadeira ${b.nome}">
-      <button class="btn-voltar" @click="voltar('${b.tela}')">← Voltar</button>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="voltar('${b.tela}')">← Voltar</button></teleport>
       <div class="topo-jogo">
         <span class="badge-fase">Desafio {{ indice${b.Cap} + 1 }} de {{ lista${b.Cap}.length }}</span>
         <button type="button" class="btn-silaba-3d btn-ouvir-palavra" @click="ouvir(atual${b.Cap}.fala)">🔊 Ouvir</button>

@@ -3,8 +3,7 @@ LB.moldes = LB.moldes || {};
 LB.moldes.selos = `
     <!-- RECOMPENSAS -->
     <div v-if="tela === 'recompensas'">
-      <button class="btn-voltar" @click="irPara('premios')">← Voltar</button>
-      <h2>Minhas conquistas</h2>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="irPara('premios')">← Voltar</button></teleport>
       <p class="texto-suave">Você tem <strong>{{ estrelas }} ⭐</strong> e completou <strong>{{ totalConcluidos }}</strong> de {{ totalItens }} itens.</p>
       <div class="barra-progresso">
         <div class="barra-preenchida" :style="{width: progressoGeral + '%'}"></div>

@@ -4,8 +4,7 @@ LB.moldes = LB.moldes || {};
 LB.moldes.materias = `
     <!-- PORTUGUÊS -->
     <div v-if="tela === 'portugues'">
-      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
-      <h2>📝 Português</h2>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="irPara('home')">← Voltar</button></teleport>
       <div class="grade-brincadeiras grade-portugues">
         <button type="button" class="bloco-brincadeira ler" @click="irPara('ler')">
           <span class="bloco-emoji" aria-hidden="true">📖</span>Histórias
@@ -16,10 +15,10 @@ LB.moldes.materias = `
         <button type="button" class="bloco-brincadeira ler" @click="abrirSilabas">
           <span class="bloco-emoji" aria-hidden="true">🧩</span>Monte a Palavra<span v-if="concluidos.silabas" class="selo-feito">✓</span>
         </button>
-        <button type="button" class="bloco-brincadeira colorir" @click="abrirMemoria">
+        <button type="button" class="bloco-brincadeira ler" @click="abrirMemoria">
           <span class="bloco-emoji" aria-hidden="true">🃏</span>Memória<span v-if="concluidos.memoria" class="selo-feito">✓</span>
         </button>
-        <button type="button" class="bloco-brincadeira brincar" @click="abrirSomFigura">
+        <button type="button" class="bloco-brincadeira ler" @click="abrirSomFigura">
           <span class="bloco-emoji" aria-hidden="true">🔊</span>Som e Figura<span v-if="concluidos['som-figura']" class="selo-feito">✓</span>
         </button>
         <button type="button" class="bloco-brincadeira ler" @click="abrirOrdem">
@@ -30,19 +29,18 @@ LB.moldes.materias = `
 
     <!-- MATEMÁTICA -->
     <div v-if="tela === 'matematica'">
-      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
-      <h2>🧮 Matemática</h2>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="irPara('home')">← Voltar</button></teleport>
       <div class="grade-brincadeiras grade-matematica">
         <button type="button" class="bloco-brincadeira brincar" @click="abrirQuestoes('matematica')">
           <span class="bloco-emoji" aria-hidden="true">➕</span>Contas
         </button>
-        <button type="button" class="bloco-brincadeira mercado" @click="abrirMercado">
+        <button type="button" class="bloco-brincadeira brincar" @click="abrirMercado">
           <span class="bloco-emoji" aria-hidden="true">🛒</span>Mercadinho<span v-if="concluidos.mercado" class="selo-feito">✓</span>
         </button>
-        <button type="button" class="bloco-brincadeira mercado" @click="abrirTrem">
+        <button type="button" class="bloco-brincadeira brincar" @click="abrirTrem">
           <span class="bloco-emoji" aria-hidden="true">🚂</span>Trem dos números<span v-if="concluidos.trem" class="selo-feito">✓</span>
         </button>
-        <button type="button" class="bloco-brincadeira mercado" @click="abrirPacote">
+        <button type="button" class="bloco-brincadeira brincar" @click="abrirPacote">
           <span class="bloco-emoji" aria-hidden="true">📦</span>Pacotes de contas<span v-if="concluidos['pacote']" class="selo-feito">✓</span>
         </button>
       </div>
@@ -50,8 +48,7 @@ LB.moldes.materias = `
 
     <!-- PRÊMIOS -->
     <div v-if="tela === 'premios'">
-      <button class="btn-voltar" @click="irPara('home')">← Voltar</button>
-      <h2>🏆 Prêmios</h2>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="irPara('home')">← Voltar</button></teleport>
       <p class="texto-suave">Você tem <strong>{{ estrelas }} ⭐</strong></p>
       <div class="grade-brincadeiras grade-premios">
         <button type="button" class="bloco-brincadeira brincar" @click="irPara('recompensas')">

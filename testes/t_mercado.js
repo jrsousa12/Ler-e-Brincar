@@ -51,7 +51,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   await p.click('.bloco-menu.brincar');   // Matemática
   await p.click('text=Mercadinho');
   ok(await p.locator('.brincadeira-mercado').count() === 1, 'abre o Mercadinho');
-  const voltar = await p.locator('section.brincadeira-mercado .btn-voltar').boundingBox();
+  const voltar = await p.locator('.cabecalho-app .btn-voltar').boundingBox();
   ok(voltar && voltar.x < 40 && voltar.width < 200, '"Voltar" no canto esquerdo');
   const estrelas = () => p.evaluate(() => LB.app.estrelas);
   const e0 = await estrelas();

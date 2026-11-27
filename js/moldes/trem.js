@@ -2,7 +2,7 @@
 LB.moldes = LB.moldes || {};
 LB.moldes.trem = `
     <section v-if="tela === 'trem' && tremAtual" class="brincadeira-silabas brincadeira-trem" aria-label="Brincadeira Trem dos números">
-      <button class="btn-voltar" @click="voltar('matematica')">← Voltar</button>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="voltar('matematica')">← Voltar</button></teleport>
       <div class="topo-jogo">
         <span class="badge-fase">Trem {{ indiceTrem + 1 }} de {{ trensTrem.length }}</span>
         <button type="button" class="btn-silaba-3d btn-ouvir-palavra" @click="ouvir(fraseTrem(tremAtual))">🔊 Ouvir</button>

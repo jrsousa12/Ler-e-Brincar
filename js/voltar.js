@@ -25,7 +25,7 @@ LB.usarVoltarAparelho = function (ctx) {
     if (caixa) return caixa.click();                     // clicar no fundo fecha a caixa (responde "não")
     const cancelar = primeiro('.portao-parental .btn-secundario');
     if (cancelar) return cancelar.click();
-    const botao = primeiro('.container .btn-voltar');
+    const botao = primeiro('.cabecalho-app .btn-voltar') || primeiro('.container .btn-voltar');
     if (botao) return botao.click();
     if (ctx.tela.value !== 'home') ctx.irPara('home');
   }

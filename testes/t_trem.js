@@ -40,7 +40,7 @@ const { novaPagina, abrirApp } = require('./_navegador');
   await p.click('.bloco-menu.brincar');   // Matemática
   await p.click('text=Trem dos números');
   ok(await p.locator('.brincadeira-trem').count() === 1, 'abre o Trem dos números');
-  const voltar = await p.locator('section.brincadeira-trem .btn-voltar').boundingBox();
+  const voltar = await p.locator('.cabecalho-app .btn-voltar').boundingBox();
   ok(voltar && voltar.x < 40 && voltar.width < 200, '"Voltar" no canto esquerdo');
   const estrelas = () => p.evaluate(() => LB.app.estrelas);
   const e0 = await estrelas();

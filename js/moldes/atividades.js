@@ -3,8 +3,7 @@ LB.moldes = LB.moldes || {};
 LB.moldes.atividades = `
     <!-- ATIVIDADES (lista) -->
     <div v-if="tela === 'atividades'">
-      <button class="btn-voltar" @click="irPara(filtroMateria === 'matematica' ? 'matematica' : 'portugues')">← Voltar</button>
-      <h2>{{ filtroMateria === 'matematica' ? '➕ Contas' : '📝 Questões de Português' }}</h2>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="irPara(filtroMateria === 'matematica' ? 'matematica' : 'portugues')">← Voltar</button></teleport>
       <div class="grade-cartoes">
         <div class="card cartao-atividade" :class="g.materia" v-for="g in gruposAtividades" :key="g.chave" @click="abrirGrupo(g)" tabindex="0">
           <div class="cartao-emoji" aria-hidden="true">{{ g.materia === 'matematica' ? '🧮' : '📝' }}</div>
@@ -17,7 +16,7 @@ LB.moldes.atividades = `
 
     <!-- ATIVIDADE (resolver) -->
     <div v-if="tela === 'atividade' && atividadeAtual">
-      <button class="btn-voltar" @click="voltar('atividades')">← Voltar</button>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="voltar('atividades')">← Voltar</button></teleport>
       <h2>{{ atividadeAtual.materia === 'matematica' ? '🧮' : '📝' }} {{ atividadeAtual.titulo }}</h2>
       <div class="enunciado">
         <button class="btn-ouvir redondo" @click="ouvir(textoPergunta(atividadeAtual))" aria-label="Ouvir a pergunta">🔊</button>

@@ -110,6 +110,7 @@
         ...historias,
         ...atividades,
         ...LB.usarMaterias(ctx, atividades),
+        ...LB.usarTopo(ctx, atividades),
         ...colorir,
         ...LB.usarSilabas(ctx),
         ...LB.usarMercado(ctx),

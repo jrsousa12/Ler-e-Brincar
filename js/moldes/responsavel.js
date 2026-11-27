@@ -3,7 +3,6 @@ LB.moldes = LB.moldes || {};
 LB.moldes.responsavel = `
     <div v-if="tela === 'responsavel'">
       <button class="btn-voltar sobrio" @click="irPara('home')">← Sair da área dos adultos</button>
-      <h2>Área do responsável</h2>
 
       <div class="card sem-clique">
         <div class="card-titulo">📊 Progresso</div>

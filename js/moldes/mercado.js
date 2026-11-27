@@ -2,7 +2,7 @@
 LB.moldes = LB.moldes || {};
 LB.moldes.mercado = `
     <section v-if="tela === 'mercado' && compraMercado" class="brincadeira-silabas brincadeira-mercado" aria-label="Brincadeira Mercadinho">
-      <button class="btn-voltar" @click="voltar('matematica')">← Voltar</button>
+      <teleport to="#slot-voltar"><button class="btn-voltar" @click="voltar('matematica')">← Voltar</button></teleport>
       <div class="topo-jogo">
         <span class="badge-fase">Compra {{ indiceMercado + 1 }} de {{ comprasMercado.length }}</span>
         <button type="button" class="btn-silaba-3d btn-ouvir-palavra" @click="ouvir(ouvirMercado)">🔊 Ouvir</button>

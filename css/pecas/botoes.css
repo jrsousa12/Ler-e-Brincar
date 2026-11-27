@@ -25,6 +25,8 @@
   background:transparent;color:var(--cor-primaria);
   padding:8px 4px;min-height:44px;font-weight:700;margin-bottom:var(--space);
 }
+/* Voltar dentro do cabeçalho azul: pílula clara e menor */
+.cabecalho-app .btn-voltar:not(.sobrio){margin:0;padding:4px 10px;min-height:44px;font-size:.9em;flex:none;white-space:nowrap}
 /* Ouvir 🔊 */
 .btn-ouvir{
   background:var(--cor-primaria-suave);color:#0369A1;border:2px solid #BAE6FD;
