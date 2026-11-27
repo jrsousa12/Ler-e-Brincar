@@ -32,7 +32,7 @@ html = html.replace(/<link rel="stylesheet" href="([^"]+)">/g, (_t, rel) => {
 html = html.replace(/<script src="([^"]+)"><\/script>/g, (_t, rel) => {
   if (rel === 'js/registrar-sw.js') return '';
   nJs++;
-  const js = ler(rel).replace(/<\/script/gi, '<\\/script');
+  const js = ler(rel).replace(/icones\/mascote-[a-z]+\.png/g, arq => `data:image/png;base64,${fs.readFileSync(path.join(RAIZ, arq)).toString('base64')}`).replace(/<\/script/gi, '<\\/script');
   return `<script>/* ${rel} */\n${js}</script>`;
 });
 

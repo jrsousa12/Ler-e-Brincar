@@ -1,7 +1,7 @@
 // Guarda o app no aparelho para funcionar sem internet.
 // Ao mudar qualquer arquivo da lista, aumente VERSAO (o teste testes/t_offline.js confere a lista).
 'use strict';
-const VERSAO = 'lb-v96';
+const VERSAO = 'lb-v97';
 const ARQUIVOS = [
   './', 'index.html', 'manifest.json',
   'css/fontes.css', 'css/base.css', 'css/pecas/cabecalho.css', 'css/pecas/botoes.css', 'css/pecas/cartao.css', 'css/pecas/opcao.css', 'css/pecas/etiquetas.css', 'css/pecas/janelas.css', 'css/pecas/mascote.css', 'css/telas/inicio.css', 'css/telas/missao.css', 'css/telas/historias.css', 'css/telas/listas.css', 'css/telas/colorir.css', 'css/telas/selos.css', 'css/telas/responsavel.css', 'css/telas/silabas.css', 'css/telas/memoria.css', 'css/telas/somfigura.css', 'css/telas/mercado.css', 'css/telas/trem.css', 'css/telas/ordem.css', 'css/telas/pacote.css', 'css/telas/relogio.css', 'css/telas/regua.css', 'css/telas/formas.css', 'css/telas/grafico.css', 'css/tema-creme.css', 'css/escuro.css', 'css/impressao.css', 'css/tablet.css', 'css/movimento.css',
@@ -21,7 +21,8 @@ const ARQUIVOS = [
   'js/telas/selos.js', 'js/telas/selonovo.js', 'js/telas/ajustes.js', 'js/telas/confirmar.js', 'js/telas/backup.js', 'js/telas/aparelho.js', 'js/app.js',
   'js/moldes/cabecalho.js', 'js/moldes/inicio.js', 'js/moldes/materias.js', 'js/moldes/historias.js', 'js/moldes/atividades.js', 'js/moldes/colorir.js', 'js/moldes/selos.js', 'js/moldes/ajustes.js', 'js/moldes/portao.js',
   'js/moldes/navegacao.js', 'js/moldes/confirmar.js', 'js/moldes/selonovo.js', 'js/moldes/backup.js', 'js/moldes/versao.js',
-  'icones/icone-192.png', 'icones/icone-512.png', 'icones/icone-mascara-512.png'
+  'icones/icone-192.png', 'icones/icone-512.png', 'icones/icone-mascara-512.png',
+  'icones/mascote-normal.png', 'icones/mascote-feliz.png', 'icones/mascote-festa.png'
 ];
 // Fontes (vendor/fontes/, baixadas pelo robô do GitHub): guardadas se existirem; se faltarem, o app usa a fonte comum.
 const FONTES = ['baloo-2-600', 'baloo-2-700', 'baloo-2-800', 'lexend-400', 'lexend-600', 'lexend-700']

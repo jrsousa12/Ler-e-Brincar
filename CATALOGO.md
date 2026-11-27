@@ -174,7 +174,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 
 | Arquivo | Linhas | O que faz |
 |---|---|---|
-| `sw.js` | 62 | Guarda o app no aparelho para funcionar sem internet. |
+| `sw.js` | 63 | Guarda o app no aparelho para funcionar sem internet. |
 | `js/app.js` | 143 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/avisoerro.js` | 40 | Aviso amigável quando o app dá erro: em vez de tela parada, mostra "Recomeçar" (o progresso fica guardado no aparelho). |
 | `js/backup.js` | 45 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
@@ -187,7 +187,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/graficodesenho.js` | 15 | Desenho do gráfico de barras (HTML feito pelo código, sem imagem): LB.graficoDesenho({ titulo, barras: [{ e, nome, valor, cor }] }). |
 | `js/graficoregras.js` | 79 | Regras da brincadeira "Gráfico de barras" (EF02MA22): monta gráficos de figuras e calcula o certo. Sem tela: só contas (testadas em testes/t_grafico.js). |
 | `js/impressao.js` | 36 | Monta folhas para imprimir (desenho ou lista de atividades) em #print-container. |
-| `js/mascote.js` | 57 | Mascote (Fase 7 etapa 3): capivara desenhada pelo próprio app, em 3 humores. |
+| `js/mascote.js` | 20 | Mascote: capivara em 3 humores, feita de imagens (icones/mascote-<humor>.png, 320×320, fundo transparente). |
 | `js/mercadoregras.js` | 90 | Regras do "Mercadinho": sorteia a compra e calcula o certo. Sem tela: só contas (testadas em testes/t_mercado.js). |
 | `js/missao.js` | 136 | Missão do dia: 1 história + 3 de Português + 3 de Matemática + 1 desenho, em sequência. |
 | `js/ondeparou.js` | 57 | Continuar de onde parou: guarda a história (e a pergunta) ou a atividade aberta e, ao reabrir o app, |

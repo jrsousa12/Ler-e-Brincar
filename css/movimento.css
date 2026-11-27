@@ -29,18 +29,13 @@
 .passo.atual{animation:pulsar 1.6s ease-in-out infinite}
 @keyframes pulsar{0%,100%{box-shadow:0 0 0 4px var(--cor-primaria-suave)}50%{box-shadow:0 0 0 9px var(--cor-primaria-suave)}}
 
-/* Mascote: pisca de vez em quando; balança ao ser tocada; pula no acerto; dança na festa */
-.mascote-svg .c-olhos{transform-box:fill-box;transform-origin:center;animation:piscar 4.5s infinite}
-@keyframes piscar{0%,92%,100%{transform:none}95%{transform:scaleY(.1)}}
+/* Mascote: respira devagar; balança ao ser tocada; pula no acerto; dança na festa */
+.humor-normal{transform-origin:50% 100%;animation:respirar 3.6s ease-in-out infinite}
+@keyframes respirar{0%,100%{transform:scale(1)}50%{transform:scale(1.03,.975)}}
 .mascote-botao:active .mascote-svg{transform:rotate(-8deg) scale(.95);transition:transform .12s}
 .mascote-mini .mascote-svg{animation:pulinho .6s cubic-bezier(.34,1.56,.64,1)}
 .humor-festa{animation:danca 1.2s ease-in-out infinite}
-.humor-festa .c-braco{transform-box:fill-box;transform-origin:100% 100%;animation:abanar .6s ease-in-out infinite alternate}
-.humor-festa .c-braco-d{transform-origin:0 100%;animation-direction:alternate-reverse}
-.humor-festa .c-confete{animation:brilhar 1.2s ease-in-out infinite}
 @keyframes danca{0%,100%{transform:rotate(-4deg)}50%{transform:translateY(-6px) rotate(4deg)}}
-@keyframes abanar{from{transform:rotate(-8deg)}to{transform:rotate(8deg)}}
-@keyframes brilhar{0%,100%{opacity:1}50%{opacity:.35}}
 
 /* Ícone da barra de baixo dá um pulo ao ser escolhido */
 .nav-inferior a.ativo .icone{animation:pulo .45s cubic-bezier(.34,1.56,.64,1)}
