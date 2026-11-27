@@ -1,6 +1,6 @@
 /* Cor "Creme" (opção em Ajustes, 23/11): fundo creme, destaques roxos, botões laranja.
-   Só troca as variáveis de base.css (vale no modo claro; no modo escuro do aparelho fica o escuro).
-   Ligada pela classe html.tema-creme (js/telas/ajustes.js). Vem depois de tema-azul.css. */
+   Troca as variáveis de base.css (vale no modo claro; no modo escuro do aparelho fica o escuro).
+   Ligada pela classe html.tema-creme (js/telas/ajustes.js). Vem depois das telas e antes de escuro.css. */
 @media (prefers-color-scheme: light){
   html.tema-creme{
     --cor-primaria:#7C3AED; --cor-primaria-2:#8B5CF6; --cor-primaria-escura:#5B21B6; --cor-primaria-suave:#EDE9FE;

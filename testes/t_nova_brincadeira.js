@@ -36,12 +36,12 @@ try {
 
   // Gravar: cria os 5 arquivos e liga tudo
   ok(motor('relogio', 'Que horas são?', '🕐', 'mat', '--gravar').cod === 0, 'gravar roda');
-  ['js/relogioregras.js', 'js/telas/relogio.js', 'js/moldes/relogio.js', 'css/relogio.css', 'testes/t_relogio.js']
+  ['js/relogioregras.js', 'js/telas/relogio.js', 'js/moldes/relogio.js', 'css/telas/relogio.css', 'testes/t_relogio.js']
     .forEach(f => ok(fs.existsSync(path.join(copia, f)), 'criou ' + f));
   ['js/relogioregras.js', 'js/telas/relogio.js', 'js/moldes/relogio.js', 'testes/t_relogio.js']
     .forEach(f => ok(rodar('--check', f).cod === 0, 'sintaxe de ' + f));
   const html = ler('index.html');
-  ok(['css/relogio.css', 'js/relogioregras.js', 'js/telas/relogio.js', 'js/moldes/relogio.js'].every(f => html.includes(f)), 'index.html liga os 4 arquivos');
+  ok(['css/telas/relogio.css', 'js/relogioregras.js', 'js/telas/relogio.js', 'js/moldes/relogio.js'].every(f => html.includes(f)), 'index.html liga os 4 arquivos');
   ok(html.indexOf('js/rodada.js') < html.indexOf('js/telas/relogio.js'), 'kit de rodada carrega antes da tela');
   ok(versao() === v0 + 1, 'VERSAO do sw.js subiu 1');
   ok(/'js\/telas\/relogio\.js'/.test(ler('sw.js')), 'sw.js guarda a tela nova');

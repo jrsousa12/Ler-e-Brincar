@@ -22,5 +22,3 @@
 .dinheiro.v10{background:#e0693f}
 .dinheiro.v20{background:#e0a21b;color:#4a3300}
 .dinheiro.v50{background:#c9776a}
-.bloco-silaba.acertou{background:var(--cor-sucesso-bg);color:var(--cor-sucesso-texto);--sombra-3d:var(--cor-sucesso)}
-.bloco-silaba.quase{background:var(--cor-alerta-bg);color:var(--cor-alerta-texto);--sombra-3d:var(--cor-alerta-texto)}

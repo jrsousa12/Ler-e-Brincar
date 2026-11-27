@@ -246,13 +246,16 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `build/ajustar-mat-regras.js` | 103 | Regras do motor de ajuste de Matemática (build/ajustar-mat.js), sem ler nem gravar arquivos. |
 | `build/ajustar-mat.js` | 105 | Motor de ajuste de Matemática: acha opções fracas (certa no meio à mesma distância das erradas, |
 | `build/ajustar-regras.js` | 74 | Regras do motor de ajuste (build/ajustar-lp.js), sem ler nem gravar arquivos. |
+| `build/antes-depois-pagina.js` | 62 | Peças do motor antes/depois (build/antes-depois.js) que rodam dentro da página ou no navegador. |
+| `build/antes-depois.js` | 163 | Motor antes/depois (Etapa A, 27/11): prova que uma mudança no CSS não mudou nada na tela. |
 | `build/apagar-item.js` | 15 | Apaga itens inteiros de um banco de conteúdo pelo id (sem imprimir o conteúdo). |
 | `build/aprender.js` | 83 | Motor que aprende as peças dos desenhos de colorir: lê os lotes aprovados do Gemini |
 | `build/arquivo-unico.js` | 45 | Motor: junta o app inteiro num só arquivo .html (abre com dois cliques, sem internet). |
 | `build/biblioteca.js` | 75 | Lista e prévia da biblioteca de peças (build/pecas/). Gerado: nunca editar PECAS.md à mão. |
 | `build/bncc-regras.js` | 39 | Regras da BNCC: diz qual habilidade combina com cada item (ficha build/fichas/bncc.json). |
 | `build/bncc.js` | 88 | Motor da BNCC: confere se o código de cada item combina com a atividade e corrige. |
-| `build/capturas.js` | 96 | Motor de capturas (Fase 7, etapa 6): percorre todas as telas do app em celular e tablet, |
+| `build/capturas-telas.js` | 57 | Lista única das telas e tamanhos fotografados (usada por build/capturas.js e build/antes-depois.js). |
+| `build/capturas.js` | 74 | Motor de capturas (Fase 7, etapa 6): percorre todas as telas do app em celular e tablet, |
 | `build/carregar.js` | 17 | Carrega o conteúdo (conteudo/*.js) e a regra de resposta certa, para os motores de build/. |
 | `build/catalogo.js` | 85 | Catálogo (motor 5): gera CATALOGO.md com o que já existe (conteúdo e código), para achar sem abrir arquivos. |
 | `build/colorir-regras.js` | 35 | Regras do estilo dos desenhos de colorir (usadas por build/colorir.js). Só lê o texto do SVG; não abre navegador. |
@@ -299,6 +302,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_colorir.js` | 97 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
 | `testes/t_conferir.js` | 68 | Teste guardado: conferidor de qualidade (build/conferir.js). Uso: node testes/t_conferir.js |
 | `testes/t_conteudo.js` | 47 | Teste guardado: regra de resposta certa + validador. Uso: node testes/t_conteudo.js |
+| `testes/t_estilos.js` | 62 | Teste guardado: organização do CSS (Etapa A, 27/11). Uso: node testes/t_estilos.js |
 | `testes/t_evolucao.js` | 47 | Teste guardado: contas da Evolução no tempo (js/evolucao.js). |
 | `testes/t_figuras_mat.js` | 36 | Teste guardado: motor de figuras da Matemática (build/figuras-mat.js). Uso: node testes/t_figuras_mat.js |
 | `testes/t_gerar_historia.js` | 38 | Teste guardado: gerador de histórias (build/gerar-historia.js). Uso: node testes/t_gerar_historia.js |

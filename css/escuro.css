@@ -1,11 +1,26 @@
-/* Modo escuro do aparelho: ajustes que as variáveis de componentes.css não alcançam.
+/* Modo escuro do aparelho: cores trocadas nas variáveis e ajustes que elas não alcançam.
    Fundos suaves das áreas ficam escuros; brancos fixos viram cor de cartão;
    textos que usavam a cor "-3d" (escura) passam para um tom claro da mesma área. */
 @media (prefers-color-scheme: dark){
   :root{
+    --cor-primaria:#38BDF8;--cor-primaria-2:#7DD3FC;--cor-primaria-escura:#0284C7;
+    --cor-primaria-suave:#1E3A5F;--cor-acento:#FBBF24;--cor-secundaria:#FBBF24;
+    --cor-fundo:#121B26;--cor-card:#1C2938;
+    --cor-nav-fundo:rgba(28,41,56,.92);--cor-overlay:rgba(18,27,38,.94);
+    --cor-texto:#F1F5F9;--cor-texto-suave:#94A3B8;
+    --cor-borda:#2D3F54;--cor-borda-forte:#0F1722;
+    --cor-sucesso:#3FD69B;--cor-sucesso-bg:#0F2E23;--cor-sucesso-texto:#7BF0BE;
+    --cor-alerta:#FFC46B;--cor-alerta-bg:#33260F;--cor-alerta-texto:#FFD79A;
+    --sombra-1:0 1px 2px rgba(0,0,0,.4),0 10px 24px -16px rgba(0,0,0,.9);
+    --sombra-2:0 2px 8px rgba(0,0,0,.45),0 24px 48px -22px rgba(0,0,0,1);
+    --sombra-primaria:0 12px 28px -14px rgba(56,189,248,.9);
     --cor-ler-suave:#1B3456; --cor-brincar-suave:#3D2716;
     --cor-colorir-suave:#3D1D30; --cor-selos-suave:#3A2E10;
   }
+  body{background-image:radial-gradient(rgba(56,189,248,.12) 2px,transparent 2px),radial-gradient(rgba(251,191,36,.12) 2px,transparent 2px)}
+  .cabecalho-app{border-bottom-color:#0F2F55}
+  .btn-ouvir{color:#7DD3FC;border-color:#1E3A5F}
+  .historia-capa{background:linear-gradient(135deg,#1E3A5F 0%,#2D2614 100%)}
   /* Início: balão do mascote e cartão da missão */
   .balao-mascote{background:var(--cor-card)}
   .card-missao{

@@ -14,7 +14,6 @@ Regra: ao concluir um item, movê-lo para `HISTORICO.md` (com a data) e tirá-lo
 
 ### Reestruturação + Fase 10 — plano aprovado pelo dono em 27/11
 Decisões: menu **por matéria**; estilo **o atual, mais caprichado**; expansão **só a Fase 10**. Fazer na ordem:
-- **Etapa A — Arrumar o estilo** (Opus): hoje são 19 CSS em camadas (`.card` em 10 arquivos, `.btn-primario` em 5). Juntar em: cores/tamanhos (`base`), peças únicas (botão, cartão, cabeçalho, opção, voltar, etiqueta, abas), um CSS por tela, temas (creme, escuro), `tablet`, `movimento`. Antes, criar motor de fotos antes/depois (ampliar `build/capturas.js`) para provar que nada mudou na tela.
 - **Etapa B — Novo mapa** (Opus planeja, Sonnet faz): menu `Início · Português · Matemática · Prêmios`. Português = Histórias, Questões, Monte a Palavra, Memória, Som e Figura. Matemática = Contas, Mercadinho, Trem, Pacotes, Ordem dos Fatos. Prêmios = Selos e Colorir. Missão do dia continua no Início. Conferir voltar do celular (`t_rolagem`) e onde parou (`t_ondeparou`).
 - **Etapa C — Visual caprichado** (Sonnet): mesmas cores e botões "de brinquedo"; cabeçalho mais baixo com título da tela + Voltar juntos (tira a linha "Ler & Brincar" + "Voltar"); espaçamentos iguais; cor por matéria nos cartões. Conferir celular, tablet e escuro com `build/capturas.js`.
 - **Etapa D — Fase 10, conteúdo** (Sonnet): mais nível 1 e ortografia em LP (R/RR, S/SS, M/N, X/CH, acento); sílabas complexas BR/LH/NH (EF02LP03, hoje 0); multiplicação simples. Tudo pelos motores.

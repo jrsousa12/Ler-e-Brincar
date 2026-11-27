@@ -1,0 +1,17 @@
+/* Peça: janelas por cima da tela (trava dos adultos, "Tem certeza?") e avisos do aparelho. */
+.portao-parental{
+  position:fixed;inset:0;z-index:100;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:var(--space);text-align:center;
+  background:var(--cor-overlay);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+}
+.portao-parental h2{color:var(--cor-primaria)}
+.portao-parental .instrucao{max-width:500px;color:var(--cor-texto-suave)}
+/* Caixa de confirmação própria (js/telas/confirmar.js); a do selo novo está em css/telas/selos.css */
+.caixa-fundo{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:var(--space);background:rgba(31,27,46,.45)}
+.caixa-confirmar{background:var(--cor-card);color:var(--cor-texto);border-radius:20px;padding:22px;max-width:420px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,.25)}
+.caixa-confirmar h2{margin-top:0;color:var(--cor-primaria)}
+/* Aviso de versão nova */
+.aviso-versao{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:var(--space);padding:12px 14px;border-radius:14px;background:var(--cor-alerta-bg);color:var(--cor-alerta-texto);font-weight:700}
+.aviso-versao .btn-primario{width:auto;padding:8px 16px}

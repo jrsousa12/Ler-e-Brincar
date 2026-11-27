@@ -1,10 +1,10 @@
 // Guarda o app no aparelho para funcionar sem internet.
 // Ao mudar qualquer arquivo da lista, aumente VERSAO (o teste testes/t_offline.js confere a lista).
 'use strict';
-const VERSAO = 'lb-v88';
+const VERSAO = 'lb-v89';
 const ARQUIVOS = [
   './', 'index.html', 'manifest.json',
-  'css/fontes.css', 'css/base.css', 'css/componentes.css', 'css/crianca.css', 'css/responsavel.css', 'css/alegre.css', 'css/tema-azul.css', 'css/tema-creme.css', 'css/silabas.css', 'css/brincadeiras.css', 'css/mercado.css', 'css/trem.css', 'css/ordem.css', 'css/pacote.css', 'css/listas.css', 'css/acabamento.css', 'css/escuro.css', 'css/tablet.css', 'css/movimento.css',
+  'css/fontes.css', 'css/base.css', 'css/pecas/cabecalho.css', 'css/pecas/botoes.css', 'css/pecas/cartao.css', 'css/pecas/opcao.css', 'css/pecas/etiquetas.css', 'css/pecas/janelas.css', 'css/pecas/mascote.css', 'css/telas/inicio.css', 'css/telas/missao.css', 'css/telas/historias.css', 'css/telas/listas.css', 'css/telas/colorir.css', 'css/telas/selos.css', 'css/telas/responsavel.css', 'css/telas/silabas.css', 'css/telas/memoria.css', 'css/telas/somfigura.css', 'css/telas/mercado.css', 'css/telas/trem.css', 'css/telas/ordem.css', 'css/telas/pacote.css', 'css/tema-creme.css', 'css/escuro.css', 'css/impressao.css', 'css/tablet.css', 'css/movimento.css',
   'vendor/vue.global.prod.js', 'vendor/dexie.min.js',
   'conteudo/historias.js', 'conteudo/lp.js', 'conteudo/mat.js', 'conteudo/colorir.js', 'conteudo/silabas.js', 'conteudo/mercado.js', 'conteudo/ordem.js',
   'js/avisoerro.js', 'js/respostas.js', 'js/sorteio.js', 'js/banco.js', 'js/registrar-sw.js',

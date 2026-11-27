@@ -4,7 +4,7 @@
 //   node build/nova-brincadeira.js relogio "Que horas são?" 🕐 mat --gravar   → cria e liga
 // id: só letras minúsculas sem acento (vira o nome dos arquivos); matéria: mat ou lp (diz em que filtro aparece).
 // Cria: js/<id>regras.js (contas, com um EXEMPLO para trocar), js/telas/<id>.js (usa o kit js/rodada.js),
-//       js/moldes/<id>.js, css/<id>.css, testes/t_<id>.js.
+//       js/moldes/<id>.js, css/telas/<id>.css, testes/t_<id>.js.
 // Liga: index.html, sw.js (lista + VERSAO), js/app.js, botão em js/moldes/atividades.js, build/fichas/etapas.json.
 // Moldes dos arquivos: build/modelos/brincadeira.js. Teste do motor: testes/t_nova_brincadeira.js
 'use strict';
@@ -38,7 +38,7 @@ function arquivosNovos(b) {
     [`js/${b.id}regras.js`]: modelos.regras(b),
     [`js/telas/${b.id}.js`]: modelos.tela(b),
     [`js/moldes/${b.id}.js`]: modelos.molde(b),
-    [`css/${b.id}.css`]: modelos.css(b),
+    [`css/telas/${b.id}.css`]: modelos.css(b),
     [`testes/t_${b.id}.js`]: modelos.teste(b)
   };
 }
@@ -48,7 +48,7 @@ function ligacoes(b) {
   const saida = {};
 
   let html = ler('index.html');
-  html = encaixar(html, 'index.html', '<link rel="stylesheet" href="css/listas.css">', `<link rel="stylesheet" href="css/${b.id}.css">\n<link rel="stylesheet" href="css/listas.css">`);
+  html = encaixar(html, 'index.html', '<link rel="stylesheet" href="css/tema-creme.css">', `<link rel="stylesheet" href="css/telas/${b.id}.css">\n<link rel="stylesheet" href="css/tema-creme.css">`);
   html = encaixar(html, 'index.html', '<script src="js/telas/selos.js"></script>', `<script src="js/${b.id}regras.js"></script>\n<script src="js/telas/${b.id}.js"></script>\n<script src="js/telas/selos.js"></script>`);
   html = encaixar(html, 'index.html', '<script src="js/moldes/selos.js"></script>', `<script src="js/moldes/${b.id}.js"></script>\n<script src="js/moldes/selos.js"></script>`);
   saida['index.html'] = html;
@@ -57,7 +57,7 @@ function ligacoes(b) {
   const versao = sw.match(/const VERSAO = 'lb-v(\d+)';/);
   if (!versao) parar('não achei a VERSAO em sw.js');
   sw = encaixar(sw, 'sw.js', versao[0], `const VERSAO = 'lb-v${Number(versao[1]) + 1}';`);
-  sw = encaixar(sw, 'sw.js', "'css/listas.css'", `'css/${b.id}.css', 'css/listas.css'`);
+  sw = encaixar(sw, 'sw.js', "'css/tema-creme.css'", `'css/telas/${b.id}.css', 'css/tema-creme.css'`);
   sw = encaixar(sw, 'sw.js', "'js/telas/selos.js'", `'js/${b.id}regras.js', 'js/telas/${b.id}.js', 'js/moldes/${b.id}.js',\n  'js/telas/selos.js'`);
   saida['sw.js'] = sw;
   b.versao = 'lb-v' + (Number(versao[1]) + 1);
@@ -79,7 +79,7 @@ function ligacoes(b) {
   const t = 't_' + b.id;
   etapas.etapas[t] = `testes/${t}.js`;
   if (!etapas.navegador.includes(t)) etapas.navegador.push(t);
-  [`js/${b.id}regras.js`, `js/telas/${b.id}.js`, `js/moldes/${b.id}.js`, `css/${b.id}.css`, `testes/${t}.js`].forEach(f => { etapas.mapa[f] = [t]; });
+  [`js/${b.id}regras.js`, `js/telas/${b.id}.js`, `js/moldes/${b.id}.js`, `css/telas/${b.id}.css`, `testes/${t}.js`].forEach(f => { etapas.mapa[f] = [t]; });
   ['js/moldes/atividades.js', 'js/rodada.js'].forEach(f => {
     if (etapas.mapa[f] && !etapas.mapa[f].includes(t)) etapas.mapa[f].push(t);
   });
@@ -106,7 +106,7 @@ function principal() {
     fs.writeFileSync(path.join(raiz, f), texto);
   });
   console.log('Gravado. Próximos passos:');
-  console.log(`  1. Troque o EXEMPLO em js/${b.id}regras.js pelas contas de verdade (e o visual em js/moldes/${b.id}.js e css/${b.id}.css)`);
+  console.log(`  1. Troque o EXEMPLO em js/${b.id}regras.js pelas contas de verdade (e o visual em js/moldes/${b.id}.js e css/telas/${b.id}.css)`);
   console.log(`  2. node testes/t_${b.id}.js   3. node build/catalogo.js   4. node build/tudo.js`);
 }
 
