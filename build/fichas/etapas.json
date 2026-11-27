@@ -49,7 +49,8 @@
     "t_estilos": "testes/t_estilos.js",
     "t_materias": "testes/t_materias.js",
     "t_relogio": "testes/t_relogio.js",
-    "t_regua": "testes/t_regua.js"
+    "t_regua": "testes/t_regua.js",
+    "t_formas": "testes/t_formas.js"
   },
   "navegador": [
     "t_avisoerro",
@@ -68,7 +69,8 @@
     "t_ondeparou",
     "t_materias",
     "t_relogio",
-    "t_regua"
+    "t_regua",
+    "t_formas"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -409,7 +411,8 @@
       "t_ordem",
       "t_pacote",
       "t_relogio",
-      "t_regua"
+      "t_regua",
+      "t_formas"
     ],
     "testes/t_rodada.js": [
       "t_rodada"
@@ -632,14 +635,16 @@
       "t_materias",
       "t_nova_brincadeira",
       "t_relogio",
-      "t_regua"
+      "t_regua",
+      "t_formas"
     ],
     "js/telas/materias.js": [
       "t_materias",
       "t_rodada",
       "t_nova_brincadeira",
       "t_relogio",
-      "t_regua"
+      "t_regua",
+      "t_formas"
     ],
     "testes/t_materias.js": [
       "t_materias"
@@ -688,6 +693,24 @@
     ],
     "testes/t_regua.js": [
       "t_regua"
+    ],
+    "js/formasregras.js": [
+      "t_formas"
+    ],
+    "js/formasdesenho.js": [
+      "t_formas"
+    ],
+    "js/telas/formas.js": [
+      "t_formas"
+    ],
+    "js/moldes/formas.js": [
+      "t_formas"
+    ],
+    "css/telas/formas.css": [
+      "t_formas"
+    ],
+    "testes/t_formas.js": [
+      "t_formas"
     ]
   }
 }

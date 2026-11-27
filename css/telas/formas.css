@@ -1,0 +1,9 @@
+/* Brincadeira "Formas" (js/moldes/formas.js). Cores de base.css. */
+.enunciado-formas{text-align:center;font-size:1.9rem;font-weight:800;margin:10px 0 14px;color:var(--cor-texto)}
+.desenho-formas{width:200px;max-width:60%;margin:0 auto 16px}
+.opcoes-formas{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.opcoes-formas .bloco-silaba{min-width:120px;font-size:1.6rem}
+.opcoes-formas.so-figuras .bloco-silaba{min-width:0;padding:8px}
+.opcao-forma{display:block;width:92px;height:92px}
+.forma-svg{display:block;width:100%;height:auto}
+.forma-corpo{stroke:var(--cor-texto);stroke-width:3}

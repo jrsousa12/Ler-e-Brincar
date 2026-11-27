@@ -17,7 +17,6 @@ Decisões: menu **por matéria**; estilo **o atual, mais caprichado**; expansão
 
 ### Fase 11 — Matemática que falta — plano aprovado pelo dono em 27/11 (Sonnet faz, uma etapa por conversa)
 Decisões: brincadeiras com desafios sorteados pelo código (não pelo banco); desenhos feitos pelo app (sem imagem); rodada de 5 do fácil ao difícil, no jeito do Trem; cada uma criada com `build/nova-brincadeira.js`; conta certa sempre calculada e com teste guardado; arquivos abaixo de 200 linhas (desenho grande vira peça à parte).
-- **11.3 Formas 🔺** (EF02MA15): círculo, quadrado, retângulo, triângulo em tamanhos e posições diferentes (girados); "toque no triângulo", "quantos lados?".
 - **11.4 Gráfico de barras 📊** (EF02MA22): gráfico com figuras; 3 perguntas por gráfico (qual tem mais, quantos, quanto a mais). Só ler (montar as barras, EF02MA23, fica para depois).
 - **11.5 Questões no banco** (`gerar-mat` + `bncc`): calendário/dias da semana (EF02MA18), pesado/leve e litro (EF02MA17), sólidos com objetos 🎲⚽🥫🍦 (EF02MA14); nomes curtos em `NOMES` de `js/pacoteregras.js` e regras em `build/fichas/bncc.json`.
 
