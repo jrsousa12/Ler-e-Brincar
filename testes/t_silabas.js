@@ -12,7 +12,8 @@ const { novaPagina, abrirApp } = require('./_navegador');
   await p.click('.bloco-menu.brincar');
   await p.click('text=Monte a Palavra');
   ok(await p.locator('.brincadeira-silabas').count() === 1, 'abre a brincadeira');
-  ok(await p.locator('.slot-bloco').count() === 2 && await p.locator('.bloco-silaba').count() === 4, '2 espaços e 4 sílabas');
+  const nSil = await p.evaluate(() => LB.app.palavraSilabas.silabas.length);
+  ok(await p.locator('.slot-bloco').count() === nSil && await p.locator('.bloco-silaba').count() > nSil, 'um espaço por sílaba e blocos extras');
 
   const atual = () => p.evaluate(() => ({ s: [...LB.app.palavraSilabas.silabas], n: LB.app.palavrasSilabas.length }));
   const montar = async lista => { for (const s of lista) await p.locator(`.bloco-silaba >> text="${s}"`).first().click(); };

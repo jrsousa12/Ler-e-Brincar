@@ -119,3 +119,4 @@ Regra: ao concluir um item do `PLANO.md`, movê-lo para cá (seção "Concluído
 - 27/11/2026 — Desenhos de colorir pela imagem do Gemini (Motor 10), lote de 20 (5 imagens com 4 desenhos, recortadas em PIL sem a moldura): troca 26 Robô e 29 Pinguim; novos 54 Preguiça, 55 Tartaruga marinha, 56 Padaria, 57 Panda, 58 Polvo, 59 Ouriço, 60 Moinho, 61 Dragão, 62 Astronauta e planeta, 63 Leão na palmeira, 64 Navio pirata, 65 Flamingo, 66 Caminhão de bombeiro, 67 Música, 68 Macaco, 69 Astronauta com bandeira, 70 Caranguejo, 71 Sala de leitura. Total de 71 desenhos; sw v83.
 - 27/11/2026 — Colorir: 06 Flor refeita pela imagem do Gemini (40 partes); sw v84.
 - 27/11/2026 — Colorir: 08 Carro, 09 Bola, 11 Peixe e 12 Nuvem com sol refeitos pela imagem do Gemini (grade 2×2 recortada); sw v85.
+- 27/11/2026 — Colorir: 14 Estrelas, 16 Joaninha, 17 Sapo, 18 Sol e nuvem e 20 Arco-íris refeitos pela imagem do Gemini; sw v86.
