@@ -734,6 +734,12 @@
     ],
     "testes/t_grafico.js": [
       "t_grafico"
+    ],
+    "js/capivara": [
+      "t_app"
+    ],
+    "js/mascote.js": [
+      "t_app"
     ]
   }
 }

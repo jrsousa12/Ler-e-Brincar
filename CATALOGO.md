@@ -174,12 +174,16 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 
 | Arquivo | Linhas | O que faz |
 |---|---|---|
-| `sw.js` | 63 | Guarda o app no aparelho para funcionar sem internet. |
+| `sw.js` | 62 | Guarda o app no aparelho para funcionar sem internet. |
 | `js/app.js` | 143 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/avisoerro.js` | 40 | Aviso amigável quando o app dá erro: em vez de tela parada, mostra "Recomeçar" (o progresso fica guardado no aparelho). |
 | `js/backup.js` | 45 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 49 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
 | `js/caderno.js` | 43 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
+| `js/capivara-patas.js` | 71 | Patinhas e traços dos braços da capivara (SVG). Desenhadas em volta de (0,0), com a ponta para baixo (+y); |
+| `js/capivara-pelo.js` | 90 | Pelo da capivara (SVG feito pelo código): tufinhos na borda das formas e fios por dentro. |
+| `js/capivara-rosto.js` | 62 | Rosto e enfeites da capivara (SVG, 320×320): olhos, sobrancelhas, bochechas, focinho, laranja, chapéu, estrela e confete. |
+| `js/capivara.js` | 95 | Capivara em SVG feita pelo código, 320×320, em 3 humores: 'normal', 'feliz', 'festa' (usada por js/mascote.js). |
 | `js/evolucao.js` | 77 | Evolução no tempo: só contas, a partir das respostas guardadas (js/tentativas.js). |
 | `js/festa.js` | 95 | Festa do acerto (confete + som) e incentivo no erro. Som feito pelo próprio app, sem arquivos. |
 | `js/formasdesenho.js` | 14 | Desenho de uma forma (SVG feito pelo código, sem imagem): LB.formasDesenho({ forma, cor, tam, giro }). |
@@ -187,7 +191,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/graficodesenho.js` | 15 | Desenho do gráfico de barras (HTML feito pelo código, sem imagem): LB.graficoDesenho({ titulo, barras: [{ e, nome, valor, cor }] }). |
 | `js/graficoregras.js` | 79 | Regras da brincadeira "Gráfico de barras" (EF02MA22): monta gráficos de figuras e calcula o certo. Sem tela: só contas (testadas em testes/t_grafico.js). |
 | `js/impressao.js` | 36 | Monta folhas para imprimir (desenho ou lista de atividades) em #print-container. |
-| `js/mascote.js` | 20 | Mascote: capivara em 3 humores, feita de imagens (icones/mascote-<humor>.png, 320×320, fundo transparente). |
+| `js/mascote.js` | 16 | Mascote: capivara em 3 humores, desenhada em SVG pelo código (js/capivara*.js, carregados antes). |
 | `js/mercadoregras.js` | 90 | Regras do "Mercadinho": sorteia a compra e calcula o certo. Sem tela: só contas (testadas em testes/t_mercado.js). |
 | `js/missao.js` | 136 | Missão do dia: 1 história + 3 de Português + 3 de Matemática + 1 desenho, em sequência. |
 | `js/ondeparou.js` | 57 | Continuar de onde parou: guarda a história (e a pergunta) ou a atividade aberta e, ao reabrir o app, |
@@ -309,7 +313,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/_navegador.js` | 24 | Ajudante comum dos testes que abrem o app no navegador (Playwright, Chromium já instalado). |
 | `testes/t_ajustar.js` | 108 | Teste guardado: motor de ajuste de Português (build/ajustar-lp.js, regras em build/ajustar-regras.js, |
 | `testes/t_ajustar_mat.js` | 62 | Teste guardado: ajuste de Matemática (build/ajustar-mat.js e build/ajustar-mat-regras.js). |
-| `testes/t_app.js` | 157 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
+| `testes/t_app.js` | 159 | Teste guardado: abre o app no navegador (Playwright) e confere as telas principais. |
 | `testes/t_avisoerro.js` | 40 | Teste guardado: aviso de erro com "Recomeçar" (js/avisoerro.js), no navegador. |
 | `testes/t_backup.js` | 39 | Teste guardado: cópia de segurança do progresso (js/backup.js). |
 | `testes/t_banco.js` | 23 | Teste guardado: pedido de guarda permanente dos dados (js/banco.js, pedirGuarda). |

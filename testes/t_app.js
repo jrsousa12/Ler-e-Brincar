@@ -19,6 +19,8 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   ok(await p.evaluate(() => !!(LB.voz && LB.festa && LB.tentativas)), 'voz, festa e tentativas carregados');
   ok(await p.locator('.mascote-saudacao .humor-normal').count() === 1 && (await p.textContent('.balao-mascote')).includes('Começar'),
     'mascote no início com balão de fala');
+  ok(await p.locator('.mascote-saudacao svg.humor-normal .c-olhos').count() === 1 && await p.locator('.mascote-saudacao svg .c-braco').count() === 2,
+    'mascote desenhada em SVG: olho que pisca e dois bracinhos');
   await foto('1-inicio');
 
   // Abre uma história e responde a 1ª pergunta certo
@@ -69,7 +71,7 @@ const pasta = process.env.CAPTURAS || '';   // se definido, salva capturas de te
   await foto('5-missao');
   const missaoAntes = await p.evaluate(() => JSON.stringify(LB.app.missao));
   ok(await p.evaluate(() => { const m = LB.app.missao; LB.app.missao = { ...m, feitos: m.feitos.map(() => true) }; return LB.app.missaoCompleta; })
-    && await p.locator('.mascote-grande .humor-festa').count() === 1, 'missão completa: mascote em festa');
+    && await p.locator('.mascote-grande .humor-festa').count() === 1 && await p.locator('.mascote-grande .c-confete').count() === 1, 'missão completa: mascote em festa');
   await foto('5b-missao-completa');
   await p.evaluate(() => LB.app.irPara('home'));
   ok(await p.locator('.mascote-saudacao .humor-festa').count() === 1, 'início: mascote em festa com a missão completa');
