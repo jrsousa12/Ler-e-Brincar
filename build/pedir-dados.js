@@ -97,4 +97,7 @@ function proximoLote(tipo) {
   return 'lote' + (Math.max(0, ...nums) + 1);
 }
 
-module.exports = { ficha, tema, silabas, historias, ordem, brincadeiras, desenhos, proximoLote, repartir, pastaPedidos };
+// Série de cada nível (mesma ficha dos distratores: nível 1 = 2º ano; 2 e 3 = 3º ano)
+const serieDoNivel = nivel => JSON.parse(fs.readFileSync(path.join(__dirname, 'fichas/distratores.json'), 'utf8')).serie_do_nivel[String(nivel)];
+
+module.exports = { ficha, serieDoNivel, tema, silabas, historias, ordem, brincadeiras, desenhos, proximoLote, repartir, pastaPedidos };

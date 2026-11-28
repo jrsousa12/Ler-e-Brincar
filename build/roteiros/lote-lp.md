@@ -9,6 +9,7 @@ Se alguma questão fugir das regras, nada é gravado e sai o arquivo `lp-<lote>-
 Você vai criar [QUANTIDADE] questões de leitura e interpretação de texto em português do Brasil
 para uma criança de 8 anos (BNCC, [2º ou 3º] ano do Ensino Fundamental).
 Tema do lote: [TEMA, ex.: pistas do texto / causa e consequência / quem fez o quê].
+Dificuldade: [DIFICULDADE, ex.: Nível 1, o mais fácil: texto de 2 ou 3 frases curtas...]
 
 ## Formato da resposta
 

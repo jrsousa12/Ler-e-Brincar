@@ -1,6 +1,6 @@
 // Motor "pedir a outra IA": monta o texto pronto para colar noutra IA, já preenchido, a partir dos roteiros.
 // Uso:
-//   node build/pedir.js lp        [--qtd 20] [--serie 2|3] [--bncc EF35LP04] [--tema "texto"]
+//   node build/pedir.js lp        [--qtd 20] [--serie 2|3] [--nivel 1|2|3] [--bncc EF35LP04] [--tema "texto"]
 //   node build/pedir.js mat       [--qtd 20] [--serie 2|3] [--bncc EF02MA08] [--tema "texto"]
 //   node build/pedir.js silabas   [--qtd 15]          (Monte a Palavra)
 //   node build/pedir.js ordem     [--qtd 10]          (Ordem dos Fatos)
@@ -34,13 +34,17 @@ const juntar = partes => partes.length < 2 ? partes.join('') : partes.slice(0, -
 // Valores de cada [colchete] e o resumo do que foi escolhido
 function preencher(tipo, op) {
   const v = { 'QUANTIDADE': op.qtd };
-  let resumo = '', serie = op.serie || 2, bncc = '';
+  let resumo = '', serie = op.serie || 2, bncc = '', nivel = 0;
   if (tipo === 'lp' || tipo === 'mat') {
+    if (op.nivel && !op.serie) op.serie = +D.serieDoNivel(op.nivel);
     const t = D.tema(tipo, op);
     serie = op.serie || t.serie;
+    nivel = op.nivel || serie;
+    v.DIFICULDADE = (D.ficha.dificuldade[tipo] || {})[nivel] || '';
+    if (op.nivel) resumo = 'nível ' + nivel + '; ';
     bncc = op.tema ? '' : t.bncc;
     v.TEMA = op.tema || t.tema;
-    resumo = op.tema ? 'tema dado: ' + op.tema : 'tema: ' + t.tema + ' (' + t.bncc + ', hoje com ' + t.tem + ' itens)';
+    resumo += op.tema ? 'tema dado: ' + op.tema : 'tema: ' + t.tema + ' (' + t.bncc + ', hoje com ' + t.tem + ' itens)';
   } else if (tipo === 'silabas') {
     const s = D.silabas(op.qtd);
     v.NÍVEIS = juntar(s.niveis.map(x => x.qtd + ' do ' + NOME_NIVEL[x.nivel]));
@@ -70,7 +74,7 @@ function preencher(tipo, op) {
     resumo = d.faltam + ' desenhos ainda sem imagem; pedido: ' + d.pedir.map(x => x.num + ' ' + x.titulo).join(', ');
   }
   v['2º ou 3º'] = serie + 'º';
-  return { v, resumo, serie, bncc };
+  return { v, resumo, serie, bncc, nivel };
 }
 
 // Troca cada [NOME] (ou [NOME, ex.: ...]) pelo valor; avisa se sobrar colchete sem valor
@@ -94,14 +98,15 @@ function principal(argv) {
   const tipo = args[0];
   if (!TIPOS.includes(tipo)) { console.log('Uso: node build/pedir.js <' + TIPOS.join('|') + '> [--qtd N] [--serie 2|3] ...'); return 1; }
   if (op.serie && ![2, 3].includes(op.serie)) { console.log('Erro: --serie precisa ser 2 ou 3'); return 1; }
+  if (op.nivel && ![1, 2, 3].includes(op.nivel)) { console.log('Erro: --nivel precisa ser 1, 2 ou 3'); return 1; }
   op.qtd = +op.qtd || D.ficha.qtd[tipo];
   try {
-    const { v, resumo, serie, bncc } = preencher(tipo, op);
+    const { v, resumo, serie, bncc, nivel } = preencher(tipo, op);
     const texto = trocar(trecho(tipo), v);
     const lote = op.lote || D.proximoLote(tipo);
     const arq = path.relative(raiz, path.join(D.pastaPedidos(), D.ficha.destino[tipo].replace('{lote}', lote)));
     const passos = D.ficha.depois[tipo].map(p => p.replace('{arq}', arq).replace('{txt}', arq.replace(/\.json$/, '.txt'))
-      .replace('{serie}', serie).replace(' --bncc {bncc}', bncc ? ' --bncc ' + bncc : ''));
+      .replace('{nivel}', nivel).replace('{serie}', serie).replace(' --bncc {bncc}', bncc ? ' --bncc ' + bncc : ''));
     const saida = path.join(process.env.PREVIAS_RAIZ || path.join(raiz, 'build/previas'), 'pedido-' + tipo + '.txt');
     fs.mkdirSync(path.dirname(saida), { recursive: true });
     fs.writeFileSync(saida, texto + '\n');

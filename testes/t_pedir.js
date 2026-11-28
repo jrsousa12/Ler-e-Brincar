@@ -57,6 +57,13 @@ const lp = rodar(['lp', '--bncc', 'EF15LP03']);
 ok(lp.saida.includes('--bncc EF15LP03') && texto('lp').includes('localizar informações'), 'lp --bncc escolhe o tema');
 ok(rodar(['lp', '--tema', 'rimas', '--lote', 'teste']).saida.includes('lp-teste.json') && texto('lp').includes('Tema do lote: rimas'), '--tema e --lote');
 
+// --nivel: dificuldade no texto, série do nível e nível no comando de importar
+const n1 = rodar(['lp', '--bncc', 'EF35LP03', '--nivel', '1']);
+ok(n1.saida.includes('--nivel 1 --bncc EF35LP03') && texto('lp').includes('Nível 1, o mais fácil') && texto('lp').includes('2º ano'), 'lp --nivel 1: texto fácil, 2º ano, importa no nível 1');
+const n2 = rodar(['lp', '--bncc', 'EF35LP03', '--nivel', '2']);
+ok(n2.saida.includes('--nivel 2') && texto('lp').includes('Nível 2, médio') && texto('lp').includes('3º ano'), 'lp --nivel 2: texto médio, 3º ano');
+ok(rodar(['lp', '--nivel', '4']).cod === 1, 'nível 4 recusa');
+
 // Erros
 ok(rodar(['xx']).cod === 1, 'tipo desconhecido recusa');
 ok(rodar(['mat', '--serie', '4']).cod === 1, 'série 4 recusa');

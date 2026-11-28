@@ -1,5 +1,12 @@
 {
-  "_leia": "Ficha do motor build/pedir.js (pedidos para outra IA). 'temas': para lp e mat, o motor escolhe o tema cujo código BNCC tem MENOS itens no app (calibrar = editar aqui). 'serie': série do tema. 'qtd': quantidade padrão de cada tipo. 'roteiros': arquivo de build/roteiros/ de cada tipo; 'destino': onde salvar a resposta; 'depois': comandos para rodar ({arq} = arquivo salvo, {serie} = série). 'cenas': ideia de cena (número do desenho → frase) para o tipo desenho, quando o título sozinho repetiria outro desenho.",
+  "_leia": "Ficha do motor build/pedir.js (pedidos para outra IA). 'temas': para lp e mat, o motor escolhe o tema cujo código BNCC tem MENOS itens no app (calibrar = editar aqui). 'serie': série do tema. 'qtd': quantidade padrão de cada tipo. 'roteiros': arquivo de build/roteiros/ de cada tipo; 'destino': onde salvar a resposta; 'depois': comandos para rodar ({arq} = arquivo salvo, {serie} = série, {nivel} = nível). 'dificuldade': para lp, como deve ser cada nível (vai no lugar de [DIFICULDADE] do roteiro; --nivel escolhe). 'cenas': ideia de cena (número do desenho → frase) para o tipo desenho, quando o título sozinho repetiria outro desenho.",
+  "dificuldade": {
+    "lp": {
+      "1": "Nível 1, o mais fácil (ela está começando): texto de 2 ou 3 frases bem curtas sobre UM só assunto, que aparece logo na primeira frase e se repete nas outras (ex.: o nome do bicho em todas as frases). Pergunta direta, como \"Do que o texto fala?\" ou \"Sobre o que é o texto?\". A certa é bem curta (até 30 letras), ex.: \"Do gato da Bia.\". Uma errada é algo que só aparece de passagem no texto (\"trecho\"); a outra é \"troca\" ou \"inventado\".",
+      "2": "Nível 2, médio: texto de 3 ou 4 frases curtas com um assunto principal e um ou dois detalhes; o assunto aparece no começo, mas não em todas as frases. Perguntas como \"Do que o texto fala?\", \"Qual é o assunto principal?\" ou \"Qual é o melhor título para o texto?\". Uma errada é sempre um detalhe verdadeiro do texto (\"trecho\"), para ela aprender a separar detalhe de assunto. Sem \"exagero\".",
+      "3": "Nível 3, o mais difícil: texto de 4 ou 5 frases; o assunto principal só aparece juntando as frases (não está escrito inteiro numa frase só)."
+    }
+  },
   "qtd": {
     "lp": 20,
     "mat": 20,
@@ -125,7 +132,7 @@
   },
   "depois": {
     "lp": [
-      "node build/importar-lp.js {arq} --nivel {serie} --bncc {bncc}",
+      "node build/importar-lp.js {arq} --nivel {nivel} --bncc {bncc}",
       "depois siga o passo \"Lote em JSON do dono\" do CLAUDE.md"
     ],
     "mat": [
