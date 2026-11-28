@@ -2,7 +2,8 @@
 // Pacote = 4 questões da MESMA habilidade da BNCC, da mais fácil à mais difícil.
 // Rodada = 3 pacotes de habilidades diferentes. Caderno de erros (js/caderno.js):
 //  - a habilidade da 1ª questão a revisar entra primeiro, e até 2 questões do caderno vão no pacote dela;
-//  - as outras habilidades são sorteadas com mais chance para as fracas (LB.caderno.peso).
+//  - as outras habilidades são sorteadas com mais chance para as fracas (LB.caderno.peso);
+//  - as questões novas saem do nível atual de cada habilidade (js/nivel.js).
 // Sem tela: só escolhas (testadas em testes/t_pacote.js).
 LB.pacoteRegras = (function () {
   'use strict';
@@ -11,16 +12,7 @@ LB.pacoteRegras = (function () {
   const REVISAO_POR_PACOTE = 2;
   const OPCAO_LONGA = 8;   // letras: acima disso, os botões ficam um embaixo do outro
 
-  // Nome curto de cada habilidade (texto oficial em build/fichas/bncc.json).
-  const NOMES = {
-    EF02MA01: 'Comparar números', EF02MA04: 'Montar e desmontar números', EF02MA05: 'Somas e subtrações',
-    EF02MA06: 'Problemas de somar e tirar', EF02MA07: 'Multiplicar', EF02MA08: 'Dobro e metade',
-    EF02MA09: 'Sequências', EF02MA14: 'Sólidos nos objetos', EF02MA17: 'Pesado, leve e litro',
-    EF02MA18: 'Calendário e semana', EF02MA20: 'Moedas e cédulas', EF03MA01: 'Números até 1000',
-    EF03MA03: 'Fatos de somar e multiplicar', EF03MA06: 'Problemas de contas', EF03MA07: 'Problemas de multiplicar',
-    EF03MA08: 'Dividir', EF03MA24: 'Compras e troco'
-  };
-  const nomeDe = h => NOMES[h] || 'Desafios';
+  const nomeDe = h => LB.nomeHabilidade ? LB.nomeHabilidade(h, 'Desafios') : 'Desafios'; // js/nomeshab.js
   const nivelDe = i => i.nivel || 1;
 
   function embaralhar(lista, rnd) {
@@ -68,9 +60,12 @@ LB.pacoteRegras = (function () {
     return escolhidas;
   }
 
-  function pacote(habilidade, lista, revisar, rnd) {
+  // Novas: primeiro as do nível atual da habilidade (js/nivel.js), depois as dos níveis mais perto.
+  function pacote(habilidade, lista, revisar, rnd, alvo) {
     const doCaderno = revisar.map(id => lista.find(i => i.id === id)).filter(Boolean).slice(0, REVISAO_POR_PACOTE);
-    const novas = embaralhar(lista.filter(i => !doCaderno.includes(i)), rnd).slice(0, TAMANHO_PACOTE - doCaderno.length);
+    const perto = i => alvo ? Math.abs(nivelDe(i) - alvo) : 0;
+    const novas = embaralhar(lista.filter(i => !doCaderno.includes(i)), rnd)
+      .sort((a, b) => perto(a) - perto(b)).slice(0, TAMANHO_PACOTE - doCaderno.length);
     const escolhidas = [...doCaderno, ...novas].sort((a, b) => nivelDe(a) - nivelDe(b));
     const titulo = nomeDe(habilidade);
     const media = escolhidas.reduce((s, i) => s + nivelDe(i), 0) / escolhidas.length;
@@ -86,7 +81,7 @@ LB.pacoteRegras = (function () {
     const g = grupos(itens);
     const revisar = LB.caderno.paraRevisar(caderno, itens[0].materia);
     return escolherHabilidades(g, caderno, revisar, rnd)
-      .map(h => pacote(h, g[h], revisar, rnd))
+      .map(h => pacote(h, g[h], revisar, rnd, LB.nivel && LB.nivel.de(caderno && caderno.niv, h)))
       .sort((a, b) => a.media - b.media);
   }
 

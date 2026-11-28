@@ -181,11 +181,11 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | Arquivo | Linhas | O que faz |
 |---|---|---|
 | `sw.js` | 64 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 148 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `js/app.js` | 152 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/avisoerro.js` | 40 | Aviso amigável quando o app dá erro: em vez de tela parada, mostra "Recomeçar" (o progresso fica guardado no aparelho). |
 | `js/backup.js` | 45 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 49 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
-| `js/caderno.js` | 52 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
+| `js/caderno.js` | 54 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
 | `js/capivara-patas.js` | 71 | Patinhas e traços dos braços da capivara (SVG). Desenhadas em volta de (0,0), com a ponta para baixo (+y); |
 | `js/capivara-pelo.js` | 90 | Pelo da capivara (SVG feito pelo código): tufinhos na borda das formas e fios por dentro. |
 | `js/capivara-rosto.js` | 62 | Rosto e enfeites da capivara (SVG, 320×320): olhos, sobrancelhas, bochechas, focinho, laranja, chapéu, estrela e confete. |
@@ -201,10 +201,12 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/letrafaltaregras.js` | 37 | Regras da brincadeira "Letra que falta": figura + palavra com um buraco; escolher entre 3 letras. Sem tela (testado em testes/t_letrafalta.js). |
 | `js/mascote.js` | 16 | Mascote: capivara em 3 humores, desenhada em SVG pelo código (js/capivara*.js, carregados antes). |
 | `js/mercadoregras.js` | 90 | Regras do "Mercadinho": sorteia a compra e calcula o certo. Sem tela: só contas (testadas em testes/t_mercado.js). |
-| `js/missao.js` | 136 | Missão do dia: 1 história + 3 de Português + 3 de Matemática + 1 desenho, em sequência. |
+| `js/missao.js` | 143 | Missão do dia: 1 história + 3 de Português + 3 de Matemática + 1 desenho, em sequência. |
+| `js/nivel.js` | 55 | Nível que se ajusta sozinho (Fase 13): um nível por habilidade da BNCC. |
+| `js/nomeshab.js` | 21 | Nome curto de cada habilidade da BNCC, para a criança e para o adulto (texto oficial em build/fichas/bncc.json). |
 | `js/ondeparou.js` | 57 | Continuar de onde parou: guarda a história (e a pergunta) ou a atividade aberta e, ao reabrir o app, |
 | `js/ordemregras.js` | 29 | Regras da brincadeira "Ordem dos Fatos": sorteia as sequências e monta as perguntas. Sem tela (testado em testes/t_ordem.js). |
-| `js/pacoteregras.js` | 94 | Regras da brincadeira "Pacotes de contas": monta pacotes com as questões do banco (conteudo/mat.js). |
+| `js/pacoteregras.js` | 89 | Regras da brincadeira "Pacotes de contas": monta pacotes com as questões do banco (conteudo/mat.js). |
 | `js/pergunta.js` | 45 | Regra de responder (histórias e atividades): acertou → festa; errou → incentivo e nova |
 | `js/registrar-sw.js` | 23 | Liga o modo sem internet (só em https ou localhost; em arquivo aberto direto, ignora). |
 | `js/reguadesenho.js` | 21 | Desenho da régua com objetos (SVG feito pelo código, sem imagem): LB.reguaDesenho(objetos, regua, guias). |
@@ -237,8 +239,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/pacote.js` | 26 | Brincadeira "Pacotes de contas" (regras em js/pacoteregras.js; vai e vem da rodada no kit js/rodada.js). |
 | `js/telas/regua.js` | 14 | Brincadeira "Régua" (regras em js/reguaregras.js, desenho em js/reguadesenho.js; vai e vem da rodada no kit js/rodada.js). |
 | `js/telas/relogio.js` | 14 | Brincadeira "Que horas são?" (regras em js/relogioregras.js, desenho em js/relogiodesenho.js; vai e vem da rodada no kit js/rodada.js). |
-| `js/telas/responsavel.js` | 79 | Área do responsável: progresso, onde errou mais (por habilidade da BNCC) e impressão. |
-| `js/telas/selonovo.js` | 41 | Selo novo: quando um selo é ganho, mostra uma janela de festa (molde js/moldes/selonovo.js). |
+| `js/telas/responsavel.js` | 80 | Área do responsável: progresso, onde errou mais (por habilidade da BNCC) e impressão. |
+| `js/telas/selonovo.js` | 47 | Selo novo: quando um selo é ganho, mostra uma janela de festa (molde js/moldes/selonovo.js). |
 | `js/telas/selos.js` | 38 | Tela "Selos": progresso geral, conquistas e selos da missão do dia (missões e dias seguidos). |
 | `js/telas/silabas.js` | 62 | Brincadeira "Monte a Palavra": tocar nas sílabas na ordem certa para formar a palavra da dica. |
 | `js/telas/somfigura.js` | 40 | Brincadeira "Som e Figura": ouvir a palavra e tocar na figura certa (palavras de conteudo/silabas.js). |
@@ -267,7 +269,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/portao.js` | 16 | Molde (HTML do Vue): Trava dos adultos — uma conta de multiplicar. |
 | `js/moldes/regua.js` | 29 | Molde (HTML do Vue): Brincadeira "Régua". Criado por build/nova-brincadeira.js. |
 | `js/moldes/relogio.js` | 38 | Molde (HTML do Vue): Brincadeira "Que horas são?" (ponteiros, digital e quanto tempo passou). |
-| `js/moldes/responsavel.js` | 74 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
+| `js/moldes/responsavel.js` | 84 | Molde (HTML do Vue): Área do responsável — progresso, onde errou mais e impressão. |
 | `js/moldes/selonovo.js` | 16 | Molde (HTML do Vue): janela de festa do selo novo (js/telas/selonovo.js). |
 | `js/moldes/selos.js` | 23 | Molde (HTML do Vue): Tela "Minhas conquistas" (selos e progresso). |
 | `js/moldes/silabas.js` | 41 | Molde (HTML do Vue): Brincadeira "Monte a Palavra" (juntar sílabas). |
@@ -331,7 +333,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_banco.js` | 23 | Teste guardado: pedido de guarda permanente dos dados (js/banco.js, pedirGuarda). |
 | `testes/t_bncc.js` | 60 | Teste guardado: motor da BNCC (build/bncc.js + build/bncc-regras.js + build/fichas/bncc.json). |
 | `testes/t_brincadeiras.js` | 82 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |
-| `testes/t_caderno.js` | 80 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |
+| `testes/t_caderno.js` | 87 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js), com o nível por habilidade (js/nivel.js). |
 | `testes/t_catalogo.js` | 37 | Teste guardado: catálogo (build/catalogo.js). Uso: node testes/t_catalogo.js |
 | `testes/t_celebracoes.js` | 71 | Teste guardado: celebrações (Fase 7, etapa 5) — janela do selo novo e fim da missão animado. |
 | `testes/t_colorir.js` | 97 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
@@ -353,6 +355,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_letrafalta.js` | 67 | Teste guardado: brincadeira "Letra que falta" (js/letrafaltaregras.js = regras; js/telas/letrafalta.js = tela). |
 | `testes/t_materias.js` | 72 | Teste guardado: mapa por matéria (Etapa B, 27/11): Início · Português · Matemática · Prêmios. |
 | `testes/t_mercado.js` | 118 | Teste guardado: brincadeira "Mercadinho" (js/mercadoregras.js = contas; js/telas/mercado.js = tela). |
+| `testes/t_nivel.js` | 55 | Teste guardado: nível que se ajusta sozinho por habilidade (js/nivel.js), ligado ao caderno e à missão. |
 | `testes/t_nova_brincadeira.js` | 67 | Teste guardado: motor build/nova-brincadeira.js. Trabalha numa cópia temporária do projeto (a pasta real não muda). |
 | `testes/t_offline.js` | 44 | Teste guardado: modo sem internet. Confere a lista do sw.js, o manifesto e abre o app offline. |
 | `testes/t_ondeparou.js` | 90 | Teste guardado: continuar de onde parou (js/ondeparou.js). Abre uma história/atividade, recarrega |

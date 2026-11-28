@@ -71,9 +71,10 @@ LB.usarResponsavel = function (ctx) {
   });
 
   const noCaderno = computed(() => LB.caderno.total(ctx.caderno.value));
+  const niveis = computed(() => LB.nivel.painel(ctx.caderno.value && ctx.caderno.value.niv)); // js/nivel.js
 
   return {
-    registros, evolucao, noCaderno, porMateria, ondeErrou, feitosPorArea, desenhoParaImprimir,
+    registros, evolucao, noCaderno, niveis, porMateria, ondeErrou, feitosPorArea, desenhoParaImprimir,
     imprimirAtividades, imprimirDesenho
   };
 };

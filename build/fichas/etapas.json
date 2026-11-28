@@ -11,6 +11,7 @@
     "t_conteudo": "testes/t_conteudo.js",
     "t_sorteio": "testes/t_sorteio.js",
     "t_caderno": "testes/t_caderno.js",
+    "t_nivel": "testes/t_nivel.js",
     "t_backup": "testes/t_backup.js",
     "t_banco": "testes/t_banco.js",
     "t_avisoerro": "testes/t_avisoerro.js",
@@ -102,7 +103,8 @@
     ],
     "js/caderno.js": [
       "t_caderno",
-      "t_app"
+      "t_app",
+      "t_nivel"
     ],
     "js/evolucao.js": [
       "t_evolucao",
@@ -780,6 +782,19 @@
     ],
     "testes/t_letrafalta.js": [
       "t_letrafalta"
+    ],
+    "js/nivel.js": [
+      "t_nivel",
+      "t_caderno",
+      "t_pacote",
+      "t_app"
+    ],
+    "js/nomeshab.js": [
+      "t_nivel",
+      "t_pacote"
+    ],
+    "testes/t_nivel.js": [
+      "t_nivel"
     ]
   }
 }

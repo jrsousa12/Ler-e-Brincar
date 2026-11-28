@@ -1,4 +1,4 @@
-// Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js).
+// Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js), com o nível por habilidade (js/nivel.js).
 // Uso: node testes/t_caderno.js
 'use strict';
 const path = require('path');
@@ -7,7 +7,7 @@ let falhas = 0;
 const ok = (cond, msg) => { if (!cond) { falhas++; console.log('FALHA: ' + msg); } };
 
 globalThis.LB = {};
-for (const f of ['js/caderno.js', 'conteudo/historias.js', 'conteudo/lp.js', 'conteudo/mat.js', 'conteudo/colorir.js', 'js/missao.js']) {
+for (const f of ['js/nomeshab.js', 'js/nivel.js', 'js/caderno.js', 'conteudo/historias.js', 'conteudo/lp.js', 'conteudo/mat.js', 'conteudo/colorir.js', 'js/missao.js']) {
   require(path.join(raiz, f));
 }
 const K = LB.caderno;
@@ -61,7 +61,7 @@ let pesada = K.vazio();
 for (let i = 0; i < 10; i++) pesada = K.anotar(pesada, { id: 'f' + i, materia: 'z', habilidadeBNCC: fraca }, false, 'd');
 pesada.itens = {};
 // Simula 200 dias (troca a data de "hoje") e conta quantas vezes a habilidade fraca cai na missão.
-const contar = cadx => {
+const contar = (cadx, conta = p => p.tipo === 'mat' && LB.mat.find(x => x.id === p.id).habilidadeBNCC === fraca) => {
   const Real = Date;
   let n = 0;
   for (let d = 1; d <= 200; d++) {
@@ -69,12 +69,19 @@ const contar = cadx => {
     globalThis.Date = class extends Real { constructor(...x) { super(...(x.length ? x : [Real.UTC(2026, 0, d, 12)])); } };
     t.m.garantir();
     globalThis.Date = Real;
-    n += t.ctx.missao.value.passos.filter(p => p.tipo === 'mat' && LB.mat.find(x => x.id === p.id).habilidadeBNCC === fraca).length;
+    n += t.ctx.missao.value.passos.filter(conta).length;
   }
   return n;
 };
 const semPeso = contar(K.vazio()), comPeso = contar(pesada);
 ok(comPeso > semPeso, `habilidade fraca puxada (${comPeso} com peso × ${semPeso} sem)`);
 
-console.log(falhas ? `t_caderno: ${falhas} falha(s)` : `t_caderno: OK (fraca na missão: ${comPeso} × ${semPeso} sem peso)`);
+// Nível da habilidade (js/nivel.js): subiu até o nível 3 → as atividades de nível 3 dela passam a cair na missão.
+const alta = habs.find(h => { const f = LB.nivel.faixa(h); return f && f[0] === 1 && f.includes(3); });
+const ehAlta = p => { const x = p.tipo === 'mat' && LB.mat.find(y => y.id === p.id); return x && x.habilidadeBNCC === alta && x.nivel === 3; };
+const subida = { ...K.vazio(), niv: { [alta]: { n: 3, u: '' } } };
+const noNivel = contar(subida, ehAlta), semNivel = contar(K.vazio(), ehAlta);
+ok(noNivel > semNivel, `nível 3 de ${alta} na missão depois de subir (${noNivel} × ${semNivel} antes)`);
+
+console.log(falhas ? `t_caderno: ${falhas} falha(s)` : `t_caderno: OK (fraca na missão: ${comPeso} × ${semPeso} sem peso; nível subido: ${noNivel} × ${semNivel})`);
 process.exit(falhas ? 1 : 0);

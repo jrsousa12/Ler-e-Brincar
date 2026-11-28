@@ -9,6 +9,7 @@
 - `node testes/t_app.js` (abre o app no navegador; `CAPTURAS=pasta` salva fotos; teste de navegador novo usa `testes/_navegador.js`: `novaPagina`, `abrirApp`)
 - `node testes/t_sorteio.js` (sorteio da ordem das opções)
 - `node testes/t_caderno.js` (caderno de erros e pontos fracos na missão)
+- `node testes/t_nivel.js` (nível que sobe e desce por habilidade, `js/nivel.js`, guardado no caderno)
 - `node testes/t_backup.js` (cópia de segurança)
 - `node testes/t_silabas.js` (brincadeira Monte a Palavra, `js/telas/silabas.js`)
 - `node testes/t_brincadeiras.js` (Memória e Som e Figura, `js/telas/memoria.js` e `somfigura.js`, palavras de `conteudo/silabas.js`)

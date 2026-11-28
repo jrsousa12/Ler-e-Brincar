@@ -38,12 +38,16 @@
       ctx.marcarConcluido = (id) => {
         if (!ctx.concluidos.value[id]) ctx.concluidos.value = { ...ctx.concluidos.value, [id]: true };
       };
-      ctx.anotarCaderno = (item, deprimeira) => {
-        ctx.caderno.value = LB.caderno.anotar(ctx.caderno.value, item, deprimeira, new Date().toISOString().slice(0, 10));
+      // Anota no caderno; se o nível da habilidade subiu (js/nivel.js), faz festa (js/telas/selonovo.js).
+      const trocarCaderno = (novo, h) => {
+        const antes = ctx.caderno.value;
+        ctx.caderno.value = novo;
+        if (h && LB.nivel.subiu(antes && antes.niv, novo.niv, h) && ctx.festejarNivel) ctx.festejarNivel(h);
       };
-      ctx.anotarHabilidade = (habilidade, deprimeira) => {
-        ctx.caderno.value = LB.caderno.anotarHabilidade(ctx.caderno.value, habilidade, deprimeira);
-      };
+      ctx.anotarCaderno = (item, deprimeira) => trocarCaderno(
+        LB.caderno.anotar(ctx.caderno.value, item, deprimeira, new Date().toISOString().slice(0, 10)), item.habilidadeBNCC);
+      ctx.anotarHabilidade = (habilidade, deprimeira) =>
+        trocarCaderno(LB.caderno.anotarHabilidade(ctx.caderno.value, habilidade, deprimeira), habilidade);
       ctx.ouvir = (texto) => LB.voz.falar(texto);
       ctx.falarSozinho = (texto) => { if (ctx.ajustes.value.vozAuto) LB.voz.falar(texto); };
 

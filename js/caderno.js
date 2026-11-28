@@ -1,19 +1,23 @@
 // Caderno de erros e pontos fracos (ideia do app Ondulatória).
 // - Errou (ou não acertou de primeira) → a atividade entra no caderno; sai com 2 acertos seguidos de primeira.
 // - Cada habilidade da BNCC guarda certas/erradas de primeira; a missão sorteia mais as fracas.
-// Funções puras: recebem o caderno { itens, hab } e devolvem um novo (o Vue percebe a troca).
+// - Cada habilidade também tem um nível que sobe e desce sozinho (js/nivel.js), no campo niv.
+// Funções puras: recebem o caderno { itens, hab, niv } e devolvem um novo (o Vue percebe a troca).
 (function () {
   'use strict';
   const SAIR_COM = 2; // acertos seguidos para sair do caderno
-  const vazio = () => ({ itens: {}, hab: {} });
+  const vazio = () => ({ itens: {}, hab: {}, niv: {} });
+  const copiar = c => ({ itens: { ...(c && c.itens) }, hab: { ...(c && c.hab) }, niv: { ...(c && c.niv) } });
+  // Soma certa/errada de primeira na habilidade e ajusta o nível dela.
+  function pesar(c, h, deprimeira) {
+    const antes = c.hab[h] || { certas: 0, erradas: 0 };
+    c.hab[h] = deprimeira ? { ...antes, certas: antes.certas + 1 } : { ...antes, erradas: antes.erradas + 1 };
+    if (LB.nivel) c.niv = LB.nivel.registrar(c.niv, h, deprimeira);
+  }
 
   function anotar(caderno, item, deprimeira, data) {
-    const c = { itens: { ...(caderno && caderno.itens) }, hab: { ...(caderno && caderno.hab) } };
-    const h = item.habilidadeBNCC;
-    if (h) {
-      const antes = c.hab[h] || { certas: 0, erradas: 0 };
-      c.hab[h] = deprimeira ? { ...antes, certas: antes.certas + 1 } : { ...antes, erradas: antes.erradas + 1 };
-    }
+    const c = copiar(caderno);
+    if (item.habilidadeBNCC) pesar(c, item.habilidadeBNCC, deprimeira);
     const atual = c.itens[item.id];
     if (!deprimeira) c.itens[item.id] = { materia: item.materia, seguidos: 0, desde: (atual && atual.desde) || data };
     else if (atual) {
@@ -25,10 +29,8 @@
 
   // Brincadeiras: só pesa a habilidade (não há "item" para voltar na missão). Conta a 1ª tentativa de cada pergunta.
   function anotarHabilidade(caderno, habilidade, deprimeira) {
-    const c = { itens: { ...(caderno && caderno.itens) }, hab: { ...(caderno && caderno.hab) } };
-    if (!habilidade) return c;
-    const antes = c.hab[habilidade] || { certas: 0, erradas: 0 };
-    c.hab[habilidade] = deprimeira ? { ...antes, certas: antes.certas + 1 } : { ...antes, erradas: antes.erradas + 1 };
+    const c = copiar(caderno);
+    if (habilidade) pesar(c, habilidade, deprimeira);
     return c;
   }
 

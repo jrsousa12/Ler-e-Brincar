@@ -30,16 +30,23 @@ LB.usarMissao = function (ctx) {
     return saida;
   }
 
-  // Atividades novas: nível mais fácil (ou o seguinte), sorteio com peso maior para habilidade fraca.
+  // Atividades novas: no nível atual de cada habilidade (js/nivel.js) ou num vizinho, peso maior para a fraca.
+  // Nível acima do "mais fácil + 1" da matéria só entra quando a habilidade já subiu até ele.
   function escolherFracas(lista, n, rnd, fora) {
     let resto = lista.filter(x => !fora.has(x.id) && !ctx.concluidos.value[x.id]);
     if (resto.length < n) resto = lista.filter(x => !fora.has(x.id));
     const minimo = Math.min(...resto.map(x => x.nivel || 1));
+    const niv = ctx.caderno.value && ctx.caderno.value.niv;
+    const alvo = x => (LB.nivel && LB.nivel.de(niv, x.habilidadeBNCC)) || minimo;
+    const subido = x => { const f = LB.nivel && LB.nivel.faixa(x.habilidadeBNCC); return f && alvo(x) > f[0] ? alvo(x) : 0; };
+    const permitido = x => (x.nivel || 1) <= Math.max(minimo + 1, subido(x));
+    const dist = x => Math.abs((x.nivel || 1) - alvo(x));
     const saida = [];
     while (saida.length < n && resto.length) {
-      let base = resto.filter(x => (x.nivel || 1) <= minimo + 1);
+      let base = resto.filter(x => permitido(x) && dist(x) <= 1);
+      if (!base.length) base = resto.filter(permitido);
       if (!base.length) base = resto;
-      const pesos = base.map(x => LB.caderno.peso(ctx.caderno.value, x.habilidadeBNCC) * ((x.nivel || 1) === minimo ? 2 : 1));
+      const pesos = base.map(x => LB.caderno.peso(ctx.caderno.value, x.habilidadeBNCC) * (dist(x) === 0 ? 2 : 1));
       let r = rnd() * pesos.reduce((a, b) => a + b, 0), k = 0;
       while (k < base.length - 1 && (r -= pesos[k]) > 0) k++;
       saida.push(base[k]);

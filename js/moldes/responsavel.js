@@ -56,6 +56,16 @@ LB.moldes.responsavel = `
       </div>
 
       <div class="card sem-clique">
+        <div class="card-titulo">🪜 Nível de cada habilidade</div>
+        <p class="card-meta" v-if="!niveis.length">Ainda sem respostas.</p>
+        <div class="linha-erro" v-for="h in niveis" :key="h.habilidade">
+          <div><strong>{{ h.nome }}</strong> ({{ h.habilidade }}) — nível {{ h.nivel }}<span v-if="h.menor !== h.maior"> (de {{ h.menor }} a {{ h.maior }})</span><span v-else> (só existe este)</span></div>
+          <div class="card-meta" v-if="h.ultimas">Desde a última mudança: {{ h.ultimas }}</div>
+        </div>
+        <p class="card-meta">Sobe com 4 acertos de primeira nas últimas 5; desce com 2 erros seguidos. As atividades novas da missão e dos pacotes saem desse nível.</p>
+      </div>
+
+      <div class="card sem-clique">
         <div class="card-titulo">🖨️ Imprimir</div>
         <p class="card-meta">Atividades: primeiro as que ela errou, depois as que ainda não fez.</p>
         <div class="linha-botoes">
