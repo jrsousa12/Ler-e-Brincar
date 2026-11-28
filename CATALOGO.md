@@ -180,8 +180,8 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 
 | Arquivo | Linhas | O que faz |
 |---|---|---|
-| `sw.js` | 62 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 143 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `sw.js` | 63 | Guarda o app no aparelho para funcionar sem internet. |
+| `js/app.js` | 144 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/avisoerro.js` | 40 | Aviso amigável quando o app dá erro: em vez de tela parada, mostra "Recomeçar" (o progresso fica guardado no aparelho). |
 | `js/backup.js` | 45 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 49 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
@@ -190,6 +190,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/capivara-pelo.js` | 90 | Pelo da capivara (SVG feito pelo código): tufinhos na borda das formas e fios por dentro. |
 | `js/capivara-rosto.js` | 62 | Rosto e enfeites da capivara (SVG, 320×320): olhos, sobrancelhas, bochechas, focinho, laranja, chapéu, estrela e confete. |
 | `js/capivara.js` | 95 | Capivara em SVG feita pelo código, 320×320, em 3 humores: 'normal', 'feliz', 'festa' (usada por js/mascote.js). |
+| `js/ditadoregras.js` | 31 | Regras da brincadeira "Ditado": sorteia as palavras e monta o teclado de letras. Sem tela (testado em testes/t_ditado.js). |
 | `js/evolucao.js` | 77 | Evolução no tempo: só contas, a partir das respostas guardadas (js/tentativas.js). |
 | `js/festa.js` | 95 | Festa do acerto (confete + som) e incentivo no erro. Som feito pelo próprio app, sem arquivos. |
 | `js/formasdesenho.js` | 14 | Desenho de uma forma (SVG feito pelo código, sem imagem): LB.formasDesenho({ forma, cor, tam, giro }). |
@@ -223,10 +224,11 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/telas/backup.js` | 49 | Tela "Cópia de segurança" (na Área do responsável): baixar e importar o progresso. |
 | `js/telas/colorir.js` | 35 | Telas "Colorir" (lista) e "Colorir item" (pintar o desenho tocando nas partes). |
 | `js/telas/confirmar.js` | 22 | Caixa de confirmação própria (no lugar do confirm do navegador). |
+| `js/telas/ditado.js` | 51 | Brincadeira "Ditado": a voz fala a palavra e a criança monta com letras grandes (regras em js/ditadoregras.js; |
 | `js/telas/formas.js` | 14 | Brincadeira "Formas" (regras em js/formasregras.js, desenho em js/formasdesenho.js; vai e vem da rodada no kit js/rodada.js). |
 | `js/telas/grafico.js` | 14 | Brincadeira "Gráfico de barras" (regras em js/graficoregras.js, desenho em js/graficodesenho.js; vai e vem da rodada no kit js/rodada.js). |
 | `js/telas/historias.js` | 89 | Telas "Ler" e "História": leitura e as perguntas de cada história. |
-| `js/telas/materias.js` | 33 | Mapa do app por matéria (Etapa B, 27/11): telas "Português", "Matemática" e "Prêmios". |
+| `js/telas/materias.js` | 34 | Mapa do app por matéria (Etapa B, 27/11): telas "Português", "Matemática" e "Prêmios". |
 | `js/telas/memoria.js` | 58 | Brincadeira "Memória": achar os pares figura + palavra escrita (palavras de conteudo/silabas.js). |
 | `js/telas/mercado.js` | 65 | Brincadeira "Mercadinho": pagar o preço com moedas e notas, ou calcular o troco (regras em js/mercadoregras.js). |
 | `js/telas/ordem.js` | 27 | Brincadeira "Ordem dos Fatos" (regras em js/ordemregras.js; vai e vem da rodada no kit js/rodada.js). |
@@ -247,11 +249,12 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/moldes/cabecalho.js` | 14 | Molde (HTML do Vue): Cabeçalho do topo — "← Voltar" (levado para cá pelas telas) + título da tela, estrelas e ⚙️ dos adultos. |
 | `js/moldes/colorir.js` | 38 | Molde (HTML do Vue): Telas "Colorir" (lista) e desenho para pintar. |
 | `js/moldes/confirmar.js` | 14 | Molde (HTML do Vue): caixa de confirmação própria (js/telas/confirmar.js). |
+| `js/moldes/ditado.js` | 36 | Molde (HTML do Vue): Brincadeira "Ditado" (ouvir a palavra e montar com letras). |
 | `js/moldes/formas.js` | 32 | Molde (HTML do Vue): Brincadeira "Formas". Criado por build/nova-brincadeira.js. |
 | `js/moldes/grafico.js` | 29 | Molde (HTML do Vue): Brincadeira "Gráfico de barras". Criado por build/nova-brincadeira.js. |
 | `js/moldes/historias.js` | 45 | Molde (HTML do Vue): Telas "Ler" (lista) e "História" (leitura e perguntas). |
 | `js/moldes/inicio.js` | 24 | Molde (HTML do Vue): Tela inicial — mascote com balão, missão do dia em destaque e 3 botões grandes (Português, Matemática, Prêmios). |
-| `js/moldes/materias.js` | 74 | Molde (HTML do Vue): telas "Português", "Matemática" e "Prêmios" (comportamento em js/telas/materias.js). |
+| `js/moldes/materias.js` | 77 | Molde (HTML do Vue): telas "Português", "Matemática" e "Prêmios" (comportamento em js/telas/materias.js). |
 | `js/moldes/memoria.js` | 26 | Molde (HTML do Vue): Brincadeira "Memória" (par figura + palavra). |
 | `js/moldes/mercado.js` | 54 | Molde (HTML do Vue): Brincadeira "Mercadinho" (pagar certinho e calcular o troco). |
 | `js/moldes/missao.js` | 25 | Molde (HTML do Vue): Missão do dia — trilha de 8 passos e o próximo passo. |
@@ -331,6 +334,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_colorir.js` | 97 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
 | `testes/t_conferir.js` | 68 | Teste guardado: conferidor de qualidade (build/conferir.js). Uso: node testes/t_conferir.js |
 | `testes/t_conteudo.js` | 47 | Teste guardado: regra de resposta certa + validador. Uso: node testes/t_conteudo.js |
+| `testes/t_ditado.js` | 81 | Teste guardado: brincadeira "Ditado" (js/ditadoregras.js = contas; js/telas/ditado.js = tela). |
 | `testes/t_estilos.js` | 62 | Teste guardado: organização do CSS (Etapa A, 27/11). Uso: node testes/t_estilos.js |
 | `testes/t_evolucao.js` | 47 | Teste guardado: contas da Evolução no tempo (js/evolucao.js). |
 | `testes/t_figuras_mat.js` | 36 | Teste guardado: motor de figuras da Matemática (build/figuras-mat.js). Uso: node testes/t_figuras_mat.js |

@@ -51,7 +51,8 @@
     "t_relogio": "testes/t_relogio.js",
     "t_regua": "testes/t_regua.js",
     "t_formas": "testes/t_formas.js",
-    "t_grafico": "testes/t_grafico.js"
+    "t_grafico": "testes/t_grafico.js",
+    "t_ditado": "testes/t_ditado.js"
   },
   "navegador": [
     "t_avisoerro",
@@ -72,7 +73,8 @@
     "t_relogio",
     "t_regua",
     "t_formas",
-    "t_grafico"
+    "t_grafico",
+    "t_ditado"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -415,7 +417,8 @@
       "t_relogio",
       "t_regua",
       "t_formas",
-      "t_grafico"
+      "t_grafico",
+      "t_ditado"
     ],
     "testes/t_rodada.js": [
       "t_rodada"
@@ -640,7 +643,8 @@
       "t_relogio",
       "t_regua",
       "t_formas",
-      "t_grafico"
+      "t_grafico",
+      "t_ditado"
     ],
     "js/telas/materias.js": [
       "t_materias",
@@ -649,7 +653,8 @@
       "t_relogio",
       "t_regua",
       "t_formas",
-      "t_grafico"
+      "t_grafico",
+      "t_ditado"
     ],
     "testes/t_materias.js": [
       "t_materias"
@@ -740,6 +745,21 @@
     ],
     "js/mascote.js": [
       "t_app"
+    ],
+    "js/ditadoregras.js": [
+      "t_ditado"
+    ],
+    "js/telas/ditado.js": [
+      "t_ditado"
+    ],
+    "js/moldes/ditado.js": [
+      "t_ditado"
+    ],
+    "css/telas/ditado.css": [
+      "t_ditado"
+    ],
+    "testes/t_ditado.js": [
+      "t_ditado"
     ]
   }
 }

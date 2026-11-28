@@ -7,7 +7,8 @@ LB.materiaDe = {
   relogio: 'matematica',
   regua: 'matematica',
   formas: 'matematica',
-  grafico: 'matematica'
+  grafico: 'matematica',
+  ditado: 'portugues'
 };
 
 // Telas de cada aba do menu de baixo (para acender a aba certa)

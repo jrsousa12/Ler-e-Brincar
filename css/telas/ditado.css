@@ -1,0 +1,5 @@
+/* Brincadeira "Ditado" (js/moldes/ditado.js). Cores de base.css; o resto vem de "Monte a Palavra". */
+.slot-letra{min-width:52px;padding-left:6px;padding-right:6px;font-size:1.8rem}
+.teclado-ditado{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:14px 0}
+.tecla-letra{min-width:64px;font-size:2rem;font-weight:800}
+.btn-apagar-ditado{display:block;margin:0 auto 12px}

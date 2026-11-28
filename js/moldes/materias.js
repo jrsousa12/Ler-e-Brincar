@@ -24,6 +24,9 @@ LB.moldes.materias = `
         <button type="button" class="bloco-brincadeira ler" @click="abrirOrdem">
           <span class="bloco-emoji" aria-hidden="true">🔢</span>Ordem dos Fatos<span v-if="concluidos['ordem']" class="selo-feito">✓</span>
         </button>
+        <button type="button" class="bloco-brincadeira ler" @click="abrirDitado">
+          <span class="bloco-emoji" aria-hidden="true">✍️</span>Ditado<span v-if="concluidos['ditado']" class="selo-feito">✓</span>
+        </button>
       </div>
     </div>
 
