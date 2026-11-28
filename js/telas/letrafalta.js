@@ -2,7 +2,7 @@
 LB.usarLetraFalta = function (ctx) {
   'use strict';
   const r = LB.rodada(ctx, {
-    id: 'letrafalta',
+    id: 'letrafalta', habilidade: 'EF02LP01', titulo: 'Letra que falta',
     sortear: () => LB.letraFaltaRegras.sortearRodada(),
     frase: d => d.fala,
     textos: {

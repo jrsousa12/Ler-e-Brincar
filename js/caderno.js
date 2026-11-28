@@ -23,6 +23,15 @@
     return c;
   }
 
+  // Brincadeiras: só pesa a habilidade (não há "item" para voltar na missão). Conta a 1ª tentativa de cada pergunta.
+  function anotarHabilidade(caderno, habilidade, deprimeira) {
+    const c = { itens: { ...(caderno && caderno.itens) }, hab: { ...(caderno && caderno.hab) } };
+    if (!habilidade) return c;
+    const antes = c.hab[habilidade] || { certas: 0, erradas: 0 };
+    c.hab[habilidade] = deprimeira ? { ...antes, certas: antes.certas + 1 } : { ...antes, erradas: antes.erradas + 1 };
+    return c;
+  }
+
   // Ids a revisar de uma matéria: quem tem menos acertos seguidos e está há mais tempo vem antes.
   function paraRevisar(caderno, materia) {
     const itens = (caderno && caderno.itens) || {};
@@ -39,5 +48,5 @@
 
   const total = caderno => Object.keys((caderno && caderno.itens) || {}).length;
 
-  LB.caderno = { vazio, anotar, paraRevisar, peso, total, SAIR_COM };
+  LB.caderno = { vazio, anotar, anotarHabilidade, paraRevisar, peso, total, SAIR_COM };
 })();

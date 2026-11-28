@@ -16,7 +16,7 @@ LB.usarSomFigura = function (ctx) {
   }
 
   const r = LB.rodada(ctx, {
-    id: 'som-figura',
+    id: 'som-figura', habilidade: 'EF02LP03', titulo: 'Som e Figura',
     sortear: sortearRodadas,
     // Aqui a voz é a própria pergunta: fala sempre (não depende do "ler sozinho").
     aoCarregar: alvo => setTimeout(() => LB.voz.falar(alvo.palavra), 300),

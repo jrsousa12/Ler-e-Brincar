@@ -7,7 +7,7 @@ LB.usarDitado = function (ctx) {
   const teclas = ref([]);
 
   const r = LB.rodada(ctx, {
-    id: 'ditado',
+    id: 'ditado', habilidade: 'EF02LP01', titulo: 'Ditado',
     sortear: () => LB.ditadoRegras.sortearRodada(),
     frase: d => d.fala,
     aoCarregar: d => { casas.value = Array(d.palavra.length).fill(null); teclas.value = LB.ditadoRegras.teclado(d.palavra); }

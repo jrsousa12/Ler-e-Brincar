@@ -2,7 +2,7 @@
 LB.usarRelogio = function (ctx) {
   'use strict';
   const r = LB.rodada(ctx, {
-    id: 'relogio',
+    id: 'relogio', habilidade: 'EF02MA19', titulo: 'Que horas são?',
     sortear: () => LB.relogioRegras.sortearRodada(),
     frase: d => d.fala,
     textos: {

@@ -2,7 +2,7 @@
 LB.usarRegua = function (ctx) {
   'use strict';
   const r = LB.rodada(ctx, {
-    id: 'regua',
+    id: 'regua', habilidade: 'EF02MA16', titulo: 'Régua',
     sortear: () => LB.reguaRegras.sortearRodada(),
     frase: d => d.fala,
     textos: {

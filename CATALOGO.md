@@ -181,11 +181,11 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | Arquivo | Linhas | O que faz |
 |---|---|---|
 | `sw.js` | 64 | Guarda o app no aparelho para funcionar sem internet. |
-| `js/app.js` | 145 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
+| `js/app.js` | 148 | Monta o app: estado comum, navegação, salvar/carregar progresso e junta as telas (js/telas/). |
 | `js/avisoerro.js` | 40 | Aviso amigável quando o app dá erro: em vez de tela parada, mostra "Recomeçar" (o progresso fica guardado no aparelho). |
 | `js/backup.js` | 45 | Cópia de segurança do progresso: monta o arquivo para baixar e confere o arquivo importado. |
 | `js/banco.js` | 49 | Guarda o progresso da criança no aparelho (IndexedDB via Dexie; reserva: localStorage). |
-| `js/caderno.js` | 43 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
+| `js/caderno.js` | 52 | Caderno de erros e pontos fracos (ideia do app Ondulatória). |
 | `js/capivara-patas.js` | 71 | Patinhas e traços dos braços da capivara (SVG). Desenhadas em volta de (0,0), com a ponta para baixo (+y); |
 | `js/capivara-pelo.js` | 90 | Pelo da capivara (SVG feito pelo código): tufinhos na borda das formas e fios por dentro. |
 | `js/capivara-rosto.js` | 62 | Rosto e enfeites da capivara (SVG, 320×320): olhos, sobrancelhas, bochechas, focinho, laranja, chapéu, estrela e confete. |
@@ -212,7 +212,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/relogiodesenho.js` | 23 | Desenho do relógio de ponteiros (SVG feito pelo código, sem imagem): LB.relogioDesenho(h, m, tamanho). |
 | `js/relogioregras.js` | 73 | Regras da brincadeira "Que horas são?": sorteia os desafios e calcula o certo. Sem tela: só contas (testadas em testes/t_relogio.js). |
 | `js/respostas.js` | 22 | Regra única de "resposta certa", usada pelo app e pelo validador (build/validar.js). |
-| `js/rodada.js` | 100 | Kit de rodada: a parte que toda brincadeira repete (sortear os desafios, "1 de 5", errar e tentar de novo, |
+| `js/rodada.js` | 115 | Kit de rodada: a parte que toda brincadeira repete (sortear os desafios, "1 de 5", errar e tentar de novo, |
 | `js/rolagem.js` | 40 | Rolagem automática: quando aparece a resposta ("Muito bem!", "Tente de novo") e o botão de seguir, |
 | `js/sorteio.js` | 28 | Sorteio das opções: a cada vez que uma pergunta aparece, a ordem dos botões muda, |
 | `js/tentativas.js` | 46 | Guarda cada resposta da criança (certa ou errada) para a Área do responsável. |
@@ -331,7 +331,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_banco.js` | 23 | Teste guardado: pedido de guarda permanente dos dados (js/banco.js, pedirGuarda). |
 | `testes/t_bncc.js` | 60 | Teste guardado: motor da BNCC (build/bncc.js + build/bncc-regras.js + build/fichas/bncc.json). |
 | `testes/t_brincadeiras.js` | 82 | Teste guardado: brincadeiras "Memória" (js/telas/memoria.js) e "Som e Figura" (js/telas/somfigura.js). |
-| `testes/t_caderno.js` | 76 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |
+| `testes/t_caderno.js` | 80 | Teste guardado: caderno de erros e pontos fracos (js/caderno.js) + escolha da missão (js/missao.js). |
 | `testes/t_catalogo.js` | 37 | Teste guardado: catálogo (build/catalogo.js). Uso: node testes/t_catalogo.js |
 | `testes/t_celebracoes.js` | 71 | Teste guardado: celebrações (Fase 7, etapa 5) — janela do selo novo e fim da missão animado. |
 | `testes/t_colorir.js` | 97 | Teste guardado: motor de desenhos de colorir (build/colorir.js + colorir-regras.js + kit desenho.js). |
@@ -350,7 +350,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `testes/t_grafico.js` | 82 | Teste guardado: brincadeira "Gráfico de barras" (js/graficoregras.js = contas; js/telas/grafico.js = tela). |
 | `testes/t_importar_mat.js` | 69 | Teste guardado: importador de Matemática (build/importar-mat.js). Uso: node testes/t_importar_mat.js |
 | `testes/t_item.js` | 62 | Teste guardado: motor de item único (build/item.js). Uso: node testes/t_item.js |
-| `testes/t_letrafalta.js` | 59 | Teste guardado: brincadeira "Letra que falta" (js/letrafaltaregras.js = regras; js/telas/letrafalta.js = tela). |
+| `testes/t_letrafalta.js` | 67 | Teste guardado: brincadeira "Letra que falta" (js/letrafaltaregras.js = regras; js/telas/letrafalta.js = tela). |
 | `testes/t_materias.js` | 72 | Teste guardado: mapa por matéria (Etapa B, 27/11): Início · Português · Matemática · Prêmios. |
 | `testes/t_mercado.js` | 118 | Teste guardado: brincadeira "Mercadinho" (js/mercadoregras.js = contas; js/telas/mercado.js = tela). |
 | `testes/t_nova_brincadeira.js` | 67 | Teste guardado: motor build/nova-brincadeira.js. Trabalha numa cópia temporária do projeto (a pasta real não muda). |

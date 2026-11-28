@@ -25,7 +25,7 @@ LB.usarSilabas = function (ctx) {
     ]);
   }
 
-  const r = LB.rodada(ctx, { id: 'silabas', sortear: sortearRodada, frase: p => p.dica, aoCarregar: montarPalavra });
+  const r = LB.rodada(ctx, { id: 'silabas', habilidade: 'EF02LP02', titulo: 'Monte a Palavra', sortear: sortearRodada, frase: p => p.dica, aoCarregar: montarPalavra });
 
   function conferirPalavra() {
     if (slotsSilabas.value.some(item => item === null)) return;

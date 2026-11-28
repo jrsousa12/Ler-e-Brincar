@@ -14,7 +14,7 @@ LB.usarMercado = function (ctx) {
   }
 
   const r = LB.rodada(ctx, {
-    id: 'mercado',
+    id: 'mercado', habilidade: 'EF02MA20', titulo: 'Mercadinho',
     sortear: () => LB.mercadoRegras.sortearRodada(),
     etapas: c => c.etapas,           // nível 1 (montar) não tem etapas: uma pergunta só
     frase,

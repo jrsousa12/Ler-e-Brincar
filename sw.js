@@ -1,7 +1,7 @@
 // Guarda o app no aparelho para funcionar sem internet.
 // Ao mudar qualquer arquivo da lista, aumente VERSAO (o teste testes/t_offline.js confere a lista).
 'use strict';
-const VERSAO = 'lb-v101';
+const VERSAO = 'lb-v102';
 const ARQUIVOS = [
   './', 'index.html', 'manifest.json',
   'css/fontes.css', 'css/base.css', 'css/pecas/cabecalho.css', 'css/pecas/botoes.css', 'css/pecas/cartao.css', 'css/pecas/opcao.css', 'css/pecas/etiquetas.css', 'css/pecas/janelas.css', 'css/pecas/mascote.css', 'css/telas/inicio.css', 'css/telas/missao.css', 'css/telas/historias.css', 'css/telas/listas.css', 'css/telas/colorir.css', 'css/telas/selos.css', 'css/telas/responsavel.css', 'css/telas/silabas.css', 'css/telas/memoria.css', 'css/telas/somfigura.css', 'css/telas/mercado.css', 'css/telas/trem.css', 'css/telas/ordem.css', 'css/telas/pacote.css', 'css/telas/relogio.css', 'css/telas/regua.css', 'css/telas/formas.css', 'css/telas/grafico.css', 'css/telas/ditado.css', 'css/telas/letrafalta.css', 'css/tema-creme.css', 'css/escuro.css', 'css/impressao.css', 'css/tablet.css', 'css/movimento.css',

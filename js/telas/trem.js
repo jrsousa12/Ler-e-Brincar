@@ -5,7 +5,7 @@ LB.usarTrem = function (ctx) {
   const fraseTrem = t => 'Conte de ' + t.passo + ' em ' + t.passo + '. ' + (t.faltam.length > 1 ? 'Quais números faltam?' : 'Qual número falta?');
 
   const r = LB.rodada(ctx, {
-    id: 'trem',
+    id: 'trem', habilidade: 'EF02MA09', titulo: 'Trem dos números',
     sortear: () => LB.tremRegras.sortearRodada(),
     etapas: t => t.faltam,
     frase: fraseTrem,

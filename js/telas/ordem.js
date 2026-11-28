@@ -3,7 +3,7 @@
 LB.usarOrdem = function (ctx) {
   'use strict';
   const r = LB.rodada(ctx, {
-    id: 'ordem',
+    id: 'ordem', habilidade: 'EF02LP17', titulo: 'Ordem dos Fatos',
     sortear: () => LB.ordemRegras.sortearRodada(),
     etapas: d => d.etapas,
     frase: d => d.fala,

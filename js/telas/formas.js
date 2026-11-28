@@ -2,7 +2,7 @@
 LB.usarFormas = function (ctx) {
   'use strict';
   const r = LB.rodada(ctx, {
-    id: 'formas',
+    id: 'formas', habilidade: 'EF02MA15', titulo: 'Formas',
     sortear: () => LB.formasRegras.sortearRodada(),
     frase: d => d.fala,
     textos: {

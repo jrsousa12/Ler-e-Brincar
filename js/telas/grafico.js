@@ -2,7 +2,7 @@
 LB.usarGrafico = function (ctx) {
   'use strict';
   const r = LB.rodada(ctx, {
-    id: 'grafico',
+    id: 'grafico', habilidade: 'EF02MA22', titulo: 'Gráfico de barras',
     sortear: () => LB.graficoRegras.sortearRodada(),
     frase: d => d.fala,
     textos: {

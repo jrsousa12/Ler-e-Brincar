@@ -2,6 +2,7 @@
 // acertar e ganhar estrela, Próximo e Concluir). Cada brincadeira só diz o que é diferente nela.
 // Uso: const r = LB.rodada(ctx, { id: 'trem', sortear: () => [...], frase: d => 'texto lido ao começar',
 //        etapas: d => d.faltam,            // perguntas de cada desafio (padrão: o próprio desafio, uma só)
+//        habilidade: 'EF02MA19', titulo: 'Que horas são?',   // anota cada resposta (Área do responsável) e pesa a habilidade na missão
 //        aoCarregar: d => {},              // limpar o que for só da brincadeira
 //        textos: { erro: (valor, d, q) => 'msg', acerto: (q, d, final) => ['msg na tela', 'frase falada'] } });
 //      return { ...r.exportar('Trem') }   // abrirTrem, escolherTrem, perguntaTrem, estadoTrem...
@@ -16,6 +17,8 @@ LB.rodada = function (ctx, cfg) {
   const mensagem = ref('');
   const estado = ref('');         // '', 'correto', 'tentar-novamente'
   const etapasDe = d => (cfg.etapas ? cfg.etapas(d) : null) || [d];
+  let tentativa = 0;              // erros + acertos da pergunta atual (para o registro de respostas)
+  const MATERIAS = { portugues: 'lingua-portuguesa', matematica: 'matematica' };
   const somLigado = () => ctx.ajustes.value.som !== false;
 
   const atual = computed(() => lista.value[indice.value]);
@@ -25,8 +28,18 @@ LB.rodada = function (ctx, cfg) {
 
   function limpar() { escolha.value = null; mensagem.value = ''; estado.value = ''; }
 
+  // Cada resposta vai para o registro; só a 1ª tentativa de cada pergunta pesa a habilidade no caderno.
+  function registrar(acertou) {
+    if (!cfg.habilidade) return;
+    tentativa += 1;
+    LB.tentativas.registrar({ id: cfg.id, materia: MATERIAS[(LB.materiaDe || {})[cfg.id]] || 'lingua-portuguesa',
+      habilidade: cfg.habilidade, titulo: cfg.titulo || cfg.id, acertou, tentativa });
+    if (tentativa === 1 && ctx.anotarHabilidade) ctx.anotarHabilidade(cfg.habilidade, acertou);   // só a 1ª resposta pesa
+  }
+
   function carregar() {
     etapa.value = 0;
+    tentativa = 0;
     limpar();
     if (cfg.aoCarregar) cfg.aoCarregar(atual.value);
     if (cfg.frase) ctx.falarSozinho(cfg.frase(atual.value));
@@ -45,6 +58,7 @@ LB.rodada = function (ctx, cfg) {
   function errou(texto) {
     estado.value = 'tentar-novamente';
     mensagem.value = texto;
+    registrar(false);
     LB.festa.erro(somLigado());
   }
 
@@ -52,6 +66,7 @@ LB.rodada = function (ctx, cfg) {
   function acertou(texto, fala) {
     estado.value = 'correto';
     mensagem.value = texto;
+    registrar(true);
     if (etapaFinal()) ctx.estrelas.value += 1;
     LB.festa.acerto(somLigado());
     if (fala) LB.voz.falar(fala);
@@ -68,7 +83,7 @@ LB.rodada = function (ctx, cfg) {
   }
 
   function seguir() {
-    if (!etapaFinal()) { etapa.value += 1; limpar(); }
+    if (!etapaFinal()) { etapa.value += 1; tentativa = 0; limpar(); }
     else if (indice.value < lista.value.length - 1) { indice.value += 1; carregar(); }
   }
 

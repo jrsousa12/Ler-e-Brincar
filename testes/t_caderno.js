@@ -18,6 +18,10 @@ let c = K.anotar(K.vazio(), a, false, '2026-11-19');
 ok(K.total(c) === 1 && c.itens['lp-001'].seguidos === 0, 'errou: entra no caderno');
 c = K.anotar(c, a, true, '2026-11-20');
 ok(K.total(c) === 1 && c.itens['lp-001'].seguidos === 1, '1 acerto: continua');
+// Brincadeiras: só pesam a habilidade, sem criar item no caderno
+const cb = K.anotarHabilidade(K.anotarHabilidade(K.vazio(), 'H9', false), 'H9', true);
+ok(cb.hab.H9.certas === 1 && cb.hab.H9.erradas === 1 && Object.keys(cb.itens).length === 0, 'anotarHabilidade: soma na habilidade e não cria item');
+ok(Object.keys(K.anotarHabilidade(K.vazio(), '', false).hab).length === 0, 'anotarHabilidade sem habilidade não anota');
 const c2 = K.anotar(c, a, false, '2026-11-21');
 ok(c2.itens['lp-001'].seguidos === 0 && c2.itens['lp-001'].desde === '2026-11-19', 'errou de novo: zera seguidos, mantém a data');
 c = K.anotar(c, a, true, '2026-11-21');

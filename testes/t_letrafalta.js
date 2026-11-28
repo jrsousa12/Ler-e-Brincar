@@ -40,9 +40,17 @@ const { novaPagina, abrirApp } = require('./_navegador');
   await clicar(errada);
   ok(await p.locator('.feedback-jogo.tentar-novamente').count() === 1 && await estrelas() === e0, 'erro pede nova tentativa, sem estrela');
   await clicar(await certa());
+  const hab = await p.evaluate(() => LB.app.caderno.hab['EF02LP01']);
+  ok(hab && hab.erradas === 1 && !hab.certas, 'caderno: errou de primeira, habilidade pesa 1 erro (e só 1): ' + JSON.stringify(hab));
+  ok(await p.evaluate(() => Object.keys(LB.app.caderno.itens).length === 0), 'brincadeira não põe item no caderno de questões');
+  const regs = (await p.evaluate(() => LB.tentativas.todas())).filter(t => t.id === 'letrafalta');
+  ok(regs.length === 2 && !regs[0].acertou && regs[1].acertou && regs[1].tentativa === 2 && regs[0].materia === 'lingua-portuguesa', 'registro de respostas: erro e acerto');
   ok(await p.locator('.feedback-jogo.correto').count() === 1 && await estrelas() === e0 + 1, 'acerto: 1 estrela');
   ok(!(await p.locator('.slots-palavra').innerText()).includes('?'), 'acertou: a letra aparece no lugar do ?');
-  for (let i = 0; i < 4; i++) { await p.click('.btn-proximo:has-text("Próxima")'); await clicar(await certa()); }
+  await p.click('.btn-proximo:has-text("Próxima")'); await clicar(await certa());
+  const hab2 = await p.evaluate(() => LB.app.caderno.hab['EF02LP01']);
+  ok(hab2.certas === 1 && hab2.erradas === 1, 'caderno: acerto de primeira soma 1 certa: ' + JSON.stringify(hab2));
+  for (let i = 0; i < 3; i++) { await p.click('.btn-proximo:has-text("Próxima")'); await clicar(await certa()); }
   await p.click('.btn-proximo:has-text("Concluir")');
   ok(await p.evaluate(() => LB.app.tela === 'portugues' && LB.app.concluidos['letrafalta'] === true), 'concluir volta e marca feito');
   ok(await estrelas() === e0 + 5, 'rodada rende 5 estrelas: ' + (await estrelas() - e0));

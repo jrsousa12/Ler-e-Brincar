@@ -41,6 +41,9 @@
       ctx.anotarCaderno = (item, deprimeira) => {
         ctx.caderno.value = LB.caderno.anotar(ctx.caderno.value, item, deprimeira, new Date().toISOString().slice(0, 10));
       };
+      ctx.anotarHabilidade = (habilidade, deprimeira) => {
+        ctx.caderno.value = LB.caderno.anotarHabilidade(ctx.caderno.value, habilidade, deprimeira);
+      };
       ctx.ouvir = (texto) => LB.voz.falar(texto);
       ctx.falarSozinho = (texto) => { if (ctx.ajustes.value.vozAuto) LB.voz.falar(texto); };
 
