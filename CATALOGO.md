@@ -8,7 +8,7 @@
 |---|---|---|
 | Histórias | 61 | `historia-62` |
 | Português | 453 | `lp-454` |
-| Matemática | 298 | `mat-299` |
+| Matemática | 337 | `mat-338` |
 | Colorir | 74 | `colorir-75` |
 | Monte a Palavra | 60 | `sil-061` |
 
@@ -73,6 +73,9 @@
 | EF02MA07 | · | 1 | · | 1 | multipla |
 | EF02MA08 | 5 | 3 | 1 | 9 | operacao |
 | EF02MA09 | 2 | 3 | · | 5 | multipla |
+| EF02MA14 | 3 | 2 | 2 | 7 | multipla |
+| EF02MA17 | 7 | 6 | 2 | 15 | multipla |
+| EF02MA18 | 8 | 6 | 3 | 17 | multipla |
 | EF02MA20 | 3 | 17 | 2 | 22 | operacao, multipla |
 | EF03MA01 | · | 23 | · | 23 | multipla |
 | EF03MA03 | 9 | 16 | 4 | 29 | operacao, multipla |
@@ -88,6 +91,9 @@
 - **EF02MA07**: mat-112 Pense e escolha (n2)
 - **EF02MA08**: mat-010 O dobro (n3) · mat-017 Dobro (n1) · mat-019 Dobro pequeno (n1) · mat-020 Dobro (n1) · mat-021 Triplo (n2) · mat-024 Dobro (n1) · mat-025 Metade (n2) · mat-049 Dobro (n1) · mat-050 Triplo (n2)
 - **EF02MA09**: mat-030 Sequência (n1) · mat-037 Sequência de 5 (n2) · mat-066 Números pares (n2) · mat-067 Números ímpares (n2) · mat-068 Sequência (n1)
+- **EF02MA14**: mat-331 Sólidos (n1) · mat-332 Sólidos (n1) · mat-333 Sólidos (n1) · mat-334 Sólidos (n2) · mat-335 Sólidos (n2) · mat-336 Sólidos (n3) · mat-337 Sólidos (n3)
+- **EF02MA17**: mat-316 Pesado ou leve (n1) · mat-317 Pesado ou leve (n1) · mat-318 Pesado ou leve (n1) · mat-319 Pesado ou leve (n1) · mat-320 Pesado ou leve (n2) · mat-321 Pesado ou leve (n2) · mat-322 Pesado ou leve (n3) · mat-323 Pesado ou leve (n2) · mat-324 Litro (n1) · mat-325 Litro (n1) · mat-326 Litro (n1) · mat-327 Litro (n2) · mat-328 Litro (n2) · mat-329 Litro (n2) · mat-330 Litro (n3)
+- **EF02MA18**: mat-299 Dias da semana (n1) · mat-300 Dias da semana (n1) · mat-301 Dias da semana (n1) · mat-302 Dias da semana (n1) · mat-303 Dias da semana (n1) · mat-304 Dias da semana (n2) · mat-305 Dias da semana (n2) · mat-306 Dias da semana (n3) · mat-307 Calendário (n1) · mat-308 Calendário (n1) · mat-309 Calendário (n1) · mat-310 Calendário (n2) · mat-311 Calendário (n2) · mat-312 Calendário (n2) · mat-313 Calendário (n2) · mat-314 Calendário (n3) · mat-315 Calendário (n3)
 - **EF02MA20**: mat-040 Problema com dinheiro (n3) · mat-060 Problema (n2) · mat-070 Problema com dinheiro (n3) · mat-071 Contando dinheiro (n1) · mat-072 Contando dinheiro (n1) · mat-073 Contando dinheiro (n2) · mat-074 Contando dinheiro (n2) · mat-075 Contando dinheiro (n2) · mat-076 Contando dinheiro (n1) · mat-077 Contando dinheiro (n2) · mat-078 Contando dinheiro (n2) · mat-079 Contando dinheiro (n2) · mat-080 Contando dinheiro (n2) · mat-114 Pense e escolha (n2) · mat-174 Pense e escolha (n2) · mat-187 Pense e escolha (n2) · mat-196 Pense e escolha (n2) · mat-202 Pense e escolha (n2) · mat-212 Pense e escolha (n2) · mat-226 Pense e escolha (n2) · mat-252 Pense e escolha (n2) · mat-260 Pense e escolha (n2)
 - **EF03MA01**: mat-116 Pense e escolha (n2) · mat-185 Pense e escolha (n2) · mat-189 Pense e escolha (n2) · mat-193 Pense e escolha (n2) · mat-194 Pense e escolha (n2) · mat-195 Pense e escolha (n2) · mat-198 Pense e escolha (n2) · mat-204 Pense e escolha (n2) · mat-205 Pense e escolha (n2) · mat-207 Pense e escolha (n2) · mat-210 Pense e escolha (n2) · mat-211 Pense e escolha (n2) · mat-213 Pense e escolha (n2) · mat-215 Pense e escolha (n2) · mat-218 Pense e escolha (n2) · mat-219 Pense e escolha (n2) · mat-220 Pense e escolha (n2) · mat-221 Pense e escolha (n2) · mat-223 Pense e escolha (n2) · mat-225 Pense e escolha (n2) · mat-227 Pense e escolha (n2) · mat-228 Pense e escolha (n2) · mat-229 Pense e escolha (n2)
 - **EF03MA03**: mat-051 Multiplicação ×2 (n1) · mat-052 Multiplicação ×3 (n2) · mat-053 Multiplicação ×4 (n2) · mat-054 Multiplicação ×5 (n2) · mat-097 Multiplicando (n2) · mat-098 Multiplicando (n2) · mat-122 Pense e escolha (n2) · mat-134 Pense e escolha (n2) · mat-141 Pense e escolha (n2) · mat-143 Pense e escolha (n2) · mat-276 Multiplicando (n1) · mat-277 Multiplicando (n1) · mat-278 Multiplicando (n1) · mat-279 Multiplicando (n1) · mat-280 Multiplicando (n1) · mat-281 Problema de grupos (n1) · mat-282 Multiplicando (n1) · mat-283 Multiplicando (n1) · mat-285 Multiplicando (n2) · mat-287 Multiplicando (n2) · mat-289 Problema de grupos (n2) · mat-290 Multiplicando (n2) · mat-291 Multiplicando (n2) · mat-292 Multiplicando (n2) · mat-293 Multiplicando (n3) · mat-294 Multiplicando (n3) · mat-296 Multiplicando (n3) · mat-297 Multiplicando (n2) · mat-298 Multiplicando (n3)
@@ -196,7 +202,7 @@ colorir-01 🐱 O gato Tobias · colorir-02 ⭐ A estrela de Lia · colorir-03 �
 | `js/missao.js` | 136 | Missão do dia: 1 história + 3 de Português + 3 de Matemática + 1 desenho, em sequência. |
 | `js/ondeparou.js` | 57 | Continuar de onde parou: guarda a história (e a pergunta) ou a atividade aberta e, ao reabrir o app, |
 | `js/ordemregras.js` | 29 | Regras da brincadeira "Ordem dos Fatos": sorteia as sequências e monta as perguntas. Sem tela (testado em testes/t_ordem.js). |
-| `js/pacoteregras.js` | 93 | Regras da brincadeira "Pacotes de contas": monta pacotes com as questões do banco (conteudo/mat.js). |
+| `js/pacoteregras.js` | 94 | Regras da brincadeira "Pacotes de contas": monta pacotes com as questões do banco (conteudo/mat.js). |
 | `js/pergunta.js` | 45 | Regra de responder (histórias e atividades): acertou → festa; errou → incentivo e nova |
 | `js/registrar-sw.js` | 23 | Liga o modo sem internet (só em https ou localhost; em arquivo aberto direto, ignora). |
 | `js/reguadesenho.js` | 21 | Desenho da régua com objetos (SVG feito pelo código, sem imagem): LB.reguaDesenho(objetos, regua, guias). |

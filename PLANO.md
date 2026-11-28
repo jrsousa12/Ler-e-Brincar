@@ -15,10 +15,6 @@ Regra: ao concluir um item, movê-lo para `HISTORICO.md` (com a data) e tirá-lo
 ### Reestruturação + Fase 10 — plano aprovado pelo dono em 27/11
 Decisões: menu **por matéria**; estilo **o atual, mais caprichado**; expansão **só a Fase 10**. Fazer na ordem (A a D feitas, ver `HISTORICO.md`): nada pendente.
 
-### Fase 11 — Matemática que falta — plano aprovado pelo dono em 27/11 (Sonnet faz, uma etapa por conversa)
-Decisões: brincadeiras com desafios sorteados pelo código (não pelo banco); desenhos feitos pelo app (sem imagem); rodada de 5 do fácil ao difícil, no jeito do Trem; cada uma criada com `build/nova-brincadeira.js`; conta certa sempre calculada e com teste guardado; arquivos abaixo de 200 linhas (desenho grande vira peça à parte).
-- **11.5 Questões no banco** (`gerar-mat` + `bncc`): calendário/dias da semana (EF02MA18), pesado/leve e litro (EF02MA17), sólidos com objetos 🎲⚽🥫🍦 (EF02MA14); nomes curtos em `NOMES` de `js/pacoteregras.js` e regras em `build/fichas/bncc.json`.
-
 ### Depois (rascunho de 24/11, não aprovado)
 - **Fase 12 — Escrever de verdade** (Opus): Ditado (voz fala, ela monta com teclado de letras grandes); completar a letra que falta.
 - **Fase 13 — Nível que se ajusta sozinho** (Opus): sobe/desce o nível por habilidade usando o caderno de erros.

@@ -15,7 +15,8 @@ LB.pacoteRegras = (function () {
   const NOMES = {
     EF02MA01: 'Comparar números', EF02MA04: 'Montar e desmontar números', EF02MA05: 'Somas e subtrações',
     EF02MA06: 'Problemas de somar e tirar', EF02MA07: 'Multiplicar', EF02MA08: 'Dobro e metade',
-    EF02MA09: 'Sequências', EF02MA20: 'Moedas e cédulas', EF03MA01: 'Números até 1000',
+    EF02MA09: 'Sequências', EF02MA14: 'Sólidos nos objetos', EF02MA17: 'Pesado, leve e litro',
+    EF02MA18: 'Calendário e semana', EF02MA20: 'Moedas e cédulas', EF03MA01: 'Números até 1000',
     EF03MA03: 'Fatos de somar e multiplicar', EF03MA06: 'Problemas de contas', EF03MA07: 'Problemas de multiplicar',
     EF03MA08: 'Dividir', EF03MA24: 'Compras e troco'
   };

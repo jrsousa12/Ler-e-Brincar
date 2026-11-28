@@ -1,0 +1,40 @@
+# 11.5 — calendário, massa/capacidade e sólidos (todas de escolha; nivel 1 a 3)
+? Que dia vem depois da terça-feira? | *Quarta-feira | Segunda-feira | Quinta-feira | Depois da terça-feira vem a quarta-feira. | titulo=Dias da semana | nivel=1
+? Que dia vem antes do sábado? | *Sexta-feira | Domingo | Quinta-feira | Antes do sábado vem a sexta-feira. | titulo=Dias da semana | nivel=1
+? Quantos dias tem uma semana? | *7 dias | 5 dias | 10 dias | A semana tem 7 dias: de domingo a sábado. | titulo=Dias da semana | nivel=1
+? Qual é o primeiro dia da semana no calendário? | *Domingo | Segunda-feira | Sábado | No calendário a semana começa no domingo. | titulo=Dias da semana | nivel=1
+? Hoje é segunda-feira. Que dia será amanhã? | *Terça-feira | Domingo | Quarta-feira | Depois da segunda-feira vem a terça-feira. | titulo=Dias da semana | nivel=1
+? Hoje é quinta-feira. Que dia foi ontem? | *Quarta-feira | Sexta-feira | Terça-feira | Antes da quinta-feira vem a quarta-feira. | titulo=Dias da semana | nivel=2
+? Hoje é sexta-feira. Que dia será daqui a 2 dias? | *Domingo | Sábado | Segunda-feira | Sexta, sábado, domingo: daqui a 2 dias é domingo. | titulo=Dias da semana | nivel=2
+? Hoje é domingo. Quantos dias faltam para sábado? | *6 dias | 7 dias | 5 dias | De domingo a sábado são 6 dias: segunda, terça, quarta, quinta, sexta e sábado. | titulo=Dias da semana | nivel=3
+? Quantos meses tem um ano? | *12 meses | 10 meses | 7 meses | O ano tem 12 meses, de janeiro a dezembro. | titulo=Calendário | nivel=1
+? Qual é o primeiro mês do ano? | *Janeiro | Fevereiro | Dezembro | O ano começa em janeiro. | titulo=Calendário | nivel=1
+? Qual é o último mês do ano? | *Dezembro | Novembro | Janeiro | O ano termina em dezembro. | titulo=Calendário | nivel=1
+? Que mês vem depois de março? | *Abril | Fevereiro | Maio | Depois de março vem abril. | titulo=Calendário | nivel=2
+? Que mês vem antes de junho? | *Maio | Julho | Abril | Antes de junho vem maio. | titulo=Calendário | nivel=2
+? Hoje é dia 10. Que dia será daqui a 5 dias? | *Dia 15 | Dia 5 | Dia 16 | 10 + 5 = 15. Será dia 15. | titulo=Calendário | nivel=2
+? Hoje é dia 20. Que dia foi há 3 dias? | *Dia 17 | Dia 23 | Dia 16 | 20 − 3 = 17. Foi dia 17. | titulo=Calendário | nivel=2
+? A festa é dia 12 e hoje é dia 5. Quantos dias faltam? | *7 dias | 17 dias | 8 dias | De 5 até 12 faltam 12 − 5 = 7 dias. | titulo=Calendário | nivel=3
+? Uma semana tem 7 dias. Quantos dias têm 2 semanas? | *14 dias | 9 dias | 12 dias | 7 + 7 = 14. Duas semanas têm 14 dias. | titulo=Calendário | nivel=3
+? Qual é mais pesado? | *Um elefante | Uma formiga | Uma pena | O elefante é muito mais pesado que os outros dois. | titulo=Pesado ou leve | nivel=1
+? Qual é mais leve? | *Uma pena | Uma bola de ferro | Um tijolo | A pena é o mais leve dos três. | titulo=Pesado ou leve | nivel=1
+? Qual é mais pesado? | *Uma melancia | Um morango | Uma uva | A melancia pesa mais que o morango e a uva. | titulo=Pesado ou leve | nivel=1
+? Qual é mais leve? | *Uma folha de papel | Um livro grosso | Uma mochila cheia | A folha de papel quase não pesa nada. | titulo=Pesado ou leve | nivel=1
+? Qual pesa mais? | *Um saco de 2 quilos de arroz | Um saco de 1 quilo de arroz | Um saco de 500 gramas de arroz | 2 quilos pesam mais que 1 quilo e que 500 gramas. | titulo=Pesado ou leve | nivel=2
+? Qual pesa menos? | *Um pacote de 100 gramas | Um pacote de 1 quilo | Um pacote de 3 quilos | 100 gramas é o menor peso dos três. | titulo=Pesado ou leve | nivel=2
+? Quantos gramas tem 1 quilo? | *1000 gramas | 100 gramas | 10 gramas | 1 quilo é o mesmo que 1000 gramas. | titulo=Pesado ou leve | nivel=3
+? Qual medida combina com o peso de um caderno? | *Gramas | Litros | Metros | Peso se mede em gramas ou quilos. | titulo=Pesado ou leve | nivel=2
+? Com o que se mede a água de uma garrafa? | *Litros | Metros | Quilos | Líquidos se medem em litros. | titulo=Litro | nivel=1
+? Qual cabe mais água? | *Um balde | Um copo | Uma colher | O balde é o maior e cabe mais água. | titulo=Litro | nivel=1
+? Qual cabe menos água? | *Uma colher | Uma jarra | Uma banheira | A colher é a menor e cabe menos água. | titulo=Litro | nivel=1
+? Uma garrafa tem 1 litro. Quantos litros têm 3 garrafas iguais? | *3 litros | 1 litro | 4 litros | 1 + 1 + 1 = 3. São 3 litros. | titulo=Litro | nivel=2
+? Uma jarra tem 2 litros de suco. Quantos litros têm 2 jarras iguais? | *4 litros | 2 litros | 6 litros | 2 + 2 = 4. São 4 litros. | titulo=Litro | nivel=2
+? Quantos litros de leite há em 5 caixas de 1 litro? | *5 litros | 1 litro | 6 litros | 5 caixas de 1 litro são 5 litros. | titulo=Litro | nivel=2
+? Um copo cheio tem 1 litro de água. Um balde tem 5 litros. Quantos litros a mais tem o balde? | *4 litros | 6 litros | 5 litros | 5 − 1 = 4. O balde tem 4 litros a mais. | titulo=Litro | nivel=3
+? Qual desses objetos tem a forma de uma bola (esfera)? | *⚽ Bola de futebol | 🎲 Dado | 🥫 Lata | A bola de futebol é redonda como uma esfera. | titulo=Sólidos | nivel=1
+? Qual desses objetos tem a forma de um cubo? | *🎲 Dado | ⚽ Bola | 🥫 Lata | O dado tem 6 faces quadradas iguais: é um cubo. | titulo=Sólidos | nivel=1
+? Qual desses objetos tem a forma de um cilindro? | *🥫 Lata | ⚽ Bola | 🎲 Dado | A lata é um cilindro: tem topo e fundo redondos. | titulo=Sólidos | nivel=1
+? Qual desses objetos lembra um cone? | *🍦 Casquinha de sorvete | 🥫 Lata | ⚽ Bola | A casquinha tem ponta em cima e fundo redondo: é um cone. | titulo=Sólidos | nivel=2
+? Qual sólido rola para qualquer lado? | *Esfera | Cubo | Pirâmide | A esfera é toda arredondada e rola para todos os lados. | titulo=Sólidos | nivel=2
+? Quantas faces tem um cubo? | *6 faces | 4 faces | 8 faces | O cubo tem 6 faces quadradas. | titulo=Sólidos | nivel=3
+? Qual sólido tem duas bases redondas e não tem ponta? | *Cilindro | Cone | Esfera | O cilindro tem duas bases redondas e nenhuma ponta. | titulo=Sólidos | nivel=3

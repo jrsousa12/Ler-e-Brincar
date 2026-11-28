@@ -27,6 +27,9 @@
    {"onde": "titulo", "padrao": "^(vírgula|plural|singular|qual é o plural\\?|plural no texto|feminino|masculino|artigo|futuro|frase correta|frase completa|frase com sentido|complete a frase|complete|mas ou mais\\?)$", "bncc": "EF35LP07", "nome": "gramática e concordância"}
   ],
   "mat": [
+   {"onde": "titulo", "padrao": "^(calendário|dias da semana|meses do ano)$", "bncc": "EF02MA18", "nome": "calendário, dias da semana e meses"},
+   {"onde": "titulo", "padrao": "^(pesado ou leve|litro|mais ou menos líquido)$", "bncc": "EF02MA17", "nome": "massa e capacidade (pesado, leve, litro)"},
+   {"onde": "titulo", "padrao": "^(sólidos|formas dos objetos)$", "bncc": "EF02MA14", "nome": "sólidos geométricos nos objetos"},
    {"onde": "tudo", "padrao": "troco|compras", "bncc": "EF03MA24", "nome": "compra, venda e troco"},
    {"onde": "tudo", "padrao": "reais|moeda|cédula|dinheiro", "bncc": "EF02MA20", "nome": "moedas e cédulas"},
    {"onde": "titulo", "padrao": "dobro|triplo|metade|terça parte", "bncc": "EF02MA08", "nome": "dobro, metade, triplo"},
