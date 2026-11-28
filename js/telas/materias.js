@@ -8,7 +8,8 @@ LB.materiaDe = {
   regua: 'matematica',
   formas: 'matematica',
   grafico: 'matematica',
-  ditado: 'portugues'
+  ditado: 'portugues',
+  letrafalta: 'portugues'
 };
 
 // Telas de cada aba do menu de baixo (para acender a aba certa)

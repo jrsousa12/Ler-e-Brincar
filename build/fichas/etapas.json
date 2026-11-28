@@ -52,7 +52,8 @@
     "t_regua": "testes/t_regua.js",
     "t_formas": "testes/t_formas.js",
     "t_grafico": "testes/t_grafico.js",
-    "t_ditado": "testes/t_ditado.js"
+    "t_ditado": "testes/t_ditado.js",
+    "t_letrafalta": "testes/t_letrafalta.js"
   },
   "navegador": [
     "t_avisoerro",
@@ -74,7 +75,8 @@
     "t_regua",
     "t_formas",
     "t_grafico",
-    "t_ditado"
+    "t_ditado",
+    "t_letrafalta"
   ],
   "limite_linhas": 300,
   "mapa": {
@@ -418,7 +420,8 @@
       "t_regua",
       "t_formas",
       "t_grafico",
-      "t_ditado"
+      "t_ditado",
+      "t_letrafalta"
     ],
     "testes/t_rodada.js": [
       "t_rodada"
@@ -644,7 +647,8 @@
       "t_regua",
       "t_formas",
       "t_grafico",
-      "t_ditado"
+      "t_ditado",
+      "t_letrafalta"
     ],
     "js/telas/materias.js": [
       "t_materias",
@@ -654,7 +658,8 @@
       "t_regua",
       "t_formas",
       "t_grafico",
-      "t_ditado"
+      "t_ditado",
+      "t_letrafalta"
     ],
     "testes/t_materias.js": [
       "t_materias"
@@ -760,6 +765,21 @@
     ],
     "testes/t_ditado.js": [
       "t_ditado"
+    ],
+    "js/letrafaltaregras.js": [
+      "t_letrafalta"
+    ],
+    "js/telas/letrafalta.js": [
+      "t_letrafalta"
+    ],
+    "js/moldes/letrafalta.js": [
+      "t_letrafalta"
+    ],
+    "css/telas/letrafalta.css": [
+      "t_letrafalta"
+    ],
+    "testes/t_letrafalta.js": [
+      "t_letrafalta"
     ]
   }
 }

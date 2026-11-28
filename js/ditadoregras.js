@@ -27,5 +27,5 @@ LB.ditadoRegras = (function () {
       .map(p => ({ id: p.id, palavra: p.palavra, emoji: p.emoji, nivel: p.nivel, fala: 'Escreva a palavra ' + p.palavra.toLowerCase() + '.' }));
   }
 
-  return { sortearRodada, teclado, POR_RODADA };
+  return { sortearRodada, teclado, POR_RODADA, PARECIDAS, ALFABETO };
 })();

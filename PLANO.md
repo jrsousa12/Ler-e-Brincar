@@ -16,6 +16,6 @@ Regra: ao concluir um item, movê-lo para `HISTORICO.md` (com a data) e tirá-lo
 Decisões: menu **por matéria**; estilo **o atual, mais caprichado**; expansão **só a Fase 10**. Fazer na ordem (A a D feitas, ver `HISTORICO.md`): nada pendente.
 
 ### Depois (rascunho de 24/11, não aprovado)
-- **Fase 12 — Escrever de verdade** (Opus): 12.1 Ditado feito (ver `HISTORICO.md`); falta ligar o Ditado ao caderno de erros e fazer 12.2 Letra que falta (figura + palavra com buraco, 3 letras, distratores pelas trocas de `build/fichas/silabas.json`).
+- **Fase 12 — Escrever de verdade** (Opus): Ditado e Letra que falta feitos (ver `HISTORICO.md`). Falta só ligar as duas ao caderno de erros (as outras brincadeiras de rodada também não ligam; decidir com o dono).
 - **Fase 13 — Nível que se ajusta sozinho** (Opus): sobe/desce o nível por habilidade usando o caderno de erros.
 - Observação: EF35LP03 tem 100 itens só no nível 3 (difícil para ela); ver se Pacotes de contas viram formato de LP após o teste em `NOTAS.md`.
